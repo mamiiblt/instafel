@@ -120,9 +120,9 @@ public class BuildProject {
         Log.info("Using default keystore for signing APKs");
         params.addAll(Arrays.asList(
             "--ks", TESTKEY_KS.getAbsolutePath(),
-            "--ksAlias testkey",
-            "--ksPass android",
-            "--ksKeyPass android"
+            "--ksAlias", "testkey",
+            "--ksPass", "android",
+            "--ksKeyPass", "android"
         ));   
         params.add("--overwrite");
         Log.info("Signing apks...");

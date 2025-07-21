@@ -1,14 +1,10 @@
 package me.mamiiblt.instafel.patcher.core.source;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.io.*;
+import java.util.*;
 import org.apache.commons.io.FileUtils;
+
+import me.mamiiblt.instafel.patcher.core.utils.Log;
 
 public class APKSigner {
 
@@ -22,6 +18,13 @@ public class APKSigner {
         ProcessBuilder builder = new ProcessBuilder(cmd);
         builder.redirectErrorStream(true);
         Process process = builder.start();
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Log.info("[SIGNER] " + line);
+            }
+        }
 
         return process.waitFor();
     }
