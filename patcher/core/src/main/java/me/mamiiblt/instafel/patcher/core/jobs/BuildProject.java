@@ -38,13 +38,8 @@ public class BuildProject {
     private File APK_UC = null, APK_C = null;
     private String BUILD_TS = null;
 
-    private boolean useDebugKeystore = true;
     private File APK_SIGNER_JAR = null;
-    private String KS_ALIAS = null;
-    private String KS_KEY_PASS = null;
-    private File KS_FILE = null;
-    private String KS_PASS = null;
-    private File DEBUG_KEYSTORE = null;
+    private File TESTKEY_KS = null;
     
     public void buildProject(File workingDir, String CORE_COMMIT, String PTAG, String PVERSION) throws Exception {
         Env.PROJECT_DIR = WorkingDir.getExistsWorkingDir(workingDir);
@@ -68,27 +63,12 @@ public class BuildProject {
         Log.info("Initializing build environment...");
         this.BUILD_TS = String.valueOf(System.currentTimeMillis());
         this.APK_SIGNER_JAR = new File(Utils.mergePaths(Env.PROJECT_DIR,"build", "signer.jar"));
-        this.DEBUG_KEYSTORE = new File(Utils.mergePaths(Env.PROJECT_DIR, "build", "debug.keystore"));
+        this.TESTKEY_KS = new File(Utils.mergePaths(Env.PROJECT_DIR, "build", "testkey.keystore"));
         this.smaliUtils = new SmaliUtils(Env.PROJECT_DIR);
         this.buildFolder = new File(Utils.mergePaths(Env.PROJECT_DIR, "build"));
         if (buildFolder.exists()) {
             FileUtils.deleteDirectory(buildFolder);
             Log.info("Old build directory deleted.");
-        }
-        this.useDebugKeystore = Env.Config.getBoolean(Env.Config.Keys.use_debug_keystore, false);
-        if (useDebugKeystore == false) {
-            this.KS_FILE = new File(Utils.mergePaths(Env.PROJECT_DIR, Env.Config.getString(Env.Config.Keys.keystore_file, "")));
-            this.KS_PASS = Env.Config.getString(Env.Config.Keys.keystore_pass, null);
-            this.KS_ALIAS = Env.Config.getString(Env.Config.Keys.keystore_alias, null);
-            this.KS_KEY_PASS = Env.Config.getString(Env.Config.Keys.keystore_keypass, null);
-        
-            if (KS_FILE.getAbsolutePath() == Utils.mergePaths(Env.PROJECT_DIR) || KS_PASS == null || KS_ALIAS == null || KS_KEY_PASS == null) {
-                Log.severe("Please set keystore configurations normally from config.properties file");
-            }
-
-            if (!KS_FILE.exists()) {
-                Log.severe("Keystore file canno't be found, " + KS_FILE.getAbsolutePath());
-            }
         }
 
         this.cloneRefFolder = new File(Env.PROJECT_DIR, "clone_ref");
@@ -121,50 +101,35 @@ public class BuildProject {
     }
 
     private void signOutputs() throws Exception {
-        APKSigner.moveOrDeleteApkSigner(true, APK_SIGNER_JAR, DEBUG_KEYSTORE);
-        if (useDebugKeystore) {
-            if (isCloneGenerated) {
-                signAPKs(true, APK_UC, APK_C);
-            } else {
-                signAPKs(true, APK_UC);
-            }
+        APKSigner.moveOrDeleteApkSigner(true, APK_SIGNER_JAR, TESTKEY_KS);
+        if (isCloneGenerated) {
+            signAPKs(APK_UC, APK_C);
         } else {
-            if (isCloneGenerated) {
-                signAPKs(false, APK_UC, APK_C);
-            } else {
-                signAPKs(false, APK_UC);
-            }
+            signAPKs(APK_UC);
         }
-        APKSigner.moveOrDeleteApkSigner(false, APK_SIGNER_JAR, DEBUG_KEYSTORE);
+        APKSigner.moveOrDeleteApkSigner(false, APK_SIGNER_JAR, TESTKEY_KS);
     }
 
-    private void signAPKs(boolean useDebugKey, File... APKs) throws Exception {
+    private void signAPKs(File... APKs) throws Exception {
         Log.info("Signing APKs");
         List<String> params = new ArrayList<>();
         params.add("-a");
         for (File file : APKs){
             params.add(file.getAbsolutePath());
         }
-        if (useDebugKey) {
-            Log.info("Using debug keystore for signing APKs");
-            params.addAll(Arrays.asList(
-                "--ksDebug", DEBUG_KEYSTORE.getAbsolutePath()
-            ));
-        } else {
-            Log.info("Using " + KS_FILE.getName() + " keystore for signing APKs");
-            params.addAll(Arrays.asList(
-                "--ks", KS_FILE.getAbsolutePath(),
-                "--ksAlias", KS_ALIAS,
-                "--ksPass", KS_PASS,
-                "--ksKeyPass", KS_KEY_PASS
-            ));            
-        }
+        Log.info("Using default keystore for signing APKs");
+        params.addAll(Arrays.asList(
+            "--ks", TESTKEY_KS.getAbsolutePath(),
+            "--ksAlias testkey",
+            "--ksPass android",
+            "--ksKeyPass android"
+        ));   
         params.add("--overwrite");
         Log.info("Signing apks...");
         int exitCode = APKSigner.execSigner(params, APK_SIGNER_JAR);
 
         if (exitCode == 0) {
-            Log.info("APKs successfully signed");
+            Log.info("All APKs successfully signed");
         } else {
             FileUtils.deleteDirectory(buildFolder);
             Log.severe("Error while signing apk, clearing /build directory and force exiting");

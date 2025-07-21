@@ -26,10 +26,10 @@ public class APKSigner {
         return process.waitFor();
     }
 
-    public static void moveOrDeleteApkSigner(boolean status, File APK_SIGNER_JAR, File DEBUG_KEYSTORE) throws IOException {
+    public static void moveOrDeleteApkSigner(boolean status, File APK_SIGNER_JAR, File KEYSTORE) throws IOException {
         if (status) {
             InputStream apkSignerJar = APKSigner.class.getResourceAsStream("/signing/uber-apk-signer.zip");
-            InputStream debugKeystore = APKSigner.class.getResourceAsStream("/signing/debug.keystore");
+            InputStream defaultKeystore = APKSigner.class.getResourceAsStream("/signing/testkey.keystore");
             try (OutputStream outputStream = new FileOutputStream(APK_SIGNER_JAR)) {
                 byte[] buffer = new byte[1024];
                 int length;
@@ -40,10 +40,10 @@ public class APKSigner {
                 e.printStackTrace();
             }
 
-            try (OutputStream outputStream = new FileOutputStream(DEBUG_KEYSTORE)) {
+            try (OutputStream outputStream = new FileOutputStream(KEYSTORE)) {
                 byte[] buffer = new byte[1024];
                 int length;
-                while ((length = debugKeystore.read(buffer)) > 0) {
+                while ((length = defaultKeystore.read(buffer)) > 0) {
                     outputStream.write(buffer, 0, length);
                 }
             } catch (IOException e) {
@@ -51,7 +51,7 @@ public class APKSigner {
             }
         } else {
             FileUtils.delete(APK_SIGNER_JAR);
-            FileUtils.delete(DEBUG_KEYSTORE);
+            FileUtils.delete(KEYSTORE);
         }
     }
 }

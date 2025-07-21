@@ -23,11 +23,6 @@ public class Env {
             use_external_ifl_source,
             prod_mode,
             manager_token,
-            use_debug_keystore,
-            keystore_file,
-            keystore_pass,
-            keystore_alias,
-            keystore_keypass,
             github_pat
         }
 
@@ -80,11 +75,6 @@ public class Env {
             propertyManager.addBoolean(Keys.use_external_ifl_source.toString(), false);
             propertyManager.addBoolean(Keys.prod_mode.toString(), false);
             propertyManager.addString(Keys.manager_token.toString(), "not_needed");
-            propertyManager.addBoolean(Keys.use_debug_keystore.toString(), true);
-            propertyManager.addString(Keys.keystore_alias.toString(), "");
-            propertyManager.addString(Keys.keystore_file.toString(), "");
-            propertyManager.addString(Keys.keystore_keypass.toString(), "");
-            propertyManager.addString(Keys.keystore_pass.toString(), "");
             propertyManager.addString(Keys.github_pat.toString(), "null");
             saveProperties();
         }
