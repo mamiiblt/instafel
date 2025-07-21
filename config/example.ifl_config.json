@@ -4,8 +4,8 @@
     "tag": "custom"
   },
   "patcher": {
-    "cli_version": "2.1.0",
-    "core_supported_version": "2.1.0",
+    "cli_version": "2.2.0",
+    "core_supported_version": "2.2.0",
     "tag": "release"
   },
   "website": {
