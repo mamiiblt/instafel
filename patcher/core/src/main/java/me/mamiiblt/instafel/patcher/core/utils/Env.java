@@ -89,7 +89,8 @@ public class Env {
             GENID,
             INSTAFEL_VERSION,
             APPLIED_PATCHES,
-            IFL_SOURCES_FOLDER
+            IFL_SOURCES_FOLDER,
+            P_VCLASS_PATH
         }
     
         public static String SAVE_STR = "Update Project Environment File";
