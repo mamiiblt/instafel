@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">Brak uprawnień</string>
+    <string name="ifl_a5_11">"Instafel nie ma uprawnień do wyświetlania powiadomień. Jeśli problem będzie się powtarzał, upewnij się, że powiadomienia są włączone w ustawieniach aplikacji."</string>
+    <string name="ifl_a0_08">Różne</string>
+    <string name="ifl_a0_09">Motyw AMOLED</string>
+    <string name="ifl_a0_10">Włącz motyw AMOLED dla okien, dialogów i innych elementów Instafela.</string>
+    <string name="ifl_a0_11">Usuń reklamy</string>
+    <string name="ifl_a0_12">Usuwa reklamy wyświetlane w aktualnościach, rolkach lub innych sekcjach.</string>
+    <string name="ifl_a0_13">Uruchom ponownie aplikację, aby zastosować zmiany.</string>
+    <string name="ifl_a0_14">Domyślnie włączone, nie można zmienić.</string>
+    <string name="ifl_a0_15">Instafel Updater</string>
+    <string name="ifl_a0_16">Użyj aplikacji Instafel Updater do automatycznych aktualizacji z rootem i Shizuku</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">Aktualizacje</string>
+    <string name="ifl_a0_03">Język</string>
+    <string name="ifl_a0_04">Biblioteka</string>
+    <string name="ifl_a0_05">Informacje</string>
+    <string name="ifl_a0_06">Ta funkcja nie została jeszcze dodana</string>
+    <string name="ifl_a0_07">Raporty o awariach</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">O Instafel</string>
+    <string name="ifl_a1_02">Wersja Instafel</string>
+    <string name="ifl_a1_03">Typ instalacji</string>
+    <string name="ifl_a1_04">Projekt</string>
+    <string name="ifl_a1_05">Deweloper</string>
+    <string name="ifl_a1_06">Wszyscy, którzy przyczynili się do tego projektu</string>
+    <string name="ifl_a1_07">Klon</string>
+    <string name="ifl_a1_08">Oryginał</string>
+    <string name="ifl_a1_09">ID kompilacji</string>
+    <string name="ifl_a1_10">Wersja Instagrama</string>
+    <string name="ifl_a1_11">Osoby odpowiedzialne za tłumaczenie Instafel</string>
+    <string name="ifl_a1_12">Informacje o kompilacji</string>
+    <string name="ifl_a1_13">Wersja patchera</string>
+    <string name="ifl_a1_14">Zastosowane poprawki</string>
+    <string name="ifl_a1_15">Zobacz szczegóły kompilacjis</string>
+    <string name="ifl_a1_17">Kod źródłowy</string>
+
+
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">O Instagramie<</string>
+    <string name="ifl_a2_02">Wersja</string>
+    <string name="ifl_a2_03">Kod wersji</string>
+    <string name="ifl_a2_04">Kanał</string>
+    <string name="ifl_a2_05">Architektura</string>
+    <string name="ifl_a3_01">Informacje</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">Eksportuj</string>
+    <string name="ifl_a4_02">Importuj</string>
+    <string name="ifl_a4_03">Usuń plik nadpisań</string>
+    <string name="ifl_a4_04">Wybierz ścieżkę zapisu pliku.</string>
+    <string name="ifl_a4_05">Kopia zapasowa została pomyślnie zapisana.</string>
+    <string name="ifl_a4_06">Nie znaleziono pliku nadpisań.</string>
+    <string name="ifl_a4_07">Wystąpił błąd podczas zapisywania kopii zapasowej.</string>
+    <string name="ifl_a4_08">Udostępnij kopię</string>
+    <string name="ifl_a4_09">Wybierz plik do importu.</string>
+    <string name="ifl_a4_10">Kopia została pomyślnie zaimportowana</string>
+    <string name="ifl_a4_11">Nie znaleziono pliku nadpisań.</string>
+    <string name="ifl_a4_12">Wystąpił błąd podczas importowania kopii zapasowej.</string>
+    <string name="ifl_a4_13">Plik nadpisań został pomyślnie usunięty.</string>
+    <string name="ifl_a4_14">Nie znaleziono pliku nadpisań.</string>
+    <string name="ifl_a4_15">Wystąpił błąd podczas importowania kopii zapasowej.</string>
+    <string name="ifl_a4_16">Edytor MobileConfig</string>
+    <string name="ifl_a4_17">Analizator flag</string>
+    <string name="ifl_a4_18">Importuj wszystko</string>
+    <string name="ifl_a4_19">Importuj z scaleniem</string>
+    <string name="ifl_a4_20">Wynik analizy</string>
+    <string name="ifl_a4_21">Użyj własnego pliku mapowania</string>
+    <string name="ifl_a4_22">Pozwala analizować z użyciem własnego pliku mapowania zamiast domyślnego pliku Instagrama</string>
+    <string name="ifl_a4_23">Zgodne flagi</string>
+    <string name="ifl_a4_24">Niezgodne flagi</string>
+    <string name="ifl_a4_25">Szukaj</string>
+    <string name="ifl_a4_26">Importuj nadpisania z kopii zapasowej</string>
+    <string name="ifl_a4_27">Użyj pliku kopii zapasowej zamiast analizowania istniejącego pliku nadpisań</string>
+    <string name="ifl_a4_28">Rozpocznij analizę</string>
+    <string name="ifl_a4_29">Rozpocznij analizę z własną kopią zapasową</string>
+    <string name="ifl_a4_30">Rozpocznij analizę z własnym mapowaniem</string>
+    <string name="ifl_a4_31">Rozpocznij analizę z własną kopią i mapowaniem</string>
+    <string name="ifl_a4_32">Skopiuj surowe mapowanie</string>
+    <string name="ifl_a4_33">Skopiuj przetworzone mapowanie</string>
+    <string name="ifl_a4_34">Plik nadpisań jest uszkodzony lub nie istnieje</string>
+    <string name="ifl_a4_35">Czy na pewno?</string>
+    <string name="ifl_a4_36">Nie można przywrócić usuniętego pliku nadpisań</string>
+    <string name="ifl_a4_37">OK</string>
+    <string name="ifl_a4_38">Anuluj</string>
+    <string name="ifl_a4_39">Błąd podczas odczytu pliku nadpisań.</string>
+    <string name="ifl_a4_40">Pomyślnie wyeksportowano flagę: %1$s</string>
+    <string name="ifl_a4_41">Błąd podczas zapisu zawartości do kopii zapasowej.</string>
+    <string name="ifl_a4_42">Błąd podczas eksportowania kopii zapasowej.</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">Sprawdź aktualizacje</string>
+    <string name="ifl_a5_02">Ostatnie sprawdzenie: %1$s</string>
+    <string name="ifl_a5_03">Częstotliwość sprawdzania</string>
+    <string name="ifl_a5_05">Nigdy</string>
+    <string name="ifl_a5_06">Włącz aktualizacje</string>
+    <string name="ifl_a5_07">Włącza ustawienia aktualizacji</string>
+    <string name="ifl_a5_08">Pobieranie w tle</string>
+    <string name="ifl_a5_09">Powiadomienie zostanie wysłane po pobraniu aktualizacji w tle</string>
+
+    <string name="ifl_a5_sub_freq_00">Ustawione na każde uruchomienie</string>
+    <string name="ifl_a5_sub_freq_01">Ustawione na nigdy</string>
+    <string name="ifl_a5_sub_freq_02">Ustawione na codziennie</string>
+    <string name="ifl_a5_sub_freq_03">Ustawione na co trzy dni</string>
+    <string name="ifl_a5_sub_freq_04">Ustawione na co pięć dni</string>
+    <string name="ifl_a5_sub_freq_05">Ustawione na raz w tygodniu</string>
+
+    <string name="ifl_a5_dia_freq_00">Przy każdym uruchomieniu (domyślnie)</string>
+    <string name="ifl_a5_dia_freq_01">Nigdy</string>
+    <string name="ifl_a5_dia_freq_02">Codziennie</string>
+    <string name="ifl_a5_dia_freq_03">Co trzy dni</string>
+    <string name="ifl_a5_dia_freq_04">Co pięć dni</string>
+    <string name="ifl_a5_dia_freq_05">Raz w tygodniu</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">Użyj języka urządzenia</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">Raporty</string>
+    <string name="ifl_a7_02">Usuń raporty</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">Szczegóły</string>
+    <string name="ifl_a8_02">Skopiuj log</string>
+    <string name="ifl_a8_03">Udostępnij log</string>
+    <string name="ifl_a8_04">Informacje o urządzeniu</string>
+    <string name="ifl_a8_05">Wersja Androida</string>
+    <string name="ifl_a8_06">Wersja IG i IFL</string>
+    <string name="ifl_a8_07">Data awarii</string>
+    <string name="ifl_a8_08">Informacje o awarii</string>
+    <string name="ifl_a8_09">Przyczyna</string>
+    <string name="ifl_a8_10">Ślad stosu</string>
+
+    <string name="ifl_a9_01">Szczegóły</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">Współtwórcy</string>
+    <string name="ifl_a10_02">Tłumacze</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">Biblioteka flag</string>
+    <string name="ifl_a11_02">Biblioteka kopii zapasowych</string>
+    <string name="ifl_a11_03">Błąd podczas pobierania kopii zapasowych z API</string>
+    <string name="ifl_a11_04">Stworzone przez %1$s</string>
+    <string name="ifl_a11_05">Informacje o kopii zapasowej</string>
+    <string name="ifl_a11_06">Nazwa</string>
+    <string name="ifl_a11_07">Opis</string>
+    <string name="ifl_a11_08">Ostatnia aktualizacja</string>
+    <string name="ifl_a11_09">Dziennik zmian</string>
+    <string name="ifl_a11_10">Zastosuj kopię</string>
+    <string name="ifl_a11_11">Więcej</string>
+    <string name="ifl_a11_12">Włącz autoaktualizacje</string>
+    <string name="ifl_a11_13">Jeśli dostępna będzie nowa wersja kopii zapasowej, zostanie ona zaktualizowana automatycznie</string>
+    <string name="ifl_a11_14">Ta kopia zostanie teraz zastosowana i zaktualizowana, jeśli autoaktualizacja będzie włączona</string>
+    <string name="ifl_a11_15">Kopie zapasowe</string>
+    <string name="ifl_a11_16">O autorze</string>
+    <string name="ifl_a11_17">Błąd podczas pobierania informacji o kopii zapasowej</string>
+    <string name="ifl_a11_18">Zaktualizowano do wersji v%1$s (%2$s)</string>
+    <string name="ifl_a11_19">O autorze</string>
+    <string name="ifl_a11_20">Nazwa autora</string>
+    <string name="ifl_a11_21">Błąd podczas pobierania informacji o autorze</string>
+    <string name="ifl_a11_22">Błąd podczas pobierania pliku kopii zapasowej</string>
+    <string name="ifl_a11_23">Aby włączyć tę opcję, musisz zastosować przynajmniej jedną kopię zapasową z biblioteki</string>
+    <string name="ifl_a11_24">Kopia zapasowa %1$s będzie teraz automatycznie aktualizowana</string>
+    <string name="ifl_a11_25">Autoaktualizacja wyłączona</string>
+    <string name="ifl_a11_26">Błąd podczas aktualizowania kopii</string>
+    <string name="ifl_a11_27">Dziennik zmian kopii</string>
+    <string name="ifl_a11_28">Uruchom ponownie aplikację</string>
+    <string name="ifl_a11_29">Uruchom ponownie później</string>
+    <string name="ifl_a11_30">Błąd podczas przetwarzania pliku kopii zapasowej</string>
+    <string name="ifl_a11_31">Błąd podczas przetwarzania pliku mapowania</string>
+    <string name="ifl_a11_32">Błąd podczas odczytu pliku mapowania Instagrama</string>
+    <string name="ifl_a11_33">Błąd podczas przetwarzania pliku nadpisań</string>
+    <string name="ifl_a11_34">Nie znaleziono pliku mapowania</string>
+    <string name="ifl_a11_35">Błąd podczas porównywania kopii z mapowaniem</string>
+    <string name="ifl_a11_36">Błąd podczas kopiowania zawartości flagi</string>
+    <string name="ifl_a11_37">Błąd podczas rozpoczynania analizy</string>
+    <string name="ifl_a11_38">Wybierz plik</string>
+    <string name="ifl_a11_39">Błąd podczas odczytu pliku kopii zapasowej</string>
+    <string name="ifl_a11_40">Błąd podczas odczytu pliku mapowania</string>
+    <string name="ifl_a11_41">Zaimportowano flagę %1$s z pliku kopii zapasowej</string>
+    <string name="ifl_a11_42">Błąd podczas importu nadpisań z pliku kopii zapasowej</string>
+    <string name="ifl_a11_43">Pomyślnie zaimportowano flagę %1$s</string>
+    <string name="ifl_a11_44">Pomyślnie zaimportowano %1$s</string>
+    <string name="ifl_a0_01">Opcje kopii zapasowej</string>
+    <string name="ifl_a11_45">Wersja</string>
+    <string name="ifl_a11_46">Pomyślnie zaimportowano %1$s z flagą %2$s</string>
+    <string name="ifl_a11_47">Wybierz prawidłowy plik kopii zapasowej</string>
+    <string name="ifl_a11_48">Importuj stare kopie zapasowe</string>
+    <string name="ifl_a11_49">Wypełnij wymagane pola.</string>
+    <string name="ifl_a11_50">Wprowadź poprawną nazwę wersji</string>
+    <string name="ifl_a11_51">Eksportuj kopię zapasową</string>
+    <string name="ifl_a11_52">Nazwa kopii zapasowej</string>
+    <string name="ifl_a11_53">"Na przykład: Idealna kopia Mami"</string>
+    <string name="ifl_a11_54">Nazwa autora</string>
+    <string name="ifl_a11_55">Na przykład: Albert Einstein</string>
+    <string name="ifl_a11_56">Wersja kopii zapasowej</string>
+    <string name="ifl_a11_57">Na przykład: 1.0, 1.0-hotfix itd.</string>
+    <string name="ifl_a11_58">Dziennik zmian</string>
+    <string name="ifl_a11_59">Tutaj możesz wpisać zmiany w kopii zapasowej</string>
+    <string name="ifl_a11_60">Eksportuj kopię zapasową</string>
+    <string name="ifl_a11_61">Importuj stare kopie JSON</string>
+    <string name="ifl_a11_62">Porównywarka kopii zapasowych</string>
+    <string name="ifl_a11_63">Umożliwia pełny import pliku kopii wraz ze wszystkimi flagami</string>
+    <string name="ifl_a11_64">Dodaje do używanego pliku flagi, których nie ma w wybranej kopii.</string>
+    <string name="ifl_a11_65">Ta opcja pozwala importować stare kopie w formacie .json</string>
+    <string name="ifl_a11_66">Wybierz kopię 1</string>
+    <string name="ifl_a11_67">Wybierz kopię 2</string>
+    <string name="ifl_a11_68">Naciśnij, aby wybrać kopię</string>
+    <string name="ifl_a11_69">Porównaj kopie</string>
+    <string name="ifl_a11_70">Błąd podczas rozpoczynania kompresji</string>
+    <string name="ifl_a11_71">Wybrano</string>
+    <string name="ifl_a11_72">Wybierz dwa pliki kopii zapasowej do porównania</string>
+    <string name="ifl_a11_73">Wynik porównania</string>
+    <string name="ifl_a11_74">Różnice K1 względem K2</string>
+    <string name="ifl_a11_75">Różnice K2 względem K1</string>
+    <string name="ifl_a11_76">Usunięte ID flag</string>
+    <string name="ifl_a11_77">Błąd podczas porównywania kopii</string>
+
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <string name="ifl_a12_05" translatable="false">Username or password is cannot be empty</string>
+    <string name="ifl_a12_06" translatable="false">Please wait server response..</string>
+
+
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">Nowa aktualizacja</string>
+    <string name="ifl_d1_02">Instafel zostanie zaktualizowany do wersji v%1$d (Instagram v%2$s)</string>
+    <string name="ifl_d1_03">Anuluj</string>
+    <string name="ifl_d1_04">Zainstaluj</string>
+    <string name="ifl_d1_05">Ukryj</string>
+    <string name="ifl_d1_06">Łączenie z serwerem aktualizacji</string>
+
+    <!-- OTA UP-TO-DATE DIALOG -->
+
+    <string name="ifl_d2_02">Instafel jest już w najnowszej wersji.</string>
+    <string name="ifl_d2_01">Brak aktualizacji</string>
+    <string name="ifl_d2_03">OK</string>
+
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">Wystąpił błąd podczas otwierania instalatora APK.</string>
+    <string name="ifl_t1_03">Aktualizacja Instafel nie powiodła się.</string>
+
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">Nie znaleziono przeglądarki na tym urządzeniu</string>
+
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">Ustaw częstotliwość</string>
+    <string name="ifl_d3_02">OK</string>
+
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">Witamy</string>
+    <string name="ifl_d4_02">Witamy w Instafel! Ten mod został stworzony, aby zapewnić wszystkim dostęp do najnowszych funkcji z wersji alpha Instagrama.\n\nMenu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na karcie profilu.</string>
+
+    <!-- CRASH TOAST -->
+    <string name="ifl_crash_toast" translatable="false">Instafel crashed, visit Crash Reports for more details.</string>
+</resources>

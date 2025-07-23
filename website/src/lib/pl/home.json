@@ -1,0 +1,43 @@
+{
+  "landing": {
+    "1": "Najlepsze wrażenia z wersji Alpha",
+    "2": "Dzięki Instafel możesz korzystać z najnowszych wersji alpha Instagrama tak szybko, jak to możliwe",
+    "3": "Pobierz",
+    "4": "Przeczytaj Wiki",
+    "5": "Dołącz do społeczności"
+  },
+  "features": {
+    "1": "Funkcje Instafel",
+    "2": "Poznaj zaawansowane funkcje, które sprawiają, że Instafel to najlepszy wybór dla użytkowników Instagrama Alpha",
+    "3": "Opcje programisty",
+    "4": "Uzyskaj dostęp do narzędzi dla programistów dostępnych w najnowszych wersjach Alpha",
+    "5": "Wsparcie dla klonów",
+    "6": "Nie chcesz instalować Instafel zamiast oryginalnego Instagrama? Możesz zainstalować go jako drugą aplikację!",
+    "7": "Aktualizacje OTA",
+    "8": "Aktualizuj Instafel bezproblemowo dzięki wbudowanemu aktualizatorowi lub automatycznej wtyczce Instafel Updater",
+    "9": "Brak reklam",
+    "10": "Korzystaj wygodnie - bez żadnych reklam w aplikacji!",
+    "11": "Raporty awarii",
+    "12": "W wersjach Alpha awarie są powszechne - Instafel automatycznie zapisuje raporty, by łatwiej je analizować",
+    "13": "Biblioteki",
+    "14": "W Bibliotece Instafel znajdziesz przydatne flagi i kopie zapasowe."
+  },
+  "join_community": {
+    "1": "Pozostań w kontakcie",
+    "2": "Dołącz do grupy Telegram - nowości i dyskusje",
+    "3": "Dołącz do naszej grupy Telegram, aby być na bieżąco z aktualizacjami Instafel. Podziel się opinią, sugestiami i ucz się razem ze społecznością.",
+    "4": "Dołącz do społeczności Instafel",
+    "5": "🎉 Nowy patcher już dostępny!",
+    "6": "Dziś, 02:25",
+    "7": "W końcu rozwiązałem problemy związane z dekompilacją zasobów :)",
+    "8": "Wczoraj, 20:00",
+    "9": "Ponad 6000 członków",
+    "10": "325 osób online"
+  },
+  "try_now": {
+    "1": "Gotowy na Instafel?",
+    "2": "Przetestuj najnowsze funkcje wersji Alpha Instagrama z ulepszoną aplikacją - pobierz teraz i dołącz do tysięcy zadowolonych użytkowników",
+    "3": "Pobierz teraz",
+    "4": "Zobacz aktualizator"
+  }
+}

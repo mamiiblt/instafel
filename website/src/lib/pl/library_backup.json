@@ -1,0 +1,15 @@
+{
+  "title": "Biblioteka kopii zapasowych",
+  "description": "Przeglądaj kopie zapasowe tworzone przez społeczność i importuj je bezpośrednio do Instafel.",
+  "createdBy": "Utworzone przez {{author}}",
+  "contribute": {
+    "title": "Chcesz pomóc?",
+    "description": "Podziel się swoją kopią zapasową Instafel ze społecznością i pomóż innym odkryć optymalne konfiguracje.",
+    "button": "Dołącz do naszej społeczności"
+  },
+  "error": {
+    "title": "Nie udało się załadować kopii zapasowych",
+    "description": "Nie udało się pobrać informacji o kopiach zapasowych. Sprawdź swoje połączenie lub spróbuj ponownie później.",
+    "retryButton": "Ponów próbę"
+  }
+}

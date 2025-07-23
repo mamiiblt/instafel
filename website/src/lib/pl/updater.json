@@ -1,0 +1,57 @@
+{
+  "heroHeader": {
+    "title": "Instafel Updater",
+    "subtitle": "Automatyczne aktualizacje, zero wysiłku",
+    "description": "Utrzymuj Instafel zawsze w najnowszej wersji dzięki tej aplikacji towarzyszącej, która automatycznie obsługuje aktualizacje przez Shizuku lub Root."
+  },
+  "buttons": {
+    "download": "Pobierz {{version}}",
+    "sourceCode": "Kod źródłowy"
+  },
+  "howItWorks": {
+    "title": "Jak to działa",
+    "steps": {
+      "install": {
+        "title": "Zainstaluj i nadaj uprawnienia",
+        "description": "Zainstaluj aplikację i przyznaj uprawnienia przez Shizuku lub Root."
+      },
+      "configure": {
+        "title": "Skonfiguruj ustawienia",
+        "description": "Wybierz preferencje dotyczące aktualizacji i częstotliwość sprawdzania."
+      },
+      "automatic": {
+        "title": "Automatyczne aktualizacje",
+        "description": "Nie musisz nic robić - Updater zajmie się wszystkim za Ciebie."
+      }
+    }
+  },
+  "features": {
+    "title": "Główne funkcje",
+    "silent": {
+      "title": "Cicha instalacja",
+      "description": "Działa w tle i automatycznie pobiera oraz instaluje najnowsze wersje z naszego API."
+    },
+    "shizuku": {
+      "title": "Obsługa Shizuku",
+      "description": "Działa na telefonach bez roota dzięki Shizuku, bez potrzeby dodatkowych menedżerów roota."
+    },
+    "openSource": {
+      "title": "Otwarte źródło",
+      "description": "Całkowicie przejrzysty kod - masz pełną kontrolę nad wymaganymi uprawnieniami."
+    }
+  },
+  "whyUse": {
+    "title": "Dlaczego warto używać Updatera?",
+    "benefits": {
+      "latestFeatures": "Zawsze najnowsze poprawki i funkcje - bez ręcznego pobierania",
+      "saveTime": "Oszczędzasz czas dzięki automatycznym aktualizacjom w tle",
+      "lightweight": "Lekki i wydajny - minimalne zużycie zasobów",
+      "notifications": "Powiadomienia tylko po pomyślnym zainstalowaniu aktualizacji",
+      "compatibility": "Współpracuje zarówno z Shizuku, jak i Rootem"
+    }
+  },
+  "callToAction": {
+    "title": "Pobierz teraz!",
+    "description": "Zachowaj najnowsze funkcje Instafel bez wysiłku. Pobierz Updater już teraz."
+  }
+}
