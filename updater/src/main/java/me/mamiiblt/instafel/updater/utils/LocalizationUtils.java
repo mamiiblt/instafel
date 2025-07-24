@@ -30,6 +30,8 @@ public class LocalizationUtils {
         switch (selectedLanguage) {
             case "Türkçe (tr_TR)":
                 return "tr";
+            case "Polish (pl_PL)":
+                return "pl";
             case "Use Device Language":
                 return Resources.getSystem().getConfiguration().locale.getLanguage();
             case "English (en_US)":
@@ -44,6 +46,9 @@ public class LocalizationUtils {
         switch (selectedLanguage) {
             case "Türkçe (tr_TR)":
                 locale = new Locale("tr");
+                break;
+            case "Polish (pl_PL)":
+                locale = new Locale("pl");
                 break;
             case "Use Device Language":
                 locale = new Locale(Resources.getSystem().getConfiguration().locale.getLanguage());
