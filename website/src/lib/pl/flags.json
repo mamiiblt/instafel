@@ -1,0 +1,16 @@
+{
+  "added_by": "Dodana przez {{name}}",
+  "uploaded_at": "Wgrana dnia {{date_str}}",
+  "removed_with": "Usunięta w wersji v{{version}}",
+  "loading": "Ładowanie...",
+  "flag_found": "W tej kategorii znajduje się łącznie {{fcount}} flag",
+  "page_info": "Strona {{current}} z {{total}}",
+  "prev": "Poprzednia",
+  "next": "Następna",
+  "results": "Wyniki",
+  "s_flag_found": "Znaleziono łącznie {{fcount}} wyników w bibliotece powiązanych z hasłem '{{query}}'",
+  "found_footer": {
+    "down": "Znaleziono łącznie {{size}} flag dla tego zapytania. Jeśli nie znalazłeś właściwej flagi, spróbuj użyć innych słów kluczowych.",
+    "up": "Znaleziono łącznie 15 flag. Domyślnie wyniki są ograniczone do 15 pozycji. Spróbuj użyć bardziej precyzyjnych terminów, aby zawęzić wyszukiwanie."
+  }
+}

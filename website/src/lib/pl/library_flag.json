@@ -1,0 +1,6 @@
+{
+  "title": "Biblioteka flag",
+  "desc": "Ta biblioteka pozwala uzyskać informacje o flagach Instagrama",
+  "num_flag": "{{fsize}} flag",
+  "search_placeholder": "Wyszukaj w bibliotece.."
+}

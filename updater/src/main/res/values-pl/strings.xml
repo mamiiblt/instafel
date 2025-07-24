@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name" translatable="false">Instafel Updater</string>
+
+    <!-- Nav Bar -->
+    <string name="status">Status</string>
+    <string name="logs">Dziennik</string>
+    <string name="settings">Ustawienia</string>
+
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Konfiguracja aktualizatora IFL</string>
+    <string name="checker_arch">Architektura</string>
+    <string name="checker_itype">Typ instalacji</string>
+    <string name="unclone">Oryginał</string>
+    <string name="clone">Klon</string>
+    <string name="cont">Kontynuuj</string>
+    <string name="warning">Ostrzeżenie</string>
+    <string name="warning_desc">Wybierz architekturę i typ instalacji.</string>
+
+    <!-- Status Fragment -->
+    <string name="authorized">Autoryzowano</string>
+    <string name="not_installed">Shizuku nie jest zainstalowane</string>
+    <string name="start_service">Shizuku nie jest uruchomione</string>
+    <string name="shiuku_status">Status Shizuku</string>
+    <string name="root_status">Status roota</string>
+    <string name="selected_arch">Wybrana architektura</string>
+    <string name="selected_installation_type">Wybrany typ instalacji</string>
+    <string name="battery_restiriction">Działanie w tle</string>
+    <string name="battery_restiricted">Ograniczone</string>
+    <string name="battery_unrestiricted">Nieograniczone</string>
+    <string name="battery_dialog_title">Zezwól na tryb bez ograniczeń</string>
+    <string name="battery_dialog_msg">Aby Instafel Updater działał poprawnie, aplikacja nie może mieć ograniczeń w działaniu w tle.</string>
+    <string name="updater_status">Status Updatera</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="permission_rejected">Odmowa uprawnień</string>
+    <string name="perm_rejected_desc">PAutoryzuj Instafel Updater w aplikacji Shizuku</string>
+    <string name="please_start_shizuku">Uruchom Shizuku z poziomu aplikacji</string>
+    <string name="please_install_shizuku">Zainstaluj Shizuku z Google Play</string>
+    <string name="please_give_permission">Autoryzuj Instafel Updater w aplikacji Shizuku</string>
+    <string name="running">Działa w trybie %1$s</string>
+    <string name="stopped">Zatrzymano</string>
+    <string name="unauthorized">Nieautoryzowano</string>
+    <string name="checking">Sprawdzanie..</string>
+    <string name="not_found">Nie znaleziono pliku SU</string>
+    <string name="please_allow_root">Odmówiono dostępu root, zezwól w menedżerze uprawnień.</string>
+    <string name="please_install_root">Brak pliku SU na urządzeniu - zrootuj urządzenie.</string>
+    <string name="please_allow_unrestiracted">Ustaw tryb baterii aplikacji na "Bez ograniczeń"</string>
+    <string name="dialog_title">Przyznaj uprawnienia</string>
+    <string name="dialog_desc">Instafel Updater wymaga uprawnień do powiadomień i roota, aby działać prawidłowo.</string>
+    <string name="dialog_ok">OK</string>
+    <string name="hour">godzina</string>
+    <string name="minute">minuta</string>
+    <string name="upd_started">Updater uruchomiony</string>
+    <string name="upd_stopped">Updater zatrzymany</string>
+
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Dziennik działania został wyczyszczony.</string>
+    <string name="work_restarted">Updater został ponownie uruchomiony</string>
+
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Pobieranie aktualizacji</string>
+    <string name="n2_waiting">Oczekiwanie na serwer aktualizacji</string>
+    <string name="n2_sub">Oczekiwanie na połączenie z API..</string>
+    <string name="n3_installing">Instalowanie aktualizacji</string>
+    <string name="n3_sub">Pobieranie zakończone, trwa instalacja...</string>
+    <string name="n4_complete">Aktualizacja zainstalowana pomyślnie</string>
+    <string name="n4_sub">Zaktualizowano Instafel do wersji v%1$s</string>
+    <string name="error">Błąd</string>
+
+    <!-- Setting Keys -->
+    <string name="cname_general">Ogólne</string>
+    <string name="cname_behavior">Zachowanie</string>
+    <string name="cname_about">O Updaterze</string>
+    <string name="checker_interval">Częstotliwość sprawdzania</string>
+    <string name="checker_interval_s">Zmień częstotliwość sprawdzania aktualizacji</string>
+    <string name="itype">Typ instalacji</string>
+    <string name="itype_s">Zmień typ instalacji</string>
+    <string name="send_notif">Wyślij powiadomienie</string>
+    <string name="send_notif_s">Updater wyśle powiadomienie po zaktualizowaniu Instafel</string>
+    <string name="use_mobile_data">Dane mobilne</string>
+    <string name="use_mobile_data_s">Zezwól na pobieranie aktualizacji przez dane mobilne</string>
+    <string name="hour12_rule">Zasada 12 godzin</string>
+    <string name="hour12_rule_s">Pozwala zainstalować aktualizację dopiero po 12 godzinach od jej wydania</string>
+    <string name="source_code">Kod źródłowy</string>
+    <string name="source_code_s">Sprawdź kod źródłowy Instafela</string>
+    <string name="instafel_website">Strona Instafel</string>
+    <string name="create_issue">Zgłoś problem</string>
+    <string name="create_issue_s">Zgłoś problem lub opinię na GitHubie!</string>
+    <string name="app_version">Wersja aplikacji</string>
+    <string name="app_version_s">Wersja v%1$s (%2$s@%3$s)</string>
+    <string name="language">Język</string>
+    <string name="language_s">Ustaw język aplikacji</string>
+    <string name="developed_by">Stworzony z ❤️ przez mamiiblt</string>
+    <string name="about_app">O aplikacji</string>
+    <string name="crash_logs">Zapisuj logi błędów</string>
+    <string name="crash_logs_s">Rejestr zapisze każdy błąd w dzienniku dziennym.</string>
+    <string name="disable_error">Wyłącz ostrzeżenia</string>
+    <string name="disable_error_s">Wyłącza powiadomienia o niekrytycznych błędachs</string>
+    <string name="updater_guide">Przewodnik po Updaterze</string>
+    <string name="updater_guide_s">Dowiedz się więcej o działaniu Updatera</string>
+</resources>
