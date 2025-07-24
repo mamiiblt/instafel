@@ -26,7 +26,7 @@ import me.mamiiblt.instafel.utils.PreferenceKeys;
 
 public class ifl_a_language extends AppCompatActivity {
 
-    private TileLarge tileEnglish, tileTurkish, tileGreece, tileDeutch, tileFrench, tileHungary, tileHindi, tileSpanish, tilePortugal, tileAzerbaijan;
+    private TileLarge tileEnglish, tileTurkish, tileGreece, tileDeutch, tileFrench, tileHungary, tileHindi, tileSpanish, tilePortugal, tileAzerbaijan, tilePolish;
     private TileLargeSwitch tileDeviceNew;
     private Switch tileDeviceSwitch;
 
@@ -52,6 +52,7 @@ public class ifl_a_language extends AppCompatActivity {
         tileSpanish = findViewById(R.id.ifl_tile_lang_spanish);
         tilePortugal = findViewById(R.id.ifl_tile_lang_portugal);
         tileAzerbaijan = findViewById(R.id.ifl_tile_lang_azerbaijan);
+        tilePolish = findViewById(R.id.ifl_tile_lang_polish);
 
         Locale langLocale = new Locale("en");
         String notSupportedText = Resources.getSystem().getConfiguration().locale.getDisplayLanguage(langLocale) + " (Not Supported)";
@@ -67,10 +68,10 @@ public class ifl_a_language extends AppCompatActivity {
 
         if (prefData.equals("def")) {
             tileDeviceSwitch.setChecked(true);
-            setVisibilities(View.GONE, tileEnglish, tileTurkish, tileGreece, tileDeutch, tileFrench, tileHungary, tileHindi, tileSpanish, tilePortugal, tileAzerbaijan);
+            setVisibilities(View.GONE, tileEnglish, tileTurkish, tileGreece, tileDeutch, tileFrench, tileHungary, tileHindi, tileSpanish, tilePortugal, tileAzerbaijan, tilePolish);
         } else {
             tileDeviceSwitch.setChecked(false);
-            setVisibilities(View.VISIBLE, tileEnglish, tileTurkish, tileGreece, tileDeutch, tileFrench, tileHungary, tileHindi, tileSpanish, tilePortugal, tileAzerbaijan);
+            setVisibilities(View.VISIBLE, tileEnglish, tileTurkish, tileGreece, tileDeutch, tileFrench, tileHungary, tileHindi, tileSpanish, tilePortugal, tileAzerbaijan, tilePolish);
         }
 
         switch (prefData) {
@@ -107,6 +108,9 @@ public class ifl_a_language extends AppCompatActivity {
             case "az":
                 tileAzerbaijan.setVisiblitySubIcon("visible");
                 break;
+            case "pl":
+                tilePolish.setVisiblitySubIcon("visible");
+                break;
         }
 
         tileDeviceSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -133,6 +137,8 @@ public class ifl_a_language extends AppCompatActivity {
         setLanguageClickListener(tileSpanish, "es", 7);
         setLanguageClickListener(tilePortugal, "pt", 8);
         setLanguageClickListener(tileAzerbaijan, "az", 9);
+        setLanguageClickListener(tilePolish, "pl", 10);
+
     }
 
     public void setVisibilities(int visibility, TileLarge... tiles) {

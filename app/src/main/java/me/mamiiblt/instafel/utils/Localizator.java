@@ -17,7 +17,7 @@ import me.mamiiblt.instafel.ui.TileLarge;
 
 public class Localizator {
 
-    public static String[] supportedLangs = {"en", "tr", "el", "de", "fr", "hu", "hi", "es", "pt", "az"};
+    public static String[] supportedLangs = {"en", "tr", "el", "de", "fr", "hu", "hi", "es", "pt", "az", "pl"};
 
     public static void writeLangSh(Context context, String lang) {
         PreferenceManager preferenceManager = new PreferenceManager(context);
@@ -25,17 +25,11 @@ public class Localizator {
     }
 
     public static void enableItem(Activity activity, int itemId) {
-        List<TileLarge> items = new ArrayList<>();
-        items.add(activity.findViewById(R.id.ifl_tile_lang_english));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_turkish));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_deutch));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_greece));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_france));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_hungary));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_hindi));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_spanish));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_portugal));
-        items.add(activity.findViewById(R.id.ifl_tile_lang_azerbaijan));
+        List<TileLarge> items = getLangItemList(activity,
+                R.id.ifl_tile_lang_english, R.id.ifl_tile_lang_turkish, R.id.ifl_tile_lang_deutch,
+                R.id.ifl_tile_lang_greece, R.id.ifl_tile_lang_france, R.id.ifl_tile_lang_hungary,
+                R.id.ifl_tile_lang_hindi, R.id.ifl_tile_lang_spanish, R.id.ifl_tile_lang_portugal,
+                R.id.ifl_tile_lang_azerbaijan, R.id.ifl_tile_lang_polish);
 
         for (int i = 0; i < items.size(); i++) {
             if (i == itemId) {
@@ -44,6 +38,14 @@ public class Localizator {
                 items.get(i).setVisiblitySubIcon("gone");
             }
         }
+    }
+
+    public static List<TileLarge> getLangItemList (Activity act, int... IDs) {
+        List<TileLarge> items = new ArrayList<>();
+        for (int id : IDs) {
+            items.add(act.findViewById(id));
+        }
+        return items;
     }
 
     public static String getLocalizedString(Activity _activity, String languageCode, String resLabel, Object... params) {
