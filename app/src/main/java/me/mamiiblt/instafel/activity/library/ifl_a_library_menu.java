@@ -31,7 +31,7 @@ public class ifl_a_library_menu extends AppCompatActivity {
         tileFlags.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_library_menu.this, "https://instafel.app/library/flags");
+                GeneralFn.openInWebBrowser(ifl_a_library_menu.this, "https://instafel.app/library/flag");
             }
         });
 

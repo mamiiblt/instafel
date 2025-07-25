@@ -87,14 +87,14 @@ public class ifl_a_menu extends AppCompatActivity {
         tileSocials.getTileGuide().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://instafel.app/guide");
+                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://instafel.app/wiki");
             }
         });
 
         tileSocials.getTileGithub().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://github.com/mamiiblt");
+                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://github.com/mamiiblt/instafel");
             }
         });
 

@@ -69,7 +69,7 @@ public class ifl_a_ota extends AppCompatActivity {
         tileInstafelUpdater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_ota.this, "https://github.com/mamiiblt/instafel-updater");
+                GeneralFn.openInWebBrowser(ifl_a_ota.this, "https://instafel.app/about_updater");
             }
         });
 
