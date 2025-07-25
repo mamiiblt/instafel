@@ -25,18 +25,18 @@
     <string name="ifl_a1_02">Instafel Version</string>
     <string name="ifl_a1_03">Installation Type</string>
     <string name="ifl_a1_04">Project</string>
-    <string name="ifl_a1_05">Developer</string>
-    <string name="ifl_a1_06">Everyone that contributed to this project</string>
     <string name="ifl_a1_07">Clone</string>
     <string name="ifl_a1_08">Unclone</string>
     <string name="ifl_a1_09">Generation ID</string>
     <string name="ifl_a1_10">Instagram Version</string>
-    <string name="ifl_a1_11">Contributors to the translation of Instafel</string>
     <string name="ifl_a1_12">Build Information</string>
     <string name="ifl_a1_13">Patcher Version</string>
     <string name="ifl_a1_14">Applied Patches</string>
     <string name="ifl_a1_15">See build info details</string>
-    <string name="ifl_a1_17">Source Code</string>
+    <string name="ifl_a1_18">About Developer</string>
+    <string name="ifl_a1_19">Website</string>
+    <string name="ifl_a1_20">Join Community</string>
+    <string name="ifl_a1_21">Contributors</string>
 
 
     <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
@@ -138,7 +138,6 @@
 
     <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Contributors</string>
-    <string name="ifl_a10_02">Translators</string>
 
     <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Flag Library</string>

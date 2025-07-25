@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2024. mamiiblt.dev
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+    <string name="ifl_a1_18">À propos du développeur</string>
+    <string name="ifl_a1_19">Site web</string>
+    <string name="ifl_a1_20">Rejoindre la communauté</string>
+    <string name="ifl_a1_21">Contributeurs</string>
     <string name="ifl_a1_12">Informations de compilation</string>
     <string name="ifl_a1_13">Version du correctif</string>
     <string name="ifl_a1_14">Correctifs appliqués</string>
     <string name="ifl_a1_15">Voir les détails de la compilation</string>
-    <string name="ifl_a1_17">Code source</string>
     <string name="ifl_a11_61">"Importer d'anciens backups JSON"</string>
     <string name="ifl_a11_62">Comparateur de sauvegarde</string>
     <string name="ifl_a11_63">Utilisé pour importer un fichier de sauvegarde complètement avec tous les drapeaux du fichier</string>
@@ -67,13 +68,10 @@
     <string name="ifl_a1_02">Version Instagram</string>
     <string name="ifl_a1_03">Type d\'installation</string>
     <string name="ifl_a1_04">Projet</string>
-    <string name="ifl_a1_05">Développeur</string>
-    <string name="ifl_a1_06">Everyone that contributed to this project</string>
     <string name="ifl_a1_07">Cloner</string>
     <string name="ifl_a1_08">Décloner</string>
     <string name="ifl_a1_09">ID de génération</string>
     <string name="ifl_a1_10">Version Instagram</string>
-    <string name="ifl_a1_11">Contributeurs à la traduction d’Instafel</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
     <string name="ifl_a2_01">À propos d\'Instagram</string>
     <string name="ifl_a2_02">Version</string>
@@ -164,7 +162,6 @@
     <string name="ifl_a9_01">Détails</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_contributors and translators  -->
     <string name="ifl_a10_01">Contributeurs</string>
-    <string name="ifl_a10_02">Traducteurs</string>
     <!--  me.mamiiblt.instafel.ifl_a_library_menu  -->
     <string name="ifl_a11_01">Bibliothèque de drapeaux</string>
     <string name="ifl_a11_02">Bibliothèque de sauvegarde</string>

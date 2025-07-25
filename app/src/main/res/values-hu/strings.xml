@@ -3,11 +3,14 @@
   -->
 
 <resources>
+    <string name="ifl_a1_18">A fejlesztőről</string>
+    <string name="ifl_a1_19">Weboldal</string>
+    <string name="ifl_a1_20">Csatlakozás a közösséghez</string>
+    <string name="ifl_a1_21">Közreműködők</string>
     <string name="ifl_a1_12">Build információ</string>
     <string name="ifl_a1_13">Patcher Verzió</string>
     <string name="ifl_a1_14">Alkalmazott javítások</string>
     <string name="ifl_a1_15">Build részleteinek megtekintése</string>
-    <string name="ifl_a1_17">Forráskód</string>
     <string name="ifl_a11_61">Régi JSON biztonsági mentések importálása</string>
     <string name="ifl_a11_62">Biztonsági mentés összehasonlító</string>
     <string name="ifl_a11_63">Egy biztonsági mentési fájl teljes importálására szolgál az összes zászlóval együtt</string>
@@ -67,13 +70,10 @@
     <string name="ifl_a1_02">Instafel Verzió</string>
     <string name="ifl_a1_03">Telepítés típusa</string>
     <string name="ifl_a1_04">Projekt</string>
-    <string name="ifl_a1_05">Fejlesztő</string>
-    <string name="ifl_a1_06">Mindenki, aki hozzájárult ehhez a projekthez</string>
     <string name="ifl_a1_07">Klónozott</string>
     <string name="ifl_a1_08">Nem klónozott</string>
     <string name="ifl_a1_09">Generáció ID</string>
     <string name="ifl_a1_10">Instagram Verzió</string>
-    <string name="ifl_a1_11">Az Instafel fordításához hozzájárultak</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
     <string name="ifl_a2_01">Instagram-ról</string>
     <string name="ifl_a2_02">Verzió</string>
@@ -164,7 +164,6 @@
     <string name="ifl_a9_01">Részletek</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_contributors and translators  -->
     <string name="ifl_a10_01">Közreműködők</string>
-    <string name="ifl_a10_02">Fordítók</string>
     <!--  me.mamiiblt.instafel.ifl_a_library_menu  -->
     <string name="ifl_a11_01">Jelzés könyvtár</string>
     <string name="ifl_a11_02">Mentés könyvtár</string>

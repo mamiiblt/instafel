@@ -3,11 +3,14 @@
   -->
 
 <resources>
+    <string name="ifl_a1_18">Sobre o desenvolvedor</string>
+    <string name="ifl_a1_19">Site</string>
+    <string name="ifl_a1_20">Entrar na comunidade</string>
+    <string name="ifl_a1_21">Contribuidores</string>
     <string name="ifl_a1_12">Informações da compilação</string>
     <string name="ifl_a1_13">Versão do patcher</string>
     <string name="ifl_a1_14">Patches aplicados</string>
     <string name="ifl_a1_15">Ver detalhes da compilação</string>
-    <string name="ifl_a1_17">Código-fonte</string>
     <string name="ifl_a0_01">Opções de backup</string>
     <string name="ifl_a11_45">Versão</string>
     <string name="ifl_a11_46">%1$s importado com sucesso com a bandeira %2$s</string>
@@ -67,13 +70,10 @@
     <string name="ifl_a1_02">Versão do Instafel</string>
     <string name="ifl_a1_03">Tipo de Instalação</string>
     <string name="ifl_a1_04">Projeto</string>
-    <string name="ifl_a1_05">Desenvolvedor</string>
-    <string name="ifl_a1_06">Todos que contribuíram para este projeto</string>
     <string name="ifl_a1_07">Clone</string>
     <string name="ifl_a1_08">Unclone</string>
     <string name="ifl_a1_09">ID de Geração</string>
     <string name="ifl_a1_10">Versão do Instagram</string>
-    <string name="ifl_a1_11">Contribuidores para a tradução do Instafel</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
     <string name="ifl_a2_01">Sobre o Instagram</string>
     <string name="ifl_a2_02">Versão</string>
@@ -164,7 +164,6 @@
     <string name="ifl_a9_01">Detalhes</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_contributors and translators  -->
     <string name="ifl_a10_01">Contribuidores</string>
-    <string name="ifl_a10_02">Tradutores</string>
     <!--  me.mamiiblt.instafel.ifl_a_library_menu  -->
     <string name="ifl_a11_01">Biblioteca de Flags</string>
     <string name="ifl_a11_02">Biblioteca de Backup</string>

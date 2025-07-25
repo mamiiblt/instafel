@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="ifl_a1_18">डेवलपर के बारे में</string>
+    <string name="ifl_a1_19">वेबसाइट</string>
+    <string name="ifl_a1_20">समुदाय से जुड़ें</string>
+    <string name="ifl_a1_21">योगदानकर्ता</string>
     <string name="ifl_a1_12">बिल्ड जानकारी</string>
     <string name="ifl_a1_13">पैचर संस्करण</string>
     <string name="ifl_a1_14">लागू किए गए पैच</string>
     <string name="ifl_a1_15">बिल्ड जानकारी विवरण देखें</string>
-    <string name="ifl_a1_17">सोर्स कोड</string>
     <string name="ifl_a11_61">पुराने JSON बैकअप आयात करें</string>
     <string name="ifl_a11_62">बैकअप तुलना उपकरण</string>
     <string name="ifl_a11_63">बैकअप फ़ाइल को सभी फ़्लैग्स के साथ पूरी तरह से आयात करने के लिए उपयोग किया जाता है</string>
@@ -62,13 +65,10 @@
     <string name="ifl_a1_02">InstaFel का वर्ज़न</string>
     <string name="ifl_a1_03">पैकेज के प्रकार</string>
     <string name="ifl_a1_04">project</string>
-    <string name="ifl_a1_05">ड्वेलपर</string>
-    <string name="ifl_a1_06">इस Project में योगदान देने वाले सभी लोग</string>
     <string name="ifl_a1_07">क्लोन</string>
     <string name="ifl_a1_08">अनक्लोन</string>
     <string name="ifl_a1_09">जनरेशन आईडी</string>
     <string name="ifl_a1_10">इंस्टाग्राम का वर्ज़न</string>
-    <string name="ifl_a1_11">InstaFel के अनुवाद में योगदानकर्ता</string>
     <string name="ifl_a2_01">Instagram के बारे में</string>
     <string name="ifl_a2_02">वर्ज़न</string>
     <string name="ifl_a2_03">वर्ज़न कोड</string>
@@ -152,7 +152,6 @@
     <string name="ifl_a8_10">स्टैक ट्रेस</string>
     <string name="ifl_a9_01">विस्तार</string>
     <string name="ifl_a10_01">योगदान करने वाले</string>
-    <string name="ifl_a10_02">अनुवाद करने वाले</string>
     <string name="ifl_a11_01">Flags लाइब्रेरी </string>
     <string name="ifl_a11_02">बैकअप लाइब्रेरी </string>
     <string name="ifl_a11_03">API से बैकअप प्राप्त करते समय समस्या आ रही है</string>

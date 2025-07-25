@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="ifl_a1_18">Geliştirici Hakkında</string>
+    <string name="ifl_a1_19">Web Sitesi</string>
+    <string name="ifl_a1_20">Topluluğa Katıl</string>
+    <string name="ifl_a1_21">Katkıda Bulunanlar</string>
     <string name="ifl_a0_01">Yedekleme Seçenekleri</string>
     <string name="ifl_a11_45">Versiyon</string>
     <string name="ifl_a11_46">%1$s başarıyla %2$s bayrağı ile içe aktarıldı</string>
@@ -34,7 +38,6 @@
     <string name="ifl_a11_75">"B2'den B1'e Farklar"</string>
     <string name="ifl_a11_76">Kaldırılan Bayrak Kimlikleri</string>
     <string name="ifl_a11_77">Yedekleri karşılaştırırken hata oluştu</string>
-
     <string name="ifl_a0_08">Çeşitli Seçenekler</string>
     <string name="ifl_a0_10">Instafel aktiviteleri, diyalogları ve diğer kısımları için amoled temayı açar</string>
     <string name="ifl_a0_11">Reklamları Kaldır</string>
@@ -45,8 +48,6 @@
     <string name="ifl_a0_14">Varsayılan olarak etkin, değiştirilemez.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">"Root / Shizuku ile otomatik güncellemeler için Instafel Updater'ı kullanın."</string>
-
-
     <string name="ifl_a0_02">Güncelleme Ayarları</string>
     <string name="ifl_a0_03">Dil Ayarları</string>
     <string name="ifl_a0_04">Kütüphane</string>
@@ -55,9 +56,7 @@
     <string name="ifl_a1_02">Instafel Sürümü</string>
     <string name="ifl_a1_03">Kurulum Türü</string>
     <string name="ifl_a1_04">Proje Hakkında</string>
-    <string name="ifl_a1_05">Geliştirici</string>
     <string name="ifl_a1_09">Oluşturulma Kimliği</string>
-    <string name="ifl_a1_17">Kaynak Kodu</string>
     <string name="ifl_a2_01">Instagram Hakkında</string>
     <string name="ifl_a2_02">Sürüm</string>
     <string name="ifl_a2_03">Sürüm Kodu</string>
@@ -199,15 +198,12 @@
     <string name="ifl_a1_07">Klon</string>
     <string name="ifl_a1_08">Klon Olmayan</string>
     <string name="ifl_a10_01">Katkı Sağlayanlar</string>
-    <string name="ifl_a1_06">Bu projeye katkı sağlayanlar</string>
     <string name="ifl_a5_08">Arka Planda İndirme</string>
     <string name="ifl_a1_10">Instagram Sürümü</string>
     <string name="ifl_a4_18">Tamamen İçe Aktar</string>
     <string name="ifl_a4_19">Sadece Seçilenleri İçe Aktar</string>
     <string name="ifl_a4_23">Eşleşen Bayraklar</string>
     <string name="ifl_a4_24">Eşleşmeyen Bayraklar</string>
-    <string name="ifl_a10_02">Çevirmenler</string>
-    <string name="ifl_a1_11">Bu projenin çevirilmesinde katkı sağlayanlar</string>
     <string name="ifl_a11_28">Şimdi Başlat</string>
     <string name="ifl_a1_12">Yapı Bilgisi</string>
     <string name="ifl_a1_13">Yamalayıcı Sürümü</string>

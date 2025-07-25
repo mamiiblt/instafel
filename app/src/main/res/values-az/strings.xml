@@ -23,18 +23,18 @@
     <string name="ifl_a1_02">Instafel Versiyası</string>
     <string name="ifl_a1_03">Quraşdırma Növü</string>
     <string name="ifl_a1_04">Layihə</string>
-    <string name="ifl_a1_05">Tərtibatçı</string>
-    <string name="ifl_a1_06">Bu layihəyə töhfə verən hər kəs</string>
     <string name="ifl_a1_07">Klon</string>
     <string name="ifl_a1_08">Klondan Çıxar</string>
     <string name="ifl_a1_09">Nəsil ID</string>
     <string name="ifl_a1_10">Instagram Versiyası</string>
-    <string name="ifl_a1_11">"Instafel'in tərcüməsinə töhfə verənlər"</string>
     <string name="ifl_a1_12">Build Məlumatı</string>
     <string name="ifl_a1_13">Patcher Versiyası</string>
     <string name="ifl_a1_14">Tətbiq Edilmiş Patch-lər</string>
     <string name="ifl_a1_15">Build məlumatlarının detalları</string>
-    <string name="ifl_a1_17">Mənbə Kodu</string>
+    <string name="ifl_a1_18">Tərtibatçı haqqında</string>
+    <string name="ifl_a1_19">Veb sayt</string>
+    <string name="ifl_a1_20">İcmaya qoşul</string>
+    <string name="ifl_a1_21">Töhfə verənlər</string>
 
 
     <!-- About Ig -->
@@ -139,7 +139,6 @@
 
     <!-- Contributors and Translators -->
     <string name="ifl_a10_01">Töhfələr</string>
-    <string name="ifl_a10_02">Tərcüməçilər</string>
 
     <!-- Library Menu -->
     <string name="ifl_a11_01">Bayraq Kitabxanası</string>

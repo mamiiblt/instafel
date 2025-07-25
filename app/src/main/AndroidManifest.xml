@@ -17,54 +17,41 @@
         android:theme="@style/ifl_theme_dark"
         tools:targetApi="34">
 
-        <activity android:name=".activity.about.ifl_a_build_info" android:exported="false" />
-        <activity android:name=".activity.devmode.comparator.ifl_a_devmode_backup_comparator" android:exported="false" />
-        <activity android:name=".activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu" android:exported="false" />
-        <activity android:name=".activity.devmode.backup.ifl_a_export_backup" android:exported="false" />
-        <activity android:name=".activity.ifl_a_misc" android:exported="false" />
-        <activity android:name=".activity.devmode.ifl_a_devmode_import" android:exported="false" />
-        <activity android:name=".activity.crash_manager.ifl_a_crash_viewer" android:exported="false" />
-        <activity android:name=".activity.about.ifl_a_about_contributors" android:exported="false" />
-        <activity android:name=".activity.crash_manager.ifl_a_crash_reports" android:exported="false" />
-        <activity android:name=".activity.devmode.analyzer.ifl_a_devmode_backup_analyzer" android:exported="false" />
-        <activity android:name=".activity.devmode.analyzer.ifl_a_devmode_backup_analyzer_menu" android:exported="false" />
-        <activity android:name=".activity.about.ifl_a_about_translators" android:exported="false" />
-        <activity android:name=".activity.library.ifl_a_library_menu" android:exported="false" />
-        <activity android:name=".activity.admin.ifl_a_admin_login" android:exported="false" />
-        <activity android:name=".activity.admin.ifl_a_admin_dashboard" android:exported="false" />
-        <activity android:name=".activity.library.backup.ifl_a_library_backup" android:exported="false" />
-        <activity android:name=".activity.library.backup.ifl_a_library_backup_info" android:exported="false" />
-        <activity android:name=".activity.library.backup.ifl_a_library_backup_info_author" android:exported="false" />
-        <activity android:name=".activity.admin.ifl_a_admin_action_updatebackup" android:exported="false" />
-        <activity android:name=".activity.admin.ifl_a_admin_action_approvepreview" android:exported="false" />
-        <activity android:name=".activity.admin.ifl_a_admin_pref_manager"
-            android:exported="false" />
-
-        <provider
-            android:name="me.mamiiblt.instafel.utils.InstafelFileProvider"
-            android:authorities="me.mamiiblt.instafel.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true" />
-
-        <activity
-            android:name=".activity.ifl_a_ota"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ifl_a_language"
-            android:exported="false" />
-        <activity
-            android:name=".activity.devmode.ifl_a_devmode"
-            android:exported="false" />
-        <activity
-            android:name=".activity.ifl_a_menu"
-            android:exported="true">
+        <activity android:name=".activity.ifl_a_menu" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ifl_a_ota" android:exported="false" />
+        <activity android:name=".activity.ifl_a_language" android:exported="false" />
+        <activity android:name=".activity.ifl_a_misc" android:exported="false" />
         <activity android:name=".activity.about.ifl_a_about" android:exported="false" />
-    </application>
+        <activity android:name=".activity.about.ifl_a_build_info" android:exported="false" />
+        <activity android:name=".activity.devmode.comparator.ifl_a_devmode_backup_comparator" android:exported="false" />
+        <activity android:name=".activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu" android:exported="false" />
+        <activity android:name=".activity.devmode.backup.ifl_a_export_backup" android:exported="false" />
+        <activity android:name=".activity.devmode.ifl_a_devmode" android:exported="false" />
+        <activity android:name=".activity.devmode.ifl_a_devmode_import" android:exported="false" />
+        <activity android:name=".activity.devmode.analyzer.ifl_a_devmode_backup_analyzer" android:exported="false" />
+        <activity android:name=".activity.devmode.analyzer.ifl_a_devmode_backup_analyzer_menu" android:exported="false" />
+        <activity android:name=".activity.crash_manager.ifl_a_crash_viewer" android:exported="false" />
+        <activity android:name=".activity.crash_manager.ifl_a_crash_reports" android:exported="false" />
+        <activity android:name=".activity.library.ifl_a_library_menu" android:exported="false" />
+        <activity android:name=".activity.library.backup.ifl_a_library_backup" android:exported="false" />
+        <activity android:name=".activity.library.backup.ifl_a_library_backup_info" android:exported="false" />
+        <activity android:name=".activity.library.backup.ifl_a_library_backup_info_author" android:exported="false" />
+        <activity android:name=".activity.admin.ifl_a_admin_login" android:exported="false" />
+        <activity android:name=".activity.admin.ifl_a_admin_dashboard" android:exported="false" />
+        <activity android:name=".activity.admin.ifl_a_admin_action_updatebackup" android:exported="false" />
+        <activity android:name=".activity.admin.ifl_a_admin_action_approvepreview" android:exported="false" />
+        <activity android:name=".activity.admin.ifl_a_admin_pref_manager" android:exported="false" />
 
+        <provider
+            android:name="me.mamiiblt.instafel.utils.InstafelFileProvider"
+            android:authorities="me.mamiiblt.instafel.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+    </application>
 </manifest>

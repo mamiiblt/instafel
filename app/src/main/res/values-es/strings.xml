@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2025. mamiiblt.dev
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="ifl_a1_18">Acerca del desarrollador</string>
+    <string name="ifl_a1_19">Sitio web</string>
+    <string name="ifl_a1_20">Unirse a la comunidad</string>
+    <string name="ifl_a1_21">Colaboradores</string>
     <string name="ifl_a1_12">Información de compilación</string>
     <string name="ifl_a1_13">Versión del parcheador</string>
     <string name="ifl_a1_14">Parches aplicados</string>
     <string name="ifl_a1_15">Ver detalles de la compilación</string>
-    <string name="ifl_a1_17">Código fuente</string>
     <string name="ifl_a0_14">Habilitado por defecto, no se puede cambiar.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Usa Instafel Updater para actualizaciones automáticas con Root / Shizuku.</string>
@@ -58,7 +58,6 @@
     <string name="ifl_a0_12">Elimina los anuncios que se muestran en el feed, reels u otros lugares.</string>
     <string name="ifl_a0_13">Reiniciar la app para aplicar los cambios.</string>
     <string name="ifl_a10_01">Contribuyentes</string>
-    <string name="ifl_a10_02">Traductores</string>
     <string name="ifl_a11_01">Flag Library</string>
     <string name="ifl_a11_02">Backup Library</string>
     <string name="ifl_a11_03">Error al obtener copias de seguridad desde la API</string>
@@ -107,13 +106,10 @@
     <string name="ifl_a1_02">Versión de Instafel</string>
     <string name="ifl_a1_03">Tipo de instalación</string>
     <string name="ifl_a1_04">Proyecto</string>
-    <string name="ifl_a1_05">Desarrollador</string>
-    <string name="ifl_a1_06">Todos los que contribuyeron a este proyecto</string>
     <string name="ifl_a1_07">Clon</string>
     <string name="ifl_a1_08">No clon</string>
     <string name="ifl_a1_09">ID de Generación</string>
     <string name="ifl_a1_10">Versión de Instagram</string>
-    <string name="ifl_a1_11">Contribuidores a la traducción de Instafel</string>
     <string name="ifl_a2_01">Sobre Instagram</string>
     <string name="ifl_a2_02">Versión</string>
     <string name="ifl_a2_03">Código de versión</string>

@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2024. mamiiblt.dev
-  -->
+<?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+    <string name="ifl_a1_18">Σχετικά με τον προγραμματιστή</string>
+    <string name="ifl_a1_19">Ιστότοπος</string>
+    <string name="ifl_a1_20">Συμμετοχή στην κοινότητα</string>
+    <string name="ifl_a1_21">Συντελεστές</string>
     <string name="ifl_a1_12">Πληροφορίες κατασκευής</string>
     <string name="ifl_a1_13">Έκδοση Patcher</string>
     <string name="ifl_a1_14">Εφαρμοσμένα patches</string>
     <string name="ifl_a1_15">Δείτε λεπτομέρειες κατασκευής</string>
-    <string name="ifl_a1_17">Πηγαίος κώδικας</string>
     <string name="ifl_a0_01">Επιλογές Αντίγραφου Ασφαλείας</string>
     <string name="ifl_a11_45">Έκδοση</string>
     <string name="ifl_a11_46">%1$s εισήχθη με επιτυχία με τη σημαία %2$s</string>
@@ -65,13 +66,10 @@
     <string name="ifl_a1_02">Έκδοση Instafel</string>
     <string name="ifl_a1_03">Μέθοδος Εγκατάστασης</string>
     <string name="ifl_a1_04">Έργο</string>
-    <string name="ifl_a1_05">Προγραμματιστής</string>
-    <string name="ifl_a1_06">Όσοι συνείσφεραν στο έργο</string>
     <string name="ifl_a1_07">Κλώνος</string>
     <string name="ifl_a1_08">Απόκλωνος</string>
     <string name="ifl_a1_09">ID Παραγωγής</string>
     <string name="ifl_a1_10">Έκδοση Instagram</string>
-    <string name="ifl_a1_11">Συνεισφέροντες στη μετάφραση του Instafel</string>
     <!--   me.mamiiblt.instafel.ifl_a_about_ig   -->
     <string name="ifl_a2_01">Σχετικά με το Instafel</string>
     <string name="ifl_a2_02">Έκδοση</string>
@@ -162,7 +160,6 @@
     <string name="ifl_a9_01">Λεπτομέρειες</string>
     <!--   me.mamiiblt.instafel.ifl_a_about_contributors and translators   -->
     <string name="ifl_a10_01">Συνεισφέροντες</string>
-    <string name="ifl_a10_02">Μεταφραστές</string>
     <!--   me.mamiiblt.instafel.ifl_a_library_menu   -->
     <string name="ifl_a11_01">Βιβλιοθήκη σημαιών</string>
     <string name="ifl_a11_02">Βιβλιοθήκη αντιγράφων ρυθμίσεων</string>

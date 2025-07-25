@@ -25,18 +25,18 @@
     <string name="ifl_a1_02">Wersja Instafel</string>
     <string name="ifl_a1_03">Typ instalacji</string>
     <string name="ifl_a1_04">Projekt</string>
-    <string name="ifl_a1_05">Deweloper</string>
-    <string name="ifl_a1_06">Wszyscy, którzy przyczynili się do tego projektu</string>
     <string name="ifl_a1_07">Klon</string>
     <string name="ifl_a1_08">Oryginał</string>
     <string name="ifl_a1_09">ID kompilacji</string>
     <string name="ifl_a1_10">Wersja Instagrama</string>
-    <string name="ifl_a1_11">Osoby odpowiedzialne za tłumaczenie Instafel</string>
     <string name="ifl_a1_12">Informacje o kompilacji</string>
     <string name="ifl_a1_13">Wersja patchera</string>
     <string name="ifl_a1_14">Zastosowane poprawki</string>
     <string name="ifl_a1_15">Zobacz szczegóły kompilacjis</string>
-    <string name="ifl_a1_17">Kod źródłowy</string>
+    <string name="ifl_a1_18">O programiście</string>
+    <string name="ifl_a1_19">Strona internetowa</string>
+    <string name="ifl_a1_20">Dołącz do społeczności</string>
+    <string name="ifl_a1_21">Współtwórcy</string>
 
 
     <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
@@ -138,7 +138,6 @@
 
     <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Współtwórcy</string>
-    <string name="ifl_a10_02">Tłumacze</string>
 
     <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Biblioteka flag</string>
