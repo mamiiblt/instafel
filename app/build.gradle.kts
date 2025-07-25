@@ -31,12 +31,12 @@ repositories {
 
 android {
     namespace = "me.mamiiblt.instafel"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "me.mamiiblt.instafel"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1 // it doesn't matter
         versionName = "$commitHash" // it doesn't matter
 
