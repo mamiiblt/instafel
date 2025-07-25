@@ -32,14 +32,12 @@ public class TileLargeSwitch extends CardView {
 
     private void init(Context ctx, AttributeSet attrs) {
         inflate(ctx, R.layout.ifl_ui_tilelarge_switch, this);
-
         iconView = findViewById(R.id.ifl_ui_icon);
         titleView = findViewById(R.id.ifl_ui_title);
         subtitleView = findViewById(R.id.ifl_ui_subtitle);
         spaceTop = findViewById(R.id.ifl_ui_space_top);
         spaceBottom = findViewById(R.id.ifl_ui_space_bottom);
         switchView = findViewById(R.id.ifl_ui_switch);
-
         if (attrs != null) {
             AttributeManager attrManager = new AttributeManager(ctx, attrs);
             setTitleText(attrManager.getString(AttributeManager.ifl_attr_ui_titleText));

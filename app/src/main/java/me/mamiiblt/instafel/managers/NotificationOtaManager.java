@@ -1,6 +1,5 @@
 package me.mamiiblt.instafel.managers;
 
-import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -8,10 +7,8 @@ import android.content.Context;
 import android.os.Build;
 import android.widget.Toast;
 
-import me.mamiiblt.instafel.R;
-
 public class NotificationOtaManager {
-    private Context ctx;
+    private final Context ctx;
     public static String notification_channel_id = "ifl_ota";
     public static int notification_id = 258;
     private static NotificationManager iflNotificationManager = null;
@@ -52,27 +49,6 @@ public class NotificationOtaManager {
                 .setContentTitle("Downloading IFL Update")
                 .setContentText("Waiting for server connection..")
                 .setAutoCancel(false)
-                .setPriority(Notification.PRIORITY_DEFAULT);
-
-        if (iflNotificationManager == null) {
-            iflNotificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-        }
-        iflNotificationManager.notify(notification_id, builder.build());
-    }
-
-    public void updateNotification(int progress, String sizeCurrent, String sizeTotal) {
-        Notification.Builder builder;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            builder = new Notification.Builder(ctx, NotificationOtaManager.notification_channel_id);
-        } else {
-            builder = new Notification.Builder(ctx);
-        }
-        builder
-                .setSmallIcon(android.R.drawable.stat_sys_download)
-                .setContentTitle("Downloading IFL Update")
-                .setContentText(sizeCurrent + " MB / " + sizeTotal + " MB")
-                .setAutoCancel(false)
-                .setProgress(100, progress, false)
                 .setPriority(Notification.PRIORITY_DEFAULT);
 
         if (iflNotificationManager == null) {

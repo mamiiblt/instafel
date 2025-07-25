@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,7 +35,7 @@ import java.util.concurrent.Executors;
 
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.managers.OverridesManager;
-import me.mamiiblt.instafel.managers.helpers.FlagItem;
+import me.mamiiblt.instafel.managers.modals.FlagItem;
 import me.mamiiblt.instafel.ui.PageContentArea;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.ui.TileTitle;
@@ -70,14 +69,11 @@ public class ifl_a_devmode_backup_analyzer extends AppCompatActivity {
         this.searchLayout = findViewById(R.id.ifl_search_layout);
 
         this.editText = findViewById(R.id.ifl_flag_editText);
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
-                    search(editText.getText().toString());
-                }
-                return false;
+        editText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                search(editText.getText().toString());
             }
+            return false;
         });
     }
 
@@ -90,191 +86,182 @@ public class ifl_a_devmode_backup_analyzer extends AppCompatActivity {
         if (!isResumed) {
             isResumed = true;
 
-            executor.execute(new Runnable() {
-                @Override
-                public void run() {
-                    Set<String> setBackup = new HashSet<>();
-                    int successTasks = 0;
-                    String errorString = null;
-                    try {
-                        if (overridesManager.existsMappingFile()) {
-                            try {
-                                Intent intent = getIntent();
-                                overrideContent = new JSONObject(intent.getStringExtra("data"));
+            executor.execute(() -> {
+                Set<String> setBackup = new HashSet<>();
+                int successTasks = 0;
+                String errorString = null;
+                try {
+                    if (overridesManager.existsMappingFile()) {
+                        try {
+                            Intent intent = getIntent();
+                            overrideContent = new JSONObject(intent.getStringExtra("data"));
 
-                                JSONObject dataObject = new JSONObject(intent.getStringExtra("data"));
-                                Uri intentMappingUri = null;
-                                if (!dataObject.getString("mapping").equals("NOT_ANY_MAPPING_SELECTED")) {
-                                    intentMappingUri = Uri.parse(dataObject.getString("mapping"));
-                                }
+                            JSONObject dataObject = new JSONObject(intent.getStringExtra("data"));
+                            Uri intentMappingUri = null;
+                            if (!dataObject.getString("mapping").equals("NOT_ANY_MAPPING_SELECTED")) {
+                                intentMappingUri = Uri.parse(dataObject.getString("mapping"));
+                            }
 
-                                JSONObject intentOverrideObject = new JSONObject(dataObject.getString("override"));
+                            JSONObject intentOverrideObject = new JSONObject(dataObject.getString("override"));
 
-                                if (intentOverrideObject.length() != 0) {
-                                    overrideContent = intentOverrideObject;
-                                } else {
-                                    overrideContent = overridesManager.readOverrideFile();
-                                }
+                            if (intentOverrideObject.length() != 0) {
+                                overrideContent = intentOverrideObject;
+                            } else {
+                                overrideContent = overridesManager.readOverrideFile();
+                            }
 
-                                if (intentMappingUri != null) {
-                                    mappingContent = overridesManager.readMappingFileFromUri(intentMappingUri);
-                                } else {
-                                    mappingContent = overridesManager.readMappingFile();
-                                }
+                            if (intentMappingUri != null) {
+                                mappingContent = overridesManager.readMappingFileFromUri(intentMappingUri);
+                            } else {
+                                mappingContent = overridesManager.readMappingFile();
+                            }
 
-                                if (mappingContent != null) {
-                                    mappingObjects = overridesManager.parseMappingFile(mappingContent);
-                                    if (mappingObjects != null) {
-                                        Iterator<String> keysBackup = overrideContent.keys();
-                                        while (keysBackup.hasNext()) {
-                                            setBackup.add(keysBackup.next());
-                                        }
+                            if (mappingContent != null) {
+                                mappingObjects = overridesManager.parseMappingFile(mappingContent);
+                                if (mappingObjects != null) {
+                                    Iterator<String> keysBackup = overrideContent.keys();
+                                    while (keysBackup.hasNext()) {
+                                        setBackup.add(keysBackup.next());
+                                    }
 
-                                        for (String key : setBackup) {
-                                            String newKey = key.substring(0, key.length() - 1);
-                                            if (mappingObjects.has(newKey)) {
-                                                JSONObject mapObject = mappingObjects.getJSONObject(newKey);
-                                                JSONObject subs = mapObject.getJSONObject("subs");
-                                                JSONArray backupValues = overridesManager.getOverrideKeyValues(overrideContent.get(key).toString());
-                                                if (backupValues != null) {
-                                                    String description = "";
-                                                    for (int i = 0; i < backupValues.length(); i++) {
-                                                        JSONArray backupSubValue = backupValues.getJSONArray(i);
+                                    for (String key : setBackup) {
+                                        String newKey = key.substring(0, key.length() - 1);
+                                        if (mappingObjects.has(newKey)) {
+                                            JSONObject mapObject = mappingObjects.getJSONObject(newKey);
+                                            JSONObject subs = mapObject.getJSONObject("subs");
+                                            JSONArray backupValues = overridesManager.getOverrideKeyValues(overrideContent.get(key).toString());
+                                            if (backupValues != null) {
+                                                String description = "";
+                                                for (int i = 0; i < backupValues.length(); i++) {
+                                                    JSONArray backupSubValue = backupValues.getJSONArray(i);
 
-                                                        if (i + 1 != backupValues.length()) {
-                                                            if (subs.has(backupSubValue.getString(0))) {
-                                                                description = description + subs.getString(backupSubValue.getString(0)) + " = " + backupSubValue.getString(1) + "\n";
-                                                            } else {
-                                                                description = description + "unknown (k" + backupValues.getString(0) + ")" + " = " + backupSubValue.getString(1) + "\n";
-                                                            }
+                                                    if (i + 1 != backupValues.length()) {
+                                                        if (subs.has(backupSubValue.getString(0))) {
+                                                            description = description + subs.getString(backupSubValue.getString(0)) + " = " + backupSubValue.getString(1) + "\n";
                                                         } else {
-                                                            if (subs.has(backupSubValue.getString(0))) {
-                                                                description = description + subs.getString(backupSubValue.getString(0)) + " = " + backupSubValue.getString(1);
-                                                            } else {
-                                                                description = description + "unknown (k" + backupValues.getString(0) + ")" + " = " + backupSubValue.getString(1);
-                                                            }
+                                                            description = description + "unknown (k" + backupValues.getString(0) + ")" + " = " + backupSubValue.getString(1) + "\n";
+                                                        }
+                                                    } else {
+                                                        if (subs.has(backupSubValue.getString(0))) {
+                                                            description = description + subs.getString(backupSubValue.getString(0)) + " = " + backupSubValue.getString(1);
+                                                        } else {
+                                                            description = description + "unknown (k" + backupValues.getString(0) + ")" + " = " + backupSubValue.getString(1);
                                                         }
                                                     }
+                                                }
 
-                                                    flagsFounded.add(
-                                                            new FlagItem(
-                                                                    newKey,
-                                                                    mapObject.getString("name"),
-                                                                    description
-                                                            )
-                                                    );
-                                                } else {
-                                                    successTasks = -1;
-                                                    errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_30);
-                                                }
+                                                flagsFounded.add(
+                                                        new FlagItem(
+                                                                newKey,
+                                                                mapObject.getString("name"),
+                                                                description
+                                                        )
+                                                );
                                             } else {
-                                                if (!newKey.equals("_qe_overrides")) {
-                                                    flagsNotFounded.add(newKey);
-                                                }
+                                                successTasks = -1;
+                                                errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_30);
+                                            }
+                                        } else {
+                                            if (!newKey.equals("_qe_overrides")) {
+                                                flagsNotFounded.add(newKey);
                                             }
                                         }
-
-                                        totalSize = setBackup.size();
-                                        buildLayout(flagsFounded, flagsNotFounded, null);
-
-                                        successTasks = 1;
-                                    } else {
-                                        successTasks = -1;
-                                        errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_31);
                                     }
+
+                                    totalSize = setBackup.size();
+                                    buildLayout(flagsFounded, flagsNotFounded, null);
+
+                                    successTasks = 1;
                                 } else {
                                     successTasks = -1;
-                                    errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_32);
+                                    errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_31);
                                 }
-                            } catch (Exception e) {
+                            } else {
                                 successTasks = -1;
-                                errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_33);
-                                e.printStackTrace();
+                                errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_32);
                             }
-                        } else {
+                        } catch (Exception e) {
                             successTasks = -1;
-                            errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_34);
+                            errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_33);
+                            e.printStackTrace();
                         }
-                    } catch (Exception e) {
+                    } else {
                         successTasks = -1;
-                        errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_35);
-                        e.printStackTrace();
+                        errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_34);
                     }
-
-                    int finalSuccessTasks = successTasks;
-                    String finalErrorString = errorString;
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            if (finalSuccessTasks == -1) {
-                                Toast.makeText(ifl_a_devmode_backup_analyzer.this, finalErrorString, Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    });
+                } catch (Exception e) {
+                    successTasks = -1;
+                    errorString = ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a11_35);
+                    e.printStackTrace();
                 }
+
+                int finalSuccessTasks = successTasks;
+                String finalErrorString = errorString;
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (finalSuccessTasks == -1) {
+                            Toast.makeText(ifl_a_devmode_backup_analyzer.this, finalErrorString, Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             });
         }
     }
 
     private void buildLayout(List<FlagItem> flagsFounded, List<String> flagsNotFounded, String searchText) {
         layout.setVisibility(View.GONE);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                final List<TileLarge> flagViews = new ArrayList<>();
+        new Thread(() -> {
+            final List<TileLarge> flagViews = new ArrayList<>();
 
-                TileTitle matchedTileTitle = new TileTitle(ifl_a_devmode_backup_analyzer.this);
-                matchedTileTitle.setText(ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a4_23));
-                matchedTileTitle.setTopPadding(false);
-                matchedTileTitle.setLayoutParams(new ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                ));
+            TileTitle matchedTileTitle = new TileTitle(ifl_a_devmode_backup_analyzer.this);
+            matchedTileTitle.setText(ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a4_23));
+            matchedTileTitle.setTopPadding(false);
+            matchedTileTitle.setLayoutParams(new ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            ));
 
-                if (searchText == null) {
-                    for (int i = 0; i < flagsFounded.size(); i++) {
-                        FlagItem flagItem = flagsFounded.get(i);
+            if (searchText == null) {
+                for (int i = 0; i < flagsFounded.size(); i++) {
+                    FlagItem flagItem = flagsFounded.get(i);
+                    flagViews.add(createTile(flagItem.getName(), flagItem.getDesc(), flagItem.getId()));
+                }
+                matchedTileTitle.setText(matchedTileTitle.getText().toString() + " (" + flagsFounded.size() + "/" + totalSize + ")");
+            } else {
+                int foundCount = 0;
+                for (int i = 0; i < flagsFounded.size(); i++) {
+                    FlagItem flagItem = flagsFounded.get(i);
+                    if (flagItem.getName().contains(searchText)) {
+                        foundCount++;
                         flagViews.add(createTile(flagItem.getName(), flagItem.getDesc(), flagItem.getId()));
                     }
-                    matchedTileTitle.setText(matchedTileTitle.getText().toString() + " (" + flagsFounded.size() + "/" + totalSize + ")");
-                } else {
-                    int foundCount = 0;
-                    for (int i = 0; i < flagsFounded.size(); i++) {
-                        FlagItem flagItem = flagsFounded.get(i);
-                        if (flagItem.getName().contains(searchText)) {
-                            foundCount++;
-                            flagViews.add(createTile(flagItem.getName(), flagItem.getDesc(), flagItem.getId()));
-                        }
-                    }
-                    matchedTileTitle.setText(matchedTileTitle.getText().toString() + " (" + foundCount + "/" + totalSize + ")");
                 }
-
-                new Handler(Looper.getMainLooper()).post(new Runnable() {
-                    @Override
-                    public void run() {
-                        linearLayout.removeAllViews();
-                        linearLayout.addView(matchedTileTitle);
-                        for (TileLarge flagView : flagViews) {
-                            linearLayout.addView(flagView);
-                        }
-                        String desc = "";
-                        for (int i = 0; i < flagsNotFounded.size(); i++) {
-                            String id = flagsNotFounded.get(i);
-                            if (i + 1 != flagsNotFounded.size()) {
-                                desc = desc + id + ",";
-                            } else {
-                                desc = desc + id;
-                            }
-                        }
-                        TileLarge mismatchedFlags = createTile(ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a4_24) + " (" + flagsNotFounded.size() + "/" + totalSize + ")", desc, null);
-                        linearLayout.addView(mismatchedFlags);
-                        linearLayout.setVisibility(View.VISIBLE);
-
-                        layout.setVisibility(View.VISIBLE);
-                        searchLayout.setVisibility(View.VISIBLE);
-                    }
-                });
+                matchedTileTitle.setText(matchedTileTitle.getText().toString() + " (" + foundCount + "/" + totalSize + ")");
             }
+
+            new Handler(Looper.getMainLooper()).post(() -> {
+                linearLayout.removeAllViews();
+                linearLayout.addView(matchedTileTitle);
+                for (TileLarge flagView : flagViews) {
+                    linearLayout.addView(flagView);
+                }
+                String desc = "";
+                for (int i = 0; i < flagsNotFounded.size(); i++) {
+                    String id = flagsNotFounded.get(i);
+                    if (i + 1 != flagsNotFounded.size()) {
+                        desc = desc + id + ",";
+                    } else {
+                        desc = desc + id;
+                    }
+                }
+                TileLarge mismatchedFlags = createTile(ifl_a_devmode_backup_analyzer.this.getString(R.string.ifl_a4_24) + " (" + flagsNotFounded.size() + "/" + totalSize + ")", desc, null);
+                linearLayout.addView(mismatchedFlags);
+                linearLayout.setVisibility(View.VISIBLE);
+
+                layout.setVisibility(View.VISIBLE);
+                searchLayout.setVisibility(View.VISIBLE);
+            });
         }).start();
     }
 
@@ -289,25 +276,15 @@ public class ifl_a_devmode_backup_analyzer extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         ));
-        tileLarge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (flag_id != null) {
-                    copyFlagContent(flag_id);
-                }
+        tileLarge.setOnClickListener(view -> {
+            if (flag_id != null) {
+                copyFlagContent(flag_id);
             }
         });
         return tileLarge;
     }
 
-    private void copyString(String string) {
-        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-        ClipData clip = ClipData.newPlainText("ifl_log_clip", string);
-        clipboard.setPrimaryClip(clip);
-    }
-
     private void copyFlagContent(String flag_id) {
-
         try {
             String string = overrideContent.getJSONArray(flag_id + ":").toString();
             JSONObject flag = new JSONObject();
@@ -322,9 +299,7 @@ public class ifl_a_devmode_backup_analyzer extends AppCompatActivity {
             Toast.makeText(this, this.getString(R.string.ifl_a11_36), Toast.LENGTH_SHORT).show();
         }
     }
-    public void searchFlag(View view) {
-        search(editText.getText().toString());
-    }
+
     private void search(String editTextContent) {
         if (!editTextContent.isEmpty()) {
             buildLayout(flagsFounded, flagsNotFounded, editTextContent);

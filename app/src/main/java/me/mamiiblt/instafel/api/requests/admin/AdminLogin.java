@@ -4,25 +4,19 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
-import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.activity.admin.ifl_a_admin_action_updatebackup;
 import me.mamiiblt.instafel.activity.admin.ifl_a_admin_dashboard;
-import me.mamiiblt.instafel.activity.admin.ifl_a_admin_login;
 import me.mamiiblt.instafel.activity.ifl_a_menu;
 import me.mamiiblt.instafel.api.models.InstafelResponse;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.utils.GeneralFn;
 import me.mamiiblt.instafel.utils.InstafelAdminUser;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
 public class AdminLogin extends AsyncTask<String, Void, InstafelResponse> {
@@ -43,18 +37,15 @@ public class AdminLogin extends AsyncTask<String, Void, InstafelResponse> {
         InstafelResponse instafelResponse = null;
         try {
             URL url = new URL(f_url[0]);
-
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("ifl-admin-username", Base64.encodeToString(uname.getBytes(), Base64.NO_WRAP));
             connection.setRequestProperty("ifl-admin-password", Base64.encodeToString(pass.getBytes(), Base64.NO_WRAP));
-
             int responseCode = connection.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
                 BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
                 String inputLine;
                 StringBuilder response = new StringBuilder();
-
                 while ((inputLine = in.readLine()) != null) {
                     response.append(inputLine);
                 }
@@ -67,7 +58,6 @@ public class AdminLogin extends AsyncTask<String, Void, InstafelResponse> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return instafelResponse;
     }
 
@@ -77,28 +67,22 @@ public class AdminLogin extends AsyncTask<String, Void, InstafelResponse> {
             Log.v("Instafel", instafelResponse.getStatus());
             
             if (instafelResponse.getStatus().equals("SUCCESS")) {
-                InstafelAdminUser.loginUser(activity, uname, pass);
+                InstafelAdminUser.login(activity, uname, pass);
                 InstafelDialog instafelDialog2 = InstafelDialog.createSimpleDialog(activity,
                         "Welcome",
                         "Welcome " + uname+ "!\n\nDo you want a shortcut created in the menu for quick access to admin dashboard?",
                         "Yes",
                         "No",
-                        new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                PreferenceManager preferenceManager = new PreferenceManager(activity);
-                                preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_show_admin_dash_as_tile, true);
+                        view -> {
+                            PreferenceManager preferenceManager = new PreferenceManager(activity);
+                            preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_show_admin_dash_as_tile, true);
 
-                                activity.finish();
-                                GeneralFn.startIntent(activity, ifl_a_menu.class);
-                            }
+                            activity.finish();
+                            GeneralFn.startIntent(activity, ifl_a_menu.class);
                         },
-                        new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                activity.finish();
-                                GeneralFn.startIntent(activity, ifl_a_admin_dashboard.class);
-                            }
+                        view -> {
+                            activity.finish();
+                            GeneralFn.startIntent(activity, ifl_a_admin_dashboard.class);
                         }
                 );
                 instafelDialog.hide();

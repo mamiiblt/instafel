@@ -2,25 +2,14 @@ package me.mamiiblt.instafel.ota.tasks;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.widget.TintableImageSourceView;
 
 import org.json.JSONObject;
 
@@ -30,15 +19,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.security.cert.X509Certificate;
-import java.util.Locale;
 
 import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.managers.CrashManager;
 import me.mamiiblt.instafel.managers.NotificationOtaManager;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogTextType;

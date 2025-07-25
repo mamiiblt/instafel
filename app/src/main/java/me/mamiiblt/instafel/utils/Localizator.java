@@ -14,6 +14,7 @@ import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.InstafelEnv;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ui.TileLarge;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class Localizator {
 
@@ -52,11 +53,13 @@ public class Localizator {
         try {
             Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, languageCode);
             if (params.length != 0) {
+                assert appResources != null;
                 return appResources.getString(
                         GeneralFn.getStringResId(_activity, appResources, resLabel),
                         params
                 );
             } else {
+                assert appResources != null;
                 return appResources.getString(
                         GeneralFn.getStringResId(_activity, appResources, resLabel)
                 );
@@ -68,7 +71,6 @@ public class Localizator {
         }
     }
 
-    // new method for InstafelDialog
     public static String getDialogLocalizedString(Activity _activity, String languageCode, String resourceName) {
         try {
             Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, languageCode);
@@ -78,21 +80,6 @@ public class Localizator {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
-        }
-    }
-
-    public static void updateDialogLocale(Activity _activity, String languageCode, DialogItem... views) {
-        try {
-            Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, languageCode);
-            for (DialogItem item : views) {
-                item.getTextView().setText(
-                        appResources.getString(
-                                GeneralFn.getStringResId(_activity, appResources, item.getStringName())
-                        ).replace("\\n", "\n")
-                );
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -146,7 +133,7 @@ public class Localizator {
             config.setLocale(locale);
             resources.updateConfiguration(config, resources.getDisplayMetrics());
         } catch (Exception e) {
-            Toast.makeText(activity, "err: " + e.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "err: " + e, Toast.LENGTH_SHORT).show();
         }
     }
 }

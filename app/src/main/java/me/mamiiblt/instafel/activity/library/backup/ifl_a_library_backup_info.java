@@ -5,7 +5,6 @@ import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -26,7 +25,7 @@ import me.mamiiblt.instafel.ui.LoadingBar;
 import me.mamiiblt.instafel.ui.PageContentArea;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
 public class ifl_a_library_backup_info extends AppCompatActivity implements ApiCallbackInterface{
@@ -68,7 +67,6 @@ public class ifl_a_library_backup_info extends AppCompatActivity implements ApiC
         this.loadingDialog.addCustomView("loading_bar", loadingBar);
         this.loadingDialog.addSpace("button_top_space", 25);
 
-
         try {
             Intent intent = getIntent();
             String backupListItemUnparsed = intent.getStringExtra("data");
@@ -77,7 +75,7 @@ public class ifl_a_library_backup_info extends AppCompatActivity implements ApiC
                 JSONObject backupItem = new JSONObject(backupListItemUnparsed);
                 backup = new Backup(backupItem.getString("id"), backupItem.getString("name"), backupItem.getString("author"));
 
-                ApiGetString apiGetString = new ApiGetString(this, this, 11);
+                ApiGetString apiGetString = new ApiGetString(this, 11);
                 apiGetString.execute("https://raw.githubusercontent.com/instafel/backups/main/" + backup.getId() + "/manifest.json");
 
             } else {
@@ -136,20 +134,10 @@ public class ifl_a_library_backup_info extends AppCompatActivity implements ApiC
                         tileVersion.setSubtitleText(backup.getVersionName());
                         tileChangelog.setSubtitleText(backup.getChangelog());
                         tileAboutAuthor.setSubtitleText(backup.getAuthor());
-                        tileAboutAuthor.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                GeneralFn.startIntentWithString(ifl_a_library_backup_info.this, ifl_a_library_backup_info_author.class, backup.getAuthorSocials().toString());
-                            }
-                        });
-                        tileApplyBackup.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-
-                                ApiGetString apiGetString = new ApiGetString(ifl_a_library_backup_info.this, ifl_a_library_backup_info.this, 14);
-                                apiGetString.execute("https://raw.githubusercontent.com/instafel/backups/main/" + backup.getId() + "/backup.ibackup");
-
-                            }
+                        tileAboutAuthor.setOnClickListener(view -> GeneralFn.startIntentWithString(ifl_a_library_backup_info.this, ifl_a_library_backup_info_author.class, backup.getAuthorSocials().toString()));
+                        tileApplyBackup.setOnClickListener(view -> {
+                            ApiGetString apiGetString = new ApiGetString(ifl_a_library_backup_info.this, 14);
+                            apiGetString.execute("https://raw.githubusercontent.com/instafel/backups/main/" + backup.getId() + "/backup.ibackup");
                         });
                         areaContent.setVisibility(View.VISIBLE);
                         areaLoading.setVisibility(View.GONE);

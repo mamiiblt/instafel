@@ -21,7 +21,7 @@ import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ui.TileSocials;
 import me.mamiiblt.instafel.utils.GeneralFn;
 import me.mamiiblt.instafel.utils.InstafelAdminUser;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
 public class ifl_a_menu extends AppCompatActivity {
@@ -36,12 +36,7 @@ public class ifl_a_menu extends AppCompatActivity {
         boolean showAdminDash = preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_show_admin_dash_as_tile, false);
         if (showAdminDash) {
             findViewById(R.id.ifl_tile_menu_adminmenu).setVisibility(View.VISIBLE);
-            findViewById(R.id.ifl_tile_menu_adminmenu).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openAdminDashboard();
-                }
-            });
+            findViewById(R.id.ifl_tile_menu_adminmenu).setOnClickListener(view -> openAdminDashboard());
         }
 
         boolean showDebugWarning = preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_debug_mode, false);
@@ -61,88 +56,25 @@ public class ifl_a_menu extends AppCompatActivity {
             }
         }
 
+        findViewById(R.id.ifl_tile_menu_crashlogs).setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_crash_reports.class));
+        findViewById(R.id.ifl_tile_menu_library).setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_library_menu.class));
+        findViewById(R.id.ifl_tile_menu_misc).setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_misc.class));
+        findViewById(R.id.ifl_tile_menu_devopt).setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_devmode.class));
+        findViewById(R.id.ifl_tile_menu_ota).setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_ota.class));
+
         TileSocials tileSocials = findViewById(R.id.ifl_tile_menu_sections);
-
-        tileSocials.getTileLanguage().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_language.class);
+        tileSocials.getTileLanguage().setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_language.class));
+        tileSocials.getTileInfo().setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_about.class));
+        tileSocials.getTileChat().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://t.me/instafel"));
+        tileSocials.getTileGuide().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://instafel.app/wiki"));
+        tileSocials.getTileGithub().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://github.com/mamiiblt/instafel"));
+        tileSocials.getTileInfo().setOnLongClickListener(view -> {
+            if (InstafelEnv.PRODUCTION_MODE) {
+                openAdminDashboard();
+            } else {
+                Toast.makeText(ifl_a_menu.this, "Admin dasboard isn't available on custom generations.", Toast.LENGTH_SHORT).show();
             }
-        });
-
-        tileSocials.getTileInfo().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_about.class);
-            }
-        });
-
-        tileSocials.getTileChat().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://t.me/instafel");
-            }
-        });
-
-        tileSocials.getTileGuide().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://instafel.app/wiki");
-            }
-        });
-
-        tileSocials.getTileGithub().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://github.com/mamiiblt/instafel");
-            }
-        });
-
-        findViewById(R.id.ifl_tile_menu_crashlogs).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_crash_reports.class);
-            }
-        });
-        
-        findViewById(R.id.ifl_tile_menu_library).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_library_menu.class);
-            }
-        });
-
-        tileSocials.getTileInfo().setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                if (InstafelEnv.PRODUCTION_MODE) {
-                    openAdminDashboard();
-                } else {
-                    Toast.makeText(ifl_a_menu.this, "Admin dasboard isn't available on custom generations.", Toast.LENGTH_SHORT).show();
-                }
-                return false;
-            }
-        });
-
-        findViewById(R.id.ifl_tile_menu_misc).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_misc.class);
-            }
-        });
-
-        findViewById(R.id.ifl_tile_menu_devopt).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_devmode.class);
-            }
-        });
-
-        findViewById(R.id.ifl_tile_menu_ota).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GeneralFn.startIntent(ifl_a_menu.this, ifl_a_ota.class);
-            }
+            return false;
         });
     }
 

@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -23,16 +22,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONObject;
 
 import java.text.Normalizer;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.activity.admin.ifl_a_admin_action_updatebackup;
-import me.mamiiblt.instafel.activity.devmode.ifl_a_devmode;
 import me.mamiiblt.instafel.managers.OverridesManager;
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.ui.TileLargeEditText;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
@@ -71,22 +64,16 @@ public class ifl_a_export_backup extends AppCompatActivity {
         tileVersionEditText.setInputType(InputType.TYPE_CLASS_TEXT);
         tileVersionEditText.setMaxLines(1);
         tileVersionEditText.setImeOptions(EditorInfo.IME_ACTION_DONE);
-        tileVersionEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    fixVersionNameString(tileVersionEditText);
-                }
-                return false;
+        tileVersionEditText.setOnEditorActionListener((textView, actionId, keyEvent) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                fixVersionNameString(tileVersionEditText);
             }
+            return false;
         });
 
-        tileVersionEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                if (!b) {
-                    fixVersionNameString(tileVersionEditText);
-                }
+        tileVersionEditText.setOnFocusChangeListener((view, b) -> {
+            if (!b) {
+                fixVersionNameString(tileVersionEditText);
             }
         });
 
@@ -105,29 +92,23 @@ public class ifl_a_export_backup extends AppCompatActivity {
         tileChangelogEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(2500)});
         tileChangelogEditText.setInputType(131073);
         tileChangelogEditText.setMaxLines(10);
-        tileChangelogEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                if (i != 6 && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
-                    return false;
-                }
-                tileAuthorNameEditText.append("\n");
-                return true;
+        tileChangelogEditText.setOnEditorActionListener((textView, i, keyEvent) -> {
+            if (i != 6 && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
+                return false;
             }
+            tileAuthorNameEditText.append("\n");
+            return true;
         });
 
-        exportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!tileAuthorNameEditText.getText().toString().isEmpty() && !tileBackupNameEditText.getText().toString().isEmpty() && !tileVersionEditText.getText().toString().isEmpty()) {
-                    Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-                    intent.addCategory(Intent.CATEGORY_OPENABLE);
-                    intent.putExtra(Intent.EXTRA_TITLE, createFileName(tileBackupNameEditText.getText().toString(), tileVersionEditText.getText().toString()) +  ".ibackup");
-                    intent.setType("application/x-ibackup");
-                    startActivityForResult(intent, 18);
-                } else {
-                    InstafelDialog.createSimpleAlertDialogNoFinish(ifl_a_export_backup.this, "Alert", ifl_a_export_backup.this.getString(R.string.ifl_a11_49));
-                }
+        exportButton.setOnClickListener(view -> {
+            if (!tileAuthorNameEditText.getText().toString().isEmpty() && !tileBackupNameEditText.getText().toString().isEmpty() && !tileVersionEditText.getText().toString().isEmpty()) {
+                Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                intent.putExtra(Intent.EXTRA_TITLE, createFileName(tileBackupNameEditText.getText().toString(), tileVersionEditText.getText().toString()) +  ".ibackup");
+                intent.setType("application/x-ibackup");
+                startActivityForResult(intent, 18);
+            } else {
+                InstafelDialog.createSimpleAlertDialogNoFinish(ifl_a_export_backup.this, "Alert", ifl_a_export_backup.this.getString(R.string.ifl_a11_49));
             }
         });
 

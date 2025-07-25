@@ -16,8 +16,7 @@ public class AttributeManager {
     public static int ifl_attr_ui_subIconRes = 6;
     public static int ifl_attr_ui_iconResTint = 7;
     public static int ifl_attr_ui_iconPadding = 8;
-    public static int ifl_attr_ui_enableStartPadding = 9;
-    public static int ifl_attr_ui_enableIcon = 10;
+    public static int ifl_attr_ui_enableIcon = 9;
 
     private Context ctx;
     private AttributeSet attrs;
@@ -59,9 +58,6 @@ public class AttributeManager {
                 attrsArray[0] = R.attr.ifl_attr_ui_iconPadding;
                 break;
             case 9:
-                attrsArray[0] = R.attr.ifl_attr_ui_enableStartPadding;
-                break;
-            case 10:
                 attrsArray[0] = R.attr.ifl_attr_ui_enableIcon;
                 break;
         }
@@ -91,9 +87,5 @@ public class AttributeManager {
 
     public int getResourceId(int attrId, int def) {
         return getTypedArray(attrId).getResourceId(0, def);
-    }
-
-    public float getFloat(int attrId, float def) {
-        return getTypedArray(attrId).getFloat(attrId, def);
     }
 }

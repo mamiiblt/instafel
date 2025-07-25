@@ -26,7 +26,6 @@ public class TileTitle extends CardView {
     public void init(Context ctx, AttributeSet attrs) {
         inflate(ctx, R.layout.ifl_ui_tiletitle, this);
         textView = findViewById(R.id.ifl_ui_text);
-
         if (attrs != null) {
             AttributeManager attrManager = new AttributeManager(ctx, attrs);
             setText(attrManager.getString(AttributeManager.ifl_attr_ui_titleText, "ifl_ui"));
@@ -39,12 +38,11 @@ public class TileTitle extends CardView {
             textView.setPadding(textView.getPaddingLeft(), 0, textView.getPaddingRight(), textView.getPaddingBottom());
         }
     }
+
     public String getText() {
         return textView.getText().toString();
     }
-
     public void setText(String value) {
         textView.setText(value);
     }
-
 }

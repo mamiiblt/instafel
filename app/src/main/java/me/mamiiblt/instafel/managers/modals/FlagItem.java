@@ -1,4 +1,4 @@
-package me.mamiiblt.instafel.managers.helpers;
+package me.mamiiblt.instafel.managers.modals;
 
 public class FlagItem {
     private String id;
@@ -14,11 +14,9 @@ public class FlagItem {
     public String getId() {
         return id;
     }
-
     public String getName() {
         return name;
     }
-
     public String getDesc() {
         return desc;
     }

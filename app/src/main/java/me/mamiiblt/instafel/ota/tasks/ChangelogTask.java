@@ -3,10 +3,8 @@ package me.mamiiblt.instafel.ota.tasks;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Base64;
-import android.util.Log;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -17,12 +15,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.ota.LastCheck;
-import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialogTextType;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class ChangelogTask extends AsyncTask<String, Void, String> {
 

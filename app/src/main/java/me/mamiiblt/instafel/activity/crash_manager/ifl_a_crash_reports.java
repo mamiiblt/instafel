@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.os.FileUriExposedException;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -22,11 +21,9 @@ import me.mamiiblt.instafel.managers.CrashManager;
 import me.mamiiblt.instafel.ui.TileCompact;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.GeneralFn;
+import me.mamiiblt.instafel.utils.crashlog.CLogDataTypes;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
-import me.mamiiblt.instafel.utils.models.AppData;
-import me.mamiiblt.instafel.utils.models.CrashData;
-import me.mamiiblt.instafel.utils.models.Crashlog;
-import me.mamiiblt.instafel.utils.models.DeviceData;
+import me.mamiiblt.instafel.utils.crashlog.Crashlog;
 
 public class ifl_a_crash_reports extends AppCompatActivity {
 
@@ -59,13 +56,13 @@ public class ifl_a_crash_reports extends AppCompatActivity {
                 for (int i = 0; i < logs.length(); i++) {
                     JSONObject crashObject = logs.getJSONObject(i);
                     Crashlog crashlog = new Crashlog(
-                            new AppData(
+                            new CLogDataTypes.AppData(
                                     crashObject.getJSONObject("appData").get("ifl_ver"),
                                     crashObject.getJSONObject("appData").get("ig_ver"),
                                     crashObject.getJSONObject("appData").get("ig_ver_code"),
                                     crashObject.getJSONObject("appData").get("ig_itype")
                             ),
-                            new DeviceData(
+                            new CLogDataTypes.DeviceData(
                                     crashObject.getJSONObject("deviceData").get("aver"),
                                     crashObject.getJSONObject("deviceData").get("sdk"),
                                     crashObject.getJSONObject("deviceData").get("model"),
@@ -73,7 +70,7 @@ public class ifl_a_crash_reports extends AppCompatActivity {
                                     crashObject.getJSONObject("deviceData").get("product")
 
                             ),
-                            new CrashData(
+                            new CLogDataTypes.CrashData(
                                     crashObject.getJSONObject("crashData").get("msg"),
                                     crashObject.getJSONObject("crashData").get("trace"),
                                     crashObject.getJSONObject("crashData").get("class")
@@ -91,12 +88,7 @@ public class ifl_a_crash_reports extends AppCompatActivity {
                     crashTile.setSubIconRes(R.drawable.ifl_open_in_browser);
                     crashTile.setSubtitleText("Caught at " + crashlog.getDate().toString());
                     crashTile.setSpaceBottom("visible");
-                    crashTile.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            GeneralFn.startIntentWithString(ifl_a_crash_reports.this, ifl_a_crash_viewer.class, crashlog.convertToString());
-                        }
-                    });
+                    crashTile.setOnClickListener(view -> GeneralFn.startIntentWithString(ifl_a_crash_reports.this, ifl_a_crash_viewer.class, crashlog.convertToString()));
                     layoutLogs.addView(crashTile);
                 }
             } else {

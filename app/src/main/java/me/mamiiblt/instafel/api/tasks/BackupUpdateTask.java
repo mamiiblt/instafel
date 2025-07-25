@@ -13,8 +13,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import me.mamiiblt.instafel.api.models.AutoUpdateInfo;
-import me.mamiiblt.instafel.api.models.InstafelResponse;
-import me.mamiiblt.instafel.api.requests.ApiCallbackInterface;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.utils.Localizator;
 

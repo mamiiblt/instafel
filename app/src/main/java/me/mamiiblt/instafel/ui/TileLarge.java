@@ -1,7 +1,6 @@
 package me.mamiiblt.instafel.ui;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -31,14 +30,12 @@ public class TileLarge extends CardView {
 
     private void init(Context ctx, AttributeSet attrs) {
         inflate(ctx, R.layout.ifl_ui_tilelarge, this);
-
         iconView = findViewById(R.id.ifl_ui_icon);
         titleView = findViewById(R.id.ifl_ui_title);
         subtitleView = findViewById(R.id.ifl_ui_subtitle);
         spaceTop = findViewById(R.id.ifl_ui_space_top);
         spaceBottom = findViewById(R.id.ifl_ui_space_bottom);
         subIconView = findViewById(R.id.ifl_ui_subicon);
-
         if (attrs != null) {
             AttributeManager attrManager = new AttributeManager(ctx, attrs);
             setTitleText(attrManager.getString(AttributeManager.ifl_attr_ui_titleText));
@@ -145,10 +142,6 @@ public class TileLarge extends CardView {
         } else {
             subtitleView.setText("Subtitle");
         }
-    }
-
-    public void setIconViewAsBitmap(Bitmap bitmap) {
-        iconView.setImageBitmap(bitmap);
     }
 
     public void setIconRes(int resId) {

@@ -2,7 +2,6 @@ package me.mamiiblt.instafel.managers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.widget.Toast;
 
 public class PreferenceManager {
     private Context ctx;

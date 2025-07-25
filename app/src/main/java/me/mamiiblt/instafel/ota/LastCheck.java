@@ -1,8 +1,6 @@
 package me.mamiiblt.instafel.ota;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.icu.text.SimpleDateFormat;
 
 import java.util.Date;
@@ -11,7 +9,7 @@ import java.util.Locale;
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ui.TileLarge;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class LastCheck {
     public static String get(Activity activity, Locale locale) {
@@ -32,8 +30,6 @@ public class LastCheck {
 
     public static void updateUi(Activity activity) {
         TileLarge tileCheck = activity.findViewById(R.id.ifl_tile_ota_check);
-        tileCheck.setSubtitleText(get(activity, Locale.getDefault()));
-
         tileCheck.setSubtitleText(get(activity, Locale.getDefault()));
     }
 }

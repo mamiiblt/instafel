@@ -8,11 +8,9 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +33,7 @@ import me.mamiiblt.instafel.ui.PageContentArea;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.ui.TileLargeSwitch;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class ifl_a_library_backup extends AppCompatActivity implements ApiCallbackInterface {
 
@@ -48,7 +46,7 @@ public class ifl_a_library_backup extends AppCompatActivity implements ApiCallba
     private Switch tileAutoUpdateSwitch;
     private PreferenceManager preferenceManager;
     private boolean isUserChangedStatus = false;
-    private List<BackupListItem> backups = new ArrayList<BackupListItem>();
+    private List<BackupListItem> backups = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,50 +70,40 @@ public class ifl_a_library_backup extends AppCompatActivity implements ApiCallba
             tileAutoUpdateSwitch.setChecked(false);
         }
 
+        tileAutoUpdateSwitch.setOnCheckedChangeListener((compoundButton, b) -> {
+            if (InstafelEnv.PRODUCTION_MODE) {
+                if (!isUserChangedStatus) {
+                    setAutoUpdateState(b);
+                }
+            } else {
+                Toast.makeText(ifl_a_library_backup.this, "This feauture isn't available on custom generations.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        tileAutoUpdateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (InstafelEnv.PRODUCTION_MODE) {
-                    if (!isUserChangedStatus) {
-                        setAutoUpdateState(b);
-                    }
+        tileAutoUpdate.setOnClickListener(view -> {
+            if (InstafelEnv.PRODUCTION_MODE) {
+                isUserChangedStatus = true;
+                setAutoUpdateState(!tileAutoUpdateSwitch.isChecked());
+                isUserChangedStatus = false;
+            } else {
+                Toast.makeText(ifl_a_library_backup.this, "This feauture isn't available on custom generations.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        editText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                String searchText = editText.getText().toString();
+                if (!searchText.isEmpty()) {
+                    buildLayout(backups, searchText);
                 } else {
-                    Toast.makeText(ifl_a_library_backup.this, "This feauture isn't available on custom generations.", Toast.LENGTH_SHORT).show();
+                    buildLayout(backups, null);
                 }
             }
+            return false;
         });
 
-        tileAutoUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (InstafelEnv.PRODUCTION_MODE) {
-                    isUserChangedStatus = true;
-                    setAutoUpdateState(!tileAutoUpdateSwitch.isChecked());
-                    isUserChangedStatus = false;
-                } else {
-                    Toast.makeText(ifl_a_library_backup.this, "This feauture isn't available on custom generations.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_SEARCH || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
-                    String searchText = editText.getText().toString();
-                    if (!searchText.isEmpty()) {
-                        buildLayout(backups, searchText);
-                    } else {
-                        buildLayout(backups, null);
-                    }
-                }
-                return false;
-            }
-        });
-
-        ApiGetString apiGetString = new ApiGetString(this, this, 11);
+        ApiGetString apiGetString = new ApiGetString(this, 11);
         apiGetString.execute("https://raw.githubusercontent.com/instafel/backups/main/backups.json");
     }
 
@@ -144,13 +132,6 @@ public class ifl_a_library_backup extends AppCompatActivity implements ApiCallba
             tileAutoUpdateSwitch.setChecked(false);
         }
     }
-
-    @Override
-    public void getResponse(InstafelResponse instafelResponse, int taskId) {
-
-    }
-
-
 
     @Override
     public void getResponse(String rawResponse, int taskId) {
@@ -228,5 +209,10 @@ public class ifl_a_library_backup extends AppCompatActivity implements ApiCallba
 
     public void showExample(View view) {
         Toast.makeText(this, preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_auto_update, false) + "s", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void getResponse(InstafelResponse instafelResponse, int taskId) {
+
     }
 }

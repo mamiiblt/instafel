@@ -6,8 +6,6 @@ import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -19,10 +17,9 @@ import java.util.Locale;
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.ui.TileLargeSwitch;
-import me.mamiiblt.instafel.utils.GeneralFn;
 import me.mamiiblt.instafel.utils.Localizator;
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class ifl_a_language extends AppCompatActivity {
 

@@ -17,7 +17,7 @@ import me.mamiiblt.instafel.managers.OverridesManager;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ota.CheckUpdates;
 import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class BackupUpdateDownloadTask extends AsyncTask<String, Void, String> {
 

@@ -3,8 +3,8 @@ package me.mamiiblt.instafel.managers;
 import android.content.Context;
 
 import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.ota.FreqLabels;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.Types;
 
 public class FrequencyManager {
     public static void setFreq(Context ctx, int freq_id) {
@@ -14,14 +14,14 @@ public class FrequencyManager {
 
     public static int getFreqId(Context ctx) {
         PreferenceManager preferenceManager = new PreferenceManager(ctx);
-        return preferenceManager.getPreferenceInt(PreferenceKeys.ifl_ota_freq, FreqLabels.EVERY_OPEN);
+        return preferenceManager.getPreferenceInt(PreferenceKeys.ifl_ota_freq, Types.FreqLabels.EVERY_OPEN);
     }
 
     public static String getFreq(Context ctx) {
         PreferenceManager preferenceManager = new PreferenceManager(ctx);
-        int data = preferenceManager.getPreferenceInt(PreferenceKeys.ifl_ota_freq, FreqLabels.EVERY_OPEN);
+        int data = preferenceManager.getPreferenceInt(PreferenceKeys.ifl_ota_freq, Types.FreqLabels.EVERY_OPEN);
 
-        if (data != FreqLabels.EVERY_OPEN) {
+        if (data != Types.FreqLabels.EVERY_OPEN) {
             switch (data) {
                 case 1:
                     return ctx.getString(R.string.ifl_a5_sub_freq_01);

@@ -1,6 +1,5 @@
 package me.mamiiblt.instafel.api.requests;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -8,7 +7,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.ObjectInput;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -18,13 +16,11 @@ import me.mamiiblt.instafel.api.models.InstafelResponse;
 public class ApiPostAdmin extends AsyncTask<String, Void, InstafelResponse> {
 
     private String uname, pass;
-    private Activity activity;
     private ApiCallbackInterface apiCallbackInterface = null;
     private int taskId = 0;
     private JSONObject requestBody;
 
-    public ApiPostAdmin(Activity activity, ApiCallbackInterface apiCallbackInterface, int taskId, String username, String  password, JSONObject requestBody) {
-        this.activity = activity;
+    public ApiPostAdmin(ApiCallbackInterface apiCallbackInterface, int taskId, String username, String  password, JSONObject requestBody) {
         this.apiCallbackInterface = apiCallbackInterface;
         this.taskId = taskId;
         this.uname = username;

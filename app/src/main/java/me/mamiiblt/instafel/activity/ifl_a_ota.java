@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,11 +16,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
@@ -37,13 +34,13 @@ import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.ui.TileLargeSwitch;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
 public class ifl_a_ota extends AppCompatActivity {
 
     private PreferenceManager preferenceManager;
-    private TileLarge tileCheck, tileFreq, tileInstafelUpdater;
+    private TileLarge tileCheck, tileFreq;
     private TileLargeSwitch tileSetting, tileBackgroundDownload;
     private Switch switchView, switchViewBackground;
     private NotificationOtaManager notificationOtaManager;
@@ -62,21 +59,17 @@ public class ifl_a_ota extends AppCompatActivity {
         tileFreq = findViewById(R.id.ifl_tile_ota_freq);
         tileSetting = findViewById(R.id.ifl_tile_ota_enable_updates);
         tileBackgroundDownload = findViewById(R.id.ifl_tile_ota_background_download);
-        tileInstafelUpdater = findViewById(R.id.ifl_tile_ota_instafel_updater);
         switchViewBackground = tileBackgroundDownload.getSwitchView();
         switchView = tileSetting.getSwitchView();
 
-        tileInstafelUpdater.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.openInWebBrowser(ifl_a_ota.this, "https://instafel.app/about_updater");
-            }
+        findViewById(R.id.ifl_tile_ota_instafel_updater).setOnClickListener(view -> {
+            GeneralFn.openInWebBrowser(ifl_a_ota.this, "https://instafel.app/about_updater");
         });
 
         if (preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_ota_setting, false)) {
-            enablePage(this);
+            enablePage();
         } else {
-            disablePage(this);
+            disablePage();
             tileFreq.setVisibility(View.GONE);
             tileCheck.setVisibility(View.GONE);
             tileBackgroundDownload.setVisibility(View.GONE);
@@ -85,93 +78,62 @@ public class ifl_a_ota extends AppCompatActivity {
         switchViewBackground.setChecked(preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, false));
         switchView.setChecked(preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_ota_setting, false));
 
-        tileBackgroundDownload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enableDisableBDownloadFeature(!switchViewBackground.isChecked());
+        tileBackgroundDownload.setOnClickListener(v -> enableDisableBDownloadFeature(!switchViewBackground.isChecked()));
+        switchViewBackground.setOnCheckedChangeListener((buttonView, isChecked) -> enableDisableBDownloadFeature(isChecked));
+        tileSetting.setOnClickListener(v -> {
+            if (InstafelEnv.PRODUCTION_MODE) {
+                enableDisableOtaFeature(!switchView.isChecked());
+                preferenceManager.setPreferenceLong(PreferenceKeys.ifl_ota_last_check, 0);
+                tileCheck.setSubtitleText(LastCheck.get(ifl_a_ota.this, Locale.getDefault()));
+            } else {
+                Toast.makeText(ifl_a_ota.this, "This is not an production build.", Toast.LENGTH_SHORT).show();
             }
         });
 
-        switchViewBackground.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                enableDisableBDownloadFeature(isChecked);
+        switchView.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (InstafelEnv.PRODUCTION_MODE) {
+                enableDisableOtaFeature(isChecked);
+                preferenceManager.setPreferenceLong(PreferenceKeys.ifl_ota_last_check, 0);
+                tileCheck.setSubtitleText(LastCheck.get(ifl_a_ota.this, Locale.getDefault()));
+            } else {
+                Toast.makeText(ifl_a_ota.this, "This is not an production build.", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tileSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (InstafelEnv.PRODUCTION_MODE) {
-                    enableDisableOtaFeature(!switchView.isChecked());
-                    preferenceManager.setPreferenceLong(PreferenceKeys.ifl_ota_last_check, 0);
-                    tileCheck.setSubtitleText(LastCheck.get(ifl_a_ota.this, Locale.getDefault()));
-                } else {
-                    Toast.makeText(ifl_a_ota.this, "This is not an production build.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+        tileFreq.setOnClickListener(v -> {
+            Dialog dialog1 = new Dialog(ifl_a_ota.this);
+            dialog1.setContentView(R.layout.ifl_dg_ota_set_freq);
+            dialog1.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            dialog1.getWindow().setBackgroundDrawable(ifl_a_ota.this.getDrawable(R.drawable.ifl_dg_ota_background));
+            dialog1.setCancelable(false);
 
-        switchView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (InstafelEnv.PRODUCTION_MODE) {
-                    enableDisableOtaFeature(isChecked);
-                    preferenceManager.setPreferenceLong(PreferenceKeys.ifl_ota_last_check, 0);
-                    tileCheck.setSubtitleText(LastCheck.get(ifl_a_ota.this, Locale.getDefault()));
-                } else {
-                    Toast.makeText(ifl_a_ota.this, "This is not an production build.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+            String[] arraySpinner = new String[] {
+                    ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_00),
+                    ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_01),
+                    ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_02),
+                    ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_03),
+                    ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_04),
+                    ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_05),
+            };
+            Spinner s = dialog1.findViewById(R.id.ifl_dialog_spinner);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(ifl_a_ota.this,
+                    android.R.layout.simple_spinner_item, arraySpinner);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            s.setAdapter(adapter);
+            s.setSelection(FrequencyManager.getFreqId(ifl_a_ota.this));
 
-        tileFreq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Dialog dialog1 = new Dialog(ifl_a_ota.this);
-                dialog1.setContentView(R.layout.ifl_dg_ota_set_freq);
-                dialog1.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog1.getWindow().setBackgroundDrawable(ifl_a_ota.this.getDrawable(R.drawable.ifl_dg_ota_background));
-                dialog1.setCancelable(false);
+            LinearLayout button1 = dialog1.findViewById(R.id.ifl_dg_button_negative);
+            LinearLayout button2 = dialog1.findViewById(R.id.ifl_dg_button_pozitive);
+            button1.setOnClickListener(v1 -> dialog1.dismiss());
 
-                // set adapter
-                String[] arraySpinner = new String[] {
-                        ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_00),
-                        ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_01),
-                        ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_02),
-                        ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_03),
-                        ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_04),
-                        ifl_a_ota.this.getString(R.string.ifl_a5_dia_freq_05),
-                };
-                Spinner s = (Spinner) dialog1.findViewById(R.id.ifl_dialog_spinner);
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(ifl_a_ota.this,
-                        android.R.layout.simple_spinner_item, arraySpinner);
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                s.setAdapter(adapter);
-                s.setSelection(FrequencyManager.getFreqId(ifl_a_ota.this));
+            button2.setOnClickListener(v2 -> {
+                int idx = s.getSelectedItemPosition();
+                FrequencyManager.setFreq(ifl_a_ota.this, idx);
+                tileFreq.setSubtitleText(FrequencyManager.getFreq(ifl_a_ota.this));
+                dialog1.dismiss();
+            });
 
-                TextView title = dialog1.findViewById(R.id.ifl_dialog_title);
-                LinearLayout button1 = dialog1.findViewById(R.id.ifl_dg_button_negative);
-                LinearLayout button2 = dialog1.findViewById(R.id.ifl_dg_button_pozitive);
-                button1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog1.dismiss();
-                    }
-                });
-
-                button2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int idx = s.getSelectedItemPosition();
-                        FrequencyManager.setFreq(ifl_a_ota.this, idx);
-                        tileFreq.setSubtitleText(FrequencyManager.getFreq(ifl_a_ota.this));
-                        dialog1.dismiss();
-                    }
-                });
-                
-                dialog1.show();
-            }
+            dialog1.show();
         });
 
         tileCheck.setSubtitleText(LastCheck.get(this, Locale.getDefault()));
@@ -185,10 +147,10 @@ public class ifl_a_ota extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (PermissionManager.checkPermission(this)) {
-            enablePage(this);
+            enablePage();
             preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_setting, true);
         } else {
-            disablePage(this);
+            disablePage();
             preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_setting, false);
         }
     }
@@ -200,19 +162,19 @@ public class ifl_a_ota extends AppCompatActivity {
                     this.requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, 1);
                     switchViewBackground.setChecked(false);
                 } else {
-                    preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, state);
+                    preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, true);
                     notificationOtaManager.createNotificationChannel();
-                    switchViewBackground.setChecked(state);
+                    switchViewBackground.setChecked(true);
                 }
             } else {
-                preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, state);
+                preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, true);
                 notificationOtaManager.createNotificationChannel();
-                switchViewBackground.setChecked(state);
+                switchViewBackground.setChecked(true);
             }
         } else {
-            preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, state);
+            preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_background_enable, false);
             notificationOtaManager.createNotificationChannel();
-            switchViewBackground.setChecked(state);
+            switchViewBackground.setChecked(false);
         }
     }
 
@@ -243,29 +205,27 @@ public class ifl_a_ota extends AppCompatActivity {
     public void enableDisableOtaFeature (boolean state) {
         if (state) {
             if (PermissionManager.checkPermission(ifl_a_ota.this)) {
-                enablePage(ifl_a_ota.this);
-                preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_setting, state);
+                enablePage();
+                preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_setting, true);
             } else {
-                disablePage(ifl_a_ota.this);
+                disablePage();
                 PermissionManager.requestInstallPermission(ifl_a_ota.this);
             }
         } else {
-            disablePage(ifl_a_ota.this);
+            disablePage();
             preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_ota_setting, false);
         }
     }
 
-    public void enablePage(Activity activity) {
+    public void enablePage() {
         switchView.setChecked(true);
-
         tileCheck.setVisibility(View.VISIBLE);
         tileBackgroundDownload.setVisibility(View.VISIBLE);
         tileFreq.setVisibility(View.VISIBLE);
     }
 
-    private void disablePage(Activity activity) {
+    private void disablePage() {
         switchView.setChecked(false);
-
         tileCheck.setVisibility(View.GONE);
         tileBackgroundDownload.setVisibility(View.GONE);
         tileFreq.setVisibility(View.GONE);

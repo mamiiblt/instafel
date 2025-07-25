@@ -1,36 +1,20 @@
 package me.mamiiblt.instafel.ota.tasks;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.os.AsyncTask;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.GenericArrayType;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.time.format.ResolverStyle;
 
-import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.ota.LastCheck;
 import me.mamiiblt.instafel.ui.LoadingBar;
-import me.mamiiblt.instafel.utils.DialogItem;
-import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.Localizator;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialogTextType;
 
 public class VersionTask extends AsyncTask<String, Void, String> {
 

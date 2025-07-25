@@ -4,28 +4,21 @@ import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
 import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer;
 import me.mamiiblt.instafel.managers.OverridesManager;
 import me.mamiiblt.instafel.ui.PageContentArea;
-import me.mamiiblt.instafel.ui.TileLarge;
 
 public class ifl_a_devmode_backup_comparator extends AppCompatActivity {
 

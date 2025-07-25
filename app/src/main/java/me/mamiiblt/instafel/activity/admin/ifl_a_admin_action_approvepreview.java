@@ -5,11 +5,9 @@ import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,8 +27,7 @@ import me.mamiiblt.instafel.ota.IflEnvironment;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.ui.TileLargeEditText;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogTextType;
@@ -77,30 +74,26 @@ public class ifl_a_admin_action_approvepreview extends AppCompatActivity impleme
         tileGenerationId.setSubtitleText(GENERATION_ID);
         buttonText.setText("Approve this preview");
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                   if (!clickLock) {
-                       ApiPostAdmin apiPostAdmin = new ApiPostAdmin(
-                               ifl_a_admin_action_approvepreview.this,
-                               ifl_a_admin_action_approvepreview.this,
-                               19,
-                               preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_username, "null"),
-                               preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_password, "null"),
-                               new JSONObject().put("gen_id", GENERATION_ID).put("clog", editText.getText().toString()));
-                       apiPostAdmin.execute(GeneralFn.getApiUrl(ifl_a_admin_action_approvepreview.this) + "/admin/user/approve_preview");
-                       clickLock = true;
-                   } else {
-                       Toast.makeText(ifl_a_admin_action_approvepreview.this, "Please wait for finish process", Toast.LENGTH_SHORT).show();
-                   }
+        button.setOnClickListener(view -> {
+            try {
+               if (!clickLock) {
+                   ApiPostAdmin apiPostAdmin = new ApiPostAdmin(
+                           ifl_a_admin_action_approvepreview.this,
+                           19,
+                           preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_username, "null"),
+                           preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_password, "null"),
+                           new JSONObject().put("gen_id", GENERATION_ID).put("clog", editText.getText().toString()));
+                   apiPostAdmin.execute(GeneralFn.getApiUrl(ifl_a_admin_action_approvepreview.this) + "/admin/user/approve_preview");
+                   clickLock = true;
+               } else {
+                   Toast.makeText(ifl_a_admin_action_approvepreview.this, "Please wait for finish process", Toast.LENGTH_SHORT).show();
+               }
 
-                } catch (JSONException e) {
-                    Toast.makeText(ifl_a_admin_action_approvepreview.this, "Error while building request", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();
-                    finish();
-                }}
-        });
+            } catch (JSONException e) {
+                Toast.makeText(ifl_a_admin_action_approvepreview.this, "Error while building request", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+                finish();
+            }});
     }
 
     public void showDialog(String title, String description) {

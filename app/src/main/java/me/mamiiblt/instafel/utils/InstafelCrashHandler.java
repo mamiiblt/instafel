@@ -16,7 +16,6 @@ public class InstafelCrashHandler implements Thread.UncaughtExceptionHandler {
     
     @Override
     public void uncaughtException(@NonNull Thread t, @NonNull Throwable e) {
-
         Toast.makeText(mContext, "Instafel crashed, crash log saved.", Toast.LENGTH_SHORT).show();
         CrashManager crashManager = new CrashManager(mContext);
         crashManager.saveLog(e);

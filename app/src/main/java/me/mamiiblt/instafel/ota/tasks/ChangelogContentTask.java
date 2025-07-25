@@ -3,9 +3,7 @@ package me.mamiiblt.instafel.ota.tasks;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Base64;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import org.json.JSONObject;
 
@@ -18,7 +16,7 @@ import java.net.URL;
 
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogTextType;

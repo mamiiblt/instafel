@@ -1,4 +1,4 @@
-package me.mamiiblt.instafel.managers.helpers;
+package me.mamiiblt.instafel.managers.modals;
 
 import org.json.JSONObject;
 
@@ -14,7 +14,6 @@ public class ParseResult {
     public JSONObject getMappingObject() {
         return mappingObject;
     }
-
     public String getFlagId() {
         return flagId;
     }

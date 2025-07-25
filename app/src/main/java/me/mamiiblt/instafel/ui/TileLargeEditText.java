@@ -33,14 +33,12 @@ public class TileLargeEditText extends CardView {
 
     private void init(Context ctx, AttributeSet attrs) {
         inflate(ctx, R.layout.ifl_ui_tilelarge_edittext, this);
-
         iconView = findViewById(R.id.ifl_ui_icon);
         titleView = findViewById(R.id.ifl_ui_title);
         spaceTop = findViewById(R.id.ifl_ui_space_top);
         spaceBottom = findViewById(R.id.ifl_ui_space_bottom);
         subIconView = findViewById(R.id.ifl_ui_subicon);
         editTextView = findViewById(R.id.ifl_edittext);
-
         if (attrs != null) {
             AttributeManager attrManager = new AttributeManager(ctx, attrs);
             setTitleText(attrManager.getString(AttributeManager.ifl_attr_ui_titleText));

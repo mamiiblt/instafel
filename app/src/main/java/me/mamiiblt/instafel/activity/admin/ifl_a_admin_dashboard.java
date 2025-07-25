@@ -6,7 +6,6 @@ import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,49 +38,26 @@ public class ifl_a_admin_dashboard extends AppCompatActivity {
         tileApprovePreview = findViewById(R.id.ifl_tile_admin_update_approve_preview);
 
         tileUpdateBackup = findViewById(R.id.ifl_tile_admin_update_update_backup);
-        tileUpdateBackup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.startIntent(ifl_a_admin_dashboard.this, ifl_a_admin_action_updatebackup.class);
+        tileUpdateBackup.setOnClickListener(view -> GeneralFn.startIntent(ifl_a_admin_dashboard.this, ifl_a_admin_action_updatebackup.class));
+        tileApprovePreview.setOnClickListener(view -> GeneralFn.startIntent(ifl_a_admin_dashboard.this, ifl_a_admin_action_approvepreview.class));
+        tileExportMapping.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.putExtra(Intent.EXTRA_TITLE, IflEnvironment.getIgVersion(ifl_a_admin_dashboard.this).replace(".", "d") + ".json");
+            intent.setType("application/json");
+            startActivityForResult(intent, 15);
+        });
+
+        tileLogout.setOnClickListener(view -> {
+            if (InstafelAdminUser.isUserLogged(ifl_a_admin_dashboard.this)) {
+                InstafelAdminUser.logout(ifl_a_admin_dashboard.this);
+                finish();
+            } else {
+                Toast.makeText(ifl_a_admin_dashboard.this, "User not logged", Toast.LENGTH_SHORT).show();
             }
         });
 
-        tileApprovePreview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.startIntent(ifl_a_admin_dashboard.this, ifl_a_admin_action_approvepreview.class);
-            }
-        });
-
-        tileExportMapping.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.putExtra(Intent.EXTRA_TITLE, IflEnvironment.getIgVersion(ifl_a_admin_dashboard.this).replace(".", "d") + ".json");
-                intent.setType("application/json");
-                startActivityForResult(intent, 15);
-            }
-        });
-
-        tileLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (InstafelAdminUser.isUserLogged(ifl_a_admin_dashboard.this)) {
-                    InstafelAdminUser.logoutUser(ifl_a_admin_dashboard.this);
-                    finish();
-                } else {
-                    Toast.makeText(ifl_a_admin_dashboard.this, "User not logged", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        tilePreferenceManager.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                GeneralFn.startIntent(ifl_a_admin_dashboard.this, ifl_a_admin_pref_manager.class);
-            }
-        });
+        tilePreferenceManager.setOnClickListener(view -> GeneralFn.startIntent(ifl_a_admin_dashboard.this, ifl_a_admin_pref_manager.class));
     }
 
     @Override

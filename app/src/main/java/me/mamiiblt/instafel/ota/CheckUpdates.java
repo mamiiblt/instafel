@@ -1,7 +1,6 @@
 package me.mamiiblt.instafel.ota;
 
 import android.app.Activity;
-import android.view.View;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -15,21 +14,19 @@ import me.mamiiblt.instafel.ota.tasks.VersionTask;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.GeneralFn;
 import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogTextType;
+import me.mamiiblt.instafel.utils.types.Types;
 
 public class CheckUpdates {
     public static void set(Activity activity, TileLarge checkUpdates) {
-        checkUpdates.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    check(activity, true);
-                } catch (Exception e) {
-                    Toast.makeText(activity, "Error while checking updates.", Toast.LENGTH_SHORT).show();
-                }
+        checkUpdates.setOnClickListener(v -> {
+            try {
+                check(activity, true);
+            } catch (Exception e) {
+                Toast.makeText(activity, "Error while checking updates.", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -59,7 +56,7 @@ public class CheckUpdates {
                 }
 
                 boolean updateState = preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_ota_setting, false);
-                int freqData = preferenceManager.getPreferenceInt(PreferenceKeys.ifl_ota_freq, FreqLabels.EVERY_OPEN);
+                int freqData = preferenceManager.getPreferenceInt(PreferenceKeys.ifl_ota_freq, Types.FreqLabels.EVERY_OPEN);
                 long lastCheckStamp = preferenceManager.getPreferenceLong(PreferenceKeys.ifl_ota_last_check, 0);
 
                 if (updateState) {
@@ -131,7 +128,6 @@ public class CheckUpdates {
     public static void check(Activity activity, boolean checkType) {
         int ifl_version = IflEnvironment.getIflVersion(activity);
         String ifl_type = IflEnvironment.getType(activity);
-
         new VersionTask(activity, ifl_type, ifl_version, checkType).execute("https://api.github.com/repos/mamiiblt/instafel/releases/latest");
     }
 
@@ -158,19 +154,11 @@ public class CheckUpdates {
                 "buttons",
                 Localizator.getDialogLocalizedString(activity, languageCode, "ifl_a11_28"),
                 "View Changelog",
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        System.exit(0);
-                        instafelDialog.dismiss();
-                    }
+                v -> {
+                    System.exit(0);
+                    instafelDialog.dismiss();
                 },
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        GeneralFn.openInWebBrowser(activity, "https://instafel.app/backup?id=" + backupId);
-                    }
-                });
+                view -> GeneralFn.openInWebBrowser(activity, "https://instafel.app/backup?id=" + backupId));
         instafelDialog.addSpace("bottom_space", 27);
         instafelDialog.show();
     }
@@ -201,12 +189,9 @@ public class CheckUpdates {
                 "buttons",
                 Localizator.getDialogLocalizedString(activity, languageCode, "ifl_d3_02"),
                 null,
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        instafelDialog.dismiss();
-                        preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_welcome_message, true);
-                    }
+                v -> {
+                    instafelDialog.dismiss();
+                    preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_welcome_message, true);
                 },
                 null);
         instafelDialog.addSpace("bottom_space", 27);

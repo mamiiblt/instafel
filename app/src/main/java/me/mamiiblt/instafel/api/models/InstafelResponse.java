@@ -8,10 +8,6 @@ public class InstafelResponse {
     String status;
     String desc;
 
-    public JSONObject getRawParsedResult() {
-        return parsedResult;
-    }
-
     public String getStatus() {
         return status;
     }

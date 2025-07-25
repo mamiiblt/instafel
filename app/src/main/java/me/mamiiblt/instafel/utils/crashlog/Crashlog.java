@@ -1,24 +1,15 @@
-package me.mamiiblt.instafel.utils.models;
+package me.mamiiblt.instafel.utils.crashlog;
 
-import android.icu.text.SimpleDateFormat;
-import android.os.Build;
-import android.util.Log;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.Date;
-import java.util.Locale;
-
-import me.mamiiblt.instafel.ota.IflEnvironment;
-
 public class Crashlog {
-    private AppData appData;
-    private DeviceData deviceData;
-    private CrashData crashData;
+
+    private CLogDataTypes.AppData appData;
+    private CLogDataTypes.DeviceData deviceData;
+    private CLogDataTypes.CrashData crashData;
     private Object date;
 
-    public Crashlog(AppData appData, DeviceData deviceData, CrashData crashData, Object date) {
+    public Crashlog(CLogDataTypes.AppData appData, CLogDataTypes.DeviceData deviceData, CLogDataTypes.CrashData crashData, Object date) {
         this.appData = appData;
         this.deviceData = deviceData;
         this.crashData = crashData;
@@ -53,7 +44,6 @@ public class Crashlog {
            newCrashData.put("class", crashData.getClassName());
            logObject.put("crashData", newCrashData);
 
-           //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
            logObject.put("date", date);
 
            return logObject.toString();
@@ -63,15 +53,13 @@ public class Crashlog {
        }
     }
 
-    public AppData getAppData() {
+    public CLogDataTypes.AppData getAppData() {
         return appData;
     }
-
-    public DeviceData getDeviceData() {
+    public CLogDataTypes.DeviceData getDeviceData() {
         return deviceData;
     }
-
-    public CrashData getCrashData() {
+    public CLogDataTypes.CrashData getCrashData() {
         return crashData;
     }
 }

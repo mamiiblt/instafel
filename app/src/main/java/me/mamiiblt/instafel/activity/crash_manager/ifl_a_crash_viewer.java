@@ -11,18 +11,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import org.json.JSONObject;
 
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.ui.TileCompact;
 import me.mamiiblt.instafel.ui.TileLarge;
+import me.mamiiblt.instafel.utils.crashlog.CLogDataTypes;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
-import me.mamiiblt.instafel.utils.models.AppData;
-import me.mamiiblt.instafel.utils.models.CrashData;
-import me.mamiiblt.instafel.utils.models.Crashlog;
-import me.mamiiblt.instafel.utils.models.DeviceData;
+import me.mamiiblt.instafel.utils.crashlog.Crashlog;
 
 public class ifl_a_crash_viewer extends AppCompatActivity {
 
@@ -50,13 +47,13 @@ public class ifl_a_crash_viewer extends AppCompatActivity {
 
             JSONObject crashObject = new JSONObject(data);
             Crashlog crashlog = new Crashlog(
-                    new AppData(
+                    new CLogDataTypes.AppData(
                             crashObject.getJSONObject("appData").get("ifl_ver"),
                             crashObject.getJSONObject("appData").get("ig_ver"),
                             crashObject.getJSONObject("appData").get("ig_ver_code"),
                             crashObject.getJSONObject("appData").get("ig_itype")
                     ),
-                    new DeviceData(
+                    new CLogDataTypes.DeviceData(
                             crashObject.getJSONObject("deviceData").get("aver"),
                             crashObject.getJSONObject("deviceData").get("sdk"),
                             crashObject.getJSONObject("deviceData").get("model"),
@@ -64,7 +61,7 @@ public class ifl_a_crash_viewer extends AppCompatActivity {
                             crashObject.getJSONObject("deviceData").get("product")
 
                     ),
-                    new CrashData(
+                    new CLogDataTypes.CrashData(
                             crashObject.getJSONObject("crashData").get("msg"),
                             crashObject.getJSONObject("crashData").get("trace"),
                             crashObject.getJSONObject("crashData").get("class")
@@ -98,38 +95,20 @@ public class ifl_a_crash_viewer extends AppCompatActivity {
             } else {
                 tileInfo.setSubtitleText(valueIsNull);
             }
-            this.tileStackTrace.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((ClipboardManager) ifl_a_crash_viewer.this.getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("ifl_log_clip", ifl_a_crash_viewer.this.tileStackTrace.getSubtitle()));
-                }
-            });
-            this.tileInfo.setOnClickListener(new View.OnClickListener() { 
-                @Override
-                public void onClick(View view) {
-                    ((ClipboardManager) ifl_a_crash_viewer.this.getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("ifl_log_clip", ifl_a_crash_viewer.this.tileInfo.getSubtitle()));
-                }
-            });
+
+            this.tileStackTrace.setOnClickListener(view -> ((ClipboardManager) ifl_a_crash_viewer.this.getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("ifl_log_clip", ifl_a_crash_viewer.this.tileStackTrace.getSubtitle())));
+            this.tileInfo.setOnClickListener(view -> ((ClipboardManager) ifl_a_crash_viewer.this.getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("ifl_log_clip", ifl_a_crash_viewer.this.tileInfo.getSubtitle())));
             String stringLog = createStringLog(crashlog);
-            tileCopy.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    copyText(stringLog);
-                }
-            });
+            tileCopy.setOnClickListener(v -> copyText(stringLog));
 
+            tileShare.setOnClickListener(v -> {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, stringLog);
+                sendIntent.setType("text/plain");
 
-            tileShare.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent sendIntent = new Intent();
-                    sendIntent.setAction(Intent.ACTION_SEND);
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, stringLog);
-                    sendIntent.setType("text/plain");
-
-                    Intent shareIntent = Intent.createChooser(sendIntent, null);
-                    startActivity(shareIntent);
-                }
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                startActivity(shareIntent);
             });
         } catch (Exception e) {
             InstafelDialog.createSimpleAlertDialog(this, "Alert", "Error while loading crashlog");

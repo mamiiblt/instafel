@@ -4,7 +4,6 @@ import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
 import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,22 +33,12 @@ public class ifl_a_build_info extends AppCompatActivity {
         tileInstallationType = findViewById(R.id.ifl_tile_installation_type);
 
         tileGenerationId.setSubtitleText(IflEnvironment.getGenerationId(this));
-        tileGenerationId.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openUrlInWeb("https://instafel.app/download?version=v" + InstafelEnv.IFL_VERSION);
-            }
-        });
+        tileGenerationId.setOnClickListener(view -> openUrlInWeb("https://instafel.app/download?version=v" + InstafelEnv.IFL_VERSION));
 
         tilePatcherVersion.setSubtitleText(InstafelEnv.PATCHER_VERSION + " (" + InstafelEnv.PATCHER_TAG + ")");
         tileCommit.setSubtitleText(InstafelEnv.COMMIT + " (main)");
 
-        tileCommit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openUrlInWeb("https://github.com/mamiiblt/instafel/commit/" + InstafelEnv.COMMIT);
-            }
-        });
+        tileCommit.setOnClickListener(view -> openUrlInWeb("https://github.com/mamiiblt/instafel/commit/" + InstafelEnv.COMMIT));
 
         String appliedPatches = InstafelEnv.APPLIED_PATCHES.replace(",", "\n");
         tileAppliedPatches.setSubtitleText(appliedPatches);

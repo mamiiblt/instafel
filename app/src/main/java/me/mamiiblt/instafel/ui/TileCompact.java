@@ -3,26 +3,20 @@ package me.mamiiblt.instafel.ui;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Space;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
-import com.google.android.material.color.ColorResourcesOverride;
 
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.managers.AttributeManager;
-import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialogItem;
 
 public class TileCompact extends CardView  {
     private ImageView iconView;
     private TextView titleView;
     private Space spaceTop, spaceBottom;
-    private Context ctx;
 
     public TileCompact(Context ctx) {
         super(ctx);
@@ -36,15 +30,11 @@ public class TileCompact extends CardView  {
 
     private void init(Context ctx, AttributeSet attrs) {
         inflate(ctx, R.layout.ifl_ui_tilecompact, this);
-
         iconView = findViewById(R.id.ifl_ui_icon);
         titleView = findViewById(R.id.ifl_ui_title);
         spaceTop = findViewById(R.id.ifl_ui_space_top);
         spaceBottom = findViewById(R.id.ifl_ui_space_bottom);
-
-
         if (attrs != null) {
-
             AttributeManager attrManager = new AttributeManager(ctx, attrs);
             setTitleText(attrManager.getString(AttributeManager.ifl_attr_ui_titleText, "ifl_ui"));
             setIconRes(attrManager.getResourceId(AttributeManager.ifl_attr_ui_iconRes, R.drawable.ifl_android));
@@ -61,7 +51,6 @@ public class TileCompact extends CardView  {
         } else {
             titleView.setText("Title");
         }
-
     }
 
     public void setIconPadding(int dpNum) {
@@ -74,7 +63,6 @@ public class TileCompact extends CardView  {
     public void setIconRes(int resId) {
         iconView.setImageResource(resId);
     }
-
 
     public void setSpaceTop(String value) {
         if (value != null){

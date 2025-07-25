@@ -1,6 +1,5 @@
 package me.mamiiblt.instafel.api.requests;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -9,18 +8,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import me.mamiiblt.instafel.api.models.InstafelResponse;
-
 public class ApiGetString extends AsyncTask<String, Void, String> {
 
-    private Activity activity;
     public ApiCallbackInterface apiCallbackInterface;
     public int taskId;
 
-    public ApiGetString(Activity activity, ApiCallbackInterface apiCallbackInterface, int taskId) {
+    public ApiGetString(ApiCallbackInterface apiCallbackInterface, int taskId) {
         this.apiCallbackInterface = apiCallbackInterface;
         this.taskId = taskId;
-        this.activity = activity;
     }
 
     @Override

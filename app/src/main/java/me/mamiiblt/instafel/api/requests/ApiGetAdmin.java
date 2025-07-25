@@ -2,29 +2,22 @@ package me.mamiiblt.instafel.api.requests;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import me.mamiiblt.instafel.activity.admin.ifl_a_admin_dashboard;
 import me.mamiiblt.instafel.api.models.InstafelResponse;
-import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.InstafelAdminUser;
 
 public class ApiGetAdmin extends AsyncTask<String, Void, InstafelResponse> {
 
     private String uname, pass;
-    private Activity activity;
     private ApiCallbackInterface apiCallbackInterface = null;
     private int taskId = 0;
 
-    public ApiGetAdmin(Activity activity, ApiCallbackInterface apiCallbackInterface, int taskId, String username, String  password) {
-        this.activity = activity;
+    public ApiGetAdmin(ApiCallbackInterface apiCallbackInterface, int taskId, String username, String  password) {
         this.apiCallbackInterface = apiCallbackInterface;
         this.taskId = taskId;
         this.uname = username;

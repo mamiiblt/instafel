@@ -2,7 +2,6 @@ package me.mamiiblt.instafel.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +11,6 @@ import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ui.TileLargeSwitch;
 import me.mamiiblt.instafel.utils.GeneralFn;
 import me.mamiiblt.instafel.utils.Localizator;
-import me.mamiiblt.instafel.utils.PreferenceKeys;
 
 public class ifl_a_misc extends AppCompatActivity {
     PreferenceManager preferenceManager;
@@ -32,12 +30,7 @@ public class ifl_a_misc extends AppCompatActivity {
         if (removedAdsPatchApplied) {
             tileRemoveAdsSwitch.setChecked(true);
             tileRemoveAdsSwitch.setEnabled(false);
-            tileRemoveAds.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(ifl_a_misc.this, ifl_a_misc.this.getString(R.string.ifl_a0_14), Toast.LENGTH_SHORT).show();
-                }
-            });
+            tileRemoveAds.setOnClickListener(view -> Toast.makeText(ifl_a_misc.this, ifl_a_misc.this.getString(R.string.ifl_a0_14), Toast.LENGTH_SHORT).show());
         } else {
             tileRemoveAds.setVisibility(View.GONE);
         }

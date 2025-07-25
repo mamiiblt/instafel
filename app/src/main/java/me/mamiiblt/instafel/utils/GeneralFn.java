@@ -22,6 +22,7 @@ import java.util.Locale;
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.InstafelEnv;
 import me.mamiiblt.instafel.managers.PreferenceManager;
+import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class GeneralFn {
 
@@ -75,10 +76,6 @@ public class GeneralFn {
         return appResources.getIdentifier(stringName, "string", getPackageName(activity));
     }
 
-    public static String getPackageNameFromCtx(Context ctx) {
-        return ctx.getPackageName();
-    }
-
     public static String getPackageName(Activity activity) {
         return activity.getPackageName();
     }
@@ -113,11 +110,9 @@ public class GeneralFn {
         } catch (Exception e) {
             Toast.makeText(ctx, ctx.getString(R.string.ifl_c1_01), Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public static void updateIflUi(ComponentActivity activity) {
-
         try {
             if (InstafelEnv.IFL_THEME == 25891 || InstafelEnv.IFL_THEME == 3) {
                 InstafelEnv.IFL_THEME = getUiMode(activity);
@@ -130,6 +125,7 @@ public class GeneralFn {
             e.printStackTrace();
         }
     }
+
     public static void setTheme(ComponentActivity activity, Window window) {
         if (InstafelEnv.IFL_THEME == 0 || InstafelEnv.IFL_THEME == 1 || InstafelEnv.IFL_THEME == 3 || InstafelEnv.IFL_THEME == 25891) {
             activity.setTheme(R.style.ifl_theme_dark);
@@ -149,12 +145,12 @@ public class GeneralFn {
         }
     }
 
+    /*
+       0 = error / dark
+       1 = dark
+       2 = light
+    */
     public static int getUiMode(Activity activity) {
-
-           /* 0 = error / dark
-            1 = dark
-            2 = light*/
-
         try {
             int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
             if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {

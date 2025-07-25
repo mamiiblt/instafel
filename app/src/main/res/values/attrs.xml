@@ -15,7 +15,6 @@
     <attr name="ifl_attr_ui_spaceBottom" format="string" />
     <attr name="ifl_attr_ui_spaceTop" format="string" />
     <attr name="ifl_attr_ui_enableSubIcon" format="string" />
-    <attr name="ifl_attr_ui_enableStartPadding" format="boolean" />
     <attr name="ifl_attr_ui_subIconRes" format="reference" />
     <attr name="ifl_attr_ui_iconResTint" format="boolean" />
     <attr name="ifl_attr_ui_iconPadding" format="integer" />

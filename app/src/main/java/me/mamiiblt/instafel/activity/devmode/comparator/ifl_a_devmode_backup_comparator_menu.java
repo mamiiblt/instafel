@@ -6,22 +6,16 @@ import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer;
-import me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer_menu;
 import me.mamiiblt.instafel.managers.OverridesManager;
-import me.mamiiblt.instafel.ui.TileCompact;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.GeneralFn;
 
@@ -45,43 +39,34 @@ public class ifl_a_devmode_backup_comparator_menu extends AppCompatActivity {
         tileBackup2 = findViewById(R.id.ifl_tile_backup_2);
         startCompare = findViewById(R.id.ifl_start_compare);
 
-        tileBackup1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("application/octet-stream");
-                startActivityForResult(intent, 11);
-            }
+        tileBackup1.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.setType("application/octet-stream");
+            startActivityForResult(intent, 11);
         });
 
-        tileBackup2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.addCategory(Intent.CATEGORY_OPENABLE);
-                intent.setType("application/octet-stream");
-                startActivityForResult(intent, 22);
-            }
+        tileBackup2.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            intent.setType("application/octet-stream");
+            startActivityForResult(intent, 22);
         });
 
-        startCompare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    if (backupContent1 != null && backupContent2 != null) {
-                        JSONObject activityData = new JSONObject();
-                        activityData.put("backup1", backupContent1.toString());
-                        activityData.put("backup2", backupContent2.toString());
+        startCompare.setOnClickListener(view -> {
+            try {
+                if (backupContent1 != null && backupContent2 != null) {
+                    JSONObject activityData = new JSONObject();
+                    activityData.put("backup1", backupContent1.toString());
+                    activityData.put("backup2", backupContent2.toString());
 
-                        GeneralFn.startIntentWithString(ifl_a_devmode_backup_comparator_menu.this, ifl_a_devmode_backup_comparator.class, activityData.toString());
-                    } else {
-                        Toast.makeText(ifl_a_devmode_backup_comparator_menu.this, ifl_a_devmode_backup_comparator_menu.this.getString(R.string.ifl_a11_72), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(ifl_a_devmode_backup_comparator_menu.this, ifl_a_devmode_backup_comparator_menu.this.getString(R.string.ifl_a11_70), Toast.LENGTH_SHORT).show();
+                    GeneralFn.startIntentWithString(ifl_a_devmode_backup_comparator_menu.this, ifl_a_devmode_backup_comparator.class, activityData.toString());
+                } else {
+                    Toast.makeText(ifl_a_devmode_backup_comparator_menu.this, ifl_a_devmode_backup_comparator_menu.this.getString(R.string.ifl_a11_72), Toast.LENGTH_SHORT).show();
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(ifl_a_devmode_backup_comparator_menu.this, ifl_a_devmode_backup_comparator_menu.this.getString(R.string.ifl_a11_70), Toast.LENGTH_SHORT).show();
             }
         });
     }

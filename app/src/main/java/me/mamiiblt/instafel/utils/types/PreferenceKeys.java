@@ -1,4 +1,4 @@
-package me.mamiiblt.instafel.utils;
+package me.mamiiblt.instafel.utils.types;
 
 public class PreferenceKeys {
     public static String ifl_welcome_message = "01";

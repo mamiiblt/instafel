@@ -1,41 +1,28 @@
 package me.mamiiblt.instafel.managers;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.SharedPreferences;
 import android.icu.text.SimpleDateFormat;
 import android.os.Build;
 import android.util.Log;
 import android.widget.Toast;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
-import java.io.DataInput;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.StringWriter;
-import java.io.PrintWriter;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.ota.IflEnvironment;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
 public class CrashManager {
 
     private Context ctx;
-    private final String crashPrefKey = "ifl_crashlogs_n";
 
     public CrashManager(Context ctx) {
         this.ctx = ctx;
@@ -63,9 +50,10 @@ public class CrashManager {
             JSONObject crashData = new JSONObject();
             String message = throwable.getMessage();
             crashData.put("msg", message != null ? message : JSONObject.NULL);
-            crashData.put("trace", sStackTrace != null ? sStackTrace : JSONObject.NULL);
-            String throwableClass = throwable.getClass() != null ? throwable.getClass().getName() : null;
-            crashData.put("class", throwableClass != null ? throwableClass : JSONObject.NULL);
+            crashData.put("trace", sStackTrace);
+            throwable.getClass();
+            String throwableClass = throwable.getClass().getName();
+            crashData.put("class", throwableClass);
             logObject.put("crashData", crashData);
 
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());

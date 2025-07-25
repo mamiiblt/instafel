@@ -8,13 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.os.Bundle;
-import android.view.View;
-
-import java.util.Locale;
 
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.ota.IflEnvironment;
-import me.mamiiblt.instafel.ui.TileCompact;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.GeneralFn;
 
