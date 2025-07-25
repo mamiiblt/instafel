@@ -40,7 +40,6 @@ public class GeneralFn {
         return Base64.encodeToString(string.getBytes(), Base64.NO_WRAP);
     }
 
-
     public static String decodeString(String string) {
         return new String(java.util.Base64.getDecoder().decode(string), StandardCharsets.UTF_8);
     }
@@ -120,7 +119,7 @@ public class GeneralFn {
     public static void updateIflUi(ComponentActivity activity) {
 
         try {
-            if (InstafelEnv.IFL_THEME == 25891) {
+            if (InstafelEnv.IFL_THEME == 25891 || InstafelEnv.IFL_THEME == 3) {
                 InstafelEnv.IFL_THEME = getUiMode(activity);
             }
             Window window = activity.getWindow();
@@ -132,14 +131,10 @@ public class GeneralFn {
         }
     }
     public static void setTheme(ComponentActivity activity, Window window) {
-        if (InstafelEnv.IFL_THEME == 0 || InstafelEnv.IFL_THEME == 1 || InstafelEnv.IFL_THEME == 25891) {
+        if (InstafelEnv.IFL_THEME == 0 || InstafelEnv.IFL_THEME == 1 || InstafelEnv.IFL_THEME == 3 || InstafelEnv.IFL_THEME == 25891) {
             activity.setTheme(R.style.ifl_theme_dark);
             window.setStatusBarColor(activity.getResources().getColor(R.color.ifl_background_color));
             window.setNavigationBarColor(activity.getResources().getColor(R.color.ifl_background_color));
-        } else if (InstafelEnv.IFL_THEME == 3) {
-            activity.setTheme(R.style.ifl_theme_amoled);
-            window.setStatusBarColor(activity.getResources().getColor(R.color.ifl_background_color_amoled));
-            window.setNavigationBarColor(activity.getResources().getColor(R.color.ifl_background_color_amoled));
         } else {
             if (InstafelEnv.IFL_THEME == 2) {
                 activity.setTheme(R.style.ifl_theme_light);
@@ -158,18 +153,12 @@ public class GeneralFn {
 
            /* 0 = error / dark
             1 = dark
-            2 = light
-            3 = amoled (new, experimental may be unhandled in some classes)*/
+            2 = light*/
 
         try {
             int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
             if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
-                PreferenceManager preferenceManager = new PreferenceManager(activity);
-                if (!preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_amoled_theme, false)) {
-                    return 1;
-                } else {
-                    return 3;
-                }
+                return 1;
             } else if (nightModeFlags == Configuration.UI_MODE_NIGHT_NO) {
                 return 2;
             } else {

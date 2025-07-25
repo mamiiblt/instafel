@@ -16,8 +16,6 @@ import me.mamiiblt.instafel.utils.PreferenceKeys;
 
 public class ifl_a_misc extends AppCompatActivity {
     PreferenceManager preferenceManager;
-    TileLargeSwitch tileAmoled;
-    Switch tileAmoledSwitch;
 
     @Override 
     protected void onCreate(Bundle bundle) {
@@ -25,24 +23,8 @@ public class ifl_a_misc extends AppCompatActivity {
         GeneralFn.updateIflUi(this);
         Localizator.updateIflLocale(this, false);
         setContentView(R.layout.ifl_at_misc);
-        this.tileAmoled = findViewById(R.id.ifl_tile_misc_amoled);
-        this.tileAmoledSwitch = tileAmoled.getSwitchView();
         PreferenceManager preferenceManager = new PreferenceManager(this);
         this.preferenceManager = preferenceManager;
-        this.tileAmoledSwitch.setChecked(preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_amoled_theme, false).booleanValue());
-        this.tileAmoled.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ifl_a_misc.this.enableOrDisableAmoledTheme(!tileAmoledSwitch.isChecked());
-                ifl_a_misc.this.tileAmoledSwitch.setChecked(!ifl_a_misc.this.tileAmoledSwitch.isChecked());
-            }
-        });
-        this.tileAmoledSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean status) {
-                ifl_a_misc.this.enableOrDisableAmoledTheme(status);
-            }
-        });
 
         TileLargeSwitch tileRemoveAds = findViewById(R.id.ifl_tile_remove_ads_section);
         Switch tileRemoveAdsSwitch = tileRemoveAds.getSwitchView();
@@ -58,15 +40,6 @@ public class ifl_a_misc extends AppCompatActivity {
             });
         } else {
             tileRemoveAds.setVisibility(View.GONE);
-        }
-    }
-
-    private void enableOrDisableAmoledTheme(boolean z) {
-        if (z) {
-            this.preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_enable_amoled_theme, true);
-            Toast.makeText(this, getString(R.string.ifl_a0_13), Toast.LENGTH_SHORT).show();
-        } else {
-            this.preferenceManager.setPreferenceBoolean(PreferenceKeys.ifl_enable_amoled_theme, false);
         }
     }
 }

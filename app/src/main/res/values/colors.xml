@@ -6,14 +6,10 @@
 
     <!-- IFL DARK THEME -->
     <color name="ifl_sub_line">#949494</color>
-    <color name="ifl_background_color">#0C0F14</color>
-    <color name="ifl_tile_color">#25282D</color>
+    <color name="ifl_background_color">#000000</color>
+    <color name="ifl_tile_color">#1A1C1F</color>
     <!-- IFL LIGHT THEME -->
     <color name="ifl_sub_line_light">#12151B</color>
     <color name="ifl_background_color_light">#FFFFFF</color>
     <color name="ifl_tile_color_light">#DFDFDF</color>
-    <!-- IFL AMOLED THEME -->
-    <color name="ifl_sub_line_amoled">#949494</color>
-    <color name="ifl_background_color_amoled">#000000</color>
-    <color name="ifl_tile_color_amoled">#1A1C1F</color>
 </resources>

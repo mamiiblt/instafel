@@ -5,7 +5,6 @@
     <string name="ifl_a5_10">Berechtigung verweigert</string>
     <string name="ifl_a5_11">"Die Benachrichtigungsberechtigung für Instafel wurde verweigert. Wenn dieses Problem weiterhin besteht, vergiss nicht, die Benachrichtigungen in den App-Einstellungen zu aktivieren."</string>
     <string name="ifl_a0_08">Sonstiges</string>
-    <string name="ifl_a0_09">Amoled-Design</string>
     <string name="ifl_a0_10">Amoled-Design für Instafel-Aktivitäten, Dialoge und andere Bereiche aktivieren.</string>
     <string name="ifl_a0_11">Werbung entfernen</string>
     <string name="ifl_a0_12">Entfernt Werbung im Feed, bei Reels oder an anderen Stellen.</string>
@@ -230,8 +229,6 @@
 
 
     <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
-    <string name="ifl_a12_05" translatable="false">Username or password is cannot be empty</string>
-    <string name="ifl_a12_06" translatable="false">Please wait server response..</string>
 
 
 	<!-- OTA FOUND DIALOG -->
@@ -268,5 +265,4 @@
 	<string name="ifl_d4_02">Willkommen bei Instafel! Dieses Mod wurde entwickelt, um allen die neuesten Funktionen der Instagram-Alpha-Versionen bereitzustellen.\\n\\nDas Menü kann durch langes Drücken der Hamburger-Schaltfläche im Profil-Tab geöffnet werden.</string>
 
     <!-- CRASH TOAST -->
-    <string name="ifl_crash_toast" translatable="false">Instafel crashed, visit Crash Reports for more details.</string>
 </resources>

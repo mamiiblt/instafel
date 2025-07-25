@@ -15,12 +15,4 @@
         <item name="ifl_attr_title_color">@color/ifl_white</item>
         <item name="ifl_attr_iview_tint">@color/ifl_white</item>
     </style>
-
-    <style name="ifl_theme_amoled" parent="ifl_theme_light" >
-        <item name="ifl_attr_background_color">@color/ifl_background_color_amoled</item>
-        <item name="ifl_attr_tile_color">@color/ifl_tile_color_amoled</item>
-        <item name="ifl_attr_subtitle_color">@color/ifl_sub_line_amoled</item>
-        <item name="ifl_attr_title_color">@color/ifl_white</item>
-        <item name="ifl_attr_iview_tint">@color/ifl_white</item>
-    </style>
 </resources>

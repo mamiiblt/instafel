@@ -4,7 +4,6 @@
     <string name="ifl_a5_10">Brak uprawnień</string>
     <string name="ifl_a5_11">"Instafel nie ma uprawnień do wyświetlania powiadomień. Jeśli problem będzie się powtarzał, upewnij się, że powiadomienia są włączone w ustawieniach aplikacji."</string>
     <string name="ifl_a0_08">Różne</string>
-    <string name="ifl_a0_09">Motyw AMOLED</string>
     <string name="ifl_a0_10">Włącz motyw AMOLED dla okien, dialogów i innych elementów Instafela.</string>
     <string name="ifl_a0_11">Usuń reklamy</string>
     <string name="ifl_a0_12">Usuwa reklamy wyświetlane w aktualnościach, rolkach lub innych sekcjach.</string>
@@ -222,8 +221,6 @@
     <string name="ifl_a11_77">Błąd podczas porównywania kopii</string>
 
     <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
-    <string name="ifl_a12_05" translatable="false">Username or password is cannot be empty</string>
-    <string name="ifl_a12_06" translatable="false">Please wait server response..</string>
 
 
     <!-- OTA FOUND DIALOG -->
@@ -256,5 +253,4 @@
     <string name="ifl_d4_02">Witamy w Instafel! Ten mod został stworzony, aby zapewnić wszystkim dostęp do najnowszych funkcji z wersji alpha Instagrama.\n\nMenu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na karcie profilu.</string>
 
     <!-- CRASH TOAST -->
-    <string name="ifl_crash_toast" translatable="false">Instafel crashed, visit Crash Reports for more details.</string>
 </resources>

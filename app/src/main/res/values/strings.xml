@@ -4,7 +4,6 @@
     <string name="ifl_a5_10">Permission Denied</string>
     <string name="ifl_a5_11">"Instafel's notification permission was denied. If this problem persists, do not forget to turn on notifications from the application settings."</string>
     <string name="ifl_a0_08">Miscellaneous</string>
-    <string name="ifl_a0_09">Amoled Theme</string>
     <string name="ifl_a0_10">Enable amoled theme for Instafel activities, dialogs and other parts.</string>
     <string name="ifl_a0_11">Remove Ads</string>
     <string name="ifl_a0_12">Removes ads displayed in the feed, reels, or other places.</string>

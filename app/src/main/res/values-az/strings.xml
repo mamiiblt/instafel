@@ -2,7 +2,6 @@
 <resources>
     <!-- sa -->
     <string name="ifl_a0_08">Müxtəlif</string>
-    <string name="ifl_a0_09">Amoled Mövzusu</string>
     <string name="ifl_a0_10">Instafel fəaliyyətləri, dialoqlar və digər hissələr üçün amoled mövzusunu aktiv edin.</string>
     <string name="ifl_a0_11">Reklamları Kaldır</string>
     <string name="ifl_a0_12">Feeddə, reelslərdə və ya digər yerlərdə göstərilən reklamları silər.</string>
@@ -229,8 +228,6 @@
     <string name="ifl_a11_77">Nüxsələri müqayisə edərkən səhv oldu</string>
 
     <!-- Admin Login -->
-    <string name="ifl_a12_05" translatable="false">İstifadəçi adı və şifrə boş ola bilməz</string>
-    <string name="ifl_a12_06" translatable="false">Zəhmət olmasa server cavabını gözləyin..</string>
 
     <!-- OTA Found Dialog -->
     <string name="ifl_d1_01">Yeni Yeniləmə</string>
@@ -261,5 +258,4 @@
     <string name="ifl_d4_02">Instafel-ə xoş gəlmisiniz, bu mod Instagram alpha versiyalarını ən son xüsusiyyətlərlə təqdim etmək üçün hazırlanmışdır.\\n\\nMenyu, profil hissəsində hamburger düyməsinə basaraq əldə edilə bilər.</string>
 
     <!-- Crash Toast -->
-    <string name="ifl_crash_toast" translatable="false">Instafel çökdü, daha ətraflı məlumat üçün Çökmə Hesabatlarına baxın.</string>
 </resources>

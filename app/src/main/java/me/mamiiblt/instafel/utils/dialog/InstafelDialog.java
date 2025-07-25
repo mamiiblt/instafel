@@ -112,12 +112,7 @@ public class InstafelDialog {
             inputEditText.setHighlightColor(activity.getResources().getColor(R.color.ifl_white));
             inputEditText.setHintTextColor(activity.getResources().getColor(R.color.ifl_sub_line_light));
             inputEditText.setLinkTextColor(activity.getResources().getColor(R.color.ifl_white));
-        } else if (instafelDialog.getDialogThemeMode() == 3) {
-            inputEditText.setTextColor(activity.getResources().getColor(R.color.ifl_white));
-            inputEditText.setHighlightColor(activity.getResources().getColor(R.color.ifl_black));
-            inputEditText.setHintTextColor(activity.getResources().getColor(R.color.ifl_sub_line_amoled));
-            inputEditText.setLinkTextColor(activity.getResources().getColor(R.color.ifl_black));
-        } else{
+        } else {
             inputEditText.setTextColor(activity.getResources().getColor(R.color.ifl_white));
             inputEditText.setHighlightColor(activity.getResources().getColor(R.color.ifl_black));
             inputEditText.setHintTextColor(activity.getResources().getColor(R.color.ifl_sub_line));
@@ -283,16 +278,12 @@ public class InstafelDialog {
         if (type == 0) {
             if (dialogThemeMode == 2) {
                 relativeLayout.setBackground(act.getResources().getDrawable(R.drawable.ifl_button_secondary_background_light));
-            } else if (dialogThemeMode == 3) {
-                relativeLayout.setBackground(act.getResources().getDrawable(R.drawable.ifl_button_secondary_background_dark));
             } else {
                 relativeLayout.setBackground(act.getResources().getDrawable(R.drawable.ifl_button_secondary_background_dark));
             }
         } else {
             if (dialogThemeMode == 2) {
                 relativeLayout.setBackground(act.getResources().getDrawable(R.drawable.ifl_button_primary_background_light));
-            } else if (dialogThemeMode == 3) {
-                relativeLayout.setBackground(act.getResources().getDrawable(R.drawable.ifl_button_primary_background_dark));
             } else {
                 relativeLayout.setBackground(act.getResources().getDrawable(R.drawable.ifl_button_primary_background_dark));
             }
@@ -312,16 +303,12 @@ public class InstafelDialog {
         if (type == 0) {
             if (dialogThemeMode == 2) {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_black));
-            } else if (dialogThemeMode == 3) {
-                textView.setTextColor(act.getResources().getColor(R.color.ifl_white));
             } else {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_white));
             }
         } else {
             if (dialogThemeMode == 2) {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_background_color_light));
-            } else if (dialogThemeMode == 3) {
-                textView.setTextColor(act.getResources().getColor(R.color.ifl_background_color_amoled));
             } else {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_background_color));
             }
@@ -392,8 +379,6 @@ public class InstafelDialog {
 
             if (dialogThemeMode == 2) {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_black));
-            } else if (dialogThemeMode == 3) {
-                textView.setTextColor(act.getResources().getColor(R.color.ifl_white));
             } else {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_white));
             }
@@ -402,8 +387,6 @@ public class InstafelDialog {
 
             if (dialogThemeMode == 2) {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_sub_line_light));
-            } else if (dialogThemeMode == 3) {
-                textView.setTextColor(act.getResources().getColor(R.color.ifl_sub_line_amoled));
             } else {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_sub_line));
             }
@@ -412,8 +395,6 @@ public class InstafelDialog {
 
             if (dialogThemeMode == 2) {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_sub_line_light));
-            } else if (dialogThemeMode == 3) {
-                textView.setTextColor(act.getResources().getColor(R.color.ifl_sub_line_amoled));
             } else {
                 textView.setTextColor(act.getResources().getColor(R.color.ifl_sub_line));
             }
@@ -462,11 +443,8 @@ public class InstafelDialog {
 
         if (themeMode == 2) {
             dialogMainArea.setBackgroundColor(act.getResources().getColor(R.color.ifl_tile_color_light));
-        } else if (themeMode == 3) {
-          dialogMainArea.setBackgroundColor(act.getResources().getColor(R.color.ifl_tile_color_amoled));
         } else {
             dialogMainArea.setBackgroundColor(act.getResources().getColor(R.color.ifl_tile_color));
-            // textView.setTextColor(act.getResources().getColor(R.color.ifl_white));
         }
 
         dialogThemeMode = themeMode;
