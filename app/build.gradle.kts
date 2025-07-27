@@ -66,11 +66,11 @@ android {
 }
 
 tasks.register("generate-app-debug") {
-    dependsOn("clear-cache", "assembleDebug")
+    dependsOn("assembleDebug")
 
     doLast {
         val outputName = "ifl-app-$commitHash-debug.apk"
-        file("${project.projectDir}/build/outputs/apk/debug/instafel.app-debug.apk")
+        file("${project.projectDir}/build/outputs/apk/debug/app-debug.apk")
             .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
@@ -81,29 +81,17 @@ tasks.register("generate-app-debug") {
 }
 
 tasks.register("generate-app-release") {
-    dependsOn("clear-cache", "assembleRelease")
+    dependsOn("assembleRelease")
 
     doLast {
         val outputName = "ifl-app-$commitHash-release.apk"
-        file("${project.projectDir}/build/outputs/apk/release/instafel.app-release.apk")
+        file("${project.projectDir}/build/outputs/apk/release/app-release.apk")
             .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
         delete("${project.projectDir}/build")
         println("Build caches cleared.")
         println("All tasks completed succesfully")
-    }
-}
-
-tasks.register("clear-cache") {
-    val filesToDelete = listOf(
-        file("${project.projectDir}/build"),
-        file("${project.projectDir}/output"),
-    )
-
-    delete(filesToDelete)
-    doLast {
-        println("Cache successfully deleted.")
     }
 }
 

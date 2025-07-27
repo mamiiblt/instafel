@@ -7,6 +7,7 @@ import me.mamiiblt.instafel.patcher.cli.commands.AboutCmd;
 import me.mamiiblt.instafel.patcher.cli.commands.BuildCmd;
 import me.mamiiblt.instafel.patcher.cli.commands.ClearPatcherCache;
 import me.mamiiblt.instafel.patcher.cli.commands.ForceUpdateCore;
+import me.mamiiblt.instafel.patcher.cli.commands.CreateIflSourceZip;
 import me.mamiiblt.instafel.patcher.cli.commands.HelpCmd;
 import me.mamiiblt.instafel.patcher.cli.commands.InitProject;
 import me.mamiiblt.instafel.patcher.cli.commands.ListPatches;
@@ -52,6 +53,6 @@ public class CommandHandler {
         commands.put("run", new RunPatch());
         commands.put("build", new BuildCmd());
         commands.put("uprew", new UploadPreview());
-        // commands.put("csrc", new CreateIflSourceZip());
+        commands.put("csrc", new CreateIflSourceZip());
     }
 }
