@@ -85,7 +85,7 @@ public class TileLarge extends CardView {
         iconView.setPadding(paddingPixel,paddingPixel,paddingPixel,paddingPixel);
     }
 
-    private void setIconTint(boolean value) {
+    public void setIconTint(boolean value) {
         if (!value) {
             iconView.getDrawable().setTintList(null);
         }

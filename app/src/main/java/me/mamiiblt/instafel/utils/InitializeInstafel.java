@@ -10,13 +10,15 @@ import android.widget.Toast;
 import me.mamiiblt.instafel.activity.ifl_a_menu;
 import me.mamiiblt.instafel.InstafelEnv;
 import me.mamiiblt.instafel.ota.CheckUpdates;
+import me.mamiiblt.instafel.utils.localization.LocalizationUtils;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 
 public class InitializeInstafel {
     public static Context ctx;
 
     public static void setContext(Application application) {
         ctx = application;
-        String iflLocale = Localizator.getIflLocale(ctx);
+        String iflLocale = LocalizationUtils.getIflLocale(ctx);
         InstafelEnv.IFL_LANG = iflLocale;
         Log.v("IFL", "InstafelEnv.IFL_LANG is set to " + iflLocale);
     }

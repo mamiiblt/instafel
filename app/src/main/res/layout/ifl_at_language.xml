@@ -19,145 +19,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ifl_page_title">
 
-        <me.mamiiblt.instafel.ui.TileLargeSwitch
-            android:id="@+id/ifl_tile_lang_device"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_device"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_subtitleText="_device_language"
-            app:ifl_attr_ui_titleText="@string/ifl_a6_01" />
 
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_english"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_us"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="United States"
-            app:ifl_attr_ui_titleText="English" />
+            android:layout_height="match_parent">
 
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_turkish"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_tr"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Türkiye"
-            app:ifl_attr_ui_titleText="Türkçe" />
-        <me.mamiiblt.instafel.ui.TileLarge
-
-            android:id="@+id/ifl_tile_lang_azerbaijan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_az"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Azərbaycan"
-            app:ifl_attr_ui_titleText="Azərbaycanca" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_deutch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_de"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Deutschland"
-            app:ifl_attr_ui_titleText="Deutsch" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_greece"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_el"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Ελλάδα"
-            app:ifl_attr_ui_titleText="Ελληνικά" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_france"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_fr"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="France"
-            app:ifl_attr_ui_titleText="Français" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_hungary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_hu"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Magyarország"
-            app:ifl_attr_ui_titleText="Magyar" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_hindi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_hi"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="भारत"
-            app:ifl_attr_ui_titleText="हिंदी" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_spanish"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_es"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="España"
-            app:ifl_attr_ui_titleText="Español" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_portugal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_pt"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Português"
-            app:ifl_attr_ui_titleText="Portugal" />
-
-        <me.mamiiblt.instafel.ui.TileLarge
-            android:id="@+id/ifl_tile_lang_polish"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:ifl_attr_ui_iconResTint="false"
-            app:ifl_attr_ui_iconRes="@drawable/ifl_flag_pl"
-            app:ifl_attr_ui_spaceBottom="visible"
-            app:ifl_attr_ui_enableSubIcon="gone"
-            app:ifl_attr_ui_subIconRes="@drawable/ifl_tick"
-            app:ifl_attr_ui_subtitleText="Polska"
-            app:ifl_attr_ui_titleText="Polski" />
+            <LinearLayout
+                android:id="@+id/ifl_languages_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <me.mamiiblt.instafel.ui.TileLargeSwitch
+                    android:id="@+id/ifl_tile_lang_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ifl_attr_ui_iconRes="@drawable/ifl_device"
+                    app:ifl_attr_ui_spaceBottom="visible"
+                    app:ifl_attr_ui_subtitleText="_device_language"
+                    app:ifl_attr_ui_titleText="@string/ifl_a6_01" />
+            </LinearLayout>
+        </ScrollView>
     </me.mamiiblt.instafel.ui.PageContentArea>
 </me.mamiiblt.instafel.ui.Page>
