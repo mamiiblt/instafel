@@ -20,15 +20,11 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.activity.admin.ifl_a_admin_login;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.Localizator;
 
 public class InstafelDialog {
     private Activity act;
