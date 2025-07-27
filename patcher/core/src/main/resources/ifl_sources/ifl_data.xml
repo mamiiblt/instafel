@@ -10,7 +10,6 @@
             <string name="ifl_a0_06">Bu özellik daha eklenmedi</string>
             <string name="ifl_a0_07">Çökme Günlükleri</string>
             <string name="ifl_a0_08">Çeşitli Seçenekler</string>
-            <string name="ifl_a0_09">Amoled Tema</string>
             <string name="ifl_a0_10">Instafel aktiviteleri, diyalogları ve diğer kısımları için amoled temayı açar</string>
             <string name="ifl_a0_11">Reklamları Kaldır</string>
             <string name="ifl_a0_12">Ana akışta, reelste ve diğer yerlerde gösterilen reklamları gizler</string>
@@ -19,7 +18,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">"Root / Shizuku ile otomatik güncellemeler için Instafel Updater'ı kullanın."</string>
             <string name="ifl_a10_01">Katkı Sağlayanlar</string>
-            <string name="ifl_a10_02">Çevirmenler</string>
             <string name="ifl_a11_01">Bayrak Kütüphanesi</string>
             <string name="ifl_a11_02">Yedek Kütüphanesi</string>
             <string name="ifl_a11_03">Yedek dosyaları sunucudan alınırken hata oluştu</string>
@@ -101,18 +99,18 @@
             <string name="ifl_a1_02">Instafel Sürümü</string>
             <string name="ifl_a1_03">Kurulum Türü</string>
             <string name="ifl_a1_04">Proje Hakkında</string>
-            <string name="ifl_a1_05">Geliştirici</string>
-            <string name="ifl_a1_06">Bu projeye katkı sağlayanlar</string>
             <string name="ifl_a1_07">Klon</string>
             <string name="ifl_a1_08">Klon Olmayan</string>
             <string name="ifl_a1_09">Oluşturulma Kimliği</string>
             <string name="ifl_a1_10">Instagram Sürümü</string>
-            <string name="ifl_a1_11">Bu projenin çevirilmesinde katkı sağlayanlar</string>
             <string name="ifl_a1_12">Yapı Bilgisi</string>
             <string name="ifl_a1_13">Yamalayıcı Sürümü</string>
             <string name="ifl_a1_14">Uygulanan Yamalar</string>
             <string name="ifl_a1_15">Bu yapı ile ilgili bilgiler</string>
-            <string name="ifl_a1_17">Kaynak Kodu</string>
+            <string name="ifl_a1_18">Geliştirici Hakkında</string>
+            <string name="ifl_a1_19">Web Sitesi</string>
+            <string name="ifl_a1_20">Topluluğa Katıl</string>
+            <string name="ifl_a1_21">Katkıda Bulunanlar</string>
             <string name="ifl_a2_01">Instagram Hakkında</string>
             <string name="ifl_a2_02">Sürüm</string>
             <string name="ifl_a2_03">Sürüm Kodu</string>
@@ -216,216 +214,214 @@
         </vcategory>
         <vcategory name="strings-de">
             <string name="ifl_a0_01">Backup-Optionen</string>
-            <string name="ifl_a0_02">Updateeinstellungen</string>
+            <string name="ifl_a0_02">Einstellungen aktualisieren</string>
             <string name="ifl_a0_03">Sprache</string>
             <string name="ifl_a0_04">Bibliothek</string>
             <string name="ifl_a0_05">Über</string>
             <string name="ifl_a0_06">Diese Funktion wurde noch nicht hinzugefügt</string>
-            <string name="ifl_a0_07">Absturzbericht</string>
-            <string name="ifl_a0_08">Miscellaneous</string>
-            <string name="ifl_a0_09">Amoled Theme</string>
-            <string name="ifl_a0_10">Enable amoled theme for Instafel activities, dialogs and other parts.</string>
-            <string name="ifl_a0_11">Remove Ads</string>
-            <string name="ifl_a0_12">Removes ads displayed in the feed, reels, or other places.</string>
-            <string name="ifl_a0_13">Restart app for apply changes.</string>
-            <string name="ifl_a0_14">Standardmäßig aktiviert, nicht änderbar.</string>
-            <string name="ifl_a0_15">Instafel Updater</string>
-            <string name="ifl_a0_16">Verwenden Sie den Instafel Updater für automatische Updates mit Root / Shizuku.</string>
+            <string name="ifl_a0_07">Absturzberichte</string>
+            <string name="ifl_a0_08">Sonstiges</string>
+            <string name="ifl_a0_10">Amoled-Design für Instafel-Aktivitäten, Dialoge und andere Bereiche aktivieren.</string>
+            <string name="ifl_a0_11">Werbung entfernen</string>
+            <string name="ifl_a0_12">Entfernt Werbung im Feed, bei Reels oder an anderen Stellen.</string>
+            <string name="ifl_a0_13">App neu starten, um Änderungen zu übernehmen.</string>
+            <string name="ifl_a0_14">Standardmäßig aktiviert, kann nicht geändert werden.</string>
+            <string name="ifl_a0_15">Instafel-Updater</string>
+            <string name="ifl_a0_16">Verwende den Instafel-Updater für automatische Updates mit Root und Shizuku.</string>
             <string name="ifl_a10_01">Mitwirkende</string>
-            <string name="ifl_a10_02">Übersetzer</string>
-            <string name="ifl_a11_01">Flaggenbibliothek</string>
-            <string name="ifl_a11_02">Sicherungsbibliothek</string>
-            <string name="ifl_a11_03">Fehler beim Abrufen von Backups von der API</string>
+            <string name="ifl_a11_01">Flag-Bibliothek</string>
+            <string name="ifl_a11_02">Backup-Bibliothek</string>
+            <string name="ifl_a11_03">Fehler beim Abrufen der Backups von der API</string>
             <string name="ifl_a11_04">Erstellt von %1$s</string>
-            <string name="ifl_a11_05">Sicherungsinfo</string>
+            <string name="ifl_a11_05">Backup-Informationen</string>
             <string name="ifl_a11_06">Name</string>
             <string name="ifl_a11_07">Beschreibung</string>
             <string name="ifl_a11_08">Zuletzt aktualisiert</string>
-            <string name="ifl_a11_09">Änderungsliste</string>
-            <string name="ifl_a11_10">Sicherung anwenden</string>
+            <string name="ifl_a11_09">Änderungsprotokoll</string>
+            <string name="ifl_a11_10">Backup anwenden</string>
             <string name="ifl_a11_11">Mehr</string>
-            <string name="ifl_a11_12">Automatisches Update einschalten</string>
-            <string name="ifl_a11_13">Wenn ein neues Update für Ihr Backup veröffentlicht wird, wird das Backup automatisch aktualisiert.</string>
-            <string name="ifl_a11_14">Diese Sicherung wird vorerst angewendet und aktualisiert, wenn die automatische Aktualisierung aktiviert ist.</string>
-            <string name="ifl_a11_15">Sicherungen</string>
-            <string name="ifl_a11_16">Über den Author</string>
-            <string name="ifl_a11_17">Fehler beim Abrufen von Sicherungsinformationen</string>
+            <string name="ifl_a11_12">Auto-Update aktivieren</string>
+            <string name="ifl_a11_13">Wenn ein neues Update für dein Backup veröffentlicht wird, wird es automatisch aktualisiert</string>
+            <string name="ifl_a11_14">Dieses Backup wird jetzt angewendet und aktualisiert, falls Auto-Update aktiviert ist</string>
+            <string name="ifl_a11_15">Backups</string>
+            <string name="ifl_a11_16">Über den Autor</string>
+            <string name="ifl_a11_17">Fehler beim Abrufen der Backup-Informationen</string>
             <string name="ifl_a11_18">Aktualisiert auf v%1$s am %2$s</string>
-            <string name="ifl_a11_19">Über den Author</string>
-            <string name="ifl_a11_20">Author Name</string>
-            <string name="ifl_a11_21">Fehler beim Abrufen von Informationen über den Autor</string>
-            <string name="ifl_a11_22">Fehler beim Herunterladen der Sicherungsdatei</string>
-            <string name="ifl_a11_23">Um diese Einstellung zu aktivieren, müssen Sie mindestens ein Backup aus der Bibliothek anwenden</string>
-            <string name="ifl_a11_24">%1$s die Sicherung wird nun automatisch aktualisiert.</string>
-            <string name="ifl_a11_25">Automatische Aktualisierung deaktiviert</string>
-            <string name="ifl_a11_26">Fehler beim Aktualisieren der Sicherung</string>
-            <string name="ifl_a11_27">Änderungvorschau von der Sicherung</string>
+            <string name="ifl_a11_19">Über den Autor</string>
+            <string name="ifl_a11_20">Autorenname</string>
+            <string name="ifl_a11_21">Fehler beim Abrufen der Informationen über den Autor</string>
+            <string name="ifl_a11_22">Fehler beim Herunterladen der Backup-Datei</string>
+            <string name="ifl_a11_23">Um diese Einstellung zu aktivieren, musst du mindestens ein Backup aus der Bibliothek anwenden</string>
+            <string name="ifl_a11_24">%1$s-Backup wird nun automatisch aktualisiert</string>
+            <string name="ifl_a11_25">Auto-Update deaktiviert</string>
+            <string name="ifl_a11_26">Fehler beim Aktualisieren des Backups</string>
+            <string name="ifl_a11_27">Backup-Änderungsprotokoll</string>
             <string name="ifl_a11_28">App neu starten</string>
             <string name="ifl_a11_29">Später neu starten</string>
-            <string name="ifl_a11_30">Fehler beim Parsen der Sicherungsdatei</string>
+            <string name="ifl_a11_30">Fehler beim Parsen der Backup-Datei</string>
             <string name="ifl_a11_31">Fehler beim Parsen der Mapping-Datei</string>
-            <string name="ifl_a11_32">Fehler beim Lesen der Zuordnungsdatei von Instagram</string>
-            <string name="ifl_a11_33">Fehler beim Parsen der Überschreibungsdatei</string>
+            <string name="ifl_a11_32">Fehler beim Lesen der Mapping-Datei von Instagram</string>
+            <string name="ifl_a11_33">Fehler beim Parsen der Override-Datei</string>
             <string name="ifl_a11_34">Mapping-Datei nicht gefunden</string>
-            <string name="ifl_a11_35">Fehler beim Vergleich von Backup und Mapping</string>
-            <string name="ifl_a11_36">Fehler beim Kopieren des Flaggeninhalts</string>
+            <string name="ifl_a11_35">Fehler beim Vergleichen des Backups mit dem Mapping</string>
+            <string name="ifl_a11_36">Fehler beim Kopieren des Flag-Inhalts</string>
             <string name="ifl_a11_37">Fehler beim Starten der Analyse</string>
-            <string name="ifl_a11_38">Bitte wählen Sie eine Datei aus</string>
-            <string name="ifl_a11_39">Fehler beim Lesen der Sicherungsdatei</string>
-            <string name="ifl_a11_40">Fehler beim Lesen der Zuordnungsdatei</string>
-            <string name="ifl_a11_41">%1$s Flag aus Sicherungsdatei importiert</string>
-            <string name="ifl_a11_42">Fehler beim Importieren von Überschreibungen aus der Sicherungsdatei</string>
-            <string name="ifl_a11_43">%1$s Flagge erfolgreich importiert</string>
+            <string name="ifl_a11_38">Bitte wähle eine Datei aus</string>
+            <string name="ifl_a11_39">Fehler beim Lesen der Backup-Datei</string>
+            <string name="ifl_a11_40">Fehler beim Lesen der Mapping-Datei</string>
+            <string name="ifl_a11_41">%1$s Flag aus Backup-Datei importiert</string>
+            <string name="ifl_a11_42">Fehler beim Importieren der Overrides aus der Backup-Datei</string>
+            <string name="ifl_a11_43">%1$s Flag erfolgreich importiert</string>
             <string name="ifl_a11_44">%1$s erfolgreich importiert</string>
             <string name="ifl_a11_45">Version</string>
-            <string name="ifl_a11_46">%1$s erfolgreich mit %2$s-Flag importiert</string>
-            <string name="ifl_a11_47">Bitte wählen Sie eine gültige Backup-Datei aus</string>
-            <string name="ifl_a11_48">Alte Backups importieren (.json)</string>
-            <string name="ifl_a11_49">Bitte füllen Sie die erforderlichen Felder aus.</string>
-            <string name="ifl_a11_50">Bitte geben Sie einen gültigen Versionsnamen ein</string>
+            <string name="ifl_a11_46">%1$s erfolgreich mit %2$s Flag(s) importiert</string>
+            <string name="ifl_a11_47">Bitte wähle eine gültige Backup-Datei</string>
+            <string name="ifl_a11_48">Alte Backups importieren</string>
+            <string name="ifl_a11_49">Bitte fülle alle erforderlichen Felder aus.</string>
+            <string name="ifl_a11_50">Bitte gib einen gültigen Versionsnamen ein</string>
             <string name="ifl_a11_51">Backup exportieren</string>
             <string name="ifl_a11_52">Backup-Name</string>
-            <string name="ifl_a11_53">Wie Mamis perfektes Backup</string>
-            <string name="ifl_a11_54">Autorname</string>
-            <string name="ifl_a11_55">Wie Albert Einstein</string>
+            <string name="ifl_a11_53">Zum Beispiel: Mamis perfektes Backup</string>
+            <string name="ifl_a11_54">Autorenname</string>
+            <string name="ifl_a11_55">Zum Beispiel: Albert Einstein</string>
             <string name="ifl_a11_56">Backup-Version</string>
-            <string name="ifl_a11_57">Wie 1.0, 1.0-hotfix usw.</string>
+            <string name="ifl_a11_57">Zum Beispiel: 1.0, 1.0-hotfix usw.</string>
             <string name="ifl_a11_58">Änderungsprotokoll</string>
-            <string name="ifl_a11_59">Hier können Sie das Änderungsprotokoll des Backups schreiben</string>
-            <string name="ifl_a11_60">Backup aktualisieren</string>
+            <string name="ifl_a11_59">Hier kannst du das Änderungsprotokoll für das Backup eintragen</string>
+            <string name="ifl_a11_60">Backup exportieren</string>
             <string name="ifl_a11_61">Alte JSON-Backups importieren</string>
-            <string name="ifl_a11_62">Backup-Vergleicher</string>
-            <string name="ifl_a11_63">Wird verwendet, um eine Backup-Datei vollständig mit allen Flags zu importieren</string>
-            <string name="ifl_a11_64">Fügt der von Ihnen verwendeten Backup-Datei Flags hinzu, die nicht in der ausgewählten Sicherung enthalten sind.</string>
-            <string name="ifl_a11_65">Mit dieser Option können Sie alte .json-Backups importieren</string>
+            <string name="ifl_a11_62">Backup-Vergleich</string>
+            <string name="ifl_a11_63">Dient zum vollständigen Importieren einer Backup-Datei mit allen enthaltenen Flags</string>
+            <string name="ifl_a11_64">Fügt dem verwendeten Backup-File Flags hinzu, die im ausgewählten Backup nicht enthalten sind.</string>
+            <string name="ifl_a11_65">Mit dieser Option kannst du alte .json-Backups importieren</string>
             <string name="ifl_a11_66">Backup 1 auswählen</string>
             <string name="ifl_a11_67">Backup 2 auswählen</string>
-            <string name="ifl_a11_68">Drücken, um Backup auszuwählen</string>
+            <string name="ifl_a11_68">Zum Auswählen des Backups drücken</string>
             <string name="ifl_a11_69">Backups vergleichen</string>
             <string name="ifl_a11_70">Fehler beim Starten der Komprimierung</string>
             <string name="ifl_a11_71">Ausgewählt</string>
-            <string name="ifl_a11_72">Bitte wählen Sie zwei Backups zum Vergleichen</string>
+            <string name="ifl_a11_72">Bitte wähle zwei Backup-Dateien zum Vergleichen</string>
             <string name="ifl_a11_73">Vergleichsergebnis</string>
             <string name="ifl_a11_74">Unterschiede B1 zu B2</string>
             <string name="ifl_a11_75">Unterschiede B2 zu B1</string>
             <string name="ifl_a11_76">Entfernte Flag-IDs</string>
             <string name="ifl_a11_77">Fehler beim Vergleichen der Backups</string>
             <string name="ifl_a1_01">Über Instafel</string>
-            <string name="ifl_a1_02">Instafel Version</string>
-            <string name="ifl_a1_03">Installation Typ</string>
+            <string name="ifl_a1_02">Instafel-Version</string>
+            <string name="ifl_a1_03">Installationsart</string>
             <string name="ifl_a1_04">Projekt</string>
-            <string name="ifl_a1_05">Entwickler</string>
-            <string name="ifl_a1_06">Alle, die zu diesem Projekt beigetragen haben</string>
-            <string name="ifl_a1_07">Klone</string>
-            <string name="ifl_a1_08">Nicht geklont</string>
-            <string name="ifl_a1_09">Generation ID</string>
-            <string name="ifl_a1_10">Instagram Version</string>
-            <string name="ifl_a1_11">Mitwirkende an der Übersetzung von Instafel</string>
+            <string name="ifl_a1_07">Klonen</string>
+            <string name="ifl_a1_08">Klon entfernen</string>
+            <string name="ifl_a1_09">Generierungs-ID</string>
+            <string name="ifl_a1_10">Instagram-Version</string>
             <string name="ifl_a1_12">Build-Informationen</string>
             <string name="ifl_a1_13">Patcher-Version</string>
-            <string name="ifl_a1_14">Angewandte Patches</string>
-            <string name="ifl_a1_15">Build-Details anzeigen</string>
-            <string name="ifl_a1_17">Quellcode</string>
+            <string name="ifl_a1_14">Angewendete Patches</string>
+            <string name="ifl_a1_15">Details zur Build-Info anzeigen</string>
+            <string name="ifl_a1_18">Über den Entwickler</string>
+            <string name="ifl_a1_19">Webseite</string>
+            <string name="ifl_a1_20">Community beitreten</string>
+            <string name="ifl_a1_21">Mitwirkende</string>
             <string name="ifl_a2_01">Über Instagram</string>
             <string name="ifl_a2_02">Version</string>
-            <string name="ifl_a2_03">Version Code</string>
+            <string name="ifl_a2_03">Versionscode</string>
             <string name="ifl_a2_04">Kanal</string>
             <string name="ifl_a2_05">Architektur</string>
-            <string name="ifl_a3_01">Über</string>
-            <string name="ifl_a4_01">Export</string>
-            <string name="ifl_a4_02">Import</string>
-            <string name="ifl_a4_03">Lokale Überschreibungsdatei löschen</string>
-            <string name="ifl_a4_04">Zum Speichern wählen Sie bitte einen Dateipfad.</string>
-            <string name="ifl_a4_05">Sicherungsdatei erfolgreich gespeichert.</string>
-            <string name="ifl_a4_06">Überschreibungsdatei nicht gefunden.</string>
-            <string name="ifl_a4_07">Beim Speichern der Sicherungsdatei ist ein Fehler aufgetreten.</string>
-            <string name="ifl_a4_08">Sicherungsdatei teilen</string>
-            <string name="ifl_a4_09">Bitte wählen Sie eine Datei für den Import aus.</string>
-            <string name="ifl_a4_10">Sicherungsdatei erfolgreich importiert.</string>
-            <string name="ifl_a4_11">Überschreibungsdatei nicht gefunden.</string>
-            <string name="ifl_a4_12">Beim Importieren der Sicherungsdatei ist ein Fehler aufgetreten.</string>
-            <string name="ifl_a4_13">Überschreibungsdatei erfolgreich gelöscht.</string>
-            <string name="ifl_a4_14">Überschreibungsdatei nicht gefunden.</string>
-            <string name="ifl_a4_15">Beim Importieren der Sicherungsdatei ist ein Fehler aufgetreten.</string>
-            <string name="ifl_a4_16">MobileConfig Editor</string>
-            <string name="ifl_a4_17">Flag Analyzer</string>
+            <string name="ifl_a3_01">Info</string>
+            <string name="ifl_a4_01">Exportieren</string>
+            <string name="ifl_a4_02">Importieren</string>
+            <string name="ifl_a4_03">Override-Datei löschen</string>
+            <string name="ifl_a4_04">Bitte wählen Sie einen Dateipfad zum Speichern.</string>
+            <string name="ifl_a4_05">Backup-Datei erfolgreich gespeichert.</string>
+            <string name="ifl_a4_06">Override-Datei nicht gefunden.</string>
+            <string name="ifl_a4_07">Beim Speichern der Backup-Datei ist ein Fehler aufgetreten.</string>
+            <string name="ifl_a4_08">Backup-Datei teilen</string>
+            <string name="ifl_a4_09">Bitte wählen Sie eine Datei zum Importieren.</string>
+            <string name="ifl_a4_10">Backup-Datei erfolgreich importiert.</string>
+            <string name="ifl_a4_11">Override-Datei nicht gefunden.</string>
+            <string name="ifl_a4_12">Beim Importieren der Backup-Datei ist ein Fehler aufgetreten.</string>
+            <string name="ifl_a4_13">Override-Datei erfolgreich gelöscht.</string>
+            <string name="ifl_a4_14">Override-Datei nicht gefunden.</string>
+            <string name="ifl_a4_15">Beim Importieren der Backup-Datei ist ein Fehler aufgetreten.</string>
+            <string name="ifl_a4_16">MobileConfig-Editor</string>
+            <string name="ifl_a4_17">Flag-Analysator</string>
             <string name="ifl_a4_18">Vollständig importieren</string>
-            <string name="ifl_a4_19">Importieren mit Zusammenführen</string>
-            <string name="ifl_a4_20">Analysieren Sie Ergebnis</string>
-            <string name="ifl_a4_21">Use Custom Mapping File</string>
+            <string name="ifl_a4_19">Importieren mit Zusammenführung</string>
+            <string name="ifl_a4_20">Analyseergebnis</string>
+            <string name="ifl_a4_21">Benutzerdefinierte Mapping-Datei verwenden</string>
             <string name="ifl_a4_22">Ermöglicht die Analyse mit einer benutzerdefinierten Mapping-Datei anstelle der Standard-Mapping-Datei von Instagram</string>
-            <string name="ifl_a4_23">Matched Flags</string>
-            <string name="ifl_a4_24">Mismatched Flags</string>
+            <string name="ifl_a4_23">Übereinstimmende Flags</string>
+            <string name="ifl_a4_24">Nicht übereinstimmende Flags</string>
             <string name="ifl_a4_25">Suchen</string>
-            <string name="ifl_a4_26">Überschreibungen aus der Sicherung importieren</string>
-            <string name="ifl_a4_27">Verwendung einer Sicherungsdatei anstelle der Analyse einer vorhandenen Überschreibungsdatei</string>
+            <string name="ifl_a4_26">Overrides aus Backup importieren</string>
+            <string name="ifl_a4_27">Verwende eine Backup-Datei anstelle der Analyse der vorhandenen Override-Datei</string>
             <string name="ifl_a4_28">Analyse starten</string>
-            <string name="ifl_a4_29">Start Analysis with Custom Backup</string>
-            <string name="ifl_a4_30">Start Analysis with Custom Mapping</string>
-            <string name="ifl_a4_31">Start Analysis with Custom Backup and Mapping</string>
-            <string name="ifl_a4_32">Copy Raw Mapping</string>
-            <string name="ifl_a4_33">Copy Parsed Mapping</string>
-            <string name="ifl_a4_34">Überschreibungsdatei fehlt oder ist beschädigt</string>
-            <string name="ifl_a4_35">Bist du dir Sicher?</string>
-            <string name="ifl_a4_36">Es gibt keine Möglichkeit, eine gelöschte Überschreibungsdatei wiederherzustellen</string>
+            <string name="ifl_a4_29">Analyse mit benutzerdefiniertem Backup starten</string>
+            <string name="ifl_a4_30">Analyse mit benutzerdefiniertem Mapping starten</string>
+            <string name="ifl_a4_31">Analyse mit benutzerdefiniertem Backup und Mapping starten</string>
+            <string name="ifl_a4_32">Rohes Mapping kopieren</string>
+            <string name="ifl_a4_33">Geparstes Mapping kopieren</string>
+            <string name="ifl_a4_34">Override-Datei fehlt oder ist beschädigt</string>
+            <string name="ifl_a4_35">Sind Sie sicher?</string>
+            <string name="ifl_a4_36">Gelöschte Override-Dateien können nicht wiederhergestellt werden</string>
             <string name="ifl_a4_37">Okay</string>
             <string name="ifl_a4_38">Abbrechen</string>
-            <string name="ifl_a4_39">Fehler beim Lesen der Überschreibungsdatei.</string>
-            <string name="ifl_a4_40">%1$s Flaggen erfolgreich exportiert</string>
-            <string name="ifl_a4_41">Fehler beim Schreiben des Inhalts in die Sicherungsdatei.</string>
-            <string name="ifl_a4_42">Fehler beim Exportieren einer Sicherungsdatei</string>
-            <string name="ifl_a5_01">Suche nach Updates</string>
-            <string name="ifl_a5_02">Letzte Überprüfung: %1$s</string>
-            <string name="ifl_a5_03">Häufigkeit prüfen</string>
-            <string name="ifl_a5_05">Niemals</string>
-            <string name="ifl_a5_06">Aktiviere Updates</string>
-            <string name="ifl_a5_07">Aktivieren Sie Update-Einstellungen</string>
-            <string name="ifl_a5_08">Hintergrund Download</string>
-            <string name="ifl_a5_09">Nach dem Herunterladen von Updates im Hintergrund wird eine Benachrichtigung gesendet</string>
-            <string name="ifl_a5_10">Erlaubnis verweigert</string>
-            <string name="ifl_a5_11">Die Benachrichtigungsberechtigung von Instafels wurde verweigert. Wenn dieses Problem weiterhin besteht, vergessen Sie nicht, die Benachrichtigungen in den Anwendungseinstellungen zu aktivieren.</string>
-            <string name="ifl_a5_dia_freq_00">Bei jeder Öffnung (Standard)</string>
-            <string name="ifl_a5_dia_freq_01">Niemals</string>
-            <string name="ifl_a5_dia_freq_02">Jeden Tag</string>
-            <string name="ifl_a5_dia_freq_03">Einmal in drei Tagen</string>
-            <string name="ifl_a5_dia_freq_04">Einmal in fünf Tagen</string>
+            <string name="ifl_a4_39">Fehler beim Lesen der Override-Datei.</string>
+            <string name="ifl_a4_40">%1$s Flags erfolgreich exportiert</string>
+            <string name="ifl_a4_41">Fehler beim Schreiben des Inhalts in die Backup-Datei.</string>
+            <string name="ifl_a4_42">Fehler beim Exportieren der Backup-Datei</string>
+            <string name="ifl_a5_01">Nach Updates suchen</string>
+            <string name="ifl_a5_02">Letzte Prüfung: %1$s</string>
+            <string name="ifl_a5_03">Prüfhäufigkeit</string>
+            <string name="ifl_a5_05">Nie</string>
+            <string name="ifl_a5_06">Updates aktivieren</string>
+            <string name="ifl_a5_07">Update-Einstellungen aktivieren</string>
+            <string name="ifl_a5_08">Hintergrund-Download</string>
+            <string name="ifl_a5_09">Eine Benachrichtigung wird gesendet, nachdem Updates im Hintergrund heruntergeladen wurden</string>
+            <string name="ifl_a5_10">Berechtigung verweigert</string>
+            <string name="ifl_a5_11">Die Benachrichtigungsberechtigung für Instafel wurde verweigert. Wenn dieses Problem weiterhin besteht, vergiss nicht, die Benachrichtigungen in den App-Einstellungen zu aktivieren.</string>
+            <string name="ifl_a5_dia_freq_00">Bei jedem Öffnen (Standard)</string>
+            <string name="ifl_a5_dia_freq_01">Nie</string>
+            <string name="ifl_a5_dia_freq_02">Täglich</string>
+            <string name="ifl_a5_dia_freq_03">Alle drei Tage</string>
+            <string name="ifl_a5_dia_freq_04">Alle fünf Tage</string>
             <string name="ifl_a5_dia_freq_05">Einmal pro Woche</string>
-            <string name="ifl_a5_sub_freq_00">Auf jede Öffnung einstellen.</string>
-            <string name="ifl_a5_sub_freq_01">Auf nie einstellen</string>
-            <string name="ifl_a5_sub_freq_02">Auf täglich einstellen</string>
-            <string name="ifl_a5_sub_freq_03">Einmal in drei Tagen</string>
-            <string name="ifl_a5_sub_freq_04">Einmal in fünf Tagen</string>
-            <string name="ifl_a5_sub_freq_05">Einmal pro Woche einstellen</string>
-            <string name="ifl_a6_01">Sprache des Geräts verwenden</string>
+            <string name="ifl_a5_sub_freq_00">Auf jedes Öffnen setzen.</string>
+            <string name="ifl_a5_sub_freq_01">Auf „Nie“ setzen</string>
+            <string name="ifl_a5_sub_freq_02">Auf „Täglich“ setzen</string>
+            <string name="ifl_a5_sub_freq_03">Auf „Alle drei Tage“ setzen</string>
+            <string name="ifl_a5_sub_freq_04">Auf „Alle fünf Tage“ setzen</string>
+            <string name="ifl_a5_sub_freq_05">Auf „Einmal pro Woche“ setzen</string>
+            <string name="ifl_a6_01">Gerätesprache verwenden</string>
             <string name="ifl_a7_01">Berichte</string>
             <string name="ifl_a7_02">Berichte löschen</string>
             <string name="ifl_a8_01">Details</string>
-            <string name="ifl_a8_02">Log kopieren</string>
-            <string name="ifl_a8_03">Log teilen</string>
-            <string name="ifl_a8_04">Geräte-Infos</string>
-            <string name="ifl_a8_05">Android Version</string>
-            <string name="ifl_a8_06">IG- und IFL-Ausgabe</string>
+            <string name="ifl_a8_02">Protokoll kopieren</string>
+            <string name="ifl_a8_03">Protokoll teilen</string>
+            <string name="ifl_a8_04">Geräteinformationen</string>
+            <string name="ifl_a8_05">Android-Version</string>
+            <string name="ifl_a8_06">IG- und IFL-Version</string>
             <string name="ifl_a8_07">Absturzdatum</string>
-            <string name="ifl_a8_08">Absturz-Info</string>
+            <string name="ifl_a8_08">Absturzinformationen</string>
             <string name="ifl_a8_09">Grund</string>
-            <string name="ifl_a8_10">Stack Trace</string>
+            <string name="ifl_a8_10">Stacktrace</string>
             <string name="ifl_a9_01">Details</string>
-            <string name="ifl_c1_01">Auf Ihrem Gerät wurde kein Webbrowser gefunden</string>
-            <string name="ifl_d1_01">Neue Update</string>
-            <string name="ifl_d1_02">Instafel wird aktualisiert version v%1$d (Instagram v%2$s)</string>
+            <string name="ifl_c1_01">Es wurde kein Webbrowser auf deinem Gerät gefunden</string>
+            <string name="ifl_d1_01">Neues Update</string>
+            <string name="ifl_d1_02">Instafel wird auf Version v%1$d aktualisiert (Instagram v%2$s)</string>
             <string name="ifl_d1_03">Abbrechen</string>
             <string name="ifl_d1_04">Installieren</string>
-            <string name="ifl_d1_05">Verstecken</string>
-            <string name="ifl_d1_06">Fehler beim Lesen der Überschreibungsdatei.</string>
+            <string name="ifl_d1_05">Ausblenden</string>
+            <string name="ifl_d1_06">Verbindung zum Update-Server wird hergestellt</string>
             <string name="ifl_d2_01">Aktuell</string>
-            <string name="ifl_d2_02">"Instafel ist auf'm aktuellen Stand."</string>
+            <string name="ifl_d2_02">Instafel ist auf dem neuesten Stand.</string>
             <string name="ifl_d2_03">Okay</string>
-            <string name="ifl_d3_01">Häufigkeit einstellen</string>
-            <string name="ifl_d3_02">Okay</string>
+            <string name="ifl_d3_01">Frequenz festlegen</string>
+            <string name="ifl_d3_02">OK</string>
             <string name="ifl_d4_01">Willkommen</string>
-            <string name="ifl_d4_02">Willkommen bei Instafel, dieser Mod wurde entwickelt, um jedem die neuesten Funktionen auf Instagram zur Verfügung zu stellen basiert auf die Alphaversion\\n\\nDas Menü kann durch Drücken und Halten der Hamburger-Taste auf der Registerkarte Profil aufgerufen werden.</string>
+            <string name="ifl_d4_02">Willkommen bei Instafel! Dieses Mod wurde entwickelt, um allen die neuesten Funktionen der Instagram-Alpha-Versionen bereitzustellen.\\n\\nDas Menü kann durch langes Drücken der Hamburger-Schaltfläche im Profil-Tab geöffnet werden.</string>
             <string name="ifl_t1_01">Beim Öffnen des APK-Installers ist ein Fehler aufgetreten.</string>
-            <string name="ifl_t1_03">Instafel Update fehlgeschlagen.</string>
+            <string name="ifl_t1_03">Instafel-Update fehlgeschlagen.</string>
         </vcategory>
         <vcategory name="strings-hi">
             <string name="ifl_a0_01">बैकअप विकल्प</string>
@@ -436,7 +432,6 @@
             <string name="ifl_a0_06">यह सुविधा अभी तक नहीं जोड़ी गई है</string>
             <string name="ifl_a0_07">क्रैश रिपोर्ट</string>
             <string name="ifl_a0_08">विविध</string>
-            <string name="ifl_a0_09">एमोलेड थीम</string>
             <string name="ifl_a0_10">Instafel की गतिविधियों, डायलॉग्स और अन्य भागों के लिए एमोलेड थीम सक्षम करें।</string>
             <string name="ifl_a0_11">विज्ञापन हटाएं</string>
             <string name="ifl_a0_12">फ़ीड, रील्स या अन्य स्थानों में दिखाए गए विज्ञापनों को हटाता है।</string>
@@ -445,7 +440,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">रूट / शिज़ुकु के साथ स्वचालित अपडेट के लिए Instafel Updater का उपयोग करें।</string>
             <string name="ifl_a10_01">योगदान करने वाले</string>
-            <string name="ifl_a10_02">अनुवाद करने वाले</string>
             <string name="ifl_a11_01">Flags लाइब्रेरी</string>
             <string name="ifl_a11_02">बैकअप लाइब्रेरी</string>
             <string name="ifl_a11_03">API से बैकअप प्राप्त करते समय समस्या आ रही है</string>
@@ -527,18 +521,18 @@
             <string name="ifl_a1_02">InstaFel का वर्ज़न</string>
             <string name="ifl_a1_03">पैकेज के प्रकार</string>
             <string name="ifl_a1_04">project</string>
-            <string name="ifl_a1_05">ड्वेलपर</string>
-            <string name="ifl_a1_06">इस Project में योगदान देने वाले सभी लोग</string>
             <string name="ifl_a1_07">क्लोन</string>
             <string name="ifl_a1_08">अनक्लोन</string>
             <string name="ifl_a1_09">जनरेशन आईडी</string>
             <string name="ifl_a1_10">इंस्टाग्राम का वर्ज़न</string>
-            <string name="ifl_a1_11">InstaFel के अनुवाद में योगदानकर्ता</string>
             <string name="ifl_a1_12">बिल्ड जानकारी</string>
             <string name="ifl_a1_13">पैचर संस्करण</string>
             <string name="ifl_a1_14">लागू किए गए पैच</string>
             <string name="ifl_a1_15">बिल्ड जानकारी विवरण देखें</string>
-            <string name="ifl_a1_17">सोर्स कोड</string>
+            <string name="ifl_a1_18">डेवलपर के बारे में</string>
+            <string name="ifl_a1_19">वेबसाइट</string>
+            <string name="ifl_a1_20">समुदाय से जुड़ें</string>
+            <string name="ifl_a1_21">योगदानकर्ता</string>
             <string name="ifl_a2_01">Instagram के बारे में</string>
             <string name="ifl_a2_02">वर्ज़न</string>
             <string name="ifl_a2_03">वर्ज़न कोड</string>
@@ -649,7 +643,6 @@
             <string name="ifl_a0_06">Este recurso ainda não foi adicionado</string>
             <string name="ifl_a0_07">Relatórios de Falhas</string>
             <string name="ifl_a0_08">Diversos</string>
-            <string name="ifl_a0_09">Tema AMOLED</string>
             <string name="ifl_a0_10">Habilite o tema AMOLED para atividades, diálogos e outras partes do Instafel.</string>
             <string name="ifl_a0_11">Remover anúncios</string>
             <string name="ifl_a0_12">Remove anúncios exibidos no feed, nos reels ou em outros lugares.</string>
@@ -658,7 +651,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">Use o Instafel Updater para atualizações automáticas com Root / Shizuku.</string>
             <string name="ifl_a10_01">Contribuidores</string>
-            <string name="ifl_a10_02">Tradutores</string>
             <string name="ifl_a11_01">Biblioteca de Flags</string>
             <string name="ifl_a11_02">Biblioteca de Backup</string>
             <string name="ifl_a11_03">Erro ao obter backups da API</string>
@@ -740,18 +732,18 @@
             <string name="ifl_a1_02">Versão do Instafel</string>
             <string name="ifl_a1_03">Tipo de Instalação</string>
             <string name="ifl_a1_04">Projeto</string>
-            <string name="ifl_a1_05">Desenvolvedor</string>
-            <string name="ifl_a1_06">Todos que contribuíram para este projeto</string>
             <string name="ifl_a1_07">Clone</string>
             <string name="ifl_a1_08">Unclone</string>
             <string name="ifl_a1_09">ID de Geração</string>
             <string name="ifl_a1_10">Versão do Instagram</string>
-            <string name="ifl_a1_11">Contribuidores para a tradução do Instafel</string>
             <string name="ifl_a1_12">Informações da compilação</string>
             <string name="ifl_a1_13">Versão do patcher</string>
             <string name="ifl_a1_14">Patches aplicados</string>
             <string name="ifl_a1_15">Ver detalhes da compilação</string>
-            <string name="ifl_a1_17">Código-fonte</string>
+            <string name="ifl_a1_18">Sobre o desenvolvedor</string>
+            <string name="ifl_a1_19">Site</string>
+            <string name="ifl_a1_20">Entrar na comunidade</string>
+            <string name="ifl_a1_21">Contribuidores</string>
             <string name="ifl_a2_01">Sobre o Instagram</string>
             <string name="ifl_a2_02">Versão</string>
             <string name="ifl_a2_03">Código da Versão</string>
@@ -862,7 +854,6 @@
             <string name="ifl_a0_06">Bu xüsusiyyət hələ əlavə edilməyib</string>
             <string name="ifl_a0_07">Çöküş Hesabatları</string>
             <string name="ifl_a0_08">Müxtəlif</string>
-            <string name="ifl_a0_09">Amoled Mövzusu</string>
             <string name="ifl_a0_10">Instafel fəaliyyətləri, dialoqlar və digər hissələr üçün amoled mövzusunu aktiv edin.</string>
             <string name="ifl_a0_11">Reklamları Kaldır</string>
             <string name="ifl_a0_12">Feeddə, reelslərdə və ya digər yerlərdə göstərilən reklamları silər.</string>
@@ -871,7 +862,6 @@
             <string name="ifl_a0_15">Instafel Yeniləyicisi</string>
             <string name="ifl_a0_16">Root və Shizuku ilə avtomatik yeniləmələr üçün Instafel Yeniləyicisindən istifadə edin.</string>
             <string name="ifl_a10_01">Töhfələr</string>
-            <string name="ifl_a10_02">Tərcüməçilər</string>
             <string name="ifl_a11_01">Bayraq Kitabxanası</string>
             <string name="ifl_a11_02">Nüxsə Kitabxanası</string>
             <string name="ifl_a11_03">API-dən Nüxsələri alarkən səhv oldu</string>
@@ -949,24 +939,22 @@
             <string name="ifl_a11_75">B2-dən B1-yə fərqlər</string>
             <string name="ifl_a11_76">Silinmiş Bayraq ID-ləri</string>
             <string name="ifl_a11_77">Nüxsələri müqayisə edərkən səhv oldu</string>
-            <string name="ifl_a12_05">İstifadəçi adı və şifrə boş ola bilməz</string>
-            <string name="ifl_a12_06">Zəhmət olmasa server cavabını gözləyin..</string>
             <string name="ifl_a1_01">Instafel Haqqında</string>
             <string name="ifl_a1_02">Instafel Versiyası</string>
             <string name="ifl_a1_03">Quraşdırma Növü</string>
             <string name="ifl_a1_04">Layihə</string>
-            <string name="ifl_a1_05">Tərtibatçı</string>
-            <string name="ifl_a1_06">Bu layihəyə töhfə verən hər kəs</string>
             <string name="ifl_a1_07">Klon</string>
             <string name="ifl_a1_08">Klondan Çıxar</string>
             <string name="ifl_a1_09">Nəsil ID</string>
             <string name="ifl_a1_10">Instagram Versiyası</string>
-            <string name="ifl_a1_11">"Instafel'in tərcüməsinə töhfə verənlər"</string>
             <string name="ifl_a1_12">Build Məlumatı</string>
             <string name="ifl_a1_13">Patcher Versiyası</string>
             <string name="ifl_a1_14">Tətbiq Edilmiş Patch-lər</string>
             <string name="ifl_a1_15">Build məlumatlarının detalları</string>
-            <string name="ifl_a1_17">Mənbə Kodu</string>
+            <string name="ifl_a1_18">Tərtibatçı haqqında</string>
+            <string name="ifl_a1_19">Veb sayt</string>
+            <string name="ifl_a1_20">İcmaya qoşul</string>
+            <string name="ifl_a1_21">Töhfə verənlər</string>
             <string name="ifl_a2_01">Instagram Haqqında</string>
             <string name="ifl_a2_02">Versiya</string>
             <string name="ifl_a2_03">Versiya Kodu</string>
@@ -1052,7 +1040,6 @@
             <string name="ifl_a8_10">Stack Trace</string>
             <string name="ifl_a9_01">Təfərrüatlar</string>
             <string name="ifl_c1_01">Cihazınızda web brauzer tapılmadı</string>
-            <string name="ifl_crash_toast">Instafel çökdü, daha ətraflı məlumat üçün Çökmə Hesabatlarına baxın.</string>
             <string name="ifl_d1_01">Yeni Yeniləmə</string>
             <string name="ifl_d1_02">Instafel v%1$d (Instagram v%2$s) versiyasına yenilənəcək</string>
             <string name="ifl_d1_03">Ləğv et</string>
@@ -1070,18 +1057,228 @@
             <string name="ifl_t1_03">Instafel yeniləməsi baş tutmadı.</string>
         </vcategory>
         <vcategory name="colors">
-            <color name="ifl_background_color">#ff0c0f14</color>
-            <color name="ifl_background_color_amoled">#ff000000</color>
+            <color name="ifl_background_color">#ff000000</color>
             <color name="ifl_background_color_light">#ffffffff</color>
             <color name="ifl_black">#ff212328</color>
             <color name="ifl_sub_line">#ff949494</color>
-            <color name="ifl_sub_line_amoled">#ff949494</color>
             <color name="ifl_sub_line_light">#ff12151b</color>
-            <color name="ifl_tile_color">#ff25282d</color>
-            <color name="ifl_tile_color_amoled">#ff1a1c1f</color>
+            <color name="ifl_tile_color">#ff1a1c1f</color>
             <color name="ifl_tile_color_light">#ffdfdfdf</color>
             <color name="ifl_white">#ffffffff</color>
             <color name="ifl_yellow">#ffffeb3b</color>
+        </vcategory>
+        <vcategory name="strings-pl">
+            <string name="ifl_a0_01">Opcje kopii zapasowej</string>
+            <string name="ifl_a0_02">Aktualizacje</string>
+            <string name="ifl_a0_03">Język</string>
+            <string name="ifl_a0_04">Biblioteka</string>
+            <string name="ifl_a0_05">Informacje</string>
+            <string name="ifl_a0_06">Ta funkcja nie została jeszcze dodana</string>
+            <string name="ifl_a0_07">Raporty o awariach</string>
+            <string name="ifl_a0_08">Różne</string>
+            <string name="ifl_a0_10">Włącz motyw AMOLED dla okien, dialogów i innych elementów Instafela.</string>
+            <string name="ifl_a0_11">Usuń reklamy</string>
+            <string name="ifl_a0_12">Usuwa reklamy wyświetlane w aktualnościach, rolkach lub innych sekcjach.</string>
+            <string name="ifl_a0_13">Uruchom ponownie aplikację, aby zastosować zmiany.</string>
+            <string name="ifl_a0_14">Domyślnie włączone, nie można zmienić.</string>
+            <string name="ifl_a0_15">Instafel Updater</string>
+            <string name="ifl_a0_16">Użyj aplikacji Instafel Updater do automatycznych aktualizacji z rootem i Shizuku</string>
+            <string name="ifl_a10_01">Współtwórcy</string>
+            <string name="ifl_a11_01">Biblioteka flag</string>
+            <string name="ifl_a11_02">Biblioteka kopii zapasowych</string>
+            <string name="ifl_a11_03">Błąd podczas pobierania kopii zapasowych z API</string>
+            <string name="ifl_a11_04">Stworzone przez %1$s</string>
+            <string name="ifl_a11_05">Informacje o kopii zapasowej</string>
+            <string name="ifl_a11_06">Nazwa</string>
+            <string name="ifl_a11_07">Opis</string>
+            <string name="ifl_a11_08">Ostatnia aktualizacja</string>
+            <string name="ifl_a11_09">Dziennik zmian</string>
+            <string name="ifl_a11_10">Zastosuj kopię</string>
+            <string name="ifl_a11_11">Więcej</string>
+            <string name="ifl_a11_12">Włącz autoaktualizacje</string>
+            <string name="ifl_a11_13">Jeśli dostępna będzie nowa wersja kopii zapasowej, zostanie ona zaktualizowana automatycznie</string>
+            <string name="ifl_a11_14">Ta kopia zostanie teraz zastosowana i zaktualizowana, jeśli autoaktualizacja będzie włączona</string>
+            <string name="ifl_a11_15">Kopie zapasowe</string>
+            <string name="ifl_a11_16">O autorze</string>
+            <string name="ifl_a11_17">Błąd podczas pobierania informacji o kopii zapasowej</string>
+            <string name="ifl_a11_18">Zaktualizowano do wersji v%1$s (%2$s)</string>
+            <string name="ifl_a11_19">O autorze</string>
+            <string name="ifl_a11_20">Nazwa autora</string>
+            <string name="ifl_a11_21">Błąd podczas pobierania informacji o autorze</string>
+            <string name="ifl_a11_22">Błąd podczas pobierania pliku kopii zapasowej</string>
+            <string name="ifl_a11_23">Aby włączyć tę opcję, musisz zastosować przynajmniej jedną kopię zapasową z biblioteki</string>
+            <string name="ifl_a11_24">Kopia zapasowa %1$s będzie teraz automatycznie aktualizowana</string>
+            <string name="ifl_a11_25">Autoaktualizacja wyłączona</string>
+            <string name="ifl_a11_26">Błąd podczas aktualizowania kopii</string>
+            <string name="ifl_a11_27">Dziennik zmian kopii</string>
+            <string name="ifl_a11_28">Uruchom ponownie aplikację</string>
+            <string name="ifl_a11_29">Uruchom ponownie później</string>
+            <string name="ifl_a11_30">Błąd podczas przetwarzania pliku kopii zapasowej</string>
+            <string name="ifl_a11_31">Błąd podczas przetwarzania pliku mapowania</string>
+            <string name="ifl_a11_32">Błąd podczas odczytu pliku mapowania Instagrama</string>
+            <string name="ifl_a11_33">Błąd podczas przetwarzania pliku nadpisań</string>
+            <string name="ifl_a11_34">Nie znaleziono pliku mapowania</string>
+            <string name="ifl_a11_35">Błąd podczas porównywania kopii z mapowaniem</string>
+            <string name="ifl_a11_36">Błąd podczas kopiowania zawartości flagi</string>
+            <string name="ifl_a11_37">Błąd podczas rozpoczynania analizy</string>
+            <string name="ifl_a11_38">Wybierz plik</string>
+            <string name="ifl_a11_39">Błąd podczas odczytu pliku kopii zapasowej</string>
+            <string name="ifl_a11_40">Błąd podczas odczytu pliku mapowania</string>
+            <string name="ifl_a11_41">Zaimportowano flagę %1$s z pliku kopii zapasowej</string>
+            <string name="ifl_a11_42">Błąd podczas importu nadpisań z pliku kopii zapasowej</string>
+            <string name="ifl_a11_43">Pomyślnie zaimportowano flagę %1$s</string>
+            <string name="ifl_a11_44">Pomyślnie zaimportowano %1$s</string>
+            <string name="ifl_a11_45">Wersja</string>
+            <string name="ifl_a11_46">Pomyślnie zaimportowano %1$s z flagą %2$s</string>
+            <string name="ifl_a11_47">Wybierz prawidłowy plik kopii zapasowej</string>
+            <string name="ifl_a11_48">Importuj stare kopie zapasowe</string>
+            <string name="ifl_a11_49">Wypełnij wymagane pola.</string>
+            <string name="ifl_a11_50">Wprowadź poprawną nazwę wersji</string>
+            <string name="ifl_a11_51">Eksportuj kopię zapasową</string>
+            <string name="ifl_a11_52">Nazwa kopii zapasowej</string>
+            <string name="ifl_a11_53">Na przykład: Idealna kopia Mami</string>
+            <string name="ifl_a11_54">Nazwa autora</string>
+            <string name="ifl_a11_55">Na przykład: Albert Einstein</string>
+            <string name="ifl_a11_56">Wersja kopii zapasowej</string>
+            <string name="ifl_a11_57">Na przykład: 1.0, 1.0-hotfix itd.</string>
+            <string name="ifl_a11_58">Dziennik zmian</string>
+            <string name="ifl_a11_59">Tutaj możesz wpisać zmiany w kopii zapasowej</string>
+            <string name="ifl_a11_60">Eksportuj kopię zapasową</string>
+            <string name="ifl_a11_61">Importuj stare kopie JSON</string>
+            <string name="ifl_a11_62">Porównywarka kopii zapasowych</string>
+            <string name="ifl_a11_63">Umożliwia pełny import pliku kopii wraz ze wszystkimi flagami</string>
+            <string name="ifl_a11_64">Dodaje do używanego pliku flagi, których nie ma w wybranej kopii.</string>
+            <string name="ifl_a11_65">Ta opcja pozwala importować stare kopie w formacie .json</string>
+            <string name="ifl_a11_66">Wybierz kopię 1</string>
+            <string name="ifl_a11_67">Wybierz kopię 2</string>
+            <string name="ifl_a11_68">Naciśnij, aby wybrać kopię</string>
+            <string name="ifl_a11_69">Porównaj kopie</string>
+            <string name="ifl_a11_70">Błąd podczas rozpoczynania kompresji</string>
+            <string name="ifl_a11_71">Wybrano</string>
+            <string name="ifl_a11_72">Wybierz dwa pliki kopii zapasowej do porównania</string>
+            <string name="ifl_a11_73">Wynik porównania</string>
+            <string name="ifl_a11_74">Różnice K1 względem K2</string>
+            <string name="ifl_a11_75">Różnice K2 względem K1</string>
+            <string name="ifl_a11_76">Usunięte ID flag</string>
+            <string name="ifl_a11_77">Błąd podczas porównywania kopii</string>
+            <string name="ifl_a1_01">O Instafel</string>
+            <string name="ifl_a1_02">Wersja Instafel</string>
+            <string name="ifl_a1_03">Typ instalacji</string>
+            <string name="ifl_a1_04">Projekt</string>
+            <string name="ifl_a1_07">Klon</string>
+            <string name="ifl_a1_08">Oryginał</string>
+            <string name="ifl_a1_09">ID kompilacji</string>
+            <string name="ifl_a1_10">Wersja Instagrama</string>
+            <string name="ifl_a1_12">Informacje o kompilacji</string>
+            <string name="ifl_a1_13">Wersja patchera</string>
+            <string name="ifl_a1_14">Zastosowane poprawki</string>
+            <string name="ifl_a1_15">Zobacz szczegóły kompilacjis</string>
+            <string name="ifl_a1_18">O programiście</string>
+            <string name="ifl_a1_19">Strona internetowa</string>
+            <string name="ifl_a1_20">Dołącz do społeczności</string>
+            <string name="ifl_a1_21">Współtwórcy</string>
+            <string name="ifl_a2_01">O Instagramie</string>
+            <string name="ifl_a2_02">Wersja</string>
+            <string name="ifl_a2_03">Kod wersji</string>
+            <string name="ifl_a2_04">Kanał</string>
+            <string name="ifl_a2_05">Architektura</string>
+            <string name="ifl_a3_01">Informacje</string>
+            <string name="ifl_a4_01">Eksportuj</string>
+            <string name="ifl_a4_02">Importuj</string>
+            <string name="ifl_a4_03">Usuń plik nadpisań</string>
+            <string name="ifl_a4_04">Wybierz ścieżkę zapisu pliku.</string>
+            <string name="ifl_a4_05">Kopia zapasowa została pomyślnie zapisana.</string>
+            <string name="ifl_a4_06">Nie znaleziono pliku nadpisań.</string>
+            <string name="ifl_a4_07">Wystąpił błąd podczas zapisywania kopii zapasowej.</string>
+            <string name="ifl_a4_08">Udostępnij kopię</string>
+            <string name="ifl_a4_09">Wybierz plik do importu.</string>
+            <string name="ifl_a4_10">Kopia została pomyślnie zaimportowana</string>
+            <string name="ifl_a4_11">Nie znaleziono pliku nadpisań.</string>
+            <string name="ifl_a4_12">Wystąpił błąd podczas importowania kopii zapasowej.</string>
+            <string name="ifl_a4_13">Plik nadpisań został pomyślnie usunięty.</string>
+            <string name="ifl_a4_14">Nie znaleziono pliku nadpisań.</string>
+            <string name="ifl_a4_15">Wystąpił błąd podczas importowania kopii zapasowej.</string>
+            <string name="ifl_a4_16">Edytor MobileConfig</string>
+            <string name="ifl_a4_17">Analizator flag</string>
+            <string name="ifl_a4_18">Importuj wszystko</string>
+            <string name="ifl_a4_19">Importuj z scaleniem</string>
+            <string name="ifl_a4_20">Wynik analizy</string>
+            <string name="ifl_a4_21">Użyj własnego pliku mapowania</string>
+            <string name="ifl_a4_22">Pozwala analizować z użyciem własnego pliku mapowania zamiast domyślnego pliku Instagrama</string>
+            <string name="ifl_a4_23">Zgodne flagi</string>
+            <string name="ifl_a4_24">Niezgodne flagi</string>
+            <string name="ifl_a4_25">Szukaj</string>
+            <string name="ifl_a4_26">Importuj nadpisania z kopii zapasowej</string>
+            <string name="ifl_a4_27">Użyj pliku kopii zapasowej zamiast analizowania istniejącego pliku nadpisań</string>
+            <string name="ifl_a4_28">Rozpocznij analizę</string>
+            <string name="ifl_a4_29">Rozpocznij analizę z własną kopią zapasową</string>
+            <string name="ifl_a4_30">Rozpocznij analizę z własnym mapowaniem</string>
+            <string name="ifl_a4_31">Rozpocznij analizę z własną kopią i mapowaniem</string>
+            <string name="ifl_a4_32">Skopiuj surowe mapowanie</string>
+            <string name="ifl_a4_33">Skopiuj przetworzone mapowanie</string>
+            <string name="ifl_a4_34">Plik nadpisań jest uszkodzony lub nie istnieje</string>
+            <string name="ifl_a4_35">Czy na pewno?</string>
+            <string name="ifl_a4_36">Nie można przywrócić usuniętego pliku nadpisań</string>
+            <string name="ifl_a4_37">OK</string>
+            <string name="ifl_a4_38">Anuluj</string>
+            <string name="ifl_a4_39">Błąd podczas odczytu pliku nadpisań.</string>
+            <string name="ifl_a4_40">Pomyślnie wyeksportowano flagę: %1$s</string>
+            <string name="ifl_a4_41">Błąd podczas zapisu zawartości do kopii zapasowej.</string>
+            <string name="ifl_a4_42">Błąd podczas eksportowania kopii zapasowej.</string>
+            <string name="ifl_a5_01">Sprawdź aktualizacje</string>
+            <string name="ifl_a5_02">Ostatnie sprawdzenie: %1$s</string>
+            <string name="ifl_a5_03">Częstotliwość sprawdzania</string>
+            <string name="ifl_a5_05">Nigdy</string>
+            <string name="ifl_a5_06">Włącz aktualizacje</string>
+            <string name="ifl_a5_07">Włącza ustawienia aktualizacji</string>
+            <string name="ifl_a5_08">Pobieranie w tle</string>
+            <string name="ifl_a5_09">Powiadomienie zostanie wysłane po pobraniu aktualizacji w tle</string>
+            <string name="ifl_a5_10">Brak uprawnień</string>
+            <string name="ifl_a5_11">Instafel nie ma uprawnień do wyświetlania powiadomień. Jeśli problem będzie się powtarzał, upewnij się, że powiadomienia są włączone w ustawieniach aplikacji.</string>
+            <string name="ifl_a5_dia_freq_00">Przy każdym uruchomieniu (domyślnie)</string>
+            <string name="ifl_a5_dia_freq_01">Nigdy</string>
+            <string name="ifl_a5_dia_freq_02">Codziennie</string>
+            <string name="ifl_a5_dia_freq_03">Co trzy dni</string>
+            <string name="ifl_a5_dia_freq_04">Co pięć dni</string>
+            <string name="ifl_a5_dia_freq_05">Raz w tygodniu</string>
+            <string name="ifl_a5_sub_freq_00">Ustawione na każde uruchomienie</string>
+            <string name="ifl_a5_sub_freq_01">Ustawione na nigdy</string>
+            <string name="ifl_a5_sub_freq_02">Ustawione na codziennie</string>
+            <string name="ifl_a5_sub_freq_03">Ustawione na co trzy dni</string>
+            <string name="ifl_a5_sub_freq_04">Ustawione na co pięć dni</string>
+            <string name="ifl_a5_sub_freq_05">Ustawione na raz w tygodniu</string>
+            <string name="ifl_a6_01">Użyj języka urządzenia</string>
+            <string name="ifl_a7_01">Raporty</string>
+            <string name="ifl_a7_02">Usuń raporty</string>
+            <string name="ifl_a8_01">Szczegóły</string>
+            <string name="ifl_a8_02">Skopiuj log</string>
+            <string name="ifl_a8_03">Udostępnij log</string>
+            <string name="ifl_a8_04">Informacje o urządzeniu</string>
+            <string name="ifl_a8_05">Wersja Androida</string>
+            <string name="ifl_a8_06">Wersja IG i IFL</string>
+            <string name="ifl_a8_07">Data awarii</string>
+            <string name="ifl_a8_08">Informacje o awarii</string>
+            <string name="ifl_a8_09">Przyczyna</string>
+            <string name="ifl_a8_10">Ślad stosu</string>
+            <string name="ifl_a9_01">Szczegóły</string>
+            <string name="ifl_c1_01">Nie znaleziono przeglądarki na tym urządzeniu</string>
+            <string name="ifl_d1_01">Nowa aktualizacja</string>
+            <string name="ifl_d1_02">Instafel zostanie zaktualizowany do wersji v%1$d (Instagram v%2$s)</string>
+            <string name="ifl_d1_03">Anuluj</string>
+            <string name="ifl_d1_04">Zainstaluj</string>
+            <string name="ifl_d1_05">Ukryj</string>
+            <string name="ifl_d1_06">Łączenie z serwerem aktualizacji</string>
+            <string name="ifl_d2_01">Brak aktualizacji</string>
+            <string name="ifl_d2_02">Instafel jest już w najnowszej wersji.</string>
+            <string name="ifl_d2_03">OK</string>
+            <string name="ifl_d3_01">Ustaw częstotliwość</string>
+            <string name="ifl_d3_02">OK</string>
+            <string name="ifl_d4_01">Witamy</string>
+            <string name="ifl_d4_02">"Witamy w Instafel! Ten mod został stworzony, aby zapewnić wszystkim dostęp do najnowszych funkcji z wersji alpha Instagrama.
+
+Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na karcie profilu."</string>
+            <string name="ifl_t1_01">Wystąpił błąd podczas otwierania instalatora APK.</string>
+            <string name="ifl_t1_03">Aktualizacja Instafel nie powiodła się.</string>
         </vcategory>
         <vcategory name="attrs">
             <attr format="color" name="ifl_attr_background_color"/>
@@ -1090,7 +1287,6 @@
             <attr format="color" name="ifl_attr_tile_color"/>
             <attr format="color" name="ifl_attr_title_color"/>
             <attr format="string" name="ifl_attr_ui_enableIcon"/>
-            <attr format="boolean" name="ifl_attr_ui_enableStartPadding"/>
             <attr format="string" name="ifl_attr_ui_enableSubIcon"/>
             <attr format="integer" name="ifl_attr_ui_iconPadding"/>
             <attr format="reference" name="ifl_attr_ui_iconRes"/>
@@ -1110,7 +1306,6 @@
             <string name="ifl_a0_06">Esta función todavía no ha sido agregada</string>
             <string name="ifl_a0_07">Reporte de fallos</string>
             <string name="ifl_a0_08">Misceláneos</string>
-            <string name="ifl_a0_09">Tema Amoled</string>
             <string name="ifl_a0_10">Habilite el tema Amoled para las actividades, diálogos y otras partes de Instafel.</string>
             <string name="ifl_a0_11">Remover anuncios</string>
             <string name="ifl_a0_12">Elimina los anuncios que se muestran en el feed, reels u otros lugares.</string>
@@ -1119,7 +1314,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">Usa Instafel Updater para actualizaciones automáticas con Root / Shizuku.</string>
             <string name="ifl_a10_01">Contribuyentes</string>
-            <string name="ifl_a10_02">Traductores</string>
             <string name="ifl_a11_01">Flag Library</string>
             <string name="ifl_a11_02">Backup Library</string>
             <string name="ifl_a11_03">Error al obtener copias de seguridad desde la API</string>
@@ -1201,18 +1395,18 @@
             <string name="ifl_a1_02">Versión de Instafel</string>
             <string name="ifl_a1_03">Tipo de instalación</string>
             <string name="ifl_a1_04">Proyecto</string>
-            <string name="ifl_a1_05">Desarrollador</string>
-            <string name="ifl_a1_06">Todos los que contribuyeron a este proyecto</string>
             <string name="ifl_a1_07">Clon</string>
             <string name="ifl_a1_08">No clon</string>
             <string name="ifl_a1_09">ID de Generación</string>
             <string name="ifl_a1_10">Versión de Instagram</string>
-            <string name="ifl_a1_11">Contribuidores a la traducción de Instafel</string>
             <string name="ifl_a1_12">Información de compilación</string>
             <string name="ifl_a1_13">Versión del parcheador</string>
             <string name="ifl_a1_14">Parches aplicados</string>
             <string name="ifl_a1_15">Ver detalles de la compilación</string>
-            <string name="ifl_a1_17">Código fuente</string>
+            <string name="ifl_a1_18">Acerca del desarrollador</string>
+            <string name="ifl_a1_19">Sitio web</string>
+            <string name="ifl_a1_20">Unirse a la comunidad</string>
+            <string name="ifl_a1_21">Colaboradores</string>
             <string name="ifl_a2_01">Sobre Instagram</string>
             <string name="ifl_a2_02">Versión</string>
             <string name="ifl_a2_03">Código de versión</string>
@@ -1323,7 +1517,6 @@
             <string name="ifl_a0_06">Ez a funkció még nem került hozzáadásra</string>
             <string name="ifl_a0_07">Összeomlás jelentések</string>
             <string name="ifl_a0_08">Egyéb</string>
-            <string name="ifl_a0_09">Amoled Téma</string>
             <string name="ifl_a0_10">Engedélyezi az amoled témát az Instafel tevékenységek, párbeszédpanelek és egyéb részek számára.</string>
             <string name="ifl_a0_11">Hirdetések eltávolítása</string>
             <string name="ifl_a0_12">Eltávolítja a hírfolyamban, a rövidvideóknál vagy más helyeken megjelenő hirdetéseket.</string>
@@ -1332,7 +1525,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">Használja az Instafel Updater-t automatikus frissítésekhez Root / Shizuku segítségével.</string>
             <string name="ifl_a10_01">Közreműködők</string>
-            <string name="ifl_a10_02">Fordítók</string>
             <string name="ifl_a11_01">Jelzés könyvtár</string>
             <string name="ifl_a11_02">Mentés könyvtár</string>
             <string name="ifl_a11_03">Hiba a biztonsági mentések API-ból történő lekérése közben</string>
@@ -1414,18 +1606,18 @@
             <string name="ifl_a1_02">Instafel Verzió</string>
             <string name="ifl_a1_03">Telepítés típusa</string>
             <string name="ifl_a1_04">Projekt</string>
-            <string name="ifl_a1_05">Fejlesztő</string>
-            <string name="ifl_a1_06">Mindenki, aki hozzájárult ehhez a projekthez</string>
             <string name="ifl_a1_07">Klónozott</string>
             <string name="ifl_a1_08">Nem klónozott</string>
             <string name="ifl_a1_09">Generáció ID</string>
             <string name="ifl_a1_10">Instagram Verzió</string>
-            <string name="ifl_a1_11">Az Instafel fordításához hozzájárultak</string>
             <string name="ifl_a1_12">Build információ</string>
             <string name="ifl_a1_13">Patcher Verzió</string>
             <string name="ifl_a1_14">Alkalmazott javítások</string>
             <string name="ifl_a1_15">Build részleteinek megtekintése</string>
-            <string name="ifl_a1_17">Forráskód</string>
+            <string name="ifl_a1_18">A fejlesztőről</string>
+            <string name="ifl_a1_19">Weboldal</string>
+            <string name="ifl_a1_20">Csatlakozás a közösséghez</string>
+            <string name="ifl_a1_21">Közreműködők</string>
             <string name="ifl_a2_01">Instagram-ról</string>
             <string name="ifl_a2_02">Verzió</string>
             <string name="ifl_a2_03">Verzió kódja</string>
@@ -1534,7 +1726,6 @@
             <public name="ifl_attr_tile_color" type="attr"/>
             <public name="ifl_attr_title_color" type="attr"/>
             <public name="ifl_attr_ui_enableIcon" type="attr"/>
-            <public name="ifl_attr_ui_enableStartPadding" type="attr"/>
             <public name="ifl_attr_ui_enableSubIcon" type="attr"/>
             <public name="ifl_attr_ui_iconPadding" type="attr"/>
             <public name="ifl_attr_ui_iconRes" type="attr"/>
@@ -1545,21 +1736,17 @@
             <public name="ifl_attr_ui_subtitleText" type="attr"/>
             <public name="ifl_attr_ui_titleText" type="attr"/>
             <public name="ifl_background_color" type="color"/>
-            <public name="ifl_background_color_amoled" type="color"/>
             <public name="ifl_background_color_light" type="color"/>
             <public name="ifl_black" type="color"/>
             <public name="ifl_sub_line" type="color"/>
-            <public name="ifl_sub_line_amoled" type="color"/>
             <public name="ifl_sub_line_light" type="color"/>
             <public name="ifl_tile_color" type="color"/>
-            <public name="ifl_tile_color_amoled" type="color"/>
             <public name="ifl_tile_color_light" type="color"/>
             <public name="ifl_white" type="color"/>
             <public name="ifl_yellow" type="color"/>
             <public name="ifl_about" type="drawable"/>
             <public name="ifl_action" type="drawable"/>
             <public name="ifl_admin" type="drawable"/>
-            <public name="ifl_amoled_theme" type="drawable"/>
             <public name="ifl_android" type="drawable"/>
             <public name="ifl_applied_patches" type="drawable"/>
             <public name="ifl_approve_backup" type="drawable"/>
@@ -1603,6 +1790,7 @@
             <public name="ifl_flag_fr" type="drawable"/>
             <public name="ifl_flag_hi" type="drawable"/>
             <public name="ifl_flag_hu" type="drawable"/>
+            <public name="ifl_flag_pl" type="drawable"/>
             <public name="ifl_flag_pt" type="drawable"/>
             <public name="ifl_flag_tr" type="drawable"/>
             <public name="ifl_flag_us" type="drawable"/>
@@ -1654,38 +1842,30 @@
             <public name="ifl_developer_title" type="id"/>
             <public name="ifl_developer_title_2" type="id"/>
             <public name="ifl_dg_button_negative" type="id"/>
-            <public name="ifl_dg_button_negative2" type="id"/>
             <public name="ifl_dg_button_okay" type="id"/>
             <public name="ifl_dg_button_pozitive" type="id"/>
             <public name="ifl_dialog_desc" type="id"/>
-            <public name="ifl_dialog_negative_title" type="id"/>
-            <public name="ifl_dialog_negative_title2" type="id"/>
-            <public name="ifl_dialog_positive_title" type="id"/>
             <public name="ifl_dialog_spinner" type="id"/>
             <public name="ifl_dialog_title" type="id"/>
-            <public name="ifl_dialog_title3" type="id"/>
-            <public name="ifl_downloadbar" type="id"/>
             <public name="ifl_edittext" type="id"/>
             <public name="ifl_flag_editText" type="id"/>
             <public name="ifl_flags_layout" type="id"/>
             <public name="ifl_homepageHeader" type="id"/>
+            <public name="ifl_languages_layout" type="id"/>
             <public name="ifl_loading_area" type="id"/>
             <public name="ifl_loading_page" type="id"/>
             <public name="ifl_logs_layout" type="id"/>
             <public name="ifl_page1" type="id"/>
-            <public name="ifl_page2" type="id"/>
-            <public name="ifl_page3" type="id"/>
             <public name="ifl_page_area" type="id"/>
             <public name="ifl_page_area_backup" type="id"/>
             <public name="ifl_page_area_edit" type="id"/>
             <public name="ifl_page_title" type="id"/>
             <public name="ifl_prefs_layout" type="id"/>
             <public name="ifl_search_layout" type="id"/>
-            <public name="ifl_size" type="id"/>
             <public name="ifl_start_analyze" type="id"/>
             <public name="ifl_start_compare" type="id"/>
-            <public name="ifl_status" type="id"/>
             <public name="ifl_text_button" type="id"/>
+            <public name="ifl_tile_about_dev" type="id"/>
             <public name="ifl_tile_admin_action_export_mapping" type="id"/>
             <public name="ifl_tile_admin_action_logout" type="id"/>
             <public name="ifl_tile_admin_action_sharedpref_manager" type="id"/>
@@ -1722,18 +1902,6 @@
             <public name="ifl_tile_crashviewer_msg" type="id"/>
             <public name="ifl_tile_crashviewer_share" type="id"/>
             <public name="ifl_tile_crashviewer_stacktrace" type="id"/>
-            <public name="ifl_tile_ct01" type="id"/>
-            <public name="ifl_tile_ct02" type="id"/>
-            <public name="ifl_tile_ct03" type="id"/>
-            <public name="ifl_tile_ct05" type="id"/>
-            <public name="ifl_tile_ct07" type="id"/>
-            <public name="ifl_tile_ct08" type="id"/>
-            <public name="ifl_tile_ct09" type="id"/>
-            <public name="ifl_tile_ct11" type="id"/>
-            <public name="ifl_tile_ct12" type="id"/>
-            <public name="ifl_tile_ct13" type="id"/>
-            <public name="ifl_tile_ct14" type="id"/>
-            <public name="ifl_tile_developer" type="id"/>
             <public name="ifl_tile_exp_analyzer" type="id"/>
             <public name="ifl_tile_exp_comperator" type="id"/>
             <public name="ifl_tile_exp_develeov" type="id"/>
@@ -1751,22 +1919,8 @@
             <public name="ifl_tile_import_merge" type="id"/>
             <public name="ifl_tile_import_old_backups" type="id"/>
             <public name="ifl_tile_installation_type" type="id"/>
-            <public name="ifl_tile_lang_azerbaijan" type="id"/>
-            <public name="ifl_tile_lang_deutch" type="id"/>
+            <public name="ifl_tile_join_community" type="id"/>
             <public name="ifl_tile_lang_device" type="id"/>
-            <public name="ifl_tile_lang_english" type="id"/>
-            <public name="ifl_tile_lang_espanol" type="id"/>
-            <public name="ifl_tile_lang_france" type="id"/>
-            <public name="ifl_tile_lang_greece" type="id"/>
-            <public name="ifl_tile_lang_hindi" type="id"/>
-            <public name="ifl_tile_lang_hungary" type="id"/>
-            <public name="ifl_tile_lang_indian" type="id"/>
-            <public name="ifl_tile_lang_john" type="id"/>
-            <public name="ifl_tile_lang_munir" type="id"/>
-            <public name="ifl_tile_lang_portugal" type="id"/>
-            <public name="ifl_tile_lang_spanish" type="id"/>
-            <public name="ifl_tile_lang_turkish" type="id"/>
-            <public name="ifl_tile_lang_zan" type="id"/>
             <public name="ifl_tile_menu_about" type="id"/>
             <public name="ifl_tile_menu_adminmenu" type="id"/>
             <public name="ifl_tile_menu_crashlogs" type="id"/>
@@ -1776,7 +1930,6 @@
             <public name="ifl_tile_menu_misc" type="id"/>
             <public name="ifl_tile_menu_ota" type="id"/>
             <public name="ifl_tile_menu_sections" type="id"/>
-            <public name="ifl_tile_misc_amoled" type="id"/>
             <public name="ifl_tile_ota_background_download" type="id"/>
             <public name="ifl_tile_ota_check" type="id"/>
             <public name="ifl_tile_ota_enable_updates" type="id"/>
@@ -1787,10 +1940,9 @@
             <public name="ifl_tile_selectbackupfile" type="id"/>
             <public name="ifl_tile_setchangelog" type="id"/>
             <public name="ifl_tile_setversionname" type="id"/>
-            <public name="ifl_tile_source_code" type="id"/>
-            <public name="ifl_tile_translators" type="id"/>
             <public name="ifl_tile_use_custom_mapping" type="id"/>
             <public name="ifl_tile_use_custom_override" type="id"/>
+            <public name="ifl_tile_website" type="id"/>
             <public name="ifl_tiles_about" type="id"/>
             <public name="ifl_tiles_chat" type="id"/>
             <public name="ifl_tiles_github" type="id"/>
@@ -1811,8 +1963,6 @@
             <public name="ifl_ui_text" type="id"/>
             <public name="ifl_ui_title" type="id"/>
             <public name="ifl_at_about" type="layout"/>
-            <public name="ifl_at_about_contributors" type="layout"/>
-            <public name="ifl_at_about_translators" type="layout"/>
             <public name="ifl_at_admin_action_approvepreview" type="layout"/>
             <public name="ifl_at_admin_action_pref_manager" type="layout"/>
             <public name="ifl_at_admin_action_updatebackup" type="layout"/>
@@ -1836,14 +1986,8 @@
             <public name="ifl_at_menu" type="layout"/>
             <public name="ifl_at_misc" type="layout"/>
             <public name="ifl_at_ota" type="layout"/>
-            <public name="ifl_dg_ota_found_dark" type="layout"/>
-            <public name="ifl_dg_ota_found_light" type="layout"/>
             <public name="ifl_dg_ota_set_freq" type="layout"/>
             <public name="ifl_dg_ota_uptodate" type="layout"/>
-            <public name="ifl_dg_welcome_dark" type="layout"/>
-            <public name="ifl_dg_welcome_light" type="layout"/>
-            <public name="ifl_exampledialog" type="layout"/>
-            <public name="ifl_ui_loadingbar" type="layout"/>
             <public name="ifl_ui_page" type="layout"/>
             <public name="ifl_ui_pagecontentarea" type="layout"/>
             <public name="ifl_ui_pagetitle" type="layout"/>
@@ -1861,7 +2005,6 @@
             <public name="ifl_a0_06" type="string"/>
             <public name="ifl_a0_07" type="string"/>
             <public name="ifl_a0_08" type="string"/>
-            <public name="ifl_a0_09" type="string"/>
             <public name="ifl_a0_10" type="string"/>
             <public name="ifl_a0_11" type="string"/>
             <public name="ifl_a0_12" type="string"/>
@@ -1870,7 +2013,6 @@
             <public name="ifl_a0_15" type="string"/>
             <public name="ifl_a0_16" type="string"/>
             <public name="ifl_a10_01" type="string"/>
-            <public name="ifl_a10_02" type="string"/>
             <public name="ifl_a11_01" type="string"/>
             <public name="ifl_a11_02" type="string"/>
             <public name="ifl_a11_03" type="string"/>
@@ -1954,18 +2096,18 @@
             <public name="ifl_a1_02" type="string"/>
             <public name="ifl_a1_03" type="string"/>
             <public name="ifl_a1_04" type="string"/>
-            <public name="ifl_a1_05" type="string"/>
-            <public name="ifl_a1_06" type="string"/>
             <public name="ifl_a1_07" type="string"/>
             <public name="ifl_a1_08" type="string"/>
             <public name="ifl_a1_09" type="string"/>
             <public name="ifl_a1_10" type="string"/>
-            <public name="ifl_a1_11" type="string"/>
             <public name="ifl_a1_12" type="string"/>
             <public name="ifl_a1_13" type="string"/>
             <public name="ifl_a1_14" type="string"/>
             <public name="ifl_a1_15" type="string"/>
-            <public name="ifl_a1_17" type="string"/>
+            <public name="ifl_a1_18" type="string"/>
+            <public name="ifl_a1_19" type="string"/>
+            <public name="ifl_a1_20" type="string"/>
+            <public name="ifl_a1_21" type="string"/>
             <public name="ifl_a2_01" type="string"/>
             <public name="ifl_a2_02" type="string"/>
             <public name="ifl_a2_03" type="string"/>
@@ -2067,7 +2209,6 @@
             <public name="ifl_d4_02" type="string"/>
             <public name="ifl_t1_01" type="string"/>
             <public name="ifl_t1_03" type="string"/>
-            <public name="ifl_theme_amoled" type="style"/>
             <public name="ifl_theme_dark" type="style"/>
             <public name="ifl_theme_light" type="style"/>
         </vcategory>
@@ -2080,7 +2221,6 @@
             <string name="ifl_a0_06">This feature has not been added yet</string>
             <string name="ifl_a0_07">Crash Reports</string>
             <string name="ifl_a0_08">Miscellaneous</string>
-            <string name="ifl_a0_09">Amoled Theme</string>
             <string name="ifl_a0_10">Enable amoled theme for Instafel activities, dialogs and other parts.</string>
             <string name="ifl_a0_11">Remove Ads</string>
             <string name="ifl_a0_12">Removes ads displayed in the feed, reels, or other places.</string>
@@ -2089,7 +2229,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">Use Instafel Updater for automatic updates with Root and Shizuku</string>
             <string name="ifl_a10_01">Contributors</string>
-            <string name="ifl_a10_02">Translators</string>
             <string name="ifl_a11_01">Flag Library</string>
             <string name="ifl_a11_02">Backup Library</string>
             <string name="ifl_a11_03">Error while getting backups from API</string>
@@ -2173,18 +2312,18 @@
             <string name="ifl_a1_02">Instafel Version</string>
             <string name="ifl_a1_03">Installation Type</string>
             <string name="ifl_a1_04">Project</string>
-            <string name="ifl_a1_05">Developer</string>
-            <string name="ifl_a1_06">Everyone that contributed to this project</string>
             <string name="ifl_a1_07">Clone</string>
             <string name="ifl_a1_08">Unclone</string>
             <string name="ifl_a1_09">Generation ID</string>
             <string name="ifl_a1_10">Instagram Version</string>
-            <string name="ifl_a1_11">Contributors to the translation of Instafel</string>
             <string name="ifl_a1_12">Build Information</string>
             <string name="ifl_a1_13">Patcher Version</string>
             <string name="ifl_a1_14">Applied Patches</string>
             <string name="ifl_a1_15">See build info details</string>
-            <string name="ifl_a1_17">Source Code</string>
+            <string name="ifl_a1_18">About Developer</string>
+            <string name="ifl_a1_19">Website</string>
+            <string name="ifl_a1_20">Join Community</string>
+            <string name="ifl_a1_21">Contributors</string>
             <string name="ifl_a2_01">About Instagram</string>
             <string name="ifl_a2_02">Version</string>
             <string name="ifl_a2_03">Version Code</string>
@@ -2288,32 +2427,30 @@
             <string name="ifl_t1_03">Instafel update failed.</string>
         </vcategory>
         <vcategory name="activities">
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_menu"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_ota"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_language"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_misc"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_about"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_build_info"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.comparator.ifl_a_devmode_backup_comparator"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.backup.ifl_a_export_backup"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_misc"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.ifl_a_devmode"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.ifl_a_devmode_import"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_viewer"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_about_contributors"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_reports"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_about_translators"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_viewer"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_reports"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.ifl_a_library_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_login"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_dashboard"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup_info"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup_info_author"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_login"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_dashboard"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_action_updatebackup"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_action_approvepreview"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_pref_manager"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_ota"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_language"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.ifl_a_devmode"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_about"/>
         </vcategory>
         <vcategory name="ids">
             <item name="ifl_about_title" type="id"/>
@@ -2327,38 +2464,30 @@
             <item name="ifl_developer_title" type="id"/>
             <item name="ifl_developer_title_2" type="id"/>
             <item name="ifl_dg_button_negative" type="id"/>
-            <item name="ifl_dg_button_negative2" type="id"/>
             <item name="ifl_dg_button_okay" type="id"/>
             <item name="ifl_dg_button_pozitive" type="id"/>
             <item name="ifl_dialog_desc" type="id"/>
-            <item name="ifl_dialog_negative_title" type="id"/>
-            <item name="ifl_dialog_negative_title2" type="id"/>
-            <item name="ifl_dialog_positive_title" type="id"/>
             <item name="ifl_dialog_spinner" type="id"/>
             <item name="ifl_dialog_title" type="id"/>
-            <item name="ifl_dialog_title3" type="id"/>
-            <item name="ifl_downloadbar" type="id"/>
             <item name="ifl_edittext" type="id"/>
             <item name="ifl_flag_editText" type="id"/>
             <item name="ifl_flags_layout" type="id"/>
             <item name="ifl_homepageHeader" type="id"/>
+            <item name="ifl_languages_layout" type="id"/>
             <item name="ifl_loading_area" type="id"/>
             <item name="ifl_loading_page" type="id"/>
             <item name="ifl_logs_layout" type="id"/>
             <item name="ifl_page1" type="id"/>
-            <item name="ifl_page2" type="id"/>
-            <item name="ifl_page3" type="id"/>
             <item name="ifl_page_area" type="id"/>
             <item name="ifl_page_area_backup" type="id"/>
             <item name="ifl_page_area_edit" type="id"/>
             <item name="ifl_page_title" type="id"/>
             <item name="ifl_prefs_layout" type="id"/>
             <item name="ifl_search_layout" type="id"/>
-            <item name="ifl_size" type="id"/>
             <item name="ifl_start_analyze" type="id"/>
             <item name="ifl_start_compare" type="id"/>
-            <item name="ifl_status" type="id"/>
             <item name="ifl_text_button" type="id"/>
+            <item name="ifl_tile_about_dev" type="id"/>
             <item name="ifl_tile_admin_action_export_mapping" type="id"/>
             <item name="ifl_tile_admin_action_logout" type="id"/>
             <item name="ifl_tile_admin_action_sharedpref_manager" type="id"/>
@@ -2395,18 +2524,6 @@
             <item name="ifl_tile_crashviewer_msg" type="id"/>
             <item name="ifl_tile_crashviewer_share" type="id"/>
             <item name="ifl_tile_crashviewer_stacktrace" type="id"/>
-            <item name="ifl_tile_ct01" type="id"/>
-            <item name="ifl_tile_ct02" type="id"/>
-            <item name="ifl_tile_ct03" type="id"/>
-            <item name="ifl_tile_ct05" type="id"/>
-            <item name="ifl_tile_ct07" type="id"/>
-            <item name="ifl_tile_ct08" type="id"/>
-            <item name="ifl_tile_ct09" type="id"/>
-            <item name="ifl_tile_ct11" type="id"/>
-            <item name="ifl_tile_ct12" type="id"/>
-            <item name="ifl_tile_ct13" type="id"/>
-            <item name="ifl_tile_ct14" type="id"/>
-            <item name="ifl_tile_developer" type="id"/>
             <item name="ifl_tile_exp_analyzer" type="id"/>
             <item name="ifl_tile_exp_comperator" type="id"/>
             <item name="ifl_tile_exp_develeov" type="id"/>
@@ -2424,22 +2541,8 @@
             <item name="ifl_tile_import_merge" type="id"/>
             <item name="ifl_tile_import_old_backups" type="id"/>
             <item name="ifl_tile_installation_type" type="id"/>
-            <item name="ifl_tile_lang_azerbaijan" type="id"/>
-            <item name="ifl_tile_lang_deutch" type="id"/>
+            <item name="ifl_tile_join_community" type="id"/>
             <item name="ifl_tile_lang_device" type="id"/>
-            <item name="ifl_tile_lang_english" type="id"/>
-            <item name="ifl_tile_lang_espanol" type="id"/>
-            <item name="ifl_tile_lang_france" type="id"/>
-            <item name="ifl_tile_lang_greece" type="id"/>
-            <item name="ifl_tile_lang_hindi" type="id"/>
-            <item name="ifl_tile_lang_hungary" type="id"/>
-            <item name="ifl_tile_lang_indian" type="id"/>
-            <item name="ifl_tile_lang_john" type="id"/>
-            <item name="ifl_tile_lang_munir" type="id"/>
-            <item name="ifl_tile_lang_portugal" type="id"/>
-            <item name="ifl_tile_lang_spanish" type="id"/>
-            <item name="ifl_tile_lang_turkish" type="id"/>
-            <item name="ifl_tile_lang_zan" type="id"/>
             <item name="ifl_tile_menu_about" type="id"/>
             <item name="ifl_tile_menu_adminmenu" type="id"/>
             <item name="ifl_tile_menu_crashlogs" type="id"/>
@@ -2449,7 +2552,6 @@
             <item name="ifl_tile_menu_misc" type="id"/>
             <item name="ifl_tile_menu_ota" type="id"/>
             <item name="ifl_tile_menu_sections" type="id"/>
-            <item name="ifl_tile_misc_amoled" type="id"/>
             <item name="ifl_tile_ota_background_download" type="id"/>
             <item name="ifl_tile_ota_check" type="id"/>
             <item name="ifl_tile_ota_enable_updates" type="id"/>
@@ -2460,10 +2562,9 @@
             <item name="ifl_tile_selectbackupfile" type="id"/>
             <item name="ifl_tile_setchangelog" type="id"/>
             <item name="ifl_tile_setversionname" type="id"/>
-            <item name="ifl_tile_source_code" type="id"/>
-            <item name="ifl_tile_translators" type="id"/>
             <item name="ifl_tile_use_custom_mapping" type="id"/>
             <item name="ifl_tile_use_custom_override" type="id"/>
+            <item name="ifl_tile_website" type="id"/>
             <item name="ifl_tiles_about" type="id"/>
             <item name="ifl_tiles_chat" type="id"/>
             <item name="ifl_tiles_github" type="id"/>
@@ -2485,20 +2586,6 @@
             <item name="ifl_ui_title" type="id"/>
         </vcategory>
         <vcategory name="styles">
-            <style name="ifl_theme_amoled" parent="@style/ifl_theme_light">
-                        
-                <item name="ifl_attr_background_color">@color/ifl_background_color_amoled</item>
-                        
-                <item name="ifl_attr_iview_tint">@color/ifl_white</item>
-                        
-                <item name="ifl_attr_subtitle_color">@color/ifl_sub_line_amoled</item>
-                        
-                <item name="ifl_attr_tile_color">@color/ifl_tile_color_amoled</item>
-                        
-                <item name="ifl_attr_title_color">@color/ifl_white</item>
-                    
-                <item name="igds_color_link">@color/ifl_white</item>
-            </style>
             <style name="ifl_theme_dark" parent="@style/ifl_theme_light">
                         
                 <item name="ifl_attr_background_color">@color/ifl_background_color</item>
@@ -2537,7 +2624,6 @@
             <string name="ifl_a0_06">Αυτή η λειτουργία δεν είναι διαθέσιμη ακόμα.</string>
             <string name="ifl_a0_07">Αναφορές Σφαλμάτων</string>
             <string name="ifl_a0_08">Διάφορα</string>
-            <string name="ifl_a0_09">Κατάμαυρη εμφάνιση</string>
             <string name="ifl_a0_10">Ενεργοποίηση κατάμαυρης εμφάνισης για δραστηριότητες, διαλόγους και άλλα μέρη μέσα στο μενού του Instafel.</string>
             <string name="ifl_a0_11">Αφαίρεση διαφημίσεων</string>
             <string name="ifl_a0_12">Αφαίρεση των διαφημίσεων στη ροή, στα Reels και άλλα μέρη.</string>
@@ -2546,7 +2632,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">Χρησιμοποιήστε το Instafel Updater για αυτόματες ενημερώσεις με Root / Shizuku.</string>
             <string name="ifl_a10_01">Συνεισφέροντες</string>
-            <string name="ifl_a10_02">Μεταφραστές</string>
             <string name="ifl_a11_01">Βιβλιοθήκη σημαιών</string>
             <string name="ifl_a11_02">Βιβλιοθήκη αντιγράφων ρυθμίσεων</string>
             <string name="ifl_a11_03">Σφάλμα κατά τη φόρτωση των αντιγράφων ρυθμίσεων από το API</string>
@@ -2628,18 +2713,18 @@
             <string name="ifl_a1_02">Έκδοση Instafel</string>
             <string name="ifl_a1_03">Μέθοδος Εγκατάστασης</string>
             <string name="ifl_a1_04">Έργο</string>
-            <string name="ifl_a1_05">Προγραμματιστής</string>
-            <string name="ifl_a1_06">Όσοι συνείσφεραν στο έργο</string>
             <string name="ifl_a1_07">Κλώνος</string>
             <string name="ifl_a1_08">Απόκλωνος</string>
             <string name="ifl_a1_09">ID Παραγωγής</string>
             <string name="ifl_a1_10">Έκδοση Instagram</string>
-            <string name="ifl_a1_11">Συνεισφέροντες στη μετάφραση του Instafel</string>
             <string name="ifl_a1_12">Πληροφορίες κατασκευής</string>
             <string name="ifl_a1_13">Έκδοση Patcher</string>
             <string name="ifl_a1_14">Εφαρμοσμένα patches</string>
             <string name="ifl_a1_15">Δείτε λεπτομέρειες κατασκευής</string>
-            <string name="ifl_a1_17">Πηγαίος κώδικας</string>
+            <string name="ifl_a1_18">Σχετικά με τον προγραμματιστή</string>
+            <string name="ifl_a1_19">Ιστότοπος</string>
+            <string name="ifl_a1_20">Συμμετοχή στην κοινότητα</string>
+            <string name="ifl_a1_21">Συντελεστές</string>
             <string name="ifl_a2_01">Σχετικά με το Instafel</string>
             <string name="ifl_a2_02">Έκδοση</string>
             <string name="ifl_a2_03">Κωδικός έκδοσης</string>
@@ -2753,7 +2838,6 @@
             <string name="ifl_a0_06">"Cette fonctionnalité n'a pas encore été ajoutée"</string>
             <string name="ifl_a0_07">"Rapports d'incidents"</string>
             <string name="ifl_a0_08">Divers</string>
-            <string name="ifl_a0_09">Thème Amoled</string>
             <string name="ifl_a0_10">"Activez le thème Amoled pour les activités, les dialogues et d'autres parties d'Instafel."</string>
             <string name="ifl_a0_11">Supprimer les publicités</string>
             <string name="ifl_a0_12">"Supprime les publicités affichées dans le fil d'actualité, les reels ou d'autres endroits."</string>
@@ -2762,7 +2846,6 @@
             <string name="ifl_a0_15">Instafel Updater</string>
             <string name="ifl_a0_16">Utilisez Instafel Updater pour les mises à jour automatiques avec Root / Shizuku.</string>
             <string name="ifl_a10_01">Contributeurs</string>
-            <string name="ifl_a10_02">Traducteurs</string>
             <string name="ifl_a11_01">Bibliothèque de drapeaux</string>
             <string name="ifl_a11_02">Bibliothèque de sauvegarde</string>
             <string name="ifl_a11_03">"Erreur lors de l'obtention des sauvegardes de l'API"</string>
@@ -2844,18 +2927,18 @@
             <string name="ifl_a1_02">Version Instagram</string>
             <string name="ifl_a1_03">"Type d'installation"</string>
             <string name="ifl_a1_04">Projet</string>
-            <string name="ifl_a1_05">Développeur</string>
-            <string name="ifl_a1_06">Everyone that contributed to this project</string>
             <string name="ifl_a1_07">Cloner</string>
             <string name="ifl_a1_08">Décloner</string>
             <string name="ifl_a1_09">ID de génération</string>
             <string name="ifl_a1_10">Version Instagram</string>
-            <string name="ifl_a1_11">Contributeurs à la traduction d’Instafel</string>
             <string name="ifl_a1_12">Informations de compilation</string>
             <string name="ifl_a1_13">Version du correctif</string>
             <string name="ifl_a1_14">Correctifs appliqués</string>
             <string name="ifl_a1_15">Voir les détails de la compilation</string>
-            <string name="ifl_a1_17">Code source</string>
+            <string name="ifl_a1_18">À propos du développeur</string>
+            <string name="ifl_a1_19">Site web</string>
+            <string name="ifl_a1_20">Rejoindre la communauté</string>
+            <string name="ifl_a1_21">Contributeurs</string>
             <string name="ifl_a2_01">"À propos d'Instagram"</string>
             <string name="ifl_a2_02">Version</string>
             <string name="ifl_a2_03">Code de version</string>
