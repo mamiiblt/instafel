@@ -154,7 +154,7 @@ export default function Footer() {
                 <div className="flex items-center gap-4">
                   <motion.a
                     whileHover={{ y: -3 }}
-                    href="https://mamiiblt.me/about"
+                    href="https://mamii.me/about"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                     aria-label="About Developer"
                     target="_blank"

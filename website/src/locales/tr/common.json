@@ -5,7 +5,8 @@
       "flags": "Bayraklar",
       "updater": "Güncelleyici",
       "src_code": "Kaynak Kodu",
-      "download": "İndir"
+      "download": "İndir",
+      "contributors": "Katılımcılar"
     },
     "1": "Görünüm",
     "2": "Aydınlık",

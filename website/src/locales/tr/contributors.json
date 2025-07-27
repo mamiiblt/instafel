@@ -1,0 +1,14 @@
+{
+  "title": "Katılımcılar",
+  "desc": "Instafel'in ve içeriklerin oluşturulmasında yardım eden kişiler!",
+  "roles": {
+    "dev": "Geliştirici",
+    "mod": "Moderatör",
+    "cre": "İçerik Üreticisi"
+  },
+  "titles": {
+    "team": "Takım",
+    "translators": "Çevirmenler",
+    "special": "Özel Teşekkürler"
+  }
+}

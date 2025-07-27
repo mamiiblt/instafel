@@ -24,6 +24,7 @@ import {
   Box,
   ListCollapse,
   FlagIcon,
+  UsersIcon,
 } from "lucide-react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -153,26 +154,37 @@ export default function Navbar() {
     {
       title: "Wiki",
       href: "/wiki",
+      icon: BookOpenText,
     },
     {
       title: t("navbar.items.backups"),
       href: "/library/backup",
+      icon: FileCog2Icon,
     },
     {
       title: t("navbar.items.flags"),
       href: "/library/flag",
+      icon: FlagIcon,
     },
     {
       title: t("navbar.items.updater"),
       href: "/about_updater",
+      icon: RefreshCcwDot,
+    },
+    {
+      title: t("navbar.items.contributors"),
+      href: "/contributors",
+      icon: UsersIcon,
     },
     {
       title: t("navbar.items.src_code"),
       href: "https://github.com/mamiiblt/instafel",
+      icon: GithubIcon,
     },
     {
       title: t("navbar.items.download"),
       href: "/download?version=latest",
+      icon: Download,
     },
   ];
 
@@ -303,23 +315,6 @@ export default function Navbar() {
                     {navItems.map((link, index) => {
                       const isActive =
                         pathname === (link.href.split("?")[0] || link.href);
-                      var MobileIcon = null;
-
-                      if (link.title == "Wiki") {
-                        MobileIcon = BookOpenText;
-                      } else if (link.title == t("navbar.items.backups")) {
-                        MobileIcon = FileCog2Icon;
-                      } else if (link.title == t("navbar.items.flags")) {
-                        MobileIcon = FlagIcon;
-                      } else if (link.title == t("navbar.items.updater")) {
-                        MobileIcon = RefreshCcwDot;
-                      } else if (link.title == t("navbar.items.src_code")) {
-                        MobileIcon = GithubIcon;
-                      } else if (link.title == t("navbar.items.download")) {
-                        MobileIcon = Download;
-                      } else {
-                        MobileIcon = Box;
-                      }
 
                       return (
                         <motion.div
@@ -343,7 +338,7 @@ export default function Navbar() {
                                 isActive ? "bg-primary/20" : "bg-background/90"
                               } text-foreground group-hover:scale-110 transition-transform shadow-sm`}
                             >
-                              <MobileIcon
+                              <link.icon
                                 className={`h-5 w-5 ${
                                   isActive ? "text-primary" : ""
                                 }`}

@@ -13,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/library/flag",
     "/about_updater",
     "/download?version=latest",
+    "/contributors",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
