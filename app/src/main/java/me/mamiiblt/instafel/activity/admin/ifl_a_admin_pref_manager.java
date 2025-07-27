@@ -1,15 +1,13 @@
 package me.mamiiblt.instafel.activity.admin;
 
 import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
-import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
 
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;

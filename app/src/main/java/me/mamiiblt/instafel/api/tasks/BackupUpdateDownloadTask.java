@@ -16,7 +16,7 @@ import me.mamiiblt.instafel.api.models.AutoUpdateInfo;
 import me.mamiiblt.instafel.managers.OverridesManager;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ota.CheckUpdates;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class BackupUpdateDownloadTask extends AsyncTask<String, Void, String> {
@@ -78,10 +78,10 @@ public class BackupUpdateDownloadTask extends AsyncTask<String, Void, String> {
                 CheckUpdates.showBackupUpdateDialog(activity, languageCode, autoUpdateInfo.getBackup_id());
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(activity, Localizator.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(activity, Localizator.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
         }
     }
 }

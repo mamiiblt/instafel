@@ -7,7 +7,7 @@ import java.util.Locale;
 
 import me.mamiiblt.instafel.InstafelEnv;
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class IflEnvironment {
@@ -90,8 +90,8 @@ public class IflEnvironment {
     }
 
     public static String getTypeString(Activity activity, Locale locale) {
-        if (getType(activity).equals("Clone")) return Localizator.getLocalizedString(activity, locale.getLanguage(), "ifl_a1_07");
-        if (getType(activity).equals("Unclone")) return Localizator.getLocalizedString(activity, locale.getLanguage(), "ifl_a1_08");
+        if (getType(activity).equals("Clone")) return LocalizedStringGetter.getLocalizedString(activity, locale.getLanguage(), "ifl_a1_07");
+        if (getType(activity).equals("Unclone")) return LocalizedStringGetter.getLocalizedString(activity, locale.getLanguage(), "ifl_a1_08");
         return getType(activity);
     }
 

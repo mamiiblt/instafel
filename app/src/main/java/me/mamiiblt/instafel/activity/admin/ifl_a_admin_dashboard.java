@@ -1,7 +1,7 @@
 package me.mamiiblt.instafel.activity.admin;
 
 import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
-import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
 
 import android.content.Intent;
 import android.net.Uri;

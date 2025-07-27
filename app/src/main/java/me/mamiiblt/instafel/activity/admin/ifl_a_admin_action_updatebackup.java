@@ -1,5 +1,7 @@
 package me.mamiiblt.instafel.activity.admin;
 
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,7 +34,7 @@ import me.mamiiblt.instafel.ui.PageTitle;
 import me.mamiiblt.instafel.ui.TileCompact;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 
@@ -53,7 +55,7 @@ public class ifl_a_admin_action_updatebackup extends AppCompatActivity implement
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         GeneralFn.updateIflUi(this);
-        Localizator.updateIflLocale(this, false);
+        updateIflLocale(this, false);
         setContentView(R.layout.ifl_at_admin_action_updatebackup);
         this.overridesManager = new OverridesManager(this);
         this.preferenceManager = new PreferenceManager(this);

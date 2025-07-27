@@ -1,5 +1,7 @@
 package me.mamiiblt.instafel.activity;
 
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
@@ -10,7 +12,7 @@ import me.mamiiblt.instafel.InstafelEnv;
 import me.mamiiblt.instafel.managers.PreferenceManager;
 import me.mamiiblt.instafel.ui.TileLargeSwitch;
 import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 
 public class ifl_a_misc extends AppCompatActivity {
     PreferenceManager preferenceManager;
@@ -19,7 +21,7 @@ public class ifl_a_misc extends AppCompatActivity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         GeneralFn.updateIflUi(this);
-        Localizator.updateIflLocale(this, false);
+        updateIflLocale(this, false);
         setContentView(R.layout.ifl_at_misc);
         PreferenceManager preferenceManager = new PreferenceManager(this);
         this.preferenceManager = preferenceManager;

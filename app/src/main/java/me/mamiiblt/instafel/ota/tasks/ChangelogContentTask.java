@@ -15,7 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizationUtils;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
@@ -59,7 +60,7 @@ public class ChangelogContentTask extends AsyncTask<String, Void, String> {
             String content = new String(dataBytes);
 
             PreferenceManager preferenceManager = new PreferenceManager(act);
-            String languageCode = Localizator.getIflLocale(act);
+            String languageCode = LocalizationUtils.getIflLocale(act);
 
             InstafelDialog instafelDialog = new InstafelDialog(act);
             instafelDialog.addSpace("top_space", 25);
@@ -81,7 +82,7 @@ public class ChangelogContentTask extends AsyncTask<String, Void, String> {
             instafelDialog.addSpace("button_top_space", 20);
             instafelDialog.addPozitiveAndNegativeButton(
                     "buttons",
-                    Localizator.getDialogLocalizedString(act, languageCode, "ifl_d3_02"),
+                    LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d3_02"),
                     null,
                     new View.OnClickListener() {
                         @Override

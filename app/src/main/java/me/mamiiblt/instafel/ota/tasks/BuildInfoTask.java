@@ -23,7 +23,8 @@ import java.net.URL;
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.managers.NotificationOtaManager;
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizationUtils;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialogMargins;
@@ -79,11 +80,11 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
 
 
             if (lastVersion > ifl_version) {
-                String languageCode = Localizator.getIflLocale(act);
+                String languageCode = LocalizationUtils.getIflLocale(act);
 
-                String localizedUpdateText = Localizator.getLocalizedString(
+                String localizedUpdateText = LocalizedStringGetter.getLocalizedString(
                         act,
-                        Localizator.getIflLocale(act),
+                        LocalizationUtils.getIflLocale(act),
                         "ifl_d1_02",
                         lastVersion,
                         igVersion
@@ -93,7 +94,7 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
                 instafelDialog.addSpace("top_space", 25);
                 instafelDialog.addTextView(
                         "dialog_title",
-                        Localizator.getDialogLocalizedString(act, languageCode, "ifl_d1_01"),
+                        LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d1_01"),
                         30,
                         0,
                         InstafelDialogTextType.TITLE,
@@ -110,8 +111,8 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
                 String finalApkContentLink = apkContentLink;
                 instafelDialog.addPozitiveAndNegativeButton(
                         "buttons",
-                        Localizator.getDialogLocalizedString(act, languageCode, "ifl_d1_04"),
-                        Localizator.getDialogLocalizedString(act, languageCode, "ifl_d1_03"),
+                        LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d1_04"),
+                        LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d1_03"),
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

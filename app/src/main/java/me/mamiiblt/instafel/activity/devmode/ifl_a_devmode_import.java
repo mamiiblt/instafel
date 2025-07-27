@@ -1,9 +1,8 @@
 package me.mamiiblt.instafel.activity.devmode;
 
 import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
-import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
 
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,7 +22,6 @@ import java.util.Set;
 
 import me.mamiiblt.instafel.R;
 import me.mamiiblt.instafel.managers.OverridesManager;
-import me.mamiiblt.instafel.ui.TileCompact;
 import me.mamiiblt.instafel.ui.TileLarge;
 import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
 

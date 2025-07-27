@@ -14,7 +14,7 @@ import java.net.URL;
 
 import me.mamiiblt.instafel.api.models.AutoUpdateInfo;
 import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.utils.Localizator;
+import me.mamiiblt.instafel.utils.localization.LocalizedStringGetter;
 
 public class BackupUpdateTask extends AsyncTask<String, Void, String> {
 
@@ -72,10 +72,10 @@ public class BackupUpdateTask extends AsyncTask<String, Void, String> {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(activity, Localizator.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(activity, Localizator.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
         }
     }
 }

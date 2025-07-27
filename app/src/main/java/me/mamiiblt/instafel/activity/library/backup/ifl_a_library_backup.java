@@ -1,7 +1,7 @@
 package me.mamiiblt.instafel.activity.library.backup;
 
 import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
-import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
 
 import android.os.Bundle;
 import android.util.Log;

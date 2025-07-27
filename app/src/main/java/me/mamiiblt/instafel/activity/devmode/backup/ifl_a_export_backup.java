@@ -1,19 +1,16 @@
 package me.mamiiblt.instafel.activity.devmode.backup;
 
 import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
-import static me.mamiiblt.instafel.utils.Localizator.updateIflLocale;
+import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
