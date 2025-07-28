@@ -214,7 +214,7 @@ export default function Page() {
     {
       name: "krvstek.",
       language: "Polski",
-      avatar: "/cpictures/kvrstek.jpg",
+      avatar: "/cpictures/krvstek.jpg",
       flag: "🇵🇱",
       socials: {
         telegram: "krvstek",
