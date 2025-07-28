@@ -12,7 +12,7 @@
     <string name="ifl_a0_16">Verwende den Instafel-Updater für automatische Updates mit Root und Shizuku.</string>
 
 	<!-- me.mamiiblt.instafel.ifl_a_menu -->
-	<string name="ifl_a0_02">Einstellungen aktualisieren</string>
+	<string name="ifl_a0_02">Updateeinstellungen</string>
 	<string name="ifl_a0_03">Sprache</string>
 	<string name="ifl_a0_04">Bibliothek</string>
 	<string name="ifl_a0_05">Über</string>
