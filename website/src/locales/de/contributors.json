@@ -1,0 +1,14 @@
+{
+  "title": "Mitwirkende",
+  "desc": "Lerne die großartigen Personen kennen, die Instafel möglich gemacht haben",
+  "roles": {
+    "dev": "Entwickler",
+    "mod": "Moderator",
+    "cre": "Ersteller"
+  },
+  "titles": {
+    "team": "Team",
+    "translators": "Übersetzer",
+    "special": "Besonderer Dank"
+  }
+}
