@@ -47,7 +47,7 @@ android {
         minSdk = 26
         targetSdk = 35
         versionCode = androidConfig["versionCode"] as Int
-        versionName = projectVersion
+        versionName = "v$projectVersion ($commitHash)"
         buildConfigField("String", "COMMIT", "\"$commitHash\"")
         buildConfigField("String", "BRANCH", "\"main\"")
 
@@ -85,7 +85,7 @@ tasks.register("generate-app-debug") {
 
     doLast {
         val outputName = "ifl-updater-v$projectVersion-$commitHash-debug.apk"
-        file("${project.projectDir}/build/outputs/apk/debug/instafel.updater-debug.apk")
+        file("${project.projectDir}/build/outputs/apk/debug/updater-debug.apk")
             .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
@@ -100,7 +100,7 @@ tasks.register("generate-app-release") {
 
     doLast {
         val outputName = "ifl-updater-v$projectVersion-$commitHash-release.apk"
-        file("${project.projectDir}/build/outputs/apk/release/instafel.updater-release.apk")
+        file("${project.projectDir}/build/outputs/apk/release/updater-release.apk")
             .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
@@ -133,6 +133,7 @@ dependencies {
     implementation("androidx.work:work-runtime:${depsConfig["android_work_version"] as String}")
     implementation("com.squareup.okhttp3:okhttp:${depsConfig["okhttp_version"] as String}")
     implementation("com.github.TTTT55:Material-You-Preferences:${depsConfig["materialyoupreferences_version"] as String}")
+    implementation("com.scottyab:rootbeer-lib:${depsConfig["rootbeer-lib"] as String}")
     implementation(libs.navigation.ui)
     implementation(libs.preference)
     testImplementation(libs.junit)

@@ -145,20 +145,7 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 105) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                if (Utils.getMethod(MainActivity.this) == 1) {
-                    if (RootManager.isDeviceRooted()) {
-                        if (RootManager.requestRootPermission()) {
-                            Toast.makeText(MainActivity.this, "Root access granted", Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, "Root access rejected, please allow from manager.", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(MainActivity.this, "SU binary doesn't found in device, please root your device.", Toast.LENGTH_SHORT).show();
-                    }
-                    prefsEditor.putBoolean("root_request_complete", true);
-                    prefsEditor.apply();
-                    recreate();
-                } else {
+                if (Utils.getMethod(MainActivity.this) == 2) {
                     if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                         if (Utils.isShizukuInstalled(MainActivity.this)) {
                             if (Shizuku.pingBinder()) {
@@ -175,7 +162,6 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(MainActivity.this, MainActivity.this.getString(R.string.please_install_shizuku), Toast.LENGTH_SHORT).show();
                             Utils.openPlayStore(MainActivity.this);
                         }
-
                     } else {
                         Toast.makeText(this, "Please allow notification permission from App Info", Toast.LENGTH_SHORT).show();
                         finish();

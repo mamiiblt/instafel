@@ -43,7 +43,7 @@
     <string name="checking">Checking..</string>
     <string name="not_found">SU binary couldn\'t found</string>
     <string name="please_allow_root">Root access rejected, please allow from manager.</string>
-    <string name="please_install_root">SU binary doesn\'t found in device, please root your device.</string>
+    <string name="please_install_root">Root access cloudn\'t ensured</string>
     <string name="please_allow_unrestiracted">Please set app battery restiraction mode to unrestiracted mode</string>
     <string name="dialog_title">Grant Permission</string>
     <string name="dialog_desc">Instafel Updater needs Notification and Root permission for running normally.</string>

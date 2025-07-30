@@ -78,12 +78,7 @@ public class InfoFragment extends Fragment {
        if (Utils.getBatteryRestrictionStatus(getActivity())) {
            viewBatteryStatus.setText(STRING_RESTRICTED);
            warIconBattery.setVisibility(View.VISIBLE);
-           view.findViewById(R.id.battery_status).setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
-                   Utils.showBatteryDialog(getActivity());
-               }
-           });
+           view.findViewById(R.id.battery_status).setOnClickListener(view1 -> Utils.showBatteryDialog(getActivity()));
        } else {
            viewBatteryStatus.setText(STRING_UNRESTICTED);
            warIconBattery.setVisibility(View.GONE);
@@ -93,31 +88,23 @@ public class InfoFragment extends Fragment {
            viewStatusTitle.setText(this.getString(R.string.root_status));
            iconProvider.setImageDrawable(getActivity().getDrawable(R.drawable.root));
            warIconProvider.setVisibility(View.GONE);
-           if (sharedPreferences.getBoolean("root_request_complete", false)) {
-               if (RootManager.isDeviceRooted()) {
-                   CommandOutput commandOutput = RootManager.execSuCommands("su -v", "su -V");
-                   if (commandOutput.getExitCode() == 0) {
-                       rootStatus = true;
-                       String[] outputParts = commandOutput.getLog().trim().split("\n");
-                       viewStatusDesc.setText("✔ " + outputParts[0].trim() + " (" + outputParts[1].trim() + ")");
-                   } else {
-                       rootStatus = false;
-                       viewStatusDesc.setText(STRING_UNAUTHORIZED);
-                       warIconProvider.setVisibility(View.VISIBLE);
 
-                       view.findViewById(R.id.root_status).setOnClickListener(new View.OnClickListener() {
-                           @Override
-                           public void onClick(View view) {
-                               RootManager.requestRootPermission();
-                           }
-                       });
-                   }
+           if (RootManager.isDeviceRooted(getActivity())) {
+               CommandOutput commandOutput = RootManager.execSuCommands("su -v");
+               if (commandOutput.getExitCode() == 0) {
+                   rootStatus = true;
+                   String[] outputParts = commandOutput.getLog().trim().split("\n");
+                   viewStatusDesc.setText("✔ " + outputParts[0].trim());
                } else {
-                   viewStatusDesc.setText(STRING_NOT_FOUND);
+                   rootStatus = false;
+                   viewStatusDesc.setText(STRING_UNAUTHORIZED);
                    warIconProvider.setVisibility(View.VISIBLE);
                }
            } else {
-               viewStatusDesc.setText(this.getString(R.string.checking));
+               rootStatus = false;
+               viewStatusDesc.setText(STRING_NOT_FOUND);
+               warIconProvider.setVisibility(View.VISIBLE);
+               Utils.showDialog(getActivity(), "Root access cloudn't ensured", "Please give root access to Instafel Updater from your root manager (Magisk, KernelSU, KernelSU Next, APatch etc.) to use Updater with root mode\n\nApp Name: Instafel Updater\nApp Package: me.mamiiblt.instafel.updater");
            }
        } else {
            viewStatusTitle.setText(this.getString(R.string.shiuku_status));
@@ -150,58 +137,50 @@ public class InfoFragment extends Fragment {
            } else {
                viewStatusDesc.setText(STRING_NOT_INSTALLED);
                warIconProvider.setVisibility(View.VISIBLE);
-               view.findViewById(R.id.root_status).setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View view) {
-                       Utils.openPlayStore(getActivity());
-                   }
-               });
+               view.findViewById(R.id.root_status).setOnClickListener(view2 -> Utils.openPlayStore(getActivity()));
            }
        }
 
        updateUI();
 
-       viewStartBtn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               if (!Utils.getBatteryRestrictionStatus(getActivity())) {
-                   if (Utils.getMethod(getContext()) == 1) {
-                       if (rootStatus) {
-                           logUtils.w(getContext().getString(R.string.upd_started));
-                           UpdateWorkHelper.scheduleWork(getActivity());
-                           updateUI();
-                       } else {
-                           Toast.makeText(ctx, getString(R.string.please_install_root), Toast.LENGTH_SHORT).show();
-                       }
+       viewStartBtn.setOnClickListener(view3 -> {
+           if (!Utils.getBatteryRestrictionStatus(getActivity())) {
+               if (Utils.getMethod(getContext()) == 1) {
+                   if (rootStatus) {
+                       logUtils.w(getContext().getString(R.string.upd_started));
+                       UpdateWorkHelper.scheduleWork(getActivity());
+                       updateUI();
                    } else {
-                       if (!Utils.getBatteryRestrictionStatus(getActivity())) {
-                           if (Utils.isShizukuInstalled(getActivity())) {
-                               if (Shizuku.pingBinder()) {
-                                   if (Utils.hasShizukuPermission()) {
-                                       logUtils.w(getContext().getString(R.string.upd_started));
-                                       UpdateWorkHelper.scheduleWork(getActivity());
-                                       updateUI();
-                                   } else {
-                                       Toast.makeText(ctx, ctx.getString(R.string.please_give_permission), Toast.LENGTH_SHORT).show();
-                                       Utils.openShizuku(ctx);
-                                   }
+                       Toast.makeText(ctx, getString(R.string.please_install_root), Toast.LENGTH_SHORT).show();
+                   }
+               } else {
+                   if (!Utils.getBatteryRestrictionStatus(getActivity())) {
+                       if (Utils.isShizukuInstalled(getActivity())) {
+                           if (Shizuku.pingBinder()) {
+                               if (Utils.hasShizukuPermission()) {
+                                   logUtils.w(getContext().getString(R.string.upd_started));
+                                   UpdateWorkHelper.scheduleWork(getActivity());
+                                   updateUI();
                                } else {
-                                   Toast.makeText(ctx, ctx.getString(R.string.please_start_shizuku), Toast.LENGTH_SHORT).show();
+                                   Toast.makeText(ctx, ctx.getString(R.string.please_give_permission), Toast.LENGTH_SHORT).show();
                                    Utils.openShizuku(ctx);
                                }
                            } else {
-                               Toast.makeText(ctx, ctx.getString(R.string.please_install_shizuku), Toast.LENGTH_SHORT).show();
-                               Utils.openPlayStore(ctx);
+                               Toast.makeText(ctx, ctx.getString(R.string.please_start_shizuku), Toast.LENGTH_SHORT).show();
+                               Utils.openShizuku(ctx);
                            }
                        } else {
-                           Toast.makeText(ctx, ctx.getString(R.string.please_allow_unrestiracted), Toast.LENGTH_SHORT).show();
-                           Utils.showBatteryDialog(ctx);
+                           Toast.makeText(ctx, ctx.getString(R.string.please_install_shizuku), Toast.LENGTH_SHORT).show();
+                           Utils.openPlayStore(ctx);
                        }
+                   } else {
+                       Toast.makeText(ctx, ctx.getString(R.string.please_allow_unrestiracted), Toast.LENGTH_SHORT).show();
+                       Utils.showBatteryDialog(ctx);
                    }
-               } else {
-                   Toast.makeText(ctx, ctx.getString(R.string.please_allow_unrestiracted), Toast.LENGTH_SHORT).show();
-                   Utils.showBatteryDialog(ctx);
                }
+           } else {
+               Toast.makeText(ctx, ctx.getString(R.string.please_allow_unrestiracted), Toast.LENGTH_SHORT).show();
+               Utils.showBatteryDialog(ctx);
            }
        });
 
