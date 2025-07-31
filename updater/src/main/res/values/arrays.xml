@@ -10,6 +10,11 @@
         <item>Clone</item>
     </string-array>
 
+    <string-array name="installation_method_list">
+        <item>Root</item>
+        <item>Shizuku</item>
+    </string-array>
+
     <string-array name="checker_interval_list">
         <item>2 hour</item>
         <item>3 hour</item>

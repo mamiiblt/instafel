@@ -120,7 +120,7 @@ public class UpdateWork extends Worker {
 
                     if (versionName != null) {
                         if (versionName.equals("NOT_INSTALLED")) {
-                            sendError("IG (Instafel / Instagram) is not installed. Please install from https://instafel.app", false, null);
+                            sendError("IG (Instafel / Instagram) is not installed. Please install from official website", false, null);
                         } else {
                             logUtils.w("Installed IG version is " + versionName);
                             try {

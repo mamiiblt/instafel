@@ -27,6 +27,14 @@
             app:allowDividerAbove="false"
             app:icon="@drawable/check_interval"/>
         <com.github.tttt55.materialyoupreferences.preferences.MaterialListPreference
+            android:key="installation_method"
+            android:title="Installation Method"
+            android:summary="You can change installation method"
+            android:entries="@array/installation_method_list"
+            android:entryValues="@array/installation_method_list"
+            app:allowDividerAbove="false"
+            app:icon="@drawable/ifl_installation_method"/>
+        <com.github.tttt55.materialyoupreferences.preferences.MaterialListPreference
             android:key="checker_type"
             android:title="@string/itype"
             android:summary="@string/itype_s"
