@@ -5,7 +5,8 @@
       "flags": "Flags",
       "updater": "Updater",
       "src_code": "Source Code",
-      "download": "Download"
+      "download": "Download",
+      "contributors": "Contributors"
     },
     "1": "Appearance",
     "2": "Light",

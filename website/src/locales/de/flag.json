@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "Flagge nicht gefunden",
+    "description": "Die gesuchte Flagge existiert nicht oder wurde entfernt.",
+    "go_back": "Zurückgehen"
+  },
+  "loading": {
+    "title": "Flaggeninformationen werden geladen",
+    "description": "Bitte warten, während wir die Details abrufen"
+  },
+  "badges": {
+    "removed": "Entfernt"
+  },
+  "content": {
+    "block_titles": {
+      "information": "Informationen",
+      "metaconf_options": "MetaConfig-Optionen",
+      "screenshots": "Screenshots"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "Hinzugefügt von",
+        "last_edit": "Letzte Bearbeitung",
+        "added_in": "Hinzugefügt in",
+        "removed_in": "Entfernt in",
+        "unknown": "Unbekannt"
+      },
+      "screenshot": {
+        "failed_load_img": "Bild konnte nicht geladen werden"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "In Zwischenablage kopieren",
+        "prop_name_copied": "Eigenschaftsname kopiert",
+        "prop_name_copied_desc": "Flaggen-Eigenschaftsname wurde in die Zwischenablage kopiert"
+      }
+    }
+  }
+}

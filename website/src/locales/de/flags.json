@@ -1,0 +1,16 @@
+{
+  "added_by": "Hinzugefügt von {{name}}",
+  "uploaded_at": "Hochgeladen am {{date_str}}",
+  "removed_with": "Entfernt mit Version v{{version}}",
+  "loading": "Lade...",
+  "flag_found": "In dieser Kategorie befinden sich insgesamt {{fcount}} Flaggen",
+  "page_info": "Seite {{current}} von {{total}}",
+  "prev": "Zurück",
+  "next": "Weiter",
+  "results": "Ergebnisse",
+  "s_flag_found": "In der Bibliothek wurden insgesamt {{fcount}} Ergebnisse zu den Begriffen '{{query}}' gefunden",
+  "found_footer": {
+    "down": "Insgesamt wurden {{size}} Flaggen zu dieser Suche gefunden. Wenn die richtige Flagge nicht dabei war, versuche andere Suchbegriffe.",
+    "up": "Insgesamt wurden 15 Flaggen gefunden. Standardmäßig sind die Ergebnisse auf 15 Elemente begrenzt. Verwende genauere Begriffe, um die Suche einzugrenzen."
+  }
+}

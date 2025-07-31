@@ -5,7 +5,8 @@
       "flags": "Banderas",
       "updater": "Actualizador",
       "src_code": "Código Fuente",
-      "download": "Descargar"
+      "download": "Descargar",
+      "contributors": "Colaboradores"
     },
     "1": "Apariencia",
     "2": "Claro",
