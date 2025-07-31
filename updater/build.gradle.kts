@@ -17,6 +17,8 @@ val commitHash: String by rootProject.extra
 
 group = "me.mamiiblt.instafel"
 
+apply(from = "publish.gradle.kts")
+
 /************************************************/
 
 repositories {
@@ -82,7 +84,7 @@ android {
 }
 
 tasks.register("generate-app-debug") {
-    dependsOn("clear-cache", "assembleDebug")
+    dependsOn("assembleDebug")
 
     doLast {
         val outputName = "ifl-updater-v$projectVersion-$commitHash-debug.apk"
@@ -97,7 +99,7 @@ tasks.register("generate-app-debug") {
 }
 
 tasks.register("generate-app-release") {
-    dependsOn("clear-cache", "assembleRelease")
+    dependsOn("assembleRelease")
 
     doLast {
         val outputName = "ifl-updater-v$projectVersion-$commitHash-release.apk"
@@ -111,17 +113,6 @@ tasks.register("generate-app-release") {
     }
 }
 
-tasks.register("clear-cache") {
-    val filesToDelete = listOf(
-        file("${project.projectDir}/build"),
-        file("${project.projectDir}/output"),
-    )
-
-    delete(filesToDelete)
-    doLast {
-        println("Cache successfully deleted.")
-    }
-}
 
 dependencies {
     implementation(libs.appcompat)
