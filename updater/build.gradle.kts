@@ -48,6 +48,7 @@ android {
         targetSdk = 35
         versionCode = androidConfig["versionCode"] as Int
         versionName = "v$projectVersion ($commitHash)"
+        buildConfigField("String", "IFLU_VERSION", "\"$projectVersion\"")
         buildConfigField("String", "COMMIT", "\"$commitHash\"")
         buildConfigField("String", "BRANCH", "\"main\"")
 

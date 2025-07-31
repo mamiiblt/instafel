@@ -68,7 +68,7 @@
     <string name="please_give_permission">Lütfen Shizuku\'dan Instafel Updater\'e izin verin.</string>
     <string name="running">%1$s modunda çalışıyor</string>
     <string name="n4_sub">Instafel v%1$s sürümüne güncellendi</string>
-    <string name="app_version_s">Sürüm v%1$s (%2$s@%3$s)</string>
+    <string name="app_version_s">Sürüm v%1$s (%2$s)</string>
     <string name="developed_by">mamiiblt tarafından ❤️ ile geliştirilmiştir</string>
     <string name="about_app">About</string>
     <string name="source_code_s">Instafel\'in kaynak koduna bakın</string>

@@ -74,9 +74,9 @@ public class Utils {
     public static void showAppInfoDialog(Context ctx) {
         new MaterialAlertDialogBuilder(ctx)
                 .setTitle(ctx.getString(R.string.about_app))
-                .setMessage("version: v" + BuildConfig.VERSION_NAME +
-                        "\ncommit: " + BuildConfig.COMMIT + "@" + BuildConfig.BRANCH +
+                .setMessage("version: v" + BuildConfig.IFLU_VERSION +
                         "\nchannel: " + BuildConfig.BUILD_TYPE +
+                        "\nbase commit: " + BuildConfig.COMMIT + "@" + BuildConfig.BRANCH +
                         "\n\n" + ctx.getString(R.string.developed_by)
                 )
                 .setNegativeButton("View Commit", (dialog, which) -> openInBrowser(ctx, Uri.parse("https://github.com/mamiiblt/instafel/commit/" + BuildConfig.COMMIT)))

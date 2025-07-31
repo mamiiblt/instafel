@@ -87,7 +87,7 @@
     <string name="create_issue">Create Issue</string>
     <string name="create_issue_s">Create a issue on GitHub for feedback!</string>
     <string name="app_version">App Version</string>
-    <string name="app_version_s">Version v%1$s (%2$s@%3$s)</string>
+    <string name="app_version_s">Version v%1$s (%2$s)</string>
     <string name="language">Langauge</string>
     <string name="language_s">Set the language of app</string>
     <string name="developed_by">Developed with ❤️ by mamiiblt</string>

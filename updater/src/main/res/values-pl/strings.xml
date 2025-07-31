@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">Instafel Updater</string>
 
     <!-- Nav Bar -->
     <string name="status">Status</string>
@@ -87,7 +86,7 @@
     <string name="create_issue">Zgłoś problem</string>
     <string name="create_issue_s">Zgłoś problem lub opinię na GitHubie!</string>
     <string name="app_version">Wersja aplikacji</string>
-    <string name="app_version_s">Wersja v%1$s (%2$s@%3$s)</string>
+    <string name="app_version_s">Wersja v%1$s (%2$s)</string>
     <string name="language">Język</string>
     <string name="language_s">Ustaw język aplikacji</string>
     <string name="developed_by">Stworzony z ❤️ przez mamiiblt</string>
