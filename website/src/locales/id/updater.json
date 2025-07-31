@@ -1,0 +1,57 @@
+{
+  "hero_header": {
+    "title": "Instafel Updater",
+    "subtitle": "Pembaruan otomatis, tanpa usaha",
+    "description": "Jaga Instafel selalu terupdate dengan aplikasi pendamping yang kuat ini yang menangani pembaruan secara otomatis melalui Shizuku atau Root."
+  },
+  "buttons": {
+    "download": "Unduh {{version}}",
+    "source_code": "Source Code"
+  },
+  "how_it_works": {
+    "title": "Cara Kerjanya",
+    "steps": {
+      "install": {
+        "title": "Instal & Berikan Izin",
+        "description": "Instal aplikasi dan berikan izin Shizuku atau Root."
+      },
+      "configure": {
+        "title": "Konfigurasi Pengaturan",
+        "description": "Pilih preferensi pembaruan dan frekuensi pemeriksaan."
+      },
+      "automatic": {
+        "title": "Pembaruan Otomatis",
+        "description": "Relaks dan biarkan Updater menangani semuanya untuk Anda."
+      }
+    }
+  },
+  "features": {
+    "title": "Fitur Utama",
+    "silent_install": {
+      "title": "Instalasi Senyap",
+      "description": "Berjalan di latar belakang untuk secara otomatis mengunduh dan menginstal versi terbaru dari API kami."
+    },
+    "shizuku_support": {
+      "title": "Dukungan Shizuku",
+      "description": "Berfungsi pada ponsel non-root dengan Shizuku tanpa memerlukan pengelola root tambahan."
+    },
+    "open_source": {
+      "title": "Open Source",
+      "description": "Kode sumber terbuka sepenuhnya sehingga Anda dapat mempercayai aplikasi ini dengan izin yang diperlukan."
+    }
+  },
+  "whyUse": {
+    "title": "Mengapa Menggunakan Updater?",
+    "benefits": {
+      "latest_features": "Selalu dapatkan pembaruan dan fitur terbaru secara otomatis",
+      "time_saver": "Hemat waktu dengan pembaruan latar belakang daripada pemeriksaan OTA manual",
+      "lightweight": "Ringan dan efisien dengan penggunaan sumber daya minimal",
+      "notifications": "Dapatkan pemberitahuan hanya saat pembaruan berhasil diinstal",
+      "compatibility": "Berfungsi dengan lancar bersama metode Shizuku dan Root"
+    }
+  },
+  "callToAction": {
+    "title": "Dapatkan sekarang!",
+    "description": "Jaga pengalaman Instafel Anda tetap terbaru dengan usaha minimal. Unduh pembaruan sekarang."
+  }
+}

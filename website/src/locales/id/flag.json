@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "Flag tidak ditemukan",
+    "description": "Flag yang Anda cari tidak ada atau telah dihapus.",
+    "go_back": "Kembali"
+  },
+  "loading": {
+    "title": "Muat informasi flag",
+    "description": "Tolong tunggu sementara kami mengambil detailnya"
+  },
+  "badges": {
+    "removed": "Dihapus"
+  },
+  "content": {
+    "block_titles": {
+      "information": "Informasi",
+      "metaconf_options": "Opsi MetaConfig",
+      "screenshots": "Screenshot"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "Ditambahkan oleh",
+        "last_edit": "Terakhir diedit",
+        "added_in": "Versi ditambahkan",
+        "removed_in": "Versi dihapus",
+        "unknown": "Tidak Diketahui"
+      },
+      "screenshot": {
+        "failed_load_img": "Gagal memuat gambar"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "Salin ke clipboard",
+        "prop_name_copied": "Nama properti disalin",
+        "prop_name_copied_desc": "Nama properti bendera disalin ke clipboard"
+      }
+    }
+  }
+}

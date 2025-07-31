@@ -1,0 +1,16 @@
+{
+  "addedBy": "Ditambahkan oleh {{name}}",
+  "uploadedAt": "Diunggah pada {{dateStr}}",
+  "removedWith": "Dihapus dengan v{{version}}",
+  "loading": "Memuat...",
+  "flagFound": "Ada total {{flagCount}} flag dalam kategori ini",
+  "pageInfo": "Halaman {{currentPage}} dari {{totalPages}}",
+  "prev": "Sebelumnya",
+  "next": "Selanjutnya",
+  "results": "Hasil",
+  "searchFlagFound": "Total {{flagCount}} hasil ditemukan di perpustakaan yang terkait dengan istilah '{{query}}'",
+  "foundFooter": {
+    "down": "Total {{flagCount}} flags ditemukan untuk kueri ini. Jika Anda tidak menemukan flag yang benar, coba gunakan istilah pencarian yang berbeda.",
+    "up": "Total 15 flags ditemukan. Secara default, hasil dibatasi hingga 15 item. Coba gunakan istilah yang lebih spesifik untuk mempertajam pencarian Anda."
+  }
+}
