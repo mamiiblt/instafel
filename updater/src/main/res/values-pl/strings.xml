@@ -6,7 +6,7 @@
     <string name="settings">Ustawienia</string>
 
     <!-- Setup Updater -->
-    <string name="setup_ifl">Konfiguracja aktualizatora IFL</string>
+    <string name="setup_ifl">Konfiguracja aktualizatora</string>
     <string name="checker_arch">Architektura</string>
     <string name="checker_itype">Typ instalacji</string>
     <string name="unclone">Oryginał</string>

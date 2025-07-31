@@ -7,7 +7,7 @@
     <string name="settings">Settings</string>
 
     <!-- Setup Updater -->
-    <string name="setup_ifl">Setup IFL Updater</string>
+    <string name="setup_ifl">Setup Updater</string>
     <string name="checker_arch">Checker Architecture</string>
     <string name="checker_itype">Checker Insallation Type</string>
     <string name="unclone">Unclone</string>

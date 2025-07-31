@@ -3,7 +3,7 @@
     <string name="status">Durum</string>
     <string name="logs">Günlük</string>
     <string name="settings">Ayarlar</string>
-    <string name="setup_ifl">IFL Güncelleyici Kurulumu</string>
+    <string name="setup_ifl">Güncelleyici Kurulumu</string>
     <string name="checker_arch">Kontrolcü Mimarisi</string>
     <string name="checker_itype">Kontrolcü Kurulum Türü</string>
     <string name="unclone">Klon Olmayan</string>
