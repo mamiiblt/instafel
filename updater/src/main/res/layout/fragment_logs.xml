@@ -9,13 +9,15 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="20dp"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -24,19 +26,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="16dp">
-            <!--<TextView
-                android:id="@+id/statusTextView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
                 <TextView
                     android:id="@+id/logs_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="_log"/>
+                    android:text="_log" />
             </ScrollView>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>

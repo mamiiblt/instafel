@@ -8,10 +8,15 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
@@ -20,64 +25,64 @@
             app:cardCornerRadius="16dp"
             app:cardElevation="4dp">
 
-           <androidx.constraintlayout.widget.ConstraintLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-               <androidx.appcompat.widget.AppCompatImageView
-                   android:id="@+id/iview_1"
-                   android:src="@drawable/root"
-                   android:layout_width="45dp"
-                   android:layout_height="45dp"
-                   android:layout_marginStart="15dp"
-                   android:layout_marginTop="15dp"
-                   app:tint="?attr/colorPrimary"
-                   android:layout_marginBottom="15dp"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toTopOf="parent" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iview_1"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/root"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorPrimary" />
 
-               <androidx.appcompat.widget.AppCompatImageView
-                   android:id="@+id/wview_1"
-                   android:layout_width="30dp"
-                   android:layout_height="30dp"
-                   android:layout_marginTop="15dp"
-                   android:layout_marginEnd="15dp"
-                   android:layout_marginBottom="15dp"
-                   android:src="@drawable/alert"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   app:layout_constraintEnd_toEndOf="@+id/root_status"
-                   app:layout_constraintTop_toTopOf="parent"
-                   app:tint="?attr/colorPrimary" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/wview_1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/alert"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/root_status"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorPrimary" />
 
-               <LinearLayout
-                   android:id="@+id/root_status"
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_marginStart="15dp"
-                   android:layout_marginEnd="15dp"
-                   android:orientation="vertical"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toEndOf="@+id/iview_1"
-                   app:layout_constraintTop_toTopOf="parent">
+                <LinearLayout
+                    android:id="@+id/root_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iview_1"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                   <TextView
-                       android:id="@+id/viewStatusTitle"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="@string/root_status"
-                       android:textAppearance="?android:attr/textAppearanceMedium"
-                       android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/viewStatusTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/root_status"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
 
-                   <TextView
-                       android:id="@+id/statusTextView"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="_status"
-                       android:textAppearance="?android:attr/textAppearanceMedium" />
-               </LinearLayout>
-           </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/statusTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="_status"
+                        android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -94,16 +99,16 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iview_2"
-                    android:src="@drawable/battery_status"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
-                    app:tint="?attr/colorPrimary"
                     android:layout_marginBottom="15dp"
+                    android:src="@drawable/battery_status"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorPrimary" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/wview_2"
@@ -161,16 +166,16 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iview_3"
-                    android:src="@drawable/installation_type"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
-                    app:tint="?attr/colorPrimary"
                     android:layout_marginBottom="15dp"
+                    android:src="@drawable/installation_type"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorPrimary" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -216,16 +221,16 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/iview_4"
-                    android:src="@drawable/info"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
-                    app:tint="?attr/colorPrimary"
                     android:layout_marginBottom="15dp"
+                    android:src="@drawable/info"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="?attr/colorPrimary" />
 
                 <LinearLayout
                     android:layout_width="0dp"
