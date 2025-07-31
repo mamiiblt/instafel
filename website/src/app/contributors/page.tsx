@@ -220,6 +220,16 @@ export default function Page() {
         website: "insane.rip/krvstek"
       },
     },
+    {
+      name: "muhbintangx",
+      language: "Indonesia",
+      avatar: "/cpictures/muhbintangx.jpg",
+      flag: "🇮🇩",
+      socials: {
+        github: "muhbintangx",
+        website: "instagram.com/muhbintangx"
+      }
+    }
   ];
 
   const specialThanks = [

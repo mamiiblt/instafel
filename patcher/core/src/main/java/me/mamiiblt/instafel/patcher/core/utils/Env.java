@@ -13,7 +13,7 @@ public class Env {
 
     public static String USER_DIR = System.getProperty("user.dir");
     public static String PROJECT_DIR = null;
-    public static String[] INSTAFEL_LOCALES = { "tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl" };
+    public static String[] INSTAFEL_LOCALES = { "tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl", "in" };
     public static String SPERATOR_STR = "---------------------------";
 
     public class Config {

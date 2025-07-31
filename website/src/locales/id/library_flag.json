@@ -1,0 +1,6 @@
+{
+  "title": "Flag Library",
+  "description": "Dapatkan informasi tentang flags Instagram dengan library ini",
+  "flagCount": "{{fsize}} Flag",
+  "searchPlaceholder": "Cari di library dengan cepat..."
+}

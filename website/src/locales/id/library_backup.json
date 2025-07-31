@@ -1,0 +1,15 @@
+{
+  "title": "Backup Library",
+  "description": "Temukan dan impor Backups yang dibuat oleh komunitas ke Instafel.",
+  "createdBy": "Dibuat oleh {{author}}",
+  "contribute": {
+    "title": "Ingin Berkontribusi?",
+    "description": "Bagikan backup Anda dengan komunitas dan bantu orang lain menemukan konfigurasi optimal.",
+    "button": "Bergabunglah dengan Komunitas Kami"
+  },
+  "error": {
+    "title": "Gagal Memuat Backups",
+    "description": "Kami tidak dapat mengambil informasi backup. Silakan periksa koneksi Anda atau coba lagi nanti.",
+    "retryButton": "Coba Lagi"
+  }
+}

@@ -23,6 +23,7 @@ public class Locales {
         map.put("es", new LocaleType("es", "Español", "España", R.drawable.ifl_flag_es));
         map.put("pt", new LocaleType("pt", "Portugal", "Português", R.drawable.ifl_flag_pt));
         map.put("pl", new LocaleType("pl", "Polski", "Polska", R.drawable.ifl_flag_pl));
+        map.put("id", new LocaleType("id", "Indonesia", "Indonesia", R.drawable.ifl_flag_id));
         SUPPORTED_LOCALES = Collections.unmodifiableMap(map);
     }
 
