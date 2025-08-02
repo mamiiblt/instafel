@@ -26,7 +26,8 @@ import me.mamiiblt.instafel.utils.types.PreferenceKeys;
 
 public class GeneralFn {
 
-    public static String DEFAULT_API_PATH = "https://api.mamiiblt.me/ifl";
+    public static String DEFAULT_API_PATH = "https://api.mamii.me/ifl";
+
     public static String getApiUrl(Activity activity) {
         PreferenceManager preferenceManager = new PreferenceManager(activity);
         boolean debugModeStatus = preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_debug_mode, false);
@@ -46,7 +47,8 @@ public class GeneralFn {
     }
 
     public static int convertToDp(Context ctx, int val) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, val, ctx.getResources().getDisplayMetrics());
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, val,
+                ctx.getResources().getDisplayMetrics());
     }
 
     public static Resources getAppResources(Activity activity) {
@@ -127,7 +129,8 @@ public class GeneralFn {
     }
 
     public static void setTheme(ComponentActivity activity, Window window) {
-        if (InstafelEnv.IFL_THEME == 0 || InstafelEnv.IFL_THEME == 1 || InstafelEnv.IFL_THEME == 3 || InstafelEnv.IFL_THEME == 25891) {
+        if (InstafelEnv.IFL_THEME == 0 || InstafelEnv.IFL_THEME == 1 || InstafelEnv.IFL_THEME == 3
+                || InstafelEnv.IFL_THEME == 25891) {
             activity.setTheme(R.style.ifl_theme_dark);
             window.setStatusBarColor(activity.getResources().getColor(R.color.ifl_background_color));
             window.setNavigationBarColor(activity.getResources().getColor(R.color.ifl_background_color));
@@ -146,10 +149,10 @@ public class GeneralFn {
     }
 
     /*
-       0 = error / dark
-       1 = dark
-       2 = light
-    */
+     * 0 = error / dark
+     * 1 = dark
+     * 2 = light
+     */
     public static int getUiMode(Activity activity) {
         try {
             int nightModeFlags = activity.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
