@@ -26,7 +26,6 @@
     <string name="selected_installation_type">Tipe Instalasi Pemeriksa</string>
     <string name="battery_restiriction">Pembatasan Baterai</string>
     <string name="battery_restiricted">Dibatasi</string>
-    <string name="battery_unrestricted">Tidak Terbatas</string>
     <string name="battery_dialog_title">Izinkan Mode Tidak Terbatas</string>
     <string name="battery_dialog_msg">Agar Instafel Updater dapat berfungsi dengan baik, mode baterai aplikasi tidak boleh dibatasi.</string>
     <string name="updater_status">Status Pembaruan</string>
