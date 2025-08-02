@@ -5,5 +5,5 @@ export const SITE_CONFIG = {
   description: "Get latest Instafel updates, backups, blogs and more!",
   contactDescription:
     "Have a question or want to work together? Feel free to reach out!",
-  email: "mami@mamiiblt.me",
+  email: "mami@mamii.me",
 };

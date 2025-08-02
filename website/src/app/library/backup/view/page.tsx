@@ -70,7 +70,7 @@ export default function PageBackup() {
     setDownloadStarted(true);
 
     const link = document.createElement("a");
-    link.href = `https://api.mamiiblt.me/ifl/dw_backup?id=${id}&version=${version}`;
+    link.href = `https://api.mamii.me/ifl/dw_backup?id=${id}&version=${version}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

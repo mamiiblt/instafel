@@ -97,7 +97,7 @@ export default function CreateContentPage() {
         formData.append("name", file.name);
 
         const fUploadResp = await fetch(
-          "https://api.mamiiblt.me/ifl/admin/user/upload-image",
+          "https://api.mamii.me/ifl/admin/user/upload-image",
           {
             method: "POST",
             body: formData,
