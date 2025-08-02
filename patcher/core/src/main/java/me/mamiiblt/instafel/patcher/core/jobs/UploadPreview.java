@@ -30,7 +30,8 @@ public class UploadPreview {
     public void run(File workingDir, String PVERSION, String PCOMMIT) {
         try {
             Env.PROJECT_DIR = WorkingDir.getExistsWorkingDir(workingDir);
-            Env.Project.setupEnv();;
+            Env.Project.setupEnv();
+            ;
             Env.Config.setupConfig();
 
             isProdMode = Env.Config.getBoolean(Env.Config.Keys.prod_mode, false);
@@ -69,18 +70,18 @@ public class UploadPreview {
     private void createRelease(String PVERSION, String PCOMMIT) throws IOException {
         JSONObject pData = buildInfo.getJSONObject("patcher_data");
         String[] bLines = {
-            "# Build Information",
-            "| PROPERTY  | VALUE |",
-            "| ------------- | ------------- |",
-            "| GENERATION_ID  | " + pData.getJSONObject("ifl").getString("gen_id") + " |",
-            "| BUILD_TS  | " + pData.getString("build_date") + " |",
-            "| IFL_VERSION  | " + pData.getJSONObject("ifl").getInt("version") + " |",
-            "| IG_VERSION  | " + pData.getJSONObject("ig").getString("version") + " |",
-            "| IG_VER_CODE  | " + pData.getJSONObject("ig").getString("ver_code") + " |",
-            "| MD5_HASH_UC | " + buildInfo.getJSONObject("hash").getString("unclone") + " |",
-            "| MD5_HASH_C | " + buildInfo.getJSONObject("hash").getString("clone") + " |\n",
-            "Generated with **Instafel Patcher** v" + PVERSION + " (" + PCOMMIT + "/release" + ")"
-        }; 
+                "# Build Information",
+                "| PROPERTY  | VALUE |",
+                "| ------------- | ------------- |",
+                "| GENERATION_ID  | " + pData.getJSONObject("ifl").getString("gen_id") + " |",
+                "| BUILD_TS  | " + pData.getString("build_date") + " |",
+                "| IFL_VERSION  | " + pData.getJSONObject("ifl").getInt("version") + " |",
+                "| IG_VERSION  | " + pData.getJSONObject("ig").getString("version") + " |",
+                "| IG_VER_CODE  | " + pData.getJSONObject("ig").getString("ver_code") + " |",
+                "| MD5_HASH_UC | " + buildInfo.getJSONObject("hash").getString("unclone") + " |",
+                "| MD5_HASH_C | " + buildInfo.getJSONObject("hash").getString("clone") + " |\n",
+                "Generated with **Instafel Patcher** v" + PVERSION + " (" + PCOMMIT + "/release" + ")"
+        };
         String body = String.join("\n", bLines);
         JSONObject req = new JSONObject();
         req.put("tag_name", GEN_ID);
@@ -89,23 +90,22 @@ public class UploadPreview {
         req.put("draft", false);
         req.put("prerelease", false);
         req.put("generate_release_notes", false);
-        
+
         RequestBody requestBody = RequestBody.create(req.toString(), MediaType.get("application/json"));
         Request request = new Request.Builder()
-            .url("https://api.github.com/repos/mamiiblt/instafel_previews/releases")
-            .addHeader("Authorization", "Bearer " + GITHUB_PAT)
-            .addHeader("Accept", "application/vnd.github+json")
-            .addHeader("X-GitHub-Api-Version", "2022-11-28")
-            .post(requestBody)
-            .build();
+                .url("https://api.github.com/repos/mamiiblt/instafel_previews/releases")
+                .addHeader("Authorization", "Bearer " + GITHUB_PAT)
+                .addHeader("Accept", "application/vnd.github+json")
+                .addHeader("X-GitHub-Api-Version", "2022-11-28")
+                .post(requestBody)
+                .build();
 
         try (Response response = httpClient.newCall(request).execute()) {
             if (response.isSuccessful()) {
-                JSONObject resp =  new JSONObject(response.body().string());
+                JSONObject resp = new JSONObject(response.body().string());
                 Log.info("Release created!");
                 String uploadUrl = resp.getString("upload_url").replace("{?name,label}", "?name=%s");
 
-                
                 Log.info("Uploading assets...");
                 uploadAsset(uploadUrl, APK_UC);
                 uploadAsset(uploadUrl, APK_C);
@@ -120,14 +120,14 @@ public class UploadPreview {
     }
 
     private void sendLogToTelegram() {
-        String url = "https://api.mamiiblt.me/ifl/manager_new/sendGeneratedLogTg";
+        String url = "https://api.mamii.me/ifl/manager_new/sendGeneratedLogTg";
         RequestBody requestBody = RequestBody.create(buildInfo.toString(), MediaType.parse("application/json"));
-        
+
         Request request = new Request.Builder()
-            .url(url)
-            .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
-            .post(requestBody)
-            .build();
+                .url(url)
+                .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
+                .post(requestBody)
+                .build();
 
         try (Response response = httpClient.newCall(request).execute()) {
             if (!response.isSuccessful()) {
@@ -147,11 +147,11 @@ public class UploadPreview {
         RequestBody reqBody = RequestBody.create(file, MediaType.parse("application/octet-stream"));
 
         Request request = new Request.Builder()
-            .url(url)
-            .header("Authorization", "Bearer " + GITHUB_PAT)
-            .header("Accept", "application/vnd.github+json")
-            .post(reqBody)
-            .build();
+                .url(url)
+                .header("Authorization", "Bearer " + GITHUB_PAT)
+                .header("Accept", "application/vnd.github+json")
+                .post(reqBody)
+                .build();
 
         try (Response response = httpClient.newCall(request).execute()) {
             if (response.isSuccessful()) {
@@ -159,7 +159,8 @@ public class UploadPreview {
                 JSONObject resp = new JSONObject(response.body().string());
                 return resp.getString("browser_download_url");
             } else {
-                Log.severe("Error while uploading asset: " + file.getName() + " - " + response.code() + " - " + response.body().string());
+                Log.severe("Error while uploading asset: " + file.getName() + " - " + response.code() + " - "
+                        + response.body().string());
             }
         }
 

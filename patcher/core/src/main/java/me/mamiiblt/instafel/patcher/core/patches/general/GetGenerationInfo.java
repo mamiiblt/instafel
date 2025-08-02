@@ -13,27 +13,20 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-@PInfos.PatchInfo (
-    name = "Get Generation Info",
-    shortname = "get_generation_info",
-    desc = "Grab IFL Version and Generation ID from API",
-    author = "mamiiblt",
-    isSingle = false
-)
+@PInfos.PatchInfo(name = "Get Generation Info", shortname = "get_generation_info", desc = "Grab IFL Version and Generation ID from API", author = "mamiiblt", isSingle = false)
 public class GetGenerationInfo extends InstafelPatch {
 
-    private String API_BASE = null; 
+    private String API_BASE = null;
     private OkHttpClient httpClient = new OkHttpClient();
     private boolean isProdMode = false;
 
     @Override
     public List<InstafelTask> initializeTasks() throws Exception {
-        this.API_BASE = Env.Project.getString(Env.Project.Keys.API_BASE, "api.mamiiblt.me/ifl");
+        this.API_BASE = Env.Project.getString(Env.Project.Keys.API_BASE, "api.mamii.me/ifl");
         this.isProdMode = Env.Config.getBoolean(Env.Config.Keys.prod_mode, isProdMode);
         return List.of(
-            getIflVersion,
-            getGenerationID
-        );
+                getIflVersion,
+                getGenerationID);
     }
 
     InstafelTask getIflVersion = new InstafelTask("Get last IFL version from API") {
@@ -42,9 +35,9 @@ public class GetGenerationInfo extends InstafelPatch {
         public void execute() throws Exception {
             if (isProdMode) {
                 Request iflVersionRequest = new Request.Builder()
-                    .url("https://" + API_BASE + "/manager_new/lastInstafelData")
-                    .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
-                    .build();
+                        .url("https://" + API_BASE + "/manager_new/lastInstafelData")
+                        .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
+                        .build();
                 Response res = httpClient.newCall(iflVersionRequest).execute();
 
                 if (!res.isSuccessful()) {
@@ -68,9 +61,9 @@ public class GetGenerationInfo extends InstafelPatch {
         public void execute() throws Exception {
             if (isProdMode) {
                 Request genIDRequest = new Request.Builder()
-                .url("https://" + API_BASE + "/manager_new/createGenerationId")
-                .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
-                .build();
+                        .url("https://" + API_BASE + "/manager_new/createGenerationId")
+                        .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
+                        .build();
                 Response res = httpClient.newCall(genIDRequest).execute();
 
                 if (!res.isSuccessful()) {

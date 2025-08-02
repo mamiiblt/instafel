@@ -143,7 +143,7 @@ public class Env {
         }
 
         public static void createDefaultEnvFile() throws StreamReadException, DatabindException, IOException {
-            propertyManager.addString(Keys.API_BASE.toString(), "api.mamiiblt.me/ifl");
+            propertyManager.addString(Keys.API_BASE.toString(), "api.mamii.me/ifl");
             propertyManager.addString(Keys.APPLIED_PATCHES.toString(), "");
             setIgVerCodeAndVersion();
         }
