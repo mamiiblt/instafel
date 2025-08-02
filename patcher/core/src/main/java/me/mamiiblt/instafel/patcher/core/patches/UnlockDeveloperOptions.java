@@ -2,7 +2,6 @@ package me.mamiiblt.instafel.patcher.core.patches;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import me.mamiiblt.instafel.patcher.core.source.SmaliParser;
@@ -49,7 +48,7 @@ public class UnlockDeveloperOptions extends InstafelPatch {
 
             List<String> detectorContent = smaliUtils.getSmaliFileContent(igDeadCodeSessionSmali.getAbsolutePath());
             List<LineData> linesWithInvokeAndUserSession = smaliUtils.getContainLines(
-                detectorContent, "UserSession", "invoke-static"
+                detectorContent, "(Lcom/instagram/common/session/UserSession;)Z", "invoke-static"
             );
 
             if (linesWithInvokeAndUserSession.size() != 1) {
