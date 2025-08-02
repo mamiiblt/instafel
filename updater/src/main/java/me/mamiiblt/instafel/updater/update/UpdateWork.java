@@ -74,7 +74,7 @@ public class UpdateWork extends Worker {
 
         if (prefType.equals("Unclone")) {
             type = "uc";
-        } else if (prefType.equals("Clone")){
+        } else if (prefType.equals("Clone")) {
             type = "c";
         } else {
             type = null;
@@ -120,13 +120,15 @@ public class UpdateWork extends Worker {
 
                     if (versionName != null) {
                         if (versionName.equals("NOT_INSTALLED")) {
-                            sendError("IG (Instafel / Instagram) is not installed. Please install from official website", false, null);
+                            sendError(
+                                    "IG (Instafel / Instagram) is not installed. Please install from official website",
+                                    false, null);
                         } else {
                             logUtils.w("Installed IG version is " + versionName);
                             try {
                                 OkHttpClient client = new OkHttpClient();
                                 Request request = new Request.Builder()
-                                        .url("https://api.mamiiblt.me/ifl/check")
+                                        .url("https://api.mamii.me/ifl/check")
                                         .build();
                                 Response response = client.newCall(request).execute();
                                 if (response.isSuccessful()) {
@@ -142,14 +144,16 @@ public class UpdateWork extends Worker {
                                         logUtils.w("New version found " + version);
                                         if (appPreferences.isAllow12HourMode()) {
                                             String publishTs = published_at;
-                                            OffsetDateTime parsedDateTime = OffsetDateTime.parse(publishTs, DateTimeFormatter.ISO_DATE_TIME);
+                                            OffsetDateTime parsedDateTime = OffsetDateTime.parse(publishTs,
+                                                    DateTimeFormatter.ISO_DATE_TIME);
                                             OffsetDateTime currentDateTime = OffsetDateTime.now(ZoneOffset.UTC);
                                             Duration duration = Duration.between(parsedDateTime, currentDateTime);
 
                                             if (duration.toHours() >= 12) {
                                                 // allow
                                             } else {
-                                                logUtils.w("Duration is " + duration.getSeconds() + ", so update stopped.");
+                                                logUtils.w("Duration is " + duration.getSeconds()
+                                                        + ", so update stopped.");
                                                 return Result.success();
                                             }
                                         }
@@ -181,7 +185,7 @@ public class UpdateWork extends Worker {
                                         }
                                     }
                                 } else {
-                                    sendError("Response code is not 200 (" + response.code() +").", false, null);
+                                    sendError("Response code is not 200 (" + response.code() + ").", false, null);
                                 }
                             } catch (Exception e) {
                                 sendError("Error while sending / reading API request", true, e);
@@ -210,7 +214,8 @@ public class UpdateWork extends Worker {
     }
 
     public boolean isNetworkAvailable(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Network network = connectivityManager.getActiveNetwork();
@@ -222,7 +227,8 @@ public class UpdateWork extends Worker {
     }
 
     public boolean isMobileDataConnected(Context context) {
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Network network = connectivityManager.getActiveNetwork();
@@ -256,7 +262,6 @@ public class UpdateWork extends Worker {
 
             // SHOW NOTIFICATION OR TOAST
 
-
             if (appPreferences.isDisable_error_notifications()) {
                 if (priority) {
                     sendErrorNotif(message);
@@ -269,14 +274,14 @@ public class UpdateWork extends Worker {
 
     private void sendErrorNotif(String message) {
         if (appPreferences.isAllowNotification()) {
-            NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager = (NotificationManager) ctx
+                    .getSystemService(Context.NOTIFICATION_SERVICE);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 NotificationChannel channel = new NotificationChannel(
                         CHANNEL_ID,
                         "Warning Channel",
-                        NotificationManager.IMPORTANCE_DEFAULT
-                );
+                        NotificationManager.IMPORTANCE_DEFAULT);
                 notificationManager.createNotificationChannel(channel);
             }
 
