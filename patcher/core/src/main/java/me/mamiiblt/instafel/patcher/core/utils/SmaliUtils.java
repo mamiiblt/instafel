@@ -25,7 +25,7 @@ import org.apache.commons.io.filefilter.TrueFileFilter;
 import me.mamiiblt.instafel.patcher.core.utils.models.LineData;
 
 public class SmaliUtils {
-    
+
     private final String projectDir;
     private final File[] smaliFolders;
 
@@ -93,7 +93,7 @@ public class SmaliUtils {
 
     public List<File> getSmaliFilesByName(String fileNamePart) {
         List<File> smaliFiles = new ArrayList<>();
-        
+
         for (int i = 0; i < smaliFolders.length; i++) {
             File smaliFolder = new File(smaliFolders[i].getAbsolutePath());
             Collection<File> files = FileUtils.listFiles(smaliFolder, TrueFileFilter.INSTANCE, TrueFileFilter.INSTANCE);
@@ -106,6 +106,19 @@ public class SmaliUtils {
         }
 
         return smaliFiles;
+    }
+
+    public List<File> getAllSmaliFilesInAllFolders() {
+        List<File> allSmaliFiles = new ArrayList<>();
+        if (smaliFolders == null || smaliFolders.length == 0) {
+            Log.severe("No smali folders found!");
+            return allSmaliFiles;
+        }
+        for (File folder : smaliFolders) {
+            Collection<File> files = FileUtils.listFiles(folder, new String[]{"smali"}, true);
+            allSmaliFiles.addAll(files);
+        }
+        return allSmaliFiles;
     }
 
     public void writeContentIntoFile(String filePath, List<String> fContent) throws IOException {
@@ -151,7 +164,6 @@ public class SmaliUtils {
             return null;
         }
 
-
         for (File smaliFolder : smaliFolders) {
             File extPath = new File(Utils.mergePaths(smaliFolder.getAbsolutePath(), folders));
             if (extPath.exists()) {
@@ -190,7 +202,7 @@ public class SmaliUtils {
                     int num2 = extractNumber(n2);
                     return Integer.compare(num1, num2);
                 }).toArray(File[]::new);
-            
+
             return folders;
         } else {
             Log.severe("classesX folders not found.");
