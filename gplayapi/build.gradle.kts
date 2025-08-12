@@ -1,4 +1,5 @@
 plugins {
+    kotlin("jvm") version "2.2.0"
     java
     application
     id("com.gradleup.shadow") version "8.3.6"
@@ -14,10 +15,16 @@ val projectTag = projectConfig["tag"] as String
 
 val commitHash: String by rootProject.extra
 
-group = "me.mamiiblt.instafel"
+group = "gplayapi"
 version = "v$projectVersion-$commitHash-$projectTag"
 
 /************************************************/
+
+sourceSets {
+    main {
+        java.srcDirs("src/main/java", "src/main/kotlin")
+    }
+}
 
 repositories {
     mavenCentral()
@@ -25,15 +32,16 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    implementation(kotlin("stdlib"))
+    testImplementation(platform("org.junit:junit-bom:5.13.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("com.gitlab.AuroraOSS:gplayapi:0e224071")
-    implementation("org.json:json:20240303")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("org.json:json:20250517")
+    implementation("com.squareup.okhttp3:okhttp:5.1.0")
 }
 
 application {
-    mainClass = "me.mamiiblt.instafel.gplayapi.Main"
+    mainClass = "instafel.gplayapi.MainKt"
 }
 
 tasks.register("clear-cache") {
