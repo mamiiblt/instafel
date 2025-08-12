@@ -36,7 +36,7 @@ repositories {
 
 android {
     namespace = "me.mamiiblt.instafel.updater"
-    compileSdk = 35
+    compileSdk = 36
 
     // disable include metadata in dep infos
     dependenciesInfo {
@@ -47,7 +47,7 @@ android {
     defaultConfig {
         applicationId = "me.mamiiblt.instafel.updater"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = androidConfig["versionCode"] as Int
         versionName = "v$projectVersion ($commitHash)"
         buildConfigField("String", "IFLU_VERSION", "\"$projectVersion\"")
