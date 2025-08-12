@@ -1,7 +1,8 @@
 plugins {
+    kotlin("jvm") version "2.2.0"
     java
     application
-    id("com.gradleup.shadow") version "8.3.6"
+    id("com.gradleup.shadow") version "9.0.1"
     id("maven-publish")
 }
 
@@ -13,7 +14,7 @@ val projectTag = projectConfig["tag"] as String
 
 val commitHash: String by rootProject.extra
 
-group = "me.mamiiblt.instafel"
+group = "patcher"
 version = "v$cliVersion-$commitHash-$projectTag"
 
 apply(from = "publish.gradle.kts")
@@ -24,7 +25,14 @@ repositories {
     maven("https://jitpack.io")
 }
 
+sourceSets {
+    main {
+        java.srcDirs("src/main/java", "src/main/kotlin")
+    }
+}
+
 dependencies {
+    implementation(kotlin("stdlib"))
     implementation(libs["org-json"]!!)
     implementation(libs["commons-io"]!!)
     implementation(libs["okhttp"]!!)
@@ -35,7 +43,7 @@ dependencies {
 }
 
 application {
-    mainClass = "me.mamiiblt.instafel.patcher.cli.Main"
+    mainClass = "instafel.patcher.cli.MainKt"
 }
 
 tasks.shadowJar {

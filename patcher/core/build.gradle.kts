@@ -1,6 +1,6 @@
 plugins {
+    kotlin("jvm") version "2.2.0"
     java
-    application
     `java-library`
 }
 
@@ -10,10 +10,16 @@ val projectConfig = config["patcher"] as Map<*, *>
 val coreSupportedVersion = projectConfig["core_supported_version"] as String
 val commitHash: String by rootProject.extra
 
-group = "me.mamiiblt.instafel"
+group = "patcher"
 version = "$commitHash"
 
 apply(from = "publish.gradle.kts")
+
+sourceSets {
+    main {
+        java.srcDirs("src/main/java", "src/main/kotlin")
+    }
+}
 
 repositories {
     mavenCentral()
@@ -22,6 +28,7 @@ repositories {
 }
 
 dependencies {
+    implementation(kotlin("stdlib"))
     implementation(libs["org-json"]!!)
     implementation(libs["commons-io"]!!)
     implementation(libs["okhttp"]!!)
