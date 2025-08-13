@@ -99,9 +99,8 @@ public class AddLongClickEvent extends InstafelPatch {
                         }
 
                         boolean passStatus = true;
-                        for (int i = 0; i < conditions.length; i++) {
-                            boolean cond = conditions[i];
-                            if (cond == false) {
+                        for (boolean cond : conditions) {
+                            if (!cond) {
                                 passStatus = false;
                             }
                         }
