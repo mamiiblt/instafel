@@ -1,8 +1,8 @@
 package instafel.gplayapi
 
-import me.mamiiblt.instafel.gplayapi.utils.AppInfo
-import me.mamiiblt.instafel.gplayapi.utils.General
-import me.mamiiblt.instafel.gplayapi.utils.Log
+import instafel.gplayapi.utils.AppInfo
+import instafel.gplayapi.utils.General
+import instafel.gplayapi.utils.Log
 
 import com.aurora.gplayapi.data.models.AuthData
 import com.aurora.gplayapi.data.models.File
@@ -11,15 +11,22 @@ import com.aurora.gplayapi.helpers.PurchaseHelper
 
 class InstafelGplayapiInstance(private val packageName: String) {
 
-    private val authData: AuthData = General.authenticateUser(Env.email, Env.aas_token, Env.deviceProperties)
+    lateinit var authData: AuthData
 
     @Throws(Exception::class)
     fun getIgApk(): AppInfo? {
+
+        if (Env.email != null && Env.aas_token != null) {
+            authData = General.authenticateUser(Env.email!!, Env.aas_token!!, Env.deviceProperties)!!
+        } else {
+            return null
+        }
+
         val appInfo = AppInfo(AppDetailsHelper(authData).getAppByPackageName(packageName))
         val files: List<File> = PurchaseHelper(authData).purchase(
-            appInfo.getApp().packageName,
-            appInfo.getApp().versionCode,
-            appInfo.getApp().offerType
+            appInfo.app.packageName,
+            appInfo.app.versionCode,
+            appInfo.app.offerType
         )
 
         for (file in files) {

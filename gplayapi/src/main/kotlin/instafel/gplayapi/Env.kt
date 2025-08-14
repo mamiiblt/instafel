@@ -113,7 +113,7 @@ class Env {
 
 
         @Throws(Exception::class)
-        private fun triggerUpdate(appInfo: me.mamiiblt.instafel.gplayapi.utils.AppInfo) {
+        private fun triggerUpdate(appInfo: AppInfo) {
             val workflowData = JSONObject().apply {
                 put("event_type", "generate_instafel")
                 put("client_payload", JSONObject().apply {
