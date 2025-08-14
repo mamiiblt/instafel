@@ -22,7 +22,7 @@ version = "v$projectVersion-$commitHash-$projectTag"
 
 sourceSets {
     main {
-        java.srcDirs("src/main/java", "src/main/kotlin")
+        java.srcDirs("src/main/kotlin")
     }
 }
 
