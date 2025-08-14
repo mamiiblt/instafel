@@ -53,7 +53,7 @@ public class UnlockDeveloperOptions extends InstafelPatch {
                 failure("Static caller opcode can't found or more than 1!");
             }
 
-            LineData callLine = linesWithInvokeAndUserSession.getFirst();
+            LineData callLine = linesWithInvokeAndUserSession.get(0);
             SmaliInstruction callLineInstruction = SmaliParser.parseInstruction(callLine.getContent(), callLine.getNum());
             className = callLineInstruction.getClassName().replace("LX/", "").replace(";", "");
             success("DevOptions class is " + className);
@@ -120,14 +120,14 @@ public class UnlockDeveloperOptions extends InstafelPatch {
         public void execute() throws IOException {
             File devOptionsFile = smaliUtils.getSmaliFilesByName(
                 "X/" + className + ".smali"
-            ).getFirst();
+            ).get(0);
             List<String> devOptionsContent = smaliUtils.getSmaliFileContent(devOptionsFile.getAbsolutePath());
             List<LineData> moveResultLines = smaliUtils.getContainLines(
                 devOptionsContent, "move-result", "v0");
             if (moveResultLines.size() != 1) {
                 failure("Move result line size is 0 or bigger than 1");
             } 
-            LineData moveResultLine = moveResultLines.getFirst();
+            LineData moveResultLine = moveResultLines.get(0);
             if (devOptionsContent.get(moveResultLine.getNum() + 2).contains("const v0, 0x1")) {
                 failure("Developer options already unlocked.");
             }
