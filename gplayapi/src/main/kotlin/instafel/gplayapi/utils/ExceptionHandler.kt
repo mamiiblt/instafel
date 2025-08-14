@@ -1,6 +1,5 @@
 package instafel.gplayapi.utils
 
-import me.mamiiblt.instafel.gplayapi.utils.Log
 import kotlin.system.exitProcess
 
 class ExceptionHandler : Thread.UncaughtExceptionHandler{

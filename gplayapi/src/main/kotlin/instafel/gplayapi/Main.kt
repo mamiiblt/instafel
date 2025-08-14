@@ -1,7 +1,7 @@
 package instafel.gplayapi
 
 import instafel.gplayapi.utils.ExceptionHandler
-import me.mamiiblt.instafel.gplayapi.utils.Log
+import instafel.gplayapi.utils.Log
 
 @Throws(Exception::class)
 fun main() {
