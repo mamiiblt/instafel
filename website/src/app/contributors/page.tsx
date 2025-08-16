@@ -217,7 +217,7 @@ export default function Page() {
       avatar: "/cpictures/krvstek.jpg",
       flag: "🇵🇱",
       socials: {
-        website: "insane.rip/krvstek"
+        website: "e-z.bio/krvstek"
       },
     },
     {
