@@ -42,7 +42,7 @@
     <string name="checking">Sprawdzanie..</string>
     <string name="not_found">Nie znaleziono pliku SU</string>
     <string name="please_allow_root">Odmówiono dostępu root, zezwól w menedżerze uprawnień.</string>
-    <string name="please_install_root">Brak pliku SU na urządzeniu - zrootuj urządzenie.</string>
+    <string name="please_install_root">Nie udało się uzyskać dostępu root</string>
     <string name="please_allow_unrestiracted">Ustaw tryb baterii aplikacji na "Bez ograniczeń"</string>
     <string name="dialog_title">Przyznaj uprawnienia</string>
     <string name="dialog_desc">Instafel Updater wymaga uprawnień do powiadomień i roota, aby działać prawidłowo.</string>
