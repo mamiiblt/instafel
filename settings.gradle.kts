@@ -1,6 +1,3 @@
-import org.gradle.process.ExecResult
-import org.gradle.api.tasks.Exec
-import org.gradle.api.DefaultTask
 import java.io.ByteArrayOutputStream
 import java.io.File
 import groovy.json.JsonSlurper
