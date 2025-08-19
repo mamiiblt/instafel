@@ -18,7 +18,7 @@ import kotlin.system.exitProcess
 
 object CoreHandler {
     lateinit var CORE_CLASS_LOADER: URLClassLoader
-    const val CORE_PACKAGE_NAME = "me.mamiiblt.instafel.patcher.core"
+    const val CORE_PACKAGE_NAME = "instafel.patcher.core"
     lateinit var CORE_DATA_FOLDER: File
     lateinit var CORE_INFO_FILE: File
     lateinit var CORE_JAR_FILE: File
@@ -199,16 +199,38 @@ object CoreHandler {
         FileUtils.writeStringToFile(CORE_INFO_FILE, INFO_DATA.toString(4), StandardCharsets.UTF_8)
     }
 
-    fun invokeNonParamMethod(
+    fun invokeKotlinObject(
         className: String,
         methodName: String,
-        paramTypes: Array<Class<*>> = emptyArray(),
+    ): Any? {
+        return try {
+            val clazz = CoreHandler.CORE_CLASS_LOADER.loadClass("$CORE_PACKAGE_NAME.$className")
+            val instanceField = clazz.getField("INSTANCE")
+            val instance = instanceField.get(null)
+            val method = clazz.getMethod(methodName)
+            method.invoke(instance)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            null
+        }
+    }
+
+    fun invokeKotlinObjectWithParams(
+        className: String,
+        methodName: String,
         vararg args: Any?
     ): Any? {
         return try {
             val clazz = CORE_CLASS_LOADER.loadClass("$CORE_PACKAGE_NAME.$className")
+
+            val instance: Any? = try {
+                clazz.getField("INSTANCE").get(null)
+            } catch (_: NoSuchFieldException) {
+                null
+            }
+            val paramTypes = args.map { it?.javaClass ?: Any::class.java }.toTypedArray()
             val method = clazz.getMethod(methodName, *paramTypes)
-            method.invoke(null, *args)
+            method.invoke(instance, *args)
         } catch (e: Exception) {
             e.printStackTrace()
             null

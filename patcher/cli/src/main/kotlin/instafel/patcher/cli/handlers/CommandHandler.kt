@@ -2,6 +2,7 @@ package instafel.patcher.cli.handlers
 
 import instafel.patcher.cli.commands.AboutCmd
 import instafel.patcher.cli.commands.HelpCmd
+import instafel.patcher.cli.commands.ListPatches
 
 class CommandHandler(val args: Array<String>) {
     var commands: MutableMap<String, Command> = HashMap();
@@ -33,6 +34,7 @@ class CommandHandler(val args: Array<String>) {
     private fun registerCommands() {
         commands["help"] = HelpCmd();
         commands["about"] = AboutCmd()
+        commands["list"] = ListPatches()
         /*commands["update-core"] = ForceUpdateCore()
         commands["clear-cache"] = ClearPatcherCache()
         commands["help"] = HelpCmd()
