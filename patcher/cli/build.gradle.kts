@@ -1,18 +1,19 @@
-plugins {
-    kotlin("jvm") version "2.2.0"
-    java
-    application
-    id("com.gradleup.shadow") version "9.0.1"
-    id("maven-publish")
-}
-
 val libs = rootProject.extra["patcherLibs"] as Map<*, *>
 var config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config["patcher"] as Map<*, *>
 val cliVersion = projectConfig["cli_version"] as String
 val projectTag = projectConfig["tag"] as String
-
 val commitHash: String by rootProject.extra
+val kotlinVersion: String by rootProject
+println("Kotlin version is $kotlinVersion")
+
+plugins {
+    kotlin("jvm") version "2.2.10"
+    java
+    application
+    id("com.gradleup.shadow") version "9.0.1"
+    id("maven-publish")
+}
 
 group = "patcher"
 version = "v$cliVersion-$commitHash-$projectTag"
@@ -55,7 +56,8 @@ tasks.shadowJar {
             "Patcher-Cli-Version" to cliVersion,
             "Patcher-Cli-Commit" to commitHash,
             "Patcher-Cli-Branch" to "main",
-            "Patcher-Cli-Tag" to projectTag
+            "Patcher-Cli-Tag" to projectTag,
+            "Patcher-Cli-Kotlin-Version" to kotlinVersion,
         )
     }
 }
