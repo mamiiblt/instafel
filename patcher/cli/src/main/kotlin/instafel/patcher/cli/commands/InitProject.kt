@@ -21,20 +21,26 @@ class InitProject: Command {
                         return;
                     }
 
-                    val clazz = CoreHandler.CORE_CLASS_LOADER.loadClass("me.mamiiblt.instafel.patcher.core.jobs.InitializeProject")
-                    val method = clazz.getMethod("runInitProject", File::class.java, File::class.java)
-                    val projectDir = File(Utils.USER_DIR)
-
+                    Thread {
+                        CoreHandler.invokeKotlinObjectWithParams(
+                            "jobs.InitProject",
+                            "runJob",
+                            arrayOf(
+                                File(Utils.USER_DIR),
+                                apkFile
+                            )
+                        )
+                    }.start()
                 } else {
                     Log.warning("Please select an .apk file")
                 }
             } else {
-                Log.info("Wrong commage usage type, use like that;")
+                Log.info("Wrong command usage, use like that;")
                 Log.info("java -jar patcher.jar init instagram.apk")
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            Log.severe("An error occurred while running tasks")
+            Log.severe("An error occurred while running command tasks")
             exitProcess(-1)
         }
     }
