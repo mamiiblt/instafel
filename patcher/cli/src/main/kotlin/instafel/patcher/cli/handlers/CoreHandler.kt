@@ -215,25 +215,20 @@ object CoreHandler {
         }
     }
 
+    @Throws(Exception::class)
     fun invokeKotlinObjectWithParams(
         className: String,
         methodName: String,
-        vararg args: Any?
+        args: Array<Any?>
     ): Any? {
         return try {
             val clazz = CORE_CLASS_LOADER.loadClass("$CORE_PACKAGE_NAME.$className")
-
-            val instance: Any? = try {
-                clazz.getField("INSTANCE").get(null)
-            } catch (_: NoSuchFieldException) {
-                null
-            }
-            val paramTypes = args.map { it?.javaClass ?: Any::class.java }.toTypedArray()
-            val method = clazz.getMethod(methodName, *paramTypes)
-            method.invoke(instance, *args)
+            val instanceField = clazz.getField("INSTANCE").get(null)
+            val runJobMethod = clazz.getMethod(methodName, Array<Any>::class.java)
+            runJobMethod.invoke(instanceField, arrayOf(*args))
         } catch (e: Exception) {
-            e.printStackTrace()
-            null
+            throw Exception("An error occurred while reflecting the class $CORE_PACKAGE_NAME.$className", e)
         }
     }
+
 }
