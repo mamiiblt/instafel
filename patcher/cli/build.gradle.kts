@@ -4,8 +4,6 @@ val projectConfig = config["patcher"] as Map<*, *>
 val cliVersion = projectConfig["cli_version"] as String
 val projectTag = projectConfig["tag"] as String
 val commitHash: String by rootProject.extra
-val kotlinVersion: String by rootProject
-println("Kotlin version is $kotlinVersion")
 
 plugins {
     kotlin("jvm") version "2.2.10"
@@ -56,8 +54,7 @@ tasks.shadowJar {
             "Patcher-Cli-Version" to cliVersion,
             "Patcher-Cli-Commit" to commitHash,
             "Patcher-Cli-Branch" to "main",
-            "Patcher-Cli-Tag" to projectTag,
-            "Patcher-Cli-Kotlin-Version" to kotlinVersion,
+            "Patcher-Cli-Tag" to projectTag
         )
     }
 }

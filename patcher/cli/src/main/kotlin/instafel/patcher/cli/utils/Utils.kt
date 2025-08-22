@@ -13,7 +13,6 @@ object Utils {
     lateinit var PROP_CLI_COMMIT_HASH: String
     lateinit var PROP_CLI_PROJECT_TAG: String
     lateinit var PROP_CLI_PROJECT_BRANCH: String
-    lateinit var PROP_KOTLIN_VERSION: String
     lateinit var PROP_CORE_COMMIT: String
     lateinit var PROP_CORE_BRANCH: String
     val USER_DIR: String = System.getProperty("user.dir")
@@ -25,7 +24,6 @@ object Utils {
             val attr = manifest.mainAttributes
 
             PROP_CLI_VERSION = attr.getValue("Patcher-Cli-Version")
-            PROP_KOTLIN_VERSION = attr.getValue("Patcher-Cli-Kotlin-Version")
             PROP_CLI_COMMIT_HASH = attr.getValue("Patcher-Cli-Commit")
             PROP_CLI_PROJECT_TAG = attr.getValue("Patcher-Cli-Tag")
             PROP_CLI_PROJECT_BRANCH = attr.getValue("Patcher-Cli-Branch")

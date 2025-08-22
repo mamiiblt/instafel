@@ -12,7 +12,7 @@ object Env {
     val INSTAFEL_LOCALES = listOf<String>("tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl", "in")
     val SEPARATOR_LINE = "---------------------------"
 
-    class Project {
+    object Project {
         enum class Keys() {
             API_BASE,
             INSTAGRAM_VERSION,
@@ -68,7 +68,7 @@ object Env {
         }
     }
 
-    class Config {
+    object Config {
         enum class Keys() {
             manifest_version,
             source_dir,

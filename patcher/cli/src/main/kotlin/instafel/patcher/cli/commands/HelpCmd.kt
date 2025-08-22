@@ -15,8 +15,8 @@ class HelpCmd: Command{
               update-core               Update Core JAR manually
               clear-cache               Clear patcher caches
               
-              For a complete guide on using the patcher, visit:
-              https://github.com/mamiiblt/instafel
+            For a complete guide on using the patcher, visit:
+            https://github.com/mamiiblt/instafel
         """.trimIndent())
     }
 }
