@@ -2,6 +2,7 @@ package instafel.patcher.cli.handlers
 
 import instafel.patcher.cli.commands.AboutCmd
 import instafel.patcher.cli.commands.HelpCmd
+import instafel.patcher.cli.commands.InitProject
 import instafel.patcher.cli.commands.ListPatches
 
 class CommandHandler(val args: Array<String>) {
@@ -35,12 +36,9 @@ class CommandHandler(val args: Array<String>) {
         commands["help"] = HelpCmd();
         commands["about"] = AboutCmd()
         commands["list"] = ListPatches()
+        commands["init"] = InitProject()
         /*commands["update-core"] = ForceUpdateCore()
         commands["clear-cache"] = ClearPatcherCache()
-        commands["help"] = HelpCmd()
-        commands["about"] = AboutCmd()
-        commands["list"] = ListPatches()
-        commands["init"] = InitProject()
         commands["run"] = RunPatch()
         commands["build"] = BuildCmd()
         commands["uprew"] = UploadPreview()
