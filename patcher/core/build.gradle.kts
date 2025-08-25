@@ -29,6 +29,7 @@ repositories {
 
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation(libs["kotlin-reflect"]!!)
     implementation(libs["org-json"]!!)
     implementation(libs["commons-io"]!!)
     implementation(libs["okhttp"]!!)

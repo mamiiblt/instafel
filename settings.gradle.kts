@@ -29,6 +29,7 @@ gradle.rootProject {
     extra["commitHash"] = getGitCommitHash()
     extra["instafelConfig"] = jsonData
     extra["patcherLibs"] = mapOf(
+        "kotlin-reflect" to "org.jetbrains.kotlin:kotlin-reflect:2.2.10",
         "org-json" to "org.json:json:20240303",
         "commons-io" to "commons-io:commons-io:2.20.0",
         "okhttp" to "com.squareup.okhttp3:okhttp:5.1.0",
