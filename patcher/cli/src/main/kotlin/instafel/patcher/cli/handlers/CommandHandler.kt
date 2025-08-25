@@ -4,6 +4,7 @@ import instafel.patcher.cli.commands.AboutCmd
 import instafel.patcher.cli.commands.HelpCmd
 import instafel.patcher.cli.commands.InitProject
 import instafel.patcher.cli.commands.ListPatches
+import instafel.patcher.cli.commands.RunPatch
 
 class CommandHandler(val args: Array<String>) {
     var commands: MutableMap<String, Command> = HashMap();
@@ -37,9 +38,9 @@ class CommandHandler(val args: Array<String>) {
         commands["about"] = AboutCmd()
         commands["list"] = ListPatches()
         commands["init"] = InitProject()
+        commands["run"] = RunPatch()
         /*commands["update-core"] = ForceUpdateCore()
         commands["clear-cache"] = ClearPatcherCache()
-        commands["run"] = RunPatch()
         commands["build"] = BuildCmd()
         commands["uprew"] = UploadPreview()
         commands["csrc"] = CreateIflSourceZip()*/
