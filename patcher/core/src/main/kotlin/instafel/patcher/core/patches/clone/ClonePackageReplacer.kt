@@ -12,7 +12,7 @@ import java.io.File
     shortname = "clone_replace_strs",
     desc = "It makes app compatible for clone generation",
     author = "mamiiblt",
-    isSingle = true
+    isSingle = false
 )
 class ClonePackageReplacer: InstafelPatch() {
 

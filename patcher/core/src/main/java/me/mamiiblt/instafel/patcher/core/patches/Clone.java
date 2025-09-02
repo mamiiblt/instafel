@@ -23,5 +23,4 @@ public class Clone extends InstafelPatchGroup {
             ClonePackageReplacer.class
         );
     }
-
 }

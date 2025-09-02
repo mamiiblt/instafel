@@ -14,7 +14,7 @@ import org.json.JSONObject
     shortname = "get_generation_info",
     desc = "Grab IFL Version and Generation ID from API",
     author = "mamiiblt",
-    isSingle = true
+    isSingle = false
 )
 class GetGenerationInfo: InstafelPatch() {
 
