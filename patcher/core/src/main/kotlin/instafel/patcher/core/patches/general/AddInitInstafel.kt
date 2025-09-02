@@ -13,7 +13,7 @@ import kotlin.system.exitProcess
     shortname = "add_init_instafel",
     desc = "This patch must be applied for Instafel Menu",
     author = "mamiiblt",
-    isSingle = true
+    isSingle = false
 )
 class AddInitInstafel: InstafelPatch() {
 

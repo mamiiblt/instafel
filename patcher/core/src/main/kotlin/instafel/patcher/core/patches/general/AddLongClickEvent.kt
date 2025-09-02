@@ -14,7 +14,7 @@ import kotlin.collections.iterator
     shortname = "add_long_click_event",
     desc = "This patch must be applied for Instafel Menu",
     author = "mamiiblt",
-    isSingle = true
+    isSingle = false
 )
 class AddLongClickEvent: InstafelPatch() {
 

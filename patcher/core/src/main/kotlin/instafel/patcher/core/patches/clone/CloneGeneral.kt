@@ -24,7 +24,7 @@ import java.io.InputStream
     shortname = "clone_general",
     desc = "It makes app compatible for clone generation",
     author = "mamiiblt",
-    isSingle = true
+    isSingle = false
 )
 class CloneGeneral: InstafelPatch() {
 
