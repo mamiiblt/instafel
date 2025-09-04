@@ -1,11 +1,6 @@
 package instafel.patcher.cli.handlers
 
-import instafel.patcher.cli.commands.AboutCmd
-import instafel.patcher.cli.commands.BuildCmd
-import instafel.patcher.cli.commands.HelpCmd
-import instafel.patcher.cli.commands.InitProject
-import instafel.patcher.cli.commands.ListPatches
-import instafel.patcher.cli.commands.RunPatch
+import instafel.patcher.cli.commands.*
 
 class CommandHandler(val args: Array<String>) {
     var commands: MutableMap<String, Command> = HashMap();
@@ -41,9 +36,9 @@ class CommandHandler(val args: Array<String>) {
         commands["init"] = InitProject()
         commands["run"] = RunPatch()
         commands["build"] = BuildCmd()
+        commands["csrc"] = CreateIflSourceZip()
         /*commands["update-core"] = ForceUpdateCore()
         commands["clear-cache"] = ClearPatcherCache()
-        commands["uprew"] = UploadPreview()
-        commands["csrc"] = CreateIflSourceZip()*/
+        commands["uprew"] = UploadPreview()*/
     }
 }
