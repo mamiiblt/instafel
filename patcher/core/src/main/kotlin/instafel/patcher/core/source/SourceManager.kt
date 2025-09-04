@@ -28,9 +28,6 @@ class SourceManager(var config: Config = Config()) {
         val buildDir = File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
         if (!buildDir.exists()) {
             FileUtils.forceMkdir(buildDir)
-        } else {
-            FileUtils.deleteDirectory(buildDir)
-            FileUtils.forceMkdir(buildDir)
         }
         val apkBuilder = ApkBuilder(
             ExtFile(
