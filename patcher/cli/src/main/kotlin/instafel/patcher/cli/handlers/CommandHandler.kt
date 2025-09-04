@@ -1,6 +1,7 @@
 package instafel.patcher.cli.handlers
 
 import instafel.patcher.cli.commands.AboutCmd
+import instafel.patcher.cli.commands.BuildCmd
 import instafel.patcher.cli.commands.HelpCmd
 import instafel.patcher.cli.commands.InitProject
 import instafel.patcher.cli.commands.ListPatches
@@ -39,9 +40,9 @@ class CommandHandler(val args: Array<String>) {
         commands["list"] = ListPatches()
         commands["init"] = InitProject()
         commands["run"] = RunPatch()
+        commands["build"] = BuildCmd()
         /*commands["update-core"] = ForceUpdateCore()
         commands["clear-cache"] = ClearPatcherCache()
-        commands["build"] = BuildCmd()
         commands["uprew"] = UploadPreview()
         commands["csrc"] = CreateIflSourceZip()*/
     }
