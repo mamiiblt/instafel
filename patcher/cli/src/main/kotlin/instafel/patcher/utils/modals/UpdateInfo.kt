@@ -1,4 +1,4 @@
-package instafel.patcher.cli.utils.modals
+package instafel.patcher.utils.modals
 
 class UpdateInfo {
     lateinit var commit: String

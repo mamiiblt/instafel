@@ -1,6 +1,6 @@
-package instafel.patcher.cli.handlers
+package instafel.patcher.handlers
 
-import instafel.patcher.cli.commands.*
+import instafel.patcher.commands.*
 
 class CommandHandler(val args: Array<String>) {
     var commands: MutableMap<String, Command> = HashMap();

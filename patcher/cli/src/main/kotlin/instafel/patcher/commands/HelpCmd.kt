@@ -1,6 +1,6 @@
-package instafel.patcher.cli.commands
+package instafel.patcher.commands
 
-import instafel.patcher.cli.handlers.Command
+import instafel.patcher.handlers.Command
 
 class HelpCmd: Command{
     override fun execute(args: Array<String>) {

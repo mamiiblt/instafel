@@ -1,11 +1,10 @@
-package instafel.patcher.cli.commands
+package instafel.patcher.commands
 
-import instafel.patcher.cli.handlers.Command
-import instafel.patcher.cli.handlers.CoreHandler
-import me.mamiiblt.instafel.patcher.cli.utils.Log
+import instafel.patcher.handlers.Command
+import instafel.patcher.handlers.CoreHandler
+import instafel.patcher.utils.Log
 import org.json.JSONObject
 import kotlin.system.exitProcess
-
 
 class ListPatches: Command {
     override fun execute(args: Array<String>) {

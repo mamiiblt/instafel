@@ -1,8 +1,8 @@
-package instafel.patcher.cli.handlers
+package instafel.patcher.handlers
 
-import instafel.patcher.cli.utils.Utils
-import instafel.patcher.cli.utils.modals.UpdateInfo
-import me.mamiiblt.instafel.patcher.cli.utils.Log
+import instafel.patcher.utils.Utils
+import instafel.patcher.utils.modals.UpdateInfo
+import instafel.patcher.utils.Log
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import org.apache.commons.io.FileUtils
