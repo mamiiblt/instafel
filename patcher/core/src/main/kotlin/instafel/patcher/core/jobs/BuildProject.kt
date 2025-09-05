@@ -39,8 +39,8 @@ object BuildProject: CLIJob {
     override fun runJob(vararg args: Any) {
         val workingDir = args.getOrNull(0) as? File
         val coreCommit = args.getOrNull(1) as? String
-        val projectTag = args.getOrNull(1) as? String
-        val projectVersion = args.getOrNull(1) as? String
+        val projectTag = args.getOrNull(2) as? String
+        val projectVersion = args.getOrNull(3) as? String
 
         if (workingDir !is File || coreCommit !is String || projectTag !is String || projectVersion !is String) {
             Log.severe("Wrong arguments given by CLI")
