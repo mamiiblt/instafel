@@ -1,4 +1,4 @@
-package instafel.patcher.cli.utils
+package instafel.patcher.utils
 
 import java.util.logging.*
 

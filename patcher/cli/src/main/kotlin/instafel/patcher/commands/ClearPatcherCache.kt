@@ -1,8 +1,8 @@
-package instafel.patcher.cli.commands
+package instafel.patcher.commands
 
-import instafel.patcher.cli.handlers.Command
-import instafel.patcher.cli.utils.Log
-import instafel.patcher.cli.utils.Utils
+import instafel.patcher.handlers.Command
+import instafel.patcher.utils.Log
+import instafel.patcher.utils.Utils
 import org.apache.commons.io.FileUtils
 import java.io.File
 

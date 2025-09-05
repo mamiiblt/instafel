@@ -1,9 +1,9 @@
-package instafel.patcher.cli
+package instafel.patcher
 
-import instafel.patcher.cli.handlers.CommandHandler
-import instafel.patcher.cli.handlers.CoreHandler
-import instafel.patcher.cli.utils.Log
-import instafel.patcher.cli.utils.Utils
+import instafel.patcher.handlers.CommandHandler
+import instafel.patcher.handlers.CoreHandler
+import instafel.patcher.utils.Log
+import instafel.patcher.utils.Utils
 
 fun main(args: Array<String>) {
     System.setProperty("java.awt.headless", "true")

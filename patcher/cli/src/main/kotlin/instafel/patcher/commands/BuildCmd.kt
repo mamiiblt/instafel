@@ -1,9 +1,9 @@
-package instafel.patcher.cli.commands
+package instafel.patcher.commands
 
-import instafel.patcher.cli.handlers.Command
-import instafel.patcher.cli.handlers.CoreHandler
-import instafel.patcher.cli.utils.Log
-import instafel.patcher.cli.utils.Utils
+import instafel.patcher.handlers.Command
+import instafel.patcher.handlers.CoreHandler
+import instafel.patcher.utils.Log
+import instafel.patcher.utils.Utils
 import java.io.File
 import java.nio.file.Paths
 import kotlin.system.exitProcess

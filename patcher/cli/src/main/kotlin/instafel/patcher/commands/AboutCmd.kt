@@ -1,8 +1,8 @@
-package instafel.patcher.cli.commands
+package instafel.patcher.commands
 
+import instafel.patcher.handlers.Command
+import instafel.patcher.utils.Utils
 import brut.androlib.ApktoolProperties
-import instafel.patcher.cli.handlers.Command
-import instafel.patcher.cli.utils.Utils
 
 class AboutCmd: Command {
     override fun execute(args: Array<String>) {

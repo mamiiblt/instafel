@@ -1,6 +1,5 @@
-package instafel.patcher.cli.utils
+package instafel.patcher.utils
 
-import me.mamiiblt.instafel.patcher.cli.utils.Utils
 import java.io.File
 import java.nio.file.Path
 import java.nio.file.Paths
