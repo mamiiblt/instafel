@@ -38,7 +38,7 @@ class CommandHandler(val args: Array<String>) {
         commands["build"] = BuildCmd()
         commands["csrc"] = CreateIflSourceZip()
         commands["uprew"] = UploadPreview()
-        /*commands["update-core"] = ForceUpdateCore()
-        commands["clear-cache"] = ClearPatcherCache()*/
+        commands["update-core"] = ForceUpdateCore()
+        commands["clear-cache"] = ClearPatcherCache()
     }
 }
