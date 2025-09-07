@@ -57,8 +57,8 @@ pluginManagement {
 
 
 include(":app")
-include(":patcher:cli")
-include(":patcher:core")
+include(":patcher")
+include(":patcher-core")
 include(":updater")
 include(":website")
 include(":gplayapi")

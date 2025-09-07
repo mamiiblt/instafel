@@ -4,8 +4,8 @@
     "tag": "release"
   },
   "patcher": {
-    "patcher_version": "3.0.1",
-    "core_supported_version": "3.0.1",
+    "patcher_version": "4.0.0",
+    "core_supported_version": "4.0.0",
     "tag": "release"
   },
   "website": {
