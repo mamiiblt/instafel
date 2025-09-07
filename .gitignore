@@ -4,49 +4,42 @@
 # Ignore Gradle build output directory
 build
 
+# Ignore Instafel build output directory
+.output
+
 # Ingore IntelliJ IDEA 
 .intellij_idea
 .idea
 .vscode
 .vercel
-
 .android_studio
 .android_sdk
 
 # Ingore Config
-
 local.properties
-
 /config/ifl_config.json
 /config/keystores
 
 # Instafel APP
-
 /app/build
 /app/output
 
 
 # Instafel Patcher
-
-/patcher/output
-/patcher/core/bin
-/patcher/core/build
-/patcher/cli/bin
-/patcher/cli/build
-/patcher/core/src/main/resources/patches.json
-
+/patcher/generated-poms/**
+/patcher/bin
+/patcher/build
+/patcher-core/generated-poms/**
+/patcher-core/bin
+/patcher-core/build
 
 # Instafel GPlayAPI
-
-/gplayapi/output
 /gplayapi/build
 /gplayapi/.gradle
 /gplayapi/bin
 /gplayapi/src/main/resources/gplayapi.properties
 
 # Instafel Updater
-
-/updater/output
 /updater/*.iml
 /updater/.gradle
 /updater/local.properties
