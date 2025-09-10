@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.2.0"
+    kotlin("jvm")
     java
     application
     id("com.gradleup.shadow") version "8.3.6"

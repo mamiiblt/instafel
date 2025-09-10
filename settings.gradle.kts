@@ -53,6 +53,9 @@ pluginManagement {
         gradlePluginPortal()
         maven("https://jitpack.io")
     }
+    plugins {
+        kotlin("jvm") version "2.2.0"
+    }
 }
 
 

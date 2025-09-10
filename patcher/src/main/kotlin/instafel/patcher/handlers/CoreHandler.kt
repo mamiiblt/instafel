@@ -57,7 +57,7 @@ object CoreHandler {
     }
 
     private fun checkDebugCoreJAR() {
-        val debugCore = File(Paths.get(Utils.USER_DIR, "ifl-pcore-" + Utils.PROP_CLI_COMMIT_HASH + ".jar").toString())
+        val debugCore = File(Paths.get(Utils.USER_DIR, "ifl-patcher-core-" + Utils.PROP_CLI_COMMIT_HASH + ".jar").toString())
         if (debugCore.exists()) {
             Log.info("Patcher uses debug core")
             CORE_JAR_FILE = debugCore
