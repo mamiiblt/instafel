@@ -19,6 +19,7 @@ build
 local.properties
 /config/ifl_config.json
 /config/keystores
+env.properties
 
 # Instafel APP
 /app/build
