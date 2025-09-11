@@ -1,4 +1,3 @@
-val libs = rootProject.extra["patcherLibs"] as Map<*, *>
 var config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config["patcher"] as Map<*, *>
 val patcherVersion = projectConfig["patcher_version"] as String
@@ -9,28 +8,22 @@ plugins {
     kotlin("jvm")
     java
     application
-    id("com.gradleup.shadow") version "9.0.1"
+    id("com.gradleup.shadow")
 }
 
 group = "instafel"
-version = "v$patcherVersion"
-
-repositories {
-    mavenCentral()
-    google()
-    maven("https://jitpack.io")
-}
+version = "v$patcherVersion-$projectTag"
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation(libs["kotlin-reflect"]!!)
-    implementation(libs["org-json"]!!)
-    implementation(libs["commons-io"]!!)
-    implementation(libs["okhttp"]!!)
-    implementation(libs["apktool-lib"]!!)
-    implementation(libs["classgraph"]!!)
-    implementation(libs["jackson-databind"]!!)
-    implementation(libs["jackson-yaml"]!!)
+    implementation(IFLProjectManager.Deps.kotlin_stdlib)
+    implementation(IFLProjectManager.Deps.kotlin_reflect)
+    implementation(IFLProjectManager.Deps.org_json)
+    implementation(IFLProjectManager.Deps.commons_io)
+    implementation(IFLProjectManager.Deps.okhttp)
+    implementation(IFLProjectManager.Deps.apktool_lib)
+    implementation(IFLProjectManager.Deps.classgraph)
+    implementation(IFLProjectManager.Deps.jackson_databind)
+    implementation(IFLProjectManager.Deps.jackson_yaml)
 }
 
 application {
@@ -52,12 +45,8 @@ tasks.shadowJar {
     }
 }
 
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("-Xlint:deprecation")
-}
-
 tasks.register("build-jar") {
-    group = "build"
+    group = "instafel"
     description = "Builds JAR file"
 
     dependsOn("shadowJar")
@@ -68,7 +57,9 @@ tasks.register("build-jar") {
 }
 
 tasks.register("release") {
-    group = "publishing"
+    dependsOn("build-jar")
+
+    group = "instafel"
     description = "Releases new patcher release"
 
     doLast {
@@ -102,4 +93,8 @@ tasks.register("release") {
             """.trimIndent()
         )
     }
+}
+
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("-Xlint:deprecation")
 }

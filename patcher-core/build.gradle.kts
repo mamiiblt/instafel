@@ -1,36 +1,27 @@
-import groovy.util.Node
-
 plugins {
     kotlin("jvm")
     java
     `java-library`
 }
 
-val libs = rootProject.extra["patcherLibs"] as Map<*, *>
 val config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config["patcher"] as Map<*, *>
 val coreSupportedVersion = projectConfig["core_supported_version"] as String
 val commitHash: String by rootProject.extra
 
-group = "patcher"
+group = "instafel"
 version = commitHash
 
-repositories {
-    mavenCentral()
-    google()
-    maven("https://jitpack.io")
-}
-
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation(libs["kotlin-reflect"]!!)
-    implementation(libs["org-json"]!!)
-    implementation(libs["commons-io"]!!)
-    implementation(libs["okhttp"]!!)
-    implementation(libs["apktool-lib"]!!)
-    implementation(libs["classgraph"]!!)
-    implementation(libs["jackson-databind"]!!)
-    implementation(libs["jackson-yaml"]!!)
+    implementation(IFLProjectManager.Deps.kotlin_stdlib)
+    implementation(IFLProjectManager.Deps.kotlin_reflect)
+    implementation(IFLProjectManager.Deps.org_json)
+    implementation(IFLProjectManager.Deps.commons_io)
+    implementation(IFLProjectManager.Deps.okhttp)
+    implementation(IFLProjectManager.Deps.apktool_lib)
+    implementation(IFLProjectManager.Deps.classgraph)
+    implementation(IFLProjectManager.Deps.jackson_databind)
+    implementation(IFLProjectManager.Deps.jackson_yaml)
 }
 
 tasks.named<Jar>("jar") {
@@ -48,7 +39,7 @@ tasks.named<Jar>("jar") {
 }
 
 tasks.register("build-jar") {
-    group = "build"
+    group = "instafel"
     description = "Builds JAR file"
 
     dependsOn("jar")
@@ -59,7 +50,9 @@ tasks.register("build-jar") {
 }
 
 tasks.register("release") {
-    group = "publishing"
+    dependsOn("build-jar")
+
+    group = "instafel"
     description = "Releases new core release"
 
     doLast {

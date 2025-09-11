@@ -2,9 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
-/************************************************/
-/* BUILD CONFIG INITIALIZATION PASHE */
-
 var config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config[project.name] as Map<*, *>
 val androidConfig = projectConfig["androidConfig"] as Map<*, *>
@@ -13,21 +10,6 @@ val keystoreConfig = androidConfig["keystore"] as Map<*, *>
 val commitHash: String by rootProject.extra
 
 group = "me.mamiiblt.instafel"
-
-/************************************************/
-
-repositories {
-    google {
-        content {
-            includeGroupByRegex("com\\.android.*")
-            includeGroupByRegex("com\\.google.*")
-            includeGroupByRegex("androidx.*")
-        }
-    }
-    mavenCentral()
-    gradlePluginPortal()
-    maven("https://jitpack.io")
-}
 
 android {
     namespace = "me.mamiiblt.instafel"
@@ -38,9 +20,7 @@ android {
         minSdk = 28
         targetSdk = 36
         versionCode = 1 // it doesn't matter
-        versionName = "$commitHash" // it doesn't matter
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        versionName = commitHash // it doesn't matter
     }
 
     signingConfigs{
@@ -66,12 +46,14 @@ android {
 }
 
 tasks.register("generate-app-debug") {
+    group = "instafel"
+    description = "Builds APK as debug"
     dependsOn("assembleDebug")
 
     doLast {
         val outputName = "ifl-app-$commitHash-debug.apk"
         file("${project.projectDir}/build/outputs/apk/debug/app-debug.apk")
-            .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
+            .copyTo(file("${project.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
         delete("${project.projectDir}/build")
@@ -81,12 +63,14 @@ tasks.register("generate-app-debug") {
 }
 
 tasks.register("generate-app-release") {
+    group = "instafel"
+    description = "Builds APK as release"
     dependsOn("assembleRelease")
 
     doLast {
         val outputName = "ifl-app-$commitHash-release.apk"
         file("${project.projectDir}/build/outputs/apk/release/app-release.apk")
-            .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
+            .copyTo(file("${project.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
         delete("${project.projectDir}/build")
@@ -96,11 +80,8 @@ tasks.register("generate-app-release") {
 }
 
 dependencies {
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.activity)
-    implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(IFLProjectManager.Deps.Android.appcompat)
+    implementation(IFLProjectManager.Deps.Android.material)
+    implementation(IFLProjectManager.Deps.Android.activity)
+    implementation(IFLProjectManager.Deps.Android.constraintlayout)
 }

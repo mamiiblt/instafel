@@ -1,0 +1,97 @@
+{
+  "project": {
+    "agp_version": "8.11.1"
+  },
+  "dependencies": {
+    "kotlin_stdlib": {
+      "package": "org.jetbrains.kotlin:kotlin-stdlib",
+      "version": "2.2.20"
+    },
+    "kotlin_reflect": {
+      "package": "org.jetbrains.kotlin:kotlin-reflect",
+      "version": "2.2.20"
+    },
+    "gplayapi": {
+      "package": "com.gitlab.AuroraOSS:gplayapi",
+      "version": "0e224071"
+    },
+    "org_json": {
+      "package": "org.json:json",
+      "version": "20250517"
+    },
+    "okhttp": {
+      "package": "com.squareup.okhttp3:okhttp",
+      "version": "5.1.0"
+    },
+    "commons_io": {
+      "package": "commons-io:commons-io",
+      "version": "2.20.0"
+    },
+    "apktool_lib": {
+      "package": "org.apktool:apktool-lib",
+      "version": "2.12.0"
+    },
+    "classgraph": {
+      "package": "io.github.classgraph:classgraph",
+      "version": "4.8.181"
+    },
+    "jackson_databind": {
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.20.0"
+    },
+    "jackson_yaml": {
+      "package": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml",
+      "version": "2.20.0"
+    },
+    "shizuku_api": {
+      "package": "dev.rikka.shizuku:api",
+      "version": "13.1.5"
+    },
+    "shizuku_provider": {
+      "package": "dev.rikka.shizuku:provider",
+      "version": "13.1.5"
+    },
+    "rootbeer": {
+      "package": "com.scottyab:rootbeer-lib",
+      "version": "0.1.1"
+    },
+    "m3_preferences": {
+      "package": "com.github.TTTT55:Material-You-Preferences",
+      "version": "0.2.5"
+    },
+    "android": {
+      "work_manager": {
+        "package": "androidx.work:work-runtime",
+        "version": "2.9.1"
+      },
+      "appcompat": {
+        "package": "androidx.appcompat:appcompat",
+        "version": "1.7.1"
+      },
+      "material": {
+        "package": "com.google.android.material:material",
+        "version": "1.13.0"
+      },
+      "activity": {
+        "package": "androidx.activity:activity",
+        "version": "1.10.1"
+      },
+      "constraintlayout": {
+        "package": "androidx.constraintlayout:constraintlayout",
+        "version": "2.2.1"
+      },
+      "navigation_fragment": {
+        "package": "androidx.navigation:navigation-fragment",
+        "version": "2.9.3"
+      },
+      "navigation_ui": {
+        "package": "androidx.navigation:navigation-ui",
+        "version": "2.9.3"
+      },
+      "preference": {
+        "package": "androidx.preference:preference",
+        "version": "1.2.1"
+      }
+    }
+  }
+}

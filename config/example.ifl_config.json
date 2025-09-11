@@ -34,11 +34,11 @@
       }
     },
     "dependencyConfig": {
-      "shizuku_version": "13.1.5",
-      "android_work_version": "2.9.1",
+      "shizuku_version": "",
+      "android_work_version": "",
       "okhttp_version": "4.9.0",
       "materialyoupreferences_version": "0.2.5",
-      "rootbeer-lib": "0.1.1"
+      "rootbeer-lib": ""
     }
   }
 }
