@@ -2,9 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
-/************************************************/
-/* BUILD CONFIG INITIALIZATION PASHE */
-
 var config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config[project.name] as Map<*, *>
 val androidConfig = projectConfig["androidConfig"] as Map<*, *>
@@ -15,24 +12,9 @@ val projectVersion = projectConfig["version"] as String
 
 val commitHash: String by rootProject.extra
 
-group = "me.mamiiblt.instafel"
+group = "instafel"
 
 apply(from = "publish.gradle.kts")
-
-/************************************************/
-
-repositories {
-    google {
-        content {
-            includeGroupByRegex("com\\.android.*")
-            includeGroupByRegex("com\\.google.*")
-            includeGroupByRegex("androidx.*")
-        }
-    }
-    mavenCentral()
-    gradlePluginPortal()
-    maven("https://jitpack.io")
-}
 
 android {
     namespace = "me.mamiiblt.instafel.updater"
@@ -84,12 +66,14 @@ android {
 }
 
 tasks.register("generate-app-debug") {
+    group = "instafel"
+    description = "Builds APK as debug"
     dependsOn("assembleDebug")
 
     doLast {
         val outputName = "ifl-updater-v$projectVersion-$commitHash-debug.apk"
         file("${project.projectDir}/build/outputs/apk/debug/updater-debug.apk")
-            .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
+            .copyTo(file("${rootProject.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
         delete("${project.projectDir}/build")
@@ -99,12 +83,14 @@ tasks.register("generate-app-debug") {
 }
 
 tasks.register("generate-app-release") {
+    group = "instafel"
+    description = "Builds APK as release"
     dependsOn("assembleRelease")
 
     doLast {
         val outputName = "ifl-updater-v$projectVersion-$commitHash-release.apk"
         file("${project.projectDir}/build/outputs/apk/release/updater-release.apk")
-            .copyTo(file("${project.projectDir}/output/$outputName"), overwrite = true)
+            .copyTo(file("${rootProject.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
 
         delete("${project.projectDir}/build")
@@ -113,22 +99,18 @@ tasks.register("generate-app-release") {
     }
 }
 
-
 dependencies {
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.activity)
-    implementation(libs.constraintlayout)
-    implementation(libs.navigation.fragment)
-    implementation("dev.rikka.shizuku:api:${depsConfig["shizuku_version"] as String}")
-    implementation("dev.rikka.shizuku:provider:${depsConfig["shizuku_version"] as String}")
-    implementation("androidx.work:work-runtime:${depsConfig["android_work_version"] as String}")
-    implementation("com.squareup.okhttp3:okhttp:${depsConfig["okhttp_version"] as String}")
-    implementation("com.github.TTTT55:Material-You-Preferences:${depsConfig["materialyoupreferences_version"] as String}")
-    implementation("com.scottyab:rootbeer-lib:${depsConfig["rootbeer-lib"] as String}")
-    implementation(libs.navigation.ui)
-    implementation(libs.preference)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(IFLProjectManager.Deps.Android.appcompat)
+    implementation(IFLProjectManager.Deps.Android.material)
+    implementation(IFLProjectManager.Deps.Android.activity)
+    implementation(IFLProjectManager.Deps.Android.constraintlayout)
+    implementation(IFLProjectManager.Deps.Android.navigation_fragment)
+    implementation(IFLProjectManager.Deps.Android.navigation_ui)
+    implementation(IFLProjectManager.Deps.Android.preference)
+    implementation(IFLProjectManager.Deps.shizuku_api)
+    implementation(IFLProjectManager.Deps.shizuku_provider)
+    implementation(IFLProjectManager.Deps.okhttp)
+    implementation(IFLProjectManager.Deps.m3_preferences)
+    implementation(IFLProjectManager.Deps.rootbeer)
+    implementation(IFLProjectManager.Deps.Android.work_manager)
 }
