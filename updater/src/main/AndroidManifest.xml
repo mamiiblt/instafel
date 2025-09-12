@@ -23,7 +23,6 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/iflu_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/iflu_icon_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.InstafelUpdater"
         tools:targetApi="34">
