@@ -89,7 +89,7 @@ tasks.register("release") {
 
                 ## More Information?
 
-                For more information about the patcher, please visit [Instafel Wiki](instafel.app/wiki) or [Source Code](https://github.com/mamiiblt/instafel)
+                For more information about the patcher, please visit [Instafel Wiki](https://instafel.app/wiki) or [Source Code](https://github.com/mamiiblt/instafel)
             """.trimIndent()
         )
     }

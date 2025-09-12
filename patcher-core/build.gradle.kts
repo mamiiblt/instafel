@@ -60,7 +60,7 @@ tasks.register("release") {
             token = getInstafelEnvProperty("GH_TOKEN"),
             owner = "instafel",
             repo = "pc-rel",
-            tagName = commitHash,
+            tagName = "$commitHash-$coreSupportedVersion",
             name =  "Core $commitHash",
             assets = listOf(
                 tasks.jar.get().archiveFile.get().asFile,
@@ -83,7 +83,7 @@ tasks.register("release") {
 
                 ## More Information?
 
-                For more information about the patcher, please visit [Instafel Wiki](instafel.app/wiki) or [Source Code](https://github.com/mamiiblt/instafel)
+                For more information about the patcher, please visit [Instafel Wiki](https://instafel.app/wiki) or [Source Code](https://github.com/mamiiblt/instafel)
             """.trimIndent()
         )
     }
