@@ -4,8 +4,8 @@
     "tag": "release"
   },
   "patcher": {
-    "patcher_version": "4.0.0",
-    "core_supported_version": "4.0.0",
+    "patcher_version": "4.1.0",
+    "core_supported_version": "4.1.0",
     "tag": "release"
   },
   "website": {
@@ -23,7 +23,7 @@
     }
   },
   "updater": {
-    "version": "3.7.0",
+    "version": "3.7.1",
     "androidConfig": {
       "versionCode": 1,
       "keystore": {
