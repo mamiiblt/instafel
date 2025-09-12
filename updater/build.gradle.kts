@@ -6,8 +6,6 @@ var config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config[project.name] as Map<*, *>
 val androidConfig = projectConfig["androidConfig"] as Map<*, *>
 val keystoreConfig = androidConfig["keystore"] as Map<*, *>
-val depsConfig = projectConfig["dependencyConfig"] as Map<*, *>
-
 val projectVersion = projectConfig["version"] as String
 
 val commitHash: String by rootProject.extra
@@ -71,7 +69,7 @@ tasks.register("generate-app-debug") {
     dependsOn("assembleDebug")
 
     doLast {
-        val outputName = "ifl-updater-v$projectVersion-$commitHash-debug.apk"
+        val outputName = "ifl-updater-v$projectVersion-debug.apk"
         file("${project.projectDir}/build/outputs/apk/debug/updater-debug.apk")
             .copyTo(file("${rootProject.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
@@ -88,10 +86,10 @@ tasks.register("generate-app-release") {
     dependsOn("assembleRelease")
 
     doLast {
-        val outputName = "ifl-updater-v$projectVersion-$commitHash-release.apk"
+        val outputName = "ifl-updater-v$projectVersion-release.apk"
         file("${project.projectDir}/build/outputs/apk/release/updater-release.apk")
             .copyTo(file("${rootProject.rootDir}/.output/$outputName"), overwrite = true)
-        println("APK successfully copied: $outputName")
+        println("APK successfully copied into .output: $outputName")
 
         delete("${project.projectDir}/build")
         println("Build caches cleared.")

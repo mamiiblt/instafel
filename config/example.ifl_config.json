@@ -23,22 +23,15 @@
     }
   },
   "updater": {
-    "version": "3.3.0",
+    "version": "3.7.0",
     "androidConfig": {
       "versionCode": 1,
       "keystore": {
-        "ksPath": "/config/keystores/instafel-updater.jks",
-        "ksKeyPass": "value",
-        "ksAlias": "value",
-        "ksPass": "value"
+        "ksPath": "/config/testkey.keystore",
+        "ksKeyPass": "android",
+        "ksAlias": "testkey",
+        "ksPass": "android"
       }
-    },
-    "dependencyConfig": {
-      "shizuku_version": "",
-      "android_work_version": "",
-      "okhttp_version": "4.9.0",
-      "materialyoupreferences_version": "0.2.5",
-      "rootbeer-lib": ""
     }
   }
 }
