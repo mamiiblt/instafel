@@ -68,7 +68,7 @@ object CoreHandler {
     }
 
     fun downloadCoreJAR(updateInfo: UpdateInfo, coreJarFile: File) {
-        val url = "https://github.com/mamiiblt/instafel/raw/refs/heads/ft-releases/p-core/dist/ifl-pcore-${updateInfo.commit}.jar"
+        val url = "https://github.com/instafel/pc-rel/releases/download/${updateInfo.commit}-${updateInfo.supported_pversion}/ifl-patcher-core-${updateInfo.commit}.jar"
         val client = OkHttpClient()
         val request = Request.Builder().url(url).build()
 
@@ -105,15 +105,16 @@ object CoreHandler {
     fun getLatestCoreUpdateInfo(): UpdateInfo {
         val client = OkHttpClient()
         val request = Request.Builder()
-            .url("https://raw.githubusercontent.com/mamiiblt/instafel/refs/heads/ft-releases/p-core/latest.json")
+            .url("https://api.github.com/repos/instafel/pc-rel/releases/latest")
             .build()
 
         client.newCall(request).execute().use { response ->
             if (response.isSuccessful) {
                 val jsonObject = JSONObject(response.body.string())
+                val tagFields = jsonObject.getString("tag_name").split("-")
                 return UpdateInfo().apply {
-                    commit = jsonObject.getString("commit")
-                    supported_pversion = jsonObject.getString("supported_pversion")
+                    commit = tagFields[0]
+                    supported_pversion = tagFields[1]
                 }
             } else {
                 throw Exception("An error occurred while reading/sending API request")
