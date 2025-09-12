@@ -81,40 +81,40 @@ fun Project.registerGithubReleaseTask(
     println("Everything is completed successfully.")
 }
 
+fun writeBuildInfoJSON(buildDir: File, jsonObj: JSONObject): File {
+    println("Generating build_info.json file...")
+    val infoFile = File("$buildDir/generated-build-infos/build_info.json")
+    infoFile.parentFile.mkdirs()
+    infoFile.writeText(jsonObj.toString(2))
+    println("File saved into ${infoFile.absolutePath} successfully.")
+    return infoFile
+}
+
 fun Project.generatePatcherBuildJSON(
     version: String,
     commit: String,
     channel: String
-): File {
-    println("Generating build_info.json file...")
-    val infoFile = File("$buildDir/generated-build-infos/build_info.json")
-    infoFile.parentFile.mkdirs()
+): File = writeBuildInfoJSON(buildDir, JSONObject()
+    .put("version", version)
+    .put("channel", channel)
+    .put("commit", commit))
 
-    val json = JSONObject()
-        .put("version", version)
-        .put("channel", channel)
-        .put("commit", commit)
-
-    infoFile.writeText(json.toString(2))
-    println("File saved into ${infoFile.absolutePath} successfully.")
-    return infoFile
-}
+fun Project.generateUpdaterBuildJSON(
+    version: String,
+    commit: String,
+    channel: String,
+    branch: String
+): File = writeBuildInfoJSON(buildDir, JSONObject()
+    .put("version", version)
+    .put("channel", channel)
+    .put("commit", commit)
+    .put("branch", branch))
 
 fun Project.generatePatcherCoreBuildJSON(
     commit: String,
     branch: String,
     supportedVer: String
-): File {
-    println("Generating build_info.json file...")
-    val infoFile = File("$buildDir/generated-build-infos/build_info.json")
-    infoFile.parentFile.mkdirs()
-
-    val json = JSONObject()
-        .put("commit", commit)
-        .put("branch", branch)
-        .put("supported_patcher_v", supportedVer)
-
-    infoFile.writeText(json.toString(2))
-    println("File saved into ${infoFile.absolutePath} successfully.")
-    return infoFile
-}
+): File = writeBuildInfoJSON(buildDir, JSONObject()
+    .put("commit", commit)
+    .put("branch", branch)
+    .put("supported_patcher_v", supportedVer))

@@ -12,7 +12,21 @@ val commitHash: String by rootProject.extra
 
 group = "instafel"
 
-apply(from = "publish.gradle.kts")
+dependencies {
+    implementation(IFLProjectManager.Deps.Android.appcompat)
+    implementation(IFLProjectManager.Deps.Android.material)
+    implementation(IFLProjectManager.Deps.Android.activity)
+    implementation(IFLProjectManager.Deps.Android.constraintlayout)
+    implementation(IFLProjectManager.Deps.Android.navigation_fragment)
+    implementation(IFLProjectManager.Deps.Android.navigation_ui)
+    implementation(IFLProjectManager.Deps.Android.preference)
+    implementation(IFLProjectManager.Deps.shizuku_api)
+    implementation(IFLProjectManager.Deps.shizuku_provider)
+    implementation(IFLProjectManager.Deps.okhttp)
+    implementation(IFLProjectManager.Deps.m3_preferences)
+    implementation(IFLProjectManager.Deps.rootbeer)
+    implementation(IFLProjectManager.Deps.Android.work_manager)
+}
 
 android {
     namespace = "me.mamiiblt.instafel.updater"
@@ -97,18 +111,41 @@ tasks.register("generate-app-release") {
     }
 }
 
-dependencies {
-    implementation(IFLProjectManager.Deps.Android.appcompat)
-    implementation(IFLProjectManager.Deps.Android.material)
-    implementation(IFLProjectManager.Deps.Android.activity)
-    implementation(IFLProjectManager.Deps.Android.constraintlayout)
-    implementation(IFLProjectManager.Deps.Android.navigation_fragment)
-    implementation(IFLProjectManager.Deps.Android.navigation_ui)
-    implementation(IFLProjectManager.Deps.Android.preference)
-    implementation(IFLProjectManager.Deps.shizuku_api)
-    implementation(IFLProjectManager.Deps.shizuku_provider)
-    implementation(IFLProjectManager.Deps.okhttp)
-    implementation(IFLProjectManager.Deps.m3_preferences)
-    implementation(IFLProjectManager.Deps.rootbeer)
-    implementation(IFLProjectManager.Deps.Android.work_manager)
+tasks.register("release") {
+    group = "instafel"
+    description = "Releases new updater release"
+    dependsOn("generate-app-release")
+
+    doLast {
+        registerGithubReleaseTask(
+            token = getInstafelEnvProperty("GH_TOKEN"),
+            owner = "instafel",
+            repo = "u-rel",
+            tagName = "v$projectVersion",
+            name =  "Release v$projectVersion",
+            assets = listOf(
+                File("${rootProject.rootDir}/.output/ifl-updater-v$projectVersion-release.apk"),
+                generateUpdaterBuildJSON(
+                    version = projectVersion,
+                    commit = commitHash,
+                    branch = "main",
+                    channel = "release"
+                )
+            ),
+            body =  """
+                # Build Information
+        
+                | Property | Value |
+                | ------------- | ------------- |
+                | Version | v$projectVersion |
+                | Channel | release |
+                | Base Commit | [$commitHash](https://github.com/mamiiblt/instafel/commit/$commitHash) |
+                | Branch | [main](https://github.com/mamiiblt/instafel) |
+
+                ## More Information?
+
+                For more information about the updater, please visit [About Updater](https://instafel.app/about_updater) or [Source Code](https://github.com/mamiiblt/instafel)
+            """.trimIndent()
+        )
+    }
 }
