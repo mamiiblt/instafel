@@ -23,7 +23,8 @@ class UnlockDeveloperOptions: InstafelPatch() {
     lateinit var unlockRefSmali: File
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Find reference smali file in X folders") {
+        @PInfos.TaskInfo("Find reference smali file in X folders")
+        object: InstafelTask() {
             override fun execute() {
                 var fileFoundLock = false
 
@@ -60,7 +61,8 @@ class UnlockDeveloperOptions: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Get constraint definition class") {
+        @PInfos.TaskInfo("Get constraint definition class")
+        object: InstafelTask() {
             override fun execute() {
                 val referenceFileContent = smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
                 val linesWithInvokeAndUserSession: List<LineData> = smaliUtils.getContainLines(
@@ -78,7 +80,8 @@ class UnlockDeveloperOptions: InstafelPatch() {
                 success("DevOptions class is $className")
             }
         },
-        object: InstafelTask("Add constraint line to DevOptions class") {
+        @PInfos.TaskInfo("Add constraint line to DevOptions class")
+        object: InstafelTask() {
             override fun execute() {
                 val devOptionsFile = smaliUtils.getSmaliFilesByName("X/$className.smali")
                     .firstOrNull() ?: run {

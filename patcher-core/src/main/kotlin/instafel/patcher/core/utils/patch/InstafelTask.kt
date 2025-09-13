@@ -4,10 +4,27 @@ import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.Log
 import kotlin.system.exitProcess
 
-abstract class InstafelTask(val taskName: String) {
+abstract class InstafelTask() {
 
     private var taskStatus: Int = 0
     private lateinit var finishString: String
+    var taskName: String
+
+    init {
+        try {
+            val taskInfo = this.javaClass.getAnnotation(PInfos.TaskInfo::class.java)
+            if (taskInfo != null) {
+                this.taskName = taskInfo.name
+            } else {
+                Log.severe("Please add TaskInfo for running tasks")
+                exitProcess(-1)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.severe("Error while constructing InstafelTask")
+            exitProcess(-1)
+        }
+    }
 
     @Throws(Exception::class)
     abstract fun execute()

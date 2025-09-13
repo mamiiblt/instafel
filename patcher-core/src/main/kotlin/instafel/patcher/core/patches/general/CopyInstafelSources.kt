@@ -35,7 +35,8 @@ class CopyInstafelSources: InstafelPatch() {
     }
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Copy smali / resources") {
+        @PInfos.TaskInfo("Copy smali / resources")
+        object: InstafelTask() {
             override fun execute() {
                 val smallDexFolder: File? = smaliUtils.getSmallSizeSmaliFolder(smaliUtils.smaliFolders)
 
@@ -63,7 +64,8 @@ class CopyInstafelSources: InstafelPatch() {
                 success("Instafel resources copied")
             }
         },
-        object: InstafelTask("Add activities & providers to manifest") {
+        @PInfos.TaskInfo("Add activities & providers to manifest")
+        object: InstafelTask() {
             override fun execute() {
                 val manifestFile = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "AndroidManifest.xml"))
                 val manifestDoc = ResourceParser.parseResourceDocument(manifestFile)
@@ -92,7 +94,8 @@ class CopyInstafelSources: InstafelPatch() {
                 success("Activities & providers added successfully from Instafel base")
             }
         },
-        object: InstafelTask("Merge Instafel strings with IG") {
+        @PInfos.TaskInfo("Merge Instafel strings with IG")
+        object: InstafelTask() {
             override fun execute() {
                 val igResources = ResourceParser.parseResString(getValueResourceFile("strings.xml"))
 
@@ -120,7 +123,8 @@ class CopyInstafelSources: InstafelPatch() {
                 success("Instafel strings merged successfully.")
             }
         },
-        object: InstafelTask("Copy IFL resources into Instagram") {
+        @PInfos.TaskInfo("Copy IFL resources into Instagram")
+        object: InstafelTask() {
             override fun execute() {
                 mergeResources(ResourceParser.parseResColor(
                     getValueResourceFile("colors.xml")
@@ -138,7 +142,8 @@ class CopyInstafelSources: InstafelPatch() {
                 success("All resources merged succesfully");
             }
         },
-        object: InstafelTask("Copy public resources with new IDs") {
+        @PInfos.TaskInfo("Copy public resources with new IDs")
+        object: InstafelTask() {
             override fun execute() {
                 val igPublic: Resources<RTypes.TPublic> = ResourceParser.parseResPublic(getValueResourceFile("public.xml"))
                 val categorizedIGPublics: Map<String, List<Int>> = ResourceHelper.getIDsWithCategory(igPublic)
@@ -157,7 +162,8 @@ class CopyInstafelSources: InstafelPatch() {
                 success("ID's successfully defined.")
             }
         },
-        object: InstafelTask("Update Instafel R classes") {
+        @PInfos.TaskInfo("Update Instafel R classes")
+        object: InstafelTask() {
             override fun execute() {
                 val smaliFolder = File(
                     Utils.mergePaths(

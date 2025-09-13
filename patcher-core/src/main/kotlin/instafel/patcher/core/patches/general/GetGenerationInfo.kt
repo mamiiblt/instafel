@@ -23,7 +23,8 @@ class GetGenerationInfo: InstafelPatch() {
     var isProdMode = Env.Config.getBoolean(Env.Config.Keys.prod_mode, false)
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Get last IFL version from API") {
+        @PInfos.TaskInfo("Get last IFL version from API")
+        object: InstafelTask() {
             override fun execute() {
                 if (isProdMode) {
                     val iflVersionRequest = Request.Builder()
@@ -55,7 +56,8 @@ class GetGenerationInfo: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Generate a new Generation ID from API") {
+        @PInfos.TaskInfo("Generate a new Generation ID from API")
+        object: InstafelTask() {
             override fun execute() {
                 if (isProdMode) {
                     val genIDRequest = Request.Builder()

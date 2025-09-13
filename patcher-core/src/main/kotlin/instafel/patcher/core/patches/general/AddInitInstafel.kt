@@ -18,7 +18,8 @@ import kotlin.system.exitProcess
 class AddInitInstafel: InstafelPatch() {
 
     override fun initializeTasks() = mutableListOf<InstafelTask> (
-        object: InstafelTask("Find getRootContent() method") {
+        @PInfos.TaskInfo("Find getRootContent() method")
+        object: InstafelTask() {
             override fun execute() {
                 val appShellResult = smaliUtils.getSmaliFilesByName("/com/instagram/app/InstagramAppShell.smali")
                 val appShellFile = if (appShellResult.isEmpty() || appShellResult.size > 1) {

@@ -21,7 +21,8 @@ class RemoveAds: InstafelPatch() {
     lateinit var removeAdsFile: File
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Find source file") {
+        @PInfos.TaskInfo("Find source file")
+        object: InstafelTask() {
             override fun execute() {
                 var scannedFileSize = 0
 
@@ -55,7 +56,8 @@ class RemoveAds: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Change method return") {
+        @PInfos.TaskInfo("Change method return")
+        object: InstafelTask() {
             override fun execute() {
                 val fContent = smaliUtils.getSmaliFileContent(removeAdsFile.absolutePath).toMutableList()
                 var methodLine = -1

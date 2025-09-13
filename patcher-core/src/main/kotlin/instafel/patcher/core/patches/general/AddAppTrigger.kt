@@ -22,7 +22,8 @@ class AddAppTrigger: InstafelPatch() {
     lateinit var activityFile: File
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Find getRootContent() method") {
+        @PInfos.TaskInfo("Find getRootContent() method")
+        object: InstafelTask() {
             override fun execute() {
                 var scannedFileSize = 0
                 var fileFoundLock = false;
@@ -64,7 +65,8 @@ class AddAppTrigger: InstafelPatch() {
             }
 
         },
-        object: InstafelTask("Find activity") {
+        @PInfos.TaskInfo("Find activity")
+        object: InstafelTask() {
             override fun execute() {
                 var scannedFileSize = 0
                 val foundFiles = mutableListOf<File>()
@@ -115,7 +117,8 @@ class AddAppTrigger: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Add trigger to activity") {
+        @PInfos.TaskInfo("Add trigger to activity")
+        object: InstafelTask() {
             override fun execute() {
                 val fContent = smaliUtils.getSmaliFileContent(activityFile.absolutePath).toMutableList()
 
