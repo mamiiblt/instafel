@@ -21,7 +21,8 @@ class AddLongClickEvent: InstafelPatch() {
     lateinit var longClickFile: File
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Find long click smali file") {
+        @PInfos.TaskInfo("Find long click smali file")
+        object: InstafelTask() {
             override fun execute() {
                 var scannedFileSize = 0
                 val foundFiles = mutableListOf<File>()
@@ -69,7 +70,8 @@ class AddLongClickEvent: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Change dev options caller to Instafel menu caller") {
+        @PInfos.TaskInfo("Change dev options caller to Instafel menu caller")
+        object: InstafelTask() {
             override fun execute() {
                 val fContent = smaliUtils.getSmaliFileContent(longClickFile.absolutePath).toMutableList()
                 var lock = false

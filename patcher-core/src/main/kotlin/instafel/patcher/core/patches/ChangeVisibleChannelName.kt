@@ -22,7 +22,8 @@ class ChangeVisibleChannelName: InstafelPatch() {
     var searchConstStrings = listOf( "\"NONE\"", "\"ALPHA\"", "\"BETA\"", "\"PROD\"")
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Find const definition class in X classes") {
+        @PInfos.TaskInfo("Find const definition class in X classes")
+        object: InstafelTask() {
             override fun execute() {
                 var scannedFileSize = 0
                 val cachePath = Env.Project.getString(Env.Project.Keys.P_VCLASS_PATH, "NFN")
@@ -75,7 +76,8 @@ class ChangeVisibleChannelName: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Change string constraints in file") {
+        @PInfos.TaskInfo("Change string constraints in file")
+        object: InstafelTask() {
             override fun execute() {
                 val sContent = smaliUtils.getSmaliFileContent(constFile.absolutePath).toMutableList()
 

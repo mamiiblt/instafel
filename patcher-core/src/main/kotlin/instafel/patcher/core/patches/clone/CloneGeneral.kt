@@ -44,7 +44,8 @@ class CloneGeneral: InstafelPatch() {
     val TN_ANDROID_LABEL = "android:label"
 
     override fun initializeTasks() = mutableListOf(
-        object: InstafelTask("Replace app icon") {
+        @PInfos.TaskInfo("Replace app icon")
+        object: InstafelTask() {
             override fun execute() {
                 val valuesFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "res"))
 
@@ -75,7 +76,8 @@ class CloneGeneral: InstafelPatch() {
                 success("Icon images successfully copied.")
             }
         },
-        object: InstafelTask("Change application package in manifest") {
+        @PInfos.TaskInfo("Change application package in manifest")
+        object: InstafelTask() {
             override fun execute() {
                 FileUtils.forceMkdir(cloneRefFolder)
                 val manifestFile = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "AndroidManifest.xml"))
@@ -86,7 +88,8 @@ class CloneGeneral: InstafelPatch() {
                 success("Package attribute changed to $NEW_PACKAGE_NAME")
             }
         },
-        object: InstafelTask("Replace app name") {
+        @PInfos.TaskInfo("Replace app name")
+        object: InstafelTask() {
             override fun execute() {
                 val appTag = ResourceParser.getElementsFromResFile(manifest, "application")[0]
                 val appLabelResource = appTag.getAttribute(TN_ANDROID_LABEL).replace("@string/", "")
@@ -109,7 +112,8 @@ class CloneGeneral: InstafelPatch() {
                 }
             }
         },
-        object: InstafelTask("Change providers in manifest") {
+        @PInfos.TaskInfo("Change providers in manifest")
+        object: InstafelTask() {
             override fun execute() {
                 val providers = ResourceParser.getElementsFromResFile(manifest, "provider")
                 providers.forEach { provider ->
@@ -155,7 +159,8 @@ class CloneGeneral: InstafelPatch() {
                 success("All providers updated.")
             }
         },
-        object: InstafelTask("Change permissions in manifest") {
+        @PInfos.TaskInfo("Change permissions in manifest")
+        object: InstafelTask() {
             override fun execute() {
                 val permissions = mutableListOf<Element>().apply {
                     addAll(ResourceParser.getElementsFromResFile(manifest, "permission"))

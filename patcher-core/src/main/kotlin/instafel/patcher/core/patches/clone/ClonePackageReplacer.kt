@@ -19,7 +19,8 @@ class ClonePackageReplacer: InstafelPatch() {
     val NEW_PACKAGE_NAME = "com.instafel.android"
 
     override fun initializeTasks() = mutableListOf<InstafelTask>(
-        object: InstafelTask("Update package name in smali files") {
+        @PInfos.TaskInfo("Update package name in smali files")
+        object: InstafelTask() {
             override fun execute() {
                 Log.info("Changing package name strings in smali files.")
                 var changedLineCount = 0
