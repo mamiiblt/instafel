@@ -1,3 +1,7 @@
+import java.util.jar.JarEntry
+import java.util.jar.JarFile
+import java.util.jar.JarOutputStream
+
 plugins {
     kotlin("jvm")
     java
@@ -8,6 +12,7 @@ val config = rootProject.extra["instafelConfig"] as Map<*, *>
 val projectConfig = config["patcher"] as Map<*, *>
 val coreSupportedVersion = projectConfig["core_supported_version"] as String
 val commitHash: String by rootProject.extra
+lateinit var patchesJsonFile: File
 
 group = "instafel"
 version = commitHash
@@ -42,10 +47,40 @@ tasks.register("build-jar") {
     group = "instafel"
     description = "Builds JAR file"
 
-    dependsOn("jar")
+    dependsOn("jar", "generatePatchesJSON")
 
     doLast {
-        println("JAR successfully generated.")
+        println("Core JAR successfully generated.")
+    }
+}
+
+tasks.register("generatePatchesJSON") {
+    mustRunAfter("jar")
+    group = "instafel"
+    description = "Generates a patches.json file contains patch details"
+
+    doLast{
+        val jarFile = tasks.jar.get().archiveFile.get().asFile
+        val patchesJsonFile = generatePatchesJSON(jarFile)
+
+        val tempJar = File(jarFile.parentFile, "temp-${jarFile.name}")
+        JarFile(jarFile).use { jar ->
+            JarOutputStream(tempJar.outputStream()).use { jos ->
+                jar.entries().toList().forEach { entry ->
+                    jos.putNextEntry(JarEntry(entry.name))
+                    jar.getInputStream(entry).use { it.copyTo(jos) }
+                    jos.closeEntry()
+                }
+
+                val entry = JarEntry("patches.json")
+                jos.putNextEntry(entry)
+                patchesJsonFile.inputStream().use { it.copyTo(jos) }
+                jos.closeEntry()
+            }
+        }
+
+        jarFile.delete()
+        tempJar.renameTo(jarFile)
     }
 }
 
