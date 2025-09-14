@@ -61,7 +61,7 @@ tasks.register("generatePatchesJSON") {
 
     doLast{
         val jarFile = tasks.jar.get().archiveFile.get().asFile
-        val patchesJsonFile = generatePatchesJSON(jarFile)
+        patchesJsonFile = generatePatchesJSON(jarFile)
 
         val tempJar = File(jarFile.parentFile, "temp-${jarFile.name}")
         JarFile(jarFile).use { jar ->
@@ -99,6 +99,7 @@ tasks.register("release") {
             name =  "Core $commitHash",
             assets = listOf(
                 tasks.jar.get().archiveFile.get().asFile,
+                patchesJsonFile,
                 generatePatcherCoreBuildJSON(
                     commit = commitHash,
                     branch = "main",
