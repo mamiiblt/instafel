@@ -13,6 +13,7 @@ import java.net.MalformedURLException
 import java.net.URLClassLoader
 import java.nio.charset.StandardCharsets
 import java.nio.file.Paths
+import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import kotlin.system.exitProcess
 
@@ -213,6 +214,16 @@ object CoreHandler {
         } catch (e: Exception) {
             e.printStackTrace()
             null
+        }
+    }
+
+    fun getEntryAsString(name: String): String {
+       JarFile(CORE_JAR_FILE).use { jar ->
+            val entry = jar.getJarEntry(name)
+                ?: throw IllegalArgumentException("Resource $name not found in core jar")
+            jar.getInputStream(entry).use { input ->
+                return input.bufferedReader().use { it.readText() }
+            }
         }
     }
 
