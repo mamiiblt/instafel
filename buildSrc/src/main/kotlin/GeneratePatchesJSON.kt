@@ -40,7 +40,7 @@ fun generatePatchInfoObj(clazz: Class<*>): JSONObject {
     if (taskInfos.has(patchPath)) {
         infoObj.put("tasks", taskInfos.get(patchPath))
     } else {
-        infoObj.put("tasks", JSONArray())
+        infoObj.put("tasks", JSONObject())
     }
 
     return infoObj;
