@@ -64,7 +64,7 @@ class CopyInstafelSources: InstafelPatch() {
                 success("Instafel resources copied")
             }
         },
-        @PInfos.TaskInfo("Add activities & providers to manifest")
+        @PInfos.TaskInfo("Add activities and providers to manifest")
         object: InstafelTask() {
             override fun execute() {
                 val manifestFile = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "AndroidManifest.xml"))
