@@ -27,6 +27,7 @@ dependencies {
     implementation(IFLProjectManager.Deps.classgraph)
     implementation(IFLProjectManager.Deps.jackson_databind)
     implementation(IFLProjectManager.Deps.jackson_yaml)
+    implementation(IFLProjectManager.Deps.gson)
 }
 
 tasks.named<Jar>("jar") {

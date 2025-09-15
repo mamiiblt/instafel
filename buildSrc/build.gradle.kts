@@ -12,10 +12,12 @@ val jsonText = File(configPath).readText()
 val orgJsonVersion = Regex("\"org_json\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
 val kotlinRlVersion = Regex("\"kotlin_reflect\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
 val kotlinStdlib = Regex("\"kotlin_stdlib\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
+val gsonVersion = Regex("\"gson\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinStdlib")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${"2.2.20"}")
     implementation("org.json:json:$orgJsonVersion")
+    implementation("com.google.code.gson:gson:${gsonVersion}")
     implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlinRlVersion")
 }

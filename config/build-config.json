@@ -3,6 +3,10 @@
     "agp_version": "8.11.1"
   },
   "dependencies": {
+    "gson": {
+      "package": "com.google.code.gson:gson",
+      "version": "2.13.2"
+    },
     "kotlin_stdlib": {
       "package": "org.jetbrains.kotlin:kotlin-stdlib",
       "version": "2.2.20"
