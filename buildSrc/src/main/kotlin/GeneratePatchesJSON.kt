@@ -1,6 +1,8 @@
+import com.google.gson.GsonBuilder
+import modals.PatchGroupInfo
+import modals.PatchInfo
+import modals.PatchesInfo
 import org.gradle.api.Project
-import org.json.JSONArray
-import org.json.JSONObject
 import java.io.File
 import java.net.URL
 import java.net.URLClassLoader
@@ -12,11 +14,21 @@ const val patchesPath = "instafel/patcher/core/patches"
 
 fun filterPackageName(name: String): String = name.replace("instafel.patcher.core.", "")
 fun filterPackageNameAndUtilsPatchPkg(name: String): String = name.replace("instafel.patcher.core.utils.patch.", "")
-var patchesJSON = JSONObject()
-var taskInfos = JSONObject()
 
-fun generatePatchInfoObj(clazz: Class<*>): JSONObject {
-    val infoObj = JSONObject()
+val gson = GsonBuilder().setPrettyPrinting().create()
+val singles = mutableListOf<PatchInfo>()
+val groups = mutableListOf<PatchGroupInfo>()
+val tasksInfo = mutableMapOf<String, MutableMap<Int, String>>()
+var tasksInfoOrdered = mutableMapOf<String, List<String>>()
+
+fun generatePatchInfoObj(clazz: Class<*>): PatchInfo {
+    lateinit var name: String;
+    lateinit var shortname: String;
+    lateinit var path: String;
+    lateinit var desc: String;
+    var isSingle = false;
+    var tasks: List<String>
+
     val infoAnnotation = clazz.annotations.firstOrNull {
         it.annotationClass.simpleName?.contains("PatchInfo") == true
     }
@@ -31,23 +43,28 @@ fun generatePatchInfoObj(clazz: Class<*>): JSONObject {
         .forEach { m ->
             val value = m.call(infoAnnotation)
             if (m.name != "hashCode" && m.name != "toString") {
-                infoObj.put(m.name, value)
+                when (m.name) {
+                    "name" -> name = value as String
+                    "shortname" -> shortname = value as String
+                    "isSingle" -> isSingle = value as Boolean
+                    "desc" -> desc = value as String
+                }
             }
         }
 
     val patchPath = filterPackageName(clazz.name)
-    infoObj.put("path", patchPath)
-    if (taskInfos.has(patchPath)) {
-        infoObj.put("tasks", taskInfos.get(patchPath))
-    } else {
-        infoObj.put("tasks", JSONObject())
-    }
+    path = patchPath
+    tasks = tasksInfoOrdered.getOrPut(patchPath) { mutableListOf() }
 
-    return infoObj;
+    return PatchInfo(name, desc, shortname, path, isSingle, tasks);
 }
 
 fun processPatchGroup(clazz: Class<*>) {
-    val groupObj = JSONObject()
+    lateinit var name: String;
+    lateinit var shortname: String;
+    lateinit var path: String;
+    lateinit var desc: String;
+
     val infoAnnotation = clazz.annotations.firstOrNull {
         it.annotationClass.simpleName?.contains("PatchGroupInfo") == true
     }
@@ -57,17 +74,19 @@ fun processPatchGroup(clazz: Class<*>) {
         exitProcess(-1)
     }
 
-    groupObj.put("path", filterPackageName(clazz.name))
+    path = filterPackageName(clazz.name)
     infoAnnotation.annotationClass.members
         .filter { it.parameters.size == 1 }
         .forEach { m ->
             val value = m.call(infoAnnotation)
-            if (m.name != "hashCode" && m.name != "toString") {
-                groupObj.put(m.name, value)
+            when (m.name) {
+                "name" -> name = value as String
+                "shortname" -> shortname = value as String
+                "desc" -> desc = value as String
             }
         }
 
-    groupObj.put("patches", JSONArray())
+    val patches = mutableListOf<PatchInfo>()
 
     val constructor = clazz.getDeclaredConstructor()
     constructor.isAccessible = true
@@ -81,18 +100,17 @@ fun processPatchGroup(clazz: Class<*>) {
 
     patchesList.forEach { patchKClass ->
         val patchClass = patchKClass as KClass<*>
-        val patchInfo = generatePatchInfoObj(patchClass.java)
-        groupObj.getJSONArray("patches").put(patchInfo)
+        patches.add(generatePatchInfoObj(patchClass.java))
     }
 
-    patchesJSON.getJSONArray("groups").put(groupObj)
+    groups.add(PatchGroupInfo(
+        name, desc, shortname, path, patches
+    ))
 }
 
 fun processPatch(clazz: Class<*>) {
-    val infoObj = generatePatchInfoObj(clazz)
-    if (infoObj.getBoolean("isSingle")) {
-        patchesJSON.getJSONArray("singles").put(infoObj)
-    }
+    val patchInfo = generatePatchInfoObj(clazz)
+    if (patchInfo.isSingle) singles.add(patchInfo)
 }
 
 fun processTaskInfos(clazz: Class<*>) {
@@ -105,21 +123,31 @@ fun processTaskInfos(clazz: Class<*>) {
         exitProcess(-1)
     }
 
+    lateinit var taskName: String
     taskInfoAnnotation.annotationClass.members
         .filter { it.parameters.size == 1 }
         .forEach { m ->
             val value = m.call(taskInfoAnnotation)
             if (m.name == "name") {
-                val patchClassName = filterPackageName(clazz.name).substringBefore("$")
-                if (!taskInfos.has(patchClassName)) taskInfos.put(patchClassName, JSONObject())
-                taskInfos.getJSONObject(patchClassName).put(filterPackageName(clazz.name).substringAfter("initializeTasks$"), value)
+                taskName = value as String
             }
         }
+
+    val patchClassName = filterPackageName(clazz.name).substringBefore("$")
+    val taskOrder = Integer.parseInt(filterPackageName(clazz.name).substringAfter("initializeTasks$"))
+
+    if (tasksInfo.containsKey(patchClassName)) {
+        tasksInfo[patchClassName]?.put(taskOrder, taskName)
+    } else {
+        tasksInfo[patchClassName] = mutableMapOf(taskOrder to taskName)
+    }
 }
 
 fun Project.generatePatchesJSON(jarFile: File): File {
-    patchesJSON.put("singles", JSONArray())
-    patchesJSON.put("groups", JSONArray())
+    singles.clear()
+    groups.clear()
+    tasksInfo.clear()
+    tasksInfoOrdered.clear()
 
     println("Loading Core JAR file...")
     JarFile(jarFile).use { jar ->
@@ -148,23 +176,24 @@ fun Project.generatePatchesJSON(jarFile: File): File {
             }
 
             taskClasses.forEach { clazz -> processTaskInfos(clazz) }
+            tasksInfoOrdered = tasksInfo.mapValues { (_, tasksMap) ->
+                tasksMap.toSortedMap()
+                    .values.toList()
+            }.toMutableMap()
+
             patchClasses.forEach { clazz -> processPatch(clazz) }
             patchGroups.forEach { clazz -> processPatchGroup(clazz) }
-            var tPatchSize = 0;
 
-            tPatchSize += patchesJSON.getJSONArray("singles").count()
-            val groups = patchesJSON.getJSONArray("groups").forEach { group ->
-                group as JSONObject
-                tPatchSize += group.getJSONArray("patches").count()
-            }
-            patchesJSON.put("total_patch_size", tPatchSize)
-            patchesJSON.put("manifest_version", 1)
-            patchesJSON.put("package", "instafel.patches.core.patches")
+            var totalPatchSize = 0;
+            totalPatchSize += singles.count()
+            groups.forEach { group -> totalPatchSize += group.patches.count() }
+
+            val patchesInfo = PatchesInfo(2, "instafel.patcher.core", totalPatchSize, singles, groups)
 
             println("Writing patches.json file...")
             val patchesFile = File("$buildDir/generated-build-infos/patches.json")
             patchesFile.parentFile.mkdirs()
-            patchesFile.writeText(patchesJSON.toString(2))
+            patchesFile.writeText(gson.toJson(patchesInfo))
             println("Patches JSON file saved into ${patchesFile.absolutePath} successfully.")
 
             return patchesFile;
