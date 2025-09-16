@@ -13,8 +13,7 @@ import kotlin.reflect.KClass
 @PInfos.PatchGroupInfo(
     name = "Instafel Stuffs",
     shortname = "instafel",
-    desc = "You can add Instafel stuffs with this patches",
-    author = "mamiiblt"
+    desc = "You can add Instafel stuffs with this patches"
 )
 class InstafelStuffs: InstafelPatchGroup() {
     override fun initializePatches(): List<KClass<out InstafelPatch>> = mutableListOf(

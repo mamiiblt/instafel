@@ -6,7 +6,6 @@ import kotlin.reflect.KClass
 abstract class InstafelPatchGroup {
 
     var name: String
-    var author: String
     var description: String
     var shortname: String
     var patches: List<KClass<out InstafelPatch>> = emptyList()
@@ -16,7 +15,6 @@ abstract class InstafelPatchGroup {
             val patchInfo = this::class.java.getAnnotation(PInfos.PatchGroupInfo::class.java)
             if (patchInfo != null) {
                 name = patchInfo.name
-                author = patchInfo.author
                 description = patchInfo.desc
                 shortname = patchInfo.shortname
             } else {

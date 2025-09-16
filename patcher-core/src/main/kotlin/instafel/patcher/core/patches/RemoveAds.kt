@@ -13,7 +13,6 @@ import java.io.File
     name = "Remove Ads",
     shortname = "remove_ads",
     desc = "Remove Ads in Instagram",
-    author = "mamiiblt",
     isSingle = true
 )
 class RemoveAds: InstafelPatch() {

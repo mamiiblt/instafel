@@ -13,7 +13,6 @@ import java.io.File
     name = "Change Visible Channel Name",
     shortname = "change_channel_name",
     desc = "Change visible channel name in Developer Options",
-    author = "mamiiblt",
     isSingle = true
 )
 class ChangeVisibleChannelName: InstafelPatch() {

@@ -14,7 +14,6 @@ import java.io.File
     name = "Unlock Developer Options",
     shortname = "unlock_developer_options",
     desc = "You can unlock developer options with applying this patch!",
-    author = "mamiiblt",
     isSingle = true
 )
 class UnlockDeveloperOptions: InstafelPatch() {

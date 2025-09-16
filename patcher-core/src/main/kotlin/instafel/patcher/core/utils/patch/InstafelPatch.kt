@@ -8,7 +8,6 @@ import kotlin.system.exitProcess
 abstract class InstafelPatch {
 
     var name: String
-    var author: String
     var description: String
     var shortname: String
     var isSingle = true
@@ -19,7 +18,6 @@ abstract class InstafelPatch {
             val patchInfo = this.javaClass.getAnnotation(PInfos.PatchInfo::class.java)
             if (patchInfo != null) {
                 this.name = patchInfo.name
-                this.author = patchInfo.author
                 this.description = patchInfo.desc
                 this.shortname = patchInfo.shortname
                 this.isSingle = patchInfo.isSingle

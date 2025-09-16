@@ -13,7 +13,6 @@ import org.json.JSONObject
     name = "Get Generation Info",
     shortname = "get_generation_info",
     desc = "Grab IFL Version and Generation ID from API",
-    author = "mamiiblt",
     isSingle = false
 )
 class GetGenerationInfo: InstafelPatch() {

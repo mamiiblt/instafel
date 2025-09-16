@@ -10,8 +10,7 @@ import kotlin.reflect.KClass
 @PInfos.PatchGroupInfo(
     name = "Clone Patches",
     shortname = "clone",
-    desc = "These patches needs to be applied for generate clone in build.",
-    author = "mamiiblt"
+    desc = "These patches needs to be applied for generate clone in build."
 )
 class Clone: InstafelPatchGroup() {
     override fun initializePatches(): List<KClass<out InstafelPatch>> = mutableListOf(
