@@ -39,8 +39,8 @@ object RunPatches: CLIJob {
             Log.info("")
             Log.info(Env.SEPARATOR_LINE)
             println(patchInfo.name)
-            println("by @${patchInfo.author}")
             println(patchInfo.desc)
+            println()
             Log.info("Loading tasks..")
             try {
                 patch.loadTasks()
