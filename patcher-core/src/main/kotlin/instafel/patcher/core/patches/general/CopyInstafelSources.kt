@@ -22,7 +22,6 @@ import java.io.File
     name = "Copy Instafel Sources",
     shortname = "copy_instafel_src",
     desc = "This patch needs to executed for use Instafel stuffs",
-    author = "mamiiblt",
     isSingle = false
 )
 class CopyInstafelSources: InstafelPatch() {

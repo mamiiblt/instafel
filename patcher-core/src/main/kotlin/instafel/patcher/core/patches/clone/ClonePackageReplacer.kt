@@ -11,7 +11,6 @@ import java.io.File
     name = "Replace Instagram Strings",
     shortname = "clone_replace_strs",
     desc = "It makes app compatible for clone generation",
-    author = "mamiiblt",
     isSingle = false
 )
 class ClonePackageReplacer: InstafelPatch() {

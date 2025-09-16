@@ -8,7 +8,6 @@ import instafel.patcher.core.utils.patch.PInfos
     name = "Extend Snooze Warning Duration",
     shortname = "ext_snooze_warning_dur",
     desc = "You can extend snooze activity duration with this patch",
-    author = "mamiiblt",
     isSingle = true
 )
 class ExtendSnoozeWarningDuration: InstafelPatch() {

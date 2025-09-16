@@ -12,7 +12,6 @@ import java.io.File
     name = "Add App Trigger",
     shortname = "add_app_trigger",
     desc = "This patch must be applied for Instafel Stuffs",
-    author = "mamiiblt",
     isSingle = false
 )
 class AddAppTrigger: InstafelPatch() {

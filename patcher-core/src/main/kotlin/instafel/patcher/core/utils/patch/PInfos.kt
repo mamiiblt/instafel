@@ -5,7 +5,6 @@ class PInfos {
     @Target(AnnotationTarget.CLASS)
     annotation class PatchInfo(
         val name: String,
-        val author: String,
         val desc: String,
         val shortname: String,
         val isSingle: Boolean,
@@ -15,7 +14,6 @@ class PInfos {
     @Target(AnnotationTarget.CLASS)
     annotation class PatchGroupInfo(
         val name: String,
-        val author: String,
         val desc: String,
         val shortname: String
     )
