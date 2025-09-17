@@ -5,6 +5,9 @@ import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.source.WorkingDir
+import instafel.patcher.core.utils.modals.pojo.PatchGroupInfo
+import instafel.patcher.core.utils.modals.pojo.PatchInfo
+import instafel.patcher.core.utils.patch.PInfos
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -62,7 +65,27 @@ object RunPatches: CLIJob {
                 }
             }
 
-            Env.Project.appliedPatches.add(patchInfo)
+            if (patchInfo.groupShortname == "single") {
+                Env.Project.appliedPatches.singlePatches.add(patchInfo)
+            } else {
+                val existingGroup = Env.Project.appliedPatches.groupPatches.find { it.shortname == patchInfo.groupShortname }
+
+                if (existingGroup != null) {
+                    existingGroup.patches.add(patchInfo)
+                } else {
+                    val coreGroupInfo = PatchInfoLoader.patchesInfo.groups.find { it.shortname == patchInfo.groupShortname }!!
+
+                    Env.Project.appliedPatches.groupPatches.add(
+                        PatchGroupInfo(
+                            name = coreGroupInfo.name,
+                            desc = coreGroupInfo.desc,
+                            shortname = coreGroupInfo.shortname,
+                            path = coreGroupInfo.path,
+                            patches = mutableListOf(patchInfo)
+                        )
+                    )
+                }
+            }
 
             Log.info("")
             Log.info("All tasks ran successfully.")

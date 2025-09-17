@@ -1,5 +1,6 @@
 package instafel.patcher.core.jobs
 
+import com.google.gson.Gson
 import instafel.patcher.core.source.APKSigner
 import instafel.patcher.core.source.SourceManager
 import instafel.patcher.core.source.SourceUtils
@@ -9,7 +10,6 @@ import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SmaliUtils
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.CLIJob
-import instafel.patcher.core.utils.modals.pojo.PatchInfo
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.TrueFileFilter
 import org.json.JSONObject
@@ -35,7 +35,6 @@ object BuildProject: CLIJob {
 
     var isCloneGenerated = false
     var isProductionMode = false
-    var appliedPatches = mutableListOf<PatchInfo>()
 
     override fun runJob(vararg args: Any) {
         val workingDir = args.getOrNull(0) as? File
@@ -228,7 +227,6 @@ object BuildProject: CLIJob {
         isProductionMode = Env.Config.productionMode
         IG_VER_CODE = Env.Project.igVersionCode.ifEmpty { "E" }
         IG_VERSION = Env.Project.igVersion.ifEmpty { "E" }
-        appliedPatches = Env.Project.appliedPatches
 
         if (buildFolder.exists()) {
             FileUtils.deleteDirectory(buildFolder)
@@ -272,7 +270,14 @@ object BuildProject: CLIJob {
     }
 
     fun updateInstafelEnv(coreCommit: String, projectTag: String, patcherVersion: String) {
-        if (appliedPatches.any { patchInfo -> patchInfo.shortname == "copy_instafel_src" }) {
+        var envOkCheck = false;
+        Env.Project.appliedPatches.groupPatches.forEach { group ->
+            group.patches.forEach { patch ->
+                if (patch.shortname == "copy_instafel_src") envOkCheck = true;
+            }
+        }
+
+        if (envOkCheck) {
             Log.info("Updating Instafel app environment...")
 
             val iflSourceFolder = Env.Project.iflSourcesFolder.ifEmpty { "E" }
@@ -314,11 +319,15 @@ object BuildProject: CLIJob {
                 "_branch_" to "main"
             )
 
-            val apatches = appliedPatches
-                .filterNot { it.shortname.contains("clone") }
-                .joinToString(",")
+            Env.Project.appliedPatches.appliedPatchCounts["singles"] = Env.Project.appliedPatches.singlePatches.count()
+            Env.Project.appliedPatches.groupPatches.forEach { group -> Env.Project.appliedPatches.appliedPatchCounts[group.shortname] = group.patches.count() }
 
-            pairs["_patches_"] = apatches.trim()
+            val gson = Gson()
+            val patchesTextEscaped = gson.toJson(Env.Project.appliedPatches)
+                .replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+
+            pairs["_patchesjson_"] = patchesTextEscaped
 
             for ((key, value) in pairs) {
                 if (value == null) {
