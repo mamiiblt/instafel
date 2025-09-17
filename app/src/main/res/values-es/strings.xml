@@ -110,6 +110,8 @@
     <string name="ifl_a1_08">No clon</string>
     <string name="ifl_a1_09">ID de Generación</string>
     <string name="ifl_a1_10">Versión de Instagram</string>
+    <string name="ifl_a1_22">Ver información sobre los parches aplicados</string>
+    <string name="ifl_a1_23">Commit principal</string>
     <string name="ifl_a2_01">Sobre Instagram</string>
     <string name="ifl_a2_02">Versión</string>
     <string name="ifl_a2_03">Código de versión</string>

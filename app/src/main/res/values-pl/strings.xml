@@ -40,6 +40,8 @@
 
 
     <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a1_22">Zobacz informacje o zastosowanych poprawkach</string>
+    <string name="ifl_a1_23">Główny commit</string>
     <string name="ifl_a2_01">O Instagramie</string>
     <string name="ifl_a2_02">Wersja</string>
     <string name="ifl_a2_03">Kod wersji</string>

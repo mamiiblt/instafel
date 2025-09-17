@@ -71,6 +71,8 @@
     <string name="ifl_a1_09">ID Παραγωγής</string>
     <string name="ifl_a1_10">Έκδοση Instagram</string>
     <!--   me.mamiiblt.instafel.ifl_a_about_ig   -->
+    <string name="ifl_a1_22">Προβολή πληροφοριών για τα εφαρμοσμένα patches</string>
+    <string name="ifl_a1_23">Βασικό Commit</string>
     <string name="ifl_a2_01">Σχετικά με το Instafel</string>
     <string name="ifl_a2_02">Έκδοση</string>
     <string name="ifl_a2_03">Κωδικός έκδοσης</string>

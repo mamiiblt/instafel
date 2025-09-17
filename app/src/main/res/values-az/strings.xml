@@ -38,6 +38,8 @@
 
 
     <!-- About Ig -->
+    <string name="ifl_a1_22">Tətbiq olunmuş yamaqlar haqqında məlumatlara bax</string>
+    <string name="ifl_a1_23">Əsas Commit</string>
     <string name="ifl_a2_01">Instagram Haqqında</string>
     <string name="ifl_a2_02">Versiya</string>
     <string name="ifl_a2_03">Versiya Kodu</string>

@@ -75,6 +75,8 @@
     <string name="ifl_a1_09">Generáció ID</string>
     <string name="ifl_a1_10">Instagram Verzió</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
+    <string name="ifl_a1_22">Alkalmazott javítások információinak megtekintése</string>
+    <string name="ifl_a1_23">Alap commit</string>
     <string name="ifl_a2_01">Instagram-ról</string>
     <string name="ifl_a2_02">Verzió</string>
     <string name="ifl_a2_03">Verzió kódja</string>
