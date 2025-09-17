@@ -75,6 +75,8 @@
     <string name="ifl_a1_09">ID de Geração</string>
     <string name="ifl_a1_10">Versão do Instagram</string>
     <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
+    <string name="ifl_a1_22">Ver informações sobre patches aplicados</string>
+    <string name="ifl_a1_23">Commit principal</string>
     <string name="ifl_a2_01">Sobre o Instagram</string>
     <string name="ifl_a2_02">Versão</string>
     <string name="ifl_a2_03">Código da Versão</string>

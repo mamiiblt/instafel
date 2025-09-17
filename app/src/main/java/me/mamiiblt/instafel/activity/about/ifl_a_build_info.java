@@ -5,6 +5,7 @@ import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIf
 
 import android.os.Bundle;
 
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -40,8 +41,12 @@ public class ifl_a_build_info extends AppCompatActivity {
 
         tileCommit.setOnClickListener(view -> openUrlInWeb("https://github.com/mamiiblt/instafel/commit/" + InstafelEnv.COMMIT));
 
-        String appliedPatches = InstafelEnv.APPLIED_PATCHES.replace(",", "\n");
-        tileAppliedPatches.setSubtitleText(appliedPatches);
+        tileAppliedPatches.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GeneralFn.startIntent(ifl_a_build_info.this, ifl_a_patches_info.class);
+            }
+        });
 
         tileInstallationType.setSubtitleText(IflEnvironment.getTypeString(this, Locale.getDefault()));
     }

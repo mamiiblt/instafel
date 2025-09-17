@@ -57,6 +57,8 @@
     <string name="ifl_a1_03">Kurulum Türü</string>
     <string name="ifl_a1_04">Proje Hakkında</string>
     <string name="ifl_a1_09">Oluşturulma Kimliği</string>
+    <string name="ifl_a1_22">Uygulanan yamalar hakkında bilgi edin</string>
+    <string name="ifl_a1_23">Çekirdek Commit</string>
     <string name="ifl_a2_01">Instagram Hakkında</string>
     <string name="ifl_a2_02">Sürüm</string>
     <string name="ifl_a2_03">Sürüm Kodu</string>

@@ -1,5 +1,8 @@
 package me.mamiiblt.instafel;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class InstafelEnv {
     public static String IFL_LANG = null;
     public static int IFL_THEME = 25891;
@@ -14,15 +17,34 @@ public class InstafelEnv {
     public static String PATCHER_TAG = "_ptag"; // release or debug
     public static String COMMIT = "_commit_"; // 3ed4c6e
     public static String BRANCH = "_branch_"; // main
-    public static String APPLIED_PATCHES = "_patches_"; // aaaa,bbbbb (without space)
+    public static String APPLIED_PATCHES = "_patchesjson_"; // A escaped JSONObject string
 
     public static boolean isPatchApplied(String patchName) {
-        String[] patches = APPLIED_PATCHES.split(",");
-        for (String patch : patches) {
-            if (patch.equals(patchName)) {
-                return true;
+        try {
+            JSONObject json = new JSONObject(APPLIED_PATCHES);
+            JSONArray singlePatches = json.getJSONArray("singlePatches");
+            JSONArray groupPatches = json.getJSONArray("groupPatches");
+
+            for (int i = 0; i < singlePatches.length(); i++) {
+                JSONObject singlePatch = singlePatches.getJSONObject(i);
+                if (singlePatch.getString("shortname").equals(patchName)) {
+                    return true;
+                }
             }
+
+            for (int i = 0; i < groupPatches.length(); i++) {
+                JSONArray patches = groupPatches.getJSONObject(i).getJSONArray("patches");
+                for (int a  = 0; a < patches.length(); a++) {
+                    JSONObject patch = patches.getJSONObject(a);
+                    if (patch.getString("shortname").equals(patchName)) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        } catch (Exception e) {
+            return false;
         }
-        return false;
     }
 }

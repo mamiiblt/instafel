@@ -39,7 +39,9 @@
 
 
 	<!-- me.mamiiblt.instafel.ifl_a_about_ig -->
-	<string name="ifl_a2_01">Über Instagram</string>
+    <string name="ifl_a1_22">Informationen zu angewendeten Patches anzeigen</string>
+    <string name="ifl_a1_23">Kern-Commit</string>
+    <string name="ifl_a2_01">Über Instagram</string>
 	<string name="ifl_a2_02">Version</string>
 	<string name="ifl_a2_03">Versionscode</string>
 	<string name="ifl_a2_04">Kanal</string>

@@ -29,6 +29,7 @@
         <activity android:name=".activity.ifl_a_misc" android:exported="false" />
         <activity android:name=".activity.about.ifl_a_about" android:exported="false" />
         <activity android:name=".activity.about.ifl_a_build_info" android:exported="false" />
+        <activity android:name=".activity.about.ifl_a_patches_info" android:exported="false" />
         <activity android:name=".activity.devmode.comparator.ifl_a_devmode_backup_comparator" android:exported="false" />
         <activity android:name=".activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu" android:exported="false" />
         <activity android:name=".activity.devmode.backup.ifl_a_export_backup" android:exported="false" />

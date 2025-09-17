@@ -37,7 +37,8 @@
     <string name="ifl_a1_19">Website</string>
     <string name="ifl_a1_20">Join Community</string>
     <string name="ifl_a1_21">Contributors</string>
-
+    <string name="ifl_a1_22">Information about applied patches</string>
+    <string name="ifl_a1_23">Core Commit</string>
 
     <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
     <string name="ifl_a2_01">About Instagram</string>

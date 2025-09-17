@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.mamiiblt.instafel.ui.Page android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <me.mamiiblt.instafel.ui.PageTitle android:id="@id/ifl_page_title" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_titleText="@string/ifl_a1_14" />
+    <me.mamiiblt.instafel.ui.PageContentArea android:id="@+id/ifl_page_area_pinfo" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/ifl_page_title">
+        <LinearLayout
+                android:id="@+id/ifl_patches_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+        </LinearLayout>
+     </me.mamiiblt.instafel.ui.PageContentArea>
+</me.mamiiblt.instafel.ui.Page>
