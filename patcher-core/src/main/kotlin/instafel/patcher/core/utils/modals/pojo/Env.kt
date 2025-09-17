@@ -13,7 +13,13 @@ data class ProjectPOJO(
     var igVersionCode: String = "",
     var generationId: String = "",
     var iflVersion: Int = 0,
-    var appliedPatches: MutableList<PatchInfo> = mutableListOf(),
+    var appliedPatches: AppliedPatchesPOJO = AppliedPatchesPOJO(),
     var iflSourcesFolder: String = "",
     var pVClassPath: String = ""
+)
+
+data class AppliedPatchesPOJO(
+    var appliedPatchCounts: MutableMap<String, Int> = mutableMapOf(),
+    var singlePatches: MutableList<PatchInfo> = mutableListOf(),
+    var groupPatches: MutableList<PatchGroupInfo> = mutableListOf(),
 )

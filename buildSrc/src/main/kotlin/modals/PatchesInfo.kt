@@ -22,5 +22,6 @@ data class PatchInfo (
     val shortname: String,
     val path: String,
     val isSingle: Boolean,
+    val groupShortname: String,
     val tasks: List<String>
 )

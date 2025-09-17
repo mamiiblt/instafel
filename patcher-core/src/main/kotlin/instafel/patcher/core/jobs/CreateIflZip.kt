@@ -68,7 +68,7 @@ object CreateIflZip: CLIJob {
 
     fun copyInstafelSmaliSources() {
         Log.info("Copying Instafel smali sources")
-        val sourceFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "smali", "me", "mamiiblt", "instafel"))
+        val sourceFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "smali_classes2", "me", "mamiiblt", "instafel"))
         val destFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "smali_sources"))
         FileUtils.copyDirectoryToDirectory(sourceFolder, destFolder)
         Log.info("Smali sources successfully copied")

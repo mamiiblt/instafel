@@ -21,7 +21,7 @@ val groups = mutableListOf<PatchGroupInfo>()
 val tasksInfo = mutableMapOf<String, MutableMap<Int, String>>()
 var tasksInfoOrdered = mutableMapOf<String, List<String>>()
 
-fun generatePatchInfoObj(clazz: Class<*>): PatchInfo {
+fun generatePatchInfoObj(clazz: Class<*>, groupShortname: String = "single"): PatchInfo {
     lateinit var name: String;
     lateinit var shortname: String;
     lateinit var path: String;
@@ -56,7 +56,7 @@ fun generatePatchInfoObj(clazz: Class<*>): PatchInfo {
     path = patchPath
     tasks = tasksInfoOrdered.getOrPut(patchPath) { mutableListOf() }
 
-    return PatchInfo(name, desc, shortname, path, isSingle, tasks);
+    return PatchInfo(name, desc, shortname, path, isSingle, groupShortname, tasks);
 }
 
 fun processPatchGroup(clazz: Class<*>) {
@@ -100,7 +100,7 @@ fun processPatchGroup(clazz: Class<*>) {
 
     patchesList.forEach { patchKClass ->
         val patchClass = patchKClass as KClass<*>
-        patches.add(generatePatchInfoObj(patchClass.java))
+        patches.add(generatePatchInfoObj(patchClass.java, shortname))
     }
 
     groups.add(PatchGroupInfo(
