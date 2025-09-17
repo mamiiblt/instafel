@@ -40,11 +40,11 @@ object UploadPreview: CLIJob {
         }
 
         Env.PROJECT_DIR = WorkingDir.getExistsWorkingDir(workingDir)
-        Env.Config.setupConfig()
-        Env.Project.setupProject()
+        Env.setupConfig()
+        Env.setupProject()
 
-        isProdMode = Env.Config.getBoolean(Env.Config.Keys.prod_mode, false);
-        GITHUB_PAT = Env.Config.getString(Env.Config.Keys.github_pat, "NONE");
+        isProdMode = Env.Config.productionMode
+        GITHUB_PAT = Env.Config.githubPatToken
 
         if (isProdMode) {
             buildFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
@@ -169,7 +169,7 @@ object UploadPreview: CLIJob {
 
         val request = Request.Builder()
             .url("https://api.mamii.me/ifl/manager_new/sendGeneratedLogTg")
-            .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
+            .addHeader("Authorization", Env.Config.managerToken)
             .post(requestBody)
             .build()
 

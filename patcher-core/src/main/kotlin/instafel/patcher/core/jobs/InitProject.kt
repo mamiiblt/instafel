@@ -37,7 +37,7 @@ object InitProject: CLIJob {
                 dwBin.delete()
             }
 
-            sourceManager.createConfigAndEnvFile()
+            sourceManager.setupProjects()
             Log.info("Project successfully created")
         } catch (e: Exception) {
             Log.severe("Failed to run job: ${e.message}")

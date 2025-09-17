@@ -1,4 +1,4 @@
-package instafel.patcher.core.utils.modals
+package instafel.patcher.core.utils.modals.pojo
 
 data class PatchesInfo (
     val manifestVersion: Int,

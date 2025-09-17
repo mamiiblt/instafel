@@ -53,7 +53,7 @@ class CopyInstafelSources: InstafelPatch() {
                     )
                 )
 
-                Env.Project.setString(Env.Project.Keys.IFL_SOURCES_FOLDER, smallDexFolder.name)
+                Env.Project.iflSourcesFolder = smallDexFolder.name
 
                 Log.info("Copying instafel resources")
                 Utils.unzipFromResources(false, "/ifl_sources/ifl_sources.zip", destFolder.absolutePath)

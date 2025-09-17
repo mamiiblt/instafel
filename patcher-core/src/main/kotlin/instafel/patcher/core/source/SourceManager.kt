@@ -40,17 +40,8 @@ class SourceManager(var config: Config = Config()) {
     }
 
     @Throws(IOException::class)
-    fun createConfigAndEnvFile() {
-        val pEnvFile = File(Utils.mergePaths(Env.PROJECT_DIR, "env.properties"))
-        pEnvFile.createNewFile()
-        Env.Project.setupProject()
-        Env.Project.createDefaultProjectFile()
-        Env.Project.saveProperties()
-
-        val pConfigFile = File(Utils.mergePaths(Env.PROJECT_DIR, "config.properties"))
-        pConfigFile.createNewFile()
-        Env.Config.setupConfig()
-        Env.Config.createDefaultConfigFile()
-        Env.Config.saveProperties()
+    fun setupProjects() {
+        Env.setupProject()
+        Env.setupConfig()
     }
 }
