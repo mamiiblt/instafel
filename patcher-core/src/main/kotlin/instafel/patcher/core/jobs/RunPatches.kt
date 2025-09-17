@@ -20,8 +20,8 @@ object RunPatches: CLIJob {
         }
 
         Env.PROJECT_DIR = WorkingDir.getExistsWorkingDir(projectFolder)
-        Env.Project.setupProject()
-        Env.Config.setupConfig()
+        Env.setupProject()
+        Env.setupConfig()
 
         Log.info("Loading patches...")
         val runnablePatches = PatchInfoLoader.loadPatches(enteredShortnames)
@@ -62,19 +62,16 @@ object RunPatches: CLIJob {
                 }
             }
 
+            Env.Project.appliedPatches.add(patchInfo)
+
             Log.info("")
-            val patches = Env.Project.getString(Env.Project.Keys.APPLIED_PATCHES, "")
-            Env.Project.setString(
-                Env.Project.Keys.APPLIED_PATCHES,
-                if (patches.isEmpty()) patches + patch.shortname else "$patches,${patch.shortname}"
-            )
             Log.info("All tasks ran successfully.")
             Log.info(Env.SEPARATOR_LINE)
         }
 
         Log.info("")
         Log.info("All patches executed successfully.")
-        Env.Project.saveProperties()
-        Env.Config.saveProperties()
+        Env.saveConfig()
+        Env.saveProject()
     }
 }

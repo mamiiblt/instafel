@@ -17,9 +17,9 @@ import org.json.JSONObject
 )
 class GetGenerationInfo: InstafelPatch() {
 
-    var apiBase: String = Env.Project.getString(Env.Project.Keys.API_BASE, "api.mamii.me/ifl")
+    var apiBase: String = Env.Project.apiBase
     var httpClient = OkHttpClient()
-    var isProdMode = Env.Config.getBoolean(Env.Config.Keys.prod_mode, false)
+    var isProdMode = Env.Config.productionMode
 
     override fun initializeTasks() = mutableListOf(
         @PInfos.TaskInfo("Get last IFL version from API")
@@ -28,7 +28,7 @@ class GetGenerationInfo: InstafelPatch() {
                 if (isProdMode) {
                     val iflVersionRequest = Request.Builder()
                         .url("https://$apiBase/manager_new/lastInstafelData")
-                        .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
+                        .addHeader("Authorization", Env.Config.managerToken)
                         .build()
 
                     try {
@@ -42,7 +42,7 @@ class GetGenerationInfo: InstafelPatch() {
                             val iflVRequestParsed = JSONObject(response.body.string())
                             val iflVersion = iflVRequestParsed.getInt("ifl_version")
 
-                            Env.Project.setInteger(Env.Project.Keys.INSTAFEL_VERSION, iflVersion + 1)
+                            Env.Project.iflVersion += 1
                             Log.info("Instafel version for this generation is ${iflVersion + 1}")
                             success("IFL version successfully saved to env")
                         }
@@ -61,7 +61,7 @@ class GetGenerationInfo: InstafelPatch() {
                 if (isProdMode) {
                     val genIDRequest = Request.Builder()
                         .url("https://$apiBase/manager_new/createGenerationId")
-                        .addHeader("Authorization", Env.Config.getString(Env.Config.Keys.manager_token, "null"))
+                        .addHeader("Authorization", Env.Config.managerToken)
                         .build()
 
                     try {
@@ -75,7 +75,7 @@ class GetGenerationInfo: InstafelPatch() {
                             val genIdResParsed = JSONObject( response.body.string())
                             val genId = genIdResParsed.getString("generation_id")
 
-                            Env.Project.setString(Env.Project.Keys.GENID, genId)
+                            Env.Project.generationId = genId
                             Log.info("Generation ID for this generation is $genId")
                             success("Generation ID successfully saved to env")
                         }

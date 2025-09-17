@@ -9,6 +9,7 @@ import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SmaliUtils
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.CLIJob
+import instafel.patcher.core.utils.modals.pojo.PatchInfo
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.TrueFileFilter
 import org.json.JSONObject
@@ -23,7 +24,7 @@ object BuildProject: CLIJob {
     lateinit var IG_VERSION: String
     lateinit var IG_VER_CODE: String
     lateinit var GENERATION_ID: String
-    lateinit var IFL_VERSION: String
+    var IFL_VERSION = 0
     lateinit var APK_UC: File
     lateinit var APK_C: File
     lateinit var buildFolder: File
@@ -34,7 +35,7 @@ object BuildProject: CLIJob {
 
     var isCloneGenerated = false
     var isProductionMode = false
-    var appliedPatches = mutableListOf<String>()
+    var appliedPatches = mutableListOf<PatchInfo>()
 
     override fun runJob(vararg args: Any) {
         val workingDir = args.getOrNull(0) as? File
@@ -48,8 +49,8 @@ object BuildProject: CLIJob {
         }
 
         Env.PROJECT_DIR = WorkingDir.getExistsWorkingDir(workingDir)
-        Env.Config.setupConfig()
-        Env.Project.setupProject()
+        Env.setupConfig()
+        Env.setupProject()
 
         Log.info("Building \"${workingDir.name}\" project...")
         configureEnvironment()
@@ -60,8 +61,8 @@ object BuildProject: CLIJob {
         generateBuildInfo(coreCommit, projectTag, projectVersion)
         Log.info("Project successfully built into /build folder of project")
 
-        Env.Config.saveProperties()
-        Env.Project.saveProperties()
+        Env.saveConfig()
+        Env.saveProject()
     }
 
     fun signOutputs() {
@@ -99,7 +100,6 @@ object BuildProject: CLIJob {
         if (exitCode == 0) {
             Log.info("All APKs successfully signed")
         } else {
-            // FileUtils.deleteDirectory(buildFolder)
             Log.severe("Error while signing APKs, clearing /build directory and force exiting")
             exitProcess(-1)
         }
@@ -225,11 +225,10 @@ object BuildProject: CLIJob {
         TESTKEY_KS = File(Utils.mergePaths(Env.PROJECT_DIR, "build", "testkey.keystore"))
         cloneRefFolder = File(Env.PROJECT_DIR, "clone_ref")
         isCloneGenerated = cloneRefFolder.exists()
-        isProductionMode = Env.Config.getBoolean(Env.Config.Keys.prod_mode, false)
-        IG_VERSION = Env.Project.getString(Env.Project.Keys.INSTAGRAM_VERSION, "E")
-        IG_VER_CODE = Env.Project.getString(Env.Project.Keys.INSTAGRAM_VERSION_CODE, "E")
-        appliedPatches.addAll( Env.Project.getString(Env.Project.Keys.APPLIED_PATCHES, "")
-            .split(","))
+        isProductionMode = Env.Config.productionMode
+        IG_VER_CODE = Env.Project.igVersionCode.ifEmpty { "E" }
+        IG_VERSION = Env.Project.igVersion.ifEmpty { "E" }
+        appliedPatches = Env.Project.appliedPatches
 
         if (buildFolder.exists()) {
             FileUtils.deleteDirectory(buildFolder)
@@ -237,10 +236,10 @@ object BuildProject: CLIJob {
         }
 
         if (isProductionMode) {
-            IFL_VERSION = Env.Project.getString(Env.Project.Keys.INSTAFEL_VERSION, "E")
-            GENERATION_ID = Env.Project.getString(Env.Project.Keys.GENID, "E")
+            IFL_VERSION = Env.Project.iflVersion
+            GENERATION_ID = Env.Project.generationId
 
-            if (IFL_VERSION == "E" && GENERATION_ID == "E") {
+            if (IFL_VERSION == 0 && GENERATION_ID == "E") {
                 Log.severe("Environment file is not compatible for building..")
                 exitProcess(-1)
             }
@@ -273,10 +272,10 @@ object BuildProject: CLIJob {
     }
 
     fun updateInstafelEnv(coreCommit: String, projectTag: String, patcherVersion: String) {
-        if (appliedPatches.contains("copy_instafel_src")) {
+        if (appliedPatches.any { patchInfo -> patchInfo.shortname == "copy_instafel_src" }) {
             Log.info("Updating Instafel app environment...")
 
-            val iflSourceFolder = Env.Project.getString(Env.Project.Keys.IFL_SOURCES_FOLDER, "E")
+            val iflSourceFolder = Env.Project.iflSourcesFolder.ifEmpty { "E" }
             if (iflSourceFolder == "E") {
                 Log.severe("IFL_SOURCES_FOLDER is not defined")
                 exitProcess(-1)
@@ -305,7 +304,7 @@ object BuildProject: CLIJob {
             val fContent = smaliUtils.getSmaliFileContent(envFile.absolutePath).toMutableList()
 
             val pairs = mutableMapOf(
-                "_iflver_" to if (isProductionMode) IFL_VERSION else "NOT_PROD_MODE",
+                "_iflver_" to if (isProductionMode) IFL_VERSION.toString() else "NOT_PROD_MODE",
                 "_genid_" to if (isProductionMode) GENERATION_ID else "NOT_PROD_MODE",
                 "_igver_" to IG_VERSION,
                 "_igvercode_" to IG_VER_CODE,
@@ -316,7 +315,7 @@ object BuildProject: CLIJob {
             )
 
             val apatches = appliedPatches
-                .filterNot { it.contains("clone") }
+                .filterNot { it.shortname.contains("clone") }
                 .joinToString(",")
 
             pairs["_patches_"] = apatches.trim()

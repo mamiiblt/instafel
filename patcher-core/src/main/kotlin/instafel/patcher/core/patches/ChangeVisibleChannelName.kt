@@ -25,7 +25,7 @@ class ChangeVisibleChannelName: InstafelPatch() {
         object: InstafelTask() {
             override fun execute() {
                 var scannedFileSize = 0
-                val cachePath = Env.Project.getString(Env.Project.Keys.P_VCLASS_PATH, "NFN")
+                val cachePath = Env.Project.pVClassPath.ifEmpty { "NFN" }
 
                 if (cachePath != "NFN") {
                     constFile = File(cachePath)
@@ -69,7 +69,7 @@ class ChangeVisibleChannelName: InstafelPatch() {
                         Log.info("Totally scanned $scannedFileSize file(s) in X folders")
                         Log.info("File name is ${foundFiles[0]}")
                         constFile = foundFiles[0]
-                        Env.Project.setString(Env.Project.Keys.P_VCLASS_PATH, constFile.absolutePath)
+                        Env.Project.pVClassPath = constFile.absolutePath
                         success("Const definition class successfully found in X files")
                     }
                 }
@@ -83,7 +83,7 @@ class ChangeVisibleChannelName: InstafelPatch() {
                 sContent.forEachIndexed { i, line ->
                     searchConstStrings.forEach { searchConst ->
                         if (line.contains(searchConst)) {
-                            val iflVer = Env.Project.getInteger(Env.Project.Keys.INSTAFEL_VERSION, 0)
+                            val iflVer = Env.Project.iflVersion
                             val changeToStr = if (iflVer == 0) "Instafel" else "Instafel v$iflVer "
                             sContent[i] = line.replace(searchConst, "\"$changeToStr\"")
                             Log.info("Constraint $searchConst found at line $i")

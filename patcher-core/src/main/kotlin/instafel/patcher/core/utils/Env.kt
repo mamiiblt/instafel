@@ -2,118 +2,81 @@ package instafel.patcher.core.utils
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import instafel.patcher.core.utils.modals.pojo.ConfigPOJO
+import instafel.patcher.core.utils.modals.pojo.ProjectPOJO
+import org.apache.commons.io.FileUtils
 import java.io.File
-import java.io.IOException
 import kotlin.system.exitProcess
 
 object Env {
     val USER_DIR: String = System.getProperty("user.dir")
     lateinit var PROJECT_DIR: String
-    val INSTAFEL_LOCALES = listOf<String>("tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl", "in")
-    val SEPARATOR_LINE = "---------------------------"
+    val INSTAFEL_LOCALES = listOf("tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl", "in")
+    const val SEPARATOR_LINE = "---------------------------"
+    val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
-    object Project {
-        enum class Keys() {
-            API_BASE,
-            INSTAGRAM_VERSION,
-            INSTAGRAM_VERSION_CODE,
-            GENID,
-            INSTAFEL_VERSION,
-            APPLIED_PATCHES,
-            IFL_SOURCES_FOLDER,
-            P_VCLASS_PATH
+    lateinit var fileConf: File
+    lateinit var fileProj: File
+    var Config = ConfigPOJO()
+        set(value) {
+            field = value
+            saveConfig()
         }
 
-        val UPDATE_STR = "Update Project Environment File"
-        lateinit var file: File
-        lateinit var propertyManager: PropertyManager
+    var Project = ProjectPOJO()
+        set(value) {
+            field = value
+            saveProject()
+        }
 
-        fun setupProject() {
-            try {
-                file = File(Utils.mergePaths(Env.PROJECT_DIR, "env.properties"))
-                propertyManager = PropertyManager(file)
-            } catch (e: IOException) {
-                e.printStackTrace()
-                Log.severe("An error occurred while loading configuration file.")
-                exitProcess(-1)
+    fun setupConfig() {
+        try {
+            fileConf = File(Utils.mergePaths(PROJECT_DIR, "config.json"))
+            if (!fileConf.exists()) {
+                Config = ConfigPOJO(
+                    manifestVersion = 1,
+                    productionMode = false,
+                    managerToken = "",
+                    githubPatToken = "",
+                )
             }
-        }
-
-        fun saveProperties() = propertyManager.save(UPDATE_STR)
-        fun getString(key: Keys, defaultValue: String): String =
-            propertyManager.getString(key.toString(), defaultValue)
-        fun getInteger(key: Keys, defaultValue: Int): Int =
-            propertyManager.getInteger(key.toString(), defaultValue)
-        fun getBoolean(key: Keys, defaultValue: Boolean): Boolean =
-            propertyManager.getBoolean(key.toString(), defaultValue)
-        fun setString(key: Keys, value: String) = propertyManager.addString(key.toString(), value)
-        fun setInteger(key: Keys, value: Int) = propertyManager.addInteger(key.toString(), value)
-        fun setBoolean(key: Keys, value: Boolean) = propertyManager.addBoolean(key.toString(), value)
-
-        fun createDefaultProjectFile() {
-            propertyManager.addString(Keys.API_BASE.toString(), "api.mamii.me/ifl")
-            propertyManager.addString(Keys.APPLIED_PATCHES.toString(), "")
-            setIgVerCodeAndVersion()
-            saveProperties()
-        }
-
-        fun setIgVerCodeAndVersion() {
-            val mapper = ObjectMapper(YAMLFactory())
-            val root = mapper.readTree(File(
-                Utils.mergePaths(Env.PROJECT_DIR, "sources", "apktool.yml")
-            )).get("versionInfo")
-
-            propertyManager.addString(Keys.INSTAGRAM_VERSION.toString(), root.get("versionName").asText())
-            propertyManager.addString(Keys.INSTAGRAM_VERSION_CODE.toString(), root.get("versionCode").asText())
+            Config = gson.fromJson(fileConf.readText(), ConfigPOJO::class.java)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.severe("An error occurred while loading config.json file.")
+            exitProcess(-1)
         }
     }
 
-    object Config {
-        enum class Keys() {
-            manifest_version,
-            source_dir,
-            use_external_ifl_source,
-            prod_mode,
-            manager_token,
-            github_pat
-        }
-
-        val UPDATE_STR = "Updated Config"
-        lateinit var file: File
-        lateinit var propertyManager: PropertyManager
-
-        fun setupConfig() {
-            try {
-                file = File(Utils.mergePaths(Env.PROJECT_DIR, "config.properties"))
-                propertyManager = PropertyManager(file)
-            } catch (e: IOException) {
-                e.printStackTrace()
-                Log.severe("An error occurred while loading configuration file.")
-                exitProcess(-1)
+    fun setupProject() {
+        try {
+            fileProj = File(Utils.mergePaths(PROJECT_DIR, "project.json"))
+            if (!fileProj.exists()) {
+                Project = ProjectPOJO(
+                    apiBase = "api.mamii.me/ifl",
+                    igVersion = getIgVerCodeAndVersion().split("#")[0],
+                    igVersionCode = getIgVerCodeAndVersion().split("#")[1]
+                )
             }
+            Project = gson.fromJson(fileProj.readText(), ProjectPOJO::class.java)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.severe("An error occurred while loading project.json file.")
+            exitProcess(-1)
         }
+    }
 
-        fun saveProperties() = propertyManager.save(UPDATE_STR)
+    fun saveConfig() = FileUtils.writeStringToFile(fileConf, gson.toJson(Config), Charsets.UTF_8)
+    fun saveProject() = FileUtils.writeStringToFile(fileProj, gson.toJson(Project), Charsets.UTF_8)
 
-        fun getString(key: Keys, defaultValue: String): String =
-            propertyManager.getString(key.toString(), defaultValue)
-        fun getInteger(key: Keys, defaultValue: Int): Int =
-            propertyManager.getInteger(key.toString(), defaultValue)
-        fun getBoolean(key: Keys, defaultValue: Boolean): Boolean =
-            propertyManager.getBoolean(key.toString(), defaultValue)
-        fun setString(key: Keys, value: String) = propertyManager.addString(key.toString(), value)
-        fun setInteger(key: Keys, value: Int) = propertyManager.addInteger(key.toString(), value)
-        fun setBoolean(key: Keys, value: Boolean) = propertyManager.addBoolean(key.toString(), value)
+    fun getIgVerCodeAndVersion(): String {
+        val mapper = ObjectMapper(YAMLFactory())
+        val root = mapper.readTree(File(
+            Utils.mergePaths(PROJECT_DIR, "sources", "apktool.yml")
+        )).get("versionInfo")
 
-        @Throws(IOException::class)
-        fun createDefaultConfigFile() {
-            propertyManager.addInteger(Keys.manifest_version.toString(), 1)
-            propertyManager.addString(Keys.source_dir.toString(), "/sources")
-            propertyManager.addBoolean(Keys.use_external_ifl_source.toString(), false)
-            propertyManager.addBoolean(Keys.prod_mode.toString(), false)
-            propertyManager.addString(Keys.manager_token.toString(), "not_needed")
-            propertyManager.addString(Keys.github_pat.toString(), "null")
-            saveProperties()
-        }
+        return "${root.get("versionName").asText()}#${root.get("versionCode").asText()}"
     }
 }

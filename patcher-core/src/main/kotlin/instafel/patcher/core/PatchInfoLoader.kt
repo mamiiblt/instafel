@@ -2,8 +2,8 @@ package instafel.patcher.core
 
 import com.google.gson.Gson
 import instafel.patcher.core.utils.Log
-import instafel.patcher.core.utils.modals.PatchInfo
-import instafel.patcher.core.utils.modals.PatchesInfo
+import instafel.patcher.core.utils.modals.pojo.PatchInfo
+import instafel.patcher.core.utils.modals.pojo.PatchesInfo
 import instafel.patcher.core.utils.patch.InstafelPatch
 import kotlin.jvm.java
 
