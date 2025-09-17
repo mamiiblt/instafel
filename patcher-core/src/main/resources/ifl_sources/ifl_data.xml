@@ -11,6 +11,7 @@
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_misc"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_about"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_build_info"/>
+            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_patches_info"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.comparator.ifl_a_devmode_backup_comparator"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu"/>
             <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.backup.ifl_a_export_backup"/>
@@ -157,6 +158,7 @@
             <public name="ifl_ota_expand" type="drawable"/>
             <public name="ifl_ota_refresh" type="drawable"/>
             <public name="ifl_ota_refresh_2" type="drawable"/>
+            <public name="ifl_patch" type="drawable"/>
             <public name="ifl_patcher_commit" type="drawable"/>
             <public name="ifl_progress_background_dark" type="drawable"/>
             <public name="ifl_progress_background_light" type="drawable"/>
@@ -201,7 +203,9 @@
             <public name="ifl_page_area" type="id"/>
             <public name="ifl_page_area_backup" type="id"/>
             <public name="ifl_page_area_edit" type="id"/>
+            <public name="ifl_page_area_pinfo" type="id"/>
             <public name="ifl_page_title" type="id"/>
+            <public name="ifl_patches_layout" type="id"/>
             <public name="ifl_prefs_layout" type="id"/>
             <public name="ifl_search_layout" type="id"/>
             <public name="ifl_start_analyze" type="id"/>
@@ -310,6 +314,7 @@
             <public name="ifl_at_admin_action_updatebackup" type="layout"/>
             <public name="ifl_at_admin_dashboard" type="layout"/>
             <public name="ifl_at_admin_login" type="layout"/>
+            <public name="ifl_at_applied_patches_info" type="layout"/>
             <public name="ifl_at_build_info" type="layout"/>
             <public name="ifl_at_crash_reports" type="layout"/>
             <public name="ifl_at_crash_viewer" type="layout"/>
@@ -450,6 +455,8 @@
             <public name="ifl_a1_19" type="string"/>
             <public name="ifl_a1_20" type="string"/>
             <public name="ifl_a1_21" type="string"/>
+            <public name="ifl_a1_22" type="string"/>
+            <public name="ifl_a1_23" type="string"/>
             <public name="ifl_a2_01" type="string"/>
             <public name="ifl_a2_02" type="string"/>
             <public name="ifl_a2_03" type="string"/>
@@ -583,7 +590,9 @@
             <item name="ifl_page_area" type="id"/>
             <item name="ifl_page_area_backup" type="id"/>
             <item name="ifl_page_area_edit" type="id"/>
+            <item name="ifl_page_area_pinfo" type="id"/>
             <item name="ifl_page_title" type="id"/>
+            <item name="ifl_patches_layout" type="id"/>
             <item name="ifl_prefs_layout" type="id"/>
             <item name="ifl_search_layout" type="id"/>
             <item name="ifl_start_analyze" type="id"/>
@@ -827,6 +836,8 @@
             <string name="ifl_a1_19">Website</string>
             <string name="ifl_a1_20">Join Community</string>
             <string name="ifl_a1_21">Contributors</string>
+            <string name="ifl_a1_22">Information about applied patches</string>
+            <string name="ifl_a1_23">Core Commit</string>
             <string name="ifl_a2_01">About Instagram</string>
             <string name="ifl_a2_02">Version</string>
             <string name="ifl_a2_03">Version Code</string>
@@ -1039,6 +1050,8 @@
             <string name="ifl_a1_19">Web Sitesi</string>
             <string name="ifl_a1_20">Topluluğa Katıl</string>
             <string name="ifl_a1_21">Katkıda Bulunanlar</string>
+            <string name="ifl_a1_22">Uygulanan yamalar hakkında bilgi edin</string>
+            <string name="ifl_a1_23">Çekirdek Commit</string>
             <string name="ifl_a2_01">Instagram Hakkında</string>
             <string name="ifl_a2_02">Sürüm</string>
             <string name="ifl_a2_03">Sürüm Kodu</string>
@@ -1250,6 +1263,8 @@
             <string name="ifl_a1_19">Webseite</string>
             <string name="ifl_a1_20">Community beitreten</string>
             <string name="ifl_a1_21">Mitwirkende</string>
+            <string name="ifl_a1_22">Informationen zu angewendeten Patches anzeigen</string>
+            <string name="ifl_a1_23">Kern-Commit</string>
             <string name="ifl_a2_01">Über Instagram</string>
             <string name="ifl_a2_02">Version</string>
             <string name="ifl_a2_03">Versionscode</string>
@@ -1461,6 +1476,8 @@
             <string name="ifl_a1_19">Ιστότοπος</string>
             <string name="ifl_a1_20">Συμμετοχή στην κοινότητα</string>
             <string name="ifl_a1_21">Συντελεστές</string>
+            <string name="ifl_a1_22">Προβολή πληροφοριών για τα εφαρμοσμένα patches</string>
+            <string name="ifl_a1_23">Βασικό Commit</string>
             <string name="ifl_a2_01">Σχετικά με το Instafel</string>
             <string name="ifl_a2_02">Έκδοση</string>
             <string name="ifl_a2_03">Κωδικός έκδοσης</string>
@@ -1672,6 +1689,8 @@
             <string name="ifl_a1_19">Site web</string>
             <string name="ifl_a1_20">Rejoindre la communauté</string>
             <string name="ifl_a1_21">Contributeurs</string>
+            <string name="ifl_a1_22">Voir les informations sur les correctifs appliqués</string>
+            <string name="ifl_a1_23">Commit principal</string>
             <string name="ifl_a2_01">"À propos d'Instagram"</string>
             <string name="ifl_a2_02">Version</string>
             <string name="ifl_a2_03">Code de version</string>
@@ -1883,6 +1902,8 @@
             <string name="ifl_a1_19">वेबसाइट</string>
             <string name="ifl_a1_20">समुदाय से जुड़ें</string>
             <string name="ifl_a1_21">योगदानकर्ता</string>
+            <string name="ifl_a1_22">लागू किए गए पैच की जानकारी देखें</string>
+            <string name="ifl_a1_23">मुख्य कमिट</string>
             <string name="ifl_a2_01">Instagram के बारे में</string>
             <string name="ifl_a2_02">वर्ज़न</string>
             <string name="ifl_a2_03">वर्ज़न कोड</string>
@@ -2094,6 +2115,8 @@
             <string name="ifl_a1_19">Weboldal</string>
             <string name="ifl_a1_20">Csatlakozás a közösséghez</string>
             <string name="ifl_a1_21">Közreműködők</string>
+            <string name="ifl_a1_22">Alkalmazott javítások információinak megtekintése</string>
+            <string name="ifl_a1_23">Alap commit</string>
             <string name="ifl_a2_01">Instagram-ról</string>
             <string name="ifl_a2_02">Verzió</string>
             <string name="ifl_a2_03">Verzió kódja</string>
@@ -2305,6 +2328,8 @@
             <string name="ifl_a1_19">Site</string>
             <string name="ifl_a1_20">Entrar na comunidade</string>
             <string name="ifl_a1_21">Contribuidores</string>
+            <string name="ifl_a1_22">Ver informações sobre patches aplicados</string>
+            <string name="ifl_a1_23">Commit principal</string>
             <string name="ifl_a2_01">Sobre o Instagram</string>
             <string name="ifl_a2_02">Versão</string>
             <string name="ifl_a2_03">Código da Versão</string>
@@ -2516,6 +2541,8 @@
             <string name="ifl_a1_19">Sitio web</string>
             <string name="ifl_a1_20">Unirse a la comunidad</string>
             <string name="ifl_a1_21">Colaboradores</string>
+            <string name="ifl_a1_22">Ver información sobre los parches aplicados</string>
+            <string name="ifl_a1_23">Commit principal</string>
             <string name="ifl_a2_01">Sobre Instagram</string>
             <string name="ifl_a2_02">Versión</string>
             <string name="ifl_a2_03">Código de versión</string>
@@ -2727,6 +2754,8 @@
             <string name="ifl_a1_19">Veb sayt</string>
             <string name="ifl_a1_20">İcmaya qoşul</string>
             <string name="ifl_a1_21">Töhfə verənlər</string>
+            <string name="ifl_a1_22">Tətbiq olunmuş yamaqlar haqqında məlumatlara bax</string>
+            <string name="ifl_a1_23">Əsas Commit</string>
             <string name="ifl_a2_01">Instagram Haqqında</string>
             <string name="ifl_a2_02">Versiya</string>
             <string name="ifl_a2_03">Versiya Kodu</string>
@@ -2938,6 +2967,8 @@
             <string name="ifl_a1_19">Strona internetowa</string>
             <string name="ifl_a1_20">Dołącz do społeczności</string>
             <string name="ifl_a1_21">Współtwórcy</string>
+            <string name="ifl_a1_22">Zobacz informacje o zastosowanych poprawkach</string>
+            <string name="ifl_a1_23">Główny commit</string>
             <string name="ifl_a2_01">O Instagramie</string>
             <string name="ifl_a2_02">Wersja</string>
             <string name="ifl_a2_03">Kod wersji</string>
@@ -3151,6 +3182,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a1_19">Website</string>
             <string name="ifl_a1_20">Bergabung dengan Komunitas</string>
             <string name="ifl_a1_21">Kontributor</string>
+            <string name="ifl_a1_22">Lihat informasi tentang patch yang diterapkan</string>
+            <string name="ifl_a1_23">Komit inti</string>
             <string name="ifl_a2_01">Tentang Instagram</string>
             <string name="ifl_a2_02">Versi</string>
             <string name="ifl_a2_03">Kode Versi</string>
