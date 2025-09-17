@@ -40,6 +40,7 @@ public class ifl_a_build_info extends AppCompatActivity {
         tileCommit.setSubtitleText(InstafelEnv.COMMIT + " (main)");
 
         tileCommit.setOnClickListener(view -> openUrlInWeb("https://github.com/mamiiblt/instafel/commit/" + InstafelEnv.COMMIT));
+        tilePatcherVersion.setOnClickListener(view -> openUrlInWeb("https://github.com/instafel/p-rel/releases/tag/" + InstafelEnv.PATCHER_VERSION));
 
         tileAppliedPatches.setOnClickListener(new View.OnClickListener() {
             @Override
