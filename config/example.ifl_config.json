@@ -15,10 +15,10 @@
   "app": {
     "androidConfig": {
       "keystore": {
-        "ksPath": "/config/keystores/instafel-app.jks",
-        "ksKeyPass": "value",
-        "ksAlias": "value",
-        "ksPass": "value"
+        "ksPath": "/config/testkey.keystore",
+        "ksKeyPass": "android",
+        "ksAlias": "testkey",
+        "ksPass": "android"
       }
     }
   },
