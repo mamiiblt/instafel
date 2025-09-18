@@ -42,7 +42,7 @@ class GetGenerationInfo: InstafelPatch() {
                             val iflVRequestParsed = JSONObject(response.body.string())
                             val iflVersion = iflVRequestParsed.getInt("ifl_version")
 
-                            Env.Project.iflVersion += 1
+                            Env.Project.iflVersion = iflVersion
                             Log.info("Instafel version for this generation is ${iflVersion + 1}")
                             success("IFL version successfully saved to env")
                         }
