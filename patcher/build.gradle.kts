@@ -1,8 +1,6 @@
-var config = rootProject.extra["instafelConfig"] as Map<*, *>
-val projectConfig = config["patcher"] as Map<*, *>
-val patcherVersion = projectConfig["patcher_version"] as String
-val projectTag = projectConfig["tag"] as String
-val commitHash: String by rootProject.extra
+import IFLProjectManager.Config
+import IFLProjectManager.BuildConfig
+import IFLProjectManager.getCommitHash
 
 plugins {
     kotlin("jvm")
@@ -12,19 +10,19 @@ plugins {
 }
 
 group = "instafel"
-version = "v$patcherVersion-$projectTag"
+version = "v${Config.patcher.version}-${Config.patcher.tag}"
 
 dependencies {
-    implementation(IFLProjectManager.Deps.kotlin_stdlib)
-    implementation(IFLProjectManager.Deps.kotlin_reflect)
-    implementation(IFLProjectManager.Deps.org_json)
-    implementation(IFLProjectManager.Deps.commons_io)
-    implementation(IFLProjectManager.Deps.okhttp)
-    implementation(IFLProjectManager.Deps.apktool_lib)
-    implementation(IFLProjectManager.Deps.classgraph)
-    implementation(IFLProjectManager.Deps.jackson_databind)
-    implementation(IFLProjectManager.Deps.jackson_yaml)
-    implementation(IFLProjectManager.Deps.gson)
+    implementation(BuildConfig.kotlin_stdlib)
+    implementation(BuildConfig.kotlin_reflect)
+    implementation(BuildConfig.org_json)
+    implementation(BuildConfig.commons_io)
+    implementation(BuildConfig.okhttp)
+    implementation(BuildConfig.apktool_lib)
+    implementation(BuildConfig.classgraph)
+    implementation(BuildConfig.jackson_databind)
+    implementation(BuildConfig.jackson_yaml)
+    implementation(BuildConfig.gson)
 }
 
 application {
@@ -38,10 +36,10 @@ tasks.shadowJar {
 
     manifest {
         attributes(
-            "Patcher-Cli-Version" to patcherVersion,
-            "Patcher-Cli-Commit" to commitHash,
+            "Patcher-Cli-Version" to Config.patcher.version,
+            "Patcher-Cli-Commit" to project.getCommitHash(),
             "Patcher-Cli-Branch" to "main",
-            "Patcher-Cli-Tag" to projectTag
+            "Patcher-Cli-Tag" to Config.patcher.tag
         )
     }
 }
@@ -68,14 +66,14 @@ tasks.register("release") {
             token = getInstafelEnvProperty("GH_TOKEN"),
             owner = "instafel",
             repo = "p-rel",
-            tagName = "v$patcherVersion",
-            name =  "Release v$patcherVersion",
+            tagName = "v${Config.patcher.version}",
+            name =  "Release v${Config.patcher.version}",
             assets = listOf(
                 tasks.shadowJar.get().archiveFile.get().asFile,
                 generatePatcherBuildJSON(
-                    version = patcherVersion,
-                    commit = commitHash,
-                    channel = projectTag
+                    version = Config.patcher.version,
+                    channel = Config.patcher.tag,
+                    commit = project.getCommitHash(),
                 )
             ),
             body =  """
@@ -83,9 +81,9 @@ tasks.register("release") {
         
                 | Property | Value |
                 | ------------- | ------------- |
-                | Version  | v$patcherVersion |
-                | Channel  | $projectTag |
-                | Base Commit  | [$commitHash](https://github.com/mamiiblt/instafel/commit/$commitHash) |
+                | Version  | v${Config.patcher.version} |
+                | Channel  | ${Config.patcher.tag} |
+                | Base Commit  | [${project.getCommitHash()}](https://github.com/mamiiblt/instafel/commit/${project.getCommitHash()}) |
                 | Branch  | [main](https://github.com/mamiiblt/instafel) |
 
                 ## More Information?

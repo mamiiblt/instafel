@@ -1,3 +1,6 @@
+import IFLProjectManager.getCommitHash
+import IFLProjectManager.Config
+import IFLProjectManager.BuildConfig
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
@@ -8,26 +11,22 @@ plugins {
     `java-library`
 }
 
-val config = rootProject.extra["instafelConfig"] as Map<*, *>
-val projectConfig = config["patcher"] as Map<*, *>
-val coreSupportedVersion = projectConfig["core_supported_version"] as String
-val commitHash: String by rootProject.extra
 lateinit var patchesJsonFile: File
 
 group = "instafel"
-version = commitHash
+version = project.getCommitHash()
 
 dependencies {
-    implementation(IFLProjectManager.Deps.kotlin_stdlib)
-    implementation(IFLProjectManager.Deps.kotlin_reflect)
-    implementation(IFLProjectManager.Deps.org_json)
-    implementation(IFLProjectManager.Deps.commons_io)
-    implementation(IFLProjectManager.Deps.okhttp)
-    implementation(IFLProjectManager.Deps.apktool_lib)
-    implementation(IFLProjectManager.Deps.classgraph)
-    implementation(IFLProjectManager.Deps.jackson_databind)
-    implementation(IFLProjectManager.Deps.jackson_yaml)
-    implementation(IFLProjectManager.Deps.gson)
+    implementation(BuildConfig.kotlin_stdlib)
+    implementation(BuildConfig.kotlin_reflect)
+    implementation(BuildConfig.org_json)
+    implementation(BuildConfig.commons_io)
+    implementation(BuildConfig.okhttp)
+    implementation(BuildConfig.apktool_lib)
+    implementation(BuildConfig.classgraph)
+    implementation(BuildConfig.jackson_databind)
+    implementation(BuildConfig.jackson_yaml)
+    implementation(BuildConfig.gson)
 }
 
 tasks.named<Jar>("jar") {
@@ -37,8 +36,8 @@ tasks.named<Jar>("jar") {
 
     manifest {
         attributes(
-            "Patcher-Core-Commit" to commitHash,
-            "Patcher-Core-Supported-Version" to coreSupportedVersion,
+            "Patcher-Core-Commit" to project.getCommitHash(),
+            "Patcher-Core-Supported-Version" to Config.patcher.version,
             "Patcher-Core-Branch" to "main"
         )
     }
@@ -96,15 +95,15 @@ tasks.register("release") {
             token = getInstafelEnvProperty("GH_TOKEN"),
             owner = "instafel",
             repo = "pc-rel",
-            tagName = "$commitHash-$coreSupportedVersion",
-            name =  "Core $commitHash",
+            tagName = "${project.getCommitHash()}-${Config.patcher.version}",
+            name =  "Core ${project.getCommitHash()}",
             assets = listOf(
                 tasks.jar.get().archiveFile.get().asFile,
                 patchesJsonFile,
                 generatePatcherCoreBuildJSON(
-                    commit = commitHash,
+                    commit = project.getCommitHash(),
                     branch = "main",
-                    supportedVer = coreSupportedVersion
+                    supportedVer = Config.patcher.version
                 )
             ),
             body =  """
@@ -112,11 +111,11 @@ tasks.register("release") {
         
                 | Property | Value |
                 | ------------- | ------------- |
-                | Commit  | [$commitHash](https://github.com/mamiiblt/instafel/commit/$commitHash) |
+                | Commit  | [$project.getCommitHash()](https://github.com/mamiiblt/instafel/commit/$project.getCommitHash()) |
                 | Branch  | [main](https://github.com/mamiiblt/instafel) |
-                | S. Version  | v$coreSupportedVersion |
+                | S. Version  | v${Config.patcher.version} |
                 
-                > Warning: This core package only supports Instafel Patcher v$coreSupportedVersion so you can't use that core package in newer or older patcher releases.
+                > Warning: This core package only supports Instafel Patcher v${Config.patcher.version} so you can't use that core package in newer or older patcher releases.
 
                 ## More Information?
 

@@ -1,4 +1,14 @@
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonDeserializationContext
+import com.google.gson.JsonDeserializer
+import com.google.gson.JsonElement
+import com.google.gson.JsonParseException
+import modals.BuildConfigFile
+import modals.ConfigFile
+import org.gradle.api.Project
 import org.json.JSONObject
+import java.io.ByteArrayOutputStream
+import java.lang.reflect.Type
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -8,56 +18,46 @@ import java.nio.file.Paths
         - buildSrc/build.gradle.kts
         - config/build-config.json
     A little note for me...
- */
+*/
 object IFLProjectManager {
-    object Deps {
-        val kotlin_stdlib get() = getDependencyInfo("kotlin_stdlib")
-        val kotlin_reflect get() = getDependencyInfo("kotlin_reflect")
-        val org_json get() = getDependencyInfo("org_json")
-        val commons_io get() = getDependencyInfo("commons_io")
-        val okhttp get() = getDependencyInfo("okhttp")
-        val apktool_lib get() = getDependencyInfo("apktool_lib")
-        val classgraph get() = getDependencyInfo("classgraph")
-        val jackson_databind get() = getDependencyInfo("jackson_databind")
-        val jackson_yaml get() = getDependencyInfo("jackson_yaml")
-        val gplayapi get() = getDependencyInfo("gplayapi")
-        val shizuku_api get() = getDependencyInfo("shizuku_api")
-        val shizuku_provider get() = getDependencyInfo("shizuku_provider")
-        val rootbeer get() = getDependencyInfo("rootbeer")
-        val m3_preferences get() = getDependencyInfo("m3_preferences")
-        val gson get() = getDependencyInfo("gson")
-
-        object Android {
-            val appcompat get() = getDependencyInfo("android#appcompat")
-            val material get() = getDependencyInfo("android#material")
-            val activity get() = getDependencyInfo("android#activity")
-            val constraintlayout get() = getDependencyInfo("android#constraintlayout")
-            val navigation_fragment get() = getDependencyInfo("android#navigation_fragment")
-            val work_manager get() = getDependencyInfo("android#work_manager")
-            val navigation_ui get() = getDependencyInfo("android#navigation_ui")
-            val preference get() = getDependencyInfo("android#preference")
-        }
-    }
-
     private val rootDir: String
         get() = System.getProperty("project.rootDir") ?: throw IllegalStateException("project.rootDir not set!")
 
-    private val libs: JSONObject by lazy {
-        val path = Paths.get("$rootDir/config/build-config.json")
-        val text = Files.readAllLines(path).joinToString("\n")
-        JSONObject(text)
+    val configPath = Paths.get("$rootDir/config/ifl_config.json")
+    val configObject = JSONObject(Files.readAllLines(configPath).joinToString("\n"))
+
+    fun Project.getCommitHash(): String =
+        ByteArrayOutputStream().use { output ->
+            exec {
+                commandLine("git", "rev-parse", "--short", "HEAD")
+                standardOutput = output
+            }
+            output.toString().trim()
+        }
+
+
+    val Config: ConfigFile by lazy {
+        gson.fromJson(configObject.getJSONObject("config").toString(), ConfigFile::class.java)
     }
 
-    private fun getDependencyInfo(depName: String): String {
-        lateinit var depBlock: JSONObject
-        if (depName.startsWith("android#")) {
-            depBlock = libs
-                .getJSONObject("dependencies")
-                .getJSONObject("android").getJSONObject(depName.replace("android#", ""))
-        } else {
-            depBlock = libs
-                .getJSONObject("dependencies").getJSONObject(depName)
-        }
-        return "${depBlock.getString("package")}:${depBlock.getString("version")}"
+    val BuildConfig: BuildConfigFile by lazy {
+        val gson = GsonBuilder()
+            .registerTypeAdapter(String::class.java, DependencyDeserializer())
+            .create()
+
+        gson.fromJson(configObject.getJSONObject("build_config").getJSONObject("dependencies").toString(), BuildConfigFile::class.java)
+    }
+}
+
+class DependencyDeserializer : JsonDeserializer<String> {
+    override fun deserialize(
+        json: JsonElement?,
+        typeOfT: Type?,
+        context: JsonDeserializationContext?
+    ): String {
+        val obj = json?.asJsonObject ?: throw JsonParseException("Invalid dependency JSON")
+        val pkg = obj["pkg"].asString
+        val ver = obj["ver"].asString
+        return "$pkg:$ver"
     }
 }

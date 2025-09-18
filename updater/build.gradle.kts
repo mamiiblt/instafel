@@ -1,31 +1,27 @@
+import IFLProjectManager.getCommitHash
+import IFLProjectManager.Config
+import IFLProjectManager.BuildConfig
+
 plugins {
     alias(libs.plugins.android.application)
 }
 
-var config = rootProject.extra["instafelConfig"] as Map<*, *>
-val projectConfig = config[project.name] as Map<*, *>
-val androidConfig = projectConfig["androidConfig"] as Map<*, *>
-val keystoreConfig = androidConfig["keystore"] as Map<*, *>
-val projectVersion = projectConfig["version"] as String
-
-val commitHash: String by rootProject.extra
-
 group = "instafel"
 
 dependencies {
-    implementation(IFLProjectManager.Deps.Android.appcompat)
-    implementation(IFLProjectManager.Deps.Android.material)
-    implementation(IFLProjectManager.Deps.Android.activity)
-    implementation(IFLProjectManager.Deps.Android.constraintlayout)
-    implementation(IFLProjectManager.Deps.Android.navigation_fragment)
-    implementation(IFLProjectManager.Deps.Android.navigation_ui)
-    implementation(IFLProjectManager.Deps.Android.preference)
-    implementation(IFLProjectManager.Deps.shizuku_api)
-    implementation(IFLProjectManager.Deps.shizuku_provider)
-    implementation(IFLProjectManager.Deps.okhttp)
-    implementation(IFLProjectManager.Deps.m3_preferences)
-    implementation(IFLProjectManager.Deps.rootbeer)
-    implementation(IFLProjectManager.Deps.Android.work_manager)
+    implementation(BuildConfig.android.appcompat)
+    implementation(BuildConfig.android.material)
+    implementation(BuildConfig.android.activity)
+    implementation(BuildConfig.android.constraintlayout)
+    implementation(BuildConfig.android.navigation_fragment)
+    implementation(BuildConfig.android.navigation_ui)
+    implementation(BuildConfig.android.preference)
+    implementation(BuildConfig.shizuku_api)
+    implementation(BuildConfig.shizuku_provider)
+    implementation(BuildConfig.okhttp)
+    implementation(BuildConfig.m3_preferences)
+    implementation(BuildConfig.rootbeer)
+    implementation(BuildConfig.android.work_manager)
 }
 
 android {
@@ -42,10 +38,10 @@ android {
         applicationId = "me.mamiiblt.instafel.updater"
         minSdk = 26
         targetSdk = 36
-        versionCode = androidConfig["versionCode"] as Int
-        versionName = "v$projectVersion ($commitHash)"
-        buildConfigField("String", "IFLU_VERSION", "\"$projectVersion\"")
-        buildConfigField("String", "COMMIT", "\"$commitHash\"")
+        versionCode = Config.updater.versionCode
+        versionName = "v${Config.updater.version} (${project.getCommitHash()})"
+        buildConfigField("String", "IFLU_VERSION", "\"${Config.updater.version}\"")
+        buildConfigField("String", "COMMIT", "\"${project.getCommitHash()}\"")
         buildConfigField("String", "BRANCH", "\"main\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -53,10 +49,10 @@ android {
 
     signingConfigs{
         create("release") {
-            storeFile = File(rootDir, keystoreConfig["ksPath"] as String)
-            storePassword = keystoreConfig["ksKeyPass"] as String
-            keyAlias = keystoreConfig["ksAlias"] as String
-            keyPassword = keystoreConfig["ksPass"] as String
+            storeFile = File(rootDir, Config.updater.signing.ksPath)
+            storePassword = Config.updater.signing.ksKeyPass
+            keyAlias = Config.updater.signing.ksAlias
+            keyPassword = Config.updater.signing.ksKeyPass
         }
     }
 
@@ -83,7 +79,7 @@ tasks.register("generate-app-debug") {
     dependsOn("assembleDebug")
 
     doLast {
-        val outputName = "ifl-updater-v$projectVersion-debug.apk"
+        val outputName = "ifl-updater-v${Config.updater.version}-debug.apk"
         file("${project.projectDir}/build/outputs/apk/debug/updater-debug.apk")
             .copyTo(file("${rootProject.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
@@ -100,7 +96,7 @@ tasks.register("generate-app-release") {
     dependsOn("assembleRelease")
 
     doLast {
-        val outputName = "ifl-updater-v$projectVersion-release.apk"
+        val outputName = "ifl-updater-v${Config.updater.version}-release.apk"
         file("${project.projectDir}/build/outputs/apk/release/updater-release.apk")
             .copyTo(file("${rootProject.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied into .output: $outputName")
@@ -121,13 +117,13 @@ tasks.register("release") {
             token = getInstafelEnvProperty("GH_TOKEN"),
             owner = "instafel",
             repo = "u-rel",
-            tagName = "v$projectVersion",
-            name =  "Release v$projectVersion",
+            tagName = "v${Config.updater.version}",
+            name =  "Release v${Config.updater.version}",
             assets = listOf(
-                File("${rootProject.rootDir}/.output/ifl-updater-v$projectVersion-release.apk"),
+                File("${rootProject.rootDir}/.output/ifl-updater-v${Config.updater.version}-release.apk"),
                 generateUpdaterBuildJSON(
-                    version = projectVersion,
-                    commit = commitHash,
+                    version = Config.updater.version,
+                    commit = project.getCommitHash(),
                     branch = "main",
                     channel = "release"
                 )
@@ -137,9 +133,9 @@ tasks.register("release") {
         
                 | Property | Value |
                 | ------------- | ------------- |
-                | Version | v$projectVersion |
+                | Version | v${Config.updater.version} |
                 | Channel | release |
-                | Base Commit | [$commitHash](https://github.com/mamiiblt/instafel/commit/$commitHash) |
+                | Base Commit | [${project.getCommitHash()}](https://github.com/mamiiblt/instafel/commit/${project.getCommitHash()}) |
                 | Branch | [main](https://github.com/mamiiblt/instafel) |
 
                 ## More Information?
