@@ -1,6 +1,4 @@
 import java.io.ByteArrayOutputStream
-import java.io.File
-import groovy.json.JsonSlurper
 
 rootProject.name = "Instafel"
 System.setProperty("project.rootDir", rootDir.absolutePath)
@@ -12,23 +10,6 @@ fun getGitCommitHash(): String {
         standardOutput = output
     }
     return output.toString().trim()
-}
-
-val configFile = File(rootDir, "config/ifl_config.json")
-val fallbackConfigFile = File(rootDir, "config/example.ifl_config.json")
-
-val jsonData: Map<*, *> = if (configFile.exists()) {
-    JsonSlurper().parse(configFile) as Map<*, *>
-} else {
-    println("Warning: ifl_config.json not found, using example.ifl_config.json instead.")
-    JsonSlurper().parse(fallbackConfigFile) as Map<*, *>
-}
-
-println("Loaded & exported Instafel project configuration file")
-
-gradle.rootProject {
-    extra["commitHash"] = getGitCommitHash()
-    extra["instafelConfig"] = jsonData
 }
 
 dependencyResolutionManagement {

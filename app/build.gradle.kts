@@ -1,13 +1,10 @@
+import IFLProjectManager.BuildConfig
+import IFLProjectManager.Config
+import IFLProjectManager.getCommitHash
+
 plugins {
     alias(libs.plugins.android.application)
 }
-
-var config = rootProject.extra["instafelConfig"] as Map<*, *>
-val projectConfig = config[project.name] as Map<*, *>
-val androidConfig = projectConfig["androidConfig"] as Map<*, *>
-val keystoreConfig = androidConfig["keystore"] as Map<*, *>
-
-val commitHash: String by rootProject.extra
 
 group = "me.mamiiblt.instafel"
 
@@ -20,15 +17,15 @@ android {
         minSdk = 28
         targetSdk = 36
         versionCode = 1 // it doesn't matter
-        versionName = commitHash // it doesn't matter
+        versionName = project.getCommitHash() // it doesn't matter
     }
 
     signingConfigs{
         create("release") {
-            storeFile = File(rootDir, keystoreConfig["ksPath"] as String)
-            storePassword = keystoreConfig["ksKeyPass"] as String
-            keyAlias = keystoreConfig["ksAlias"] as String
-            keyPassword = keystoreConfig["ksPass"] as String
+            storeFile = File(rootDir, Config.app.signing.ksPath)
+            storePassword = Config.app.signing.ksKeyPass
+            keyAlias = Config.app.signing.ksAlias
+            keyPassword = Config.app.signing.ksPass
         }
     }
 
@@ -51,7 +48,7 @@ tasks.register("generate-app-debug") {
     dependsOn("assembleDebug")
 
     doLast {
-        val outputName = "ifl-app-$commitHash-debug.apk"
+        val outputName = "ifl-app-${project.getCommitHash()}-debug.apk"
         file("${project.projectDir}/build/outputs/apk/debug/app-debug.apk")
             .copyTo(file("${project.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
@@ -68,7 +65,7 @@ tasks.register("generate-app-release") {
     dependsOn("assembleRelease")
 
     doLast {
-        val outputName = "ifl-app-$commitHash-release.apk"
+        val outputName = "ifl-app-${project.getCommitHash()}-release.apk"
         file("${project.projectDir}/build/outputs/apk/release/app-release.apk")
             .copyTo(file("${project.rootDir}/.output/$outputName"), overwrite = true)
         println("APK successfully copied: $outputName")
@@ -80,8 +77,8 @@ tasks.register("generate-app-release") {
 }
 
 dependencies {
-    implementation(IFLProjectManager.Deps.Android.appcompat)
-    implementation(IFLProjectManager.Deps.Android.material)
-    implementation(IFLProjectManager.Deps.Android.activity)
-    implementation(IFLProjectManager.Deps.Android.constraintlayout)
+    implementation(BuildConfig.android.appcompat)
+    implementation(BuildConfig.android.material)
+    implementation(BuildConfig.android.activity)
+    implementation(BuildConfig.android.constraintlayout)
 }

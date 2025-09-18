@@ -7,12 +7,12 @@ repositories {
     gradlePluginPortal()
     mavenCentral()
 }
-val configPath = "${rootDir.parentFile}/config/build-config.json"
+val configPath = "${rootDir.parentFile}/config/ifl_config.json"
 val jsonText = File(configPath).readText()
-val orgJsonVersion = Regex("\"org_json\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
-val kotlinRlVersion = Regex("\"kotlin_reflect\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
-val kotlinStdlib = Regex("\"kotlin_stdlib\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
-val gsonVersion = Regex("\"gson\"\\s*:\\s*\\{[^}]*\"version\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
+val orgJsonVersion = Regex("\"org_json\"\\s*:\\s*\\{[^}]*\"ver\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
+val kotlinRlVersion = Regex("\"kotlin_reflect\"\\s*:\\s*\\{[^}]*\"ver\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
+val kotlinStdlib = Regex("\"kotlin_stdlib\"\\s*:\\s*\\{[^}]*\"ver\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
+val gsonVersion = Regex("\"gson\"\\s*:\\s*\\{[^}]*\"ver\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinStdlib")

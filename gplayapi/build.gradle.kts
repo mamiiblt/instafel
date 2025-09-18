@@ -1,3 +1,6 @@
+import IFLProjectManager.Config
+import IFLProjectManager.BuildConfig
+
 plugins {
     kotlin("jvm")
     java
@@ -5,21 +8,14 @@ plugins {
     id("com.gradleup.shadow")
 }
 
-var config = rootProject.extra["instafelConfig"] as Map<*, *>
-val projectConfig = config[project.name] as Map<*, *>
-val projectVersion = projectConfig["version"] as String
-val projectTag = projectConfig["tag"] as String 
-
-val commitHash: String by rootProject.extra
-
 group = "gplayapi"
-version = "v$projectVersion-$projectTag"
+version = "v${Config.gplayapi.version}-${Config.gplayapi.tag}"
 
 dependencies {
-    implementation(IFLProjectManager.Deps.kotlin_stdlib)
-    implementation(IFLProjectManager.Deps.gplayapi)
-    implementation(IFLProjectManager.Deps.org_json)
-    implementation(IFLProjectManager.Deps.okhttp)
+    implementation(BuildConfig.kotlin_stdlib)
+    implementation(BuildConfig.gplayapi)
+    implementation(BuildConfig.org_json)
+    implementation(BuildConfig.okhttp)
 }
 
 application {
