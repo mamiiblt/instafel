@@ -7,6 +7,11 @@ import java.util.zip.*
 import java.security.MessageDigest
 
 object Utils {
+    fun getSuggestedThreadCount(): Int {
+        val threadCount = Runtime.getRuntime().availableProcessors()
+        return threadCount.coerceAtMost(10) // use max 8 threads
+    }
+
     fun makeSmaliPathShort(file: File): String = "'smali${file.absolutePath.substringAfter("/smali")}'"
 
     fun mergePaths(basePath: String, vararg args: String) = Paths.get(basePath, *args).toString()

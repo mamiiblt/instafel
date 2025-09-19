@@ -19,6 +19,7 @@ version = project.getCommitHash()
 dependencies {
     implementation(BuildConfig.kotlin_stdlib)
     implementation(BuildConfig.kotlin_reflect)
+    implementation(BuildConfig.kotlin_coroutines)
     implementation(BuildConfig.org_json)
     implementation(BuildConfig.commons_io)
     implementation(BuildConfig.okhttp)

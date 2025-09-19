@@ -15,6 +15,7 @@ version = "v${Config.patcher.version}-${Config.patcher.tag}"
 dependencies {
     implementation(BuildConfig.kotlin_stdlib)
     implementation(BuildConfig.kotlin_reflect)
+    implementation(BuildConfig.kotlin_coroutines)
     implementation(BuildConfig.org_json)
     implementation(BuildConfig.commons_io)
     implementation(BuildConfig.okhttp)
