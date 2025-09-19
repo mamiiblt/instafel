@@ -1,7 +1,8 @@
 package instafel.patcher.core.patches.general
 
+import instafel.patcher.core.utils.FileSearchResult
 import instafel.patcher.core.utils.Log
-import instafel.patcher.core.utils.Utils
+import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
@@ -24,94 +25,39 @@ class AddAppTrigger: InstafelPatch() {
         @PInfos.TaskInfo("Find getRootContent() method")
         object: InstafelTask() {
             override fun execute() {
-                var scannedFileSize = 0
-                var fileFoundLock = false;
-
-                smaliUtils.smaliFolders.forEach { folder ->
-                    if (fileFoundLock) return
-
-                    val xFolder = File(Utils.mergePaths(folder.absolutePath, "X"))
-                    Log.info("Searching in X folder of " + folder.getName())
-
-                    val fileIterator = FileUtils.iterateFiles(xFolder, null, true)
-                    fileIterator.forEach { file ->
-                        if (fileFoundLock) return@forEach
-
-                        scannedFileSize++
-                        val fContent = smaliUtils.getSmaliFileContent(file.absolutePath)
-                        val matchLines = smaliUtils.getContainLines(
-                            fContent,
-                            ".method public getRootActivity()Landroid/app/Activity;"
-                        )
-
-                        if (matchLines.size == 1) {
-                            interfaceFile = file
-                            interfaceClassName = interfaceFile!!.name.substringBefore(".")
-                            Log.info("File found in ${interfaceFile!!.name} at ${folder.name}")
-                            fileFoundLock = true
-                        }
+                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
+                    listOf(
+                        ".method public getRootActivity()Landroid/app/Activity;",
+                    ))) {
+                    is FileSearchResult.Success -> {
+                        interfaceFile = result.file
+                        interfaceClassName = interfaceFile.name.substringBefore(".")
+                        Log.info("Interface class name is $interfaceClassName")
+                        success("Interface class found successfully")
+                    }
+                    is FileSearchResult.NotFound -> {
+                        failure("Patch aborted because no any classes found.")
                     }
                 }
-
-                if (fileFoundLock) {
-                    Log.info("Totally scanned $scannedFileSize file(s) in X folders")
-                    Log.info("Interface class name is $interfaceClassName")
-                    interfaceClassName = interfaceFile.name.substringBefore(".")
-                    success("Interface file founded.")
-                } else {
-                    failure("Interface file cannot be found.")
-                }
             }
-
         },
         @PInfos.TaskInfo("Find activity")
         object: InstafelTask() {
             override fun execute() {
-                var scannedFileSize = 0
-                val foundFiles = mutableListOf<File>()
-                val searchConstStrings = listOf(
-                    "Landroid/content/res/Configuration;",
-                    "Lcom/facebook/quicklog/reliability/UserFlowLogger",
-                    "Lcom/instagram/quickpromotion/intf/QPTooltipAnchor",
-                    ".super Ljava/lang/Object;",
-                    "MainFeedQuickPromotionDelegate.onCreateView"
-                )
-
-                smaliUtils.smaliFolders.forEach { folder ->
-                    val xFolder = File(Utils.mergePaths(folder.absolutePath, "X"))
-                    if (!xFolder.exists() || !xFolder.isDirectory) return
-
-                    val fileIterator = FileUtils.iterateFiles(xFolder, null, true)
-
-                    for (file in fileIterator) {
-                        scannedFileSize++
-                        val fContent = smaliUtils.getSmaliFileContent(file.absolutePath)
-                        val passStatuses = BooleanArray(searchConstStrings.size)
-
-                        for (line in fContent) {
-                            searchConstStrings.forEachIndexed { i, str ->
-                                if (line.contains(str)) passStatuses[i] = true
-                            }
-                        }
-
-                        val passStatus = passStatuses.all { it }
-
-                        if (passStatus) {
-                            Log.info("A file found in ${file.name} at ${folder.name}")
-                            foundFiles.add(file)
-                        }
+                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
+                    listOf(
+                        "Landroid/content/res/Configuration;",
+                        "Lcom/facebook/quicklog/reliability/UserFlowLogger",
+                        "Lcom/instagram/quickpromotion/intf/QPTooltipAnchor",
+                        ".super Ljava/lang/Object;",
+                        "MainFeedQuickPromotionDelegate.onCreateView"
+                    ))) {
+                    is FileSearchResult.Success -> {
+                        activityFile = result.file
+                        success("Activity class found successfully")
                     }
-                }
-
-                when {
-                    foundFiles.isEmpty() || foundFiles.size > 1 -> {
-                        failure("Found more files than one (or no any file found) for apply patch, add more condition for find correct file.")
-                    }
-                    else -> {
-                        Log.info("Totally scanned $scannedFileSize file(s) in X folders")
-                        Log.info("File name is ${foundFiles[0].name}")
-                        activityFile = foundFiles[0]
-                        success("Activity file found in X files successfully")
+                    is FileSearchResult.NotFound -> {
+                        failure("Patch aborted because no any classes found.")
                     }
                 }
             }
