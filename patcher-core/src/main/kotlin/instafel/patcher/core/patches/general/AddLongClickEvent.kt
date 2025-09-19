@@ -25,8 +25,8 @@ class AddLongClickEvent: InstafelPatch() {
             override fun execute() {
                 when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
                     listOf(
-                        "notifications_entry_point_impression",
-                        "null cannot be cast to non-null type android.content.Context"
+                        listOf("notifications_entry_point_impression"),
+                        listOf("null cannot be cast to non-null type android.content.Context")
                     ))) {
                     is FileSearchResult.Success -> {
                         longClickClass = result.file

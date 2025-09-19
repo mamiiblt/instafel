@@ -27,7 +27,7 @@ class AddAppTrigger: InstafelPatch() {
             override fun execute() {
                 when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
                     listOf(
-                        ".method public getRootActivity()Landroid/app/Activity;",
+                        listOf(".method public getRootActivity()Landroid/app/Activity;"),
                     ))) {
                     is FileSearchResult.Success -> {
                         interfaceFile = result.file
@@ -46,11 +46,11 @@ class AddAppTrigger: InstafelPatch() {
             override fun execute() {
                 when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
                     listOf(
-                        "Landroid/content/res/Configuration;",
-                        "Lcom/facebook/quicklog/reliability/UserFlowLogger",
-                        "Lcom/instagram/quickpromotion/intf/QPTooltipAnchor",
-                        ".super Ljava/lang/Object;",
-                        "MainFeedQuickPromotionDelegate.onCreateView"
+                        listOf("Landroid/content/res/Configuration;"),
+                        listOf("Lcom/facebook/quicklog/reliability/UserFlowLogger"),
+                        listOf("Lcom/instagram/quickpromotion/intf/QPTooltipAnchor"),
+                        listOf(".super Ljava/lang/Object;"),
+                        listOf("MainFeedQuickPromotionDelegate.onCreateView")
                     ))) {
                     is FileSearchResult.Success -> {
                         activityFile = result.file

@@ -1,7 +1,7 @@
 package instafel.patcher.core.patches
 
-import instafel.patcher.core.utils.Log
-import instafel.patcher.core.utils.Utils
+import instafel.patcher.core.utils.FileSearchResult
+import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
@@ -23,35 +23,17 @@ class RemoveAds: InstafelPatch() {
         @PInfos.TaskInfo("Find source file")
         object: InstafelTask() {
             override fun execute() {
-                var scannedFileSize = 0
-
-                run loop@{
-                    smaliUtils.smaliFolders.forEach { folder ->
-                        val xFolder = File(Utils.mergePaths(folder.absolutePath, "X"))
-                        Log.info("Searching in X folder of ${folder.name}")
-
-                        if (!xFolder.exists()) return@forEach
-
-                        FileUtils.iterateFiles(xFolder, null, true).forEach { file ->
-                            scannedFileSize++
-
-                            val fContent = smaliUtils.getSmaliFileContent(file.absolutePath)
-                            val matchLines = smaliUtils.getContainLines(fContent, "SponsoredContentController.insertItem")
-
-                            if (matchLines.size == 1) {
-                                removeAdsFile = file
-                                Log.info("File found in ${file.name} at ${folder.name}")
-                                return@loop
-                            }
-                        }
+                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
+                    listOf(
+                        listOf("SponsoredContentController.insertItem"),
+                    ))) {
+                    is FileSearchResult.Success -> {
+                        removeAdsFile = result.file
+                        success("Remove ads source class found successfully")
                     }
-                }
-
-                if (::removeAdsFile.isInitialized) {
-                    Log.info("Totally scanned $scannedFileSize files in X folders")
-                    success("Remove ads controller file found.")
-                } else {
-                    failure("Remove ads controller file cannot be found")
+                    is FileSearchResult.NotFound -> {
+                        failure("Patch aborted because no any classes found.")
+                    }
                 }
             }
         },
