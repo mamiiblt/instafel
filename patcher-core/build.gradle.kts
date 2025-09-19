@@ -111,7 +111,7 @@ tasks.register("release") {
         
                 | Property | Value |
                 | ------------- | ------------- |
-                | Commit  | [$project.getCommitHash()](https://github.com/mamiiblt/instafel/commit/$project.getCommitHash()) |
+                | Commit  | [${project.getCommitHash()}](https://github.com/mamiiblt/instafel/commit/${project.getCommitHash()}) |
                 | Branch  | [main](https://github.com/mamiiblt/instafel) |
                 | S. Version  | v${Config.patcher.version} |
                 
