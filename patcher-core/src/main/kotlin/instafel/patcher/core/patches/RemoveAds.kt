@@ -1,7 +1,7 @@
 package instafel.patcher.core.patches
 
-import instafel.patcher.core.utils.FileSearchResult
 import instafel.patcher.core.utils.SearchUtils
+import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
