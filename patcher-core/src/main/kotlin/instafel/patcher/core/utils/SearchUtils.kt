@@ -1,12 +1,8 @@
 package instafel.patcher.core.utils
 
+import instafel.patcher.core.utils.modals.FileSearchResult
 import org.apache.commons.io.FileUtils
 import java.io.File
-
-sealed class FileSearchResult {
-    data class Success(val file: File) : FileSearchResult()
-    data class NotFound(val scannedFiles: Int) : FileSearchResult()
-}
 
 object SearchUtils {
 
