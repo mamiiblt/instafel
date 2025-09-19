@@ -1,0 +1,62 @@
+{
+  "config": {
+    "gplayapi": {
+      "version": "1.6",
+      "tag": "release"
+    },
+    "patcher": {
+      "version": "4.1.0",
+      "tag": "release"
+    },
+    "app": {
+      "signing": {
+        "ksPath": "/config/testkey.keystore",
+        "ksKeyPass": "android",
+        "ksAlias": "testkey",
+        "ksPass": "android"
+      }
+    },
+    "updater": {
+      "version": "3.7.1",
+      "versionCode": 1,
+      "signing": {
+        "ksPath": "/config/testkey.keystore",
+        "ksKeyPass": "android",
+        "ksAlias": "testkey",
+        "ksPass": "android"
+      }
+    }
+  },
+  "build_config": {
+    "project": {
+      "agp_ver": "8.11.1"
+    },
+    "dependencies": {
+      "gson": { "pkg": "com.google.code.gson:gson", "ver": "2.13.2" },
+      "kotlin_stdlib": { "pkg": "org.jetbrains.kotlin:kotlin-stdlib", "ver": "2.2.20" },
+      "kotlin_reflect": { "pkg": "org.jetbrains.kotlin:kotlin-reflect", "ver": "2.2.20" },
+      "gplayapi": { "pkg": "com.gitlab.AuroraOSS:gplayapi","ver": "0e224071" },
+      "org_json": { "pkg": "org.json:json", "ver": "20250517" },
+      "okhttp": { "pkg": "com.squareup.okhttp3:okhttp", "ver": "5.1.0" },
+      "commons_io": { "pkg": "commons-io:commons-io", "ver": "2.20.0" },
+      "apktool_lib": { "pkg": "org.apktool:apktool-lib", "ver": "2.12.0" },
+      "classgraph": { "pkg": "io.github.classgraph:classgraph", "ver": "4.8.181" },
+      "jackson_databind": { "pkg": "com.fasterxml.jackson.core:jackson-databind", "ver": "2.20.0" },
+      "jackson_yaml": { "pkg": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml", "ver": "2.20.0" },
+      "shizuku_api": { "pkg": "dev.rikka.shizuku:api", "ver": "13.1.5" },
+      "shizuku_provider": { "pkg": "dev.rikka.shizuku:provider", "ver": "13.1.5" },
+      "rootbeer": { "pkg": "com.scottyab:rootbeer-lib", "ver": "0.1.1" },
+      "m3_preferences": { "pkg": "com.github.TTTT55:Material-You-Preferences", "ver": "0.2.5" },
+      "android": {
+        "work_manager": {"pkg": "androidx.work:work-runtime", "ver": "2.9.1" },
+        "appcompat": {"pkg": "androidx.appcompat:appcompat", "ver": "1.7.1" },
+        "material": {"pkg": "com.google.android.material:material", "ver": "1.13.0" },
+        "activity": {"pkg": "androidx.activity:activity", "ver": "1.10.1" },
+        "constraintlayout": { "pkg": "androidx.constraintlayout:constraintlayout", "ver": "2.2.1" },
+        "navigation_fragment": { "pkg": "androidx.navigation:navigation-fragment", "ver": "2.9.3" },
+        "navigation_ui": { "pkg": "androidx.navigation:navigation-ui", "ver": "2.9.3" },
+        "preference": { "pkg": "androidx.preference:preference", "ver": "1.2.1" }
+      }
+    }
+  }
+}
