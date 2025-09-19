@@ -15,20 +15,15 @@ import kotlin.system.exitProcess
 object SourceUtils {
     fun getDefaultIflConfigDecoder(config: Config): Config {
         config.isBaksmaliDebugMode = false
-        config.jobs = getSuggestedThreadCount()
+        config.jobs = Utils.getSuggestedThreadCount()
         return config
     }
 
     fun getDefaultIflConfigBuilder(config: Config): Config {
         config.isBaksmaliDebugMode = false
-        config.jobs = getSuggestedThreadCount()
+        config.jobs = Utils.getSuggestedThreadCount()
         config.aaptVersion = 1 // aapt2 is buggy for Instagram in Apktool now.
         return config
-    }
-
-    fun getSuggestedThreadCount(): Int {
-        val threadCount = Runtime.getRuntime().availableProcessors()
-        return threadCount.coerceAtMost(8) // use max 8 threads
     }
 
     fun getDefaultFrameworkDirectory(): String {
