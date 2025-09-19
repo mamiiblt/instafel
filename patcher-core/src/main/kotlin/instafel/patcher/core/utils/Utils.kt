@@ -7,8 +7,9 @@ import java.util.zip.*
 import java.security.MessageDigest
 
 object Utils {
-    fun mergePaths(basePath: String, vararg args: String) =
-        Paths.get(basePath, *args).toString()
+    fun makeSmaliPathShort(file: File): String = "'smali${file.absolutePath.substringAfter("/smali")}'"
+
+    fun mergePaths(basePath: String, vararg args: String) = Paths.get(basePath, *args).toString()
 
     @Throws(IOException::class, FileNotFoundException::class)
     fun copyResourceToFile(resourcePath: String, destFile: File) {

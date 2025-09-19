@@ -1,6 +1,7 @@
 package instafel.patcher.core.patches.clone
 
 import instafel.patcher.core.utils.Log
+import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
@@ -38,7 +39,7 @@ class ClonePackageReplacer: InstafelPatch() {
                                         "\"com.instagram.android\"",
                                         "\"$NEW_PACKAGE_NAME\""
                                     )
-                                    Log.info("Constraint updated in ${folder.name}/${file.name} at line $index")
+                                    Log.info("Constraint updated in ${Utils.makeSmaliPathShort(file)} at line $index")
                                     changedLineCount++
                                     fileModified = true
                                 }

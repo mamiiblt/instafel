@@ -3,7 +3,6 @@ package instafel.patcher.core.utils
 import org.apache.commons.io.FileUtils
 import java.io.File
 
-
 sealed class FileSearchResult {
     data class Success(val file: File) : FileSearchResult()
     data class NotFound(val scannedFiles: Int) : FileSearchResult()
@@ -37,7 +36,7 @@ object SearchUtils {
                 }
                 val passStatus = passStatuses.all { it }
                 if (passStatus) {
-                    Log.info("Found file, $file")
+                    Log.info("A file found, ${Utils.makeSmaliPathShort(file)}")
                     foundFiles.add(file)
                 }
             }
@@ -50,7 +49,7 @@ object SearchUtils {
             Log.severe("Found more files than one (or no any file found) for apply patch, add more condition for find correct file.")
             return FileSearchResult.NotFound(scannedFileSize)
         } else {
-            Log.info("Class ${foundFiles[0].name} meets all requirements")
+            Log.info("Class ${Utils.makeSmaliPathShort(foundFiles[0])} meets all requirements")
             return FileSearchResult.Success(foundFiles[0])
         }
     }
