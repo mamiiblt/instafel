@@ -24,9 +24,9 @@ class RemoveSnoozeWarning: InstafelPatch() {
             override fun execute() {
                 when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
                     listOf(
-                        "Lcom/instagram/release/lockout/DogfoodingEligibilityApi",
-                        "invoke-direct/range",
-                        "null cannot be cast to non-null type"
+                        listOf("Lcom/instagram/release/lockout/DogfoodingEligibilityApi"),
+                        listOf("invoke-direct/range"),
+                        listOf("null cannot be cast to non-null type")
                     ))) {
                     is FileSearchResult.Success -> {
                         callerClass = result.file

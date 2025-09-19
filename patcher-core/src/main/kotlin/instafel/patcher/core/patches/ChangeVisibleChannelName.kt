@@ -34,7 +34,13 @@ class ChangeVisibleChannelName: InstafelPatch() {
                     return
                 }
 
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils, searchConstStrings)) {
+                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
+                    listOf(
+                        listOf( "\"NONE\""),
+                        listOf("\"ALPHA\""),
+                        listOf("\"BETA\""),
+                        listOf("\"PROD\"")
+                    ))) {
                     is FileSearchResult.Success -> {
                         constFile = result.file
                         success("Const definition class found successfully")

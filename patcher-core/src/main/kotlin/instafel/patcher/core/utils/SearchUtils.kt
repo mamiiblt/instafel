@@ -19,7 +19,7 @@ object SearchUtils {
 
     fun getFileContainsAllCords(
         smaliUtils: SmaliUtils,
-        searchConditions: List<String>
+        searchConditions: List<List<String>>
     ): FileSearchResult {
         var scannedFileSize = 0
         val foundFiles = mutableListOf<File>()
@@ -30,8 +30,10 @@ object SearchUtils {
                 val fContent = smaliUtils.getSmaliFileContent(file.absolutePath)
                 val passStatuses = BooleanArray(searchConditions.size)
                 for (line in fContent) {
-                    searchConditions.forEachIndexed { i, str ->
-                        if (line.contains(str)) passStatuses[i] = true
+                    searchConditions.forEachIndexed { i, lineConditions ->
+                        if (lineConditions.all { condition -> line.contains(condition) }) {
+                            passStatuses[i] = true
+                        }
                     }
                 }
                 val passStatus = passStatuses.all { it }

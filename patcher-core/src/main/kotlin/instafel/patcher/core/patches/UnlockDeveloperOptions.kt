@@ -1,7 +1,9 @@
 package instafel.patcher.core.patches
 
 import instafel.patcher.core.source.SmaliParser
+import instafel.patcher.core.utils.FileSearchResult
 import instafel.patcher.core.utils.Log
+import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.LineData
 import instafel.patcher.core.utils.patch.InstafelPatch
@@ -25,37 +27,19 @@ class UnlockDeveloperOptions: InstafelPatch() {
         @PInfos.TaskInfo("Find reference smali file in X folders")
         object: InstafelTask() {
             override fun execute() {
-                var fileFoundLock = false
-
-                for (folder in smaliUtils.smaliFolders) {
-                    if (fileFoundLock) break
-
-                    val xFolder = File(Utils.mergePaths(folder.absolutePath, "X"))
-                    Log.info("Searching in X folder of ${folder.name}")
-
-                    val fileIterator = FileUtils.iterateFiles(xFolder, null, true)
-                    while (fileIterator.hasNext()) {
-                        val file = fileIterator.next()
-                        val fContent = smaliUtils.getSmaliFileContent(file.absolutePath)
-
-                        val conditions = booleanArrayOf(false, false, false, false)
-                        fContent.forEach { line ->
-                            when {
-                                line.contains(".field public final") && line.contains(":Lcom/google/common/collect/EvictingQueue;") -> conditions[0] = true
-                                line.contains(".field public final") && line.contains(":Lcom/instagram/common/session/UserSession;") -> conditions[1] = true
-                                line.contains(".field public") && line.contains(":Ljava/lang/String;") -> conditions[2] = true
-                                line.contains(".super LX/") -> conditions[3] = true
-                            }
-                        }
-
-                        val passStatus = conditions.all { it }
-
-                        if (passStatus) {
-                            unlockRefSmali = file
-                            Log.info("File found in ${unlockRefSmali.name} at ${folder.name}")
-                            fileFoundLock = true
-                            break
-                        }
+                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
+                    listOf(
+                        listOf(".field public final", ":Lcom/google/common/collect/EvictingQueue;"),
+                        listOf(".field public final", ":Lcom/instagram/common/session/UserSession;"),
+                        listOf(".field public", ":Ljava/lang/String;"),
+                        listOf(".super LX/"),
+                    ))) {
+                    is FileSearchResult.Success -> {
+                        unlockRefSmali = result.file
+                        success("Reference class found successfully")
+                    }
+                    is FileSearchResult.NotFound -> {
+                        failure("Patch aborted because no any classes found.")
                     }
                 }
             }
@@ -103,7 +87,6 @@ class UnlockDeveloperOptions: InstafelPatch() {
 
                 Log.info("Constraint added successfully.")
                 success("Developer options unlocked successfully.")
-
             }
         }
     )
