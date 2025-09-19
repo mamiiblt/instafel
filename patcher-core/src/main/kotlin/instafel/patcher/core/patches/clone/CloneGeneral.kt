@@ -142,7 +142,7 @@ class CloneGeneral: InstafelPatch() {
                             providerDatas.forEach { pData ->
                                 if (line.contains(pData.oldAuthority)) {
                                     fContent[index] = line.replace(pData.oldAuthority, pData.newAuthority)
-                                    Log.info("Provider fixed in ${folder.name}/${file.name}")
+                                    Log.info("Provider fixed in ${Utils.makeSmaliPathShort(file)}")
                                     fileModified = true
                                 }
                             }
