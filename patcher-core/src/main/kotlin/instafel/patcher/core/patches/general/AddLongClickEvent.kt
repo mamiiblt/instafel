@@ -1,13 +1,13 @@
 package instafel.patcher.core.patches.general
 
+import instafel.patcher.core.utils.FileSearchResult
 import instafel.patcher.core.utils.Log
-import instafel.patcher.core.utils.Utils
+import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
 import org.apache.commons.io.FileUtils
 import java.io.File
-import kotlin.collections.iterator
 
 @PInfos.PatchInfo(
     name = "Add Long Click Event",
@@ -17,54 +17,23 @@ import kotlin.collections.iterator
 )
 class AddLongClickEvent: InstafelPatch() {
 
-    lateinit var longClickFile: File
+    lateinit var longClickClass: File
 
     override fun initializeTasks() = mutableListOf(
         @PInfos.TaskInfo("Find long click smali file")
         object: InstafelTask() {
             override fun execute() {
-                var scannedFileSize = 0
-                val foundFiles = mutableListOf<File>()
-                val searchConstStrings = listOf(
-                    "notifications_entry_point_impression",
-                    "null cannot be cast to non-null type android.content.Context"
-                )
-
-                smaliUtils.smaliFolders.forEach { folder ->
-                    val xFolder = File(Utils.mergePaths(folder.absolutePath, "X"))
-                    if (!xFolder.exists() || !xFolder.isDirectory) return
-
-                    val fileIterator = FileUtils.iterateFiles(xFolder, null, true)
-
-                    for (file in fileIterator) {
-                        scannedFileSize++
-                        val fContent = smaliUtils.getSmaliFileContent(file.absolutePath)
-                        val passStatuses = BooleanArray(searchConstStrings.size)
-
-                        for (line in fContent) {
-                            searchConstStrings.forEachIndexed { i, str ->
-                                if (line.contains(str)) passStatuses[i] = true
-                            }
-                        }
-
-                        val passStatus = passStatuses.all { it }
-
-                        if (passStatus) {
-                            Log.info("A file found in ${file.name} at ${folder.name}")
-                            foundFiles.add(file)
-                        }
+                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
+                    listOf(
+                        "notifications_entry_point_impression",
+                        "null cannot be cast to non-null type android.content.Context"
+                    ))) {
+                    is FileSearchResult.Success -> {
+                        longClickClass = result.file
+                        success("Long click trigger class found successfully")
                     }
-                }
-
-                when {
-                    foundFiles.isEmpty() || foundFiles.size > 1 -> {
-                        failure("Found more files than one (or no any file found) for apply patch, add more condition for find correct file.")
-                    }
-                    else -> {
-                        Log.info("Totally scanned $scannedFileSize file(s) in X folders")
-                        Log.info("File name is ${foundFiles[0].name}")
-                        longClickFile = foundFiles[0]
-                        success("Long click smali file found in X files successfully")
+                    is FileSearchResult.NotFound -> {
+                        failure("Patch aborted because no any classes found.")
                     }
                 }
             }
@@ -72,7 +41,7 @@ class AddLongClickEvent: InstafelPatch() {
         @PInfos.TaskInfo("Change dev options caller to Instafel menu caller")
         object: InstafelTask() {
             override fun execute() {
-                val fContent = smaliUtils.getSmaliFileContent(longClickFile.absolutePath).toMutableList()
+                val fContent = smaliUtils.getSmaliFileContent(longClickClass.absolutePath).toMutableList()
                 var lock = false
 
                 for (i in fContent.indices) {
@@ -93,7 +62,7 @@ class AddLongClickEvent: InstafelPatch() {
                 }
 
                 if (lock) {
-                    FileUtils.writeLines(longClickFile, fContent)
+                    FileUtils.writeLines(longClickClass, fContent)
                     success("Lines modified successfully.")
                 } else {
                     failure("instance and invoke lines couldn't found")
