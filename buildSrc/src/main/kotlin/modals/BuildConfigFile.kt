@@ -2,6 +2,7 @@ package modals
 
 data class BuildConfigFile(
     val gson: String,
+    val kotlin_coroutines: String,
     val kotlin_stdlib: String,
     val kotlin_reflect: String,
     val gplayapi: String,

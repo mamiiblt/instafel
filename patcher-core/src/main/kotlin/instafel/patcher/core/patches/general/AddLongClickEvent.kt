@@ -6,6 +6,7 @@ import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
+import kotlinx.coroutines.runBlocking
 import org.apache.commons.io.FileUtils
 import java.io.File
 
@@ -23,11 +24,13 @@ class AddLongClickEvent: InstafelPatch() {
         @PInfos.TaskInfo("Find long click smali file")
         object: InstafelTask() {
             override fun execute() {
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf("notifications_entry_point_impression"),
-                        listOf("null cannot be cast to non-null type android.content.Context")
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf("notifications_entry_point_impression"),
+                            listOf("null cannot be cast to non-null type android.content.Context")
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         longClickClass = result.file
                         success("Long click trigger class found successfully")

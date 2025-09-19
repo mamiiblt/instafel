@@ -5,6 +5,7 @@ import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
+import kotlinx.coroutines.runBlocking
 import org.apache.commons.io.FileUtils
 import java.io.File
 
@@ -23,10 +24,12 @@ class RemoveAds: InstafelPatch() {
         @PInfos.TaskInfo("Find source file")
         object: InstafelTask() {
             override fun execute() {
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf("SponsoredContentController.insertItem"),
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf("SponsoredContentController.insertItem"),
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         removeAdsFile = result.file
                         success("Remove ads source class found successfully")

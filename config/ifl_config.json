@@ -33,6 +33,7 @@
     },
     "dependencies": {
       "gson": { "pkg": "com.google.code.gson:gson", "ver": "2.13.2" },
+      "kotlin_coroutines": { "pkg": "org.jetbrains.kotlinx:kotlinx-coroutines-core", "ver": "1.10.2" },
       "kotlin_stdlib": { "pkg": "org.jetbrains.kotlin:kotlin-stdlib", "ver": "2.2.20" },
       "kotlin_reflect": { "pkg": "org.jetbrains.kotlin:kotlin-reflect", "ver": "2.2.20" },
       "gplayapi": { "pkg": "com.gitlab.AuroraOSS:gplayapi","ver": "0e224071" },
