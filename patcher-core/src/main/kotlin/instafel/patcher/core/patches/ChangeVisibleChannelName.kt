@@ -7,6 +7,7 @@ import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
+import kotlinx.coroutines.runBlocking
 import org.apache.commons.io.FileUtils
 import java.io.File
 
@@ -33,13 +34,15 @@ class ChangeVisibleChannelName: InstafelPatch() {
                     return
                 }
 
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf( "\"NONE\""),
-                        listOf("\"ALPHA\""),
-                        listOf("\"BETA\""),
-                        listOf("\"PROD\"")
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf( "\"NONE\""),
+                            listOf("\"ALPHA\""),
+                            listOf("\"BETA\""),
+                            listOf("\"PROD\"")
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         constFile = result.file
                         success("Const definition class found successfully")

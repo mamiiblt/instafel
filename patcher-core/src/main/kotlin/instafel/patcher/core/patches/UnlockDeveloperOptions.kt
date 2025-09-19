@@ -8,6 +8,7 @@ import instafel.patcher.core.utils.modals.LineData
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
+import kotlinx.coroutines.runBlocking
 import java.io.File
 
 @PInfos.PatchInfo(
@@ -25,13 +26,15 @@ class UnlockDeveloperOptions: InstafelPatch() {
         @PInfos.TaskInfo("Find reference smali file in X folders")
         object: InstafelTask() {
             override fun execute() {
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf(".field public final", ":Lcom/google/common/collect/EvictingQueue;"),
-                        listOf(".field public final", ":Lcom/instagram/common/session/UserSession;"),
-                        listOf(".field public", ":Ljava/lang/String;"),
-                        listOf(".super LX/"),
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf(".field public final", ":Lcom/google/common/collect/EvictingQueue;"),
+                            listOf(".field public final", ":Lcom/instagram/common/session/UserSession;"),
+                            listOf(".field public", ":Ljava/lang/String;"),
+                            listOf(".super LX/"),
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         unlockRefSmali = result.file
                         success("Reference class found successfully")

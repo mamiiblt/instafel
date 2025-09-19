@@ -5,6 +5,7 @@ import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
+import kotlinx.coroutines.runBlocking
 import org.apache.commons.io.FileUtils
 import java.io.File
 
@@ -22,12 +23,14 @@ class RemoveSnoozeWarning: InstafelPatch() {
         @PInfos.TaskInfo("Find caller file")
         object: InstafelTask() {
             override fun execute() {
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf("Lcom/instagram/release/lockout/DogfoodingEligibilityApi"),
-                        listOf("invoke-direct/range"),
-                        listOf("null cannot be cast to non-null type")
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf("Lcom/instagram/release/lockout/DogfoodingEligibilityApi"),
+                            listOf("invoke-direct/range"),
+                            listOf("null cannot be cast to non-null type")
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         callerClass = result.file
                         success("Class found successfully")

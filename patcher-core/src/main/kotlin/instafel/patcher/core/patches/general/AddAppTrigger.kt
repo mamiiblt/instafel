@@ -6,6 +6,7 @@ import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
+import kotlinx.coroutines.runBlocking
 import org.apache.commons.io.FileUtils
 import java.io.File
 
@@ -25,10 +26,12 @@ class AddAppTrigger: InstafelPatch() {
         @PInfos.TaskInfo("Find getRootContent() method")
         object: InstafelTask() {
             override fun execute() {
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf(".method public getRootActivity()Landroid/app/Activity;"),
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf(".method public getRootActivity()Landroid/app/Activity;"),
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         interfaceFile = result.file
                         interfaceClassName = interfaceFile.name.substringBefore(".")
@@ -44,14 +47,16 @@ class AddAppTrigger: InstafelPatch() {
         @PInfos.TaskInfo("Find activity")
         object: InstafelTask() {
             override fun execute() {
-                when (val result = SearchUtils.getFileContainsAllCords(smaliUtils,
-                    listOf(
-                        listOf("Landroid/content/res/Configuration;"),
-                        listOf("Lcom/facebook/quicklog/reliability/UserFlowLogger"),
-                        listOf("Lcom/instagram/quickpromotion/intf/QPTooltipAnchor"),
-                        listOf(".super Ljava/lang/Object;"),
-                        listOf("MainFeedQuickPromotionDelegate.onCreateView")
-                    ))) {
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(smaliUtils,
+                        listOf(
+                            listOf("Landroid/content/res/Configuration;"),
+                            listOf("Lcom/facebook/quicklog/reliability/UserFlowLogger"),
+                            listOf("Lcom/instagram/quickpromotion/intf/QPTooltipAnchor"),
+                            listOf(".super Ljava/lang/Object;"),
+                            listOf("MainFeedQuickPromotionDelegate.onCreateView")
+                        ))
+                }) {
                     is FileSearchResult.Success -> {
                         activityFile = result.file
                         success("Activity class found successfully")
