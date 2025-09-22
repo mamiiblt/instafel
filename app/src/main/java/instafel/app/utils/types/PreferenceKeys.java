@@ -1,4 +1,4 @@
-package me.mamiiblt.instafel.utils.types;
+package instafel.app.utils.types;
 
 public class PreferenceKeys {
     public static String ifl_welcome_message = "01";
@@ -28,4 +28,5 @@ public class PreferenceKeys {
     public static String ifl_disable_backup_check_period = "25";
     public static String ifl_enable_remove_ads_feature = "26";
     public static String ifl_remove_ads = "27";
+    public static String ifl_mapping_file_hash = "31";
 }

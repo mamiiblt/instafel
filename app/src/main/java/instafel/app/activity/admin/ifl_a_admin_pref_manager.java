@@ -1,7 +1,7 @@
-package me.mamiiblt.instafel.activity.admin;
+package instafel.app.activity.admin;
 
-import static me.mamiiblt.instafel.utils.GeneralFn.updateIflUi;
-import static me.mamiiblt.instafel.utils.localization.LocalizationUtils.updateIflLocale;
+import static instafel.app.utils.GeneralFn.updateIflUi;
+import static instafel.app.utils.localization.LocalizationUtils.updateIflLocale;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -15,12 +15,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.mamiiblt.instafel.R;
-import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.ui.TileLargeEditText;
-import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.types.PreferenceKeys;
-import me.mamiiblt.instafel.utils.types.Types;
+import instafel.app.R;
+import instafel.app.managers.PreferenceManager;
+import instafel.app.ui.TileLargeEditText;
+import instafel.app.utils.GeneralFn;
+import instafel.app.utils.types.PreferenceKeys;
+import instafel.app.utils.types.Types;
 
 public class ifl_a_admin_pref_manager extends AppCompatActivity {
 
@@ -58,6 +58,8 @@ public class ifl_a_admin_pref_manager extends AppCompatActivity {
         createPreferenceTitle(PreferenceKeys.ifl_debug_mode_warning_dialog, "ifl_debug_mode_warning_dialog", Types.PreferenceTypes.BOOLEAN);
         createPreferenceTitle(PreferenceKeys.ifl_clog_last_shown_version, "ifl_clog_last_shown_version", Types.PreferenceTypes.INT);
         createPreferenceTitle(PreferenceKeys.ifl_clog_disable_version_control, "ifl_clog_disable_version_control", Types.PreferenceTypes.BOOLEAN);
+        createPreferenceTitle(PreferenceKeys.ifl_mapping_file_hash, "ifl_mapping_file_size", Types.PreferenceTypes.STRING);
+
         buildLayout();
     }
 

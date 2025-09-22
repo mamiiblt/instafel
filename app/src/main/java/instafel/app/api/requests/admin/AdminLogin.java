@@ -1,4 +1,4 @@
-package me.mamiiblt.instafel.api.requests.admin;
+package instafel.app.api.requests.admin;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -10,14 +10,14 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import me.mamiiblt.instafel.activity.admin.ifl_a_admin_dashboard;
-import me.mamiiblt.instafel.activity.ifl_a_menu;
-import me.mamiiblt.instafel.api.models.InstafelResponse;
-import me.mamiiblt.instafel.managers.PreferenceManager;
-import me.mamiiblt.instafel.utils.GeneralFn;
-import me.mamiiblt.instafel.utils.InstafelAdminUser;
-import me.mamiiblt.instafel.utils.types.PreferenceKeys;
-import me.mamiiblt.instafel.utils.dialog.InstafelDialog;
+import instafel.app.activity.admin.ifl_a_admin_dashboard;
+import instafel.app.activity.ifl_a_menu;
+import instafel.app.api.models.InstafelResponse;
+import instafel.app.managers.PreferenceManager;
+import instafel.app.utils.GeneralFn;
+import instafel.app.utils.InstafelAdminUser;
+import instafel.app.utils.types.PreferenceKeys;
+import instafel.app.utils.dialog.InstafelDialog;
 
 public class AdminLogin extends AsyncTask<String, Void, InstafelResponse> {
 
