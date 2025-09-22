@@ -12,7 +12,7 @@
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Gunakan Instafel Updater untuk pembaruan otomatis dengan Root dan Shizuku</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <!-- instafel.app.ifl_a_menu -->
     <string name="ifl_a0_02">Perbarui Pengaturan</string>
     <string name="ifl_a0_03">Bahasa</string>
     <string name="ifl_a0_04">Library</string>
@@ -20,7 +20,7 @@
     <string name="ifl_a0_06">Fitur ini belum ditambahkan</string>
     <string name="ifl_a0_07">Laporan Kerusakan</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <!-- instafel.app.ifl_a_about_ifl -->
     <string name="ifl_a1_01">Tentang Instafel</string>
     <string name="ifl_a1_02">Versi Instafel</string>
     <string name="ifl_a1_03">Jenis Instalasi</string>
@@ -38,7 +38,7 @@
     <string name="ifl_a1_20">Bergabung dengan Komunitas</string>
     <string name="ifl_a1_21">Kontributor</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <!-- instafel.app.ifl_a_about_ig -->
     <string name="ifl_a1_22">Lihat informasi tentang patch yang diterapkan</string>
     <string name="ifl_a1_23">Komit inti</string>
     <string name="ifl_a2_01">Tentang Instagram</string>
@@ -48,7 +48,7 @@
     <string name="ifl_a2_05">Arsitektur</string>
     <string name="ifl_a3_01">Tentang</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <!-- instafel.app.ifl_a_devmode -->
     <string name="ifl_a4_01">Ekspor</string>
     <string name="ifl_a4_02">Impor</string>
     <string name="ifl_a4_03">Hapus File Penggantian</string>
@@ -92,7 +92,7 @@
     <string name="ifl_a4_41">Kesalahan saat menulis konten ke file backup.</string>
     <string name="ifl_a4_42">Kesalahan saat mengekspor file backup</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <!-- instafel.app.ifl_a_about_ota -->
     <string name="ifl_a5_01">Periksa Pembaruan</string>
     <string name="ifl_a5_02">Periksa terakhir: %1$s</string>
     <string name="ifl_a5_03">Frekuensi Periksa</string>
@@ -116,14 +116,14 @@
     <string name="ifl_a5_dia_freq_04">Setiap lima hari sekali</string>
     <string name="ifl_a5_dia_freq_05">Setiap minggu sekali</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <!-- instafel.app.ifl_a_language -->
     <string name="ifl_a6_01">Gunakan Bahasa Perangkat</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <!-- instafel.app.ifl_a_crashlog -->
     <string name="ifl_a7_01">Laporan</string>
     <string name="ifl_a7_02">Hapus Laporan</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <!-- instafel.app.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Rincian</string>
     <string name="ifl_a8_02">Salin Log</string>
     <string name="ifl_a8_03">Bagikan Log</string>
@@ -137,10 +137,10 @@
 
     <string name="ifl_a9_01">Rincian</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <!-- instafel.app.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Kontributor</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <!-- instafel.app.ifl_a_library_menu -->
     <string name="ifl_a11_01">Flag Library</string>
     <string name="ifl_a11_02">Backup Library</string>
     <string name="ifl_a11_03">Kesalahan saat mengambil backups dari API</string>
@@ -220,7 +220,7 @@
     <string name="ifl_a11_76">ID Flag yang Dihapus</string>
     <string name="ifl_a11_77">Kesalahan saat membandingkan backup</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- instafel.app.ifl_a_admin_login -->
 
 
     <!-- OTA FOUND DIALOG -->

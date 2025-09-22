@@ -11,7 +11,7 @@
     <string name="ifl_a0_15">Instafel-Updater</string>
     <string name="ifl_a0_16">Verwende den Instafel-Updater für automatische Updates mit Root und Shizuku.</string>
 
-	<!-- me.mamiiblt.instafel.ifl_a_menu -->
+	<!-- instafel.app.ifl_a_menu -->
 	<string name="ifl_a0_02">Updateeinstellungen</string>
 	<string name="ifl_a0_03">Sprache</string>
 	<string name="ifl_a0_04">Bibliothek</string>
@@ -19,7 +19,7 @@
 	<string name="ifl_a0_06">Diese Funktion wurde noch nicht hinzugefügt</string>
 	<string name="ifl_a0_07">Absturzberichte</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <!-- instafel.app.ifl_a_about_ifl -->
 	<string name="ifl_a1_01">Über Instafel</string>
 	<string name="ifl_a1_02">Instafel-Version</string>
 	<string name="ifl_a1_03">Installationsart</string>
@@ -38,7 +38,7 @@
 	<string name="ifl_a1_21">Mitwirkende</string>
 
 
-	<!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+	<!-- instafel.app.ifl_a_about_ig -->
     <string name="ifl_a1_22">Informationen zu angewendeten Patches anzeigen</string>
     <string name="ifl_a1_23">Kern-Commit</string>
     <string name="ifl_a2_01">Über Instagram</string>
@@ -48,7 +48,7 @@
 	<string name="ifl_a2_05">Architektur</string>
 	<string name="ifl_a3_01">Info</string>
 
-	<!-- me.mamiiblt.instafel.ifl_a_devmode -->
+	<!-- instafel.app.ifl_a_devmode -->
 	<string name="ifl_a4_01">Exportieren</string>
 	<string name="ifl_a4_02">Importieren</string>
 	<string name="ifl_a4_03">Override-Datei löschen</string>
@@ -92,7 +92,7 @@
 	<string name="ifl_a4_41">Fehler beim Schreiben des Inhalts in die Backup-Datei.</string>
 	<string name="ifl_a4_42">Fehler beim Exportieren der Backup-Datei</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <!-- instafel.app.ifl_a_about_ota -->
 	<string name="ifl_a5_01">Nach Updates suchen</string>
 	<string name="ifl_a5_02">Letzte Prüfung: %1$s</string>
 	<string name="ifl_a5_03">Prüfhäufigkeit</string>
@@ -117,16 +117,16 @@
 	<string name="ifl_a5_dia_freq_05">Einmal pro Woche</string>
 
 
-    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <!-- instafel.app.ifl_a_language -->
 	<string name="ifl_a6_01">Gerätesprache verwenden</string>
 
 
-    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <!-- instafel.app.ifl_a_crashlog -->
 	<string name="ifl_a7_01">Berichte</string>
 	<string name="ifl_a7_02">Berichte löschen</string>
 
 
-	<!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+	<!-- instafel.app.ifl_a_crashviewer -->
 	<string name="ifl_a8_01">Details</string>
 	<string name="ifl_a8_02">Protokoll kopieren</string>
 	<string name="ifl_a8_03">Protokoll teilen</string>
@@ -141,11 +141,11 @@
 	<string name="ifl_a9_01">Details</string>
 
 
-	<!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+	<!-- instafel.app.ifl_a_about_contributors and translators -->
 	<string name="ifl_a10_01">Mitwirkende</string>
 
 
-	<!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+	<!-- instafel.app.ifl_a_library_menu -->
 	<string name="ifl_a11_01">Flag-Bibliothek</string>
 	<string name="ifl_a11_02">Backup-Bibliothek</string>
 	<string name="ifl_a11_03">Fehler beim Abrufen der Backups von der API</string>
@@ -226,7 +226,7 @@
 	<string name="ifl_a11_77">Fehler beim Vergleichen der Backups</string>
 
 
-    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- instafel.app.ifl_a_admin_login -->
 
 
 	<!-- OTA FOUND DIALOG -->

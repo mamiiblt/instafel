@@ -6,9 +6,9 @@
     android:background="?ifl_attr_background_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup">
+    tools:context="instafel.app.instafel.app.activity.library.backup.ifl_a_library_backup">
 
-    <me.mamiiblt.instafel.ui.PageTitle
+    <instafel.app.ui.PageTitle
         android:id="@+id/ifl_page_title"
         android:layout_width="match_parent"
         android:onClick="showExample"
@@ -51,7 +51,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Yükleniyor arayüzü -->
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:id="@+id/ifl_loading_page"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,10 +68,10 @@
             android:indeterminateBehavior="repeat"
             android:indeterminateTint="?ifl_attr_subtitle_color" />
 
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    </instafel.app.ui.PageContentArea>
 
     <!-- Sonuç -->
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:id="@+id/ifl_page_area_backup"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -80,7 +80,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ifl_search_layout">
 
-        <me.mamiiblt.instafel.ui.TileLargeSwitch
+        <instafel.app.ui.TileLargeSwitch
             android:id="@+id/ifl_tile_backup_library_enableAutoUpdates"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             app:ifl_attr_ui_subtitleText="@string/ifl_a11_13"
             app:ifl_attr_ui_titleText="@string/ifl_a11_12" />
 
-        <me.mamiiblt.instafel.ui.TileTitle
+        <instafel.app.ui.TileTitle
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:ifl_attr_ui_titleText="@string/ifl_a11_15" />
@@ -101,5 +101,5 @@
             android:orientation="vertical">
 
         </LinearLayout>
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    </instafel.app.ui.PageContentArea>
 </androidx.constraintlayout.widget.ConstraintLayout>

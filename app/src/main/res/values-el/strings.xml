@@ -54,14 +54,14 @@
     <string name="ifl_a0_14">Προεπιλεγμένο ενεργό, δεν μπορεί να αλλάξει.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Χρησιμοποιήστε το Instafel Updater για αυτόματες ενημερώσεις με Root / Shizuku.</string>
-    <!--   me.mamiiblt.instafel.ifl_a_menu   -->
+    <!--   instafel.app.ifl_a_menu   -->
     <string name="ifl_a0_02">Ρυθμίσεις Ενημερώσεων</string>
     <string name="ifl_a0_03">Γλώσσα</string>
     <string name="ifl_a0_04">Βιβλιοθήκες</string>
     <string name="ifl_a0_05">Σχετικά με</string>
     <string name="ifl_a0_06">Αυτή η λειτουργία δεν είναι διαθέσιμη ακόμα.</string>
     <string name="ifl_a0_07">Αναφορές Σφαλμάτων</string>
-    <!--   me.mamiiblt.instafel.ifl_a_about_ifl   -->
+    <!--   instafel.app.ifl_a_about_ifl   -->
     <string name="ifl_a1_01">Σχετικά με το Instafel</string>
     <string name="ifl_a1_02">Έκδοση Instafel</string>
     <string name="ifl_a1_03">Μέθοδος Εγκατάστασης</string>
@@ -70,7 +70,7 @@
     <string name="ifl_a1_08">Απόκλωνος</string>
     <string name="ifl_a1_09">ID Παραγωγής</string>
     <string name="ifl_a1_10">Έκδοση Instagram</string>
-    <!--   me.mamiiblt.instafel.ifl_a_about_ig   -->
+    <!--   instafel.app.ifl_a_about_ig   -->
     <string name="ifl_a1_22">Προβολή πληροφοριών για τα εφαρμοσμένα patches</string>
     <string name="ifl_a1_23">Βασικό Commit</string>
     <string name="ifl_a2_01">Σχετικά με το Instafel</string>
@@ -79,7 +79,7 @@
     <string name="ifl_a2_04">Κανάλι</string>
     <string name="ifl_a2_05">Αρχιτεκτονική</string>
     <string name="ifl_a3_01">Σχετικά με</string>
-    <!--   me.mamiiblt.instafel.ifl_a_devmode   -->
+    <!--   instafel.app.ifl_a_devmode   -->
     <string name="ifl_a4_01">Εξαγωγή</string>
     <string name="ifl_a4_02">Εισαγωγή</string>
     <string name="ifl_a4_03">Διαγραφή αρχείου ρυθμίσεων</string>
@@ -122,7 +122,7 @@
     <string name="ifl_a4_40">%1$s σημαίες εξήχθησαν επιτυχώς.</string>
     <string name="ifl_a4_41">Σφάλμα κατά την εγγραφή στο αντίγραφο ρυθμίσεων.</string>
     <string name="ifl_a4_42">Σφάλμα κατά την εξαγωγή του αντιγράφου ρυθμίσεων.</string>
-    <!--   me.mamiiblt.instafel.ifl_a_about_ota   -->
+    <!--   instafel.app.ifl_a_about_ota   -->
     <string name="ifl_a5_01">Έλεγχος για ενημερώσεις</string>
     <string name="ifl_a5_02">Τελευταίος έλεγχος: %1$s</string>
     <string name="ifl_a5_03">Συχνότητα ελέγχου</string>
@@ -143,12 +143,12 @@
     <string name="ifl_a5_dia_freq_03">Κάθε τρεις ημέρες</string>
     <string name="ifl_a5_dia_freq_04">Κάθε πέντε ημέρες</string>
     <string name="ifl_a5_dia_freq_05">Κάθε εβδομάδα</string>
-    <!--   me.mamiiblt.instafel.ifl_a_language   -->
+    <!--   instafel.app.ifl_a_language   -->
     <string name="ifl_a6_01">Χρήση προεπιλεγμένης γλώσσας</string>
-    <!--   me.mamiiblt.instafel.ifl_a_crashlog   -->
+    <!--   instafel.app.ifl_a_crashlog   -->
     <string name="ifl_a7_01">Καταγραφές Σφαλμάτων</string>
     <string name="ifl_a7_02">Διαγραφή Καταγραφών</string>
-    <!--   me.mamiiblt.instafel.ifl_a_crashviewer   -->
+    <!--   instafel.app.ifl_a_crashviewer   -->
     <string name="ifl_a8_01">Λεπτομέρειες Καταγραφής</string>
     <string name="ifl_a8_02">Αντιγραφή καταγραφής</string>
     <string name="ifl_a8_03">Κοινοποίηση Καταγραφής</string>
@@ -160,9 +160,9 @@
     <string name="ifl_a8_09">Αιτία</string>
     <string name="ifl_a8_10">Καταγραφή</string>
     <string name="ifl_a9_01">Λεπτομέρειες</string>
-    <!--   me.mamiiblt.instafel.ifl_a_about_contributors and translators   -->
+    <!--   instafel.app.ifl_a_about_contributors and translators   -->
     <string name="ifl_a10_01">Συνεισφέροντες</string>
-    <!--   me.mamiiblt.instafel.ifl_a_library_menu   -->
+    <!--   instafel.app.ifl_a_library_menu   -->
     <string name="ifl_a11_01">Βιβλιοθήκη σημαιών</string>
     <string name="ifl_a11_02">Βιβλιοθήκη αντιγράφων ρυθμίσεων</string>
     <string name="ifl_a11_03">Σφάλμα κατά τη φόρτωση των αντιγράφων ρυθμίσεων από το API</string>
@@ -207,7 +207,7 @@
     <string name="ifl_a11_42">Σφάλμα κατά την εισαγωγή των αλλαγών από το αντίγραφο ρυθμίσεων</string>
     <string name="ifl_a11_43">Η σημαία %1$s εισήχθηκε με επιτυχία</string>
     <string name="ifl_a11_44">%1$s εισήχθηκε με επιτυχία</string>
-    <!--   me.mamiiblt.instafel.ifl_a_admin_login   -->
+    <!--   instafel.app.ifl_a_admin_login   -->
     <!--   OTA FOUND DIALOG   -->
     <string name="ifl_d1_01">Νέα ενημέρωση</string>
     <string name="ifl_d1_02">Το Instafel θα ενημερωθεί στην έκδοση v%1$d (Instagram v%2$s).</string>

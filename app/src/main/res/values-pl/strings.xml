@@ -12,7 +12,7 @@
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Użyj aplikacji Instafel Updater do automatycznych aktualizacji z rootem i Shizuku</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <!-- instafel.app.ifl_a_menu -->
     <string name="ifl_a0_02">Aktualizacje</string>
     <string name="ifl_a0_03">Język</string>
     <string name="ifl_a0_04">Biblioteka</string>
@@ -20,7 +20,7 @@
     <string name="ifl_a0_06">Ta funkcja nie została jeszcze dodana</string>
     <string name="ifl_a0_07">Raporty o awariach</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <!-- instafel.app.ifl_a_about_ifl -->
     <string name="ifl_a1_01">O Instafel</string>
     <string name="ifl_a1_02">Wersja Instafel</string>
     <string name="ifl_a1_03">Typ instalacji</string>
@@ -39,7 +39,7 @@
     <string name="ifl_a1_21">Współtwórcy</string>
 
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <!-- instafel.app.ifl_a_about_ig -->
     <string name="ifl_a1_22">Zobacz informacje o zastosowanych poprawkach</string>
     <string name="ifl_a1_23">Główny commit</string>
     <string name="ifl_a2_01">O Instagramie</string>
@@ -49,7 +49,7 @@
     <string name="ifl_a2_05">Architektura</string>
     <string name="ifl_a3_01">Informacje</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <!-- instafel.app.ifl_a_devmode -->
     <string name="ifl_a4_01">Eksportuj</string>
     <string name="ifl_a4_02">Importuj</string>
     <string name="ifl_a4_03">Usuń plik nadpisań</string>
@@ -93,7 +93,7 @@
     <string name="ifl_a4_41">Błąd podczas zapisu zawartości do kopii zapasowej.</string>
     <string name="ifl_a4_42">Błąd podczas eksportowania kopii zapasowej.</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <!-- instafel.app.ifl_a_about_ota -->
     <string name="ifl_a5_01">Sprawdź aktualizacje</string>
     <string name="ifl_a5_02">Ostatnie sprawdzenie: %1$s</string>
     <string name="ifl_a5_03">Częstotliwość sprawdzania</string>
@@ -117,14 +117,14 @@
     <string name="ifl_a5_dia_freq_04">Co pięć dni</string>
     <string name="ifl_a5_dia_freq_05">Raz w tygodniu</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <!-- instafel.app.ifl_a_language -->
     <string name="ifl_a6_01">Użyj języka urządzenia</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <!-- instafel.app.ifl_a_crashlog -->
     <string name="ifl_a7_01">Raporty</string>
     <string name="ifl_a7_02">Usuń raporty</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <!-- instafel.app.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Szczegóły</string>
     <string name="ifl_a8_02">Skopiuj log</string>
     <string name="ifl_a8_03">Udostępnij log</string>
@@ -138,10 +138,10 @@
 
     <string name="ifl_a9_01">Szczegóły</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <!-- instafel.app.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Współtwórcy</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <!-- instafel.app.ifl_a_library_menu -->
     <string name="ifl_a11_01">Biblioteka flag</string>
     <string name="ifl_a11_02">Biblioteka kopii zapasowych</string>
     <string name="ifl_a11_03">Błąd podczas pobierania kopii zapasowych z API</string>
@@ -221,7 +221,7 @@
     <string name="ifl_a11_76">Usunięte ID flag</string>
     <string name="ifl_a11_77">Błąd podczas porównywania kopii</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- instafel.app.ifl_a_admin_login -->
 
 
     <!-- OTA FOUND DIALOG -->

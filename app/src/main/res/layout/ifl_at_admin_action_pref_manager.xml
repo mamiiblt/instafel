@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<me.mamiiblt.instafel.ui.Page
+<instafel.app.ui.Page
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="me.mamiiblt.instafel.activity.about.ifl_a_about">
+    tools:context="instafel.app.instafel.app.activity.about.ifl_a_about">
 
-    <me.mamiiblt.instafel.ui.PageTitle
+    <instafel.app.ui.PageTitle
         android:id="@+id/ifl_page_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:ifl_attr_ui_titleText="Preferences" />
 
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:visibility="visible"
         android:id="@+id/ifl_page_area_edit"
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
 
         </LinearLayout>
 
-        <!-- <me.mamiiblt.instafel.ui.TileLargeEditText
+        <!-- <instafel.app.ui.TileLargeEditText
             android:id="@+id/ifl_tile_setchangelog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,6 +37,6 @@
             app:ifl_attr_ui_spaceBottom="visible"
             app:ifl_attr_ui_subtitleText="Write here for release changelog (Max 1500 characters)"
             app:ifl_attr_ui_titleText="Set Changelog (*)" /> -->
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    </instafel.app.ui.PageContentArea>
 
-</me.mamiiblt.instafel.ui.Page>
+</instafel.app.ui.Page>

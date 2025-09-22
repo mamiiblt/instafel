@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:background="?ifl_attr_background_color"
     android:layout_height="match_parent"
-    tools:context="me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer">
+    tools:context="instafel.app.instafel.app.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer">
 
-    <me.mamiiblt.instafel.ui.PageTitle
+    <instafel.app.ui.PageTitle
         android:id="@+id/ifl_page_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
 
 
     <!-- Yükleniyor arayüzü -->
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:id="@+id/ifl_loading_area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,10 +65,10 @@
             android:indeterminateBehavior="repeat"
             android:indeterminateTint="?ifl_attr_subtitle_color" />
 
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    </instafel.app.ui.PageContentArea>
 
     <!-- Sonuç -->
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:id="@+id/ifl_page_area"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -86,5 +86,5 @@
             android:visibility="visible">
 
         </LinearLayout>
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    </instafel.app.ui.PageContentArea>
 </androidx.constraintlayout.widget.ConstraintLayout>

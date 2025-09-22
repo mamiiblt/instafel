@@ -58,14 +58,14 @@
 
 
 
-    <!--  me.mamiiblt.instafel.ifl_a_menu  -->
+    <!--  instafel.app.ifl_a_menu  -->
     <string name="ifl_a0_02">Configurações de Atualização</string>
     <string name="ifl_a0_03">Idioma</string>
     <string name="ifl_a0_04">Biblioteca</string>
     <string name="ifl_a0_05">Sobre</string>
     <string name="ifl_a0_06">Este recurso ainda não foi adicionado</string>
     <string name="ifl_a0_07">Relatórios de Falhas</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_ifl  -->
+    <!--  instafel.app.ifl_a_about_ifl  -->
     <string name="ifl_a1_01">Sobre o Instafel</string>
     <string name="ifl_a1_02">Versão do Instafel</string>
     <string name="ifl_a1_03">Tipo de Instalação</string>
@@ -74,7 +74,7 @@
     <string name="ifl_a1_08">Unclone</string>
     <string name="ifl_a1_09">ID de Geração</string>
     <string name="ifl_a1_10">Versão do Instagram</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
+    <!--  instafel.app.ifl_a_about_ig  -->
     <string name="ifl_a1_22">Ver informações sobre patches aplicados</string>
     <string name="ifl_a1_23">Commit principal</string>
     <string name="ifl_a2_01">Sobre o Instagram</string>
@@ -83,7 +83,7 @@
     <string name="ifl_a2_04">Canal</string>
     <string name="ifl_a2_05">Arquitetura</string>
     <string name="ifl_a3_01">Sobre</string>
-    <!--  me.mamiiblt.instafel.ifl_a_devmode  -->
+    <!--  instafel.app.ifl_a_devmode  -->
     <string name="ifl_a4_01">Exportar</string>
     <string name="ifl_a4_02">Importar</string>
     <string name="ifl_a4_03">Excluir Arquivo de Substituições Locais</string>
@@ -126,7 +126,7 @@
     <string name="ifl_a4_40">%1$s flags exportadas com sucesso</string>
     <string name="ifl_a4_41">Erro ao gravar o conteúdo no arquivo de backup.</string>
     <string name="ifl_a4_42">Erro ao exportar o arquivo de backup</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_ota  -->
+    <!--  instafel.app.ifl_a_about_ota  -->
     <string name="ifl_a5_01">Verificar Atualizações</string>
     <string name="ifl_a5_02">Última verificação: %1$s</string>
     <string name="ifl_a5_03">Verificar Frequência</string>
@@ -147,12 +147,12 @@
     <string name="ifl_a5_dia_freq_03">Uma vez a cada três dias</string>
     <string name="ifl_a5_dia_freq_04">Uma vez a cada cinco dias</string>
     <string name="ifl_a5_dia_freq_05">Uma vez por semana</string>
-    <!--  me.mamiiblt.instafel.ifl_a_language  -->
+    <!--  instafel.app.ifl_a_language  -->
     <string name="ifl_a6_01">Usar o Idioma do Dispositivo</string>
-    <!--  me.mamiiblt.instafel.ifl_a_crashlog  -->
+    <!--  instafel.app.ifl_a_crashlog  -->
     <string name="ifl_a7_01">Relatórios</string>
     <string name="ifl_a7_02">Excluir Relatórios</string>
-    <!--  me.mamiiblt.instafel.ifl_a_crashviewer  -->
+    <!--  instafel.app.ifl_a_crashviewer  -->
     <string name="ifl_a8_01">Detalhes</string>
     <string name="ifl_a8_02">Copiar Log</string>
     <string name="ifl_a8_03">Compartilhar Log</string>
@@ -164,9 +164,9 @@
     <string name="ifl_a8_09">Razão</string>
     <string name="ifl_a8_10">Rastreamento de Pilha</string>
     <string name="ifl_a9_01">Detalhes</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_contributors and translators  -->
+    <!--  instafel.app.ifl_a_about_contributors and translators  -->
     <string name="ifl_a10_01">Contribuidores</string>
-    <!--  me.mamiiblt.instafel.ifl_a_library_menu  -->
+    <!--  instafel.app.ifl_a_library_menu  -->
     <string name="ifl_a11_01">Biblioteca de Flags</string>
     <string name="ifl_a11_02">Biblioteca de Backup</string>
     <string name="ifl_a11_03">Erro ao obter backups da API</string>
@@ -211,7 +211,7 @@
     <string name="ifl_a11_42">Erro ao importar substituições do arquivo de backup</string>
     <string name="ifl_a11_43">%1$s flag importada com sucesso</string>
     <string name="ifl_a11_44">%1$s importado com sucesso</string>
-    <!--  me.mamiiblt.instafel.ifl_a_admin_login  -->
+    <!--  instafel.app.ifl_a_admin_login  -->
     <!--  OTA FOUND DIALOG  -->
     <string name="ifl_d1_01">Nova Atualização</string>
     <string name="ifl_d1_02">Instafel será atualizado para a versão v%1$d (Instagram v%2$s)</string>
