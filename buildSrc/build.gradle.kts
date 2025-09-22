@@ -7,7 +7,7 @@ repositories {
     gradlePluginPortal()
     mavenCentral()
 }
-val configPath = "${rootDir.parentFile}/config/ifl_config.json"
+val configPath = "${rootDir.parentFile}/.config/ifl_config.json"
 val jsonText = File(configPath).readText()
 val orgJsonVersion = Regex("\"org_json\"\\s*:\\s*\\{[^}]*\"ver\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)
 val kotlinRlVersion = Regex("\"kotlin_reflect\"\\s*:\\s*\\{[^}]*\"ver\"\\s*:\\s*\"([^\"]+)\"").find(jsonText)?.groupValues?.get(1)

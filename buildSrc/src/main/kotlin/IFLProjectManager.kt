@@ -23,7 +23,7 @@ object IFLProjectManager {
     private val rootDir: String
         get() = System.getProperty("project.rootDir") ?: throw IllegalStateException("project.rootDir not set!")
 
-    val configPath = Paths.get("$rootDir/config/ifl_config.json")
+    val configPath = Paths.get("$rootDir/.config/ifl_config.json")
     val configObject = JSONObject(Files.readAllLines(configPath).joinToString("\n"))
 
     fun Project.getCommitHash(): String =
