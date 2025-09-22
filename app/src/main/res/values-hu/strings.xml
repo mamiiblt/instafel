@@ -58,14 +58,14 @@
     <string name="ifl_a11_59">Itt írhatja a biztonsági másolat változási naplóját</string>
     <string name="ifl_a11_60">Biztonsági másolat frissítése</string>
 
-    <!--  me.mamiiblt.instafel.ifl_a_menu  -->
+    <!--  instafel.app.ifl_a_menu  -->
     <string name="ifl_a0_02">Frissítés beállításai</string>
     <string name="ifl_a0_03">Nyelv</string>
     <string name="ifl_a0_04">Könyvtár</string>
     <string name="ifl_a0_05">Névjegy</string>
     <string name="ifl_a0_06">Ez a funkció még nem került hozzáadásra</string>
     <string name="ifl_a0_07">Összeomlás jelentések</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_ifl  -->
+    <!--  instafel.app.ifl_a_about_ifl  -->
     <string name="ifl_a1_01">Instafel-ről</string>
     <string name="ifl_a1_02">Instafel Verzió</string>
     <string name="ifl_a1_03">Telepítés típusa</string>
@@ -74,7 +74,7 @@
     <string name="ifl_a1_08">Nem klónozott</string>
     <string name="ifl_a1_09">Generáció ID</string>
     <string name="ifl_a1_10">Instagram Verzió</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_ig  -->
+    <!--  instafel.app.ifl_a_about_ig  -->
     <string name="ifl_a1_22">Alkalmazott javítások információinak megtekintése</string>
     <string name="ifl_a1_23">Alap commit</string>
     <string name="ifl_a2_01">Instagram-ról</string>
@@ -83,7 +83,7 @@
     <string name="ifl_a2_04">Csatorna</string>
     <string name="ifl_a2_05">Felépítése</string>
     <string name="ifl_a3_01">Névjegy</string>
-    <!--  me.mamiiblt.instafel.ifl_a_devmode  -->
+    <!--  instafel.app.ifl_a_devmode  -->
     <string name="ifl_a4_01">Exportálás</string>
     <string name="ifl_a4_02">Importálás</string>
     <string name="ifl_a4_03">Helyi felülbírálatok fájl törlése</string>
@@ -126,7 +126,7 @@
     <string name="ifl_a4_40">%1$s jelzések sikeresen importálva</string>
     <string name="ifl_a4_41">Hiba a tartalom mentési fájlba írása közben.</string>
     <string name="ifl_a4_42">Hiba a mentési fájl exportálása közben</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_ota  -->
+    <!--  instafel.app.ifl_a_about_ota  -->
     <string name="ifl_a5_01">Frissítések keresése</string>
     <string name="ifl_a5_02">Utolsó ellenőrzés: %1$s</string>
     <string name="ifl_a5_03">Ellenőrzési gyakoriság</string>
@@ -147,12 +147,12 @@
     <string name="ifl_a5_dia_freq_03">Egyszer három naponta</string>
     <string name="ifl_a5_dia_freq_04">Egyszer öt naponta</string>
     <string name="ifl_a5_dia_freq_05">Egyszer egy héten</string>
-    <!--  me.mamiiblt.instafel.ifl_a_language  -->
+    <!--  instafel.app.ifl_a_language  -->
     <string name="ifl_a6_01">Eszköz nyelvének használata</string>
-    <!--  me.mamiiblt.instafel.ifl_a_crashlog  -->
+    <!--  instafel.app.ifl_a_crashlog  -->
     <string name="ifl_a7_01">Jelentések</string>
     <string name="ifl_a7_02">Jelentések törlése</string>
-    <!--  me.mamiiblt.instafel.ifl_a_crashviewer  -->
+    <!--  instafel.app.ifl_a_crashviewer  -->
     <string name="ifl_a8_01">Részletek</string>
     <string name="ifl_a8_02">Napló másolása</string>
     <string name="ifl_a8_03">Napló megosztása</string>
@@ -164,9 +164,9 @@
     <string name="ifl_a8_09">Indok</string>
     <string name="ifl_a8_10">Halmazkövetés</string>
     <string name="ifl_a9_01">Részletek</string>
-    <!--  me.mamiiblt.instafel.ifl_a_about_contributors and translators  -->
+    <!--  instafel.app.ifl_a_about_contributors and translators  -->
     <string name="ifl_a10_01">Közreműködők</string>
-    <!--  me.mamiiblt.instafel.ifl_a_library_menu  -->
+    <!--  instafel.app.ifl_a_library_menu  -->
     <string name="ifl_a11_01">Jelzés könyvtár</string>
     <string name="ifl_a11_02">Mentés könyvtár</string>
     <string name="ifl_a11_03">Hiba a biztonsági mentések API-ból történő lekérése közben</string>
@@ -211,7 +211,7 @@
     <string name="ifl_a11_42">Hiba a mentési fájlból történő felülírálások importálása során</string>
     <string name="ifl_a11_43">%1$s jelzés sikeresen importálva</string>
     <string name="ifl_a11_44">%1$s sikeresen importálva</string>
-    <!--  me.mamiiblt.instafel.ifl_a_admin_login  -->
+    <!--  instafel.app.ifl_a_admin_login  -->
     <!--  OTA FOUND DIALOG  -->
     <string name="ifl_d1_01">Új frissítés</string>
     <string name="ifl_d1_02">Instafel frissítve lesz a következő verzióra v%1$d (Instagram v%2$s)</string>

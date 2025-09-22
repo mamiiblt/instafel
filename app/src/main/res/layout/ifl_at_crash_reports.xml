@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:background="?ifl_attr_background_color"
     android:layout_height="match_parent"
-    tools:context="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_reports">
+    tools:context="instafel.app.instafel.app.activity.crash_manager.ifl_a_crash_reports">
 
-    <me.mamiiblt.instafel.ui.PageTitle
+    <instafel.app.ui.PageTitle
         android:id="@+id/ifl_page_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:id="@+id/ifl_page_area"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ifl_page_title">
 
-        <me.mamiiblt.instafel.ui.TileCompact
+        <instafel.app.ui.TileCompact
             android:id="@+id/ifl_tile_crashlog_delete_logs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
 
 
         </LinearLayout>
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    </instafel.app.ui.PageContentArea>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

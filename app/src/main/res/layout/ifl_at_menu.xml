@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<me.mamiiblt.instafel.ui.Page android:layout_width="fill_parent" android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+<instafel.app.ui.Page android:layout_width="fill_parent" android:layout_height="fill_parent"
+                       xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
     <Space android:id="@id/ifl_titleSpace1" android:layout_width="wrap_content" android:layout_height="85.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -17,17 +17,17 @@
 
     <Space android:id="@id/ifl_titleSpace" android:layout_width="wrap_content" android:layout_height="85.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/ifl_homepageHeader" />
 
-    <me.mamiiblt.instafel.ui.PageContentArea android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/ifl_titleSpace">
-        <me.mamiiblt.instafel.ui.TileCompact android:id="@+id/ifl_tile_menu_devopt" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_developer" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_01" />
-        <me.mamiiblt.instafel.ui.TileCompact android:id="@+id/ifl_tile_menu_ota" android:layout_width="fill_parent" android:layout_height="wrap_content"  app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_approve_backup" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_02" />
-        <me.mamiiblt.instafel.ui.TileCompact android:visibility="gone" android:id="@+id/ifl_tile_menu_lang" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_language" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_03" />
-        <me.mamiiblt.instafel.ui.TileCompact android:id="@+id/ifl_tile_menu_library" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="1" app:ifl_attr_ui_iconRes="@drawable/ifl_libraries" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_04" />
-        <me.mamiiblt.instafel.ui.TileCompact android:id="@+id/ifl_tile_menu_adminmenu" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconRes="@drawable/ifl_admin" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="Admin Dashboard" />
-        <me.mamiiblt.instafel.ui.TileCompact android:id="@+id/ifl_tile_menu_crashlogs" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_crashlog" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_07" />
-        <me.mamiiblt.instafel.ui.TileCompact android:id="@+id/ifl_tile_menu_misc" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_misc" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_08" />
-        <me.mamiiblt.instafel.ui.TileCompact android:visibility="gone" android:id="@+id/ifl_tile_menu_about" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_about" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a1_01" />
-        <me.mamiiblt.instafel.ui.TileSocials android:id="@+id/ifl_tile_menu_sections" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_about" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a1_01" />
-    </me.mamiiblt.instafel.ui.PageContentArea>
+    <instafel.app.ui.PageContentArea android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/ifl_titleSpace">
+        <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_devopt" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_developer" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_01" />
+        <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_ota" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_approve_backup" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_02" />
+        <instafel.app.ui.TileCompact android:visibility="gone" android:id="@+id/ifl_tile_menu_lang" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_language" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_03" />
+        <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_library" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="1" app:ifl_attr_ui_iconRes="@drawable/ifl_libraries" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_04" />
+        <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_adminmenu" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconRes="@drawable/ifl_admin" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="Admin Dashboard" />
+        <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_crashlogs" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_crashlog" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_07" />
+        <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_misc" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_misc" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a0_08" />
+        <instafel.app.ui.TileCompact android:visibility="gone" android:id="@+id/ifl_tile_menu_about" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_about" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a1_01" />
+        <instafel.app.ui.TileSocials android:id="@+id/ifl_tile_menu_sections" android:layout_width="fill_parent" android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2" app:ifl_attr_ui_iconRes="@drawable/ifl_about" app:ifl_attr_ui_spaceBottom="visible" app:ifl_attr_ui_titleText="@string/ifl_a1_01" />
+    </instafel.app.ui.PageContentArea>
 
 
     <LinearLayout
@@ -57,4 +57,4 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-</me.mamiiblt.instafel.ui.Page>
+</instafel.app.ui.Page>

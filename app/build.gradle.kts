@@ -6,14 +6,14 @@ plugins {
     alias(libs.plugins.android.application)
 }
 
-group = "me.mamiiblt.instafel"
+group = "instafel.app"
 
 android {
-    namespace = "me.mamiiblt.instafel"
+    namespace = "instafel.app"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "me.mamiiblt.instafel"
+        applicationId = "instafel.app"
         minSdk = 28
         targetSdk = 36
         versionCode = 1 // it doesn't matter
@@ -39,6 +39,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = false
+            isReturnDefaultValues = true
+        }
     }
 }
 

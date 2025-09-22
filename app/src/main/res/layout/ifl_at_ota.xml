@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<me.mamiiblt.instafel.ui.Page
+<instafel.app.ui.Page
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="me.mamiiblt.instafel.activity.ifl_a_ota">
+    tools:context="instafel.app.instafel.app.activity.ifl_a_ota">
 
-    <me.mamiiblt.instafel.ui.PageTitle
+    <instafel.app.ui.PageTitle
         android:id="@+id/ifl_page_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:ifl_attr_ui_titleText="@string/ifl_a0_02" />
 
-    <me.mamiiblt.instafel.ui.PageContentArea
+    <instafel.app.ui.PageContentArea
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ifl_page_title">
 
-        <me.mamiiblt.instafel.ui.TileLargeSwitch
+        <instafel.app.ui.TileLargeSwitch
             android:id="@+id/ifl_tile_ota_enable_updates"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             app:ifl_attr_ui_subtitleText="@string/ifl_a5_07"
             app:ifl_attr_ui_titleText="@string/ifl_a5_06" />
 
-        <me.mamiiblt.instafel.ui.TileLargeSwitch
+        <instafel.app.ui.TileLargeSwitch
             android:id="@+id/ifl_tile_ota_background_download"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             app:ifl_attr_ui_subtitleText="@string/ifl_a5_09"
             app:ifl_attr_ui_titleText="@string/ifl_a5_08" />
 
-        <me.mamiiblt.instafel.ui.TileLarge
+        <instafel.app.ui.TileLarge
             android:id="@+id/ifl_tile_ota_check"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +46,7 @@
             app:ifl_attr_ui_subtitleText="@string/ifl_a5_02"
             app:ifl_attr_ui_titleText="@string/ifl_a5_01" />
 
-        <me.mamiiblt.instafel.ui.TileLarge
+        <instafel.app.ui.TileLarge
             android:id="@+id/ifl_tile_ota_freq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             app:ifl_attr_ui_subtitleText="_empty"
             app:ifl_attr_ui_titleText="@string/ifl_a5_03" />
 
-        <me.mamiiblt.instafel.ui.TileLarge
+        <instafel.app.ui.TileLarge
             android:id="@+id/ifl_tile_ota_instafel_updater"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,5 +70,5 @@
             app:ifl_attr_ui_subtitleText="@string/ifl_a0_16"
             app:ifl_attr_ui_titleText="@string/ifl_a0_15" />
 
-    </me.mamiiblt.instafel.ui.PageContentArea>
-</me.mamiiblt.instafel.ui.Page>
+    </instafel.app.ui.PageContentArea>
+</instafel.app.ui.Page>
