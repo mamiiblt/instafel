@@ -10,7 +10,7 @@
     },
     "app": {
       "signing": {
-        "ksPath": "/config/testkey.keystore",
+        "ksPath": "/.config/testkey.keystore",
         "ksKeyPass": "android",
         "ksAlias": "testkey",
         "ksPass": "android"
@@ -20,7 +20,7 @@
       "version": "3.7.1",
       "versionCode": 1,
       "signing": {
-        "ksPath": "/config/testkey.keystore",
+        "ksPath": "/.config/testkey.keystore",
         "ksKeyPass": "android",
         "ksAlias": "testkey",
         "ksPass": "android"
