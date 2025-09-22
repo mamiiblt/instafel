@@ -1,4 +1,4 @@
-package me.mamiiblt.instafel.managers;
+package instafel.app.managers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
