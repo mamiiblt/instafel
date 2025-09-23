@@ -52,13 +52,13 @@ class AddInitInstafel: InstafelPatch() {
                         Log.info("Unused register is v$unusedRegister before line $i in onCreate method")
 
                         val content = listOf(
-                            "    invoke-static {$onCreateVariableName}, Lme/mamiiblt/instafel/utils/InitializeInstafel;->setContext(Landroid/app/Application;)V",
-                            "    new-instance v$unusedRegister, Lme/mamiiblt/instafel/utils/InstafelCrashHandler;",
-                            "    invoke-direct {v$unusedRegister, $onCreateVariableName}, Lme/mamiiblt/instafel/utils/InstafelCrashHandler;-><init>(Landroid/content/Context;)V",
+                            "    invoke-static {$onCreateVariableName}, Linstafel/app/utils/InitializeInstafel;->setContext(Landroid/app/Application;)V",
+                            "    new-instance v$unusedRegister, Linstafel/app/utils/InstafelCrashHandler;",
+                            "    invoke-direct {v$unusedRegister, $onCreateVariableName}, Linstafel/app/utils/InstafelCrashHandler;-><init>(Landroid/content/Context;)V",
                             "    invoke-static {v$unusedRegister}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread\$UncaughtExceptionHandler;)V"
                         )
 
-                        if (fContent[i + 2].contains("Lme/mamiiblt/instafel")) {
+                        if (fContent[i + 2].contains("Lapp/instafel")) {
                             failure("This patch is applied already.")
                         }
 
