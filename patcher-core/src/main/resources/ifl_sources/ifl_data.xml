@@ -2,34 +2,34 @@
 <instafel xmlns:android="http://schemas.android.com/apk/res/android">
     <values>
         <vcategory name="providers">
-            <provider android:authorities="me.mamiiblt.instafel.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="me.mamiiblt.instafel.utils.InstafelFileProvider"/>
+            <provider android:authorities="instafel.app.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="instafel.app.utils.InstafelFileProvider"/>
         </vcategory>
         <vcategory name="activities">
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_ota"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_language"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.ifl_a_misc"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_about"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_build_info"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.about.ifl_a_patches_info"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.comparator.ifl_a_devmode_backup_comparator"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.backup.ifl_a_export_backup"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.ifl_a_devmode"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.ifl_a_devmode_import"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_viewer"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.crash_manager.ifl_a_crash_reports"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.ifl_a_library_menu"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup_info"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.library.backup.ifl_a_library_backup_info_author"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_login"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_dashboard"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_action_updatebackup"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_action_approvepreview"/>
-            <activity android:exported="false" android:name="me.mamiiblt.instafel.activity.admin.ifl_a_admin_pref_manager"/>
+            <activity android:exported="false" android:name="instafel.app.activity.ifl_a_menu"/>
+            <activity android:exported="false" android:name="instafel.app.activity.ifl_a_ota"/>
+            <activity android:exported="false" android:name="instafel.app.activity.ifl_a_language"/>
+            <activity android:exported="false" android:name="instafel.app.activity.ifl_a_misc"/>
+            <activity android:exported="false" android:name="instafel.app.activity.about.ifl_a_about"/>
+            <activity android:exported="false" android:name="instafel.app.activity.about.ifl_a_build_info"/>
+            <activity android:exported="false" android:name="instafel.app.activity.about.ifl_a_patches_info"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.comparator.ifl_a_devmode_backup_comparator"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.comparator.ifl_a_devmode_backup_comparator_menu"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.backup.ifl_a_export_backup"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.ifl_a_devmode"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.ifl_a_devmode_import"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer"/>
+            <activity android:exported="false" android:name="instafel.app.activity.devmode.analyzer.ifl_a_devmode_backup_analyzer_menu"/>
+            <activity android:exported="false" android:name="instafel.app.activity.crash_manager.ifl_a_crash_viewer"/>
+            <activity android:exported="false" android:name="instafel.app.activity.crash_manager.ifl_a_crash_reports"/>
+            <activity android:exported="false" android:name="instafel.app.activity.library.ifl_a_library_menu"/>
+            <activity android:exported="false" android:name="instafel.app.activity.library.backup.ifl_a_library_backup"/>
+            <activity android:exported="false" android:name="instafel.app.activity.library.backup.ifl_a_library_backup_info"/>
+            <activity android:exported="false" android:name="instafel.app.activity.library.backup.ifl_a_library_backup_info_author"/>
+            <activity android:exported="false" android:name="instafel.app.activity.admin.ifl_a_admin_login"/>
+            <activity android:exported="false" android:name="instafel.app.activity.admin.ifl_a_admin_dashboard"/>
+            <activity android:exported="false" android:name="instafel.app.activity.admin.ifl_a_admin_action_updatebackup"/>
+            <activity android:exported="false" android:name="instafel.app.activity.admin.ifl_a_admin_action_approvepreview"/>
+            <activity android:exported="false" android:name="instafel.app.activity.admin.ifl_a_admin_pref_manager"/>
         </vcategory>
         <vcategory name="styles">
             <style name="ifl_theme_dark" parent="@style/ifl_theme_light">
