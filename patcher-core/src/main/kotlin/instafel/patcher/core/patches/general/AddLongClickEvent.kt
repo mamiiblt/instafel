@@ -56,8 +56,8 @@ class AddLongClickEvent: InstafelPatch() {
                         val vNameRw = fContent[i].trim().split(" ")[1]
                         val veriablePart = vNameRw.substring(0, vNameRw.length - 1)
 
-                        fContent[i] = "    new-instance $veriablePart, Lme/mamiiblt/instafel/utils/OpenIflMenu;"
-                        fContent[i + 2] = "    invoke-direct {$veriablePart}, Lme/mamiiblt/instafel/utils/OpenIflMenu;-><init>()V"
+                        fContent[i] = "    new-instance $veriablePart, Linstafel/app/utils/OpenIflMenu;"
+                        fContent[i + 2] = "    invoke-direct {$veriablePart}, Linstafel/app/utils/OpenIflMenu;-><init>()V"
 
                         Log.info("new-instance & invoke-direct lines modified at $i & ${i + 2} lines")
                         lock = true

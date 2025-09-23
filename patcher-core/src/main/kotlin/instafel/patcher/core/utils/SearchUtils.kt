@@ -60,7 +60,7 @@ object SearchUtils {
                         for (line in fContent) {
                             searchConditions.forEachIndexed { i, lineConditions ->
                                 if (lineConditions.all { condition ->
-                                        line.contains(condition, ignoreCase = false)
+                                        line.contains(condition)
                                     }) {
                                     passStatuses[i] = true
                                 }

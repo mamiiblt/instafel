@@ -49,7 +49,7 @@ class CopyInstafelSources: InstafelPatch() {
                         Env.PROJECT_DIR,
                         "sources",
                         smallDexFolder.name,
-                        "me", "mamiiblt"
+                        "instafel"
                     )
                 )
 
@@ -166,8 +166,8 @@ class CopyInstafelSources: InstafelPatch() {
             override fun execute() {
                 val smaliFolder = File(
                     Utils.mergePaths(
-                        smaliUtils.getSmaliFolderByPaths("me", "mamiiblt")!!.absolutePath,
-                        "me", "mamiiblt", "instafel"
+                        smaliUtils.getSmaliFolderByPaths("instafel", "app")!!.absolutePath,
+                        "instafel", "app"
                     )
                 )
 

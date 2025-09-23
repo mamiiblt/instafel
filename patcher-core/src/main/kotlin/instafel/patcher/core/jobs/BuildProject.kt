@@ -291,9 +291,8 @@ object BuildProject: CLIJob {
                     Env.PROJECT_DIR,
                     "sources",
                     iflSourceFolder,
-                    "me",
-                    "mamiiblt",
                     "instafel",
+                    "app",
                     "InstafelEnv.smali"
                 )
             )

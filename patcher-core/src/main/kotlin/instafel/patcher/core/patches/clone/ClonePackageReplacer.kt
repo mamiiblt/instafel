@@ -27,7 +27,7 @@ class ClonePackageReplacer: InstafelPatch() {
 
                 smaliUtils.smaliFolders.forEach { folder ->
                     FileUtils.iterateFiles(File(folder.absolutePath), null, true).forEach { sourcesFile ->
-                        if (!sourcesFile.absolutePath.contains("/me/mamiiblt/instafel")) {
+                        if (!sourcesFile.absolutePath.contains("/instafel/app")) {
                             val cloneFile = File(sourcesFile.absolutePath.replace("sources", "clone_ref"))
                             val file = if (cloneFile.exists()) cloneFile else sourcesFile
                             val fContent = smaliUtils.getSmaliFileContent(file.absolutePath).toMutableList()
