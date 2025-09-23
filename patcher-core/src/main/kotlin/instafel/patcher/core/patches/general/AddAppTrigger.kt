@@ -108,7 +108,9 @@ class AddAppTrigger: InstafelPatch() {
                     "    move-result-object v0",
                     "",
                     "    invoke-static {v0}, Linstafel/app/utils/InitializeInstafel;->triggerCheckUpdates(Landroid/app/Activity;)V",
-                    ""
+                    "",
+                    "    invoke-static {v0}, Linstafel/app/utils/InitializeInstafel;->triggerUploadMapping(Landroid/app/Activity;)V",
+                    "",
                 )
                 Log.info("Caller lines set successfully.")
                 val newFileContent = fContent.toMutableList()
