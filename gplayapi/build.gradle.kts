@@ -1,21 +1,20 @@
 import IFLProjectManager.Config
-import IFLProjectManager.BuildConfig
 
 plugins {
-    kotlin("jvm")
     java
     application
-    id("com.gradleup.shadow")
+    alias(libs.plugins.shadowjar)
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "gplayapi"
 version = "v${Config.gplayapi.version}-${Config.gplayapi.tag}"
 
 dependencies {
-    implementation(BuildConfig.kotlin_stdlib)
-    implementation(BuildConfig.gplayapi)
-    implementation(BuildConfig.org_json)
-    implementation(BuildConfig.okhttp)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.gplayapi)
+    implementation(libs.org.json)
+    implementation(libs.okhttp)
 }
 
 application {

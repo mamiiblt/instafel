@@ -1,14 +1,13 @@
 import IFLProjectManager.getCommitHash
 import IFLProjectManager.Config
-import IFLProjectManager.BuildConfig
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
 
 plugins {
-    kotlin("jvm")
     java
     `java-library`
+    alias(libs.plugins.kotlin.jvm)
 }
 
 lateinit var patchesJsonFile: File
@@ -17,17 +16,17 @@ group = "instafel"
 version = project.getCommitHash()
 
 dependencies {
-    implementation(BuildConfig.kotlin_stdlib)
-    implementation(BuildConfig.kotlin_reflect)
-    implementation(BuildConfig.kotlin_coroutines)
-    implementation(BuildConfig.org_json)
-    implementation(BuildConfig.commons_io)
-    implementation(BuildConfig.okhttp)
-    implementation(BuildConfig.apktool_lib)
-    implementation(BuildConfig.classgraph)
-    implementation(BuildConfig.jackson_databind)
-    implementation(BuildConfig.jackson_yaml)
-    implementation(BuildConfig.gson)
+    implementation(libs.kotlin.stdlib)
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.coroutines)
+    implementation(libs.org.json)
+    implementation(libs.apache.commons.io)
+    implementation(libs.okhttp)
+    implementation(libs.apktool.lib)
+    implementation(libs.classgraph)
+    implementation(libs.jackson.databind)
+    implementation(libs.jackson.yaml)
+    implementation(libs.gson)
 }
 
 tasks.named<Jar>("jar") {

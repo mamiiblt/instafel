@@ -1,6 +1,5 @@
 import IFLProjectManager.getCommitHash
 import IFLProjectManager.Config
-import IFLProjectManager.BuildConfig
 
 plugins {
     alias(libs.plugins.android.application)
@@ -9,19 +8,19 @@ plugins {
 group = "instafel"
 
 dependencies {
-    implementation(BuildConfig.android.appcompat)
-    implementation(BuildConfig.android.material)
-    implementation(BuildConfig.android.activity)
-    implementation(BuildConfig.android.constraintlayout)
-    implementation(BuildConfig.android.navigation_fragment)
-    implementation(BuildConfig.android.navigation_ui)
-    implementation(BuildConfig.android.preference)
-    implementation(BuildConfig.shizuku_api)
-    implementation(BuildConfig.shizuku_provider)
-    implementation(BuildConfig.okhttp)
-    implementation(BuildConfig.m3_preferences)
-    implementation(BuildConfig.rootbeer)
-    implementation(BuildConfig.android.work_manager)
+    implementation(libs.android.appcompat)
+    implementation(libs.android.material)
+    implementation(libs.android.activity)
+    implementation(libs.android.constraintlayout)
+    implementation(libs.android.navigation.fragment)
+    implementation(libs.android.navigation.ui)
+    implementation(libs.android.preference)
+    implementation(libs.shizuku.api)
+    implementation(libs.shizuku.provider)
+    implementation(libs.okhttp)
+    implementation(libs.m3.preferences)
+    implementation(libs.rootbeer)
+    implementation(libs.android.work.manager)
 }
 
 android {
