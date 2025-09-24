@@ -3,15 +3,6 @@ import java.io.ByteArrayOutputStream
 rootProject.name = "Instafel"
 System.setProperty("project.rootDir", rootDir.absolutePath)
 
-fun getGitCommitHash(): String {
-    val output = ByteArrayOutputStream()
-    exec {
-        commandLine("git", "rev-parse", "--short", "HEAD")
-        standardOutput = output
-    }
-    return output.toString().trim()
-}
-
 dependencyResolutionManagement {
     repositories {
         google {
@@ -27,10 +18,6 @@ dependencyResolutionManagement {
 }
 
 pluginManagement {
-    plugins {
-        kotlin("jvm") version "2.2.20"
-        id("com.gradleup.shadow") version "9.1.0"
-    }
     repositories {
         google {
             content {

@@ -1,4 +1,3 @@
-import IFLProjectManager.BuildConfig
 import IFLProjectManager.Config
 import IFLProjectManager.getCommitHash
 
@@ -17,7 +16,7 @@ android {
         minSdk = 28
         targetSdk = 36
         versionCode = 1 // it doesn't matter
-        versionName = project.getCommitHash() // it doesn't matter
+        versionName = project.getCommitHash()// it doesn't matter
     }
 
     signingConfigs{
@@ -84,8 +83,8 @@ tasks.register("generate-app-release") {
 }
 
 dependencies {
-    implementation(BuildConfig.android.appcompat)
-    implementation(BuildConfig.android.material)
-    implementation(BuildConfig.android.activity)
-    implementation(BuildConfig.android.constraintlayout)
+    implementation(libs.android.appcompat)
+    implementation(libs.android.material)
+    implementation(libs.android.activity)
+    implementation(libs.android.constraintlayout)
 }

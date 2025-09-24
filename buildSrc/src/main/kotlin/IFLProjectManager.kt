@@ -39,14 +39,6 @@ object IFLProjectManager {
     val Config: ConfigFile by lazy {
         gson.fromJson(configObject.getJSONObject("config").toString(), ConfigFile::class.java)
     }
-
-    val BuildConfig: BuildConfigFile by lazy {
-        val gson = GsonBuilder()
-            .registerTypeAdapter(String::class.java, DependencyDeserializer())
-            .create()
-
-        gson.fromJson(configObject.getJSONObject("build_config").getJSONObject("dependencies").toString(), BuildConfigFile::class.java)
-    }
 }
 
 class DependencyDeserializer : JsonDeserializer<String> {

@@ -1,6 +1,6 @@
 import org.gradle.api.Project
-import org.jetbrains.kotlin.konan.properties.Properties
 import java.nio.file.Paths
+import java.util.Properties
 
 fun Project.getInstafelEnvProperty(propName: String): String {
     val envFile = Paths.get(rootProject.projectDir.toString(), "env.properties").toFile()
