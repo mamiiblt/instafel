@@ -1,61 +1,30 @@
-# Instafel
+<h1 align="center">Instafel</h1>
 
-**Instafel** is a modular project designed to patch the latest **Instagram Alpha APKs** using its own custom patcher.  
-This repository contains the source code of six core subprojects that make up the Instafel ecosystem.
+<p align="center">Instafel is a modular, open-source suite for customizing the latest <b>Instagram Alpha APKs.</b><br/>
+This repository brings together six core subprojects, each designed to enhance flexibility and usability for power users and developers.</p>
 
 ## Projects
 
-### App
+| Project        | Description                                                 | Links                                                       |
+| -------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| **App**        | Instafel’s user interface: menus, activities, dialogs, and more. | [Source](https://github.com/mamiiblt/instafel/tree/main/app) <br> [Website](https://instafel.app) |
+| **Patcher**    | Injects Instafel features into Instagram APKs.              | [Source](https://github.com/mamiiblt/instafel/tree/main/patcher) <br> [Release](https://github.com/instafel/p-rel/releases/latest) |
+| **Patcher Core** | Core patching logic: utilities, patch definitions, main functions. | [Source](https://github.com/mamiiblt/instafel/tree/main/patcher-core) <br> [Release](https://github.com/instafel/pc-rel/releases/latest) |
+| **Updater**    | OTA update manager for Instafel: stay up-to-date effortlessly. | [Source](https://github.com/mamiiblt/instafel/tree/main/updater) <br> [Website](https://instafel.app/about_updater) <br> [Release](https://github.com/instafel/u-rel/releases/latest) |
+| **Website**    | Dynamic guides, libraries, and resources for users.         | [Source](https://github.com/mamiiblt/instafel/tree/main/website) <br> [Website](https://instafel.app) |
+| **GPlayAPI**   | Fetches latest Instagram Alpha APKs directly from Google Play. | [Source](https://github.com/mamiiblt/instafel/tree/main/gplayapi) |
 
-This project includes the Instafel menu, activities, dialogs, and many other components.
-
-> 📦 [Source Code](https://github.com/mamiiblt/instafel/tree/main/app)
-> 🌐 [Website](https://instafel.app)
-
-### Patcher
-
-Injects the modified Instafel sources into the Instagram APK, making it functional with additional features.
-
-> 📦 [Source Code](https://github.com/mamiiblt/instafel/tree/main/patcher)
-
-### Updater
-
-Keeps the Instafel application up to date by checking and installing the latest release from OTA.
-
-> 📦 [Source Code](https://github.com/mamiiblt/instafel/tree/main/updater)
-> 🌐 [Website](https://instafel.app/about_updater)
-
-### Website
-
-Provides guides, libraries, and more for Instafel users dynamically.
-
-> 📦 [Source Code](https://github.com/mamiiblt/instafel/tree/main/website)
-> 🌐 [Website](https://instafel.app)
-
-### Wiki
-
-You can access all information and documents about Instafel here!
-
-> 📦 [Source Code](https://github.com/mamiiblt/instafel/tree/main/wiki)
-> 🌐 [Website](https://instafel.app/wiki)
-
-### GPlayAPI
-
-A simple module for retrieve latest Alpha APKs directly from the Google Play Store for patching
-
-> 📦 [Source Code](https://github.com/mamiiblt/instafel/tree/main/gplayapi)
-
-## Links
+## Useful Links
 
 - 🌐 [Website](https://instafel.app)
-- 📚 [Wiki](https://wiki.instafel.app)
-- 💬 [Instafel Community](https://t.me/instafel)
-- 🗂️ [Backup Library](https://instafel.app/library/backup)
+- 📚 [Wiki](https://instafel.app/wiki)
+- 💬 [Community Chat](https://t.me/instafel)
 
-## Disclaimer
+## ⚠️ Disclaimer
 
-This project is in **no way affiliated with Meta or Instagram**, and may **not be used for commercial or personal gain**.
+Instafel is **not affiliated with Meta or Instagram**, and is intended for educational use only.  
+**Commercial or personal gain is strictly prohibited.**
 
 ---
 
-Developed with ❤️ by mamiiblt
+<p align="center"><i>Developed with ❤️ by <a href="https://github.com/mamiiblt">mamiiblt</a></i></p>
