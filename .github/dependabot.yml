@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "gradle"
-    directory: "/gradle"
+    directory: "/"
     schedule:
       interval: "weekly"
     allow:
