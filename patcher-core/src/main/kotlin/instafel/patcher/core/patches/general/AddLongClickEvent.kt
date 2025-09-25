@@ -28,7 +28,8 @@ class AddLongClickEvent: InstafelPatch() {
                     SearchUtils.getFileContainsAllCords(smaliUtils,
                         listOf(
                             listOf("notifications_entry_point_impression"),
-                            listOf("null cannot be cast to non-null type android.content.Context")
+                            listOf("user_profile_header"),
+                            listOf("Lcom/instagram/profile/fragment/UserDetailFragment;")
                         ))
                 }) {
                     is FileSearchResult.Success -> {
