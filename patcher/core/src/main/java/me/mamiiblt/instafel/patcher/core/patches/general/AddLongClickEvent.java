@@ -87,14 +87,18 @@ public class AddLongClickEvent extends InstafelPatch {
                         File file = fileIterator.next();
                         List<String> fContent = smaliUtils.getSmaliFileContent(file.getAbsolutePath()); 
 
-                        boolean[] conditions = {false, false};
+                        boolean[] conditions = {false, false, false};
                         for (String line : fContent) {
                             if (line.contains("notifications_entry_point_impression")) {
                                 conditions[0] = true;
                             }
 
-                            if (line.contains("null cannot be cast to non-null type android.content.Context")) {
+                            if (line.contains("user_profile_header")) {
                                 conditions[1] = true;
+                            }
+
+                            if (line.contains("Lcom/instagram/profile/fragment/UserDetailFragment;")) {
+                                conditions[2] = true;
                             }
                         }
 
