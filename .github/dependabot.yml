@@ -6,5 +6,3 @@ updates:
       interval: "weekly"
     allow:
       - dependency-type: "direct"
-    files:
-      - "libs.versions.toml"
