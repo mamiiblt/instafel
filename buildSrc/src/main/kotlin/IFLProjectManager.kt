@@ -1,9 +1,7 @@
-import com.google.gson.GsonBuilder
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
 import com.google.gson.JsonParseException
-import modals.BuildConfigFile
 import modals.ConfigFile
 import org.gradle.api.Project
 import org.json.JSONObject
@@ -37,7 +35,7 @@ object IFLProjectManager {
 
 
     val Config: ConfigFile by lazy {
-        gson.fromJson(configObject.getJSONObject("config").toString(), ConfigFile::class.java)
+        gson.fromJson(configObject.toString(), ConfigFile::class.java)
     }
 }
 
