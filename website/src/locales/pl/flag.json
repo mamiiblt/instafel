@@ -19,14 +19,14 @@
     },
     "block_contents": {
       "info": {
-        "added_by": "Dodana przez",
+        "added_by": "Dodane przez",
         "last_edit": "Ostatnia edycja",
-        "added_in": "Dodana w",
-        "removed_in": "Usunięta w",
+        "added_in": "Dodano w",
+        "removed_in": "Usunięto w",
         "unknown": "Nieznane"
       },
       "screenshot": {
-        "failed_load_img": "Nie udało się załadować obrazu"
+        "failed_load_img": "Nie udało się wczytać obrazu"
       },
       "metaconf_options": {
         "copy_to_clipboard": "Skopiuj do schowka",
