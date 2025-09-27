@@ -9,7 +9,7 @@
   "lastUpdated": "Ostatnia aktualizacja",
   "changelogTitle": "Dziennik zmian",
   "howToUseTitle": "Jak użyć tej kopii zapasowej",
-  "howToUseDescription": "Możesz pobrać ten plik kopii zapasowej i ręcznie zaimportować go do Instafel lub użyć przycisku \"Importuj do Instafel\", aby automatycznie otworzyć aplikację i zaimportować plik bezpośrednio.",
+  "howToUseDescription": "Pobierz plik kopii zapasowej i zaimportuj go ręcznie do Instafel lub użyj przycisku \"Importuj do Instafel\", aby zrobić to automatycznie.",
   "viewAllBackups": "Zobacz wszystkie kopie",
   "notFound": {
     "title": "Nie znaleziono kopii zapasowej",
