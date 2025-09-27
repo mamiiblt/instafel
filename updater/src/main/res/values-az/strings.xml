@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name" translatable="false">Instafel Updater</string>
+
+    <!-- Nav Bar -->
+    <string name="status">Vəziyyət</string>
+    <string name="logs">Jurnal</string>
+    <string name="settings">Tənzimləmələr</string>
+
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Yeniləyicini tənzimlə</string>
+    <string name="checker_arch">Quruluş Yoxlayıcı</string>
+    <string name="checker_itype">Quraşdırma Yoxlayıcı Növü</string>
+    <string name="unclone">Orjinal</string>
+    <string name="clone">Kopya</string>
+    <string name="cont">Davam et</string>
+    <string name="warning">Xəbərdarlıq</string>
+    <string name="warning_desc">Quruluş və quraşdırma növünü seçin.</string>
+
+    <!-- Status Fragment -->
+    <string name="authorized">İcazə verildi</string>
+    <string name="not_installed">Shizuku Quraşdırılmayıb</string>
+    <string name="start_service">Shizuku İşləmir</string>
+    <string name="shiuku_status">Shizuku Vəziyyəti</string>
+    <string name="root_status">Root Vəziyyəti</string>
+    <string name="selected_arch">Quruluş Yoxlayıcı</string>
+    <string name="selected_installation_type">Quraşdırma Yoxlayıcı Növü</string>
+    <string name="battery_restiriction">Batareya Məhdudlaşdırılması</string>
+    <string name="battery_restiricted">Məhdudlaşdırılıb</string>
+    <string name="battery_unrestiricted">Məhdudiyyətsiz</string>
+    <string name="battery_dialog_title">Məhdudiyyətsiz Rejimə İcazə Ver</string>
+    <string name="battery_dialog_msg">Instafel Updater-in düzgün işləməsi üçün tətbiq batareya rejimi məhdudlaşdırılmamalıdır.</string>
+    <string name="updater_status">Yeniləyici Vəziyyəti</string>
+    <string name="start">Başlat</string>
+    <string name="stop">Dayandır</string>
+    <string name="permission_rejected">İcazə ləğv edildi</string>
+    <string name="perm_rejected_desc">Xahiş olunur, Shizuku Tətbiqindən Instafel Yeniləyicisinə İcazə Verin</string>
+    <string name="please_start_shizuku">Zəhmət olmasa, tətbiqdən Shizuku-nu başlat</string>
+    <string name="please_install_shizuku">Zəhmət olmasa, Play Market-dən Shizuku-nu quraşdır</string>
+    <string name="please_give_permission">Zəhmət olmasa Shizuku-da Instafel Updater-ə icazə verin</string>
+    <string name="running">%1$s rejimi ilə işləyir</string>
+    <string name="stopped">Dayandırılıb</string>
+    <string name="unauthorized">İcazəsiz</string>
+    <string name="checking">Yoxlanılır..</string>
+    <string name="not_found">SU binary tapılmadı</string>
+    <string name="please_allow_root">Root girişi ləğv edildi, menecerdən icazə verin.</string>
+    <string name="please_install_root">Root girişi təmin edilmir</string>
+    <string name="please_allow_unrestiracted">Lütfən, tətbiq batareya məhdudlaşdırması rejimini məhdudiyyətsiz rejimə təyin et</string>
+    <string name="dialog_title">İcazəni Qəbul Et</string>
+    <string name="dialog_desc">Instafel Updater düzgün işləmək üçün Bildiriş və Root icazəsi tələb edir.</string>
+    <string name="dialog_ok">Yaxşı</string>
+    <string name="hour">saat</string>
+    <string name="minute">dəqiqə</string>
+    <string name="upd_started">Yeniləyici başladı</string>
+    <string name="upd_stopped">Yeniləyici dayandı</string>
+
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">İcra vaxtı jurnalı təmizləndi.</string>
+    <string name="work_restarted">Yeniləyici təkrar işə salınır</string>
+
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Yenilənmə endirilir</string>
+    <string name="n2_waiting">Yeniləmə Serveri Gözlənilir</string>
+    <string name="n2_sub">API bağlantısı gözlənilir..</string>
+    <string name="n3_installing">Yeniləmə quraşdırılır</string>
+    <string name="n3_sub">Endirmə tamamlandı, quraşdırılır...</string>
+    <string name="n4_complete">Yeniləmə Uğurla Quraşdırıldı</string>
+    <string name="n4_sub">Instafel v%1$s-a yeniləndi</string>
+    <string name="error">Xəta</string>
+
+    <!-- Setting Keys -->
+    <string name="cname_general">Ümumi</string>
+    <string name="cname_behavior">Davranış</string>
+    <string name="cname_about">Yeniləyici Haqqında</string>
+    <string name="checker_interval">Yoxlanma Aralığı</string>
+    <string name="checker_interval_s">Yoxlanma aralığın dəyişdir</string>
+    <string name="itype">Quraşdırma Növü</string>
+    <string name="itype_s">Quraşdırma növünü dəyişdir</string>
+    <string name="send_notif">Bildiriş Göndər</string>
+    <string name="send_notif_s">Updater Instafel-i yenilədikdən sonra bildiriş göndərir</string>
+    <string name="use_mobile_data">Mobil Məlumat</string>
+    <string name="use_mobile_data_s">Mobil internet ilə yeniləmələri endirməyə imkan verir</string>
+    <string name="hour12_rule">12 Saat Qaydası</string>
+    <string name="hour12_rule_s">Buraxıldıqdan 12 saat sonra yeniləməni quraşdırmağa imkan verir</string>
+    <string name="source_code">Mənbə Kodu</string>
+    <string name="source_code_s">Instafel-in mənbə kodunu görün</string>
+    <string name="instafel_website">Instafel Vebsayt</string>
+    <string name="create_issue">Problem Yarat</string>
+    <string name="create_issue_s">Əlaqə üçün GitHub-da məsələ yaradın!</string>
+    <string name="app_version">Tətbiq Versiyası</string>
+    <string name="app_version_s">Versiya v%1$s (%2$s)</string>
+    <string name="language">Dil</string>
+    <string name="language_s">Tətbiq dilini təyin et</string>
+    <string name="developed_by">mamiiblt tərəfindən ❤️ ilə işlənib hazırlanmışdır</string>
+    <string name="about_app">Haqqında</string>
+    <string name="crash_logs">Çökmə qeydlərini saxla</string>
+    <string name="crash_logs_s">Logger hər qəzanı gündəlik jurnala qeyd edəcək.</string>
+    <string name="disable_error">Xəbərdarlıq bildirişini qapat</string>
+    <string name="disable_error_s">Ciddi olmayan xəta bildirişlərini qapadır</string>
+    <string name="updater_guide">Updater Bələdçisi</string>
+    <string name="updater_guide_s">Updater haqqında ətraflı məlumat əldə edin/string>
+</resources>
