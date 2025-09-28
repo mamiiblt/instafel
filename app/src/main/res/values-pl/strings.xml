@@ -6,7 +6,7 @@
     <string name="ifl_a0_08">Różne</string>
     <string name="ifl_a0_10">Włącz motyw AMOLED dla okien, dialogów i innych elementów Instafela.</string>
     <string name="ifl_a0_11">Usuń reklamy</string>
-    <string name="ifl_a0_12">Usuwa reklamy wyświetlane w aktualnościach, rolkach lub innych sekcjach.</string>
+    <string name="ifl_a0_12">Usuwa reklamy wyświetlane na stronie głównej, w rolkach lub innych sekcjach.</string>
     <string name="ifl_a0_13">Uruchom ponownie aplikację, aby zastosować zmiany.</string>
     <string name="ifl_a0_14">Domyślnie włączone, nie można zmienić.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
@@ -32,16 +32,15 @@
     <string name="ifl_a1_12">Informacje o kompilacji</string>
     <string name="ifl_a1_13">Wersja patchera</string>
     <string name="ifl_a1_14">Zastosowane poprawki</string>
-    <string name="ifl_a1_15">Zobacz szczegóły kompilacjis</string>
+    <string name="ifl_a1_15">Zobacz szczegóły kompilacji</string>
     <string name="ifl_a1_18">O programiście</string>
     <string name="ifl_a1_19">Strona internetowa</string>
     <string name="ifl_a1_20">Dołącz do społeczności</string>
     <string name="ifl_a1_21">Współtwórcy</string>
-
-
-    <!-- instafel.app.ifl_a_about_ig -->
     <string name="ifl_a1_22">Zobacz informacje o zastosowanych poprawkach</string>
     <string name="ifl_a1_23">Główny commit</string>
+
+    <!-- instafel.app.ifl_a_about_ig -->
     <string name="ifl_a2_01">O Instagramie</string>
     <string name="ifl_a2_02">Wersja</string>
     <string name="ifl_a2_03">Kod wersji</string>
@@ -52,18 +51,18 @@
     <!-- instafel.app.ifl_a_devmode -->
     <string name="ifl_a4_01">Eksportuj</string>
     <string name="ifl_a4_02">Importuj</string>
-    <string name="ifl_a4_03">Usuń plik nadpisań</string>
+    <string name="ifl_a4_03">Usuń plik ustawień</string>
     <string name="ifl_a4_04">Wybierz ścieżkę zapisu pliku.</string>
-    <string name="ifl_a4_05">Kopia zapasowa została pomyślnie zapisana.</string>
-    <string name="ifl_a4_06">Nie znaleziono pliku nadpisań.</string>
+    <string name="ifl_a4_05">Kopia zapasowa została zapisana.</string>
+    <string name="ifl_a4_06">Nie znaleziono pliku ustawień.</string>
     <string name="ifl_a4_07">Wystąpił błąd podczas zapisywania kopii zapasowej.</string>
     <string name="ifl_a4_08">Udostępnij kopię</string>
     <string name="ifl_a4_09">Wybierz plik do importu.</string>
     <string name="ifl_a4_10">Kopia została pomyślnie zaimportowana</string>
-    <string name="ifl_a4_11">Nie znaleziono pliku nadpisań.</string>
+    <string name="ifl_a4_11">Nie znaleziono pliku ustawień.</string>
     <string name="ifl_a4_12">Wystąpił błąd podczas importowania kopii zapasowej.</string>
-    <string name="ifl_a4_13">Plik nadpisań został pomyślnie usunięty.</string>
-    <string name="ifl_a4_14">Nie znaleziono pliku nadpisań.</string>
+    <string name="ifl_a4_13">Plik ustawień został pomyślnie usunięty.</string>
+    <string name="ifl_a4_14">Nie znaleziono pliku ustawień.</string>
     <string name="ifl_a4_15">Wystąpił błąd podczas importowania kopii zapasowej.</string>
     <string name="ifl_a4_16">Edytor MobileConfig</string>
     <string name="ifl_a4_17">Analizator flag</string>
@@ -75,20 +74,20 @@
     <string name="ifl_a4_23">Zgodne flagi</string>
     <string name="ifl_a4_24">Niezgodne flagi</string>
     <string name="ifl_a4_25">Szukaj</string>
-    <string name="ifl_a4_26">Importuj nadpisania z kopii zapasowej</string>
-    <string name="ifl_a4_27">Użyj pliku kopii zapasowej zamiast analizowania istniejącego pliku nadpisań</string>
+    <string name="ifl_a4_26">Importuj ustawienia z kopii zapasowej</string>
+    <string name="ifl_a4_27">Użyj pliku kopii zapasowej zamiast analizowania istniejącego pliku ustawień</string>
     <string name="ifl_a4_28">Rozpocznij analizę</string>
     <string name="ifl_a4_29">Rozpocznij analizę z własną kopią zapasową</string>
     <string name="ifl_a4_30">Rozpocznij analizę z własnym mapowaniem</string>
     <string name="ifl_a4_31">Rozpocznij analizę z własną kopią i mapowaniem</string>
     <string name="ifl_a4_32">Skopiuj surowe mapowanie</string>
     <string name="ifl_a4_33">Skopiuj przetworzone mapowanie</string>
-    <string name="ifl_a4_34">Plik nadpisań jest uszkodzony lub nie istnieje</string>
+    <string name="ifl_a4_34">Plik ustawień jest uszkodzony lub nie istnieje</string>
     <string name="ifl_a4_35">Czy na pewno?</string>
-    <string name="ifl_a4_36">Nie można przywrócić usuniętego pliku nadpisań</string>
+    <string name="ifl_a4_36">Nie można przywrócić usuniętego pliku ustawień</string>
     <string name="ifl_a4_37">OK</string>
     <string name="ifl_a4_38">Anuluj</string>
-    <string name="ifl_a4_39">Błąd podczas odczytu pliku nadpisań.</string>
+    <string name="ifl_a4_39">Błąd podczas odczytu pliku ustawień.</string>
     <string name="ifl_a4_40">Pomyślnie wyeksportowano flagę: %1$s</string>
     <string name="ifl_a4_41">Błąd podczas zapisu zawartości do kopii zapasowej.</string>
     <string name="ifl_a4_42">Błąd podczas eksportowania kopii zapasowej.</string>
@@ -155,7 +154,7 @@
     <string name="ifl_a11_11">Więcej</string>
     <string name="ifl_a11_12">Włącz autoaktualizacje</string>
     <string name="ifl_a11_13">Jeśli dostępna będzie nowa wersja kopii zapasowej, zostanie ona zaktualizowana automatycznie</string>
-    <string name="ifl_a11_14">Ta kopia zostanie teraz zastosowana i zaktualizowana, jeśli autoaktualizacja będzie włączona</string>
+    <string name="ifl_a11_14">Ta kopia zostanie zastosowana i będzie aktualizowana automatycznie (jeśli włączono autoaktualizację).</string>
     <string name="ifl_a11_15">Kopie zapasowe</string>
     <string name="ifl_a11_16">O autorze</string>
     <string name="ifl_a11_17">Błąd podczas pobierania informacji o kopii zapasowej</string>
@@ -174,7 +173,7 @@
     <string name="ifl_a11_30">Błąd podczas przetwarzania pliku kopii zapasowej</string>
     <string name="ifl_a11_31">Błąd podczas przetwarzania pliku mapowania</string>
     <string name="ifl_a11_32">Błąd podczas odczytu pliku mapowania Instagrama</string>
-    <string name="ifl_a11_33">Błąd podczas przetwarzania pliku nadpisań</string>
+    <string name="ifl_a11_33">Błąd podczas przetwarzania pliku ustawień</string>
     <string name="ifl_a11_34">Nie znaleziono pliku mapowania</string>
     <string name="ifl_a11_35">Błąd podczas porównywania kopii z mapowaniem</string>
     <string name="ifl_a11_36">Błąd podczas kopiowania zawartości flagi</string>
@@ -183,7 +182,7 @@
     <string name="ifl_a11_39">Błąd podczas odczytu pliku kopii zapasowej</string>
     <string name="ifl_a11_40">Błąd podczas odczytu pliku mapowania</string>
     <string name="ifl_a11_41">Zaimportowano flagę %1$s z pliku kopii zapasowej</string>
-    <string name="ifl_a11_42">Błąd podczas importu nadpisań z pliku kopii zapasowej</string>
+    <string name="ifl_a11_42">Błąd podczas importu ustawień z pliku kopii zapasowej</string>
     <string name="ifl_a11_43">Pomyślnie zaimportowano flagę %1$s</string>
     <string name="ifl_a11_44">Pomyślnie zaimportowano %1$s</string>
     <string name="ifl_a0_01">Opcje kopii zapasowej</string>

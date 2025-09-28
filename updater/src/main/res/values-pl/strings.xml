@@ -6,14 +6,14 @@
     <string name="settings">Ustawienia</string>
 
     <!-- Setup Updater -->
-    <string name="setup_ifl">Konfiguracja aktualizatora</string>
+    <string name="setup_ifl">Konfiguracja Updatera</string>
     <string name="checker_arch">Architektura</string>
     <string name="checker_itype">Typ instalacji</string>
     <string name="unclone">Oryginał</string>
     <string name="clone">Klon</string>
     <string name="cont">Kontynuuj</string>
     <string name="warning">Ostrzeżenie</string>
-    <string name="warning_desc">Wybierz architekturę i typ instalacji.</string>
+    <string name="warning_desc">Proszę wybrać architekturę i typ instalacji.</string>
 
     <!-- Status Fragment -->
     <string name="authorized">Autoryzowano</string>
@@ -32,17 +32,17 @@
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="permission_rejected">Odmowa uprawnień</string>
-    <string name="perm_rejected_desc">PAutoryzuj Instafel Updater w aplikacji Shizuku</string>
+    <string name="perm_rejected_desc">Autoryzuj Instafel Updater w aplikacji Shizuku</string>
     <string name="please_start_shizuku">Uruchom Shizuku z poziomu aplikacji</string>
     <string name="please_install_shizuku">Zainstaluj Shizuku z Google Play</string>
     <string name="please_give_permission">Autoryzuj Instafel Updater w aplikacji Shizuku</string>
     <string name="running">Działa w trybie %1$s</string>
     <string name="stopped">Zatrzymano</string>
-    <string name="unauthorized">Nieautoryzowano</string>
-    <string name="checking">Sprawdzanie..</string>
+    <string name="unauthorized">Brak autoryzacji</string>
+    <string name="checking">Sprawdzanie...</string>
     <string name="not_found">Nie znaleziono pliku SU</string>
-    <string name="please_allow_root">Odmówiono dostępu root, zezwól w menedżerze uprawnień.</string>
-    <string name="please_install_root">Nie udało się uzyskać dostępu root</string>
+    <string name="please_allow_root">Odmówiono dostępu root. Zezwól w menedżerze uprawnień.</string>
+    <string name="please_install_root">Nie udało się uzyskać uprawnień root</string>
     <string name="please_allow_unrestiracted">Ustaw tryb baterii aplikacji na "Bez ograniczeń"</string>
     <string name="dialog_title">Przyznaj uprawnienia</string>
     <string name="dialog_desc">Instafel Updater wymaga uprawnień do powiadomień i roota, aby działać prawidłowo.</string>
@@ -94,7 +94,7 @@
     <string name="crash_logs">Zapisuj logi błędów</string>
     <string name="crash_logs_s">Rejestr zapisze każdy błąd w dzienniku dziennym.</string>
     <string name="disable_error">Wyłącz ostrzeżenia</string>
-    <string name="disable_error_s">Wyłącza powiadomienia o niekrytycznych błędachs</string>
+    <string name="disable_error_s">Wyłącza powiadomienia o niekrytycznych błędach</string>
     <string name="updater_guide">Przewodnik po Updaterze</string>
     <string name="updater_guide_s">Dowiedz się więcej o działaniu Updatera</string>
 </resources>
