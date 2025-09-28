@@ -1,5 +1,7 @@
 package instafel.patcher.core.patches
 
+import instafel.patcher.core.source.SmaliParser
+import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
@@ -31,7 +33,7 @@ class RemoveSnoozeWarning: InstafelPatch() {
                 }) {
                     is FileSearchResult.Success -> {
                         callerClass = result.file
-                        success("Class found successfully")
+                        success("DogfoodingEligibilityApi caller class found successfully")
                     }
                     is FileSearchResult.NotFound -> {
                         failure("Patch aborted because no any classes found.")
@@ -39,10 +41,11 @@ class RemoveSnoozeWarning: InstafelPatch() {
                 }
             }
         },
-        @PInfos.TaskInfo("Find and delete correct invoker line")
+        @PInfos.TaskInfo("Set check days duration to 0 for bypass it")
         object: InstafelTask() {
             override fun execute() {
                 val fContent = smaliUtils.getSmaliFileContent(callerClass.absolutePath).toMutableList()
+
                 val invokeLines = smaliUtils.getContainLines(fContent,
                     "invoke-direct/range",
                     "Lcom/instagram/release/lockout/DogfoodingEligibilityApi;")
@@ -51,9 +54,21 @@ class RemoveSnoozeWarning: InstafelPatch() {
                     failure("Correct invoke-direct/range line couldn't found.")
                 }
 
-                fContent.removeAt(invokeLines[0].num)
+                val longConversationLine = invokeLines[0].num - 4
+                val longConversationContent = fContent[longConversationLine]
+                if (!longConversationContent.contains("long-to-int")) {
+                    failure("long-to-int conversation couldn't found.")
+                }
+
+                val regex = Regex("""long-to-int\s+(v\d+)""")
+                val match = regex.find(longConversationContent)
+                val registerName = match?.groups?.get(1)?.value
+
+                val convertedValue = "    const/4 ${registerName}, 0x0"
+                Log.info("Day duration converted from '${longConversationContent.trim()}' to '${convertedValue.trim()}'")
+                fContent[invokeLines[0].num - 4] = convertedValue
                 FileUtils.writeLines(callerClass, fContent)
-                success("Caller removed in line ${invokeLines[0].num}")
+                success("Time duration successfully set to 0")
             }
         },
     )
