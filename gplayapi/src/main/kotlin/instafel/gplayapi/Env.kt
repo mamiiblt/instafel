@@ -95,8 +95,10 @@ class Env {
                                 lastCheckedVersion[0] = appInfo.getVer_name()
                                 val latestIflVersion = getLatestInstafelVersion()
                                 if (latestIflVersion != null && latestIflVersion != appInfo.getVer_name()) {
-                                    Log.println("I", "Triggering update, $latestIflVersion -> ${appInfo.getVer_name()}")
-                                    triggerUpdate(appInfo)
+                                    if (isNewerOrEqual(appInfo.getVer_name(), latestIflVersion)) {
+                                        Log.println("I", "Triggering update for ${appInfo.getVer_name()}")
+                                        triggerUpdate(appInfo)
+                                    }
                                 }
                             }
                         }
@@ -138,6 +140,22 @@ class Env {
             }
         }
 
+        fun isNewerOrEqual(newBuildVersion: String, latestReleaseVer: String): Boolean {
+            val verNewBuildParts = newBuildVersion.split(".").map { it.toInt() }
+            val verLatestRelParts = latestReleaseVer.split(".").map { it.toInt() }
+            val maxLength = maxOf(verNewBuildParts.size, verLatestRelParts.size)
+
+            for (i in 0 until maxLength) {
+                val num1 = if (i < verNewBuildParts.size) verNewBuildParts[i] else 0
+                val num2 = if (i < verLatestRelParts.size) verLatestRelParts[i] else 0
+
+                if (num1 < num2) return false
+                if (num1 > num2) return true
+            }
+            return true
+        }
+
+
         fun getLatestInstafelVersion(): String? {
             val request = Request.Builder()
                 .url(github_releases_link ?: "")
@@ -154,9 +172,12 @@ class Env {
 
                 for (line in releaseBody) {
                     if (line.contains("app.version_name")) {
-                        val verNameLines: List<String> = line.split("\\|");
-                        for (part in verNameLines) {
-                            if (!part.isEmpty() && General.isNumeric(part)) {
+                        val parts = line.split("|")
+                            .map { it.trim() }
+                            .filter { it.isNotEmpty() }
+
+                        for (part in parts) {
+                            if (!part.contains("app.version_name")) {
                                 return part.trim();
                             }
                         }
