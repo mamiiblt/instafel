@@ -23,10 +23,9 @@ const item = {
     show: { opacity: 1, y: 0 }
 };
 
-const formatDate = (isoString) => {
-    const { i18n } = useTranslation(["releases"]);
+const formatDate = (lang: string, isoString: string) => {
     const date = new Date(isoString);
-    return new Intl.DateTimeFormat(i18n.language, {
+    return new Intl.DateTimeFormat(lang, {
         day: "2-digit",
         month: "2-digit",
         year: "numeric",
@@ -80,7 +79,7 @@ export function ReleaseListCard({ cardBody, release, isLatest }: { cardBody: Rea
 }
 
 export function ReleaseListInfoCard({ release }: { release: ReleaseInfo }) {
-    const { t } = useTranslation(["releases"]);
+    const { t, i18n } = useTranslation(["releases"]);
     return (
         <>
             {release.patcherVersion && (
@@ -96,7 +95,7 @@ export function ReleaseListInfoCard({ release }: { release: ReleaseInfo }) {
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2">
                 <CalendarArrowUp className="h-4 w-4" />
-                {t("releasedOn", { dateFormatted: formatDate(release.releaseDate) })}
+                {t("releasedOn", { dateFormatted: formatDate(i18n.language, release.releaseDate) })}
             </div>
 
             {release.iflGenID != null && <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2">
