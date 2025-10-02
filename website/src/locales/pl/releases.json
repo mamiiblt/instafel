@@ -1,0 +1,11 @@
+{
+  "title": "Wydania",
+  "subtitle": "Tutaj znajdziesz wszystkie wydania",
+  "latestVersion": "Najnowsza wersja",
+  "releaseText": "Wydanie v{{version}}",
+  "basedOn": "Na podstawie v{{version}}",
+  "releasedOn": "Wydano {{dateFormatted}}",
+  "genByPatcher": "Wygenerowano przez Instafel Patcher v{{patcherVersion}}",
+  "changes": "Dziennik zmian",
+  "deleted": "Usunięto"
+}
