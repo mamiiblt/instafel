@@ -1,7 +1,7 @@
 "use client";
 
 import React, {useEffect, useState} from 'react';
-import {AnimatePresence, motion} from 'framer-motion';
+import { motion} from 'framer-motion';
 import {
     Download,
     Info,
@@ -17,13 +17,11 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
-import Navbar from "@/components/Navbar";
 import {contentAPIURL} from "@/wdata/flag_sdata";
-import { LoadingBar } from "@/components/LoadingBars";
 import {useSearchParams} from "next/navigation";
 import {toast} from "sonner";
+import {Page, PageHeader, PageLoading} from "@/components/PageUtils";
 
 interface RelInfo {
     manifest_version: number;
@@ -205,166 +203,147 @@ export default function ReleaseInfoPage() {
     };
 
     return (
-        <AnimatePresence>
+        <>
             {data ? (
-                <div>
-                    <Navbar />
-                    <div className="container max-w-5xl mx-auto py-8 px-4">
-                        <div className="flex flex-col items-center justify-center mb-8">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5 }}
-                                className="flex flex-col items-center justify-center"
-                            >
-                                <DownloadIcon className="h-8 w-8 mb-2" />
-                                <h1 className="text-3xl font-bold tracking-tight text-center">{t("title")}</h1>
-                                <p className="text-center text-muted-foreground mt-2">{t("subtitle", { version: data.patcher_data.ifl.version })}</p>
-                            </motion.div>
+                <Page
+                    width={6}
+                    header={<PageHeader
+                        icon={<DownloadIcon />}
+                        title={t("title")}
+                        subtitle={t("subtitle", { version: data.patcher_data.ifl.version })} />}
+                    content={<motion.div
+                        variants={container}
+                        initial="hidden"
+                        animate="show"
+                        className="space-y-6"
+                    >
+                        <div className="grid md:grid-cols-2 gap-4">
+                            <VariantCard
+                                badges={[
+                                    {
+                                        icon: Package,
+                                        text: t("unclone"),
+                                        variant: "secondary",
+                                        className: "mb-3",
+                                    },
+                                    {
+                                        icon: Star,
+                                        text: t("recommended"),
+                                        variant: "secondary",
+                                        className: "ml-1 mb-3",
+                                    }
+                                ]}
+                                cardTitle={t("releaseStr", { iflVersion: data.patcher_data.ifl.version })}
+                                cardDesc={t("uncloneDesc")}
+                                dialogInfo={{
+                                    title: t("uncloneInfo"),
+                                    description: t("uncloneInfoDesc")
+                                }}
+                                downloadText={t("download")}
+                                downloadDataInfo={{
+                                    iflVersion: data.patcher_data.ifl.version,
+                                    fileName: data.fnames.unclone
+                                }} />
+
+                            <VariantCard
+                                badges={[
+                                    {
+                                        icon: Package,
+                                        text: t("clone"),
+                                        variant: "secondary",
+                                        className: "mb-3",
+                                    }
+                                ]}
+                                cardTitle={t("releaseStr", { iflVersion: data.patcher_data.ifl.version })}
+                                cardDesc={t("cloneDesc")}
+                                dialogInfo={{
+                                    title: t("cloneInfo"),
+                                    description: t("cloneInfoDesc")
+                                }}
+                                downloadText={t("download")}
+                                downloadDataInfo={{
+                                    iflVersion: data.patcher_data.ifl.version,
+                                    fileName: data.fnames.clone
+                                }} />
                         </div>
 
-                        <motion.div
-                            variants={container}
-                            initial="hidden"
-                            animate="show"
-                            className="space-y-6"
-                        >
-                            <div className="grid md:grid-cols-2 gap-4">
-                                <VariantCard
-                                    badges={[
-                                        {
-                                            icon: Package,
-                                            text: t("unclone"),
-                                            variant: "secondary",
-                                            className: "mb-3",
-                                        },
-                                        {
-                                            icon: Star,
-                                            text: t("recommended"),
-                                            variant: "secondary",
-                                            className: "ml-1 mb-3",
-                                        }
-                                    ]}
-                                    cardTitle={t("releaseStr", { iflVersion: data.patcher_data.ifl.version })}
-                                    cardDesc={t("uncloneDesc")}
-                                    dialogInfo={{
-                                        title: t("uncloneInfo"),
-                                        description: t("uncloneInfoDesc")
-                                    }}
-                                    downloadText={t("download")}
-                                    downloadDataInfo={{
-                                        iflVersion: data.patcher_data.ifl.version,
-                                        fileName: data.fnames.unclone
-                                    }} />
-
-                                <VariantCard
-                                    badges={[
-                                        {
-                                            icon: Package,
-                                            text: t("clone"),
-                                            variant: "secondary",
-                                            className: "mb-3",
-                                        }
-                                    ]}
-                                    cardTitle={t("releaseStr", { iflVersion: data.patcher_data.ifl.version })}
-                                    cardDesc={t("cloneDesc")}
-                                    dialogInfo={{
-                                        title: t("cloneInfo"),
-                                        description: t("cloneInfoDesc")
-                                    }}
-                                    downloadText={t("download")}
-                                    downloadDataInfo={{
-                                        iflVersion: data.patcher_data.ifl.version,
-                                        fileName: data.fnames.clone
-                                    }} />
-                            </div>
-
-                            {data.changelogs.length > 0 && (
-                                <motion.div variants={item}>
-                                    <Card>
-                                        <CardHeader>
-                                            <CardTitle className="flex items-center gap-2">
-                                                <LogsIcon className="h-5 w-5" />
-                                                {t("changelogs")}
-                                            </CardTitle>
-                                        </CardHeader>
-                                        <CardContent>
-                                            <ul className="space-y-2">
-                                                {data.changelogs.map((log, idx) => (
-                                                    <li key={idx} className="flex items-center gap-3 text-sm">
-                                                        <div className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                                                        {log}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </CardContent>
-                                    </Card>
-                                </motion.div>
-                            )}
-
+                        {data.changelogs.length > 0 && (
                             <motion.div variants={item}>
                                 <Card>
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-2">
-                                            <Info className="h-5 w-5" />
-                                            {t("releaseInfo")}
+                                            <LogsIcon className="h-5 w-5" />
+                                            {t("changelogs")}
                                         </CardTitle>
                                     </CardHeader>
-                                    <CardContent className="space-y-4">
-                                        <div className="grid md:grid-cols-2 gap-4">
-                                            <div className="space-y-3">
-                                                <InfoTileComp
-                                                    icon={Calendar}
-                                                    title={t("releaseDate")}
-                                                    subtitle={formatDate(i18n.language, data.release_date)} />
-                                                <InfoTileComp
-                                                    icon={Package}
-                                                    title={t("igVersion")}
-                                                    subtitle={`v${data.patcher_data.ig.version} (${data.patcher_data.ig.ver_code})`} />
-                                                <InfoTileComp
-                                                    icon={Hash}
-                                                    title={t("generationId")}
-                                                    subtitle={data.patcher_data.ifl.gen_id} />
-                                            </div>
-
-                                            <div className="space-y-3">
-                                                <InfoTileComp
-                                                    icon={SquaresExcludeIcon}
-                                                    title={t("patcherInfo")}
-                                                    subtitle={t("patcherInfoDesc", {
-                                                        version: data.patcher.version,
-                                                        commit: data.patcher.commit
-                                                    })} />
-
-                                                <InfoTileComp
-                                                    icon={Shield}
-                                                    title={t("hash", { type: t("unclone")})}
-                                                    subtitle={data.hash.unclone}
-                                                    copiable={true}
-                                                    copyData={data.hash.unclone} />
-
-                                                <InfoTileComp
-                                                    icon={Shield}
-                                                    title={t("hash", { type: t("clone")})}
-                                                    subtitle={data.hash.clone}
-                                                    copiable={true}
-                                                    copyData={data.hash.clone} />
-                                            </div>
-                                        </div>
+                                    <CardContent>
+                                        <ul className="space-y-2">
+                                            {data.changelogs.map((log, idx) => (
+                                                <li key={idx} className="flex items-center gap-3 text-sm">
+                                                    <div className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                                                    {log}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </CardContent>
                                 </Card>
                             </motion.div>
+                        )}
+
+                        <motion.div variants={item}>
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="flex items-center gap-2">
+                                        <Info className="h-5 w-5" />
+                                        {t("releaseInfo")}
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-4">
+                                    <div className="grid md:grid-cols-2 gap-4">
+                                        <div className="space-y-3">
+                                            <InfoTileComp
+                                                icon={Calendar}
+                                                title={t("releaseDate")}
+                                                subtitle={formatDate(i18n.language, data.release_date)} />
+                                            <InfoTileComp
+                                                icon={Package}
+                                                title={t("igVersion")}
+                                                subtitle={`v${data.patcher_data.ig.version} (${data.patcher_data.ig.ver_code})`} />
+                                            <InfoTileComp
+                                                icon={Hash}
+                                                title={t("generationId")}
+                                                subtitle={data.patcher_data.ifl.gen_id} />
+                                        </div>
+
+                                        <div className="space-y-3">
+                                            <InfoTileComp
+                                                icon={SquaresExcludeIcon}
+                                                title={t("patcherInfo")}
+                                                subtitle={t("patcherInfoDesc", {
+                                                    version: data.patcher.version,
+                                                    commit: data.patcher.commit
+                                                })} />
+
+                                            <InfoTileComp
+                                                icon={Shield}
+                                                title={t("hash", { type: t("unclone")})}
+                                                subtitle={data.hash.unclone}
+                                                copiable={true}
+                                                copyData={data.hash.unclone} />
+
+                                            <InfoTileComp
+                                                icon={Shield}
+                                                title={t("hash", { type: t("clone")})}
+                                                subtitle={data.hash.clone}
+                                                copiable={true}
+                                                copyData={data.hash.clone} />
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
                         </motion.div>
-                    </div>
-                    <Footer />
-                </div>
-            ) : (
-                <>
-                    <Navbar />
-                    <LoadingBar />
-                    <Footer />
-                </>
-            )}
-        </AnimatePresence>
+                    </motion.div>} />
+            ) : <PageLoading/> }
+        </>
     );
 }

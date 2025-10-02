@@ -10,9 +10,9 @@ import { LoadingBar } from "@/components/LoadingBars";
 import {useRouter, useSearchParams} from "next/navigation";
 import {CardTitle} from "@/components/ui/card";
 import {
-    AlertCircle,
+    AlertCircle, Blocks,
     ChevronLeft,
-    ChevronRight,
+    ChevronRight, DownloadIcon,
     Package,
     Sparkles, Star
 } from "lucide-react";
@@ -25,6 +25,7 @@ import {
     PaginationPrevious
 } from "@/components/ui/pagination";
 import {ReleaseInfo, ReleaseListCard, ReleaseListInfoCard} from "@/components/release/ReleaseListComps";
+import {PageUtils} from "@/components/PageUtils";
 
 export default function ReleasesPage() {
     const { t } = useTranslation(["releases"]);
@@ -120,21 +121,11 @@ export default function ReleasesPage() {
             {data ? (
                 <div>
                     <Navbar />
-                    <div className="container max-w-5xl mx-auto py-8 px-4">
-                        {currentPage == 1 && <div className="text-center space-y-6 mb-12 py-12">
-                            <motion.div
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5 }}
-                            >
-                                <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-                                    {t("title")}
-                                </h1>
-                                <p className="text-xl text-muted-foreground max-w-2xl mt-3 mx-auto leading-relaxed">
-                                    {t("subtitle")}
-                                </p>
-                            </motion.div>
-                        </div>}
+                    <div className="container max-w-6xl mx-auto py-8 px-4">
+                        {currentPage == 1 && <PageUtils
+                            icon={<Blocks />}
+                            title={t("title")}
+                            subtitle={t("subtitle")} />}
 
                         <motion.div
                             variants={container}

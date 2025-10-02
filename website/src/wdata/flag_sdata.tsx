@@ -19,7 +19,7 @@ import {
   Wrench,
 } from "lucide-react";
 
-export const contentAPIURL = "https://content.api.instafel.app";
+export const contentAPIURL = "https://ubiquitous-eureka-vrpwxv7r446hwqg6-3000.app.github.dev";
 
 export const flagCategories = {
   "2589": {
