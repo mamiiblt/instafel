@@ -25,7 +25,7 @@ import {
   UploadIcon,
   User,
 } from "lucide-react";
-import { flagAPIURL } from "@/wdata/flag_sdata";
+import { contentAPIURL } from "@/wdata/flag_sdata";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { toast } from "sonner";
@@ -99,7 +99,7 @@ export default function UpdateFlagPage() {
 
     setIsLoading(true);
     try {
-      const response = await fetch(`${flagAPIURL}/content/flag/${id}`);
+      const response = await fetch(`${contentAPIURL}/content/flib/flag/${id}`);
 
       if (!response.ok) {
         if (response.status == 404) {
@@ -157,7 +157,7 @@ export default function UpdateFlagPage() {
 
     try {
       console.log(payload);
-      const res = await fetch(`${flagAPIURL}/creator/update-flag`, {
+      const res = await fetch(`${contentAPIURL}/creator/update-flag`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -52,7 +52,7 @@ const cardHoverVariants = {
   },
 };
 
-export default function Page() {
+export default function ContributorsPage() {
   const { t } = useTranslation("contributors");
   const mainDeveloper = {
     name: "mamii.",

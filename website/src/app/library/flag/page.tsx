@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
-import { flagAPIURL, flagCategories } from "@/wdata/flag_sdata";
+import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
 import { FlagIcon, GalleryVerticalEnd, Router, Search } from "lucide-react";
 import { LoadingBar } from "@/components/LoadingBars";
 import FlagLibraryCategoryItem from "@/components/FlagLibraryCategoryItem";
@@ -24,7 +24,7 @@ export default function LibraryBackupPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      var requestUrl = `${flagAPIURL}/content/sizes`;
+      var requestUrl = `${contentAPIURL}/content/flib/sizes`;
       const res = await fetch(requestUrl);
       const result = await res.json();
       setData(result);

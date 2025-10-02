@@ -8,7 +8,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { useTranslation } from "react-i18next";
-import { flagAPIURL, flagCategories } from "@/wdata/flag_sdata";
+import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
 import {
   Pagination,
   PaginationContent,
@@ -48,14 +48,14 @@ export default function FlagListPage() {
       try {
         const requestUrl =
           categoryID != 2589
-            ? `${flagAPIURL}/content/list?category_id=${categoryID}&page=${page}`
-            : `${flagAPIURL}/content/list_all?page=${page}`;
+            ? `${contentAPIURL}/content/flib/list?category_id=${categoryID}&page=${page}`
+            : `${contentAPIURL}/content/flib/list_all?page=${page}`;
         const res = await fetch(requestUrl);
         const data: RespTF = await res.json();
         console.log(data);
         setData(data);
       } catch (e) {
-        console.error("An error occured while sending / reading response:", e);
+        console.error("An error occurred while sending / reading response:", e);
       }
     };
     fetchData();

@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { flagAPIURL, flagCategories } from "@/wdata/flag_sdata";
+import { contentAPIURL, flagCategories } from "@/wdata/flag_sdata";
 import { useTranslation } from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -202,7 +202,7 @@ export default function CreateContentPage() {
 
     try {
       if (checkFlagsValidity(flags)) {
-        const res = await fetch(`${flagAPIURL}/creator/create-flag`, {
+        const res = await fetch(`${contentAPIURL}/creator/create-flag`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

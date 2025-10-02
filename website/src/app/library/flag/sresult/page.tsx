@@ -4,25 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { LoadingBar } from "@/components/LoadingBars";
 import Footer from "@/components/Footer";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { useTranslation } from "react-i18next";
-import { flagAPIURL, flagCategories } from "@/wdata/flag_sdata";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-  PaginationEllipsis,
-} from "@/components/ui/pagination";
+import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
 import {
   Copy,
   Trash,
-  ChevronLeft,
-  ChevronRight,
   SearchCheckIcon,
 } from "lucide-react";
 
@@ -48,7 +37,7 @@ export default function FlagListPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const requestUrl = `${flagAPIURL}/content/filter?sQuery=${encodeURIComponent(
+        const requestUrl = `${contentAPIURL}/content/flib/filter?sQuery=${encodeURIComponent(
           search
         )}`;
         const res = await fetch(requestUrl);
