@@ -1,37 +1,38 @@
-import { Geist } from "next/font/google";
+import {Geist} from "next/font/google";
 import "@/app/globals.css";
-import { ThemeProvider } from "@/components/providers/theme-provider";
-import { SITE_CONFIG } from "@/config/config";
-import { defaultMetadata } from "@/config/metadata";
+import {ThemeProvider} from "@/components/providers/theme-provider";
+import {SITE_CONFIG} from "@/config/config";
+import {defaultMetadata} from "@/config/metadata";
 import LocaleProvider from "@/i18n/LocaleProvider";
-import { Toaster } from "sonner";
+import {Toaster} from "sonner";
+
 const appleTitle = SITE_CONFIG.siteName;
 const geist = Geist({
-  subsets: ["latin"],
+    subsets: ["latin"],
 });
 
 export const metadata = defaultMetadata;
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
+                                       children,
+                                   }: Readonly<{
+    children: React.ReactNode;
 }>) {
-  return (
-    <html suppressHydrationWarning>
-      <head>
-        <meta name="apple-mobile-web-app-title" content={appleTitle} />
-      </head>
-      <body
-        className={`${geist.className} flex min-h-screen flex-col bg-background text-foreground`}
-      >
+    return (
+        <html suppressHydrationWarning>
+        <head>
+            <meta name="apple-mobile-web-app-title" content={appleTitle}/>
+        </head>
+        <body
+            className={`${geist.className} flex min-h-screen flex-col bg-background text-foreground`}
+        >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <LocaleProvider>
-            <Toaster />
-            <main className="flex-1">{children}</main>
-          </LocaleProvider>
+            <LocaleProvider>
+                <Toaster/>
+                <main className="flex-1">{children}</main>
+            </LocaleProvider>
         </ThemeProvider>
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }

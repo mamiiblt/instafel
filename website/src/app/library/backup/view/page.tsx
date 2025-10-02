@@ -5,19 +5,10 @@ import {useEffect, useState} from "react";
 import {Card, CardContent, CardTitle} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
-import {useParams, useSearchParams} from "next/navigation";
+import {useSearchParams} from "next/navigation";
 import {LoadingBar} from "@/components/LoadingBars";
 import Footer from "@/components/Footer";
-import {
-    Calendar,
-    Download,
-    FileDown,
-    FileSpreadsheet,
-    History,
-    Info,
-    Smartphone,
-    User,
-} from "lucide-react";
+import {Calendar, Download, FileDown, FileSpreadsheet, History, Info, Smartphone, User,} from "lucide-react";
 import Link from "next/link";
 import {Separator} from "@/components/ui/separator";
 import {useTranslation} from "react-i18next";

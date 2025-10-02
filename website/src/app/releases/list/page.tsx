@@ -1,34 +1,30 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import React, {useEffect, useState} from "react";
 import Footer from "@/components/Footer";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 import Navbar from "@/components/Navbar";
 import {contentAPIURL} from "@/wdata/flag_sdata";
-import { LoadingBar } from "@/components/LoadingBars";
+import {LoadingBar} from "@/components/LoadingBars";
 import {useRouter, useSearchParams} from "next/navigation";
 import {CardTitle} from "@/components/ui/card";
-import {
-    AlertCircle, Blocks,
-    ChevronLeft,
-    ChevronRight, DownloadIcon,
-    Package,
-    Sparkles, Star
-} from "lucide-react";
+import {AlertCircle, Blocks, ChevronLeft, ChevronRight, Package, Sparkles} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
 import {
     Pagination,
     PaginationContent,
     PaginationEllipsis,
-    PaginationItem, PaginationLink, PaginationNext,
+    PaginationItem,
+    PaginationLink,
+    PaginationNext,
     PaginationPrevious
 } from "@/components/ui/pagination";
 import {ReleaseInfo, ReleaseListCard, ReleaseListInfoCard} from "@/components/release/ReleaseListComps";
 import {PageUtils} from "@/components/PageUtils";
 
 export default function ReleasesPage() {
-    const { t } = useTranslation(["releases"]);
+    const {t} = useTranslation(["releases"]);
     const searchParams = useSearchParams();
     const currentPage = Number(searchParams.get("page")) ?? 1;
     const router = useRouter();
@@ -64,7 +60,7 @@ export default function ReleasesPage() {
     }, [currentPage]);
 
     const container = {
-        hidden: { opacity: 0 },
+        hidden: {opacity: 0},
         show: {
             opacity: 1,
             transition: {
@@ -72,7 +68,6 @@ export default function ReleasesPage() {
             }
         }
     };
-
 
 
     const generatePageNumbers = () => {
@@ -112,7 +107,7 @@ export default function ReleasesPage() {
 
     const handlePageChange = (newPage: number) => {
         const params = new URLSearchParams(searchParams.toString());
-        params.set("page",  newPage.toString());
+        params.set("page", newPage.toString());
         router.push(`?${params.toString()}`);
     };
 
@@ -120,12 +115,12 @@ export default function ReleasesPage() {
         <AnimatePresence>
             {data ? (
                 <div>
-                    <Navbar />
+                    <Navbar/>
                     <div className="container max-w-6xl mx-auto py-8 px-4">
                         {currentPage == 1 && <PageUtils
-                            icon={<Blocks />}
+                            icon={<Blocks/>}
                             title={t("title")}
-                            subtitle={t("subtitle")} />}
+                            subtitle={t("subtitle")}/>}
 
                         <motion.div
                             variants={container}
@@ -141,44 +136,44 @@ export default function ReleasesPage() {
                                             isLatest={true}
                                             cardBody={<div className="space-y-2 flex-1">
                                                 <Badge className="mb-2">
-                                                    <Sparkles className="mr-1 h-3 w-3" />
+                                                    <Sparkles className="mr-1 h-3 w-3"/>
                                                     {t("latestVersion")}
                                                 </Badge>
 
                                                 <CardTitle className="flex items-center gap-2 text-3xl font-bold">
-                                                    <Package className="h-7 w-7" />
-                                                    {t("releaseText", { version: release.iflVersion })}
+                                                    <Package className="h-7 w-7"/>
+                                                    {t("releaseText", {version: release.iflVersion})}
                                                 </CardTitle>
 
-                                                <ReleaseListInfoCard release={release} />
-                                            </div>} />
+                                                <ReleaseListInfoCard release={release}/>
+                                            </div>}/>
                                         : <ReleaseListCard
                                             release={release}
                                             isLatest={false}
                                             cardBody={<div className="space-y-2 flex-1">
                                                 <div className="flex items-center gap-2 flex-wrap">
                                                     <CardTitle className="flex items-center gap-2">
-                                                        <Package className="h-5 w-5" />
-                                                        {t("releaseText", { version: release.iflVersion })}
+                                                        <Package className="h-5 w-5"/>
+                                                        {t("releaseText", {version: release.iflVersion})}
                                                     </CardTitle>
                                                     {release.isDeleted && (
                                                         <Badge variant="destructive">
-                                                            <AlertCircle className="mr-1 h-3 w-3" />
+                                                            <AlertCircle className="mr-1 h-3 w-3"/>
                                                             {t("deleted")}
                                                         </Badge>
                                                     )}
                                                 </div>
 
-                                                <ReleaseListInfoCard release={release} />
-                                            </div>} />}
+                                                <ReleaseListInfoCard release={release}/>
+                                            </div>}/>}
                                 </div>
                             ))}
                         </motion.div>
 
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.8, duration: 0.6 }}
+                            initial={{opacity: 0, y: 20}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{delay: 0.8, duration: 0.6}}
                             className="flex justify-center mt-6"
                         >
                             <Pagination>
@@ -197,7 +192,7 @@ export default function ReleasesPage() {
                                             }
                           `}
                                         >
-                                            <ChevronLeft className="h-4 w-4" />
+                                            <ChevronLeft className="h-4 w-4"/>
                                             <span className="hidden sm:inline">Previous</span>
                                         </PaginationPrevious>
                                     </PaginationItem>
@@ -205,7 +200,7 @@ export default function ReleasesPage() {
                                     {generatePageNumbers().map((pageNum, index) => (
                                         <PaginationItem key={index}>
                                             {pageNum === "ellipsis" ? (
-                                                <PaginationEllipsis className="px-3 py-2" />
+                                                <PaginationEllipsis className="px-3 py-2"/>
                                             ) : (
                                                 <PaginationLink
                                                     onClick={() =>
@@ -243,20 +238,20 @@ export default function ReleasesPage() {
                           `}
                                         >
                                             <span className="hidden sm:inline">Next</span>
-                                            <ChevronRight className="h-4 w-4" />
+                                            <ChevronRight className="h-4 w-4"/>
                                         </PaginationNext>
                                     </PaginationItem>
                                 </PaginationContent>
                             </Pagination>
                         </motion.div>
                     </div>
-                    <Footer />
+                    <Footer/>
                 </div>
             ) : (
                 <>
-                    <Navbar />
-                    <LoadingBar />
-                    <Footer />
+                    <Navbar/>
+                    <LoadingBar/>
+                    <Footer/>
                 </>
             )}
         </AnimatePresence>
