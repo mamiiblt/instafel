@@ -1,0 +1,11 @@
+{
+  "title": "Sürümler",
+  "subtitle": "Yayımlanmış tüm sürümleri buradan bulabilirsin!",
+  "latestVersion": "Son Sürüm",
+  "releaseText": "Sürüm v{{version}}",
+  "basedOn": "v{{version}} taban alındı",
+  "releasedOn": "{{dateFormatted}} tarihinde yayınlandı",
+  "genByPatcher": "Instafel Patcher v{{patcherVersion}} ile üretildi",
+  "changes": "Değişiklik Günlüğü",
+  "deleted": "Silindi"
+}
