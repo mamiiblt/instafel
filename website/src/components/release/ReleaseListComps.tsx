@@ -42,7 +42,7 @@ export function ReleaseListCard({ cardBody, release, isLatest }: { cardBody: Rea
             whileHover={{ scale: 1.01 }}
             transition={{ type: 'spring', stiffness: 300 }}
         >
-            <Link href={`/download?version=v${release.iflVersion}`}>
+            <Link href={`/releases/view?version=${release.iflVersion}`}>
                 <Card className={`${ isLatest == true ? "border-2 border-primary" : "" }`}>
                     <CardHeader>
                         <div className="flex items-start justify-between gap-4">
