@@ -13,7 +13,7 @@ import {
     Package,
     Shield,
     SquaresExcludeIcon,
-    Star
+    Star, Trash
 } from 'lucide-react';
 import {Badge} from '@/components/ui/badge';
 import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
@@ -67,7 +67,7 @@ const item = {
 };
 
 
-export function InfoTileComp({icon: Icon, title, subtitle, copiable, copyData}: {
+function InfoTileComp({icon: Icon, title, subtitle, copiable, copyData}: {
     icon: LucideIcon
     title: string
     subtitle: string
@@ -90,7 +90,7 @@ export function InfoTileComp({icon: Icon, title, subtitle, copiable, copyData}: 
 
 type BadgeVariant = React.ComponentProps<typeof Badge>["variant"];
 
-export function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadText, downloadDataInfo}: {
+function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadText, downloadDataInfo, isDeleted}: {
     badges: {
         text: string;
         icon: LucideIcon;
@@ -108,21 +108,20 @@ export function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadTe
         iflVersion: number;
         fileName: string;
     }
+    isDeleted: boolean;
 }) {
     return (
         <motion.div variants={item}>
             <Card className="h-full border-2 hover:border-primary transition-colors">
                 <CardHeader>
-                    <div className="flex items-start justify-between    ">
+                    <div className="flex items-start justify-between">
                         <div className="flex flex-wrap gap-2">
-                            {badges.map(({text, icon: Icon, variant, className}, i) => (
-                                <Badge key={i}
-                                       variant={variant}
-                                       className={className}>
-                                    <Icon className={"mr-1 h-3 w-3"}/>
-                                    {text}
-                                </Badge>
-                            ))}
+                          {badges.filter(Boolean).map(({text, icon: Icon, variant, className}, i) => (
+                              <Badge key={i} variant={variant} className={className}>
+                                  <Icon className={"mr-1 h-3 w-3"}/>
+                                  {text}
+                              </Badge>
+                          ))}
                         </div>
                     </div>
                     <CardTitle className="text-2xl mb-2">{cardTitle}</CardTitle>
@@ -133,6 +132,7 @@ export function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadTe
                         <Button
                             className="flex-1"
                             size="lg"
+                            disabled={isDeleted}
                             onClick={() =>
                                 window.open(
                                     `https://github.com/mamiiblt/instafel/releases/download/v${downloadDataInfo.iflVersion}/${downloadDataInfo.fileName}`,
@@ -242,6 +242,12 @@ export default function ReleaseInfoPage() {
                                         text: t("recommended"),
                                         variant: "secondary",
                                         className: "ml-1 mb-3",
+                                    },
+                                    data.is_deleted == true && {
+                                        icon: Trash,
+                                        text: t("deleted"),
+                                        variant: "destructive",
+                                        className: "ml-1 mb-3"
                                     }
                                 ]}
                                 cardTitle={t("releaseStr", {iflVersion: data.patcher_data.ifl.version})}
@@ -254,7 +260,8 @@ export default function ReleaseInfoPage() {
                                 downloadDataInfo={{
                                     iflVersion: data.patcher_data.ifl.version,
                                     fileName: data.fnames.unclone
-                                }}/>
+                                }}
+                                isDeleted={data.is_deleted}/>
 
                             <VariantCard
                                 badges={[
@@ -263,6 +270,12 @@ export default function ReleaseInfoPage() {
                                         text: t("clone"),
                                         variant: "secondary",
                                         className: "mb-3",
+                                    },
+                                    data.is_deleted == true && {
+                                        icon: Trash,
+                                        text: t("deleted"),
+                                        variant: "destructive",
+                                        className: "ml-1 mb-3"
                                     }
                                 ]}
                                 cardTitle={t("releaseStr", {iflVersion: data.patcher_data.ifl.version})}
@@ -275,7 +288,8 @@ export default function ReleaseInfoPage() {
                                 downloadDataInfo={{
                                     iflVersion: data.patcher_data.ifl.version,
                                     fileName: data.fnames.clone
-                                }}/>
+                                }}
+                                isDeleted={data.is_deleted}/>
                         </div>
 
                         {data.changelogs.length > 0 && (
@@ -312,42 +326,44 @@ export default function ReleaseInfoPage() {
                                 <CardContent className="space-y-4">
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-3">
-                                            <InfoTileComp
+                                            {data.release_date && <InfoTileComp
                                                 icon={Calendar}
                                                 title={t("releaseDate")}
-                                                subtitle={formatDate(i18n.language, data.release_date)}/>
+                                                subtitle={formatDate(i18n.language, data.release_date)}/>}
+
                                             <InfoTileComp
                                                 icon={Package}
                                                 title={t("igVersion")}
                                                 subtitle={`v${data.patcher_data.ig.version} (${data.patcher_data.ig.ver_code})`}/>
-                                            <InfoTileComp
+
+                                            {data.patcher_data.ifl.gen_id && <InfoTileComp
                                                 icon={Hash}
                                                 title={t("generationId")}
-                                                subtitle={data.patcher_data.ifl.gen_id}/>
+                                                subtitle={data.patcher_data.ifl.gen_id}/>}
                                         </div>
 
                                         <div className="space-y-3">
-                                            <InfoTileComp
+                                            {data.patcher.version && <InfoTileComp
                                                 icon={SquaresExcludeIcon}
                                                 title={t("patcherInfo")}
                                                 subtitle={t("patcherInfoDesc", {
                                                     version: data.patcher.version,
                                                     commit: data.patcher.commit
-                                                })}/>
+                                                })}/>}
 
-                                            <InfoTileComp
+                                            {data.hash.unclone && <InfoTileComp
                                                 icon={Shield}
                                                 title={t("hash", {type: t("unclone")})}
                                                 subtitle={data.hash.unclone}
                                                 copiable={true}
-                                                copyData={data.hash.unclone}/>
+                                                copyData={data.hash.unclone}/>}
 
-                                            <InfoTileComp
+                                            {data.hash.clone && <InfoTileComp
                                                 icon={Shield}
                                                 title={t("hash", {type: t("clone")})}
                                                 subtitle={data.hash.clone}
                                                 copiable={true}
-                                                copyData={data.hash.clone}/>
+                                                copyData={data.hash.clone}/>}
                                         </div>
                                     </div>
                                 </CardContent>

@@ -21,7 +21,7 @@ import {
     PaginationPrevious
 } from "@/components/ui/pagination";
 import {ReleaseInfo, ReleaseListCard, ReleaseListInfoCard} from "@/components/release/ReleaseListComps";
-import {PageUtils} from "@/components/PageUtils";
+import {Page, PageLoading, PageHeader} from "@/components/PageUtils";
 
 export default function ReleasesPage() {
     const {t} = useTranslation(["releases"]);
@@ -114,14 +114,13 @@ export default function ReleasesPage() {
     return (
         <AnimatePresence>
             {data ? (
-                <div>
-                    <Navbar/>
-                    <div className="container max-w-6xl mx-auto py-8 px-4">
-                        {currentPage == 1 && <PageUtils
-                            icon={<Blocks/>}
-                            title={t("title")}
-                            subtitle={t("subtitle")}/>}
-
+                <Page
+                    width={6}
+                    header={currentPage == 1 && <PageHeader
+                        icon={<Blocks/>}
+                        title={t("title")}
+                        subtitle={t("subtitle")}/>}
+                    content={<>
                         <motion.div
                             variants={container}
                             initial="hidden"
@@ -244,16 +243,8 @@ export default function ReleasesPage() {
                                 </PaginationContent>
                             </Pagination>
                         </motion.div>
-                    </div>
-                    <Footer/>
-                </div>
-            ) : (
-                <>
-                    <Navbar/>
-                    <LoadingBar/>
-                    <Footer/>
-                </>
-            )}
+                    </>}/>
+            ) : (<PageLoading />)}
         </AnimatePresence>
     );
 }
