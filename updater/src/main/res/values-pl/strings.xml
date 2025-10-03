@@ -19,13 +19,13 @@
     <string name="authorized">Autoryzowano</string>
     <string name="not_installed">Shizuku nie jest zainstalowane</string>
     <string name="start_service">Shizuku nie jest uruchomione</string>
-    <string name="shiuku_status">Status Shizuku</string>
+    <string name="shizuku_status">Status Shizuku</string>
     <string name="root_status">Status roota</string>
     <string name="selected_arch">Wybrana architektura</string>
     <string name="selected_installation_type">Wybrany typ instalacji</string>
-    <string name="battery_restiriction">Działanie w tle</string>
-    <string name="battery_restiricted">Ograniczone</string>
-    <string name="battery_unrestiricted">Nieograniczone</string>
+    <string name="battery_restriction">Działanie w tle</string>
+    <string name="battery_restricted">Ograniczone</string>
+    <string name="battery_unrestricted">Nieograniczone</string>
     <string name="battery_dialog_title">Zezwól na tryb bez ograniczeń</string>
     <string name="battery_dialog_msg">Aby Instafel Updater działał poprawnie, aplikacja nie może mieć ograniczeń w działaniu w tle.</string>
     <string name="updater_status">Status Updatera</string>
