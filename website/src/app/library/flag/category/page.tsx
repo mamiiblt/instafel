@@ -60,6 +60,8 @@ export default function FlagListPage() {
     }, [categoryID, page]);
 
     const categoryData = flagCategories[categoryID];
+    const flags = data?.flags ?? [];
+    const categorySize = data?.category_size ?? 0;
 
     const totalPages = data ? data.page_size : 0;
     const currentPage = data?.page || 1;
@@ -114,7 +116,7 @@ export default function FlagListPage() {
                         icon={categoryData.icon}
                         title={t(categoryData.cif, {ns: "fcategories"})}
                         subtitle={t("flag_found", {
-                            count: data.category_size,
+                            count: categorySize,
                         })}/>}
                     content={<motion.div
                         initial={{opacity: 0, y: 30}}
@@ -123,7 +125,7 @@ export default function FlagListPage() {
                         className="grid gap-4"
                     >
                         <div className="grid gap-4 mb-4">
-                            {data.flags.map((flag, index) => (
+                            {flags.map((flag, index) => (
                                 <Link
                                     key={index}
                                     href={`/library/flag/view?id=${flag.id}`}
