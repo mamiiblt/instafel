@@ -10,6 +10,7 @@ import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
 import kotlinx.coroutines.runBlocking
 import java.io.File
+import kotlin.system.exitProcess
 
 @PInfos.PatchInfo(
     name = "Unlock Developer Options",
@@ -23,31 +24,16 @@ class UnlockDeveloperOptions: InstafelPatch() {
     lateinit var unlockRefSmali: File
 
     override fun initializeTasks() = mutableListOf(
-        @PInfos.TaskInfo("Find reference smali file in X folders")
-        object: InstafelTask() {
-            override fun execute() {
-                when (val result = runBlocking {
-                    SearchUtils.getFileContainsAllCords(smaliUtils,
-                        listOf(
-                            listOf(".field public final", ":Lcom/google/common/collect/EvictingQueue;"),
-                            listOf(".field public final", ":Lcom/instagram/common/session/UserSession;"),
-                            listOf(".field public", ":Ljava/lang/String;"),
-                            listOf(".super LX/"),
-                        ))
-                }) {
-                    is FileSearchResult.Success -> {
-                        unlockRefSmali = result.file
-                        success("Reference class found successfully")
-                    }
-                    is FileSearchResult.NotFound -> {
-                        failure("Patch aborted because no any classes found.")
-                    }
-                }
-            }
-        },
         @PInfos.TaskInfo("Get constraint definition class")
         object: InstafelTask() {
             override fun execute() {
+                val unlockRefClassResults = smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
+                unlockRefSmali = if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
+                    failure("BaseFragmentActivity class can't be found / selected.")
+                    exitProcess(-1)
+                } else {
+                    unlockRefClassResults.first()
+                }
                 val referenceFileContent = smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
                 val linesWithInvokeAndUserSession: List<LineData> = smaliUtils.getContainLines(
                     referenceFileContent, "(Lcom/instagram/common/session/UserSession;)Z", "invoke-static"
