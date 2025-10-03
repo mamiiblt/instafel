@@ -3,12 +3,12 @@
   "uploaded_at": "{{date_str}} tarihinde eklendi",
   "removed_with": "Sürüm v{{version}} ile kaldırıldı",
   "loading": "Yükleniyor...",
-  "flag_found": "Bu kategoride toplamda {{fcount}} bayrak var",
+  "flag_found": "Bu kategoride toplamda {{count}} bayrak var",
   "page_info": "Sayfa {{current}}/{{total}}",
   "prev": "Önceki",
   "next": "Sonraki",
   "results": "Arama sonuçları",
-  "s_flag_found": "Toplam olarak '{{query}}' terimleri ile alakalı olan {{fcount}} sonuç bulundu",
+  "s_flag_found": "Toplam olarak '{{query}}' terimleri ile alakalı olan {{count}} sonuç bulundu",
   "found_footer": {
     "down": "{{size}} bayrak bulundu. Doğru bayrağı bulamadıysan, farklı arama terimleri denemeyi unutma.",
     "up": "Toplam 15 bayrak bulundu. Varsayılan olarak sonuçlar 15 öğe ile sınırlandırılmıştır. Daha spesifik terimler kullanarak aramanı daraltmayı deneyebilirsin."

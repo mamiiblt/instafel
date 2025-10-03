@@ -1,6 +1,10 @@
 {
   "title": "Biblioteka flag",
   "desc": "Ta biblioteka pozwala uzyskać informacje o flagach Instagrama",
-  "num_flag": "{{fsize}} flag",
+  "num_flag_zero": "Brak flag",
+  "num_flag_one": "{{count}} flaga",
+  "num_flag_few": "{{count}} flagi",
+  "num_flag_many": "{{count}} flag",
+  "num_flag_other": "{{count}} flag",
   "search_placeholder": "Wyszukaj w bibliotece..."
 }

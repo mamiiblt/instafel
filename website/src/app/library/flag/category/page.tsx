@@ -114,7 +114,7 @@ export default function FlagListPage() {
                         icon={categoryData.icon}
                         title={t(categoryData.cif, {ns: "fcategories"})}
                         subtitle={t("flag_found", {
-                            fcount: data.category_size,
+                            count: data.category_size,
                         })}/>}
                     content={<motion.div
                         initial={{opacity: 0, y: 30}}
