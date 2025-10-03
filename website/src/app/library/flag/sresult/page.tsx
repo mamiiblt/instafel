@@ -54,7 +54,7 @@ export default function FlagListPage() {
                         icon={<SearchCheckIcon/>}
                         title={t("results")}
                         subtitle={t("s_flag_found", {
-                            fcount: data.result_size,
+                            count: data.result_size,
                             query: decodeURIComponent(search),
                         })}/>}
                     content={<>

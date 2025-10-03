@@ -2,6 +2,7 @@
 
 import {motion} from "framer-motion";
 import {Button} from "@/components/ui/button";
+import {useTranslation} from "react-i18next";
 import {Home, RotateCcw} from "lucide-react";
 import Link from "next/link";
 
@@ -10,8 +11,10 @@ export default function Error({
                                   reset,
                               }: {
     error: Error & { digest?: string };
-    reset: () => void;
+    reset: () => void;  
 }) {
+    const {t} = useTranslation("misc");
+
     return (
         <motion.div
             initial={{opacity: 0, y: 40}}
@@ -25,7 +28,7 @@ export default function Error({
                 transition={{delay: 0.2, duration: 0.4}}
                 className="text-3xl md:text-4xl font-bold tracking-tight"
             >
-                Something went wrong
+                {t("error.1")}
             </motion.h2>
             <motion.p
                 initial={{opacity: 0}}
@@ -47,7 +50,7 @@ export default function Error({
                     className="w-full sm:w-auto hover:scale-105 transition-transform"
                 >
                     <RotateCcw className="w-4 h-4 mr-2"/>
-                    Retry
+                    {t("error.2")}
                 </Button>
                 <Button
                     asChild
@@ -55,7 +58,7 @@ export default function Error({
                 >
                     <Link href="/">
                         <Home className="w-4 h-4 mr-2"/>
-                        Home
+                        {t("error.3")}
                     </Link>
                 </Button>
             </motion.div>

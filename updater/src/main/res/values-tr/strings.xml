@@ -11,13 +11,13 @@
     <string name="cont">Devam Et</string>
     <string name="warning">Uyarı</string>
     <string name="warning_desc">Lütfe mimari ve kurulum türü seçiniz.</string>
-    <string name="shiuku_status">Shizuku Durumu</string>
+    <string name="shizuku_status">Shizuku Durumu</string>
     <string name="root_status">Root Durumu</string>
     <string name="selected_arch">Kontrolcü Mimarisi</string>
     <string name="selected_installation_type">Kontrolcü Kurulum Türü</string>
-    <string name="battery_restiriction">Pil Kısıtlaması</string>
-    <string name="battery_restiricted">Kısıtlı</string>
-    <string name="battery_unrestiricted">Kısıtlama Yok</string>
+    <string name="battery_restriction">Pil Kısıtlaması</string>
+    <string name="battery_restricted">Kısıtlı</string>
+    <string name="battery_unrestricted">Kısıtlama Yok</string>
     <string name="battery_dialog_title">Kısıtlama Modunu Kaldırın</string>
     <string name="battery_dialog_msg">Instafel Updater\'ın düzgün çalışabilmesi için uygulamanın pil modunun kısıtlanmamış olması gerekmektedir.</string>
     <string name="updater_status">Güncelleyici Durumu</string>
@@ -79,7 +79,7 @@
     <string name="disable_error_s">Çok önemli olmayan uyarılar için bildirim göndermez.</string>
     <string name="updater_guide">Updater Kılavuzu</string>
     <string name="updater_guide_s">Instafel Updater\'i nasıl kullanacağınızı öğrenin</string>
-    <string name="checking">Kontrol ediliyor..</string>
+    <string name="checking">Kontrol ediliyor...</string>
     <string name="not_found">Cihazınızda root bulunamadı, lütfen manager\'den izin verin.</string>
     <string name="please_allow_root">Root erişimi reddedildi, lütfen managerden izin verin.</string>
     <string name="authorized">Yetkilendirildi</string>

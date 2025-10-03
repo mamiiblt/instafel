@@ -67,8 +67,8 @@ public class InfoFragment extends Fragment {
        STRING_UNAUTHORIZED = ctx.getString(R.string.unauthorized);
        STRING_NOT_FOUND = ctx.getString(R.string.not_found);
        STRING_STOPPED = ctx.getString(R.string.stopped);
-       STRING_RESTRICTED = ctx.getString(R.string.battery_restiricted);
-       STRING_UNRESTICTED = ctx.getString(R.string.battery_unrestiricted);
+       STRING_RESTRICTED = ctx.getString(R.string.battery_restricted);
+       STRING_UNRESTICTED = ctx.getString(R.string.battery_unrestricted);
 
        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
        SharedPreferences.Editor prefEditor = sharedPreferences.edit();
@@ -107,7 +107,7 @@ public class InfoFragment extends Fragment {
                Utils.showDialog(getActivity(), "Root access cloudn't ensured", "Please give root access to Instafel Updater from your root manager (Magisk, KernelSU, KernelSU Next, APatch etc.) to use Updater with root mode\n\nApp Name: Instafel Updater\nApp Package: me.mamiiblt.instafel.updater");
            }
        } else {
-           viewStatusTitle.setText(this.getString(R.string.shiuku_status));
+           viewStatusTitle.setText(this.getString(R.string.shizuku_status));
            iconProvider.setImageDrawable(getActivity().getDrawable(R.drawable.shizuku));
            warIconProvider.setVisibility(View.GONE);
            if (Utils.isShizukuInstalled(getActivity())) {

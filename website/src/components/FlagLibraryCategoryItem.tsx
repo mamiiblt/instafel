@@ -39,7 +39,7 @@ export default function FlagLibraryCategoryItem({
         <div className="mt-2 text-center">
           <span className="text-xs font-medium px-2 py-1 rounded-full bg-muted text-muted-foreground">
             {t("num_flag", {
-              fsize: fsize,
+              count: fsize,
             })}
           </span>
         </div>
