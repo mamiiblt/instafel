@@ -2,10 +2,13 @@
 
 import {motion} from "framer-motion";
 import {Button} from "@/components/ui/button";
+import {useTranslation} from "react-i18next";
 import {Home} from "lucide-react";
 import Link from "next/link";
 
 export default function NotFound() {
+    const {t} = useTranslation("misc");
+
     return (
         <motion.div
             initial={{opacity: 0, y: 40, scale: 0.95}}
@@ -25,10 +28,10 @@ export default function NotFound() {
                     transition={{type: "spring", stiffness: 200}}
                     className="text-2xl md:text-3xl text-red-500 font-bold"
                 >
-                    Oops!
+                    {t("not_found.1")}
                 </motion.h2>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                    Page Not Found
+                    {t("not_found.2")}
                 </h2>
             </motion.div>
             <motion.p
@@ -37,8 +40,7 @@ export default function NotFound() {
                 transition={{delay: 0.4}}
                 className="text-base md:text-lg text-muted-foreground max-w-lg mx-auto"
             >
-                The page you are looking for does not exist. Please check the URL or go
-                back to the homepage.
+                {t("not_found.3")}
             </motion.p>
             <motion.div
                 initial={{opacity: 0, y: 20}}
@@ -51,7 +53,7 @@ export default function NotFound() {
                 >
                     <Link href="/" className="flex items-center gap-3">
                         <Home className="h-5 w-5"/>
-                        <span>Return Home</span>
+                        <span>{t("not_found.4")}</span>
                     </Link>
                 </Button>
             </motion.div>
