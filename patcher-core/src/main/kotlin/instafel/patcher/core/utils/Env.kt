@@ -56,6 +56,7 @@ object Env {
             if (!fileProj.exists()) {
                 Project = ProjectPOJO(
                     apiBase = "api.mamii.me/ifl",
+                    contentApiUrl = "content.api.instafel.app",
                     igVersion = getIgVerCodeAndVersion().split("#")[0],
                     igVersionCode = getIgVerCodeAndVersion().split("#")[1]
                 )

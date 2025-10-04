@@ -17,7 +17,6 @@ import org.json.JSONObject
 )
 class GetGenerationInfo: InstafelPatch() {
 
-    var apiBase: String = Env.Project.apiBase
     var httpClient = OkHttpClient()
     var isProdMode = Env.Config.productionMode
 
@@ -27,8 +26,8 @@ class GetGenerationInfo: InstafelPatch() {
             override fun execute() {
                 if (isProdMode) {
                     val iflVersionRequest = Request.Builder()
-                        .url("https://$apiBase/manager_new/lastInstafelData")
-                        .addHeader("Authorization", Env.Config.managerToken)
+                        .url("https://${Env.Project.contentApiUrl}/manager/get-latest-ifl-version")
+                        .addHeader("manager-token", Env.Config.managerToken)
                         .build()
 
                     try {
@@ -60,8 +59,8 @@ class GetGenerationInfo: InstafelPatch() {
             override fun execute() {
                 if (isProdMode) {
                     val genIDRequest = Request.Builder()
-                        .url("https://$apiBase/manager_new/createGenerationId")
-                        .addHeader("Authorization", Env.Config.managerToken)
+                        .url("https://${Env.Project.contentApiUrl}/manager/get-new-gen-id")
+                        .addHeader("manager-token", Env.Config.managerToken)
                         .build()
 
                     try {
