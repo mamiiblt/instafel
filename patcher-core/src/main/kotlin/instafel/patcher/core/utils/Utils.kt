@@ -69,21 +69,15 @@ object Utils {
         }
     }
 
-    fun getFileMD5(file: File): String? {
-        return try {
-            FileInputStream(file).use { fis ->
-                val md = MessageDigest.getInstance("MD5")
-                val buffer = ByteArray(8192)
-                var bytesRead: Int
-                while (fis.read(buffer).also { bytesRead = it } != -1) {
-                    md.update(buffer, 0, bytesRead)
-                }
-                md.digest().joinToString("") { "%02x".format(it) }
+    fun getFileMD5(file: File): String {
+        return FileInputStream(file).use { fis ->
+            val md = MessageDigest.getInstance("MD5")
+            val buffer = ByteArray(8192)
+            var bytesRead: Int
+            while (fis.read(buffer).also { bytesRead = it } != -1) {
+                md.update(buffer, 0, bytesRead)
             }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Log.info("Error while creating MD5 hash for ${file.name}")
-            null
+            md.digest().joinToString("") { "%02x".format(it) }
         }
     }
 

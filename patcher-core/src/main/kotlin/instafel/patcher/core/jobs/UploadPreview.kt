@@ -5,6 +5,7 @@ import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.utils.Utils
+import instafel.patcher.core.utils.modals.pojo.BuildInfo
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -22,9 +23,8 @@ object UploadPreview: CLIJob {
     lateinit var F_BUILD_INFO: File
     lateinit var APK_UC: File
     lateinit var APK_C: File
-    lateinit var buildInfo: JSONObject
+    lateinit var buildInfo: BuildInfo
     lateinit var buildFolder: File
-    lateinit var GEN_ID: String
     lateinit var GITHUB_PAT: String
     val httpClient = OkHttpClient()
     var isProdMode = false
@@ -64,37 +64,39 @@ object UploadPreview: CLIJob {
 
         F_BUILD_INFO = File(Utils.mergePaths(buildFolder.absolutePath, "build_info.json"))
         val jsonStr = Files.readAllBytes(Paths.get(F_BUILD_INFO.absolutePath)).toString(Charsets.UTF_8)
-        buildInfo = JSONObject(jsonStr)
-        val fnames = buildInfo.getJSONObject("fnames")
-        APK_UC = File(Utils.mergePaths(buildFolder.absolutePath, fnames.getString("unclone")))
-        APK_C = File(Utils.mergePaths(buildFolder.absolutePath, fnames.getString("clone")))
-        val patcherData = buildInfo.getJSONObject("patcher_data")
-        GEN_ID = patcherData.getJSONObject("ifl").getString("gen_id")
+        buildInfo = Env.gson.fromJson(jsonStr, BuildInfo::class.java)
+        APK_UC = File(Utils.mergePaths(buildFolder.absolutePath, buildInfo.fileInfos.unclone.fileName))
+        APK_C = File(Utils.mergePaths(buildFolder.absolutePath, buildInfo.fileInfos.clone.fileName))
         Log.info("Build files & properties loaded")
     }
 
     fun createRelease(patcherVersion: String, patcherCommit: String) {
-        val pData = buildInfo.getJSONObject("patcher_data")
-
-        val bLines = listOf(
+        val buildInfoMap = mapOf(
+            "GENERATION_ID" to buildInfo.patcherData.generationId,
+            "BUILD_TS" to buildInfo.patcherData.buildDate,
+            "IFL_VERSION" to buildInfo.patcherData.iflVersion.toString(),
+            "IG_VERSION" to buildInfo.patcherData.igVersion,
+            "IG_VER_CODE" to buildInfo.patcherData.igVersionCode,
+            "HASH_UC" to buildInfo.fileInfos.unclone.fileHash,
+            "HASH_C" to buildInfo.fileInfos.clone.fileHash
+        )
+        val bLines = mutableListOf(
             "# Build Information",
             "| PROPERTY  | VALUE |",
             "| ------------- | ------------- |",
-            "| GENERATION_ID  | ${pData.getJSONObject("ifl").getString("gen_id")} |",
-            "| BUILD_TS  | ${pData.getString("build_date")} |",
-            "| IFL_VERSION  | ${pData.getJSONObject("ifl").getInt("version")} |",
-            "| IG_VERSION  | ${pData.getJSONObject("ig").getString("version")} |",
-            "| IG_VER_CODE  | ${pData.getJSONObject("ig").getString("ver_code")} |",
-            "| MD5_HASH_UC | ${buildInfo.getJSONObject("hash").getString("unclone")} |",
-            "| MD5_HASH_C | ${buildInfo.getJSONObject("hash").getString("clone")} |\n",
-            "Generated with **Instafel Patcher** v$patcherVersion ($patcherCommit/release)"
         )
+
+        buildInfoMap.forEach { infoLine ->
+            bLines.add("| ${infoLine.key} | ${infoLine.value} |")
+        }
+
+        bLines.add("\nGenerated with **Instafel Patcher** v$patcherVersion ($patcherCommit/release)")
 
         val body = bLines.joinToString("\n")
 
         val req = JSONObject().apply {
-            put("tag_name", GEN_ID)
-            put("name", "Preview of ${pData.getJSONObject("ig").getString("version")}")
+            put("tag_name", buildInfo.patcherData.generationId)
+            put("name", "Preview of ${buildInfo.patcherData.igVersion}")
             put("body", body)
             put("draft", false)
             put("prerelease", false)
@@ -163,13 +165,13 @@ object UploadPreview: CLIJob {
     }
 
     fun sendLogToTelegram() {
-        val requestBody = buildInfo
-            .toString()
+        val requestBody =
+            Env.gson.toJson(buildInfo)
             .toRequestBody("application/json".toMediaType())
 
         val request = Request.Builder()
-            .url("https://api.mamii.me/ifl/manager_new/sendGeneratedLogTg")
-            .addHeader("Authorization", Env.Config.managerToken)
+            .url("https://content.api.instafel.app/manager/send-generated-log")
+            .addHeader("manager-token", Env.Config.managerToken)
             .post(requestBody)
             .build()
 

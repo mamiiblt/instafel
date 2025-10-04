@@ -10,9 +10,13 @@ import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SmaliUtils
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.CLIJob
+import instafel.patcher.core.utils.modals.pojo.BuildInfo
+import instafel.patcher.core.utils.modals.pojo.FileInfo
+import instafel.patcher.core.utils.modals.pojo.FileInfos
+import instafel.patcher.core.utils.modals.pojo.Patcher
+import instafel.patcher.core.utils.modals.pojo.PatcherData
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.TrueFileFilter
-import org.json.JSONObject
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -20,7 +24,6 @@ object BuildProject: CLIJob {
 
     lateinit var smaliUtils: SmaliUtils
     lateinit var sourceManager: SourceManager
-    lateinit var buildInfo: JSONObject
     lateinit var IG_VERSION: String
     lateinit var IG_VER_CODE: String
     lateinit var GENERATION_ID: String
@@ -105,64 +108,34 @@ object BuildProject: CLIJob {
     }
 
     fun generateBuildInfo(coreCommit: String, patcherTag: String, patcherVersion: String) {
-        buildInfo = JSONObject().apply {
-            put("manifest_version", 1)
-
-            if (!isProductionMode) {
-                put("clone_generated", isCloneGenerated)
-            }
-
-            put("patcher", JSONObject().apply {
-                put("commit", coreCommit)
-                put("channel", patcherTag)
-                put("version", patcherVersion)
-            })
-
-            put("patcher_data", JSONObject().apply {
-                put("build_date", BUILD_TS)
-
-                if (isProductionMode) {
-                    val ifl = JSONObject().apply {
-                        put("version", IFL_VERSION.toInt())
-                        put("gen_id", GENERATION_ID)
-                    }
-                    put("ifl", ifl)
-                }
-
-                val ig = JSONObject().apply {
-                    put("version", IG_VERSION)
-                    put("ver_code", IG_VER_CODE)
-                }
-                put("ig", ig)
-            })
-
-            if (isProductionMode) {
-                put("links", JSONObject().apply {
-                    put("unclone", "https://github.com/mamiiblt/instafel/releases/download/v$IFL_VERSION/${APK_UC.name}")
-                    if (isCloneGenerated) {
-                        put("clone", "https://github.com/mamiiblt/instafel/releases/download/v$IFL_VERSION/${APK_C.name}")
-                    }
-                })
-            }
-
-            put("fnames", JSONObject().apply {
-                put("unclone", APK_UC.name)
-                if (isCloneGenerated) {
-                    put("clone", APK_C.name)
-                }
-            })
-
-            put("hash", JSONObject().apply {
-                put("unclone", Utils.getFileMD5(APK_UC))
-                if (isCloneGenerated) {
-                    put("clone", Utils.getFileMD5(APK_C))
-                }
-            })
-        }
+        val buildInfo = BuildInfo(
+            manifestVersion = 1,
+            patcher = Patcher(
+                version = patcherVersion,
+                commit = coreCommit,
+                channel = patcherTag
+            ),
+            patcherData = PatcherData(
+                buildDate = BUILD_TS,
+                generationId = GENERATION_ID,
+                iflVersion = IFL_VERSION,
+                igVersion = IG_VERSION,
+                igVersionCode = IG_VER_CODE
+            ),
+            fileInfos = FileInfos(
+                unclone = FileInfo(
+                    fileName = APK_UC.name,
+                    fileHash = Utils.getFileMD5(APK_UC)
+                ),
+                clone = FileInfo(
+                    fileName = APK_C.name,
+                    fileHash = Utils.getFileMD5(APK_C)
+                )
+            ),
+        )
 
         val bInfoFile = File(Utils.mergePaths(buildFolder.absolutePath, "build_info.json"))
-
-        FileUtils.writeStringToFile(bInfoFile, buildInfo.toString(4))
+        FileUtils.writeStringToFile(bInfoFile, Env.gson.toJson(buildInfo, BuildInfo::class.java))
         Log.info("Build information file saved.")
     }
 
@@ -171,7 +144,7 @@ object BuildProject: CLIJob {
         Log.info("Generating APKs...")
         Log.info("Generating unclone variant...")
         sourceManager.build(APK_UC.name)
-        Log.info("Unclone APK succesfully generated...")
+        Log.info("Unclone APK successfully generated...")
         if (isCloneGenerated) {
             Log.info("Generating clone variant....")
             replaceSourceFiles(true);
