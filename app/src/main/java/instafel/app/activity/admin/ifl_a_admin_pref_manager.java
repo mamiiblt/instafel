@@ -59,6 +59,8 @@ public class ifl_a_admin_pref_manager extends AppCompatActivity {
         createPreferenceTitle(PreferenceKeys.ifl_clog_last_shown_version, "ifl_clog_last_shown_version", Types.PreferenceTypes.INT);
         createPreferenceTitle(PreferenceKeys.ifl_clog_disable_version_control, "ifl_clog_disable_version_control", Types.PreferenceTypes.BOOLEAN);
         createPreferenceTitle(PreferenceKeys.ifl_mapping_file_hash, "ifl_mapping_file_size", Types.PreferenceTypes.STRING);
+        createPreferenceTitle(PreferenceKeys.ifl_debug_api_url, "ifl_debug_api_url", Types.PreferenceTypes.STRING);
+        createPreferenceTitle(PreferenceKeys.ifl_debug_content_api_url, "ifl_debug_content_api_url", Types.PreferenceTypes.STRING);
 
         buildLayout();
     }

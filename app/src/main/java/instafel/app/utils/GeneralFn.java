@@ -33,14 +33,25 @@ import instafel.app.utils.types.PreferenceKeys;
 public class GeneralFn {
 
     public static String DEFAULT_API_PATH = "https://api.mamii.me/ifl";
+    public static String DEFAULT_CONTENT_API_PATH = "https://content.api.instafel.app";
 
     public static String getApiUrl(Activity activity) {
         PreferenceManager preferenceManager = new PreferenceManager(activity);
         boolean debugModeStatus = preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_debug_mode, false);
         if (debugModeStatus) {
-            return "DEBUG_URL";
+            return preferenceManager.getPreferenceString(PreferenceKeys.ifl_debug_api_url, "DEBUG_URL");
         } else {
             return DEFAULT_API_PATH;
+        }
+    }
+
+    public static String getContentApiUrl(Activity activity) {
+        PreferenceManager preferenceManager = new PreferenceManager(activity);
+        boolean debugModeStatus = preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_enable_debug_mode, false);
+        if (debugModeStatus) {
+            return preferenceManager.getPreferenceString(PreferenceKeys.ifl_debug_content_api_url, "DEBUG_URL");
+        } else {
+            return DEFAULT_CONTENT_API_PATH;
         }
     }
 
