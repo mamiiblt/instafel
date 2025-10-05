@@ -69,15 +69,16 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
         try {
             JSONObject buildInfo = new JSONObject(result);
 
-            String igVersion = buildInfo.getJSONObject("patcher_data").getJSONObject("ig").getString("version");
+            String igVersion = buildInfo.getJSONObject("patcherData").getString("igVersion");
 
             String apkContentLink = "";
             if (ifl_type.equals("Unclone")) {
-                apkContentLink = buildInfo.getJSONObject("links").getString("unclone");
+                String fileName = buildInfo.getJSONObject("fileInfos").getJSONObject("unclone").getString("fileName");
+                apkContentLink = "https://github.com/mamiiblt/instafel/releases/download/v" + lastVersion + "/" + fileName;
             } else if (ifl_type.equals("Clone")) {
-                apkContentLink = buildInfo.getJSONObject("links").getString("clone");
+                String fileName = buildInfo.getJSONObject("fileInfos").getJSONObject("clone").getString("fileName");
+                apkContentLink = "https://github.com/mamiiblt/instafel/releases/download/v" + lastVersion + "/" + fileName;
             }
-
 
             if (lastVersion > ifl_version) {
                 String languageCode = LocalizationUtils.getIflLocale(act);

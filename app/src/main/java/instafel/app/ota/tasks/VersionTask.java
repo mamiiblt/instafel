@@ -67,18 +67,9 @@ public class VersionTask extends AsyncTask<String, Void, String> {
             }
             JSONObject jObject = new JSONObject(result);
             int lastVersion = Integer.parseInt(jObject.getString("tag_name").substring(1));
-
-            JSONArray assetsArray = jObject.getJSONArray("assets");
-            String buildInfoLink = "";
-            for (int i = 0; i < assetsArray.length(); i++) {
-                JSONObject asset = assetsArray.getJSONObject(i);
-                String assetName = asset.getString("name");
-
-                if (assetName.equals("build_info.json")) {
-                    buildInfoLink = asset.getString("browser_download_url");
-                }
-            }
-            new BuildInfoTask(act, ifl_version, ifl_type, lastVersion, instafelDialog, checkType).execute(buildInfoLink);
+            new BuildInfoTask(act, ifl_version, ifl_type, lastVersion, instafelDialog, checkType).execute(
+                    "https://content.api.instafel.app/content/rels/get/" + lastVersion
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
