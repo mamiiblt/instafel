@@ -33,30 +33,28 @@ import {toast} from "sonner";
 import {Page, PageHeader, PageLoading} from "@/components/PageUtils";
 
 interface RelInfo {
-    manifest_version: number;
-    release_date: string;
-    is_deleted: boolean;
-    changelogs: string[];
+    manifest_version: number
+    is_deleted: boolean
+    changelogs: string[]
     patcher: {
-        commit: string;
-        version: string;
+        commit: string
+        version: string
     },
-    hash: {
-        unclone: string;
-        clone: string;
+    patcherData: {
+        buildDate: string
+        generationId: string
+        iflVersion: number
+        igVersion: string
+        igVersionCode: string
     },
-    fnames: {
-        unclone: string;
-        clone: string;
-    }
-    patcher_data: {
-        ifl: {
-            version: number;
-            gen_id: string;
+    fileInfos: {
+        unclone: {
+            fileName: string
+            fileHash: string
         },
-        ig: {
-            version: string;
-            ver_code: string;
+        clone: {
+            fileName: string
+            fileHash: string
         }
     }
 }
@@ -221,7 +219,7 @@ export default function ReleaseInfoPage() {
                     header={<PageHeader
                         icon={<DownloadIcon/>}
                         title={t("title")}
-                        subtitle={t("subtitle", {version: data.patcher_data.ifl.version})}/>}
+                        subtitle={t("subtitle", {version: data.patcherData.iflVersion})}/>}
                     content={<motion.div
                         variants={container}
                         initial="hidden"
@@ -250,7 +248,7 @@ export default function ReleaseInfoPage() {
                                         className: "ml-1 mb-3"
                                     }
                                 ]}
-                                cardTitle={t("releaseStr", {iflVersion: data.patcher_data.ifl.version})}
+                                cardTitle={t("releaseStr", {iflVersion: data.patcherData.iflVersion})}
                                 cardDesc={t("uncloneDesc")}
                                 dialogInfo={{
                                     title: t("uncloneInfo"),
@@ -258,8 +256,8 @@ export default function ReleaseInfoPage() {
                                 }}
                                 downloadText={t("download")}
                                 downloadDataInfo={{
-                                    iflVersion: data.patcher_data.ifl.version,
-                                    fileName: data.fnames.unclone
+                                    iflVersion: data.patcherData.iflVersion,
+                                    fileName: data.fileInfos.unclone.fileName
                                 }}
                                 isDeleted={data.is_deleted}/>
 
@@ -278,7 +276,7 @@ export default function ReleaseInfoPage() {
                                         className: "ml-1 mb-3"
                                     }
                                 ]}
-                                cardTitle={t("releaseStr", {iflVersion: data.patcher_data.ifl.version})}
+                                cardTitle={t("releaseStr", {iflVersion: data.patcherData.iflVersion})}
                                 cardDesc={t("cloneDesc")}
                                 dialogInfo={{
                                     title: t("cloneInfo"),
@@ -286,8 +284,8 @@ export default function ReleaseInfoPage() {
                                 }}
                                 downloadText={t("download")}
                                 downloadDataInfo={{
-                                    iflVersion: data.patcher_data.ifl.version,
-                                    fileName: data.fnames.clone
+                                    iflVersion: data.patcherData.iflVersion,
+                                    fileName: data.fileInfos.clone.fileName
                                 }}
                                 isDeleted={data.is_deleted}/>
                         </div>
@@ -326,20 +324,20 @@ export default function ReleaseInfoPage() {
                                 <CardContent className="space-y-4">
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-3">
-                                            {data.release_date && <InfoTileComp
+                                            {data.patcherData.buildDate && <InfoTileComp
                                                 icon={Calendar}
                                                 title={t("releaseDate")}
-                                                subtitle={formatDate(i18n.language, data.release_date)}/>}
+                                                subtitle={formatDate(i18n.language, data.patcherData.buildDate)}/>}
 
                                             <InfoTileComp
                                                 icon={Package}
                                                 title={t("igVersion")}
-                                                subtitle={`v${data.patcher_data.ig.version} (${data.patcher_data.ig.ver_code})`}/>
+                                                subtitle={`v${data.patcherData.igVersion} (${data.patcherData.igVersionCode})`}/>
 
-                                            {data.patcher_data.ifl.gen_id && <InfoTileComp
+                                            {data.patcherData.generationId && <InfoTileComp
                                                 icon={Hash}
                                                 title={t("generationId")}
-                                                subtitle={data.patcher_data.ifl.gen_id}/>}
+                                                subtitle={data.patcherData.generationId}/>}
                                         </div>
 
                                         <div className="space-y-3">
@@ -351,19 +349,19 @@ export default function ReleaseInfoPage() {
                                                     commit: data.patcher.commit
                                                 })}/>}
 
-                                            {data.hash.unclone && <InfoTileComp
+                                            {data.fileInfos.unclone.fileHash && <InfoTileComp
                                                 icon={Shield}
                                                 title={t("hash", {type: t("unclone")})}
-                                                subtitle={data.hash.unclone}
+                                                subtitle={data.fileInfos.unclone.fileHash}
                                                 copiable={true}
-                                                copyData={data.hash.unclone}/>}
+                                                copyData={data.fileInfos.unclone.fileHash}/>}
 
-                                            {data.hash.clone && <InfoTileComp
+                                            {data.fileInfos.clone.fileHash && <InfoTileComp
                                                 icon={Shield}
                                                 title={t("hash", {type: t("clone")})}
-                                                subtitle={data.hash.clone}
+                                                subtitle={data.fileInfos.clone.fileHash}
                                                 copiable={true}
-                                                copyData={data.hash.clone}/>}
+                                                copyData={data.fileInfos.clone.fileHash}/>}
                                         </div>
                                     </div>
                                 </CardContent>

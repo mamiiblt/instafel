@@ -183,7 +183,7 @@ export default function Navbar() {
     },
     {
       title: t("navbar.items.download"),
-      href: "/download?version=latest",
+      href: "/releases/list?page=1",
       icon: Download,
     },
   ];
