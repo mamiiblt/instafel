@@ -18,6 +18,9 @@ import instafel.patcher.core.utils.modals.pojo.PatcherData
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.TrueFileFilter
 import java.io.File
+import java.time.Instant
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import kotlin.system.exitProcess
 
 object BuildProject: CLIJob {
@@ -191,7 +194,7 @@ object BuildProject: CLIJob {
         Log.info("Initializing build environment...")
 
         smaliUtils = SmaliUtils(Env.PROJECT_DIR)
-        BUILD_TS = System.currentTimeMillis().toString()
+        BUILD_TS = Instant.now().toString()
         buildFolder =  File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
         APK_SIGNER_JAR = File(Utils.mergePaths(Env.PROJECT_DIR, "build", "signer.jar"))
         TESTKEY_KS = File(Utils.mergePaths(Env.PROJECT_DIR, "build", "testkey.keystore"))
