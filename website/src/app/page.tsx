@@ -95,7 +95,7 @@ export default function PageHome() {
                                         variant={"default"}
                                         className="w-full flex justify-center items-center group hover:scale-105 transition-transform duration-300"
                                     >
-                                        <Link href="/download?version=latest">
+                                        <Link href="/releases/list?page=1">
                                             <Download className="shrink-0 w-5 h-5 mr-2 group-hover:animate-pulse"/>
                                             {t("landing.3")}
                                         </Link>
