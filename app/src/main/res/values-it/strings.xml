@@ -65,14 +65,14 @@
     <string name="ifl_a4_14">File di override non trovato.</string>
     <string name="ifl_a4_15">Si è verificato un errore durante l\'importazione del file di backup.</string>
     <string name="ifl_a4_16">Editor MobileConfig</string>
-    <string name="ifl_a4_17">Analizzatore Flag</string>
+    <string name="ifl_a4_17">Analizzatore Contrassegni</string>
     <string name="ifl_a4_18">Importazione Completa</string>
     <string name="ifl_a4_19">Importazione con unione</string>
     <string name="ifl_a4_20">Analizza Risultato</string>
     <string name="ifl_a4_21">Usa File Di Mappatura Personalizzato</string>
     <string name="ifl_a4_22">Consente di analizzare con un file di mappatura personalizzato anziché con il file di mappatura predefinito di Instagram</string>
-    <string name="ifl_a4_23">Flag Corrispondenti</string>
-    <string name="ifl_a4_24">Flag Non Corrispondenti</string>
+    <string name="ifl_a4_23">Contrassegni Corrispondenti</string>
+    <string name="ifl_a4_24">Contrassegni Non Corrispondenti</string>
     <string name="ifl_a4_25">Cerca</string>
     <string name="ifl_a4_26">Importa override dal backup</string>
     <string name="ifl_a4_27">Utilizza un file di backup anziché analizzare il file di override esistente</string>
@@ -88,7 +88,7 @@
     <string name="ifl_a4_37">Ok</string>
     <string name="ifl_a4_38">Annulla</string>
     <string name="ifl_a4_39">Errore durante la lettura del file di override.</string>
-    <string name="ifl_a4_40">Flag %1$s esportati correttamente</string>
+    <string name="ifl_a4_40">Contrassegni %1$s esportati correttamente</string>
     <string name="ifl_a4_41">Errore durante la scrittura del contenuto nel file di backup.</string>
     <string name="ifl_a4_42">Errore durante l\'esportazione del file di backup</string>
 
@@ -141,7 +141,7 @@
     <string name="ifl_a10_01">Collaboratori</string>
 
     <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
-    <string name="ifl_a11_01">Libreria Flag</string>
+    <string name="ifl_a11_01">Libreria Contrassegni</string>
     <string name="ifl_a11_02">Libreria Backup</string>
     <string name="ifl_a11_03">Errore durante il recupero dei backup dall\'API</string>
     <string name="ifl_a11_04">Creato da %1$s</string>
@@ -181,9 +181,9 @@
     <string name="ifl_a11_38">Seleziona un file</string>
     <string name="ifl_a11_39">Errore durante la lettura del file di backup</string>
     <string name="ifl_a11_40">Errore durante la lettura del file di mappatura</string>
-    <string name="ifl_a11_41">Flag %1$s importato dal file di backup</string>
+    <string name="ifl_a11_41">Contrassegno %1$s importato dal file di backup</string>
     <string name="ifl_a11_42">Errore durante l\'importazione degli override dal file di backup</string>
-    <string name="ifl_a11_43">Flag %1$s importato correttamente</string>
+    <string name="ifl_a11_43">Contrassegno %1$s importato correttamente</string>
     <string name="ifl_a11_44">%1$s importato correttamente</string>
     <string name="ifl_a0_01">Opzioni Di Backup</string>
     <string name="ifl_a11_45">Versione</string>
@@ -217,7 +217,7 @@
     <string name="ifl_a11_73">Risultato Del Confronto</string>
     <string name="ifl_a11_74">Differenze da B1 a B2</string>
     <string name="ifl_a11_75">Differenze da B2 a B1</string>
-    <string name="ifl_a11_76">ID Flag Rimossi</string>
+    <string name="ifl_a11_76">ID Contrassegni Rimossi</string>
     <string name="ifl_a11_77">Errore durante il confronto dei backup</string>
 
     <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
