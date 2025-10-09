@@ -8,8 +8,9 @@
     "button": "Unisciti alla nostra community"
   },
   "error": {
-    "title": ""Impossibile caricare i backup",
+    "title": "Impossibile caricare i backup",
     "description": "Impossibile recuperare le informazioni di backup. Controlla la connessione o riprova più tardi.",
     "retryButton": "Riprova"
   }
+
 }
