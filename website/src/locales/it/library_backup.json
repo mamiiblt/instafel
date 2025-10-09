@@ -1,0 +1,15 @@
+{
+  "title": "Libreria di backup",
+  "description": "Esplora i backup creati dalla community che puoi importare direttamente in Instafel.",
+  "createdBy": "Creato da {{author}}",
+  "contribute": {
+    "title": "Vuoi Contribuire?",
+    "description": "Condividi il tuo backup Instafel con la community e aiuta gli altri a scoprire le configurazioni ottimali.",
+    "button": "Unisciti alla nostra community"
+  },
+  "error": {
+    "title": ""Impossibile caricare i backup",
+    "description": "Impossibile recuperare le informazioni di backup. Controlla la connessione o riprova più tardi.",
+    "retryButton": "Riprova"
+  }
+}
