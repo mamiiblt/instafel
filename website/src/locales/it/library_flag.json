@@ -6,5 +6,6 @@
   "num_flag_few": "{{count}} contrassegni",
   "num_flag_many": "{{count}} contrassegni",
   "num_flag_other": "{{count}} contrassegni",
-  "search_placeholder": ""Cerca rapidamente nella libreria..."
+  "search_placeholder": "Cerca rapidamente nella libreria..."
+
 }
