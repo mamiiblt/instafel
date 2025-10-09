@@ -6,7 +6,7 @@
   "unclone": "Originale",
   "releaseStr": "Versione v{{iflVersion}}",
   "recommended": "Consigliato",
-  "cloneDesc": ""Funziona insieme a Instagram originale",
+  "cloneDesc": "Funziona insieme a Instagram originale",
   "uncloneDesc": "Sostituisce Instagram originale",
   "cloneInfo": "Informazioni sulla versione Clone",
   "cloneInfoDesc": "La versione Clone funziona insieme all'app Instagram originale sul tuo telefono. Puoi utilizzare entrambe le app contemporaneamente. L'icona e il nome dell'app sono stati modificati.",
@@ -22,4 +22,5 @@
   "hash": "Hash ({{type}})",
   "changelogs": "Changelogs",
   "noChanges": "Nessuna modifica in questa versione"
+
 }
