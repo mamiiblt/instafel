@@ -199,10 +199,6 @@ export default function PageHome() {
                                     className="md:w-1/2"
                                 >
                                     <div className="max-w-lg">
-                    <span
-                        className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 mb-4">
-                      {t("join_community.1")}
-                    </span>
                                         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center md:text-left">
                                             {t("join_community.2")}
                                         </h2>
@@ -246,7 +242,7 @@ export default function PageHome() {
                                             className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-6 relative max-w-xs">
                                             <div className="flex items-center mb-4">
                                                 <div
-                                                    className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gray-200">
+                                                    className="relative w-16 h-16 rounded-full overflow-hidden">
                                                     <Image
                                                         alt="Instafel Logo"
                                                         src="/instafel.jpg"

@@ -48,7 +48,7 @@ export default function Footer() {
               <div className="space-y-4 lg:col-span-2">
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 rounded-xl bg-instafelcolor flex items-center justify-center">
-                    <LucideInstagram className="text-black font-bold text-xl" />
+                    <LucideInstagram className="text-[#a3b18a] font-bold text-xl" />
                   </div>
                   <span className="font-bold text-xl text-foreground">
                     Instafel
