@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name" translatable="false">Instafel Updater</string>
+
+    <!-- Nav Bar -->
+    <string name="status">Stato</string>
+    <string name="logs">Registro</string>
+    <string name="settings">Impostazioni</string>
+
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Imposta Updater</string>
+    <string name="checker_arch">Controllo Architettura</string>
+    <string name="checker_itype">Controllo Tipo Di Installazione</string>
+    <string name="unclone">Annulla clonazione</string>
+    <string name="clone">Clonazione</string>
+    <string name="cont">Continua</string>
+    <string name="warning">Avviso</string>
+    <string name="warning_desc">Seleziona un\'architettura e un tipo di installazione.</string>
+
+    <!-- Status Fragment -->
+    <string name="authorized">​​Autorizzato</string>
+    <string name="not_installed">Shizuku Non Installato</string>
+    <string name="start_service">Shizuku non in esecuzione</string>
+    <string name="shizuku_status">Stato Shizuku</string>
+    <string name="root_status">Stato Root</string>
+    <string name="selected_arch">Architettura Selezionata</string>
+    <string name="selected_installation_type">Tipo Di Installazione Selezionato</string>
+    <string name="battery_restriction">Restrizione Batteria</string>
+    <string name="battery_restricted">Limitato</string>
+    <string name="battery_unrestricted">Senza restrizioni</string>
+    <string name="battery_dialog_title">Consenti Modalità Senza Restrizioni</string>
+    <string name="battery_dialog_msg">Affinché Instafel Updater funzioni correttamente, la modalità batteria dell\'applicazione non deve essere limitata.</string>
+    <string name="updater_status">Stato Updater</string>
+    <string name="start">Avvio</string>
+    <string name="stop">Arresto</string>
+    <string name="permission_rejected">Autorizzazione Rifiutata</string>
+    <string name="perm_rejected_desc">Autorizza Instafel Updater nell\'app Shizuku</string>
+    <string name="please_start_shizuku">Avvia Shizuku dall\'app</string>
+    <string name="please_install_shizuku">Installa Shizuku dal Play Store</string>
+    <string name="please_give_permission">Autorizza Instafel Updater su Shizuku</string>
+    <string name="running">In esecuzione con modalità %1$s</string>
+    <string name="stopped">Arrestato</string>
+    <string name="unauthorized">Non autorizzato</string>
+    <string name="checking">Controllo in corso...</string>
+    <string name="not_found">Impossibile trovare il binario SU</string>
+    <string name="please_allow_root">Accesso root rifiutato, consentire dal gestore.</string>
+    <string name="please_install_root">Impossibile ottenere l\'accesso root</string>
+    <string name="please_allow_unrestiracted">Imposta la modalità restrizione della batteria dell\'app su modalità non limitata</string>
+    <string name="dialog_title">Concedi Autorizzazione</string>
+    <string name="dialog_desc">Instafel Updater necessita di notifica e autorizzazione root per funzionare normalmente.</string>
+    <string name="dialog_ok">Okay</string>
+    <string name="hour">ora</string>
+    <string name="minute">minuto</string>
+    <string name="upd_started">Updater avviato</string>
+    <string name="upd_stopped">Updater arrestato</string>
+
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Registro di runtime cancellato.</string>
+    <string name="work_restarted">Updater riavviato</string>
+
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Download Aggiornamento</string>
+    <string name="n2_waiting">In attesa del server di aggiornamento</string>
+    <string name="n2_sub">In attesa della connessione API...</string>
+    <string name="n3_installing">Installazione Aggiornamento</string>
+    <string name="n3_sub">Download completato, installazione...</string>
+    <string name="n4_complete">Aggiornamento Installato Correttamente</string>
+    <string name="n4_sub">Instafel aggiornato alla versione v %1$s</string>
+    <string name="error">Errore</string>
+
+    <!-- Setting Keys -->
+    <string name="cname_general">Generale</string>
+    <string name="cname_behavior">Comportamento</string>
+    <string name="cname_about">Informazioni Su Updater</string>
+    <string name="checker_interval">Intervallo Di Controllo</string>
+    <string name="checker_interval_s">Modifica intervallo di controllo</string>
+    <string name="itype">Tipo Di Installazione</string>
+    <string name="itype_s">Modifica tipo di installazione</string>
+    <string name="send_notif">Invia Notifica</string>
+    <string name="send_notif_s">Updater invia una notifica dopo aver aggiornato Instafel</string>
+    <string name="use_mobile_data">Dati Mobili</string>
+    <string name="use_mobile_data_s">Consente il download degli aggiornamenti con i dati mobili</string>
+    <string name="hour12_rule">Regola Delle 12 Ore</string>
+    <string name="hour12_rule_s">Consente di installare l\'aggiornamento dopo il rilascio di 12 ore</string>
+    <string name="source_code">Codice Sorgente</string>
+    <string name="source_code_s">Visita il codice sorgente di Instafel</string>
+    <string name="instafel_website">Sito Web Di Instafel</string>
+    <string name="create_issue">Crea Problema</string>
+    <string name="create_issue_s">Crea un problema su GitHub per ricevere feedback!</string>
+    <string name="app_version">Versione App</string>
+    <string name="app_version_s">Versione v %1$s ( %2$s )</string>
+    <string name="language">Lingua</string>
+    <string name="language_s">Imposta la lingua dell\'app</string>
+    <string name="developed_by">Sviluppato con ❤️ da mamiiblt</string>
+    <string name="about_app">Informazioni</string>
+    <string name="crash_logs">Salva I Registri Degli Arresti Anomali</string>
+    <string name="crash_logs_s">Il logger scriverà ogni arresto anomalo in un registro giornaliero.</string>
+    <string name="disable_error">Disabilita Le Notifiche Di Avviso</string>
+    <string name="disable_error_s">Disabilita le notifiche di errori non critici</string>
+    <string name="updater_guide">Guida All\'aggiornamento</string>
+    <string name="updater_guide_s">Scopri di più sull\'aggiornamento</string>
+</resources>
