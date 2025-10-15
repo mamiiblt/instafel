@@ -128,20 +128,21 @@ public class UpdateWork extends Worker {
                             try {
                                 OkHttpClient client = new OkHttpClient();
                                 Request request = new Request.Builder()
-                                        .url("https://api.mamii.me/ifl/check")
+                                        .url("https://content.api.instafel.app/content/rels/get/latest")
                                         .build();
                                 Response response = client.newCall(request).execute();
                                 if (response.isSuccessful()) {
 
                                     JSONObject res = new JSONObject(response.body().string());
-                                    String version = res.getString("ig_version");
-                                    String published_at = res.getString("published_at");
+                                    int iflVersion = res.getJSONObject("patcherData").getInt("iflVersion");
+                                    String version = res.getJSONObject("patcherData").getString("igVersion");
+                                    String published_at = res.getJSONObject("patcherData").getString("buildDate");
 
                                     if (versionName.equals(version)) {
                                         logUtils.w("Update not needed, app is up-to-date.");
                                         return Result.success();
                                     } else {
-                                        logUtils.w("New version found " + version);
+                                        logUtils.w("New version found " + version + " (Instafel v" + iflVersion + ")");
                                         if (appPreferences.isAllow12HourMode()) {
                                             String publishTs = published_at;
                                             OffsetDateTime parsedDateTime = OffsetDateTime.parse(publishTs,
@@ -164,9 +165,11 @@ public class UpdateWork extends Worker {
 
                                         String b_download_url = null;
                                         if (type.equals("uc")) {
-                                            b_download_url = res.getString("download_link_uc");
+                                            String fName = res.getJSONObject("fileInfos").getJSONObject("unclone").getString("fileName");
+                                            b_download_url = "https://github.com/mamiiblt/instafel/releases/download/v" + iflVersion +"/" + fName;
                                         } else {
-                                            b_download_url = res.getString("download_link_c");
+                                            String fName = res.getJSONObject("fileInfos").getJSONObject("clone").getString("fileName");
+                                            b_download_url = "https://github.com/mamiiblt/instafel/releases/download/v" + iflVersion +"/" + fName;
                                         }
 
                                         if (b_download_url != null) {
