@@ -17,7 +17,7 @@ import kotlin.system.exitProcess
 
 class Env {
     companion object {
-        var email: String? = null; var aas_token: String? = null; var github_releases_link: String? = null; var github_pat: String? = null; var telegram_api_key: String? = null
+        var email: String? = null; var aas_token: String? = null; var release_content_api_url: String? = null; var github_pat: String? = null; var telegram_api_key: String? = null
         lateinit var deviceProperties: Properties
         lateinit var client: OkHttpClient
 
@@ -36,13 +36,13 @@ class Env {
 
                 val emailP = props.getProperty("email", null)
                 val aasTokenP = props.getProperty("aas_token", null)
-                val githubRelLink = props.getProperty("github_releases_link", null)
+                val relContentLink = props.getProperty("release_content_api_url", null)
                 val githubPatP = props.getProperty("github_pat", null)
 
-                if (emailP != null && aasTokenP != null && githubRelLink != null && githubPatP != null) {
+                if (emailP != null && aasTokenP != null && relContentLink != null && githubPatP != null) {
                     email = emailP
                     aas_token = aasTokenP
-                    github_releases_link = githubRelLink
+                    release_content_api_url = relContentLink
                     github_pat = githubPatP
 
                     Log.println("I", "User ($email) read from config file.")
@@ -158,33 +158,15 @@ class Env {
 
         fun getLatestInstafelVersion(): String? {
             val request = Request.Builder()
-                .url(github_releases_link ?: "")
-                .addHeader("Authorization", "Bearer $github_pat")
-                .addHeader("Accept", "application/vnd.github+json")
-                .addHeader("X-GitHub-Api-Version", "2022-11-28")
+                .url(release_content_api_url ?: "")
                 .build()
 
             client.newCall(request).execute().use { response ->
                 if (!response.isSuccessful) throw Exception("Instafel Release response code is ${response.code}")
 
-                val responseObject = JSONObject(response.body!!.string())
-                val releaseBody: List<String> = responseObject.getString("body").split("\n")
-
-                for (line in releaseBody) {
-                    if (line.contains("app.version_name")) {
-                        val parts = line.split("|")
-                            .map { it.trim() }
-                            .filter { it.isNotEmpty() }
-
-                        for (part in parts) {
-                            if (!part.contains("app.version_name")) {
-                                return part.trim();
-                            }
-                        }
-                    }
-                }
+                val releaseInfo = JSONObject(response.body.string())
+                return releaseInfo.getJSONObject("patcherData").getString("igVersion")
             }
-            return null;
         }
     }
 }
