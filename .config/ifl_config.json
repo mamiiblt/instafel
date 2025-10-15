@@ -16,7 +16,7 @@
     }
   },
   "updater": {
-    "version": "3.7.1",
+    "version": "4.1.0",
     "versionCode": 1,
     "signing": {
       "ksPath": "/.config/testkey.keystore",

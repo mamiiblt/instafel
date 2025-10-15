@@ -23,8 +23,6 @@ import {LoadingBar} from "@/components/LoadingBars";
 
 interface FetchInfo {
     version: string;
-    commit: string;
-    updated_at: string;
     download_url: string;
 }
 
@@ -35,15 +33,12 @@ export default function PageUpdater() {
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch(
-                "https://raw.githubusercontent.com/mamiiblt/instafel/refs/heads/ft-releases/updater/latest.json"
+                "https://api.github.com/repos/instafel/u-rel/releases/latest"
             );
             const result = await res.json();
-            console.log(result);
             setData({
-                version: `v${result.version}`,
-                commit: result.commit,
-                updated_at: result.updated_at,
-                download_url: `https://github.com/mamiiblt/instafel/raw/refs/heads/ft-releases/updater/dist/ifl-updater-v${result.version}-${result.commit}-release.apk`,
+                version: `${result.tag_name}`,
+                download_url: `https://github.com/instafel/u-rel/releases/download/${result.tag_name}/ifl-updater-${result.tag_name}-release.apk`,
             });
         };
         fetchData();
