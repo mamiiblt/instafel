@@ -1,24 +1,24 @@
 {
-  "added_by": "Added by {{name}}",
-  "uploaded_at": "Uploaded at {{date_str}}",
-  "removed_with": "Removed with v{{version}}",
-  "loading": "Loading...",
+  "added_by": "Hinzugefügt von {{name}}",
+  "uploaded_at": "Hochgeladen am {{date_str}}",
+  "removed_with": "Entfernt mit Version v{{version}}",
+  "loading": "Lade...",
   "flag_found_zero": "There are no flags in this category",
   "flag_found_one": "There is {{count}} flag in this category",
   "flag_found_few": "There are {{count}} flags in this category",
   "flag_found_many": "There are {{count}} flags in this category",
   "flag_found_other": "There are {{count}} flags in this category",
-  "page_info": "Page {{current}} of {{total}}",
-  "prev": "Previous",
-  "next": "Next",
-  "results": "Results",
+  "page_info": "Seite {{current}} von {{total}}",
+  "prev": "Zurück",
+  "next": "Weiter",
+  "results": "Ergebnisse",
   "s_flag_found_zero": "No results were found in the library for '{{query}}'",
   "s_flag_found_one": "{{count}} result was found in the library for '{{query}}'",
   "s_flag_found_few": "{{count}} results were found in the library for '{{query}}'",
   "s_flag_found_many": "{{count}} results were found in the library for '{{query}}'",
   "s_flag_found_other": "{{count}} results were found in the library for '{{query}}'",
   "found_footer": {
-    "down": "A total of {{size}} flags were found for this query. If you didn't find the correct flag, try using different search terms.",
-    "up": "A total of 15 flags were found. By default, results are limited to 15 items. Try using more specific terms to refine your search."
+    "down": "Insgesamt wurden {{size}} Flaggen zu dieser Suche gefunden. Wenn die richtige Flagge nicht dabei war, versuche andere Suchbegriffe.",
+    "up": "Insgesamt wurden 15 Flaggen gefunden. Standardmäßig sind die Ergebnisse auf 15 Elemente begrenzt. Verwende genauere Begriffe, um die Suche einzugrenzen."
   }
 }
