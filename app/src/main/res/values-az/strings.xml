@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- sa -->
+    <string name="ifl_a5_10">Hələ yeni bir yeniləmə yoxdur</string>
+    <string name="ifl_a5_11">"Yeniləmələr izlənir, amma hələ bir şey yoxdur"</string>
     <string name="ifl_a0_08">Müxtəlif</string>
     <string name="ifl_a0_10">Instafel fəaliyyətləri, dialoqlar və digər hissələr üçün amoled mövzusunu aktiv edin.</string>
     <string name="ifl_a0_11">Reklamları Kaldır</string>
@@ -9,16 +11,14 @@
     <string name="ifl_a0_14">Varsayılan olaraq aktivdir, dəyişdirilə bilməz.</string>
     <string name="ifl_a0_15">Instafel Yeniləyicisi</string>
     <string name="ifl_a0_16">Root və Shizuku ilə avtomatik yeniləmələr üçün Instafel Yeniləyicisindən istifadə edin.</string>
-
-    <!-- Instafel Menu -->
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
     <string name="ifl_a0_02">Yeniləmə Parametrləri</string>
     <string name="ifl_a0_03">Dil</string>
     <string name="ifl_a0_04">Kitabxana</string>
     <string name="ifl_a0_05">Haqqında</string>
     <string name="ifl_a0_06">Bu xüsusiyyət hələ əlavə edilməyib</string>
     <string name="ifl_a0_07">Çöküş Hesabatları</string>
-
-    <!-- About Instafel -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
     <string name="ifl_a1_01">Instafel Haqqında</string>
     <string name="ifl_a1_02">Instafel Versiyası</string>
     <string name="ifl_a1_03">Quraşdırma Növü</string>
@@ -35,19 +35,16 @@
     <string name="ifl_a1_19">Veb sayt</string>
     <string name="ifl_a1_20">İcmaya qoşul</string>
     <string name="ifl_a1_21">Töhfə verənlər</string>
-
-
-    <!-- About Ig -->
     <string name="ifl_a1_22">Tətbiq olunmuş yamaqlar haqqında məlumatlara bax</string>
     <string name="ifl_a1_23">Əsas Commit</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
     <string name="ifl_a2_01">Instagram Haqqında</string>
     <string name="ifl_a2_02">Versiya</string>
     <string name="ifl_a2_03">Versiya Kodu</string>
     <string name="ifl_a2_04">Kanal</string>
     <string name="ifl_a2_05">Memari</string>
     <string name="ifl_a3_01">Haqqında</string>
-
-    <!-- Dev Mode -->
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
     <string name="ifl_a4_01">Ixrac Et</string>
     <string name="ifl_a4_02">Daxil Et</string>
     <string name="ifl_a4_03">Əvəzləmə Faylını Sil</string>
@@ -69,7 +66,7 @@
     <string name="ifl_a4_19">Birlikdə Daxil etmək</string>
     <string name="ifl_a4_20">Analiz Nəticəsi</string>
     <string name="ifl_a4_21">Xüsusi Mapping Faylı istifadə et</string>
-    <string name="ifl_a4_22">"Instagram'ın standart Mapping faylı əvəzinə xüsusi Mapping faylı ilə analiz etməyə imkan verir"</string>
+    <string name="ifl_a4_22">Instagram\'ın standart Mapping faylı əvəzinə xüsusi Mapping faylı ilə analiz etməyə imkan verir</string>
     <string name="ifl_a4_23">Uyğun Bayraqlar</string>
     <string name="ifl_a4_24">Uyğunsuz Bayraqlar</string>
     <string name="ifl_a4_25">Axtar</string>
@@ -90,8 +87,7 @@
     <string name="ifl_a4_40">%1$s bayraqları uğurla ixrac edildi</string>
     <string name="ifl_a4_41">Nüxsələmə faylına məzmun yazarkən xəta baş verdi.</string>
     <string name="ifl_a4_42">Nüxsələmə faylını ixrac edərkən xəta baş verdi</string>
-
-    <!-- About OTA -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
     <string name="ifl_a5_01">Yeniləmələri Yoxla</string>
     <string name="ifl_a5_02">Son yoxlama: %1$s</string>
     <string name="ifl_a5_03">Yeniləmə Çıxarıldı</string>
@@ -100,32 +96,24 @@
     <string name="ifl_a5_07">Həftəlik</string>
     <string name="ifl_a5_08">Günlük</string>
     <string name="ifl_a5_09">Yeniləmənin üzərinə vurun</string>
-    <string name="ifl_a5_10">Hələ yeni bir yeniləmə yoxdur</string>
-    <string name="ifl_a5_11">Yeniləmələr izlənir, amma hələ bir şey yoxdur</string>
-
-    <!-- Frequency Settings -->
     <string name="ifl_a5_sub_freq_00">Hər açılışda təyin et.</string>
     <string name="ifl_a5_sub_freq_01">Heç vaxt təyin et</string>
     <string name="ifl_a5_sub_freq_02">Hər gün təyin et</string>
     <string name="ifl_a5_sub_freq_03">Hər üç gündə bir təyin et</string>
     <string name="ifl_a5_sub_freq_04">Hər beş gündə bir təyin et</string>
     <string name="ifl_a5_sub_freq_05">Həftədə bir təyin et</string>
-
     <string name="ifl_a5_dia_freq_00">Hər açılışda (defolt)</string>
     <string name="ifl_a5_dia_freq_01">Heç vaxt</string>
     <string name="ifl_a5_dia_freq_02">Hər gün</string>
     <string name="ifl_a5_dia_freq_03">Hər üç gündə bir</string>
     <string name="ifl_a5_dia_freq_04">Hər beş gündə bir</string>
     <string name="ifl_a5_dia_freq_05">Həftədə bir</string>
-
-    <!-- Language Settings -->
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Cihaz dilini istifadə et</string>
-
-    <!-- Crash Reports -->
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Hesabatlar</string>
     <string name="ifl_a7_02">Hesabatları sil</string>
-
-    <!-- Crash Viewer -->
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Təfərrüatlar</string>
     <string name="ifl_a8_02">Loqnu kopyala</string>
     <string name="ifl_a8_03">Loqnu paylaş</string>
@@ -136,13 +124,10 @@
     <string name="ifl_a8_08">Qəza məlumatı</string>
     <string name="ifl_a8_09">Səbəb</string>
     <string name="ifl_a8_10">Stack Trace</string>
-
     <string name="ifl_a9_01">Təfərrüatlar</string>
-
-    <!-- Contributors and Translators -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Töhfələr</string>
-
-    <!-- Library Menu -->
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Bayraq Kitabxanası</string>
     <string name="ifl_a11_02">Nüxsə Kitabxanası</string>
     <string name="ifl_a11_03">API-dən Nüxsələri alarkən səhv oldu</string>
@@ -187,14 +172,8 @@
     <string name="ifl_a11_42">Nüxsə faylından override-ları idxal edərkən səhv oldu</string>
     <string name="ifl_a11_43">%1$s bayrağı müvəffəqiyyətlə idxal edildi</string>
     <string name="ifl_a11_44">%1$s müvəffəqiyyətlə idxal edildi</string>
-
-    <!-- Backup Options -->
     <string name="ifl_a0_01">Nüxsə Seçimləri</string>
-    
-    <!-- Version -->
     <string name="ifl_a11_45">Versiya</string>
-
-    <!-- Import/Export Backup -->
     <string name="ifl_a11_46">%1$s müvəffəqiyyətlə %2$s bayrağı ilə idxal edildi</string>
     <string name="ifl_a11_47">Zəhmət olmasa düzgün bir Nüxsə faylı seçin</string>
     <string name="ifl_a11_48">Köhnə Nüxsələri Daxil Et</string>
@@ -227,36 +206,28 @@
     <string name="ifl_a11_75">B2-dən B1-yə fərqlər</string>
     <string name="ifl_a11_76">Silinmiş Bayraq ID-ləri</string>
     <string name="ifl_a11_77">Nüxsələri müqayisə edərkən səhv oldu</string>
-
-    <!-- Admin Login -->
-
-    <!-- OTA Found Dialog -->
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
     <string name="ifl_d1_01">Yeni Yeniləmə</string>
     <string name="ifl_d1_02">Instafel v%1$d (Instagram v%2$s) versiyasına yenilənəcək</string>
     <string name="ifl_d1_03">Ləğv et</string>
     <string name="ifl_d1_04">Quraşdır</string>
     <string name="ifl_d1_05">Gizlət</string>
     <string name="ifl_d1_06">Yeniləmə serverinə qoşuluruq</string>
-
-    <!-- OTA Up-to-Date Dialog -->
+    <!-- OTA UP-TO-DATE DIALOG -->
     <string name="ifl_d2_02">Instafel ən son versiyadadır.</string>
     <string name="ifl_d2_01">Ən son versiya</string>
     <string name="ifl_d2_03">Tamam</string>
-
-    <!-- Autoupdate Texts -->
+    <!-- AUTOUPDATE TEXTS -->
     <string name="ifl_t1_01">apk-installer açılarkən səhv baş verdi.</string>
     <string name="ifl_t1_03">Instafel yeniləməsi baş tutmadı.</string>
-
-    <!-- General Functions -->
+    <!-- GENERAL_FN CLASS -->
     <string name="ifl_c1_01">Cihazınızda web brauzer tapılmadı</string>
-
-    <!-- Dialog Set Frequency -->
+    <!--- DIALOG SET FREQ -->
     <string name="ifl_d3_01">Frekans təyin et</string>
     <string name="ifl_d3_02">Tamam</string>
-
-    <!-- Welcome Dialog -->
+    <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Xoş gəldiniz</string>
     <string name="ifl_d4_02">Instafel-ə xoş gəlmisiniz, bu mod Instagram alpha versiyalarını ən son xüsusiyyətlərlə təqdim etmək üçün hazırlanmışdır.\\n\\nMenyu, profil hissəsində hamburger düyməsinə basaraq əldə edilə bilər.</string>
-
-    <!-- Crash Toast -->
+    <!-- CRASH TOAST -->
 </resources>
