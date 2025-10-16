@@ -1,13 +1,13 @@
 {
   "error": {
-    "1": "Something went wrong",
-    "2": "Retry",
-    "3": "Home"
+    "1": "Ocorreu um erro",
+    "2": "Tente novamente",
+    "3": "Início"
   },
   "not_found": {
-    "1": "Oops!",
-    "2": "Page Not Found",
-    "3": "The page you are looking for does not exist. Please check the URL or go back to the homepage.",
-    "4": "Return Home"
+    "1": "Epa!",
+    "2": "Página não encontrada",
+    "3": "A página que você está procurando não existe. Por favor, verifique a URL ou volte para a página inicial.",
+    "4": "Voltar ao Início"
   }
 }
