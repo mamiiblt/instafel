@@ -1,71 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2024. mamiiblt.dev
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ifl_a1_18">Sobre o desenvolvedor</string>
-    <string name="ifl_a1_19">Site</string>
-    <string name="ifl_a1_20">Entrar na comunidade</string>
-    <string name="ifl_a1_21">Contribuidores</string>
-    <string name="ifl_a1_12">Informações da compilação</string>
-    <string name="ifl_a1_13">Versão do patcher</string>
-    <string name="ifl_a1_14">Patches aplicados</string>
-    <string name="ifl_a1_15">Ver detalhes da compilação</string>
-    <string name="ifl_a0_01">Opções de backup</string>
-    <string name="ifl_a11_45">Versão</string>
-    <string name="ifl_a11_46">%1$s importado com sucesso com a bandeira %2$s</string>
-    <string name="ifl_a11_47">Por favor, selecione um arquivo de backup válido</string>
-    <string name="ifl_a11_48">Importar backups antigos (.json)</string>
+    <!-- sa -->
+    <string name="ifl_a5_10">Permissão negada</string>
+    <string name="ifl_a5_11">"A permissão de notificação do Instafel foi negada. Se esse problema persistir, não esqueça de ativar as notificações nas configurações do aplicativo."</string>
     <string name="ifl_a0_08">Diversos</string>
     <string name="ifl_a0_10">Habilite o tema AMOLED para atividades, diálogos e outras partes do Instafel.</string>
     <string name="ifl_a0_11">Remover anúncios</string>
     <string name="ifl_a0_12">Remove anúncios exibidos no feed, nos reels ou em outros lugares.</string>
     <string name="ifl_a0_13">Reinicie o App para aplicar as alterações.</string>
-    <string name="ifl_a5_10">Permissão negada</string>
-    <string name="ifl_a5_11">A permissão de notificação do Instafel foi negada. Se esse problema persistir, não esqueça de ativar as notificações nas configurações do aplicativo.</string>
     <string name="ifl_a0_14">Ativado por padrão, não pode ser alterado.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Use o Instafel Updater para atualizações automáticas com Root / Shizuku.</string>
-    <string name="ifl_a11_49">Por favor, preencha os campos obrigatórios.</string>
-    <string name="ifl_a11_50">Por favor, insira um nome de versão válido</string>
-    <string name="ifl_a11_51">Exportar backup</string>
-    <string name="ifl_a11_52">Nome do backup</string>
-    <string name="ifl_a11_53">"Como o backup perfeito da mamãe"</string>
-    <string name="ifl_a11_54">Nome do autor</string>
-    <string name="ifl_a11_55">Como Albert Einstein</string>
-    <string name="ifl_a11_56">Versão do backup</string>
-    <string name="ifl_a11_57">Como 1.0, 1.0-hotfix, etc.</string>
-    <string name="ifl_a11_58">Registro de alterações</string>
-    <string name="ifl_a11_59">Você pode escrever aqui o registro de alterações do backup</string>
-    <string name="ifl_a11_60">Atualizar backup</string>
-    <string name="ifl_a11_61">Importar backups antigos em JSON</string>
-    <string name="ifl_a11_62">Comparador de backups</string>
-    <string name="ifl_a11_63">Usado para importar completamente um arquivo de backup com todas as flags no arquivo</string>
-    <string name="ifl_a11_64">Adiciona flags ao arquivo de backup que você está usando e que não estão no backup selecionado.</string>
-    <string name="ifl_a11_65">Você pode importar backups antigos do tipo .json com esta opção</string>
-    <string name="ifl_a11_66">Selecionar Backup 1</string>
-    <string name="ifl_a11_67">Selecionar Backup 2</string>
-    <string name="ifl_a11_68">Pressione para selecionar um backup</string>
-    <string name="ifl_a11_69">Comparar Backups</string>
-    <string name="ifl_a11_70">Erro ao iniciar a compactação</string>
-    <string name="ifl_a11_71">Selecionado</string>
-    <string name="ifl_a11_72">Por favor, selecione dois arquivos de backup para comparar</string>
-    <string name="ifl_a11_73">Resultado da Comparação</string>
-    <string name="ifl_a11_74">Diferenças de B1 para B2</string>
-    <string name="ifl_a11_75">Diferenças de B2 para B1</string>
-    <string name="ifl_a11_76">IDs de flags removidos</string>
-    <string name="ifl_a11_77">Erro ao comparar backups</string>
-
-
-
-    <!--  instafel.app.ifl_a_menu  -->
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
     <string name="ifl_a0_02">Configurações de Atualização</string>
     <string name="ifl_a0_03">Idioma</string>
     <string name="ifl_a0_04">Biblioteca</string>
     <string name="ifl_a0_05">Sobre</string>
     <string name="ifl_a0_06">Este recurso ainda não foi adicionado</string>
     <string name="ifl_a0_07">Relatórios de Falhas</string>
-    <!--  instafel.app.ifl_a_about_ifl  -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
     <string name="ifl_a1_01">Sobre o Instafel</string>
     <string name="ifl_a1_02">Versão do Instafel</string>
     <string name="ifl_a1_03">Tipo de Instalação</string>
@@ -74,16 +27,24 @@
     <string name="ifl_a1_08">Unclone</string>
     <string name="ifl_a1_09">ID de Geração</string>
     <string name="ifl_a1_10">Versão do Instagram</string>
-    <!--  instafel.app.ifl_a_about_ig  -->
+    <string name="ifl_a1_12">Informações da compilação</string>
+    <string name="ifl_a1_13">Versão do patcher</string>
+    <string name="ifl_a1_14">Patches aplicados</string>
+    <string name="ifl_a1_15">Ver detalhes da compilação</string>
+    <string name="ifl_a1_18">Sobre o desenvolvedor</string>
+    <string name="ifl_a1_19">Site</string>
+    <string name="ifl_a1_20">Entrar na comunidade</string>
+    <string name="ifl_a1_21">Contribuidores</string>
     <string name="ifl_a1_22">Ver informações sobre patches aplicados</string>
     <string name="ifl_a1_23">Commit principal</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
     <string name="ifl_a2_01">Sobre o Instagram</string>
     <string name="ifl_a2_02">Versão</string>
     <string name="ifl_a2_03">Código da Versão</string>
     <string name="ifl_a2_04">Canal</string>
     <string name="ifl_a2_05">Arquitetura</string>
     <string name="ifl_a3_01">Sobre</string>
-    <!--  instafel.app.ifl_a_devmode  -->
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
     <string name="ifl_a4_01">Exportar</string>
     <string name="ifl_a4_02">Importar</string>
     <string name="ifl_a4_03">Excluir Arquivo de Substituições Locais</string>
@@ -126,7 +87,7 @@
     <string name="ifl_a4_40">%1$s flags exportadas com sucesso</string>
     <string name="ifl_a4_41">Erro ao gravar o conteúdo no arquivo de backup.</string>
     <string name="ifl_a4_42">Erro ao exportar o arquivo de backup</string>
-    <!--  instafel.app.ifl_a_about_ota  -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
     <string name="ifl_a5_01">Verificar Atualizações</string>
     <string name="ifl_a5_02">Última verificação: %1$s</string>
     <string name="ifl_a5_03">Verificar Frequência</string>
@@ -147,12 +108,12 @@
     <string name="ifl_a5_dia_freq_03">Uma vez a cada três dias</string>
     <string name="ifl_a5_dia_freq_04">Uma vez a cada cinco dias</string>
     <string name="ifl_a5_dia_freq_05">Uma vez por semana</string>
-    <!--  instafel.app.ifl_a_language  -->
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Usar o Idioma do Dispositivo</string>
-    <!--  instafel.app.ifl_a_crashlog  -->
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Relatórios</string>
     <string name="ifl_a7_02">Excluir Relatórios</string>
-    <!--  instafel.app.ifl_a_crashviewer  -->
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Detalhes</string>
     <string name="ifl_a8_02">Copiar Log</string>
     <string name="ifl_a8_03">Compartilhar Log</string>
@@ -164,9 +125,9 @@
     <string name="ifl_a8_09">Razão</string>
     <string name="ifl_a8_10">Rastreamento de Pilha</string>
     <string name="ifl_a9_01">Detalhes</string>
-    <!--  instafel.app.ifl_a_about_contributors and translators  -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Contribuidores</string>
-    <!--  instafel.app.ifl_a_library_menu  -->
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Biblioteca de Flags</string>
     <string name="ifl_a11_02">Biblioteca de Backup</string>
     <string name="ifl_a11_03">Erro ao obter backups da API</string>
@@ -211,28 +172,62 @@
     <string name="ifl_a11_42">Erro ao importar substituições do arquivo de backup</string>
     <string name="ifl_a11_43">%1$s flag importada com sucesso</string>
     <string name="ifl_a11_44">%1$s importado com sucesso</string>
-    <!--  instafel.app.ifl_a_admin_login  -->
-    <!--  OTA FOUND DIALOG  -->
+    <string name="ifl_a0_01">Opções de backup</string>
+    <string name="ifl_a11_45">Versão</string>
+    <string name="ifl_a11_46">%1$s importado com sucesso com a bandeira %2$s</string>
+    <string name="ifl_a11_47">Por favor, selecione um arquivo de backup válido</string>
+    <string name="ifl_a11_48">Importar backups antigos (.json)</string>
+    <string name="ifl_a11_49">Por favor, preencha os campos obrigatórios.</string>
+    <string name="ifl_a11_50">Por favor, insira um nome de versão válido</string>
+    <string name="ifl_a11_51">Exportar backup</string>
+    <string name="ifl_a11_52">Nome do backup</string>
+    <string name="ifl_a11_53">"Como o backup perfeito da mamãe"</string>
+    <string name="ifl_a11_54">Nome do autor</string>
+    <string name="ifl_a11_55">Como Albert Einstein</string>
+    <string name="ifl_a11_56">Versão do backup</string>
+    <string name="ifl_a11_57">Como 1.0, 1.0-hotfix, etc.</string>
+    <string name="ifl_a11_58">Registro de alterações</string>
+    <string name="ifl_a11_59">Você pode escrever aqui o registro de alterações do backup</string>
+    <string name="ifl_a11_60">Atualizar backup</string>
+    <string name="ifl_a11_61">Importar backups antigos em JSON</string>
+    <string name="ifl_a11_62">Comparador de backups</string>
+    <string name="ifl_a11_63">Usado para importar completamente um arquivo de backup com todas as flags no arquivo</string>
+    <string name="ifl_a11_64">Adiciona flags ao arquivo de backup que você está usando e que não estão no backup selecionado.</string>
+    <string name="ifl_a11_65">Você pode importar backups antigos do tipo .json com esta opção</string>
+    <string name="ifl_a11_66">Selecionar Backup 1</string>
+    <string name="ifl_a11_67">Selecionar Backup 2</string>
+    <string name="ifl_a11_68">Pressione para selecionar um backup</string>
+    <string name="ifl_a11_69">Comparar Backups</string>
+    <string name="ifl_a11_70">Erro ao iniciar a compactação</string>
+    <string name="ifl_a11_71">Selecionado</string>
+    <string name="ifl_a11_72">Por favor, selecione dois arquivos de backup para comparar</string>
+    <string name="ifl_a11_73">Resultado da Comparação</string>
+    <string name="ifl_a11_74">Diferenças de B1 para B2</string>
+    <string name="ifl_a11_75">Diferenças de B2 para B1</string>
+    <string name="ifl_a11_76">IDs de flags removidos</string>
+    <string name="ifl_a11_77">Erro ao comparar backups</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
     <string name="ifl_d1_01">Nova Atualização</string>
     <string name="ifl_d1_02">Instafel será atualizado para a versão v%1$d (Instagram v%2$s)</string>
     <string name="ifl_d1_03">Cancelar</string>
     <string name="ifl_d1_04">Instalar</string>
     <string name="ifl_d1_05">Ocultar</string>
     <string name="ifl_d1_06">Conectando ao servidor de atualização</string>
-    <!--  OTA UP-TO-DATE DIALOG  -->
+    <!-- OTA UP-TO-DATE DIALOG -->
     <string name="ifl_d2_02">O Instafel está atualizado.</string>
     <string name="ifl_d2_01">Atualizado</string>
     <string name="ifl_d2_03">Okay</string>
-    <!--  AUTOUPDATE TEXTS  -->
+    <!-- AUTOUPDATE TEXTS -->
     <string name="ifl_t1_01">Ocorreu um erro ao abrir o instalador do APK.</string>
     <string name="ifl_t1_03">A atualização do Instafel falhou.</string>
-    <!--  GENERAL_FN CLASS  -->
+    <!-- GENERAL_FN CLASS -->
     <string name="ifl_c1_01">Um navegador da web não foi encontrado no seu dispositivo.</string>
-    <!-- - DIALOG SET FREQ  -->
+    <!--- DIALOG SET FREQ -->
     <string name="ifl_d3_01">Definir Frequência</string>
     <string name="ifl_d3_02">Okay</string>
-    <!--  WELCOME_DIALOG  -->
+    <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Bem-vindo</string>
     <string name="ifl_d4_02">Bem-vindo ao Instafel, este mod foi desenvolvido para fornecer a todos os recursos mais recentes nas versões alfa do Instagram\\n\\nO menu pode ser acessado pressionando e segurando o botão de hambúrguer na aba do perfil.</string>
-    <!--  CRASH TOAST  -->
+    <!-- CRASH TOAST -->
 </resources>
