@@ -210,7 +210,7 @@ export default function ReleasesPage() {
                                 px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer
                                 ${
                                                         currentPage === pageNum
-                                                            ? "bg-primary text-foreground shadow-sm"
+                                                            ? "text-foreground shadow-sm"
                                                             : "hover:bg-muted"
                                                     }
                               `}

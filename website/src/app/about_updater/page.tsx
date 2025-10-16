@@ -152,17 +152,13 @@ export default function PageUpdater() {
                                                 key={index}
                                                 className="relative overflow-hidden border-2 hover:border-primary/50 transition-colors group"
                                             >
-                                                <div
-                                                    className="absolute -right-4 -top-4 bg-gray-100 dark:bg-gray-800 rounded-full w-12 h-12 flex items-center justify-center text-lg font-bold opacity-70">
-                                                    {item.step}
-                                                </div>
                                                 <CardContent className="pt-6">
                                                     <div
                                                         className="mb-4 rounded-full bg-primary/10 p-3 w-fit group-hover:bg-primary/20 transition-colors">
                                                         {item.icon}
                                                     </div>
                                                     <h3 className="text-lg font-semibold mb-2">
-                                                        {item.title}
+                                                        {`${item.step}. ${item.title}`}
                                                     </h3>
                                                     <p className="text-muted-foreground">
                                                         {item.description}
@@ -232,7 +228,7 @@ export default function PageUpdater() {
                                     <div
                                         className="bg-gradient-to-r from-gray-100/50 to-gray-50/50 dark:from-gray-800/50 dark:to-gray-900/50 rounded-2xl p-8">
                                         <div className="flex flex-col md:flex-row items-center">
-                                            <div className="md:w-1/2 mb-6 md:mb-0">
+                                            <div className="mb-6 md:mb-0">
                                                 <h2 className="text-2xl font-bold mb-4">
                                                     {t("whyUse.title")}
                                                 </h2>
