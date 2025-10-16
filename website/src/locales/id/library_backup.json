@@ -1,15 +1,15 @@
 {
   "title": "Backup Library",
-  "description": "Browse community-created backups that you can import directly into Instafel.",
-  "createdBy": "Created by {{author}}",
+  "description": "Temukan dan impor Backups yang dibuat oleh komunitas ke Instafel.",
+  "createdBy": "Dibuat oleh {{author}}",
   "contribute": {
-    "title": "Want to Contribute?",
-    "description": "Share your Instafel backup with the community and help others discover optimal configurations.",
-    "button": "Join Our Community"
+    "title": "Ingin Berkontribusi?",
+    "description": "Bagikan backup Anda dengan komunitas dan bantu orang lain menemukan konfigurasi optimal.",
+    "button": "Bergabunglah dengan Komunitas Kami"
   },
   "error": {
-    "title": "Failed to Load Backups",
-    "description": "We couldn't retrieve the backup information. Please check your connection or try again later.",
-    "retryButton": "Retry"
+    "title": "Gagal Memuat Backups",
+    "description": "Kami tidak dapat mengambil informasi backup. Silakan periksa koneksi Anda atau coba lagi nanti.",
+    "retryButton": "Coba Lagi"
   }
 }
