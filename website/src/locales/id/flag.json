@@ -1,37 +1,37 @@
 {
   "not_found": {
-    "title": "Flag not found",
-    "description": "The flag you're looking for doesn't exist or has been removed.",
-    "go_back": "Go back"
+    "title": "Flag tidak ditemukan",
+    "description": "Flag yang Anda cari tidak ada atau telah dihapus.",
+    "go_back": "Kembali"
   },
   "loading": {
-    "title": "Loading flag information",
-    "description": "Please wait while we fetch the details"
+    "title": "Muat informasi flag",
+    "description": "Tolong tunggu sementara kami mengambil detailnya"
   },
   "badges": {
-    "removed": "Removed"
+    "removed": "Dihapus"
   },
   "content": {
     "block_titles": {
-      "information": "Information",
-      "metaconf_options": "MetaConfig Options",
-      "screenshots": "Screenshots"
+      "information": "Informasi",
+      "metaconf_options": "Opsi MetaConfig",
+      "screenshots": "Screenshot"
     },
     "block_contents": {
       "info": {
-        "added_by": "Added by",
-        "last_edit": "Last Edit",
-        "added_in": "Added in",
-        "removed_in": "Removed in",
-        "unknown": "Unknown"
+        "added_by": "Ditambahkan oleh",
+        "last_edit": "Terakhir diedit",
+        "added_in": "Versi ditambahkan",
+        "removed_in": "Versi dihapus",
+        "unknown": "Tidak Diketahui"
       },
       "screenshot": {
-        "failed_load_img": "Failed to load image"
+        "failed_load_img": "Gagal memuat gambar"
       },
       "metaconf_options": {
-        "copy_to_clipboard": "Copy to clipboard",
-        "prop_name_copied": "Property name copied",
-        "prop_name_copied_desc": "Flag property name copied to clipboard"
+        "copy_to_clipboard": "Salin ke clipboard",
+        "prop_name_copied": "Nama properti disalin",
+        "prop_name_copied_desc": "Nama properti bendera disalin ke clipboard"
       }
     }
   }
