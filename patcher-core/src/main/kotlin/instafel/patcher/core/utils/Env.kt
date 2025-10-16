@@ -13,7 +13,7 @@ import kotlin.system.exitProcess
 object Env {
     val USER_DIR: String = System.getProperty("user.dir")
     lateinit var PROJECT_DIR: String
-    val INSTAFEL_LOCALES = listOf("tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl", "in")
+    val INSTAFEL_LOCALES = listOf("tr", "de", "el", "fr", "hi", "hu", "pt", "es", "az", "pl", "in", "it")
     const val SEPARATOR_LINE = "---------------------------"
     val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
