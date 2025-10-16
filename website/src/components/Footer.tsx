@@ -124,7 +124,7 @@ export default function Footer() {
                     transition={{ type: "spring", stiffness: 400 }}
                   >
                     <Link
-                      href="/download?version=latest"
+                      href="/releases/view?version=latest"
                       className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
                     >
                       <Download className="w-4 h-4" />

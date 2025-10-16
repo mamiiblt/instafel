@@ -177,7 +177,7 @@ const copyToClipboard = (text: string) => {
 export default function ReleaseInfoPage() {
     const {t, i18n} = useTranslation(["release"]);
     const searchParams = useSearchParams();
-    const version = Number(searchParams.get("version")) ?? 1;
+    const version = searchParams.get("version");
     const [data, setData] = useState<RelInfo>(null);
 
     useEffect(() => {

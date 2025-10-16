@@ -34,7 +34,7 @@ public class ifl_a_build_info extends AppCompatActivity {
         tileInstallationType = findViewById(R.id.ifl_tile_installation_type);
 
         tileGenerationId.setSubtitleText(IflEnvironment.getGenerationId(this));
-        tileGenerationId.setOnClickListener(view -> openUrlInWeb("https://instafel.app/download?version=v" + InstafelEnv.IFL_VERSION));
+        tileGenerationId.setOnClickListener(view -> openUrlInWeb("https://instafel.app/releases/view?version=" + InstafelEnv.IFL_VERSION));
 
         tilePatcherVersion.setSubtitleText(InstafelEnv.PATCHER_VERSION + " (" + InstafelEnv.PATCHER_TAG + ")");
         tileCommit.setSubtitleText(InstafelEnv.COMMIT + " (main)");

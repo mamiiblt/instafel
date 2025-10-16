@@ -308,7 +308,7 @@ export default function PageHome() {
                                 size="lg"
                                 className="hover:scale-105 transition-transform duration-300"
                             >
-                                <Link href="/download?version=latest">
+                                <Link href="/releases/view?version=latest">
                                     <Download className="mr-2"/>
                                     {t("try_now.3")}
                                 </Link>
