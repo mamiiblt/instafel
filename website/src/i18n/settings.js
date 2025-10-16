@@ -1,13 +1,13 @@
 export const fallbackLng = "en";
 export const navLanguages = [
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "tr", name: "Türkçe", flag: "🇹🇷" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
-  { code: "hi", name: "हिन्दी", flag: "🇮🇳" },
-  { code: "pl", name: "Polski", flag: "🇵🇱" },
-  { code: "id", name: "Indonesia", flag: "🇮🇩" },
-  { code: "it", name: "Italiano", flag: "🇮🇹" },
+  { code: "en", name: "English" },
+  { code: "tr", name: "Türkçe" },
+  { code: "de", name: "Deutsch" },
+  { code: "es", name: "Español" },
+  { code: "in", name: "हिन्दी" },
+  { code: "pl", name: "Polski" },
+  { code: "id", name: "Indonesia" },
+  { code: "it", name: "Italiano" },
 ];
 export const languages = navLanguages.map((lang) => lang.code);
 export const defaultNS = "common";

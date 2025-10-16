@@ -10,6 +10,7 @@ import {
 import { Globe } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -38,7 +39,12 @@ export default function LanguageSwitcher() {
                 : ""
             }`}
           >
-            <span className="mr-2">{lang.flag}</span>
+            <span className="mr-2">
+                <Avatar className="w-5 h-5">
+                    <AvatarImage src={`/flags/${lang.code}.svg`} />
+                    <AvatarFallback>{lang.code.toUpperCase()}</AvatarFallback>
+                </Avatar>
+            </span>
             {lang.name}
             {i18n.resolvedLanguage === lang.code && (
               <span className="ml-auto text-primary">•</span>

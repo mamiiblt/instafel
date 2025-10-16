@@ -114,8 +114,8 @@ export default function ContributorsPage() {
         {
             name: "Munir Nasibzade",
             language: "Azerbaycanca",
+            languageCode: "az",
             avatar: "https://avatars.githubusercontent.com/u/160434174?v=4",
-            flag: "🇦🇿",
             socials: {
                 github: "mnasibzade",
                 telegram: "mnasibzade",
@@ -124,8 +124,8 @@ export default function ContributorsPage() {
         {
             name: "Rüşan Gür",
             language: "Deutsch",
+            languageCode: "de",
             avatar: "https://avatars.githubusercontent.com/u/34343052?v=4",
-            flag: "🇩🇪",
             socials: {
                 website: "github.com/xxOrdulu52xx",
             },
@@ -133,8 +133,8 @@ export default function ContributorsPage() {
         {
             name: "Hem Pal",
             language: "Français",
+            languageCode: "fr",
             avatar: "/cpictures/hempal.jpg",
-            flag: "🇫🇷",
             socials: {
                 telegram: "hemk651",
                 website: "www.instagram.com/sincrypt.hemk651",
@@ -143,8 +143,8 @@ export default function ContributorsPage() {
         {
             name: "nubesurrealista",
             language: "Español",
+            languageCode: "es",
             avatar: "https://avatars.githubusercontent.com/u/136946098?v=4",
-            flag: "🇪🇸",
             socials: {
                 github: "nubesurrealista",
                 website: "nube.codeberg.page/links/",
@@ -153,8 +153,8 @@ export default function ContributorsPage() {
         {
             name: "Vinicius",
             language: "Portugal",
+            languageCode: "pt",
             avatar: "/cpictures/vinicius.jpg",
-            flag: "🇵🇹",
             socials: {
                 telegram: "exteraDev",
                 github: "exteraDev",
@@ -163,8 +163,8 @@ export default function ContributorsPage() {
         {
             name: "Zan",
             language: "Magyar",
+            languageCode: "hu",
             avatar: "/placeholder.svg?height=60&width=60",
-            flag: "🇭🇺",
             socials: {
                 telegram: "Zan1456",
                 website: "youtsit.ee/zan1456",
@@ -173,8 +173,8 @@ export default function ContributorsPage() {
         {
             name: "Sahil Ensari",
             language: "हिंदी",
+            languageCode: "in",
             avatar: "/cpictures/sahil.jpg",
-            flag: "🇮🇳",
             socials: {
                 telegram: "imsahilansarii",
                 github: "imsahilansarii",
@@ -183,8 +183,8 @@ export default function ContributorsPage() {
         {
             name: "John Xirouchakis",
             language: "Ελληνικά",
+            languageCode: "gr",
             avatar: "/cpictures/john.jpg",
-            flag: "🇬🇷",
             socials: {
                 telegram: "ioannisxir",
                 github: "johnxirouchakis",
@@ -193,8 +193,8 @@ export default function ContributorsPage() {
         {
             name: "krvstek.",
             language: "Polski",
+            languageCode: "pl",
             avatar: "/cpictures/krvstek.jpg",
-            flag: "🇵🇱",
             socials: {
                 website: "e-z.bio/krvstek"
             },
@@ -202,8 +202,8 @@ export default function ContributorsPage() {
         {
             name: "muhbintangx",
             language: "Indonesia",
+            languageCode: "id",
             avatar: "/cpictures/muhbintangx.jpg",
-            flag: "🇮🇩",
             socials: {
                 github: "muhbintangx",
                 website: "instagram.com/muhbintangx"
@@ -212,8 +212,8 @@ export default function ContributorsPage() {
         {
             name: "Andrea Strange",
             language: "Italiano",
+            languageCode: "it",
             avatar: "/cpictures/andrea.jpg",
-            flag: "🇮🇹",
             socials: {
                 github: "Strange-IPmart",
             }
@@ -455,17 +455,20 @@ export default function ContributorsPage() {
                                             </Avatar>
                                             <div className="flex flex-col items-center">
                                                 <div>
-                                                    <h3 className="font-semibold text-sm">
+                                                    <h3 className="font-semibold text-sm mb-1">
                                                         {translator.name}
                                                     </h3>
-                                                    <div className="flex items-center justify-center gap-2  mb-2">
-                                                        <span className="text-lg">{translator.flag}</span>
-                                                        <span className="text-muted-foreground text-xs">
-                                {translator.language}
-                              </span>
+                                                    <div className="flex items-center justify-center gap-2 mb-3">
+                                                        <Avatar className="w-5 h-5">
+                                                            <AvatarImage src={`/flags/${translator.languageCode}.svg`} />
+                                                            <AvatarFallback>{translator.languageCode.toUpperCase()}</AvatarFallback>
+                                                        </Avatar>
+                                                        <span className="text-muted-foreground text-sm">
+                                                            {translator.language}
+                                                        </span>
                                                     </div>
                                                 </div>
-                                                <SocialLinks socials={translator.socials}/>
+                                                <SocialLinks socials={translator.socials} />
                                             </div>
                                         </div>
                                     </CardContent>
