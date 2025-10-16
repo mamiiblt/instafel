@@ -1,71 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2024. mamiiblt.dev
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ifl_a1_18">A fejlesztőről</string>
-    <string name="ifl_a1_19">Weboldal</string>
-    <string name="ifl_a1_20">Csatlakozás a közösséghez</string>
-    <string name="ifl_a1_21">Közreműködők</string>
-    <string name="ifl_a1_12">Build információ</string>
-    <string name="ifl_a1_13">Patcher Verzió</string>
-    <string name="ifl_a1_14">Alkalmazott javítások</string>
-    <string name="ifl_a1_15">Build részleteinek megtekintése</string>
-    <string name="ifl_a11_61">Régi JSON biztonsági mentések importálása</string>
-    <string name="ifl_a11_62">Biztonsági mentés összehasonlító</string>
-    <string name="ifl_a11_63">Egy biztonsági mentési fájl teljes importálására szolgál az összes zászlóval együtt</string>
-    <string name="ifl_a11_64">Hozzáadja azokat a zászlókat a használt biztonsági mentéshez, amelyek nincsenek a kiválasztottban.</string>
-    <string name="ifl_a11_65">Ezzel az opcióval régi .json típusú biztonsági mentéseket importálhat</string>
-    <string name="ifl_a11_66">Válassza ki az 1. mentést</string>
-    <string name="ifl_a11_67">Válassza ki a 2. mentést</string>
-    <string name="ifl_a11_68">Koppintson a mentés kiválasztásához</string>
-    <string name="ifl_a11_69">Biztonsági mentések összehasonlítása</string>
-    <string name="ifl_a11_70">Hiba a tömörítés indításakor</string>
-    <string name="ifl_a11_71">Kiválasztva</string>
-    <string name="ifl_a11_72">Kérjük, válasszon ki két biztonsági mentési fájlt az összehasonlításhoz</string>
-    <string name="ifl_a11_73">Összehasonlítás eredménye</string>
-    <string name="ifl_a11_74">Eltérések B1 és B2 között</string>
-    <string name="ifl_a11_75">Eltérések B2 és B1 között</string>
-    <string name="ifl_a11_76">Eltávolított zászlóazonosítók</string>
-    <string name="ifl_a11_77">Hiba a biztonsági mentések összehasonlításakor</string>
-
-    <string name="ifl_a0_01">Biztonsági másolat lehetőségek</string>
-    <string name="ifl_a11_45">Verzió</string>
-    <string name="ifl_a11_46">%1$s sikeresen importálva a %2$s zászlóval</string>
-    <string name="ifl_a11_47">Kérjük, válasszon egy érvényes biztonsági másolat fájlt</string>
-    <string name="ifl_a11_48">Régi biztonsági másolatok importálása (.json)</string>
-
+    <!-- sa -->
+    <string name="ifl_a5_10">Engedély megtagadva</string>
+    <string name="ifl_a5_11">"Az Instafel értesítési engedélyét megtagadták. Ha ez a probléma továbbra is fennáll, ne felejtsd el bekapcsolni az értesítéseket az alkalmazás beállításaiban."</string>
     <string name="ifl_a0_08">Egyéb</string>
     <string name="ifl_a0_10">Engedélyezi az amoled témát az Instafel tevékenységek, párbeszédpanelek és egyéb részek számára.</string>
     <string name="ifl_a0_11">Hirdetések eltávolítása</string>
     <string name="ifl_a0_12">Eltávolítja a hírfolyamban, a rövidvideóknál vagy más helyeken megjelenő hirdetéseket.</string>
     <string name="ifl_a0_13">Indítsd újra az appot a módosítások alkalmazásához.</string>
-    <string name="ifl_a5_10">Engedély megtagadva</string>
-    <string name="ifl_a5_11">Az Instafel értesítési engedélyét megtagadták. Ha ez a probléma továbbra is fennáll, ne felejtsd el bekapcsolni az értesítéseket az alkalmazás beállításaiban.</string>
     <string name="ifl_a0_14">Alapértelmezés szerint engedélyezve, nem módosítható.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Használja az Instafel Updater-t automatikus frissítésekhez Root / Shizuku segítségével.</string>
-    <string name="ifl_a11_49">Kérjük, töltse ki a kötelező mezőket.</string>
-    <string name="ifl_a11_50">Kérjük, adjon meg egy érvényes verziónevet</string>
-    <string name="ifl_a11_51">Biztonsági másolat exportálása</string>
-    <string name="ifl_a11_52">Biztonsági másolat neve</string>
-    <string name="ifl_a11_53">"Mint Mami tökéletes biztonsági másolata"</string>
-    <string name="ifl_a11_54">Szerző neve</string>
-    <string name="ifl_a11_55">Mint Albert Einstein</string>
-    <string name="ifl_a11_56">Biztonsági másolat verziója</string>
-    <string name="ifl_a11_57">Mint 1.0, 1.0-hotfix stb.</string>
-    <string name="ifl_a11_58">Változási napló</string>
-    <string name="ifl_a11_59">Itt írhatja a biztonsági másolat változási naplóját</string>
-    <string name="ifl_a11_60">Biztonsági másolat frissítése</string>
-
-    <!--  instafel.app.ifl_a_menu  -->
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
     <string name="ifl_a0_02">Frissítés beállításai</string>
     <string name="ifl_a0_03">Nyelv</string>
     <string name="ifl_a0_04">Könyvtár</string>
     <string name="ifl_a0_05">Névjegy</string>
     <string name="ifl_a0_06">Ez a funkció még nem került hozzáadásra</string>
     <string name="ifl_a0_07">Összeomlás jelentések</string>
-    <!--  instafel.app.ifl_a_about_ifl  -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
     <string name="ifl_a1_01">Instafel-ről</string>
     <string name="ifl_a1_02">Instafel Verzió</string>
     <string name="ifl_a1_03">Telepítés típusa</string>
@@ -74,16 +27,24 @@
     <string name="ifl_a1_08">Nem klónozott</string>
     <string name="ifl_a1_09">Generáció ID</string>
     <string name="ifl_a1_10">Instagram Verzió</string>
-    <!--  instafel.app.ifl_a_about_ig  -->
+    <string name="ifl_a1_12">Build információ</string>
+    <string name="ifl_a1_13">Patcher Verzió</string>
+    <string name="ifl_a1_14">Alkalmazott javítások</string>
+    <string name="ifl_a1_15">Build részleteinek megtekintése</string>
+    <string name="ifl_a1_18">A fejlesztőről</string>
+    <string name="ifl_a1_19">Weboldal</string>
+    <string name="ifl_a1_20">Csatlakozás a közösséghez</string>
+    <string name="ifl_a1_21">Közreműködők</string>
     <string name="ifl_a1_22">Alkalmazott javítások információinak megtekintése</string>
     <string name="ifl_a1_23">Alap commit</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
     <string name="ifl_a2_01">Instagram-ról</string>
     <string name="ifl_a2_02">Verzió</string>
     <string name="ifl_a2_03">Verzió kódja</string>
     <string name="ifl_a2_04">Csatorna</string>
     <string name="ifl_a2_05">Felépítése</string>
     <string name="ifl_a3_01">Névjegy</string>
-    <!--  instafel.app.ifl_a_devmode  -->
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
     <string name="ifl_a4_01">Exportálás</string>
     <string name="ifl_a4_02">Importálás</string>
     <string name="ifl_a4_03">Helyi felülbírálatok fájl törlése</string>
@@ -126,7 +87,7 @@
     <string name="ifl_a4_40">%1$s jelzések sikeresen importálva</string>
     <string name="ifl_a4_41">Hiba a tartalom mentési fájlba írása közben.</string>
     <string name="ifl_a4_42">Hiba a mentési fájl exportálása közben</string>
-    <!--  instafel.app.ifl_a_about_ota  -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
     <string name="ifl_a5_01">Frissítések keresése</string>
     <string name="ifl_a5_02">Utolsó ellenőrzés: %1$s</string>
     <string name="ifl_a5_03">Ellenőrzési gyakoriság</string>
@@ -147,12 +108,12 @@
     <string name="ifl_a5_dia_freq_03">Egyszer három naponta</string>
     <string name="ifl_a5_dia_freq_04">Egyszer öt naponta</string>
     <string name="ifl_a5_dia_freq_05">Egyszer egy héten</string>
-    <!--  instafel.app.ifl_a_language  -->
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Eszköz nyelvének használata</string>
-    <!--  instafel.app.ifl_a_crashlog  -->
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Jelentések</string>
     <string name="ifl_a7_02">Jelentések törlése</string>
-    <!--  instafel.app.ifl_a_crashviewer  -->
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Részletek</string>
     <string name="ifl_a8_02">Napló másolása</string>
     <string name="ifl_a8_03">Napló megosztása</string>
@@ -164,9 +125,9 @@
     <string name="ifl_a8_09">Indok</string>
     <string name="ifl_a8_10">Halmazkövetés</string>
     <string name="ifl_a9_01">Részletek</string>
-    <!--  instafel.app.ifl_a_about_contributors and translators  -->
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Közreműködők</string>
-    <!--  instafel.app.ifl_a_library_menu  -->
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Jelzés könyvtár</string>
     <string name="ifl_a11_02">Mentés könyvtár</string>
     <string name="ifl_a11_03">Hiba a biztonsági mentések API-ból történő lekérése közben</string>
@@ -211,28 +172,62 @@
     <string name="ifl_a11_42">Hiba a mentési fájlból történő felülírálások importálása során</string>
     <string name="ifl_a11_43">%1$s jelzés sikeresen importálva</string>
     <string name="ifl_a11_44">%1$s sikeresen importálva</string>
-    <!--  instafel.app.ifl_a_admin_login  -->
-    <!--  OTA FOUND DIALOG  -->
+    <string name="ifl_a0_01">Biztonsági másolat lehetőségek</string>
+    <string name="ifl_a11_45">Verzió</string>
+    <string name="ifl_a11_46">%1$s sikeresen importálva a %2$s zászlóval</string>
+    <string name="ifl_a11_47">Kérjük, válasszon egy érvényes biztonsági másolat fájlt</string>
+    <string name="ifl_a11_48">Régi biztonsági másolatok importálása (.json)</string>
+    <string name="ifl_a11_49">Kérjük, töltse ki a kötelező mezőket.</string>
+    <string name="ifl_a11_50">Kérjük, adjon meg egy érvényes verziónevet</string>
+    <string name="ifl_a11_51">Biztonsági másolat exportálása</string>
+    <string name="ifl_a11_52">Biztonsági másolat neve</string>
+    <string name="ifl_a11_53">"Mint Mami tökéletes biztonsági másolata"</string>
+    <string name="ifl_a11_54">Szerző neve</string>
+    <string name="ifl_a11_55">Mint Albert Einstein</string>
+    <string name="ifl_a11_56">Biztonsági másolat verziója</string>
+    <string name="ifl_a11_57">Mint 1.0, 1.0-hotfix stb.</string>
+    <string name="ifl_a11_58">Változási napló</string>
+    <string name="ifl_a11_59">Itt írhatja a biztonsági másolat változási naplóját</string>
+    <string name="ifl_a11_60">Biztonsági másolat frissítése</string>
+    <string name="ifl_a11_61">Régi JSON biztonsági mentések importálása</string>
+    <string name="ifl_a11_62">Biztonsági mentés összehasonlító</string>
+    <string name="ifl_a11_63">Egy biztonsági mentési fájl teljes importálására szolgál az összes zászlóval együtt</string>
+    <string name="ifl_a11_64">Hozzáadja azokat a zászlókat a használt biztonsági mentéshez, amelyek nincsenek a kiválasztottban.</string>
+    <string name="ifl_a11_65">Ezzel az opcióval régi .json típusú biztonsági mentéseket importálhat</string>
+    <string name="ifl_a11_66">Válassza ki az 1. mentést</string>
+    <string name="ifl_a11_67">Válassza ki a 2. mentést</string>
+    <string name="ifl_a11_68">Koppintson a mentés kiválasztásához</string>
+    <string name="ifl_a11_69">Biztonsági mentések összehasonlítása</string>
+    <string name="ifl_a11_70">Hiba a tömörítés indításakor</string>
+    <string name="ifl_a11_71">Kiválasztva</string>
+    <string name="ifl_a11_72">Kérjük, válasszon ki két biztonsági mentési fájlt az összehasonlításhoz</string>
+    <string name="ifl_a11_73">Összehasonlítás eredménye</string>
+    <string name="ifl_a11_74">Eltérések B1 és B2 között</string>
+    <string name="ifl_a11_75">Eltérések B2 és B1 között</string>
+    <string name="ifl_a11_76">Eltávolított zászlóazonosítók</string>
+    <string name="ifl_a11_77">Hiba a biztonsági mentések összehasonlításakor</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
     <string name="ifl_d1_01">Új frissítés</string>
     <string name="ifl_d1_02">Instafel frissítve lesz a következő verzióra v%1$d (Instagram v%2$s)</string>
     <string name="ifl_d1_03">Mégsem</string>
     <string name="ifl_d1_04">Telepítés</string>
     <string name="ifl_d1_05">Elrejtés</string>
     <string name="ifl_d1_06">Csatlakozás a szerverhez</string>
-    <!--  OTA UP-TO-DATE DIALOG  -->
+    <!-- OTA UP-TO-DATE DIALOG -->
     <string name="ifl_d2_02">Instafel naprakész.</string>
     <string name="ifl_d2_01">Naprakész</string>
     <string name="ifl_d2_03">Oké</string>
-    <!--  AUTOUPDATE TEXTS  -->
+    <!-- AUTOUPDATE TEXTS -->
     <string name="ifl_t1_01">Hiba történt az apk-telepítő megnyitásakor.</string>
     <string name="ifl_t1_03">Instafel frissítés sikertelen.</string>
-    <!--  GENERAL_FN CLASS  -->
+    <!-- GENERAL_FN CLASS -->
     <string name="ifl_c1_01">A web böngésző nem található az eszközön</string>
-    <!-- - DIALOG SET FREQ  -->
+    <!--- DIALOG SET FREQ -->
     <string name="ifl_d3_01">Gyakoriság beállítása</string>
     <string name="ifl_d3_02">Oké</string>
-    <!--  WELCOME_DIALOG  -->
+    <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Üdvözölünk</string>
     <string name="ifl_d4_02">Üdvözölünk az Instafel, ezt a modot azért fejlesztették, hogy mindenki számára a legújabb funkciókat az Instagram alfa buildeken\\n\\nA menü érhető el a hamburger gomb megnyomásával és lenyomva tartásával a profil fülön.</string>
-    <!--  CRASH TOAST  -->
+    <!-- CRASH TOAST -->
 </resources>
