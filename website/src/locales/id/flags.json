@@ -1,16 +1,24 @@
 {
-  "addedBy": "Ditambahkan oleh {{name}}",
-  "uploadedAt": "Diunggah pada {{dateStr}}",
-  "removedWith": "Dihapus dengan v{{version}}",
-  "loading": "Memuat...",
-  "flagFound": "Ada total {{flagCount}} flag dalam kategori ini",
-  "pageInfo": "Halaman {{currentPage}} dari {{totalPages}}",
-  "prev": "Sebelumnya",
-  "next": "Selanjutnya",
-  "results": "Hasil",
-  "searchFlagFound": "Total {{flagCount}} hasil ditemukan di perpustakaan yang terkait dengan istilah '{{query}}'",
-  "foundFooter": {
-    "down": "Total {{flagCount}} flags ditemukan untuk kueri ini. Jika Anda tidak menemukan flag yang benar, coba gunakan istilah pencarian yang berbeda.",
-    "up": "Total 15 flags ditemukan. Secara default, hasil dibatasi hingga 15 item. Coba gunakan istilah yang lebih spesifik untuk mempertajam pencarian Anda."
+  "added_by": "Added by {{name}}",
+  "uploaded_at": "Uploaded at {{date_str}}",
+  "removed_with": "Removed with v{{version}}",
+  "loading": "Loading...",
+  "flag_found_zero": "There are no flags in this category",
+  "flag_found_one": "There is {{count}} flag in this category",
+  "flag_found_few": "There are {{count}} flags in this category",
+  "flag_found_many": "There are {{count}} flags in this category",
+  "flag_found_other": "There are {{count}} flags in this category",
+  "page_info": "Page {{current}} of {{total}}",
+  "prev": "Previous",
+  "next": "Next",
+  "results": "Results",
+  "s_flag_found_zero": "No results were found in the library for '{{query}}'",
+  "s_flag_found_one": "{{count}} result was found in the library for '{{query}}'",
+  "s_flag_found_few": "{{count}} results were found in the library for '{{query}}'",
+  "s_flag_found_many": "{{count}} results were found in the library for '{{query}}'",
+  "s_flag_found_other": "{{count}} results were found in the library for '{{query}}'",
+  "found_footer": {
+    "down": "A total of {{size}} flags were found for this query. If you didn't find the correct flag, try using different search terms.",
+    "up": "A total of 15 flags were found. By default, results are limited to 15 items. Try using more specific terms to refine your search."
   }
 }
