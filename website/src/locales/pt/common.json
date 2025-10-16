@@ -4,26 +4,26 @@
       "backups": "Backups",
       "flags": "Flags",
       "updater": "Updater",
-      "src_code": "Código Fonte",
+      "src_code": "Source Code",
       "download": "Download",
-      "contributors": "Contribuidores"
+      "contributors": "Contributors"
     },
-    "1": "Aparência",
-    "2": "Claro",
-    "3": "Escuro",
+    "1": "Appearance",
+    "2": "Light",
+    "3": "Dark",
     "4": "Auto"
   },
   "footer": {
-    "1": "Fornece uma experiência alfa rápida e atualizada do Instagram com recursos aprimorados e desenvolvimento orientado à comunidade",
-    "2": "Instafel não tem nenhuma afiliação com Meta ou Instagram",
-    "3": "Desenvolvido com ❤️ por mamiiblt",
-    "4": "Recursos",
+    "1": "Provides fast & up-to-date Instagram Alpha experience with enhanced features and community-driven development",
+    "2": "Instafel has no any affiliation with Meta or Instagram",
+    "3": "Developed with ❤️ by mamiiblt",
+    "4": "Resources",
     "5": "Wiki",
     "6": "Backups",
     "7": "Links",
     "8": "Updater",
     "9": "Download",
-    "10": "Código Fonte",
+    "10": "Source Code",
     "11": "Flags"
   }
 }
