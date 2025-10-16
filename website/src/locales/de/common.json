@@ -2,28 +2,28 @@
   "navbar": {
     "items": {
       "backups": "Backups",
-      "flags": "Flags",
+      "flags": "Flaggen",
       "updater": "Updater",
-      "src_code": "Source Code",
+      "src_code": "Quellcode",
       "download": "Download",
-      "contributors": "Contributors"
+      "contributors": "Mitwirkende"
     },
-    "1": "Appearance",
-    "2": "Light",
-    "3": "Dark",
-    "4": "Auto"
+    "1": "Darstellung",
+    "2": "Hell",
+    "3": "Dunkel",
+    "4": "Automatisch"
   },
   "footer": {
-    "1": "Provides fast & up-to-date Instagram Alpha experience with enhanced features and community-driven development",
-    "2": "Instafel has no any affiliation with Meta or Instagram",
-    "3": "Developed with ❤️ by mamiiblt",
-    "4": "Resources",
+    "1": "Bietet eine schnelle und aktuelle Instagram-Alpha-Erfahrung mit erweiterten Funktionen und community-getriebener Entwicklung",
+    "2": "Instafel steht in keiner Verbindung zu Meta oder Instagram",
+    "3": "Mit ❤️ entwickelt von mamiiblt",
+    "4": "Ressourcen",
     "5": "Wiki",
     "6": "Backups",
     "7": "Links",
     "8": "Updater",
     "9": "Download",
-    "10": "Source Code",
-    "11": "Flags"
+    "10": "Quellcode",
+    "11": "Flaggen"
   }
 }
