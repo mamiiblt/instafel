@@ -5,7 +5,7 @@
     "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
   },
   "buttons": {
-    "download": "Download {{version}}",
+    "download": "Unduh {{version}}",
     "sourceCode": "Source Code"
   },
   "howItWorks": {
@@ -26,7 +26,7 @@
     }
   },
   "features": {
-    "title": "Key Features",
+    "title": "Fitur Utama",
     "silent": {
       "title": "Silent Installation",
       "description": "Runs in the background to automatically download and install the latest versions from our API."
@@ -41,17 +41,17 @@
     }
   },
   "whyUse": {
-    "title": "Why Use Updater?",
+    "title": "Mengapa Menggunakan Updater?",
     "benefits": {
       "latestFeatures": "Always have the latest patches and features automatically",
       "saveTime": "Save time with background updates instead of manual OTA checks",
-      "lightweight": "Lightweight and efficient with minimal resource usage",
-      "notifications": "Get notified only when updates are successfully installed",
-      "compatibility": "Works seamlessly with both Shizuku and Root methods"
+      "lightweight": "Ringan dan efisien dengan penggunaan sumber daya minimal",
+      "notifications": "Dapatkan pemberitahuan hanya saat pembaruan berhasil diinstal",
+      "compatibility": "Berfungsi dengan lancar bersama metode Shizuku dan Root"
     }
   },
   "callToAction": {
-    "title": "Get it now!",
-    "description": "Keep your Instafel experience up-to-date with minimum effort. Download the updater now."
+    "title": "Dapatkan sekarang!",
+    "description": "Jaga pengalaman Instafel Anda tetap terbaru dengan usaha minimal. Unduh pembaruan sekarang."
   }
 }
