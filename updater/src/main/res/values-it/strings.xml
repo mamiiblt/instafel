@@ -1,11 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Instafel Updater</string>
-
     <!-- Nav Bar -->
     <string name="status">Stato</string>
     <string name="logs">Registro</string>
     <string name="settings">Impostazioni</string>
-
     <!-- Setup Updater -->
     <string name="setup_ifl">Imposta Updater</string>
     <string name="checker_arch">Controllo Architettura</string>
@@ -15,7 +13,6 @@
     <string name="cont">Continua</string>
     <string name="warning">Avviso</string>
     <string name="warning_desc">Seleziona un\'architettura e un tipo di installazione.</string>
-
     <!-- Status Fragment -->
     <string name="authorized">​​Autorizzato</string>
     <string name="not_installed">Shizuku Non Installato</string>
@@ -52,11 +49,9 @@
     <string name="minute">minuto</string>
     <string name="upd_started">Updater avviato</string>
     <string name="upd_stopped">Updater arrestato</string>
-
     <!-- Code Strings -->
     <string name="runtime_log_cleared">Registro di runtime cancellato.</string>
     <string name="work_restarted">Updater riavviato</string>
-
     <!-- Notification Strings -->
     <string name="n1_downloading">Download Aggiornamento</string>
     <string name="n2_waiting">In attesa del server di aggiornamento</string>
@@ -66,7 +61,6 @@
     <string name="n4_complete">Aggiornamento Installato Correttamente</string>
     <string name="n4_sub">Instafel aggiornato alla versione v %1$s</string>
     <string name="error">Errore</string>
-
     <!-- Setting Keys -->
     <string name="cname_general">Generale</string>
     <string name="cname_behavior">Comportamento</string>
