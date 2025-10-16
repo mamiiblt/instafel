@@ -1,37 +1,37 @@
 {
   "not_found": {
-    "title": "Contrassegno non trovato",
-    "description": "Il contrassegno che stai cercando non esiste o è stato rimosso.",
-    "go_back": "Torna indietro"
+    "title": "Flag not found",
+    "description": "The flag you're looking for doesn't exist or has been removed.",
+    "go_back": "Go back"
   },
   "loading": {
-    "title": "Caricamento informazioni sul contrassegno",
-    "description": "Attendi mentre recuperiamo i dettagli"
+    "title": "Loading flag information",
+    "description": "Please wait while we fetch the details"
   },
   "badges": {
-    "removed": "Rimosso"
+    "removed": "Removed"
   },
   "content": {
     "block_titles": {
-      "information": "Informazione",
-      "metaconf_options": "Opzioni MetaConfig",
-      "screenshots": "Screenshot"
+      "information": "Information",
+      "metaconf_options": "MetaConfig Options",
+      "screenshots": "Screenshots"
     },
     "block_contents": {
       "info": {
-        "added_by": "Aggiunto da",
-        "last_edit": "Ultima Modifica",
-        "added_in": "Aggiunto in",
-        "removed_in": "Rimosso in",
-        "unknown": "Sconosciuto"
+        "added_by": "Added by",
+        "last_edit": "Last Edit",
+        "added_in": "Added in",
+        "removed_in": "Removed in",
+        "unknown": "Unknown"
       },
       "screenshot": {
-        "failed_load_img": "Impossibile caricare l'immagine"
+        "failed_load_img": "Failed to load image"
       },
       "metaconf_options": {
-        "copy_to_clipboard": "Copia negli appunti",
-        "prop_name_copied": "Nome della proprietà copiato",
-        "prop_name_copied_desc": "Proprietà del contrassegno copiato negli appunti"
+        "copy_to_clipboard": "Copy to clipboard",
+        "prop_name_copied": "Property name copied",
+        "prop_name_copied_desc": "Flag property name copied to clipboard"
       }
     }
   }
