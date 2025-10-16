@@ -1,57 +1,57 @@
 {
-  "hero_header": {
+  "heroHeader": {
     "title": "Instafel Updater",
-    "subtitle": "Pembaruan otomatis, tanpa usaha",
-    "description": "Jaga Instafel selalu terupdate dengan aplikasi pendamping yang kuat ini yang menangani pembaruan secara otomatis melalui Shizuku atau Root."
+    "subtitle": "Automatic updates, zero effort",
+    "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
   },
   "buttons": {
-    "download": "Unduh {{version}}",
-    "source_code": "Source Code"
+    "download": "Download {{version}}",
+    "sourceCode": "Source Code"
   },
-  "how_it_works": {
-    "title": "Cara Kerjanya",
+  "howItWorks": {
+    "title": "How It Works",
     "steps": {
       "install": {
-        "title": "Instal & Berikan Izin",
-        "description": "Instal aplikasi dan berikan izin Shizuku atau Root."
+        "title": "Install & Grant Permissions",
+        "description": "Install the app and grant Shizuku or Root permissions."
       },
       "configure": {
-        "title": "Konfigurasi Pengaturan",
-        "description": "Pilih preferensi pembaruan dan frekuensi pemeriksaan."
+        "title": "Configure Settings",
+        "description": "Choose your update preferences and check frequency."
       },
       "automatic": {
-        "title": "Pembaruan Otomatis",
-        "description": "Relaks dan biarkan Updater menangani semuanya untuk Anda."
+        "title": "Automatic Updates",
+        "description": "Relax and let Updater handle everything for you."
       }
     }
   },
   "features": {
-    "title": "Fitur Utama",
-    "silent_install": {
-      "title": "Instalasi Senyap",
-      "description": "Berjalan di latar belakang untuk secara otomatis mengunduh dan menginstal versi terbaru dari API kami."
+    "title": "Key Features",
+    "silent": {
+      "title": "Silent Installation",
+      "description": "Runs in the background to automatically download and install the latest versions from our API."
     },
-    "shizuku_support": {
-      "title": "Dukungan Shizuku",
-      "description": "Berfungsi pada ponsel non-root dengan Shizuku tanpa memerlukan pengelola root tambahan."
+    "shizuku": {
+      "title": "Shizuku Support",
+      "description": "Works on non-rooted phones with Shizuku without requiring any additional root managers."
     },
-    "open_source": {
+    "openSource": {
       "title": "Open Source",
-      "description": "Kode sumber terbuka sepenuhnya sehingga Anda dapat mempercayai aplikasi ini dengan izin yang diperlukan."
+      "description": "Completely transparent code so you can trust the app with the necessary permissions."
     }
   },
   "whyUse": {
-    "title": "Mengapa Menggunakan Updater?",
+    "title": "Why Use Updater?",
     "benefits": {
-      "latest_features": "Selalu dapatkan pembaruan dan fitur terbaru secara otomatis",
-      "time_saver": "Hemat waktu dengan pembaruan latar belakang daripada pemeriksaan OTA manual",
-      "lightweight": "Ringan dan efisien dengan penggunaan sumber daya minimal",
-      "notifications": "Dapatkan pemberitahuan hanya saat pembaruan berhasil diinstal",
-      "compatibility": "Berfungsi dengan lancar bersama metode Shizuku dan Root"
+      "latestFeatures": "Always have the latest patches and features automatically",
+      "saveTime": "Save time with background updates instead of manual OTA checks",
+      "lightweight": "Lightweight and efficient with minimal resource usage",
+      "notifications": "Get notified only when updates are successfully installed",
+      "compatibility": "Works seamlessly with both Shizuku and Root methods"
     }
   },
   "callToAction": {
-    "title": "Dapatkan sekarang!",
-    "description": "Jaga pengalaman Instafel Anda tetap terbaru dengan usaha minimal. Unduh pembaruan sekarang."
+    "title": "Get it now!",
+    "description": "Keep your Instafel experience up-to-date with minimum effort. Download the updater now."
   }
 }
