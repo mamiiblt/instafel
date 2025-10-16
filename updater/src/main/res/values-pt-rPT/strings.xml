@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">Status</string>
+    <string name="logs">Log</string>
+    <string name="settings">Settings</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Setup Updater</string>
+    <string name="checker_arch">Checker Architecture</string>
+    <string name="checker_itype">Checker Installation Type</string>
+    <string name="unclone">Unclone</string>
+    <string name="clone">Clone</string>
+    <string name="cont">Continue</string>
+    <string name="warning">Warning</string>
+    <string name="warning_desc">Please select an architecture and installation type.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">Authorized</string>
+    <string name="not_installed">Shizuku Not Installed</string>
+    <string name="start_service">Shizuku is Not Running</string>
+    <string name="shizuku_status">Shizuku Status</string>
+    <string name="root_status">Root Status</string>
+    <string name="selected_arch">Selected Architecture</string>
+    <string name="selected_installation_type">Selected Installation Type</string>
+    <string name="battery_restriction">Battery Restriction</string>
+    <string name="battery_restricted">Restricted</string>
+    <string name="battery_unrestricted">Unrestricted</string>
+    <string name="battery_dialog_title">Allow Unrestricted Mode</string>
+    <string name="battery_dialog_msg">In order for Instafel Updater to work properly, the battery mode of the application must not be restricted.</string>
+    <string name="updater_status">Updater Status</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="permission_rejected">Permission Rejected</string>
+    <string name="perm_rejected_desc">Please authorize Instafel Updater in the Shizuku app</string>
+    <string name="please_start_shizuku">Please start Shizuku from the app</string>
+    <string name="please_install_shizuku">Please install Shizuku from Play Store</string>
+    <string name="please_give_permission">Please authorize Instafel Updater on Shizuku</string>
+    <string name="running">Running with %1$s mode</string>
+    <string name="stopped">Stopped</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="checking">Checking...</string>
+    <string name="not_found">SU binary couldn\'t be found</string>
+    <string name="please_allow_root">Root access rejected, please allow from manager.</string>
+    <string name="please_install_root">Couldn\'t obtain root access</string>
+    <string name="please_allow_unrestiracted">Please set app battery restiraction mode to unrestiracted mode</string>
+    <string name="dialog_title">Grant Permission</string>
+    <string name="dialog_desc">Instafel Updater needs Notification and Root permission for running normally.</string>
+    <string name="dialog_ok">Okay</string>
+    <string name="hour">hour</string>
+    <string name="minute">minute</string>
+    <string name="upd_started">Updater started</string>
+    <string name="upd_stopped">Updater stopped</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Runtime log cleared.</string>
+    <string name="work_restarted">Updater is restarted</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Downloading Update</string>
+    <string name="n2_waiting">Waiting for update server</string>
+    <string name="n2_sub">Waiting for API connection...</string>
+    <string name="n3_installing">Installing Update</string>
+    <string name="n3_sub">Download complete, installing...</string>
+    <string name="n4_complete">Update Successfully Installed</string>
+    <string name="n4_sub">Instafel updated to v%1$s</string>
+    <string name="error">Error</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">General</string>
+    <string name="cname_behavior">Behavior</string>
+    <string name="cname_about">About Updater</string>
+    <string name="checker_interval">Checker Interval</string>
+    <string name="checker_interval_s">Change checker interval</string>
+    <string name="itype">Installation Type</string>
+    <string name="itype_s">Change installation type</string>
+    <string name="send_notif">Send Notification</string>
+    <string name="send_notif_s">Updater sends a notification after updating Instafel</string>
+    <string name="use_mobile_data">Mobile Data</string>
+    <string name="use_mobile_data_s">Allows downloading updates with mobile data</string>
+    <string name="hour12_rule">12 Hour Rule</string>
+    <string name="hour12_rule_s">Allows you to install the update after released 12 hours</string>
+    <string name="source_code">Source Code</string>
+    <string name="source_code_s">Visit source code of Instafel</string>
+    <string name="instafel_website">Instafel Website</string>
+    <string name="create_issue">Create Issue</string>
+    <string name="create_issue_s">Create an issue on GitHub for feedback!</string>
+    <string name="app_version">App Version</string>
+    <string name="app_version_s">Version v%1$s (%2$s)</string>
+    <string name="language">Language</string>
+    <string name="language_s">Set the language of app</string>
+    <string name="developed_by">Developed with ❤️ by mamiiblt</string>
+    <string name="about_app">About</string>
+    <string name="crash_logs">Save Crash Logs</string>
+    <string name="crash_logs_s">Logger will write every crash to a daily log.</string>
+    <string name="disable_error">Disable Warning Notif.</string>
+    <string name="disable_error_s">Disables non critical error notifications</string>
+    <string name="updater_guide">Updater Guide</string>
+    <string name="updater_guide_s">Learn more things about updater</string>
+</resources>
