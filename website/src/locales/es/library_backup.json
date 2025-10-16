@@ -1,15 +1,15 @@
 {
-  "title": "Backup Library",
-  "description": "Browse community-created backups that you can import directly into Instafel.",
-  "createdBy": "Created by {{author}}",
+  "title": "Biblioteca de Copias de Seguridad",
+  "description": "Explora las copias de seguridad creadas por la comunidad que puedes importar directamente a Instafel.",
+  "createdBy": "Creado por {{author}}",
   "contribute": {
-    "title": "Want to Contribute?",
-    "description": "Share your Instafel backup with the community and help others discover optimal configurations.",
-    "button": "Join Our Community"
+    "title": "¿Quieres Contribuir?",
+    "description": "Comparte tu copia de seguridad de Instafel con la comunidad y ayuda a otros a descubrir configuraciones óptimas.",
+    "button": "Únete a Nuestra Comunidad"
   },
   "error": {
-    "title": "Failed to Load Backups",
-    "description": "We couldn't retrieve the backup information. Please check your connection or try again later.",
-    "retryButton": "Retry"
+    "title": "No se Pudo Cargar la Copia de Seguridad",
+    "description": "No pudimos recuperar la información de la copia de seguridad. Por favor, revisa tu conexión o intenta nuevamente más tarde.",
+    "retryButton": "Reintentar"
   }
 }
