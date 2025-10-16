@@ -1,6 +1,10 @@
 {
   "title": "Flag Library",
-  "description": "Dapatkan informasi tentang flags Instagram dengan library ini",
-  "flagCount": "{{count}} Flag",
-  "searchPlaceholder": "Cari di library dengan cepat..."
+  "desc": "With this library you can get information about the flags of Instagram",
+  "num_flag_zero": "No flags",
+  "num_flag_one": "{{count}} flag",
+  "num_flag_few": "{{count}} flags",
+  "num_flag_many": "{{count}} flags",
+  "num_flag_other": "{{count}} flags",
+  "search_placeholder": "Search in library quickly..."
 }
