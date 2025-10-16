@@ -1,37 +1,37 @@
 {
   "not_found": {
-    "title": "Flag not found",
-    "description": "The flag you're looking for doesn't exist or has been removed.",
-    "go_back": "Go back"
+    "title": "Flag não encontrada",
+    "description": "A flag que você está procurando não existe ou foi removida.",
+    "go_back": "Voltar"
   },
   "loading": {
-    "title": "Loading flag information",
-    "description": "Please wait while we fetch the details"
+    "title": "Carregando informação da flag",
+    "description": "Por favor, aguarde enquanto buscamos os dados"
   },
   "badges": {
-    "removed": "Removed"
+    "removed": "Removido"
   },
   "content": {
     "block_titles": {
-      "information": "Information",
-      "metaconf_options": "MetaConfig Options",
-      "screenshots": "Screenshots"
+      "information": "Informação",
+      "metaconf_options": "Opções MetaConfig",
+      "screenshots": "Capturas de Tela"
     },
     "block_contents": {
       "info": {
-        "added_by": "Added by",
-        "last_edit": "Last Edit",
-        "added_in": "Added in",
-        "removed_in": "Removed in",
-        "unknown": "Unknown"
+        "added_by": "Adicionado por",
+        "last_edit": "Última Edição",
+        "added_in": "Adicionado em",
+        "removed_in": "Removido em",
+        "unknown": "Desconhecido"
       },
       "screenshot": {
-        "failed_load_img": "Failed to load image"
+        "failed_load_img": "Falha ao carregar a imagem"
       },
       "metaconf_options": {
-        "copy_to_clipboard": "Copy to clipboard",
-        "prop_name_copied": "Property name copied",
-        "prop_name_copied_desc": "Flag property name copied to clipboard"
+        "copy_to_clipboard": "Copiar para a área de transferência",
+        "prop_name_copied": "Nome da propriedade copiado",
+        "prop_name_copied_desc": "Nome da propriedade flag copiado para a área de transferência"
       }
     }
   }
