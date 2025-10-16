@@ -1,43 +1,43 @@
 {
   "landing": {
-    "1": "The Best Alpha Experience",
-    "2": "You can try out latest alpha builds as quickly as possible with Instafel",
-    "3": "Download",
-    "4": "Read Wiki",
-    "5": "Join Community"
+    "1": "Die beste Alpha-Erfahrung",
+    "2": "Mit Instafel kannst du die neuesten Alpha-Builds so schnell wie möglich ausprobieren",
+    "3": "Herunterladen",
+    "4": "Lies das Wiki",
+    "5": "Community beitreten"
   },
   "features": {
-    "1": "Instafel Features",
-    "2": "Explore the powerful features that make Instafel the best choice for Instagram Alpha users",
-    "3": "Developer Options",
-    "4": "Access the developer-exclusive tools in latest Alpha bases",
-    "5": "Clone Support",
-    "6": "If you don't want to install the Alpha versions instead of the Instagram, you can install it as a secondary app!",
-    "7": "OTA Updates",
-    "8": "You can update Instafel flawlessly using the in-app updater or the automatic update plugin Instafel Updater",
-    "9": "Ads Removed",
-    "10": "Use it comfortably without any ads in the app!",
-    "11": "Crash Reports",
-    "12": "It is very common for the application to crash when using Alpha versions, Instafel always keeps a crash report for such cases",
-    "13": "Libraries",
-    "14": "You can find useful flags, backups in Instafel Library!"
+    "1": "Instafel-Funktionen",
+    "2": "Entdecke die leistungsstarken Funktionen, die Instafel zur besten Wahl für Instagram-Alpha-Nutzer machen",
+    "3": "Entwickleroptionen",
+    "4": "Zugriff auf exklusive Entwickler-Tools in den neuesten Alpha-Versionen",
+    "5": "Klon-Unterstützung",
+    "6": "Wenn du die Alpha-Versionen nicht anstelle der Instagram-App installieren möchtest, kannst du sie als Zweit-App installieren!",
+    "7": "OTA-Updates",
+    "8": "Du kannst Instafel problemlos mit dem integrierten Updater oder dem automatischen Update-Plugin „Instafel Updater“ aktualisieren",
+    "9": "Werbung entfernt",
+    "10": "Verwende die App komfortabel und ohne Werbung!",
+    "11": "Absturzberichte",
+    "12": "Bei der Nutzung von Alpha-Versionen kommt es häufig zu Abstürzen – Instafel erstellt für solche Fälle immer einen Absturzbericht",
+    "13": "Bibliotheken",
+    "14": "In der Instafel-Bibliothek findest du nützliche Flags und Backups!"
   },
   "join_community": {
-    "1": "Stay Connected",
-    "2": "Join Community for Discussion & Latest News",
-    "3": "Join our Telegram group to stay up-to-date with the latest Instafel updates and news. Share your feedback, suggestions and learn everything with the community.",
-    "4": "Join Instafel Community",
-    "5": "🎉 New patcher is available now!",
-    "6": "Today 02:25 AM",
-    "7": "Finally I solved issues related by resource decompilation events :)",
-    "8": "Yesterday 08:00 PM",
-    "9": "8,000+ members",
+    "1": "Bleib in Verbindung",
+    "2": "Tritt der Telegram-Gruppe für Neuigkeiten & Diskussionen bei",
+    "3": "Tritt unserer Telegram-Gruppe bei, um über die neuesten Instafel-Updates und Neuigkeiten informiert zu bleiben. Teile dein Feedback, deine Vorschläge und lerne gemeinsam mit der Community.",
+    "4": "Instafel-Community beitreten",
+    "5": "🎉 Neuer Patcher ist jetzt verfügbar!",
+    "6": "Heute um 02:25 Uhr",
+    "7": "Endlich habe ich die Probleme im Zusammenhang mit Ressourcen-Dekompilierung behoben :)",
+    "8": "Gestern um 20:00 Uhr",
+    "9": "Über 8.000+ Mitglieder",
     "10": "325 online"
   },
   "try_now": {
-    "1": "Ready to Try Instafel?",
-    "2": "Experience the latest Instagram Alpha features with our enhanced app, download now and join thousands of satisfied users",
-    "3": "Download Now",
-    "4": "View Updater"
+    "1": "Bereit, Instafel auszuprobieren?",
+    "2": "Erlebe die neuesten Funktionen von Instagram Alpha mit unserer erweiterten App – lade sie jetzt herunter und werde Teil von tausenden zufriedenen Nutzern",
+    "3": "Jetzt herunterladen",
+    "4": "Updater anzeigen"
   }
 }
