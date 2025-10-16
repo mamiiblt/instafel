@@ -21,7 +21,7 @@ public class Locales {
         map.put("hu", new LocaleType("hu", "Magyar", "Magyarország", R.drawable.ifl_flag_hu));
         map.put("hi", new LocaleType("hi", "हिंदी", "भारत", R.drawable.ifl_flag_hi));
         map.put("es", new LocaleType("es", "Español", "España", R.drawable.ifl_flag_es));
-        map.put("pt", new LocaleType("pt", "Portugal", "Português", R.drawable.ifl_flag_pt));
+        map.put("pt-rBR", new LocaleType("pt-rBR", "Português Brasileiro", "Brasil", R.drawable.ifl_flag_br));
         map.put("pl", new LocaleType("pl", "Polski", "Polska", R.drawable.ifl_flag_pl));
         map.put("id", new LocaleType("id", "Indonesia", "Indonesia", R.drawable.ifl_flag_id));
         map.put("it", new LocaleType("it", "Italiano", "Italia", R.drawable.ifl_flag_it));
