@@ -152,8 +152,8 @@ export default function ContributorsPage() {
         },
         {
             name: "Vinicius",
-            language: "Portugal",
-            languageCode: "pt",
+            language: "Português (Brasil)",
+            languageCode: "br",
             avatar: "/cpictures/vinicius.jpg",
             socials: {
                 telegram: "exteraDev",
