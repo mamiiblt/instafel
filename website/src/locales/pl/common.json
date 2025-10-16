@@ -1,29 +1,29 @@
 {
   "navbar": {
     "items": {
-      "backups": "Backups",
-      "flags": "Flags",
+      "backups": "Kopie zapasowe",
+      "flags": "Flagi",
       "updater": "Updater",
-      "src_code": "Source Code",
-      "download": "Download",
-      "contributors": "Contributors"
+      "src_code": "Kod źródłowy",
+      "download": "Pobierz",
+      "contributors": "Współtwórcy"
     },
-    "1": "Appearance",
-    "2": "Light",
-    "3": "Dark",
-    "4": "Auto"
+    "1": "Wygląd",
+    "2": "Jasny",
+    "3": "Ciemny",
+    "4": "Automatyczny"
   },
   "footer": {
-    "1": "Provides fast & up-to-date Instagram Alpha experience with enhanced features and community-driven development",
-    "2": "Instafel has no any affiliation with Meta or Instagram",
-    "3": "Developed with ❤️ by mamiiblt",
-    "4": "Resources",
+    "1": "Zapewnia szybki dostęp do najnowszych wersji alpha Instagrama z dodatkowymi funkcjami rozwijanymi przez społeczność",
+    "2": "Instafel nie jest powiązany z Meta ani Instagramem",
+    "3": "Stworzony z ❤️ przez mamiiblt",
+    "4": "Zasoby",
     "5": "Wiki",
-    "6": "Backups",
-    "7": "Links",
+    "6": "Kopie zapasowe",
+    "7": "Linki",
     "8": "Updater",
-    "9": "Download",
-    "10": "Source Code",
-    "11": "Flags"
+    "9": "Pobierz",
+    "10": "Kod źródłowy",
+    "11": "Flagi"
   }
 }
