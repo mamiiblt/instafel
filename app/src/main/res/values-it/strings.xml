@@ -220,11 +220,6 @@
     <string name="ifl_a11_76">ID Contrassegni Rimossi</string>
     <string name="ifl_a11_77">Errore durante il confronto dei backup</string>
 
-    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
-    <string name="ifl_a12_05" translatable="false">Il nome utente o la password non possono essere vuoti</string>
-    <string name="ifl_a12_06" translatable="false">Attendi la risposta del server..</string>
-
-
     <!-- OTA FOUND DIALOG -->
     <string name="ifl_d1_01">Nuovo Aggiornamento</string>
     <string name="ifl_d1_02">Instafel verrà aggiornato alla versione v %1$d (Instagram v %2$s )</string>
@@ -253,7 +248,4 @@
     <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Benvenuto</string>
     <string name="ifl_d4_02">Benvenuti su Instafel, questa mod è stata sviluppata per fornire a tutti le ultime funzionalità delle build alpha di Instagram\\n\\nÈ possibile accedere al menu tenendo premuto il pulsante hamburger nella scheda del profilo.</string>
-
-    <!-- CRASH TOAST -->
-    <string name="ifl_crash_toast" translatable="false">Instafel si è bloccato, visita la sezione Rapporti sugli arresti anomali per maggiori dettagli.</string>
 </resources>
