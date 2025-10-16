@@ -1,13 +1,13 @@
 {
   "error": {
-    "1": "Something went wrong",
-    "2": "Retry",
-    "3": "Home"
+    "1": "Bir şeyler yanlış gitti",
+    "2": "Tekrar Dene",
+    "3": "Ana Sayfa"
   },
   "not_found": {
-    "1": "Oops!",
-    "2": "Page Not Found",
-    "3": "The page you are looking for does not exist. Please check the URL or go back to the homepage.",
-    "4": "Return Home"
+    "1": "Upss!",
+    "2": "Sayfa bulunamadı",
+    "3": "Aradığınız sayfa artık mevcut değil. Lütfen URL'yi kontrol edin veya ana sayfaya dönün.",
+    "4": "Ana Sayfaya Dön"
   }
 }
