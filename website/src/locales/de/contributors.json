@@ -1,14 +1,14 @@
 {
-  "title": "Contributors",
-  "desc": "Meet the amazing people who made Instafel possible",
+  "title": "Mitwirkende",
+  "desc": "Lerne die großartigen Personen kennen, die Instafel möglich gemacht haben",
   "roles": {
-    "dev": "Developer",
+    "dev": "Entwickler",
     "mod": "Moderator",
-    "cre": "Creator"
+    "cre": "Ersteller"
   },
   "titles": {
     "team": "Team",
-    "translators": "Translators",
-    "special": "Special Thanks"
+    "translators": "Übersetzer",
+    "special": "Besonderer Dank"
   }
 }
