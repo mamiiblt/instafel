@@ -1,0 +1,15 @@
+{
+  "title": "Backup Library",
+  "description": "Browse community-created backups that you can import directly into Instafel.",
+  "createdBy": "Created by {{author}}",
+  "contribute": {
+    "title": "Want to Contribute?",
+    "description": "Share your Instafel backup with the community and help others discover optimal configurations.",
+    "button": "Join Our Community"
+  },
+  "error": {
+    "title": "Failed to Load Backups",
+    "description": "We couldn't retrieve the backup information. Please check your connection or try again later.",
+    "retryButton": "Retry"
+  }
+}
