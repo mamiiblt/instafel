@@ -208,7 +208,16 @@ export default function ContributorsPage() {
                 github: "muhbintangx",
                 website: "instagram.com/muhbintangx"
             }
-        }
+        },
+        {
+            name: "Andrea Strange",
+            language: "Italiano",
+            avatar: "/cpictures/andrea.jpg",
+            flag: "🇮🇹",
+            socials: {
+                github: "Strange-IPmart",
+            }
+        },
     ];
 
     const specialThanks = [
