@@ -1,20 +1,20 @@
 {
-  "backToLibrary": "Back to Backup Library",
+  "backToLibrary": "Zurück zur Backup-Bibliothek",
   "version": "Version {{verStr}}",
-  "downloadButton": "Download Backup",
-  "downloading": "Downloading...",
-  "importButton": "Import in Instafel",
-  "openingInstafel": "Opening Instafel...",
-  "aboutTitle": "About This Backup",
-  "lastUpdated": "Last Updated",
-  "changelogTitle": "Changelog",
-  "howToUseTitle": "How to use this backup",
-  "howToUseDescription": "You can either download this backup file and manually import it into Instafel, or use the \"Import in Instafel\" button to automatically open the app and import it directly.",
-  "viewAllBackups": "View All Backups",
+  "downloadButton": "Backup herunterladen",
+  "downloading": "Wird heruntergeladen...",
+  "importButton": "In Instafel importieren",
+  "openingInstafel": "Instafel wird geöffnet...",
+  "aboutTitle": "Über dieses Backup",
+  "lastUpdated": "Zuletzt aktualisiert",
+  "changelogTitle": "Änderungsprotokoll",
+  "howToUseTitle": "So verwendest du dieses Backup",
+  "howToUseDescription": "Du kannst diese Backup-Datei entweder herunterladen und manuell in Instafel importieren oder den Button „In Instafel importieren“ verwenden, um die App automatisch zu öffnen und direkt zu importieren.",
+  "viewAllBackups": "Alle Backups anzeigen",
   "notFound": {
-    "title": "Backup Not Found",
-    "description": "We couldn't find the backup you're looking for. It may have been removed or doesn't exist.",
-    "returnButton": "Return to Backup Library"
+    "title": "Backup nicht gefunden",
+    "description": "Wir konnten das gesuchte Backup nicht finden. Es wurde möglicherweise entfernt oder existiert nicht.",
+    "returnButton": "Zurück zur Backup-Bibliothek"
   },
-  "fetchFailed": "Failed to fetch backup data: {{errStr}}"
+  "fetchFailed": "Fehler beim Laden der Backup-Daten: {{errStr}}"
 }
