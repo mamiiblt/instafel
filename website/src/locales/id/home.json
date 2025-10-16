@@ -1,43 +1,43 @@
 {
   "landing": {
-    "1": "Pengalaman Alpha Terbaik",
-    "2": "Anda dapat mencoba build alpha terbaru secepat mungkin dengan Instafel",
-    "3": "Unduh",
-    "4": "Baca Wiki",
-    "5": "Bergabung dengan Komunitas"
+    "1": "The Best Alpha Experience",
+    "2": "You can try out latest alpha builds as quickly as possible with Instafel",
+    "3": "Download",
+    "4": "Read Wiki",
+    "5": "Join Community"
   },
   "features": {
-    "1": "Fitur Instafel",
-    "2": "Jelajahi fitur-fitur canggih yang membuat Instafel menjadi pilihan terbaik untuk pengguna Instagram Alpha",
-    "3": "Opsi Pengembang",
-    "4": "Akses alat eksklusif pengembang di basis Alpha terbaru",
-    "5": "Dukungan Clone",
-    "6": "Jika Anda tidak ingin menginstal versi Alpha sebagai pengganti Instagram, Anda dapat menginstalnya sebagai aplikasi sekunder!",
-    "7": "Pembaruan OTA",
-    "8": "Anda dapat memperbarui Instafel dengan lancar menggunakan pembaruan dalam aplikasi atau plugin pembaruan otomatis Instafel Updater",
-    "9": "Iklan Dihapus",
-    "10": "Gunakan dengan nyaman tanpa iklan di aplikasi!",
-    "11": "Reports Crash",
-    "12": "Sangat umum bagi aplikasi untuk mengalami kecelakaan saat menggunakan versi Alpha, Instafel selalu menyimpan crash reports untuk kasus-kasus seperti itu",
+    "1": "Instafel Features",
+    "2": "Explore the powerful features that make Instafel the best choice for Instagram Alpha users",
+    "3": "Developer Options",
+    "4": "Access the developer-exclusive tools in latest Alpha bases",
+    "5": "Clone Support",
+    "6": "If you don't want to install the Alpha versions instead of the Instagram, you can install it as a secondary app!",
+    "7": "OTA Updates",
+    "8": "You can update Instafel flawlessly using the in-app updater or the automatic update plugin Instafel Updater",
+    "9": "Ads Removed",
+    "10": "Use it comfortably without any ads in the app!",
+    "11": "Crash Reports",
+    "12": "It is very common for the application to crash when using Alpha versions, Instafel always keeps a crash report for such cases",
     "13": "Libraries",
-    "14": "Anda dapat menemukan flags berguna dan backup di Library Instafel!"
+    "14": "You can find useful flags, backups in Instafel Library!"
   },
   "join_community": {
-    "1": "Tetap Terhubung",
-    "2": "Bergabunglah dengan Grup Telegram untuk Berita & Diskusi",
-    "3": "Bergabunglah dengan grup Telegram kami untuk tetap update dengan pembaruan dan berita terbaru Instafel. Bagikan umpan balik, saran, dan pelajari segala hal bersama komunitas.",
-    "4": "Bergabunglah dengan Komunitas Instafel",
-    "5": "🎉 Patcher baru kini tersedia!",
-    "6": "Hari ini pukul 02:25 pagi",
-    "7": "Akhirnya saya berhasil menyelesaikan masalah terkait dekompilasi sumber daya :)",
-    "8": "Kemarin pukul 08:00 malam",
-    "9": "8.000+ anggota",
+    "1": "Stay Connected",
+    "2": "Join Community for Discussion & Latest News",
+    "3": "Join our Telegram group to stay up-to-date with the latest Instafel updates and news. Share your feedback, suggestions and learn everything with the community.",
+    "4": "Join Instafel Community",
+    "5": "🎉 New patcher is available now!",
+    "6": "Today 02:25 AM",
+    "7": "Finally I solved issues related by resource decompilation events :)",
+    "8": "Yesterday 08:00 PM",
+    "9": "8,000+ members",
     "10": "325 online"
   },
   "try_now": {
-    "1": "Siap mencoba Instafel?",
-    "2": "Nikmati fitur Alpha terbaru Instagram dengan aplikasi kami yang ditingkatkan, unduh sekarang dan bergabunglah dengan ribuan pengguna yang puas",
-    "3": "Unduh Sekarang",
-    "4": "Lihat Pembaruan"
+    "1": "Ready to Try Instafel?",
+    "2": "Experience the latest Instagram Alpha features with our enhanced app, download now and join thousands of satisfied users",
+    "3": "Download Now",
+    "4": "View Updater"
   }
 }
