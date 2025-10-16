@@ -1,20 +1,20 @@
 {
-  "back_to_library": "Kembali ke Backup Library",
-  "version": "Versi {{verStr}}",
-  "download_button": "Unduh Backup",
-  "downloading": "Sedang mengunduh...",
-  "import_button": "Impor ke Instafel",
-  "opening_instafel": "Membuka Instafel...",
-  "about_title": "Tentang Backup Ini",
-  "last_updated": "Diperbarui Terakhir",
-  "changelog_title": "Riwayat Perubahan",
-  "how_to_use_title": "Cara Menggunakan Backup Ini",
-  "how_to_use_description": "Anda dapat mengunduh file backup ini dan mengimpornya secara manual ke Instafel, atau menggunakan tombol \"Impor ke Instafel\" untuk membuka aplikasi secara otomatis dan mengimpornya langsung.",
-  "view_all_backups": "Lihat Semua Backup",
-  "not_found": {
-    "title": "Backup Tidak Ditemukan",
-    "description": "Kami tidak dapat menemukan backup yang Anda cari. Mungkin telah dihapus atau tidak ada.",
-    "return_button": "Kembali ke Perpustakaan Backup"
+  "backToLibrary": "Back to Backup Library",
+  "version": "Version {{verStr}}",
+  "downloadButton": "Download Backup",
+  "downloading": "Downloading...",
+  "importButton": "Import in Instafel",
+  "openingInstafel": "Opening Instafel...",
+  "aboutTitle": "About This Backup",
+  "lastUpdated": "Last Updated",
+  "changelogTitle": "Changelog",
+  "howToUseTitle": "How to use this backup",
+  "howToUseDescription": "You can either download this backup file and manually import it into Instafel, or use the \"Import in Instafel\" button to automatically open the app and import it directly.",
+  "viewAllBackups": "View All Backups",
+  "notFound": {
+    "title": "Backup Not Found",
+    "description": "We couldn't find the backup you're looking for. It may have been removed or doesn't exist.",
+    "returnButton": "Return to Backup Library"
   },
-  "fetch_failed": "Gagal mengambil data Backup: {{errStr}}"
+  "fetchFailed": "Failed to fetch backup data: {{errStr}}"
 }
