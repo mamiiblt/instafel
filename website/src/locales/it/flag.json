@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "Contrassegno non trovato",
+    "description": "Il contrassegno che stai cercando non esiste o è stato rimosso.",
+    "go_back": "Torna indietro"
+  },
+  "loading": {
+    "title": "Caricamento informazioni sul contrassegno",
+    "description": "Attendi mentre recuperiamo i dettagli"
+  },
+  "badges": {
+    "removed": "Rimosso"
+  },
+  "content": {
+    "block_titles": {
+      "information": "Informazione",
+      "metaconf_options": "Opzioni MetaConfig",
+      "screenshots": "Screenshot"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "Aggiunto da",
+        "last_edit": "Ultima Modifica",
+        "added_in": "Aggiunto in",
+        "removed_in": "Rimosso in",
+        "unknown": "Sconosciuto"
+      },
+      "screenshot": {
+        "failed_load_img": "Impossibile caricare l'immagine"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "Copia negli appunti",
+        "prop_name_copied": "Nome della proprietà copiato",
+        "prop_name_copied_desc": "Proprietà del contrassegno copiato negli appunti"
+      }
+    }
+  }
+}
