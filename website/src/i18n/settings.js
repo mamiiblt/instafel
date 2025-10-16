@@ -7,6 +7,7 @@ export const navLanguages = [
   { code: "hi", name: "हिन्दी", flag: "🇮🇳" },
   { code: "pl", name: "Polski", flag: "🇵🇱" },
   { code: "id", name: "Indonesia", flag: "🇮🇩" },
+  { code: "it", name: "Italiano", flag: "🇮🇹" },
 ];
 export const languages = navLanguages.map((lang) => lang.code);
 export const defaultNS = "common";
