@@ -2,7 +2,7 @@
 <resources>
     <!-- sa -->
     <string name="ifl_a5_10">Autorizzazione Negata</string>
-    <string name="ifl_a5_11">"L\'autorizzazione alle notifiche di Instafel è stata negata. Se il problema persiste, ricordati di attivare le notifiche dalle impostazioni dell\'applicazione."</string>
+    <string name="ifl_a5_11">"L'autorizzazione alle notifiche di Instafel è stata negata. Se il problema persiste, ricordati di attivare le notifiche dalle impostazioni dell'applicazione."</string>
     <string name="ifl_a0_08">Varie</string>
     <string name="ifl_a0_10">Abilita il tema AMOLED per le attività, le finestre di dialogo e altre parti di Instafel.</string>
     <string name="ifl_a0_11">Rimuovi Annunci</string>
@@ -11,7 +11,6 @@
     <string name="ifl_a0_14">Abilitato per impostazione predefinita, non può essere modificato.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Utilizza Instafel Updater per gli aggiornamenti automatici con Root e Shizuku</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_menu -->
     <string name="ifl_a0_02">Impostazioni Di Aggiornamento</string>
     <string name="ifl_a0_03">Lingua</string>
@@ -19,7 +18,6 @@
     <string name="ifl_a0_05">Informazioni</string>
     <string name="ifl_a0_06">Questa funzionalità non è stata ancora aggiunta</string>
     <string name="ifl_a0_07">Segnalazioni Di Arresti Anomali</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
     <string name="ifl_a1_01">Informazioni Su Instafel</string>
     <string name="ifl_a1_02">Versione Di Instafel</string>
@@ -39,7 +37,6 @@
     <string name="ifl_a1_21">Collaboratori</string>
     <string name="ifl_a1_22">Informazioni sulle patch applicate</string>
     <string name="ifl_a1_23">Commit Principale</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
     <string name="ifl_a2_01">Informazioni Su Instagram</string>
     <string name="ifl_a2_02">Versione</string>
@@ -47,7 +44,6 @@
     <string name="ifl_a2_04">Canale</string>
     <string name="ifl_a2_05">Architettura</string>
     <string name="ifl_a3_01">Informazioni</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_devmode -->
     <string name="ifl_a4_01">Esporta</string>
     <string name="ifl_a4_02">Importa</string>
@@ -91,7 +87,6 @@
     <string name="ifl_a4_40">Contrassegni %1$s esportati correttamente</string>
     <string name="ifl_a4_41">Errore durante la scrittura del contenuto nel file di backup.</string>
     <string name="ifl_a4_42">Errore durante l\'esportazione del file di backup</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
     <string name="ifl_a5_01">Controlla aggiornamenti</string>
     <string name="ifl_a5_02">Ultimo controllo: %1$s</string>
@@ -101,28 +96,23 @@
     <string name="ifl_a5_07">Abilita Impostazioni Di Aggiornamento</string>
     <string name="ifl_a5_08">Download In Background</string>
     <string name="ifl_a5_09">Una notifica viene inviata dopo il download degli aggiornamenti in background</string>
-
     <string name="ifl_a5_sub_freq_00">Imposta su ogni apertura.</string>
     <string name="ifl_a5_sub_freq_01">Imposta su mai</string>
     <string name="ifl_a5_sub_freq_02">Imposta su ogni giorno</string>
     <string name="ifl_a5_sub_freq_03">Imposta su una volta ogni tre giorni</string>
     <string name="ifl_a5_sub_freq_04">Imposta su una volta ogni cinque giorni</string>
     <string name="ifl_a5_sub_freq_05">Imposta su una volta a settimana</string>
-
     <string name="ifl_a5_dia_freq_00">Ogni Apertura (predefinito)</string>
     <string name="ifl_a5_dia_freq_01">Mai</string>
     <string name="ifl_a5_dia_freq_02">Ogni giorno</string>
     <string name="ifl_a5_dia_freq_03">Una volta ogni tre giorni</string>
     <string name="ifl_a5_dia_freq_04">Una volta ogni cinque giorni</string>
     <string name="ifl_a5_dia_freq_05">Una volta a settimana</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Usa la lingua del dispositivo</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Rapporti</string>
     <string name="ifl_a7_02">Elimina rapporti</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Dettagli</string>
     <string name="ifl_a8_02">Copia Registro</string>
@@ -134,12 +124,9 @@
     <string name="ifl_a8_08">Informazioni Sull\'arresto Anomalo</string>
     <string name="ifl_a8_09">Motivo</string>
     <string name="ifl_a8_10">Stack Trace</string>
-
     <string name="ifl_a9_01">Dettagli</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Collaboratori</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Libreria Contrassegni</string>
     <string name="ifl_a11_02">Libreria Backup</string>
@@ -219,7 +206,7 @@
     <string name="ifl_a11_75">Differenze da B2 a B1</string>
     <string name="ifl_a11_76">ID Contrassegni Rimossi</string>
     <string name="ifl_a11_77">Errore durante il confronto dei backup</string>
-
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
     <!-- OTA FOUND DIALOG -->
     <string name="ifl_d1_01">Nuovo Aggiornamento</string>
     <string name="ifl_d1_02">Instafel verrà aggiornato alla versione v %1$d (Instagram v %2$s )</string>
@@ -227,25 +214,20 @@
     <string name="ifl_d1_04">Installa</string>
     <string name="ifl_d1_05">Nascondi</string>
     <string name="ifl_d1_06">Connessione al server di aggiornamento</string>
-
     <!-- OTA UP-TO-DATE DIALOG -->
-
     <string name="ifl_d2_02">Instafel è aggiornato.</string>
     <string name="ifl_d2_01">Aggiornato</string>
     <string name="ifl_d2_03">Okay</string>
-
     <!-- AUTOUPDATE TEXTS -->
     <string name="ifl_t1_01">Si è verificato un errore durante l\'apertura dell\'apk-installer.</string>
     <string name="ifl_t1_03">Aggiornamento Instafel non riuscito.</string>
-
     <!-- GENERAL_FN CLASS -->
     <string name="ifl_c1_01">Non è stato trovato un browser web sul tuo dispositivo</string>
-
     <!--- DIALOG SET FREQ -->
     <string name="ifl_d3_01">Imposta frequenza</string>
     <string name="ifl_d3_02">Okay</string>
-
     <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Benvenuto</string>
     <string name="ifl_d4_02">Benvenuti su Instafel, questa mod è stata sviluppata per fornire a tutti le ultime funzionalità delle build alpha di Instagram\\n\\nÈ possibile accedere al menu tenendo premuto il pulsante hamburger nella scheda del profilo.</string>
+    <!-- CRASH TOAST -->
 </resources>
