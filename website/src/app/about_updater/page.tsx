@@ -33,12 +33,12 @@ export default function PageUpdater() {
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch(
-                "https://api.github.com/repos/instafel/u-rel/releases/latest"
+                "https://raw.githubusercontent.com/instafel/instafel/refs/heads/main/latest_updater.json"
             );
             const result = await res.json();
             setData({
-                version: `${result.tag_name}`,
-                download_url: `https://github.com/instafel/u-rel/releases/download/${result.tag_name}/ifl-updater-${result.tag_name}-release.apk`,
+                version: `v${result.version}`,
+                download_url: `https://github.com/instafel/u-rel/releases/download/v${result.version}/ifl-updater-v${result.version}-release.apk`,
             });
         };
         fetchData();
