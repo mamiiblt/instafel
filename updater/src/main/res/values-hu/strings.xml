@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Nav Bar -->
-    <string name="status">Status</string>
-    <string name="logs">Log</string>
-    <string name="settings">Settings</string>
+    <string name="status">Állapot</string>
+    <string name="logs">Napló</string>
+    <string name="settings">Beállítások</string>
     <!-- Setup Updater -->
     <string name="setup_ifl">Setup Updater</string>
     <string name="checker_arch">Checker Architecture</string>
