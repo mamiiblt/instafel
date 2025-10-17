@@ -1,6 +1,6 @@
 {
-  "added_by": "Added by {{name}}",
-  "uploaded_at": "Uploaded at {{date_str}}",
+  "added_by": "{{name}} द्वारा जोड़ा गया",
+  "uploaded_at": "{{date_str}} अपलोड किया गया",
   "removed_with": "Removed with v{{version}}",
   "loading": "Loading...",
   "flag_found_zero": "There are no flags in this category",
