@@ -1,14 +1,14 @@
 {
-  "title": "Contributors",
-  "desc": "Meet the amazing people who made Instafel possible",
+  "title": "योगदान करने वाले",
+  "desc": "मिलिए उन अद्भुत लोगों से जिन्होंने इंस्टाफेल को संभव बनाया",
   "roles": {
-    "dev": "Developer",
-    "mod": "Moderator",
-    "cre": "Creator"
+    "dev": "डेवलपर",
+    "mod": "संचालक",
+    "cre": "निर्माता"
   },
   "titles": {
-    "team": "Team",
-    "translators": "Translators",
-    "special": "Special Thanks"
+    "team": "टीम",
+    "translators": "अनुवादक",
+    "special": "विशेष धन्यवाद"
   }
 }
