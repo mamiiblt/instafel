@@ -2,12 +2,19 @@
 
 import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Button} from "@/components/ui/button";
-import {Card, CardContent} from "@/components/ui/card";
+import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import {motion} from "framer-motion";
 import {Github, Globe, Heart, Languages, SendIcon, Twitter, Users,} from "lucide-react";
 import {useTranslation} from "react-i18next";
 import {Page, PageHeader} from "@/components/PageUtils";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {LoadingBar} from "@/components/LoadingBars";
+import {contentAPIURL} from "@/wdata/flag_sdata";
+import {Badge} from "@/components/ui/badge";
+import {getLanguageDisplayName} from "@/lib/utils";
+import Link from "next/link";
+import Image from "next/image";
+import {useTheme} from "next-themes";
 
 const itemVariants = {
     hidden: {opacity: 0, y: 30},
@@ -31,8 +38,52 @@ const cardHoverVariants = {
     },
 };
 
+export interface TranslatorResponse {
+    status: string;
+    totalLangCode: number;
+    memberList: {
+        langCode: string;
+        members: {
+            id: number;
+            username: string;
+            fullName: string | null;
+            avatarUrl: string | null;
+        }[]
+    }[]
+}
+
 export default function ContributorsPage() {
     const {t} = useTranslation("contributors");
+    const [translators, setTranslators] = useState<TranslatorResponse | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const { theme, resolvedTheme } = useTheme();
+    const currentTheme = theme === "system" ? resolvedTheme : theme;
+    const crowdinLogoSrc =
+        currentTheme === "dark"
+            ? "/cpictures/crowdin/crw_light.svg"
+            : "/cpictures/crowdin/crw_dark.svg";
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const requestUrl = `${contentAPIURL}/content/util/get-crw-members`;
+                const res = await fetch(requestUrl);
+                const result: TranslatorResponse = await res.json();
+                result.memberList = [...result.memberList].sort((a, b) => b.members.length - a.members.length);
+                setTranslators(result);
+            } catch (error) {
+                console.error(t("errors.fetchBackupsFailed"), error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [t]);
+
+    if (isLoading) {
+        return <LoadingBar/>;
+    }
     const mainDeveloper = {
         name: "mamii.",
         role: t("roles.dev"),
@@ -107,116 +158,6 @@ export default function ContributorsPage() {
             socials: {
                 telegram: "votsz",
             },
-        },
-    ];
-
-    const translators = [
-        {
-            name: "Munir Nasibzade",
-            language: "Azerbaycanca",
-            languageCode: "az",
-            avatar: "https://avatars.githubusercontent.com/u/160434174?v=4",
-            socials: {
-                github: "mnasibzade",
-                telegram: "mnasibzade",
-            },
-        },
-        {
-            name: "Rüşan Gür",
-            language: "Deutsch",
-            languageCode: "de",
-            avatar: "https://avatars.githubusercontent.com/u/34343052?v=4",
-            socials: {
-                website: "github.com/xxOrdulu52xx",
-            },
-        },
-        {
-            name: "Hem Pal",
-            language: "Français",
-            languageCode: "fr",
-            avatar: "/cpictures/hempal.jpg",
-            socials: {
-                telegram: "hemk651",
-                website: "www.instagram.com/sincrypt.hemk651",
-            },
-        },
-        {
-            name: "nubesurrealista",
-            language: "Español",
-            languageCode: "es",
-            avatar: "https://avatars.githubusercontent.com/u/136946098?v=4",
-            socials: {
-                github: "nubesurrealista",
-                website: "nube.codeberg.page/links/",
-            },
-        },
-        {
-            name: "Vinicius",
-            language: "Português (Brasil)",
-            languageCode: "br",
-            avatar: "/cpictures/vinicius.jpg",
-            socials: {
-                telegram: "exteraDev",
-                github: "exteraDev",
-            },
-        },
-        {
-            name: "Zan",
-            language: "Magyar",
-            languageCode: "hu",
-            avatar: "/placeholder.svg?height=60&width=60",
-            socials: {
-                telegram: "Zan1456",
-                website: "youtsit.ee/zan1456",
-            },
-        },
-        {
-            name: "Sahil Ensari",
-            language: "हिंदी",
-            languageCode: "in",
-            avatar: "/cpictures/sahil.jpg",
-            socials: {
-                telegram: "imsahilansarii",
-                github: "imsahilansarii",
-            },
-        },
-        {
-            name: "John Xirouchakis",
-            language: "Ελληνικά",
-            languageCode: "gr",
-            avatar: "/cpictures/john.jpg",
-            socials: {
-                telegram: "ioannisxir",
-                github: "johnxirouchakis",
-            },
-        },
-        {
-            name: "krvstek.",
-            language: "Polski",
-            languageCode: "pl",
-            avatar: "/cpictures/krvstek.jpg",
-            socials: {
-                website: "e-z.bio/krvstek"
-            },
-        },
-        {
-            name: "muhbintangx",
-            language: "Indonesia",
-            languageCode: "id",
-            avatar: "/cpictures/muhbintangx.jpg",
-            socials: {
-                github: "muhbintangx",
-                website: "instagram.com/muhbintangx"
-            }
-        },
-        {
-            name: "Andrea Strange",
-            language: "Italiano",
-            languageCode: "it",
-            avatar: "/cpictures/andrea.jpg",
-            socials: {
-                github: "Strange-IPmart",
-            }
         },
     ];
 
@@ -423,63 +364,6 @@ export default function ContributorsPage() {
 
                 <motion.section variants={itemVariants}>
                     <div className="flex items-center gap-3 mb-8 mt-8">
-                        <Languages className="w-6 h-6 text-foreground"/>
-                        <h2 className="text-2xl font-semibold">
-                            {t("titles.translators")}
-                        </h2>
-                    </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        {translators.map((translator, index) => (
-                            <motion.div
-                                key={translator.name}
-                                variants={cardHoverVariants}
-                                whileHover="hover"
-                                initial={{opacity: 0, scale: 0.9}}
-                                animate={{opacity: 1, scale: 1}}
-                                transition={{delay: index * 0.1, duration: 0.6}}
-                            >
-                                <Card>
-                                    <CardContent className="p-6 text-center">
-                                        <div className="space-y-4">
-                                            <Avatar className="w-12 h-12 mx-auto border-2">
-                                                <AvatarImage
-                                                    src={translator.avatar || "/placeholder.svg"}
-                                                    alt={translator.name}
-                                                />
-                                                <AvatarFallback className="bg-gray-800 text-foreground">
-                                                    {translator.name
-                                                        .split(" ")
-                                                        .map((n) => n[0])
-                                                        .join("")}
-                                                </AvatarFallback>
-                                            </Avatar>
-                                            <div className="flex flex-col items-center">
-                                                <div>
-                                                    <h3 className="font-semibold text-sm mb-1">
-                                                        {translator.name}
-                                                    </h3>
-                                                    <div className="flex items-center justify-center gap-2 mb-3">
-                                                        <Avatar className="w-5 h-5">
-                                                            <AvatarImage src={`/flags/${translator.languageCode}.svg`} />
-                                                            <AvatarFallback>{translator.languageCode.toUpperCase()}</AvatarFallback>
-                                                        </Avatar>
-                                                        <span className="text-muted-foreground text-sm">
-                                                            {translator.language}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <SocialLinks socials={translator.socials} />
-                                            </div>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.section>
-
-                <motion.section variants={itemVariants}>
-                    <div className="flex items-center gap-3 mb-8 mt-8">
                         <Heart className="w-6 h-6 text-foreground"/>
                         <h2 className="text-2xl font-semibold">{t("titles.special")}</h2>
                     </div>
@@ -524,6 +408,74 @@ export default function ContributorsPage() {
                         ))}
                     </div>
                 </motion.section>
+
+                <motion.section variants={itemVariants}>
+                    <div className="flex items-center gap-3 mb-8 mt-8">
+                        <Languages className="w-6 h-6 text-foreground"/>
+                        <h2 className="text-2xl font-semibold">
+                            {t("titles.translators")}
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {translators.memberList.map((lang) => (
+                            <Card key={lang.langCode} className="hover:shadow-lg transition-shadow">
+                                <CardHeader>
+                                    <CardTitle className="flex items-center justify-between">
+                                        <span>
+                                            {getLanguageDisplayName(lang.langCode, "en")}
+                                        </span>
+                                    </CardTitle>
+                                    <p className="text-sm text-muted-foreground">{getLanguageDisplayName(lang.langCode, lang.langCode)}</p>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="space-y-4">
+                                        {lang.members.map((member) => (
+                                            <Card key={member.id}>
+                                                <Link href={`https://crowdin.com/profile/${member.username}`} className="flex items-center bg-input/30 gap-3 p-3 rounded-lg">
+                                                    <Avatar>
+                                                        <AvatarImage src={member.avatarUrl} alt={member.username} />
+                                                        <AvatarFallback>{member.username.slice(0, 2).toUpperCase()}</AvatarFallback>
+                                                    </Avatar>
+                                                    <div className="flex-1 min-w-0">
+                                                        <p className="font-medium truncate">
+                                                            {member.fullName || member.username}
+                                                        </p>
+                                                        <p className="text-sm text-muted-foreground truncate">@{member.username}</p>
+                                                    </div>
+                                                </Link>
+                                            </Card>
+                                        ))}
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+
+                    <Card className="mt-8 border-2">
+                        <CardContent className="pt-8 pb-8">
+                            <div className="flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto">
+                                <div className="relative w-full h-8 md:h-14 lg:h-14 p-4">
+                                    <Image
+                                        src={crowdinLogoSrc}
+                                        alt="Crowdin Logo"
+                                        fill
+                                        className="object-contain"
+                                    />
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold mb-2">{t("pleaseTranslateCard.title")}</h3>
+                                    <p className="text-muted-foreground">{t("pleaseTranslateCard.desc")}</p>
+                                </div>
+                                <Link href={"https://crowdin.com/project/instafel"}>
+                                    <Button className="mt-2 px-8 py-3 font-medium rounded-lg transition-all shadow-sm flex items-center gap-2" size={"lg"}>
+                                        {t("pleaseTranslateCard.joinUs")}
+                                    </Button>
+                                </Link>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </motion.section>
+
             </>}
         />
     );
