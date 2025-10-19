@@ -1,21 +1,50 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, {ReactElement, ReactNode, Suspense} from "react";
 import { FooterLoading } from "./loading";
 import {
-  BookOpenText,
-  Download,
-  FileCog2Icon,
-  FlagIcon,
-  GithubIcon,
-  LucideInstagram,
-  RefreshCcwDot,
-  Send,
-  User,
+    BookOpenText,
+    Download,
+    FileCog2Icon,
+    FlagIcon,
+    GithubIcon, Languages,
+    LucideInstagram,
+    RefreshCcwDot,
+    Send,
+    User, Users,
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
+function LinkListComponent({ href, text, icon }: { href: string, icon: ReactElement, text: string }) {
+    return (
+        <motion.li
+            whileHover={{ x: 5 }}
+            transition={{ type: "spring", stiffness: 400 }}
+        >
+            <Link
+                href={href}
+                className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
+            >
+                {React.cloneElement(icon, {
+                    ...(icon.props as any),
+                    className: "w-4 h-4",
+                })}
+                {text}
+            </Link>
+        </motion.li>
+    )
+}
+
+function generateListComponents(
+    listCompInfos: [string, string, ReactElement][]
+): ReactNode[] {
+    return listCompInfos.map((subArray) => {
+        const [href, text, icon] = subArray;
+        return <LinkListComponent key={href} href={href} icon={icon} text={text} />;
+    });
+}
 
 export default function Footer() {
   const [loading, setLoading] = React.useState(true);
@@ -65,85 +94,24 @@ export default function Footer() {
               <div>
                 <h3 className="font-semibold mb-4 text-lg">{t("footer.4")}</h3>
                 <ul className="space-y-3">
-                  <motion.li
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <Link
-                      href="/wiki"
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
-                    >
-                      <BookOpenText className="w-4 h-4" />
-                      {t("footer.5")}
-                    </Link>
-                  </motion.li>
-                  <motion.li
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <Link
-                      href="/library/backup"
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
-                    >
-                      <FileCog2Icon className="w-4 h-4" />
-                      {t("footer.6")}
-                    </Link>
-                  </motion.li>
-                  <motion.li
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <Link
-                      href="/library/flag"
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
-                    >
-                      <FlagIcon className="w-4 h-4" />
-                      {t("footer.11")}
-                    </Link>
-                  </motion.li>
+                    {generateListComponents([
+                        ["/wiki", t("footer.5"), <BookOpenText />],
+                        ["/library/backup", t("footer.6"), <FileCog2Icon />],
+                        ["/library/flag", t("footer.11"), <FlagIcon />],
+                        ["/contributors", t("footer.12"), <Users />]
+                    ])}
                 </ul>
               </div>
 
               <div>
                 <h3 className="font-semibold mb-4 text-lg">{t("footer.7")}</h3>
                 <ul className="space-y-3">
-                  <motion.li
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <Link
-                      href="/about_updater"
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
-                    >
-                      <RefreshCcwDot className="w-4 h-4" />
-                      {t("footer.8")}
-                    </Link>
-                  </motion.li>
-                  <motion.li
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <Link
-                      href="/releases/view?version=latest"
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
-                    >
-                      <Download className="w-4 h-4" />
-                      {t("footer.9")}
-                    </Link>
-                  </motion.li>
-                  <motion.li
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
-                  >
-                    <a
-                      href="https://github.com/mamiiblt/instafel"
-                      className="text-muted-foreground hover:text-foreground flex items-center gap-2 transition-colors"
-                      target="_blank"
-                    >
-                      <GithubIcon className="w-4 h-4" />
-                      {t("footer.10")}
-                    </a>
-                  </motion.li>
+                    {generateListComponents([
+                        ["/about_updater", t("footer.8"), <RefreshCcwDot />],
+                        ["/releases/view?version=latest", t("footer.9"), <Download />],
+                        ["https://github.com/mamiiblt/instafel", t("footer.10"), <GithubIcon />],
+                        ["https://crowdin.com/project/instafel", t("footer.13"), <Languages />]
+                    ])}
                 </ul>
               </div>
             </div>
