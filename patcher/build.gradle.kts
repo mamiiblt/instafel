@@ -45,7 +45,7 @@ tasks.shadowJar {
 }
 
 tasks.register("build-jar") {
-    group = "instafel"
+    group = "ifl-patcher"
     description = "Builds JAR file"
 
     dependsOn("shadowJar")
@@ -58,7 +58,7 @@ tasks.register("build-jar") {
 tasks.register("release") {
     dependsOn("build-jar")
 
-    group = "instafel"
+    group = "ifl-patcher"
     description = "Releases new patcher release"
 
     doLast {

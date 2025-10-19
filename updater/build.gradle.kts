@@ -73,7 +73,7 @@ android {
 }
 
 tasks.register("generate-app-debug") {
-    group = "instafel"
+    group = "ifl-updater"
     description = "Builds APK as debug"
     dependsOn("assembleDebug")
 
@@ -90,7 +90,7 @@ tasks.register("generate-app-debug") {
 }
 
 tasks.register("generate-app-release") {
-    group = "instafel"
+    group = "ifl-updater"
     description = "Builds APK as release"
     dependsOn("assembleRelease")
 
@@ -107,7 +107,7 @@ tasks.register("generate-app-release") {
 }
 
 tasks.register("release") {
-    group = "instafel"
+    group = "ifl-updater"
     description = "Releases new updater release"
     dependsOn("generate-app-release")
 

@@ -32,7 +32,7 @@ tasks.shadowJar {
 }
 
 tasks.register("build-jar") {
-    group = "instafel"
+    group = "ifl-gplayapi"
     description = "Builds JAR file"
 
     dependsOn("shadowJar")

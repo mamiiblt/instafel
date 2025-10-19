@@ -44,7 +44,7 @@ tasks.named<Jar>("jar") {
 }
 
 tasks.register("build-jar") {
-    group = "instafel"
+    group = "ifl-patcher-core"
     description = "Builds JAR file"
 
     dependsOn("jar", "generatePatchesJSON")
@@ -56,7 +56,7 @@ tasks.register("build-jar") {
 
 tasks.register("generatePatchesJSON") {
     mustRunAfter("jar")
-    group = "instafel"
+    group = "ifl-patcher-core"
     description = "Generates a patches.json file contains patch details"
 
     doLast{
@@ -87,7 +87,7 @@ tasks.register("generatePatchesJSON") {
 tasks.register("release") {
     dependsOn("build-jar")
 
-    group = "instafel"
+    group = "ifl-patcher-core"
     description = "Releases new core release"
 
     doLast {
