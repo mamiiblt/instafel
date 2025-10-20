@@ -1,0 +1,10 @@
+{
+  "title": "Librería de banderas",
+  "desc": "Con esta librería puedes obtener información sobre las banderas de Instagram",
+  "num_flag_zero": "No hay banderas",
+  "num_flag_one": "{{count}} bandera",
+  "num_flag_few": "{{count}} banderas",
+  "num_flag_many": "{{count}} banderas",
+  "num_flag_other": "{{count}} banderas",
+  "search_placeholder": "Busca en la librería rápidamente..."
+}

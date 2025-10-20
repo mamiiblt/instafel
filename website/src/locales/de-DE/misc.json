@@ -1,0 +1,13 @@
+{
+  "error": {
+    "1": "Es ist ein Fehler aufgetreten",
+    "2": "Erneut versuchen",
+    "3": "Hauptseite"
+  },
+  "not_found": {
+    "1": "Hoppla!",
+    "2": "Seite nicht gefunden",
+    "3": "Die gesuchte Seite existiert nicht. Bitte überprüfen Sie die URL oder kehren Sie zur Startseite zurück.",
+    "4": "Zurück zur Startseite"
+  }
+}

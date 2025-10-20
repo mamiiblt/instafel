@@ -1,0 +1,24 @@
+{
+  "added_by": "Añadido por {{name}}",
+  "uploaded_at": "Subido en {{date_str}}",
+  "removed_with": "Eliminado con v{{version}}",
+  "loading": "Cargando...",
+  "flag_found_zero": "No hay banderas en esta categoría",
+  "flag_found_one": "Hay una bandera {{count}} en esta categoría",
+  "flag_found_few": "Hay una bandera {{count}} en esta categoría",
+  "flag_found_many": "Hay una bandera {{count}} en esta categoría",
+  "flag_found_other": "Hay {{count}} banderas en esta categoría",
+  "page_info": "Página {{current}} de {{total}}",
+  "prev": "Anterior",
+  "next": "Siguiente",
+  "results": "Resultados",
+  "s_flag_found_zero": "No se han encontrado resultados en la biblioteca para '{{query}}'",
+  "s_flag_found_one": "Se encontró el resultado {{count}} en la biblioteca para '{{query}}'",
+  "s_flag_found_few": "{{count}} resultados fueron encontrados en la librería para la búsqueda {{query}}",
+  "s_flag_found_many": "{{count}} resultados fueron encontrados en la librería para la búsqueda {{query}}",
+  "s_flag_found_other": "{{count}} resultados fueron encontrados en la librería para la búsqueda {{query}}",
+  "found_footer": {
+    "down": "Se han encontrado un total de banderas {{size}} para esta consulta. Si no has encontrado la bandera correcta, intenta usar diferentes términos de búsqueda.",
+    "up": "Un total de 15 banderas fueron encontradas. Por defecto, los resultados están limitados a 15 objetos. Intenta usar términos más específicos para refinar tu búsqueda."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "العلامة غير موجودة",
+    "description": "العلامة المطلوبة غير موجودة أو أُزيلت.",
+    "go_back": "الرجوع"
+  },
+  "loading": {
+    "title": "جارٍ تحميل معلومات العلم",
+    "description": "يرجى الانتظار في أثناء تحميل التفاصيل"
+  },
+  "badges": {
+    "removed": "تمت الإزالة"
+  },
+  "content": {
+    "block_titles": {
+      "information": "معلومات",
+      "metaconf_options": "خيارات إعدادات ميتا",
+      "screenshots": "لقطة شاشة"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "تمت الإضافة بواسطة",
+        "last_edit": "آخر تعديل",
+        "added_in": "تمت الإضافة في",
+        "removed_in": "تمت إزالته في",
+        "unknown": "مجهول"
+      },
+      "screenshot": {
+        "failed_load_img": "تعذر تحميل الصورة"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "نسخ إلى الحافظة",
+        "prop_name_copied": "تم نسخ اسم الخاصية",
+        "prop_name_copied_desc": "تم نسخ اسم خاصية العلم إلى الحافظة"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "landing": {
+    "1": "The Best Alpha Experience",
+    "2": "You can try out latest alpha builds as quickly as possible with Instafel",
+    "3": "Download",
+    "4": "Read Wiki",
+    "5": "Join Community"
+  },
+  "features": {
+    "1": "Instafel Features",
+    "2": "Explore the powerful features that make Instafel the best choice for Instagram Alpha users",
+    "3": "Developer Options",
+    "4": "Access the developer-exclusive tools in latest Alpha bases",
+    "5": "Clone Support",
+    "6": "If you don't want to install the Alpha versions instead of the Instagram, you can install it as a secondary app!",
+    "7": "OTA 更新",
+    "8": "你可以透過應用程式內建的更新器，或自動更新外掛程式 Instafel Updater，無縫更新 Instafel",
+    "9": "廣告已移除",
+    "10": "在應用程式中舒適地使用，完全沒有廣告！",
+    "11": "崩潰報告",
+    "12": "使用 Alpha 版本時崩潰相當常見，因此 Instafel 針對此情況持續保留一份崩潰報告",
+    "13": "旗幟庫",
+    "14": "你可以在 Instafel 旗幟庫中找到好用的旗幟！"
+  },
+  "join_community": {
+    "1": "保持聯繫",
+    "2": "加入社群一齊討論並接收最新資訊",
+    "3": "加入我們的 Telegram 群組，接收最新的 Instafel 更新與新聞。分享你的回饋、提出建議並向社群學習一切事物。",
+    "4": "加入 Instafel 社群",
+    "5": "🎉 新的修補器已經公開了！",
+    "6": "今天早上 02:25",
+    "7": "終於解決了與資源反編譯事件相關的問題 :)",
+    "8": "昨天下午 08:00",
+    "9": "8,000+ 成員",
+    "10": "325 在線"
+  },
+  "try_now": {
+    "1": "準備好嘗試 Instafel 了嗎？",
+    "2": "立即下載我們的升級版應用程式，體驗 Instagram 最新 Alpha 功能，加入數千名滿意使用者的行列",
+    "3": "立即下載",
+    "4": "查看更新器"
+  }
+}

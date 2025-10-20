@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "items": {
+      "backups": "Backup",
+      "flags": "Contrassegni",
+      "updater": "Aggiornatore",
+      "src_code": "Codice Sorgente",
+      "download": "Scaricamento",
+      "contributors": "Collaboratori"
+    },
+    "1": "Aspetto",
+    "2": "Chiaro",
+    "3": "Scuro",
+    "4": "Automatico"
+  },
+  "footer": {
+    "1": "Offre un'esperienza Instagram Alpha veloce e aggiornata con funzionalità avanzate e sviluppo guidato dalla community",
+    "2": "Instafel non ha alcuna affiliazione con Meta o Instagram",
+    "3": "Sviluppato con ❤️ by mamiiblt",
+    "4": "Risorse",
+    "5": "Wiki",
+    "6": "Backup",
+    "7": "Link",
+    "8": "Aggiornatore",
+    "9": "Scaricamento",
+    "10": "Codice Sorgente",
+    "11": "Contrassegni",
+    "12": "Contributors",
+    "13": "Translate"
+  }
+}

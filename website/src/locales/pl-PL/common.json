@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "items": {
+      "backups": "Kopie zapasowe",
+      "flags": "Flagi",
+      "updater": "Aktualizator",
+      "src_code": "Kod źródłowy",
+      "download": "Pobierz",
+      "contributors": "Współtwórcy"
+    },
+    "1": "Wygląd",
+    "2": "Jasny",
+    "3": "Ciemny",
+    "4": "Automatyczny"
+  },
+  "footer": {
+    "1": "Zapewnia szybki dostęp do najnowszych wersji alpha Instagrama z dodatkowymi funkcjami rozwijanymi przez społeczność",
+    "2": "Instafel nie jest powiązany z Meta ani Instagramem",
+    "3": "Stworzony z ❤️ przez mamiiblt",
+    "4": "Zasoby",
+    "5": "Wiki",
+    "6": "Kopie zapasowe",
+    "7": "Linki",
+    "8": "Aktualizator",
+    "9": "Pobierz",
+    "10": "Kod źródłowy",
+    "11": "Flagi",
+    "12": "Współtwórcy",
+    "13": "Przetłumacz"
+  }
+}

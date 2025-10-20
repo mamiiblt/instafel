@@ -1,0 +1,10 @@
+{
+  "title": "مكتبة الميزات التجريبية",
+  "desc": "تتيح لك هذه المكتبة معرفة تفاصيل الميزات التجريبية في Instagram",
+  "num_flag_zero": "لا توجد ميزات تجريبية حالياً",
+  "num_flag_one": "{{count}} علامة",
+  "num_flag_few": "{{count}} علامات",
+  "num_flag_many": "{{count}} علامات",
+  "num_flag_other": "{{count}} علامات",
+  "search_placeholder": "بحث سريع في المكتبة..."
+}

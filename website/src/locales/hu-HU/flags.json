@@ -1,0 +1,24 @@
+{
+  "added_by": "Hozzáadta: {{name}}",
+  "uploaded_at": "Feltöltve: {{date_str}}",
+  "removed_with": "Eltávolítva a v{{version}} verzióval",
+  "loading": "Betöltés...",
+  "flag_found_zero": "Nincsenek zászlók ebben a kategóriában",
+  "flag_found_one": "Ebben a kategóriában {{count}} zászló van",
+  "flag_found_few": "Ebben a kategóriában {{count}} zászló van",
+  "flag_found_many": "Ebben a kategóriában {{count}} zászló van",
+  "flag_found_other": "Ebben a kategóriában {{count}} zászló van",
+  "page_info": "{{current}}. oldal a {{total}}-ből",
+  "prev": "Előző",
+  "next": "Következő",
+  "results": "Találatok",
+  "s_flag_found_zero": "A könyvtárban nem találtunk eredményt a \"{{query}}\" kifejezésre.",
+  "s_flag_found_one": "{{count}} találat a könyvtárban a \"{{query}}\" kifejezésre.",
+  "s_flag_found_few": "{{count}} találat a könyvtárban a \"{{query}}\" kifejezésre.",
+  "s_flag_found_many": "{{count}} találat a könyvtárban a \"{{query}}\" kifejezésre.",
+  "s_flag_found_other": "{{count}} találat a könyvtárban a \"{{query}}\" kifejezésre.",
+  "found_footer": {
+    "down": "Összesen {{size}} zászló található ehhez a kereséshez. Ha nem találtad meg a megfelelő zászlót, próbálkozz más keresési kifejezésekkel.",
+    "up": "Összesen 15 zászló található. Alapértelmezés szerint az eredmények száma 15 elemre korlátozódik. Próbálj meg pontosabb kifejezést használni a keresés finomításához."
+  }
+}

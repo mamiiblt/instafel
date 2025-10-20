@@ -1,0 +1,11 @@
+{
+  "title": "Kiadások",
+  "subtitle": "Az összes kiadást ezen az oldalon találod meg.",
+  "latestVersion": "Legújabb verzió",
+  "releaseText": "v{{version}} kiadás",
+  "basedOn": "v{{version}}-ra alapozva",
+  "releasedOn": "{{dateFormatted}}-án kiadva",
+  "genByPatcher": "Az Instafel Patcher v{{patcherVersion}} generálta",
+  "changes": "Újdonságok",
+  "deleted": "Törölve"
+}

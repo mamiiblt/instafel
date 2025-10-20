@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "items": {
+      "backups": "Mentések",
+      "flags": "Zászlók",
+      "updater": "Telepítő",
+      "src_code": "Forráskód",
+      "download": "Letöltés",
+      "contributors": "Közreműködők"
+    },
+    "1": "Megjelenés",
+    "2": "Világos",
+    "3": "Sötét",
+    "4": "Automatikus"
+  },
+  "footer": {
+    "1": "Gyors és naprakész Instagram Alpha élményt biztosít továbbfejlesztett funkciókkal és közösségvezérelt fejlesztéssel",
+    "2": "Az Instafel semmilyen kapcsolatban nem áll a Meta vagy az Instagram vállalattal",
+    "3": "mamiiblt ❤️-vel fejlesztette",
+    "4": "Erőforrások",
+    "5": "Wiki",
+    "6": "Mentések",
+    "7": "Hivatkozások",
+    "8": "Telepítő",
+    "9": "Letöltés",
+    "10": "Forráskód",
+    "11": "Zászlók",
+    "12": "Contributors",
+    "13": "Translate"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "title": "旗幟庫",
+  "desc": "你可以從這個旗幟庫中取得關於 Instagram 旗幟的資訊",
+  "num_flag_zero": "無旗幟",
+  "num_flag_one": "{{count}} 個旗幟",
+  "num_flag_few": "{{count}} 個旗幟",
+  "num_flag_many": "{{count}} 個旗幟",
+  "num_flag_other": "{{count}} 個旗幟",
+  "search_placeholder": "在旗幟庫中快速搜尋......"
+}

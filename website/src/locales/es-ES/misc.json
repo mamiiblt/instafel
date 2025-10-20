@@ -1,0 +1,13 @@
+{
+  "error": {
+    "1": "Algo salió mal",
+    "2": "Reintentar",
+    "3": "Inicio"
+  },
+  "not_found": {
+    "1": "¡Oops!",
+    "2": "Página no encontrada",
+    "3": "La página que estás buscando no existe. Por favor comprueba la URL o vuelve a la página de inicio.",
+    "4": "Volver a la página de inicio"
+  }
+}

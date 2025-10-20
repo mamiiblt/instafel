@@ -1,0 +1,57 @@
+{
+  "heroHeader": {
+    "title": "Instafel telepítő",
+    "subtitle": "Automatikus frissítések, nulla erőfeszítés",
+    "description": "Tartsd az Instafelt mindig naprakészen ezzel a hatékony kiegészítő alkalmazással, amely automatikusan kezeli a frissítéseket a Shizuku vagy a Root segítségével."
+  },
+  "buttons": {
+    "download": "{{version}} letöltése",
+    "sourceCode": "Forráskód"
+  },
+  "howItWorks": {
+    "title": "Hogyan működik",
+    "steps": {
+      "install": {
+        "title": "Telepítés és engedélyek megadása",
+        "description": "Telepítsd az alkalmazást, és adj meg Shizuku vagy Root jogosultságokat."
+      },
+      "configure": {
+        "title": "Beállítások",
+        "description": "Válaszd ki a frissítési beállításokat és a ellenőrzés gyakoriságát."
+      },
+      "automatic": {
+        "title": "Automatikus frissítések",
+        "description": "Lazíts és hagyd, hogy a telepítő mindent elvégezzen."
+      }
+    }
+  },
+  "features": {
+    "title": "Főbb funkciók",
+    "silent": {
+      "title": "Csendes telepítés",
+      "description": "A háttérben fut, hogy automatikusan letöltse és telepítse a legújabb verziókat az API-ból."
+    },
+    "shizuku": {
+      "title": "Shizuku támogatás",
+      "description": "Shizuku segítségével root kezelő programok nélkül is működik root kezelő programmal nélküli telefonokon."
+    },
+    "openSource": {
+      "title": "Nyílt Forráskódú",
+      "description": "Teljesen átlátható kód, így megbízhatsz az alkalmazásban a szükséges engedélyekkel."
+    }
+  },
+  "whyUse": {
+    "title": "Miért használd a telepítőt?",
+    "benefits": {
+      "latestFeatures": "Mindig automatikusan kapod a legújabb javításokkal és funkciókkal",
+      "saveTime": "Időt takarítasz meg a háttérfrissítésekkel a manuális OTA-ellenőrzések helyett",
+      "lightweight": "Könnyű és hatékony, minimális erőforrás-felhasználással",
+      "notifications": "Csak akkor kapj értesítést, ha a frissítések telepítése sikeresen megtörtént.",
+      "compatibility": "Zökkenőmentesen működik mind a Shizuku, mind a Root módszerekkel"
+    }
+  },
+  "callToAction": {
+    "title": "Szerezd be most!",
+    "description": "Tartsd naprakészen az Instafel élményedet minimális erőfeszítéssel. Töltsd le a telepítőt most."
+  }
+}

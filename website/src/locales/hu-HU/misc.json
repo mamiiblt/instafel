@@ -1,0 +1,13 @@
+{
+  "error": {
+    "1": "Valami hiba történt",
+    "2": "Újra",
+    "3": "Kezdőlap"
+  },
+  "not_found": {
+    "1": "Hoppá!",
+    "2": "Az oldal nem található",
+    "3": "A keresett oldal nem létezik. Ellenőrizd az URL-címet, vagy térj vissza a kezdőlapra.",
+    "4": "Vissza a főoldalra"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "الإصدارات",
+  "subtitle": "يمكنك العثور على جميع الإصدارات من هذه الصفحة",
+  "latestVersion": "أحدث إصدار",
+  "releaseText": "الإصدار {{version}}",
+  "basedOn": "استنادًا إلى الإصدار {{version}}",
+  "releasedOn": "تم الإصدار في {{dateFormatted}}",
+  "genByPatcher": "تم الإنشاء بواسطة {Instafel Patcher} الإصدار {{patcherVersion}}",
+  "changes": "سجل التغييرات",
+  "deleted": "تم الحذف"
+}

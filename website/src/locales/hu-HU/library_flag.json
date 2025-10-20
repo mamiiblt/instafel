@@ -1,0 +1,10 @@
+{
+  "title": "Zászló könyvtár",
+  "desc": "Ezzel a könyvtárral információkat szerezhetsz az Instagram zászlóiról.",
+  "num_flag_zero": "Nincs zászló",
+  "num_flag_one": "{{count}} zászló",
+  "num_flag_few": "{{count}} zászló",
+  "num_flag_many": "{{count}} zászló",
+  "num_flag_other": "{{count}} zászló",
+  "search_placeholder": "Gyors keresés a könyvtárban..."
+}

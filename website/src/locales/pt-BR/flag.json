@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "Flag não encontrada",
+    "description": "A flag que você está procurando não existe ou foi removida.",
+    "go_back": "Voltar"
+  },
+  "loading": {
+    "title": "Carregando informação da flag",
+    "description": "Por favor, aguarde enquanto buscamos os dados"
+  },
+  "badges": {
+    "removed": "Removido"
+  },
+  "content": {
+    "block_titles": {
+      "information": "Informação",
+      "metaconf_options": "Opções MetaConfig",
+      "screenshots": "Capturas de Tela"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "Adicionado por",
+        "last_edit": "Última Edição",
+        "added_in": "Adicionado em",
+        "removed_in": "Removido em",
+        "unknown": "Desconhecido"
+      },
+      "screenshot": {
+        "failed_load_img": "Falha ao carregar a imagem"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "Copiar para a área de transferência",
+        "prop_name_copied": "Nome da propriedade copiado",
+        "prop_name_copied_desc": "Nome da propriedade flag copiado para a área de transferência"
+      }
+    }
+  }
+}

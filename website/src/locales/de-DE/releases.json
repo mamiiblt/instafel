@@ -1,0 +1,11 @@
+{
+  "title": "Versionen",
+  "subtitle": "Sie können alle Versionen von dieser Seite finden",
+  "latestVersion": "Aktuellste Version",
+  "releaseText": "Version v{{version}}",
+  "basedOn": "Basierend auf v{{version}}",
+  "releasedOn": "Veröffentlicht am {{dateFormatted}}",
+  "genByPatcher": "Generiert von Instafel Patcher v{{patcherVersion}}",
+  "changes": "Änderungsprotokoll",
+  "deleted": "Gelöscht"
+}

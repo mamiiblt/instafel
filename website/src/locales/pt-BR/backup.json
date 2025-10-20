@@ -1,0 +1,20 @@
+{
+  "backToLibrary": "Voltar à Biblioteca de Backup",
+  "version": "Versão {{verStr}}",
+  "downloadButton": "Download Backup",
+  "downloading": "Baixando...",
+  "importButton": "Importar no Instafel",
+  "openingInstafel": "Abrindo Instafel...",
+  "aboutTitle": "Sobre este Backup",
+  "lastUpdated": "Última Atualização",
+  "changelogTitle": "Registro de Alterações",
+  "howToUseTitle": "Como usar este backup",
+  "howToUseDescription": "Você pode baixar este arquivo de backup e importá-lo manualmente no Instafel, ou use o botão \"Importar no Instafel\" para abrir automaticamente o aplicativo e importá-lo diretamente.",
+  "viewAllBackups": "Exibir todos os Backups",
+  "notFound": {
+    "title": "Backup Não Encontrado",
+    "description": "Não conseguimos encontrar o backup que você está procurando. Ele pode ter sido removido ou não existe.",
+    "returnButton": "Voltar à Biblioteca de Backup"
+  },
+  "fetchFailed": "Falha ao buscar dados de backup: {{errStr}}"
+}

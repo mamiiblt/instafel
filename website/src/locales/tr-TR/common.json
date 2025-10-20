@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "items": {
+      "backups": "Yedekler",
+      "flags": "Bayraklar",
+      "updater": "Güncelleyici",
+      "src_code": "Kaynak Kodu",
+      "download": "İndir",
+      "contributors": "Katılımcılar"
+    },
+    "1": "Görünüm",
+    "2": "Aydınlık",
+    "3": "Karanlık",
+    "4": "Otomatik"
+  },
+  "footer": {
+    "1": "Topluluk geliştirmeleri sayesinde hızlı & güncel bir Instagram Alpha deneyimi!",
+    "2": "Instafel'in Meta ve Instagram ile hiçbir bağı yoktur",
+    "3": "mamiiblt tarafından ❤️ ile geliştirilmiştir",
+    "4": "Kaynaklar",
+    "5": "Wiki",
+    "6": "Yedekler",
+    "7": "Linkler",
+    "8": "Güncelleyici",
+    "9": "İndir",
+    "10": "Kaynak Kodu",
+    "11": "Bayraklar",
+    "12": "Katılımcılar",
+    "13": "Çevir"
+  }
+}

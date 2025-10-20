@@ -1,0 +1,20 @@
+{
+  "backToLibrary": "返回備份庫",
+  "version": "版本 {{verStr}}",
+  "downloadButton": "下載備份",
+  "downloading": "下載中......",
+  "importButton": "在 Instafel 中匯入",
+  "openingInstafel": "正在開啟 Instafel......",
+  "aboutTitle": "關於此備份",
+  "lastUpdated": "上次更新",
+  "changelogTitle": "變更日誌",
+  "howToUseTitle": "如何使用此備份",
+  "howToUseDescription": "你可以下載此備份檔並手動匯入至 Instafel，或是使用「在 Instafel 中匯入」按鈕自動開啟應用程式並直接匯入。",
+  "viewAllBackups": "檢視所有備份",
+  "notFound": {
+    "title": "找不到備份",
+    "description": "我們無法找到你正在尋找的備份。可能已經被刪除或不存在。",
+    "returnButton": "返回備份庫"
+  },
+  "fetchFailed": "獲取備份資訊失敗：{{errStr}}"
+}

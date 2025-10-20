@@ -1,0 +1,24 @@
+{
+  "added_by": "Hinzugefügt von {{name}}",
+  "uploaded_at": "Hochgeladen am {{date_str}}",
+  "removed_with": "Entfernt mit Version v{{version}}",
+  "loading": "Lade...",
+  "flag_found_zero": "Es gibt keine Flags in dieser Kategorie",
+  "flag_found_one": "Es gibt {{count}} Flags in dieser Kategorie",
+  "flag_found_few": "Es gibt {{count}} Flags in dieser Kategorie",
+  "flag_found_many": "Es gibt {{count}} Flags in dieser Kategorie",
+  "flag_found_other": "Es gibt {{count}} Flags in dieser Kategorie",
+  "page_info": "Seite {{current}} von {{total}}",
+  "prev": "Zurück",
+  "next": "Weiter",
+  "results": "Ergebnisse",
+  "s_flag_found_zero": "Keine Ergebnisse in der Bibliothek für '{{query}}' gefunden",
+  "s_flag_found_one": "{{count}} Ergebnis wurde in der Bibliothek für '{{query}}' gefunden",
+  "s_flag_found_few": "{{count}} Ergebnisse wurden in der Bibliothek für '{{query}}' gefunden",
+  "s_flag_found_many": "{{count}} Ergebnisse wurden in der Bibliothek für '{{query}}' gefunden",
+  "s_flag_found_other": "{{count}} Ergebnisse wurden in der Bibliothek für '{{query}}' gefunden",
+  "found_footer": {
+    "down": "Insgesamt wurden {{size}} Flaggen zu dieser Suche gefunden. Wenn die richtige Flagge nicht dabei war, versuche andere Suchbegriffe.",
+    "up": "Insgesamt wurden 15 Flaggen gefunden. Standardmäßig sind die Ergebnisse auf 15 Elemente begrenzt. Verwende genauere Begriffe, um die Suche einzugrenzen."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "landing": {
+    "1": "A legjobb alfa élmény",
+    "2": "Az Instafel segítségével a lehető leggyorsabban kipróbálhatod a legújabb alfa verziókat.",
+    "3": "Letöltés",
+    "4": "Wiki elolvasása",
+    "5": "Csatlakozás a közösséghez"
+  },
+  "features": {
+    "1": "Instafel funkciói",
+    "2": "Fedezd fel azokat a hatékony funkciókat, amelyek az Instafelt az Instagram Alpha felhasználók számára a legjobb választássá teszik",
+    "3": "Fejlesztői beállítások",
+    "4": "Hozzáférés a fejlesztőknek fenntartott eszközökhöz a legújabb alfa fázisokban",
+    "5": "Klónozás támogatás",
+    "6": "Ha nem szeretnéd az Instagram helyett az alfa verziót telepíteni, akkor másodlagos alkalmazásként is telepítheted!",
+    "7": "OTA frissítések",
+    "8": "Az Instafel alkalmazást az alkalmazáson belüli frissítővel vagy az automatikusan frissítő plugin, az Instafel telepítő segítségével hibátlanul frissítheted.",
+    "9": "Hírdetések eltávolítva",
+    "10": "Használd kényelmesen, hirdetések nélkül az alkalmazásban!",
+    "11": "Összeomlás jelentések",
+    "12": "Az alfa verziók használata során nagyon gyakran előfordul, hogy az alkalmazás összeomlik. Az Instafel minden ilyen esetben megőrzi a rendszer összeomlásáról szóló jelentést.",
+    "13": "Könyvtárak",
+    "14": "Hasznos zászlókat és mentéseket találhatsz az Instafel könyvtárban!"
+  },
+  "join_community": {
+    "1": "Maradj kapcsolatban",
+    "2": "Csatlakozz a közösséghez a beszélgetésekhez és a legfrissebb hírekhez",
+    "3": "Csatlakozz a Telegram csoportunkhoz, hogy naprakész legyél az Instafel legújabb frissítéseivel és híreivel kapcsolatban. Oszd meg velünk visszajelzéseidet, javaslataidat, és tudj meg mindent a közösségtől.",
+    "4": "Csatlakozz az Instafel közösségéhez",
+    "5": "🎉 Az új frissítés már elérhető!",
+    "6": "Ma 02:25",
+    "7": "Végül megoldottam az erőforrás-dekompilációs eseményekkel kapcsolatos problémákat :)",
+    "8": "Tegnap 20:00",
+    "9": "8000+ tag",
+    "10": "325 elérhető"
+  },
+  "try_now": {
+    "1": "Készen állsz az Instafel kipróbálására?",
+    "2": "Próbáld ki a legújabb Instagram Alpha funkciókat továbbfejlesztett alkalmazásunkkal, töltsd le most, és csatlakozz több ezer elégedett felhasználóhoz",
+    "3": "Letöltés",
+    "4": "Telepítő megtekintése"
+  }
+}

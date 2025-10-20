@@ -1,0 +1,57 @@
+{
+  "heroHeader": {
+    "title": "Instafel Updater",
+    "subtitle": "Automatic updates, zero effort",
+    "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
+  },
+  "buttons": {
+    "download": "Download {{version}}",
+    "sourceCode": "Source Code"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "steps": {
+      "install": {
+        "title": "Install & Grant Permissions",
+        "description": "Install the app and grant Shizuku or Root permissions."
+      },
+      "configure": {
+        "title": "Configure Settings",
+        "description": "Choose your update preferences and check frequency."
+      },
+      "automatic": {
+        "title": "Automatic Updates",
+        "description": "Relax and let Updater handle everything for you."
+      }
+    }
+  },
+  "features": {
+    "title": "Key Features",
+    "silent": {
+      "title": "Silent Installation",
+      "description": "Runs in the background to automatically download and install the latest versions from our API."
+    },
+    "shizuku": {
+      "title": "Shizuku Support",
+      "description": "Works on non-rooted phones with Shizuku without requiring any additional root managers."
+    },
+    "openSource": {
+      "title": "Open Source",
+      "description": "Completely transparent code so you can trust the app with the necessary permissions."
+    }
+  },
+  "whyUse": {
+    "title": "Why Use Updater?",
+    "benefits": {
+      "latestFeatures": "Always have the latest patches and features automatically",
+      "saveTime": "Save time with background updates instead of manual OTA checks",
+      "lightweight": "輕量化且高效，資源消耗極低",
+      "notifications": "更新成功安裝時獲得通知",
+      "compatibility": "Shizuki 和 Root 兩種方式皆可無縫運作"
+    }
+  },
+  "callToAction": {
+    "title": "立即獲取！",
+    "description": "輕鬆保持你的 Instafel 最新體驗。立即下載更新程式。"
+  }
+}

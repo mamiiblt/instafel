@@ -1,0 +1,31 @@
+{
+  "navbar": {
+    "items": {
+      "backups": "Backups",
+      "flags": "Flaggen",
+      "updater": "Updater",
+      "src_code": "Quellcode",
+      "download": "Herunterladen",
+      "contributors": "Mitwirkende"
+    },
+    "1": "Darstellung",
+    "2": "Hell",
+    "3": "Dunkel",
+    "4": "Automatisch"
+  },
+  "footer": {
+    "1": "Bietet eine schnelle und aktuelle Instagram-Alpha-Erfahrung mit erweiterten Funktionen und community-getriebener Entwicklung",
+    "2": "Instafel steht in keiner Verbindung zu Meta oder Instagram",
+    "3": "Mit ❤️ entwickelt von mamiiblt",
+    "4": "Ressourcen",
+    "5": "Wiki",
+    "6": "Sicherungen",
+    "7": "Links",
+    "8": "Updater",
+    "9": "Herunterladen",
+    "10": "Quellcode",
+    "11": "Flaggen",
+    "12": "Contributors",
+    "13": "Translate"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "backToLibrary": "Vissza a mentés könyvtárhoz",
+  "version": "Verzió v{{verStr}}",
+  "downloadButton": "Mentés letöltése",
+  "downloading": "Letöltés...",
+  "importButton": "Importálás Instafel-ben",
+  "openingInstafel": "Instafel megnyitása...",
+  "aboutTitle": "A mentésről",
+  "lastUpdated": "Legutóbb frissítve",
+  "changelogTitle": "Újdonságok",
+  "howToUseTitle": "Hogyan használd a mentést",
+  "howToUseDescription": "Letöltheted ezt a mentést, és manuálisan importálhatod az Instafelbe, vagy az „Importálás az Instafelbe” gombra kattintva automatikusan megnyithatod az alkalmazást, és közvetlenül importálhatod.",
+  "viewAllBackups": "Összes mentés megtekintése",
+  "notFound": {
+    "title": "A mentés nem található",
+    "description": "Nem találtuk meg a keresett mentést. Lehet, hogy eltávolították, vagy nem létezik.",
+    "returnButton": "Vissza a mentés könyvtárhoz"
+  },
+  "fetchFailed": "A mentés adatainak lekérése sikertelen: {{errStr}}"
+}

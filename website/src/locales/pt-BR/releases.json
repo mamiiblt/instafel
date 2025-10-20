@@ -1,0 +1,11 @@
+{
+  "title": "Lançamentos",
+  "subtitle": "Você pode encontrar todas as versões nesta página",
+  "latestVersion": "A versão mais recente",
+  "releaseText": "Lançamento v{{version}}",
+  "basedOn": "Baseado em v{{version}}",
+  "releasedOn": "Lançado em {{dateFormatted}}",
+  "genByPatcher": "Gerado por Instafel Patcher v{{patcherVersion}}",
+  "changes": "Registro de Alterações",
+  "deleted": "Excluído"
+}

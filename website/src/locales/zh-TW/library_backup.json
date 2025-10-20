@@ -1,0 +1,15 @@
+{
+  "title": "備份旗幟庫",
+  "description": "瀏覽由社群建立、可以直接匯入至 Instafel 的備份。",
+  "createdBy": "由 {{author}} 建立",
+  "contribute": {
+    "title": "想要做出貢獻嗎？",
+    "description": "與社群分享你的 Instafel 備份並幫助其他人探索最佳設定。",
+    "button": "加入我們的社群"
+  },
+  "error": {
+    "title": "讀取備份失敗",
+    "description": "我們無法獲取備份資訊。請檢查你的網路連線並再試一次。",
+    "retryButton": "再試一次"
+  }
+}

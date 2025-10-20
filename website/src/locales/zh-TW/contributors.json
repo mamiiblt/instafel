@@ -1,0 +1,19 @@
+{
+  "title": "貢獻者",
+  "desc": "認識那些讓 Instafel 成為可能的非凡人物",
+  "roles": {
+    "dev": "開發者",
+    "mod": "管理員",
+    "cre": "創作者"
+  },
+  "titles": {
+    "team": "團隊",
+    "translators": "譯者",
+    "special": "特別鳴謝"
+  },
+  "pleaseTranslateCard": {
+    "title": "Would you like to translate too?",
+    "desc": "Join Instafel's Crowdin project and contribute to the translation!",
+    "joinUs": "Join us on Crowdin!"
+  }
+}

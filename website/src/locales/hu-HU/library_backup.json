@@ -1,0 +1,15 @@
+{
+  "title": "Mentés könyvtár",
+  "description": "Böngéssz a közösség által létrehozott mentések között, amelyeket közvetlenül importálhatsz az Instafelbe.",
+  "createdBy": "Készítette {{author}}",
+  "contribute": {
+    "title": "Szeretnél közreműködni?",
+    "description": "Oszd meg Instafel mentésedet a közösséggel, és segíts másoknak megtalálni az optimális konfigurációkat.",
+    "button": "Csatlakozás a közösséghez"
+  },
+  "error": {
+    "title": "A mentések betöltése sikertelen",
+    "description": "Nem sikerült lekérni a mentést. Ellenőrizd a kapcsolatot, vagy próbálkozz újra később.",
+    "retryButton": "Újra"
+  }
+}

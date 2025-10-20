@@ -1,0 +1,19 @@
+{
+  "title": "المساهمون",
+  "desc": "تعرف إلى الأشخاص الرائعين الذين جعلوا {Instafel} ممكنًا",
+  "roles": {
+    "dev": "المطور",
+    "mod": "المشرف",
+    "cre": "المُنشئ"
+  },
+  "titles": {
+    "team": "الفريق",
+    "translators": "Translators",
+    "special": "شكر خاص"
+  },
+  "pleaseTranslateCard": {
+    "title": "هل ترغب في التَّرْجَمَةً أيضًا؟",
+    "desc": "انضم إلى مشروع {Instafel} على Crowdin وساهم في التَّرْجَمَةً!",
+    "joinUs": "انضم إلينا على Crowdin!"
+  }
+}

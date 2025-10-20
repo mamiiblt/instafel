@@ -1,0 +1,19 @@
+{
+  "title": "Közreműködők",
+  "desc": "Ismerd meg azokat a csodálatos embereket, akik az Instafelt lehetővé tették",
+  "roles": {
+    "dev": "Fejlesztő",
+    "mod": "Moderátor",
+    "cre": "Készítő"
+  },
+  "titles": {
+    "team": "Csapat",
+    "translators": "Fordítók",
+    "special": "Külön köszönet"
+  },
+  "pleaseTranslateCard": {
+    "title": "Would you like to translate too?",
+    "desc": "Join Instafel's Crowdin project and contribute to the translation!",
+    "joinUs": "Join us on Crowdin!"
+  }
+}

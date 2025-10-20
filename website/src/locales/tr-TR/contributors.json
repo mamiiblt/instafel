@@ -1,0 +1,19 @@
+{
+  "title": "Katılımcılar",
+  "desc": "Instafel'in ve içeriklerin oluşturulmasında yardım eden kişiler!",
+  "roles": {
+    "dev": "Geliştirici",
+    "mod": "Moderatör",
+    "cre": "İçerik Üreticisi"
+  },
+  "titles": {
+    "team": "Takım",
+    "translators": "Çevirmenler",
+    "special": "Özel Teşekkürler"
+  },
+  "pleaseTranslateCard": {
+    "title": "Projeyi çevirmek ister misin?",
+    "desc": "Instafel'in Crowdin projesine katıl ve çevirilmesine katkı sağla!",
+    "joinUs": "Bize Crowdin'de katıl!"
+  }
+}

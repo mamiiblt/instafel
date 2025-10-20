@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "Bandera no encontrada",
+    "description": "La bandera que buscas no existe o ha sido eliminada.",
+    "go_back": "Volver"
+  },
+  "loading": {
+    "title": "Cargando información de la bandera",
+    "description": "Por favor espere mientras recuperamos los detalles"
+  },
+  "badges": {
+    "removed": "Eliminado"
+  },
+  "content": {
+    "block_titles": {
+      "information": "Información",
+      "metaconf_options": "Opciones de MetaConfig",
+      "screenshots": "Capturas de pantalla"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "Añadido por",
+        "last_edit": "Editado por última vez",
+        "added_in": "Agregado en",
+        "removed_in": "Eliminado en",
+        "unknown": "Desconocido"
+      },
+      "screenshot": {
+        "failed_load_img": "Fallo al cargar la imagen"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "Copiar al portapapeles",
+        "prop_name_copied": "Nombre de la propiedad copiado",
+        "prop_name_copied_desc": "Propiedad de la Bandera copiada al portapapeles"
+      }
+    }
+  }
+}

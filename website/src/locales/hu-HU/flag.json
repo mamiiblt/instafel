@@ -1,0 +1,38 @@
+{
+  "not_found": {
+    "title": "Zászló nem található",
+    "description": "A zászló, amit keresel nem létezik vagy el lett távolítva.",
+    "go_back": "Vissza"
+  },
+  "loading": {
+    "title": "Zászló információinak betöltése",
+    "description": "Várj, ameddig lekérjük a részleteket"
+  },
+  "badges": {
+    "removed": "Eltávolítva"
+  },
+  "content": {
+    "block_titles": {
+      "information": "Információ",
+      "metaconf_options": "MetaConfig beállítások",
+      "screenshots": "Képernyőképek"
+    },
+    "block_contents": {
+      "info": {
+        "added_by": "Hozzáadta",
+        "last_edit": "Legutolsó szerkesztés",
+        "added_in": "Hozzáadva",
+        "removed_in": "Eltávolítva",
+        "unknown": "Ismeretlen"
+      },
+      "screenshot": {
+        "failed_load_img": "Hiba a kép betöltése során"
+      },
+      "metaconf_options": {
+        "copy_to_clipboard": "Másolás vágólapra",
+        "prop_name_copied": "Tulajdonság neve másolva",
+        "prop_name_copied_desc": "A zászló tulajdonság neve a vágólapra másolva"
+      }
+    }
+  }
+}

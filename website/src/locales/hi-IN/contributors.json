@@ -1,0 +1,19 @@
+{
+  "title": "योगदान करने वाले",
+  "desc": "मिलिए उन अद्भुत लोगों से जिन्होंने इंस्टाफेल को संभव बनाया",
+  "roles": {
+    "dev": "डेवलपर",
+    "mod": "संचालक",
+    "cre": "निर्माता"
+  },
+  "titles": {
+    "team": "टीम",
+    "translators": "अनुवादक",
+    "special": "विशेष धन्यवाद"
+  },
+  "pleaseTranslateCard": {
+    "title": "Would you like to translate too?",
+    "desc": "Join Instafel's Crowdin project and contribute to the translation!",
+    "joinUs": "Join us on Crowdin!"
+  }
+}

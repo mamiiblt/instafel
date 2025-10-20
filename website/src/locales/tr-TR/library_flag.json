@@ -1,0 +1,10 @@
+{
+  "title": "Bayrak Kütüphanesi",
+  "desc": "Bu sayfada Instafel'in bayrak kütüphanesinde bulunan tüm bayrakların kategorisel olarak ayrıştırılmış hallerini bulabilirsiniz.",
+  "num_flag_zero": "Bayrak bulunamadı",
+  "num_flag_one": "{{count}} bayrak",
+  "num_flag_few": "{{count}} bayraklar",
+  "num_flag_many": "{{count}} bayraklar",
+  "num_flag_other": "{{count}} bayraklar",
+  "search_placeholder": "Kütüphane içinde hızlıca ara..."
+}
