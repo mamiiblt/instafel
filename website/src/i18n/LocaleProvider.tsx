@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import i18next from "@/i18n/i18n";
-import { cookieName, languages } from "@/i18n/settings";
+import {cookieName, getSupportedLocales} from "@/i18n/settings";
 import { I18nextProvider } from "react-i18next";
 import { LoadingBar } from "@/components/LoadingBars";
 
@@ -13,8 +13,10 @@ function getCookie(name: string) {
 }
 
 function getBrowserLanguage() {
-  return navigator.language.split("-")[0];
+  return navigator.language;
 }
+
+const supportedLanguages = await getSupportedLocales()
 
 export default function LocaleProvider({
   children,
@@ -25,9 +27,11 @@ export default function LocaleProvider({
 
   useEffect(() => {
     let lng = getCookie(cookieName);
-    if (!lng || !languages.includes(lng)) {
+    const langSupported = supportedLanguages.includes(lng)
+    if (!lng || !langSupported) {
       lng = getBrowserLanguage();
-      if (!languages.includes(lng)) lng = "en";
+      if (!langSupported) lng = "en-EN";
+      if (!langSupported) lng = "en-EN";
       document.cookie = `${cookieName}=${lng}; path=/; max-age=31536000`;
     }
 
