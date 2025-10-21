@@ -1,10 +1,9 @@
 import i18next from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
-import {fallbackLng, defaultNS, getSupportedLocales} from "./settings";
+import {fallbackLng, defaultNS, supportedLocales} from "./settings";
 
 const runsOnServerSide = typeof window === "undefined";
-const supportedLngs = await getSupportedLocales();
 
 i18next
   .use(initReactI18next)
@@ -15,14 +14,14 @@ i18next
   )
   .init({
     debug: process.env.NODE_ENV === "development",
-    supportedLngs,
+    supportedLocales,
     fallbackLng,
     defaultNS,
     ns: [defaultNS],
     interpolation: {
       escapeValue: false,
     },
-    preload: runsOnServerSide ? supportedLngs : [],
+    preload: runsOnServerSide ? supportedLocales : [],
   });
 
 export default i18next;

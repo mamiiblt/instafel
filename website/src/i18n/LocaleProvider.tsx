@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import i18next from "@/i18n/i18n";
-import {cookieName, getSupportedLocales} from "@/i18n/settings";
+import {cookieName, supportedLocales} from "@/i18n/settings";
 import { I18nextProvider } from "react-i18next";
 import { LoadingBar } from "@/components/LoadingBars";
 
@@ -16,8 +16,6 @@ function getBrowserLanguage() {
   return navigator.language;
 }
 
-const supportedLanguages = await getSupportedLocales()
-
 export default function LocaleProvider({
   children,
 }: {
@@ -27,7 +25,7 @@ export default function LocaleProvider({
 
   useEffect(() => {
     let lng = getCookie(cookieName);
-    const langSupported = supportedLanguages.includes(lng)
+    const langSupported = supportedLocales.includes(lng)
     if (!lng || !langSupported) {
       lng = getBrowserLanguage();
       if (!langSupported) lng = "en-EN";

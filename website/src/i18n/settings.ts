@@ -1,34 +1,4 @@
 export const fallbackLng = "en-EN";
 export const defaultNS = "common";
-export const namespaces = [
-    "backup",
-    "common",
-    "download",
-    "home",
-    "library_backup",
-    "updater",
-    "library_flag",
-    "fcategories",
-    "flag",
-    "flags",
-];
 export const cookieName = "WPG_LANG";
-
-let cachedLocales: string[] | null = null;
-
-export async function getSupportedLocales(): Promise<string[]> {
-    if (cachedLocales) {
-        return cachedLocales;
-    }
-
-    try {
-        const res = await fetch("/api/locales");
-        cachedLocales = await res.json()
-        console.log("✅ Locales cached:", cachedLocales);
-        return cachedLocales;
-    } catch (err) {
-        console.error("❌ Error fetching locales:", err);
-        cachedLocales = [];
-        return cachedLocales;
-    }
-}
+export const supportedLocales = ["en-EN","ar-SA","az-AZ","de-DE","el-GR","es-ES","fr-FR","hi-IN","hu-HU","id-ID","it-IT","pl-PL","pt-BR","sr-CS","tr-TR","zh-CN","zh-HK","zh-TW"]
