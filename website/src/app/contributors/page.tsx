@@ -10,11 +10,9 @@ import {Page, PageHeader} from "@/components/PageUtils";
 import React, {useEffect, useState} from "react";
 import {LoadingBar} from "@/components/LoadingBars";
 import {contentAPIURL} from "@/wdata/flag_sdata";
-import {Badge} from "@/components/ui/badge";
 import {getLanguageDisplayName} from "@/lib/utils";
 import Link from "next/link";
-import Image from "next/image";
-import {useTheme} from "next-themes";
+import {CrowdinSuggestCard} from "@/components/CrowdinSuggestCard";
 
 const itemVariants = {
     hidden: {opacity: 0, y: 30},
@@ -56,12 +54,6 @@ export default function ContributorsPage() {
     const {t} = useTranslation("contributors");
     const [translators, setTranslators] = useState<TranslatorResponse | null>(null);
     const [isLoading, setIsLoading] = useState(true);
-    const { theme, resolvedTheme } = useTheme();
-    const currentTheme = theme === "system" ? resolvedTheme : theme;
-    const crowdinLogoSrc =
-        currentTheme === "dark"
-            ? "/cpictures/crowdin/crw_light.svg"
-            : "/cpictures/crowdin/crw_dark.svg";
 
     useEffect(() => {
         const fetchData = async () => {
@@ -451,31 +443,8 @@ export default function ContributorsPage() {
                         ))}
                     </div>
 
-                    <Card className="mt-8 border-2">
-                        <CardContent className="pt-8 pb-8">
-                            <div className="flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto">
-                                <div className="relative w-full h-8 md:h-14 lg:h-14 p-4">
-                                    <Image
-                                        src={crowdinLogoSrc}
-                                        alt="Crowdin Logo"
-                                        fill
-                                        className="object-contain"
-                                    />
-                                </div>
-                                <div>
-                                    <h3 className="text-3xl font-bold mb-2">{t("pleaseTranslateCard.title")}</h3>
-                                    <p className="text-muted-foreground">{t("pleaseTranslateCard.desc")}</p>
-                                </div>
-                                <Link href={"https://crowdin.com/project/instafel"}>
-                                    <Button className="mt-2 px-8 py-3 font-medium rounded-lg transition-all shadow-sm flex items-center gap-2" size={"lg"}>
-                                        {t("pleaseTranslateCard.joinUs")}
-                                    </Button>
-                                </Link>
-                            </div>
-                        </CardContent>
-                    </Card>
+                    <CrowdinSuggestCard className="mt-8" />
                 </motion.section>
-
             </>}
         />
     );
