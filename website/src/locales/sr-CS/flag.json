@@ -2,31 +2,31 @@
   "not_found": {
     "title": "Flag not found",
     "description": "The flag you're looking for doesn't exist or has been removed.",
-    "go_back": "Go back"
+    "go_back": "Idi nazad"
   },
   "loading": {
     "title": "Loading flag information",
-    "description": "Please wait while we fetch the details"
+    "description": "Molimo sačekajte dok prikupimo detalje"
   },
   "badges": {
-    "removed": "Removed"
+    "removed": "Uklonjeno"
   },
   "content": {
     "block_titles": {
-      "information": "Information",
-      "metaconf_options": "MetaConfig Options",
+      "information": "Informacije",
+      "metaconf_options": "MetaConfig opcije",
       "screenshots": "Snimci Ekrana"
     },
     "block_contents": {
       "info": {
         "added_by": "Dodat od strane",
         "last_edit": "Last Edit",
-        "added_in": "Added in",
-        "removed_in": "Removed in",
-        "unknown": "Unknown"
+        "added_in": "Dodato u",
+        "removed_in": "Obrisano u",
+        "unknown": "Nepoznato"
       },
       "screenshot": {
-        "failed_load_img": "Failed to load image"
+        "failed_load_img": "Učitavanje slike nije uspelo"
       },
       "metaconf_options": {
         "copy_to_clipboard": "Copy to clipboard",

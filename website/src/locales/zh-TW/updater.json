@@ -1,50 +1,50 @@
 {
   "heroHeader": {
-    "title": "Instafel Updater",
-    "subtitle": "Automatic updates, zero effort",
-    "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
+    "title": "Instafel 更新器",
+    "subtitle": "全自動更新，不費吹灰之力",
+    "description": "使用這個強大的應用程式，透過 Shizuku 或 Root 自動處理更新，並保持 Instafel 為最新版本。"
   },
   "buttons": {
-    "download": "Download {{version}}",
-    "sourceCode": "Source Code"
+    "download": "下載 {{version}}",
+    "sourceCode": "原始碼"
   },
   "howItWorks": {
-    "title": "How It Works",
+    "title": "如何運作",
     "steps": {
       "install": {
-        "title": "Install & Grant Permissions",
-        "description": "Install the app and grant Shizuku or Root permissions."
+        "title": "安裝並授予權限",
+        "description": "安裝應用程式並授予 Shizuku 或 Root 權限。"
       },
       "configure": {
-        "title": "Configure Settings",
-        "description": "Choose your update preferences and check frequency."
+        "title": "調整設定",
+        "description": "選擇你的更新偏好與檢查頻率。"
       },
       "automatic": {
-        "title": "Automatic Updates",
-        "description": "Relax and let Updater handle everything for you."
+        "title": "自動更新",
+        "description": "放鬆並讓更新器替你處理所有事物。"
       }
     }
   },
   "features": {
-    "title": "Key Features",
+    "title": "主要特點",
     "silent": {
-      "title": "Silent Installation",
-      "description": "Runs in the background to automatically download and install the latest versions from our API."
+      "title": "安靜安裝",
+      "description": "在背景運行並從我們的 API 自動安裝最新版本。"
     },
     "shizuku": {
-      "title": "Shizuku Support",
-      "description": "Works on non-rooted phones with Shizuku without requiring any additional root managers."
+      "title": "支援 Shizuku",
+      "description": "在非 Root 手機上使用 Shizuku，無需額外的 Root 管理器。"
     },
     "openSource": {
-      "title": "Open Source",
-      "description": "Completely transparent code so you can trust the app with the necessary permissions."
+      "title": "開放原始碼",
+      "description": "完全透明的程式碼，所以你可以信任應用程式與必要的權限。"
     }
   },
   "whyUse": {
-    "title": "Why Use Updater?",
+    "title": "為什麼使用更新器？",
     "benefits": {
-      "latestFeatures": "Always have the latest patches and features automatically",
-      "saveTime": "Save time with background updates instead of manual OTA checks",
+      "latestFeatures": "永遠自動擁有最新的修補與功能",
+      "saveTime": "比起手動 OTA 更新，透過背景更新節省時間",
       "lightweight": "輕量化且高效，資源消耗極低",
       "notifications": "更新成功安裝時獲得通知",
       "compatibility": "Shizuki 和 Root 兩種方式皆可無縫運作"

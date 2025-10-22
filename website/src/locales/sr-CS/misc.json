@@ -1,13 +1,13 @@
 {
   "error": {
-    "1": "Something went wrong",
-    "2": "Retry",
-    "3": "Home"
+    "1": "Došlo je do greške",
+    "2": "Pokušaj ponovo",
+    "3": "Početna"
   },
   "not_found": {
-    "1": "Oops!",
-    "2": "Page Not Found",
-    "3": "The page you are looking for does not exist. Please check the URL or go back to the homepage.",
-    "4": "Return Home"
+    "1": "Ups!",
+    "2": "Stranica nije pronađena",
+    "3": "Stranica koju tražite ne postoji. Molimo vas da proverite URL ili se vratite na početnu stranicu.",
+    "4": "Vrati se na početnu stranicu"
   }
 }

@@ -12,8 +12,8 @@
     "special": "特別鳴謝"
   },
   "pleaseTranslateCard": {
-    "title": "Would you like to translate too?",
-    "desc": "Join Instafel's Crowdin project and contribute to the translation!",
-    "joinUs": "Join us on Crowdin!"
+    "title": "想要一起翻譯嗎？",
+    "desc": "加入 Instafel 的 Crowdin 專案並貢獻翻譯！",
+    "joinUs": "在 Crowdin 加入我們！"
   }
 }

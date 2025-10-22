@@ -1,50 +1,50 @@
 {
   "heroHeader": {
     "title": "Instafel Updater",
-    "subtitle": "Automatic updates, zero effort",
-    "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
+    "subtitle": "Pembaruan otomatis, tanpa upaya",
+    "description": "Selalu perbarui Instafel dengan aplikasi pendamping canggih ini yang menangani pembaruan secara otomatis melalui Shizuku atau Root."
   },
   "buttons": {
     "download": "Unduh {{version}}",
-    "sourceCode": "Source Code"
+    "sourceCode": "Kode Sumber"
   },
   "howItWorks": {
-    "title": "How It Works",
+    "title": "Cara Kerjanya",
     "steps": {
       "install": {
-        "title": "Install & Grant Permissions",
-        "description": "Install the app and grant Shizuku or Root permissions."
+        "title": "Pasang & Berikan Izin",
+        "description": "Pasang aplikasi dan berikan izin Shizuku atau Root."
       },
       "configure": {
-        "title": "Configure Settings",
-        "description": "Choose your update preferences and check frequency."
+        "title": "Konfigurasikan Pengaturan",
+        "description": "Pilih preferensi pembaruan anda dan frekuensi pengecekan."
       },
       "automatic": {
-        "title": "Automatic Updates",
-        "description": "Relax and let Updater handle everything for you."
+        "title": "Pembaruan Otomatis",
+        "description": "Tenang saja dan biarkan Updater menangani semuanya untuk anda."
       }
     }
   },
   "features": {
     "title": "Fitur Utama",
     "silent": {
-      "title": "Silent Installation",
-      "description": "Runs in the background to automatically download and install the latest versions from our API."
+      "title": "Pemasangan Senyap",
+      "description": "Berjalan di latar belakang untuk mengunduh dan menginstal versi terbaru dari API kami secara otomatis."
     },
     "shizuku": {
-      "title": "Shizuku Support",
-      "description": "Works on non-rooted phones with Shizuku without requiring any additional root managers."
+      "title": "Dukungan Shizuku",
+      "description": "Bekerja pada ponsel non-root dengan Shizuku tanpa memerlukan pengelola root tambahan."
     },
     "openSource": {
-      "title": "Open Source",
-      "description": "Completely transparent code so you can trust the app with the necessary permissions."
+      "title": "Sumber Terbuka",
+      "description": "Kode yang sepenuhnya transparan sehingga anda dapat mempercayai aplikasi dengan izin yang diperlukan."
     }
   },
   "whyUse": {
     "title": "Mengapa Menggunakan Updater?",
     "benefits": {
-      "latestFeatures": "Always have the latest patches and features automatically",
-      "saveTime": "Save time with background updates instead of manual OTA checks",
+      "latestFeatures": "Selalu miliki patch dan fitur terbaru secara otomatis",
+      "saveTime": "Hemat waktu dengan pembaruan latar belakang alih-alih pemeriksaan OTA manual",
       "lightweight": "Ringan dan efisien dengan penggunaan sumber daya minimal",
       "notifications": "Dapatkan pemberitahuan hanya saat pembaruan berhasil diinstal",
       "compatibility": "Berfungsi dengan lancar bersama metode Shizuku dan Root"

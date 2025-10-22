@@ -1,9 +1,9 @@
 {
-  "all": "All",
-  "direct": "Direct",
-  "reels": "Reels",
-  "stories": "Stories",
-  "feed": "Feed",
+  "all": "Sve",
+  "direct": "Direktno",
+  "reels": "Rilovi",
+  "stories": "Priče",
+  "feed": "Fid",
   "interface": "Interfejs",
   "notes": "Beleške",
   "quality": "Kvalitet",
@@ -13,7 +13,7 @@
   "comments": "Komentari",
   "profile": "Profil",
   "professional": "Profesionalan",
-  "livestreams": "Livestreams",
+  "livestreams": "Uživo",
   "meta-ai": "Meta AI",
   "other": "Drugo"
 }

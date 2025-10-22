@@ -19,6 +19,6 @@
   "s_flag_found_other": "{{count}} results were found in the library for '{{query}}'",
   "found_footer": {
     "down": "A total of {{size}} flags were found for this query. If you didn't find the correct flag, try using different search terms.",
-    "up": "A total of 15 flags were found. By default, results are limited to 15 items. Try using more specific terms to refine your search."
+    "up": "Un total de 15 drapeaux ont été trouvés. Par défaut, les résultats sont limités à 15 éléments. Essayez d'utiliser des termes plus spécifiques pour affiner votre recherche."
   }
 }

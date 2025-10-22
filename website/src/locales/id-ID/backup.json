@@ -1,20 +1,20 @@
 {
-  "backToLibrary": "Back to Backup Library",
+  "backToLibrary": "Kembali ke Pustaka Backup",
   "version": "Versi {{verStr}}",
-  "downloadButton": "Download Backup",
+  "downloadButton": "Unduh Backup",
   "downloading": "Sedang mengunduh...",
-  "importButton": "Import in Instafel",
-  "openingInstafel": "Opening Instafel...",
-  "aboutTitle": "About This Backup",
-  "lastUpdated": "Last Updated",
-  "changelogTitle": "Changelog",
-  "howToUseTitle": "How to use this backup",
-  "howToUseDescription": "You can either download this backup file and manually import it into Instafel, or use the \"Import in Instafel\" button to automatically open the app and import it directly.",
-  "viewAllBackups": "View All Backups",
+  "importButton": "Impor di Instafel",
+  "openingInstafel": "Membuka Instafel...",
+  "aboutTitle": "Tentang Backup Ini",
+  "lastUpdated": "Pembaruan Terakhir",
+  "changelogTitle": "Riwayat Perubahan",
+  "howToUseTitle": "Cara menggunakan backup ini",
+  "howToUseDescription": "Anda dapat mengunduh file backup ini dan mengimpornya secara manual ke Instafel, atau menggunakan tombol \"Impor di Instafel\" untuk membuka aplikasi secara otomatis dan mengimpornya langsung.",
+  "viewAllBackups": "Lihat Semua Backup",
   "notFound": {
-    "title": "Backup Not Found",
-    "description": "We couldn't find the backup you're looking for. It may have been removed or doesn't exist.",
-    "returnButton": "Return to Backup Library"
+    "title": "Backup Tidak Ditemukan",
+    "description": "Kami tidak dapat menemukan backup yang Anda cari. Backup tersebut mungkin telah dihapus atau tidak ada.",
+    "returnButton": "Kembali ke Pustaka Backup"
   },
-  "fetchFailed": "Failed to fetch backup data: {{errStr}}"
+  "fetchFailed": "Gagal mengambil data backup: {{errStr}}"
 }

@@ -1,13 +1,13 @@
 {
   "error": {
-    "1": "Something went wrong",
-    "2": "Retry",
-    "3": "Home"
+    "1": "कुछ गड़बड़ हुई है",
+    "2": "फिर से कोशिश करें",
+    "3": "होम"
   },
   "not_found": {
-    "1": "Oops!",
-    "2": "Page Not Found",
-    "3": "The page you are looking for does not exist. Please check the URL or go back to the homepage.",
-    "4": "Return Home"
+    "1": "ओह!",
+    "2": "पेज नहीं मिला",
+    "3": "आप जिस पेज को ढूंढ रहे हैं वह मौजूद नहीं है। कृपया URL जांचें या होमपेज पर वापस जाएँ।",
+    "4": "होम पेज पर लौटें"
   }
 }

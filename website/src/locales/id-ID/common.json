@@ -1,12 +1,12 @@
 {
   "navbar": {
     "items": {
-      "backups": "Backups",
-      "flags": "Flags",
+      "backups": "Backup",
+      "flags": "Flag",
       "updater": "Updater",
-      "src_code": "Source Code",
+      "src_code": "Kode Sumber",
       "download": "Unduh",
-      "contributors": "Contributors"
+      "contributors": "Kontributor"
     },
     "1": "Penampilan",
     "2": "Terang",
@@ -17,15 +17,15 @@
     "1": "Menyediakan pengalaman Instagram Alpha yang cepat dan terbaru dengan fitur-fitur yang ditingkatkan dan pengembangan yang didorong oleh komunitas",
     "2": "Instafel tidak memiliki afiliasi apa pun dengan Meta atau Instagram",
     "3": "Dikembangkan dengan ❤️ oleh mamiiblt",
-    "4": "Resources",
+    "4": "Sumber",
     "5": "Wiki",
-    "6": "Backups",
+    "6": "Backup",
     "7": "Tautan",
     "8": "Pembaruan",
     "9": "Unduh",
-    "10": "Source Code",
-    "11": "Flags",
-    "12": "Contributors",
-    "13": "Translate"
+    "10": "Kode Sumber",
+    "11": "Flag",
+    "12": "Kontributor",
+    "13": "Terjemahkan"
   }
 }

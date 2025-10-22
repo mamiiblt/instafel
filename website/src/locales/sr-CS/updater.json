@@ -2,21 +2,21 @@
   "heroHeader": {
     "title": "Instafel Updater",
     "subtitle": "Automatic updates, zero effort",
-    "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
+    "description": "Držite Instafel uvek ažuriran pomoću ove moćne prateće aplikacije koja automatski obrađuje ažuriranja putem Shizukua ili Ruta."
   },
   "buttons": {
     "download": "Download {{version}}",
-    "sourceCode": "Source Code"
+    "sourceCode": "Izvorni kod"
   },
   "howItWorks": {
-    "title": "How It Works",
+    "title": "Kako radi",
     "steps": {
       "install": {
-        "title": "Install & Grant Permissions",
+        "title": "Instaliraj i odobri dozvole",
         "description": "Install the app and grant Shizuku or Root permissions."
       },
       "configure": {
-        "title": "Configure Settings",
+        "title": "Konfigurišite podešavanja",
         "description": "Choose your update preferences and check frequency."
       },
       "automatic": {

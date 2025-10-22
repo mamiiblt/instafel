@@ -1,10 +1,10 @@
 {
-  "title": "Flag Library",
-  "desc": "With this library you can get information about the flags of Instagram",
-  "num_flag_zero": "No flags",
-  "num_flag_one": "{{count}} flag",
-  "num_flag_few": "{{count}} flags",
-  "num_flag_many": "{{count}} flags",
-  "num_flag_other": "{{count}} flags",
-  "search_placeholder": "Search in library quickly..."
+  "title": "फ्लैग लाइब्रेरी",
+  "desc": "इस लाइब्रेरी से आप इंस्टाग्राम के फ्लैग्स के बारे में जानकारी प्राप्त कर सकते हैं",
+  "num_flag_zero": "कोई फ्लैग्स नहीं",
+  "num_flag_one": "{{count}} फ्लैग",
+  "num_flag_few": "{{count}} फ्लैग्स",
+  "num_flag_many": "{{count}} फ्लैग्स",
+  "num_flag_other": "{{count}} फ्लैग्स",
+  "search_placeholder": "लाइब्रेरी में शीघ्रता से खोजें..."
 }
