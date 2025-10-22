@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
@@ -20,11 +21,14 @@ import com.github.tttt55.materialyoupreferences.preferences.MaterialPreference;
 import com.github.tttt55.materialyoupreferences.preferences.MaterialSwitchGooglePreference;
 
 import me.mamiiblt.instafel.updater.BuildConfig;
-import me.mamiiblt.instafel.updater.MainActivity;
 import me.mamiiblt.instafel.updater.R;
 import me.mamiiblt.instafel.updater.update.UpdateWorkHelper;
 import me.mamiiblt.instafel.updater.utils.LocalizationUtils;
 import me.mamiiblt.instafel.updater.utils.Utils;
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.*;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
     @Override
@@ -86,22 +90,42 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             return true;
         });
 
+
         MaterialListPreference language = findPreference("language");
-        language.setOnPreferenceChangeListener((preference, newValue) -> {
-            prefEditor.putString("language", String.valueOf(newValue)).apply();
-            prefEditor.apply();
-            LocalizationUtils localizationUtils = new LocalizationUtils(getActivity().getApplicationContext());
-            localizationUtils.updateAppLanguage();
-            Intent intent = new Intent(getActivity(), MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            // getActivity().recreate();
-            return true;
-        });
+        if (language != null) {
+            String[] languages = getResources().getStringArray(R.array.supported_languages);
+
+            List<String> entriesList = new ArrayList<>();
+            List<String> entryValuesList = new ArrayList<>();
+
+            for (String langCode: languages) {
+                String displayName = LocalizationUtils.getLanguageDisplayName(langCode);
+                entriesList.add(displayName);
+                entryValuesList.add(langCode);
+            }
+
+            language.setEntries(entriesList.toArray(new CharSequence[0]));
+            language.setEntryValues(entryValuesList.toArray(new CharSequence[0]));
+
+            language.setOnPreferenceChangeListener((preference, newValue) -> {
+                Log.i("IFLU", "Application language changed to " + newValue);
+                LocalizationUtils.setAppLocale(requireActivity(), (String) newValue);
+                requireActivity().recreate();
+                return true;
+            });
+        }
 
         MaterialPreference sourceCode = findPreference("source_code");
         sourceCode.setOnPreferenceClickListener(preference -> {
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("https://github.com/mamiiblt/instafel"));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            getContext().startActivity(intent);
+            return false;
+        });
+
+        MaterialPreference helpTranslation = findPreference("help_translation");
+        helpTranslation.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("https://crowdin.com/project/instafel"));
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             getContext().startActivity(intent);
             return false;

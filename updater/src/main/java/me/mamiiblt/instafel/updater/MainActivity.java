@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences prefsApp;
     SharedPreferences.Editor prefsEditor;
     LogUtils logUtils;
-    LocalizationUtils localizationUtils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         prefsApp = PreferenceManager.getDefaultSharedPreferences(this);
         prefsEditor = prefsApp.edit();
         logUtils = new LogUtils(this);
-        localizationUtils = new LocalizationUtils(getApplicationContext());
-        localizationUtils.updateAppLanguage();
 
         if (!prefsApp.getBoolean("init", false)) {
             prefsEditor.putString("checker_type", "NULL");

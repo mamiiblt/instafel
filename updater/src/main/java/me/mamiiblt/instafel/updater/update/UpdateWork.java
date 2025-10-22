@@ -47,7 +47,6 @@ public class UpdateWork extends Worker {
     private Context ctx;
     private String uVersion;
     private LogUtils logUtils;
-    private LocalizationUtils localizationUtils;
 
     public UpdateWork(Context ctx, WorkerParameters params) {
         super(ctx, params);
@@ -61,11 +60,6 @@ public class UpdateWork extends Worker {
         ctx = getApplicationContext();
         logUtils.w("");
         logUtils.w("Work is running.");
-        localizationUtils = new LocalizationUtils(getApplicationContext());
-
-        // Update locale
-
-        localizationUtils.updateAppLanguage();
 
         // Get arch and type from SharedPreferences
 
