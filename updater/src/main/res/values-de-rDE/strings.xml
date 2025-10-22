@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">Zustand</string>
+    <string name="logs">Ausgabe</string>
+    <string name="settings">Einstellungen</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Updater einrichten</string>
+    <string name="checker_arch">Checke Architektur</string>
+    <string name="checker_itype">Checke Installations Typ</string>
+    <string name="unclone">Entklonte</string>
+    <string name="clone">Geklonte</string>
+    <string name="cont">Weiter</string>
+    <string name="warning">Warnung</string>
+    <string name="warning_desc">Bitte wählen Sie eine Architektur und einen Installationstyp aus.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">Autorisiert</string>
+    <string name="not_installed">Shizuku nicht installiert</string>
+    <string name="start_service">Shizuku ist nicht aktiv</string>
+    <string name="shizuku_status">Shizuku-Zustand</string>
+    <string name="root_status">Root-Zustand</string>
+    <string name="selected_arch">Ausgewählte Architektur</string>
+    <string name="selected_installation_type">Ausgewählter Installationstyp</string>
+    <string name="battery_restriction">Akkubeschränkung</string>
+    <string name="battery_restricted">Eingeschränkt</string>
+    <string name="battery_unrestricted">Uneingeschränkt</string>
+    <string name="battery_dialog_title">Uneingeschränkten Modus erlauben</string>
+    <string name="battery_dialog_msg">Damit Instafel Updater richtig funktioniert, darf der Batterie-Modus der Anwendung nicht eingeschränkt werden.</string>
+    <string name="updater_status">Updater-Status</string>
+    <string name="start">Start</string>
+    <string name="stop">Stoppen</string>
+    <string name="permission_rejected">Berechtigung abgelehnt</string>
+    <string name="perm_rejected_desc">Bitte autorisieren Sie Instafel Updater in der Shizuku App</string>
+    <string name="please_start_shizuku">Bitte starten Sie Shizuku aus der App</string>
+    <string name="please_install_shizuku">Bitte installieren Sie Shizuku aus dem Play Store</string>
+    <string name="please_give_permission">Bitte autorisieren Sie Instafel Updater in der Shizuku App</string>
+    <string name="running">Laufen mit %1$s Modus</string>
+    <string name="stopped">Angehalten</string>
+    <string name="unauthorized">Nicht autorisiert</string>
+    <string name="checking">Wird geprüft...</string>
+    <string name="not_found">SU-Binärdatei konnte nicht gefunden werden</string>
+    <string name="please_allow_root">Root-Zugriff abgelehnt, bitte vom Manager zulassen.</string>
+    <string name="please_install_root">Konnte Root-Zugriff nicht erhalten</string>
+    <string name="please_allow_unrestiracted">Bitte setzen Sie den Energiesparmodus der App auf uneingeschränkt</string>
+    <string name="dialog_title">Berechtigung erteilen</string>
+    <string name="dialog_desc">Instafel Updater benötigt Benachrichtigungs- und Root-Berechtigung, um normal laufen zu können.</string>
+    <string name="dialog_ok">Okay</string>
+    <string name="hour">Stunde</string>
+    <string name="minute">Minute</string>
+    <string name="upd_started">Updater gestartet</string>
+    <string name="upd_stopped">Updater gestoppt</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Laufzeitlog geleert.</string>
+    <string name="work_restarted">Updater wird neu gestartet</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Update wird heruntergeladen</string>
+    <string name="n2_waiting">Warte auf Update Server</string>
+    <string name="n2_sub">Warte auf API-Verbindung...</string>
+    <string name="n3_installing">Update wird installiert</string>
+    <string name="n3_sub">Download vollständig, installiere...</string>
+    <string name="n4_complete">Update erfolgreich installiert</string>
+    <string name="n4_sub">Instafel aktualisiert auf v%1$s</string>
+    <string name="error">Fehler</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">Allgemein</string>
+    <string name="cname_behavior">Verhalten</string>
+    <string name="cname_about">Über Updater</string>
+    <string name="checker_interval">Checkerintervall</string>
+    <string name="checker_interval_s">Checker-Intervall ändern</string>
+    <string name="itype">Installationsart</string>
+    <string name="itype_s">Installationstyp ändern</string>
+    <string name="send_notif">Benachrichtigung senden</string>
+    <string name="send_notif_s">Updater sendet eine Benachrichtigung nach dem Aktualisieren von Instafel</string>
+    <string name="use_mobile_data">Mobile Daten</string>
+    <string name="use_mobile_data_s">Ermöglicht das Herunterladen von Updates mit mobilen Daten</string>
+    <string name="hour12_rule">12 Stunden Regel</string>
+    <string name="hour12_rule_s">Ermöglicht die Installation des Updates nach 12 Stunden</string>
+    <string name="source_code">Quellcode</string>
+    <string name="source_code_s">Besuche den Quellcode von Instafel</string>
+    <string name="instafel_website">Instafel Webseite</string>
+    <string name="create_issue">Ticket erstellen</string>
+    <string name="create_issue_s">Erstelle ein Problem auf GitHub für Feedback!</string>
+    <string name="app_version">App-Version</string>
+    <string name="app_version_s">Version v%1$s (%2$s)</string>
+    <string name="language">Sprache</string>
+    <string name="language_s">Sprache der App festlegen</string>
+    <string name="developed_by">Mit ❤️ entwickelt von mamiiblt</string>
+    <string name="about_app">Über</string>
+    <string name="crash_logs">Absturzprotokolle speichern</string>
+    <string name="crash_logs_s">Logger schreibt jeden Absturz in ein tägliches Protokoll.</string>
+    <string name="disable_error">Warnhinweis deaktivieren.</string>
+    <string name="disable_error_s">Deaktiviert nicht kritische Fehlerbenachrichtigungen</string>
+    <string name="updater_guide">Updater Anleitung</string>
+    <string name="updater_guide_s">Erfahren Sie mehr über Updater</string>
+</resources>

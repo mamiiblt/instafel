@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">狀態</string>
+    <string name="logs">日誌</string>
+    <string name="settings">設定</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">設定更新器</string>
+    <string name="checker_arch">檢查器架構</string>
+    <string name="checker_itype">檢查器安裝類型</string>
+    <string name="unclone">非複製</string>
+    <string name="clone">複製</string>
+    <string name="cont">繼續</string>
+    <string name="warning">警告</string>
+    <string name="warning_desc">請選擇一個架構與安裝類型。</string>
+    <!-- Status Fragment -->
+    <string name="authorized">已授權</string>
+    <string name="not_installed">未安裝 Shizuku</string>
+    <string name="start_service">Shizuku 未啟動</string>
+    <string name="shizuku_status">Shizuku 狀態</string>
+    <string name="root_status">Root 狀態</string>
+    <string name="selected_arch">已選擇的架構</string>
+    <string name="selected_installation_type">已選擇的安裝類型</string>
+    <string name="battery_restriction">電池限制</string>
+    <string name="battery_restricted">限制</string>
+    <string name="battery_unrestricted">無限制</string>
+    <string name="battery_dialog_title">允許無限制模式</string>
+    <string name="battery_dialog_msg">為使 Instagel 更新器運作正常，應用程式的電池模式應被設置為「無限制」。</string>
+    <string name="updater_status">更新器狀態</string>
+    <string name="start">開始</string>
+    <string name="stop">停止</string>
+    <string name="permission_rejected">權限遭拒</string>
+    <string name="perm_rejected_desc">請於 Shizuku 應用程式中授權 Instafel 更新器</string>
+    <string name="please_start_shizuku">請從 Shizuku 應用程式中啟動它</string>
+    <string name="please_install_shizuku">請從 Play 商店中安裝 Shizuku</string>
+    <string name="please_give_permission">請於 Shizuku 中授權 Instafel 更新器</string>
+    <string name="running">運行 %1$s 模式中</string>
+    <string name="stopped">已停止</string>
+    <string name="unauthorized">未授權</string>
+    <string name="checking">檢查中......</string>
+    <string name="not_found">找不到 SU 二進制檔案</string>
+    <string name="please_allow_root">Root 訪問權限以被拒絕，請從管理器中允許。</string>
+    <string name="please_install_root">無法取得 Root 訪問</string>
+    <string name="please_allow_unrestiracted">請設置應用程式電池限制模式至無限制模式</string>
+    <string name="dialog_title">授權</string>
+    <string name="dialog_desc">Instafel 更新器需要通知與 Root 權限才能運作正常。</string>
+    <string name="dialog_ok">確定</string>
+    <string name="hour">小時</string>
+    <string name="minute">分鐘</string>
+    <string name="upd_started">更新起已開啟</string>
+    <string name="upd_stopped">更新器已停止</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">運行日誌已清除。</string>
+    <string name="work_restarted">更新器已重新啟動</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">正在下載更新</string>
+    <string name="n2_waiting">正在等待更新伺服器</string>
+    <string name="n2_sub">正在等待 API 連接......</string>
+    <string name="n3_installing">正在安裝更新</string>
+    <string name="n3_sub">下載完成，正在安裝中......</string>
+    <string name="n4_complete">成功安裝更新</string>
+    <string name="n4_sub">已更新 Instafel 至 v%1$s</string>
+    <string name="error">錯誤</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">一般</string>
+    <string name="cname_behavior">行為</string>
+    <string name="cname_about">關於更新器</string>
+    <string name="checker_interval">檢查頻率</string>
+    <string name="checker_interval_s">更改檢查器頻率</string>
+    <string name="itype">安裝類型</string>
+    <string name="itype_s">更改安裝類型</string>
+    <string name="send_notif">傳送通知</string>
+    <string name="send_notif_s">更新器會於更新 Instafel 後傳送一則通知</string>
+    <string name="use_mobile_data">行動數據</string>
+    <string name="use_mobile_data_s">允許透過行數據下載更新</string>
+    <string name="hour12_rule">12 小時規則</string>
+    <string name="hour12_rule_s">允許你於版本發布 12 小時後安裝更新</string>
+    <string name="source_code">原始碼</string>
+    <string name="source_code_s">查看 Instafel 原始碼</string>
+    <string name="instafel_website">Instafel 網站</string>
+    <string name="create_issue">建立議題</string>
+    <string name="create_issue_s">在 GitHub 上建立議題並提供回饋！</string>
+    <string name="app_version">應用程式版本</string>
+    <string name="app_version_s">版本 v%1$s（%2$s）</string>
+    <string name="language">語言</string>
+    <string name="language_s">設定應用程式語言</string>
+    <string name="developed_by">由 mamiiblt 用 ❤️ 開發</string>
+    <string name="about_app">關於</string>
+    <string name="crash_logs">儲存崩潰日誌</string>
+    <string name="crash_logs_s">記錄器會在每次崩潰時寫入到日誌中。</string>
+    <string name="disable_error">停用警告通知</string>
+    <string name="disable_error_s">停用非重大錯誤通知</string>
+    <string name="updater_guide">更新器指南</string>
+    <string name="updater_guide_s">了解更多關於更新器的資訊</string>
+</resources>

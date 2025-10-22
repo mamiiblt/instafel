@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">Status</string>
+    <string name="logs">Dnevnik</string>
+    <string name="settings">Podešavanja</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Podesi ažuriranje</string>
+    <string name="checker_arch">Arhitektura čekera</string>
+    <string name="checker_itype">Tip instalacije čekera</string>
+    <string name="unclone">Nije klon</string>
+    <string name="clone">Klon</string>
+    <string name="cont">Nastavi</string>
+    <string name="warning">Upozorenje</string>
+    <string name="warning_desc">Molimo vas da izaberete arhitekturu i tip instalacije.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">Ovlašćeni</string>
+    <string name="not_installed">Shizuku nije instaliran</string>
+    <string name="start_service">Shizuku nije pokrenut</string>
+    <string name="shizuku_status">Status Shizuku-a</string>
+    <string name="root_status">Status ruta</string>
+    <string name="selected_arch">Izabrana arhitektura</string>
+    <string name="selected_installation_type">Izabran tip instalacije</string>
+    <string name="battery_restriction">Ograničenje baterije</string>
+    <string name="battery_restricted">Ograničeno</string>
+    <string name="battery_unrestricted">Neograničeno</string>
+    <string name="battery_dialog_title">Dozvoli neograničeni režim</string>
+    <string name="battery_dialog_msg">Da bi Instafel Updater ispravno radio, režim baterije aplikacije ne sme biti ograničen.</string>
+    <string name="updater_status">Status ažuriranja</string>
+    <string name="start">Pokrеni</string>
+    <string name="stop">Zaustavi</string>
+    <string name="permission_rejected">Dozvola odbijena</string>
+    <string name="perm_rejected_desc">Molimo vas da ovlastite Instafel Updater u aplikaciji Shizuku</string>
+    <string name="please_start_shizuku">Molimo vas da pokrenete Shizuku iz aplikacije</string>
+    <string name="please_install_shizuku">Molimo vas da instalirate Shizuku iz Play prodavnice</string>
+    <string name="please_give_permission">Molimo vas da ovlastite Instafel Updater u aplikaciji Shizuku</string>
+    <string name="running">Pokreće se u režimu %1$s</string>
+    <string name="stopped">Zaustavljeno</string>
+    <string name="unauthorized">Neovlašćeno</string>
+    <string name="checking">Provera...</string>
+    <string name="not_found">SU binarna datoteka nije pronađena</string>
+    <string name="please_allow_root">Rut pristup je odbijen, molimo vas da dozvolite preko menadžera.</string>
+    <string name="please_install_root">Nisam mogao da dobijem rut pristup</string>
+    <string name="please_allow_unrestiracted">Podesite režim ograničenja baterije aplikacije na neograničeni režim</string>
+    <string name="dialog_title">Odobri dozvolu</string>
+    <string name="dialog_desc">Instafel Updater su potrebna obaveštenja i rut dozvola za normalan rad.</string>
+    <string name="dialog_ok">Okej</string>
+    <string name="hour">sat</string>
+    <string name="minute">minut</string>
+    <string name="upd_started">Updater startovan</string>
+    <string name="upd_stopped">Updater stopiran</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Dnevnik izvršavanja je obrisan.</string>
+    <string name="work_restarted">Updater je ponovo pokrenut</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Preuzimanje ažuriranja</string>
+    <string name="n2_waiting">Čeka se server za ažuriranje</string>
+    <string name="n2_sub">Čekanje na API vezu...</string>
+    <string name="n3_installing">Instaliranje ažuriranja</string>
+    <string name="n3_sub">Preuzimanje završeno, instaliranje...</string>
+    <string name="n4_complete">Ažuriranje je uspešno instalirano</string>
+    <string name="n4_sub">Instafel je ažuriran na v%1$s</string>
+    <string name="error">Grеška</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">Opšte</string>
+    <string name="cname_behavior">Ponašanje</string>
+    <string name="cname_about">O updater-u</string>
+    <string name="checker_interval">Interval provere</string>
+    <string name="checker_interval_s">Change checker interval</string>
+    <string name="itype">Tip instalacije</string>
+    <string name="itype_s">Promeni tip instalacije</string>
+    <string name="send_notif">Pošalji obaveštenje</string>
+    <string name="send_notif_s">Ažuriranje šalje obaveštenje nakon ažuriranja Instafela</string>
+    <string name="use_mobile_data">Mobilni podaci</string>
+    <string name="use_mobile_data_s">Omogućava preuzimanje ažuriranja putem mobilnih podataka</string>
+    <string name="hour12_rule">12 Hour Rule</string>
+    <string name="hour12_rule_s">Allows you to install the update after released 12 hours</string>
+    <string name="source_code">Source Code</string>
+    <string name="source_code_s">Visit source code of Instafel</string>
+    <string name="instafel_website">Instafel Website</string>
+    <string name="create_issue">Create Issue</string>
+    <string name="create_issue_s">Create an issue on GitHub for feedback!</string>
+    <string name="app_version">Verzija aplikacije</string>
+    <string name="app_version_s">Version v%1$s (%2$s)</string>
+    <string name="language">Jezik</string>
+    <string name="language_s">Podesite jezik aplikacije</string>
+    <string name="developed_by">Razvijeno sa ❤️ od strane mamiiblt</string>
+    <string name="about_app">O programu</string>
+    <string name="crash_logs">Save Crash Logs</string>
+    <string name="crash_logs_s">Logger will write every crash to a daily log.</string>
+    <string name="disable_error">Disable Warning Notif.</string>
+    <string name="disable_error_s">Disables non critical error notifications</string>
+    <string name="updater_guide">Updater Guide</string>
+    <string name="updater_guide_s">Learn more things about updater</string>
+</resources>

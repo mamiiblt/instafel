@@ -1,11 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Instafel Updater</string>
-
     <!-- Nav Bar -->
     <string name="status">Status</string>
     <string name="logs">Log</string>
     <string name="settings">Settings</string>
-
     <!-- Setup Updater -->
     <string name="setup_ifl">Setup Updater</string>
     <string name="checker_arch">Checker Architecture</string>
@@ -15,7 +13,6 @@
     <string name="cont">Continue</string>
     <string name="warning">Warning</string>
     <string name="warning_desc">Please select an architecture and installation type.</string>
-
     <!-- Status Fragment -->
     <string name="authorized">Authorized</string>
     <string name="not_installed">Shizuku Not Installed</string>
@@ -52,11 +49,9 @@
     <string name="minute">minute</string>
     <string name="upd_started">Updater started</string>
     <string name="upd_stopped">Updater stopped</string>
-
     <!-- Code Strings -->
     <string name="runtime_log_cleared">Runtime log cleared.</string>
     <string name="work_restarted">Updater is restarted</string>
-
     <!-- Notification Strings -->
     <string name="n1_downloading">Downloading Update</string>
     <string name="n2_waiting">Waiting for update server</string>
@@ -66,15 +61,12 @@
     <string name="n4_complete">Update Successfully Installed</string>
     <string name="n4_sub">Instafel updated to v%1$s</string>
     <string name="error">Error</string>
-
     <!-- Setting Keys -->
     <string name="cname_general">General</string>
     <string name="cname_behavior">Behavior</string>
     <string name="cname_about">About Updater</string>
     <string name="checker_interval">Checker Interval</string>
     <string name="checker_interval_s">Change checker interval</string>
-    <string name="install_method">Installation Method</string>
-    <string name="install_method_desc">You can change installation method</string>
     <string name="itype">Installation Type</string>
     <string name="itype_s">Change installation type</string>
     <string name="send_notif">Send Notification</string>
@@ -100,6 +92,4 @@
     <string name="disable_error_s">Disables non critical error notifications</string>
     <string name="updater_guide">Updater Guide</string>
     <string name="updater_guide_s">Learn more things about updater</string>
-    <string name="help_translation">Help to Translation</string>
-    <string name="help_translation_desc">Join Crowdin project and contribute!</string>
 </resources>

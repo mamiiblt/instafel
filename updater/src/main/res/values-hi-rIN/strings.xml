@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">स्थिति</string>
+    <string name="logs">लॉग</string>
+    <string name="settings">सेटिंग्स</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">सेटअप अपडेटर</string>
+    <string name="checker_arch">चेकर आर्किटेक्चर</string>
+    <string name="checker_itype">चेकर इंस्टॉलेशन प्रकार</string>
+    <string name="unclone">अनक्लोन</string>
+    <string name="clone">क्लोन</string>
+    <string name="cont">आगे बढ़ें</string>
+    <string name="warning">चेतावनी</string>
+    <string name="warning_desc">कृपया एक आर्किटेक्चर और इंस्टालेशन प्रकार का चयन करें।</string>
+    <!-- Status Fragment -->
+    <string name="authorized">अधिकृत</string>
+    <string name="not_installed">शिज़ुकु उपलब्ध नहीं है</string>
+    <string name="start_service">शिज़ुकु नहीं चल रहा है</string>
+    <string name="shizuku_status">शिंजुकु की स्थिति</string>
+    <string name="root_status">रूट की स्थिति</string>
+    <string name="selected_arch">चुना हुआ आर्किटेक्चर</string>
+    <string name="selected_installation_type">चुना हुआ इंस्टॉलेशन का प्रकार</string>
+    <string name="battery_restriction">बैटरी प्रतिबंध</string>
+    <string name="battery_restricted">प्रतिबंधित</string>
+    <string name="battery_unrestricted">पाबंदी के बिना</string>
+    <string name="battery_dialog_title">अप्रतिबंधित मोड की अनुमति दें</string>
+    <string name="battery_dialog_msg">इंस्टाफेल अपडेटर को ठीक से काम करने के लिए, एप्लिकेशन के बैटरी मोड को प्रतिबंधित नहीं किया जाना चाहिए।</string>
+    <string name="updater_status">अपडेटर की स्थिति</string>
+    <string name="start">शुरू करें</string>
+    <string name="stop">रोकें</string>
+    <string name="permission_rejected">अनुमति अस्वीकृत</string>
+    <string name="perm_rejected_desc">कृपया शिज़ुकु ऐप में इंस्टाफ़ेल अपडेटर को अधिकृत करें</string>
+    <string name="please_start_shizuku">कृपया ऐप से शिज़ुकु शुरू करें</string>
+    <string name="please_install_shizuku">कृपया प्लेस्टोर से शिंजुकु इंस्टॉल करें</string>
+    <string name="please_give_permission">कृपया शिज़ुकु ऐप में इंस्टाफ़ेल अपडेटर को अधिकृत करें</string>
+    <string name="running">%1$s मोड के साथ चल रहा है</string>
+    <string name="stopped">रुका हुआ</string>
+    <string name="unauthorized">अनधिकृत</string>
+    <string name="checking">जांच की जा रही है...</string>
+    <string name="not_found">SU बाइनरी नहीं मिल सका</string>
+    <string name="please_allow_root">रूट एक्सेस अस्वीकृत, कृपया प्रबंधक से अनुमति दें।</string>
+    <string name="please_install_root">रूट एक्सेस प्राप्त नहीं किया जा सका</string>
+    <string name="please_allow_unrestiracted">कृपया ऐप बैटरी रेस्ट्रिक्शन मोड को अनरेस्ट्रिक्टेड मोड पर सेट करें</string>
+    <string name="dialog_title">अनुमति प्रदान करें</string>
+    <string name="dialog_desc">इंस्टाफेल अपडेटर को सामान्य रूप से चलने के लिए अधिसूचना और रूट अनुमति की आवश्यकता होती है।</string>
+    <string name="dialog_ok">ठीक है</string>
+    <string name="hour">घंटा</string>
+    <string name="minute">मिनट</string>
+    <string name="upd_started">अपडेटर शुरू हुआ</string>
+    <string name="upd_stopped">अपडेटर बंद कर दिया गया</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">रनटाइम लॉग साफ़ किया गया।</string>
+    <string name="work_restarted">अपडेटर पुनः आरंभ हो गया है</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">अपडेट डाउनलोड हो रहा है</string>
+    <string name="n2_waiting">अपडेट सर्वर की प्रतीक्षा कर रहा है</string>
+    <string name="n2_sub">API कनेक्शन की प्रतीक्षा कर रहा है...</string>
+    <string name="n3_installing">अपडेट इंस्टॉल कर रहा है</string>
+    <string name="n3_sub">डाउनलोड पूरा हुआ, इंस्टॉल हो रहा है...</string>
+    <string name="n4_complete">अपडेट सफलतापूर्वक स्थापित हुआ</string>
+    <string name="n4_sub">इंस्टाफ़ेल को v%1$s में अपडेट किया गया</string>
+    <string name="error">त्रुटि</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">सामान्य</string>
+    <string name="cname_behavior">व्यवहार</string>
+    <string name="cname_about">अपडेटर के बारे में</string>
+    <string name="checker_interval">चेकर अंतराल</string>
+    <string name="checker_interval_s">चेकर अंतराल बदलें</string>
+    <string name="itype">इंस्टॉल का प्रकार</string>
+    <string name="itype_s">इंस्टॉल प्रकार बदलें</string>
+    <string name="send_notif">सूचना भेजें</string>
+    <string name="send_notif_s">अपडेटर इंस्टाफेल को अपडेट करने के बाद एक सूचना भेजता है</string>
+    <string name="use_mobile_data">मोबाइल डेटा</string>
+    <string name="use_mobile_data_s">मोबाइल डेटा के साथ अपडेट डाउनलोड करने की अनुमति देता है</string>
+    <string name="hour12_rule">12 घंटे का नियम</string>
+    <string name="hour12_rule_s">आपको रिलीज़ के 12 घंटे बाद अपडेट इंस्टॉल करने की अनुमति देता है</string>
+    <string name="source_code">स्रोत कोड</string>
+    <string name="source_code_s">इंस्टाफेल का स्रोत कोड देखें</string>
+    <string name="instafel_website">इंस्टाफेल वेबसाइट</string>
+    <string name="create_issue">मुद्दा बनाएँ</string>
+    <string name="create_issue_s">प्रतिक्रिया के लिए GitHub पर एक मुद्दा बनाएं!</string>
+    <string name="app_version">ऐप संस्करण</string>
+    <string name="app_version_s">संस्करण v%1$s (%2$s)</string>
+    <string name="language">भाषा</string>
+    <string name="language_s">ऐप की भाषा सेट करें</string>
+    <string name="developed_by">Mamiiblt द्वारा ❤️ के साथ विकसित</string>
+    <string name="about_app">इसके बारे में</string>
+    <string name="crash_logs">क्रैश लॉग सहेजें</string>
+    <string name="crash_logs_s">लॉगर प्रत्येक क्रैश को दैनिक लॉग में लिखेगा।</string>
+    <string name="disable_error">चेतावनी अधिसूचना अक्षम करें।</string>
+    <string name="disable_error_s">गैर-महत्वपूर्ण त्रुटि सूचनाएँ अक्षम करता है</string>
+    <string name="updater_guide">अपडेटर गाइड</string>
+    <string name="updater_guide_s">अपडेटर के बारे में और जानें</string>
+</resources>

@@ -1,10 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <!-- Nav Bar -->
     <string name="status">Status</string>
     <string name="logs">Dziennik</string>
     <string name="settings">Ustawienia</string>
-
     <!-- Setup Updater -->
     <string name="setup_ifl">Konfiguracja Updatera</string>
     <string name="checker_arch">Architektura</string>
@@ -14,7 +13,6 @@
     <string name="cont">Kontynuuj</string>
     <string name="warning">Ostrzeżenie</string>
     <string name="warning_desc">Proszę wybrać architekturę i typ instalacji.</string>
-
     <!-- Status Fragment -->
     <string name="authorized">Autoryzowano</string>
     <string name="not_installed">Shizuku nie jest zainstalowane</string>
@@ -29,8 +27,8 @@
     <string name="battery_dialog_title">Zezwól na tryb bez ograniczeń</string>
     <string name="battery_dialog_msg">Aby Instafel Updater działał poprawnie, aplikacja nie może mieć ograniczeń w działaniu w tle.</string>
     <string name="updater_status">Status Updatera</string>
-    <string name="start">Start</string>
-    <string name="stop">Stop</string>
+    <string name="start">Inizio</string>
+    <string name="stop">Ferrarę</string>
     <string name="permission_rejected">Odmowa uprawnień</string>
     <string name="perm_rejected_desc">Autoryzuj Instafel Updater w aplikacji Shizuku</string>
     <string name="please_start_shizuku">Uruchom Shizuku z poziomu aplikacji</string>
@@ -43,7 +41,7 @@
     <string name="not_found">Nie znaleziono pliku SU</string>
     <string name="please_allow_root">Odmówiono dostępu root. Zezwól w menedżerze uprawnień.</string>
     <string name="please_install_root">Nie udało się uzyskać uprawnień root</string>
-    <string name="please_allow_unrestiracted">Ustaw tryb baterii aplikacji na "Bez ograniczeń"</string>
+    <string name="please_allow_unrestiracted">Ustaw tryb baterii aplikacji na \"Bez ograniczeń\"</string>
     <string name="dialog_title">Przyznaj uprawnienia</string>
     <string name="dialog_desc">Instafel Updater wymaga uprawnień do powiadomień i roota, aby działać prawidłowo.</string>
     <string name="dialog_ok">OK</string>
@@ -51,11 +49,9 @@
     <string name="minute">minuta</string>
     <string name="upd_started">Updater uruchomiony</string>
     <string name="upd_stopped">Updater zatrzymany</string>
-
     <!-- Code Strings -->
     <string name="runtime_log_cleared">Dziennik działania został wyczyszczony.</string>
     <string name="work_restarted">Updater został ponownie uruchomiony</string>
-
     <!-- Notification Strings -->
     <string name="n1_downloading">Pobieranie aktualizacji</string>
     <string name="n2_waiting">Oczekiwanie na serwer aktualizacji</string>
@@ -65,7 +61,6 @@
     <string name="n4_complete">Aktualizacja zainstalowana pomyślnie</string>
     <string name="n4_sub">Zaktualizowano Instafel do wersji v%1$s</string>
     <string name="error">Błąd</string>
-
     <!-- Setting Keys -->
     <string name="cname_general">Ogólne</string>
     <string name="cname_behavior">Zachowanie</string>

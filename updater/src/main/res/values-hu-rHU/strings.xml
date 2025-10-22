@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">Állapot</string>
+    <string name="logs">Napló</string>
+    <string name="settings">Beállítások</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Telepítő frissítő</string>
+    <string name="checker_arch">Ellenőrző architektúrája</string>
+    <string name="checker_itype">Ellenőrző telepítési típusa</string>
+    <string name="unclone">Nem klónozott</string>
+    <string name="clone">Klónozott</string>
+    <string name="cont">Tovább</string>
+    <string name="warning">Figyelmeztetés</string>
+    <string name="warning_desc">Vűlassz ki egy architektúrát és telepítési típust.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">Engedélyezve </string>
+    <string name="not_installed">A Shizuku nincs telepítve</string>
+    <string name="start_service">A Shizuku nem fut</string>
+    <string name="shizuku_status">Shizuku állapota</string>
+    <string name="root_status">Root állapot</string>
+    <string name="selected_arch">Kiválaszott architektúra</string>
+    <string name="selected_installation_type">Telepítési típus</string>
+    <string name="battery_restriction">Akkumulátor korlátozás</string>
+    <string name="battery_restricted">Korlátozva</string>
+    <string name="battery_unrestricted">Nincs korlátozás</string>
+    <string name="battery_dialog_title">Korlátozás eltávolítása</string>
+    <string name="battery_dialog_msg">Az Instafel telepítő megfelelő működéséhez az alkalmazás akkumulátor üzemmódját nem szabad korlátozni.</string>
+    <string name="updater_status">Telepítő állapota</string>
+    <string name="start">Kezdés</string>
+    <string name="stop">Leállítás</string>
+    <string name="permission_rejected">Engedély megtagadva</string>
+    <string name="perm_rejected_desc">Engedélyezd az Instafel telepítő alkalmazást a Shizuku alkalmazásban</string>
+    <string name="please_start_shizuku">Indítsd el a Shizuku alkalmazást az alkalmazásból</string>
+    <string name="please_install_shizuku">Telepítsd a Shizuku alkalmazást a Play Áruházból</string>
+    <string name="please_give_permission">Engedélyezd az Instafel telepítő alkalmazást a Shizuku-n</string>
+    <string name="running">Futás %1$s módban</string>
+    <string name="stopped">Megállítva</string>
+    <string name="unauthorized">Jogosulatlan</string>
+    <string name="checking">Ellenőrzés...</string>
+    <string name="not_found">A SU bináris fájl nem található</string>
+    <string name="please_allow_root">A root hozzáférés elutasítva, engedélyezd a kezelőből.</string>
+    <string name="please_install_root">Nem sikerült root hozzáférést szerezni</string>
+    <string name="please_allow_unrestiracted">Állítsd az alkalmazás akkumulátor-korlátozási módját korlátozás nélküli módra</string>
+    <string name="dialog_title">Engedély megadása</string>
+    <string name="dialog_desc">Az Instafel telepítő normál működéséhez értesítési és root jogosultságra van szükség.</string>
+    <string name="dialog_ok">Oké</string>
+    <string name="hour">óra</string>
+    <string name="minute">perc</string>
+    <string name="upd_started">A telepítő elindult</string>
+    <string name="upd_stopped">A telepítő megállt</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">A futási napló törölve.</string>
+    <string name="work_restarted">A telepítő újraindul</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Frissítés letöltése</string>
+    <string name="n2_waiting">Várakozás a frissítési szerverre</string>
+    <string name="n2_sub">Várakozás az API csatlakozásra...</string>
+    <string name="n3_installing">Frissítés telepítése</string>
+    <string name="n3_sub">Letöltés befejezve, telepítés...</string>
+    <string name="n4_complete">Telepítő frissítése telepítve</string>
+    <string name="n4_sub">Instafel frissítve v%1$s verzióra</string>
+    <string name="error">Hiba</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">Általános</string>
+    <string name="cname_behavior">Működés</string>
+    <string name="cname_about">A telepítőről</string>
+    <string name="checker_interval">Ellenőrzések gyakorisága</string>
+    <string name="checker_interval_s">Gyakoriság átállítása</string>
+    <string name="itype">Telepítés típusa</string>
+    <string name="itype_s">Telepítés típusának változtatása</string>
+    <string name="send_notif">Értesítés küldése</string>
+    <string name="send_notif_s">A telepítő frissítés után értesítést küld az Instafelről.</string>
+    <string name="use_mobile_data">Mobiladat</string>
+    <string name="use_mobile_data_s">Lehetővé teszi, hogy a frissítéseket mobiladat forgalommal tölteni tudd.</string>
+    <string name="hour12_rule">12 órás szabály</string>
+    <string name="hour12_rule_s">Lehetővé teszi a frissítés telepítését 12 órával a kiadás után.</string>
+    <string name="source_code">Forráskód</string>
+    <string name="source_code_s">Nézd meg az Instafel forráskódját</string>
+    <string name="instafel_website">Instafel weboldala</string>
+    <string name="create_issue">Hibajegy létrehozása</string>
+    <string name="create_issue_s">Készíts egy issue-t a GitHubon visszajelzés céljából!</string>
+    <string name="app_version">Alkalmazás verzió</string>
+    <string name="app_version_s">Verzió v%1$s (%2$s)</string>
+    <string name="language">Nyelv</string>
+    <string name="language_s">Alkalmazás nyelvének beállítása</string>
+    <string name="developed_by">mamiiblt ❤️-vel fejlesztette</string>
+    <string name="about_app">Rólunk</string>
+    <string name="crash_logs">Összeomlási napló mentése</string>
+    <string name="crash_logs_s">A naplózó minden összeomlást napi naplóba ír.</string>
+    <string name="disable_error">Figyelmeztetési értesítések letiltása.</string>
+    <string name="disable_error_s">Letiltja a nem kritikus hibaüzeneteket</string>
+    <string name="updater_guide">Frissítési útmutató</string>
+    <string name="updater_guide_s">Tudj meg többet a telepítőről</string>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">Status</string>
+    <string name="logs">Registro</string>
+    <string name="settings">Configurações</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Configure o Updater</string>
+    <string name="checker_arch">Verificar Arquitetura</string>
+    <string name="checker_itype">Verificar o Tipo de Instalação</string>
+    <string name="unclone">Unclone</string>
+    <string name="clone">Clone</string>
+    <string name="cont">Continuar</string>
+    <string name="warning">Atenção</string>
+    <string name="warning_desc">Selecione uma arquitetura e tipo de instalação.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">Autorizado</string>
+    <string name="not_installed">Shizuku Não Instalado</string>
+    <string name="start_service">Shizuku não está funcionando</string>
+    <string name="shizuku_status">Status do Shizuku</string>
+    <string name="root_status">Status do Root</string>
+    <string name="selected_arch">Arquitetura Selecionada</string>
+    <string name="selected_installation_type">Tipo de Instalação Selecionada</string>
+    <string name="battery_restriction">Restrição da Bateria</string>
+    <string name="battery_restricted">Restrito</string>
+    <string name="battery_unrestricted">Sem restrições</string>
+    <string name="battery_dialog_title">Permitir Modo Irrestrito</string>
+    <string name="battery_dialog_msg">Para que o Instafel Updater funcione corretamente, o modo de bateria do aplicativo não deve ser restrito.</string>
+    <string name="updater_status">Status de Atualização</string>
+    <string name="start">Iniciar</string>
+    <string name="stop">Parar</string>
+    <string name="permission_rejected">Permissão Negada</string>
+    <string name="perm_rejected_desc">Por favor, autorize o Instafel Updater no aplicativo Shizuku</string>
+    <string name="please_start_shizuku">Por favor, inicie Shizuku a partir do aplicativo</string>
+    <string name="please_install_shizuku">Por favor, instale o Shizuku da Play Store</string>
+    <string name="please_give_permission">Por favor, autorize o Instafel Updater no Shizuku</string>
+    <string name="running">Executando com o modo %1$s</string>
+    <string name="stopped">Interrompido</string>
+    <string name="unauthorized">Não autorizado</string>
+    <string name="checking">Verificando...</string>
+    <string name="not_found">Não foi possível encontrar o binário SU</string>
+    <string name="please_allow_root">Acesso Root negado, por favor permita a partir do gerenciador.</string>
+    <string name="please_install_root">Não foi possível obter acesso root</string>
+    <string name="please_allow_unrestiracted">Por favor, defina o modo de restrição da bateria para modo não restrito</string>
+    <string name="dialog_title">Conceder Permissão</string>
+    <string name="dialog_desc">Instafel Updater precisa de permissão de notificação e Root para ser executado normalmente.</string>
+    <string name="dialog_ok">Ok</string>
+    <string name="hour">hora</string>
+    <string name="minute">minuto</string>
+    <string name="upd_started">Atualização iniciada</string>
+    <string name="upd_stopped">A atualização parou</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Registro do tempo de execução excluído.</string>
+    <string name="work_restarted">Atualização foi reiniciada</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Baixando Atualização</string>
+    <string name="n2_waiting">Aguardando servidor de atualização</string>
+    <string name="n2_sub">Aguardando conexão de API...</string>
+    <string name="n3_installing">Instalando Atualização</string>
+    <string name="n3_sub">Download concluído, instalando...</string>
+    <string name="n4_complete">Atualização Instalada com Sucesso</string>
+    <string name="n4_sub">Instafel atualizado para v%1$s</string>
+    <string name="error">Erro</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">Geral</string>
+    <string name="cname_behavior">Comportamento</string>
+    <string name="cname_about">Sobre o Updater</string>
+    <string name="checker_interval">Intervalor de verificação</string>
+    <string name="checker_interval_s">Alterar o intervalo de verificação</string>
+    <string name="itype">Tipo de Instalação</string>
+    <string name="itype_s">Alterar o tipo de instalação</string>
+    <string name="send_notif">Enviar Notificação</string>
+    <string name="send_notif_s">O atualizador envia uma notificação depois de atualizar o Instafel</string>
+    <string name="use_mobile_data">Dados Móveis</string>
+    <string name="use_mobile_data_s">Permite baixar atualizações com dados móveis</string>
+    <string name="hour12_rule">Regra de 12 horas</string>
+    <string name="hour12_rule_s">Permite que você instale a atualização após 12 horas</string>
+    <string name="source_code">Código Fonte</string>
+    <string name="source_code_s">Visite o código-fonte do Instafel</string>
+    <string name="instafel_website">Site do Instafel</string>
+    <string name="create_issue">Criar Issue</string>
+    <string name="create_issue_s">Criar uma issue no GitHub para feedback!</string>
+    <string name="app_version">Versão do App</string>
+    <string name="app_version_s">Versão v%1$s (%2$s)</string>
+    <string name="language">Idioma</string>
+    <string name="language_s">Definir o idioma do app</string>
+    <string name="developed_by">Desenvolvido com ❤️ por mamiiblt</string>
+    <string name="about_app">Sobre</string>
+    <string name="crash_logs">Salvar Relatório de Erros</string>
+    <string name="crash_logs_s">Logger vai escrever cada erro num registro diário.</string>
+    <string name="disable_error">Desativar Notificação de Aviso.</string>
+    <string name="disable_error_s">Desativa notificações de erros não críticos</string>
+    <string name="updater_guide">Guia do Updater</string>
+    <string name="updater_guide_s">Saiba mais sobre o Updater</string>
+</resources>

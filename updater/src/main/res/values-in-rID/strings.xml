@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">Status</string>
+    <string name="logs">Catatan</string>
+    <string name="settings">Setelan</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">Siapkan Updater</string>
+    <string name="checker_arch">Arsitektur Pemeriksa</string>
+    <string name="checker_itype">Tipe Instalasi</string>
+    <string name="unclone">Unclone</string>
+    <string name="clone">Clone</string>
+    <string name="cont">Lanjutkan</string>
+    <string name="warning">Peringatan</string>
+    <string name="warning_desc">Harap pilih arsitektur dan tipe instalasi.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">Diotorisasi</string>
+    <string name="not_installed">Shizuku Tidak Terpasang</string>
+    <string name="start_service">Shizuku Tidak Berjalan</string>
+    <string name="shizuku_status">Status Shizuku</string>
+    <string name="root_status">Status Root</string>
+    <string name="selected_arch">Arsitektur Dipilih</string>
+    <string name="selected_installation_type">Tipe Instalasi Dipilih</string>
+    <string name="battery_restriction">Pembatasan Baterai</string>
+    <string name="battery_restricted">Dibatasi</string>
+    <string name="battery_unrestricted">Tak Terbatas</string>
+    <string name="battery_dialog_title">Izinkan Mode Tak Terbatas</string>
+    <string name="battery_dialog_msg">Agar Instafel Updater dapat berfungsi dengan baik, mode baterai aplikasi tidak boleh dibatasi.</string>
+    <string name="updater_status">Status Updater</string>
+    <string name="start">Mulai</string>
+    <string name="stop">Hentikan</string>
+    <string name="permission_rejected">Izin Ditolak</string>
+    <string name="perm_rejected_desc">Harap otorisasi Instafel Updater di aplikasi Shizuku</string>
+    <string name="please_start_shizuku">Silakan mulai Shizuku dari aplikasi</string>
+    <string name="please_install_shizuku">Silakan instal Shizuku dari Play Store</string>
+    <string name="please_give_permission">Harap otorisasi Instafel Updater di Shizuku</string>
+    <string name="running">Berjalan dengan mode %1$s</string>
+    <string name="stopped">Dihentikan</string>
+    <string name="unauthorized">Tidak diizinkan</string>
+    <string name="checking">Memeriksa...</string>
+    <string name="not_found">Binary SU tidak dapat ditemukan</string>
+    <string name="please_allow_root">Akses root ditolak, harap izinkan dari manager.</string>
+    <string name="please_install_root">Tidak dapat memperoleh akses root</string>
+    <string name="please_allow_unrestiracted">Harap atur mode pembatasan baterai aplikasi ke mode tak dibatasi</string>
+    <string name="dialog_title">Berikan Izin</string>
+    <string name="dialog_desc">Instafel Updater memerlukan izin pemberitahuan dan Root agar dapat berjalan normal.</string>
+    <string name="dialog_ok">Oke</string>
+    <string name="hour">jam</string>
+    <string name="minute">menit</string>
+    <string name="upd_started">Updater dimulai</string>
+    <string name="upd_stopped">Updater dihentikan</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">Catatan runtime dihapus.</string>
+    <string name="work_restarted">Updater dimulai ulang</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">Mengunduh Pembaruan</string>
+    <string name="n2_waiting">Menunggu server pembaruan</string>
+    <string name="n2_sub">Menunggu koneksi API...</string>
+    <string name="n3_installing">Memasang Pembaruan</string>
+    <string name="n3_sub">Unduhan selesai, memasang...</string>
+    <string name="n4_complete">Pembaruan Berhasil Dipasang</string>
+    <string name="n4_sub">Instafel diperbarui ke v%1$s</string>
+    <string name="error">Kesalahan</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">Umum</string>
+    <string name="cname_behavior">Perilaku</string>
+    <string name="cname_about">Tentang Update</string>
+    <string name="checker_interval">Interval Pemeriksa</string>
+    <string name="checker_interval_s">Ubah interval pemeriksa</string>
+    <string name="itype">Tipe Instalasi</string>
+    <string name="itype_s">Ubah tipe instalasi</string>
+    <string name="send_notif">Kirim Notifikasi</string>
+    <string name="send_notif_s">Update mengirimkan notifikasi setelah memperbarui Instafel</string>
+    <string name="use_mobile_data">Data Seluler</string>
+    <string name="use_mobile_data_s">Memungkinkan mengunduh pembaruan dengan data seluler</string>
+    <string name="hour12_rule">Aturan 12 Jam</string>
+    <string name="hour12_rule_s">Memungkinkan Anda menginstal pembaruan setelah dirilis 12 jam</string>
+    <string name="source_code">Kode Sumber</string>
+    <string name="source_code_s">Kunjungi kode sumber Instafel</string>
+    <string name="instafel_website">Situs Web Instafel</string>
+    <string name="create_issue">Buat Issue</string>
+    <string name="create_issue_s">Buat issue di GitHub untuk masukan!</string>
+    <string name="app_version">Versi Aplikasi</string>
+    <string name="app_version_s">Versi v%1$s (%2$s)</string>
+    <string name="language">Bahasa</string>
+    <string name="language_s">Atur bahasa aplikasi</string>
+    <string name="developed_by">Dikembangkan dengan ❤️ oleh mamiiblt</string>
+    <string name="about_app">Tentang</string>
+    <string name="crash_logs">Simpan Log Kerusakan</string>
+    <string name="crash_logs_s">Logger akan menulis setiap kerusakan ke dalam catatan harian.</string>
+    <string name="disable_error">Nonaktifkan Notif. Peringatan</string>
+    <string name="disable_error_s">Menonaktifkan notifikasi kesalahan non-kritis</string>
+    <string name="updater_guide">Panduan Updater</string>
+    <string name="updater_guide_s">Pelajari lebih lanjut tentang Updater</string>
+</resources>

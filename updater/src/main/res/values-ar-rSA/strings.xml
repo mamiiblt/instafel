@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nav Bar -->
+    <string name="status">الحالة</string>
+    <string name="logs">السجل</string>
+    <string name="settings">الإعدادات</string>
+    <!-- Setup Updater -->
+    <string name="setup_ifl">إعداد برنامَج التحديث</string>
+    <string name="checker_arch">بنية نظام التحقق</string>
+    <string name="checker_itype">نوع تثبيت أداة التحقق</string>
+    <string name="unclone">إلغاء استنساخ</string>
+    <string name="clone">استنساخ</string>
+    <string name="cont">اضغط للمتابعة</string>
+    <string name="warning">تحذير</string>
+    <string name="warning_desc">يرجى تحديد نوع الهندسة المعمارية والتثبيت.</string>
+    <!-- Status Fragment -->
+    <string name="authorized">مُصرّح</string>
+    <string name="not_installed">{Shizuku} غير مثبت</string>
+    <string name="start_service">{Shizuku} لا يعمل</string>
+    <string name="shizuku_status">حالة {Shizuku}</string>
+    <string name="root_status">حاله {Root}</string>
+    <string name="selected_arch">المعمارية المختارة</string>
+    <string name="selected_installation_type">نوع التثبيت</string>
+    <string name="battery_restriction">قيود البطارية</string>
+    <string name="battery_restricted">مقيد</string>
+    <string name="battery_unrestricted">غير مقيد</string>
+    <string name="battery_dialog_title">السماح بالوضع غير مقيد</string>
+    <string name="battery_dialog_msg">لكي يعمل مُحدّث التطبيق بشكل صحيح، يجب ألا يكون وضع البطارية الخاص بالتطبيق مقيدًا.</string>
+    <string name="updater_status">حالة المحدث</string>
+    <string name="start">أبدا</string>
+    <string name="stop">إيقاف</string>
+    <string name="permission_rejected">تم رفض الإذن</string>
+    <string name="perm_rejected_desc">يرجى تفويض {Instafel Updater} في تطبيق {Shizuku}</string>
+    <string name="please_start_shizuku">يرجى بَدْء تشغيل {Shizuku} من التطبيق</string>
+    <string name="please_install_shizuku">يرجى تثبيت {Shizuku} من المتجر</string>
+    <string name="please_give_permission">يرجى تفويض {Instafel Updater} على {Shizuku}</string>
+    <string name="running">يعمل في وضع %1$s</string>
+    <string name="stopped">توقف</string>
+    <string name="unauthorized">غير المصرح به</string>
+    <string name="checking">جارٍ الفحص...</string>
+    <string name="not_found">لم يُعثر على مِلَفّ SU الثنائي</string>
+    <string name="please_allow_root">تم رفض الوصول إلى الجذر، يرجى السماح من المدير.</string>
+    <string name="please_install_root">تم رفض صَلاحِيَة لروت، يرجى السماح بواسطة المدير</string>
+    <string name="please_allow_unrestiracted">يرجى ضبط وضع تقييد بطارية التطبيق إلى وضع غير مقيد</string>
+    <string name="dialog_title">منح الإذن</string>
+    <string name="dialog_desc">يحتاج {Instafel Updater} إلى صلاحيات الإشعارات ولروت ليعمل بشكل طبيعي.</string>
+    <string name="dialog_ok">حسنًا</string>
+    <string name="hour">ساعة</string>
+    <string name="minute">دقيقة</string>
+    <string name="upd_started">تم تشغيل المُحدّث</string>
+    <string name="upd_stopped">توقف المحدث</string>
+    <!-- Code Strings -->
+    <string name="runtime_log_cleared">تم مسح سجل التشغيل.</string>
+    <string name="work_restarted">تمت إعادة تشغيل برنامَج التحديث</string>
+    <!-- Notification Strings -->
+    <string name="n1_downloading">تنزيل التحديث</string>
+    <string name="n2_waiting">في انتظار خادم التحديث</string>
+    <string name="n2_sub">في انتظار اتصال واجهة برمجة التطبيقات...</string>
+    <string name="n3_installing">تثبيت التحديث</string>
+    <string name="n3_sub">اكتمل التنزيل والتثبيت...</string>
+    <string name="n4_complete">تم تثبيت التحديث بنجاح</string>
+    <string name="n4_sub">تم تحديث {Instafel} إلى الإصدار%1$s</string>
+    <string name="error">خطأ</string>
+    <!-- Setting Keys -->
+    <string name="cname_general">عام</string>
+    <string name="cname_behavior">السلوك</string>
+    <string name="cname_about">حول التحديث</string>
+    <string name="checker_interval">فاصل التحقق</string>
+    <string name="checker_interval_s">تغيير فاصل التحقق</string>
+    <string name="itype">طريقة التثبيت</string>
+    <string name="itype_s">تغيير طريقة التثبيت</string>
+    <string name="send_notif">إرسال إشعار</string>
+    <string name="send_notif_s">يرسل المُحدّث إشعارًا بعد تحديث{Instafel}</string>
+    <string name="use_mobile_data">بيانات الجوال</string>
+    <string name="use_mobile_data_s">يسمح بتنزيل التحديثات باستخدام بيانات الجوال</string>
+    <string name="hour12_rule">قاعدة 12 ساعة</string>
+    <string name="hour12_rule_s">يسمح لك بتثبيت التحديث بعد إصداره لمدة 12 ساعة</string>
+    <string name="source_code">كود المصدر</string>
+    <string name="source_code_s">زيارة كود المصدر لـ {Instafel}</string>
+    <string name="instafel_website">موقع {Instafel}</string>
+    <string name="create_issue">إنشاء بلاغ</string>
+    <string name="create_issue_s">قم إبلاغ مشكلة على GitHub للحصول على تعليقات!</string>
+    <string name="app_version">إصدار التطبيق</string>
+    <string name="app_version_s">الإصدار %1$s (%2$s)</string>
+    <string name="language">اللغة</string>
+    <string name="language_s">تعيين لغة التطبيق</string>
+    <string name="developed_by">تم تطويره بواسطة {mamiiblt} ❤️</string>
+    <string name="about_app">حول</string>
+    <string name="crash_logs">حفظ سجلات الأعطال</string>
+    <string name="crash_logs_s">يسجل التطبيق كل تعطل في سجل يومي.</string>
+    <string name="disable_error">تعطيل إشعار التحذير.</string>
+    <string name="disable_error_s">إيقاف إشعارات الأخطاء غير الهامة</string>
+    <string name="updater_guide">دليل التحديث</string>
+    <string name="updater_guide_s">تعرف إلى المزيد من الأشياء حول التحديث</string>
+</resources>
