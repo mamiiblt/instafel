@@ -8,12 +8,15 @@ tasks.register("mergeTranslations") {
 
         val mergeUtils = CrowdinMergeUtils(
             crowdinApiToken = getInstafelEnvProperty("CROWDIN_TOKEN"),
-            outputDir = File("${rootProject.rootDir}/.output/translations")
+            outputDir = File("${rootProject.rootDir}/.output/translations"),
+            rootDir = rootProject.rootDir
         )
 
         mergeUtils.startBuild()
         mergeUtils.waitUntilBuildFinish()
         mergeUtils.downloadBuild()
         mergeUtils.unzipBuildFile()
+
+        mergeUtils.mergeWebsiteSources()
     }
 }

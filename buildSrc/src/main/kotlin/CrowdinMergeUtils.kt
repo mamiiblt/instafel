@@ -6,6 +6,13 @@ import java.io.FileOutputStream
 import java.net.URL
 import java.net.HttpURLConnection
 import java.io.OutputStreamWriter
+import java.nio.file.FileVisitResult
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
+import java.nio.file.SimpleFileVisitor
+import java.nio.file.StandardCopyOption
+import java.nio.file.attribute.BasicFileAttributes
 import java.util.zip.ZipInputStream
 
 fun File.deleteRecursivelySafe(): Boolean {
@@ -18,9 +25,27 @@ fun File.deleteRecursivelySafe(): Boolean {
     }
 }
 
+fun copyFolder(sourceDir: Path, targetDir: Path) {
+    Files.walkFileTree(sourceDir, object : SimpleFileVisitor<Path>() {
+        override fun preVisitDirectory(dir: Path, attrs: BasicFileAttributes): FileVisitResult {
+            val targetPath = targetDir.resolve(sourceDir.relativize(dir))
+            if (!Files.exists(targetPath)) {
+                Files.createDirectory(targetPath)
+            }
+            return FileVisitResult.CONTINUE
+        }
+
+        override fun visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult {
+            Files.copy(file, targetDir.resolve(sourceDir.relativize(file)), StandardCopyOption.REPLACE_EXISTING)
+            return FileVisitResult.CONTINUE
+        }
+    })
+}
+
 class CrowdinMergeUtils(
     val crowdinApiToken: String,
-    val outputDir: File
+    val outputDir: File,
+    val rootDir: File
 ) {
     val crowdinProjectID = 838578
     val pollInterval = 1000L
@@ -123,5 +148,64 @@ class CrowdinMergeUtils(
         }
 
         println("Extracted ZIP to → ${outputDir.absolutePath}")
+    }
+
+    fun mergeWebsiteSources() {
+        println("Merging website project sources...")
+        val projectDir = File(rootDir, "website")
+        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "website").toFile()
+        val websiteLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "locales").toFile()
+        val settingsTsFile = Paths.get(projectDir.absolutePath, "src", "i18n", "settings.ts").toFile()
+
+        val crowdinLocalizationFolders = loadFolderContents(crowdinLocalizationFolderDir, "en-EN")
+        val localWebsiteLocaleFolders = loadFolderContents(websiteLocalizationFolderDir, "en-EN")
+
+        localWebsiteLocaleFolders.forEach { folderName ->
+            val folder = File(websiteLocalizationFolderDir, folderName)
+            if (folder.exists()) {
+                folder.deleteRecursivelySafe()
+            }
+        }
+
+        println("Totally ${localWebsiteLocaleFolders.size} localization folder deleted from website sources.")
+
+
+        crowdinLocalizationFolders.forEach { folderName ->
+            val destFolder = Paths.get(websiteLocalizationFolderDir.absolutePath, folderName)
+            copyFolder(
+                Paths.get(crowdinLocalizationFolderDir.absolutePath, folderName),
+                destFolder
+            )
+        }
+
+        println("Totally ${crowdinLocalizationFolders.size} localization folder copied into website sources.")
+
+        val localeCodes = mutableListOf<String>()
+        localeCodes.add("en-EN")
+        crowdinLocalizationFolders.forEach { folderName -> localeCodes.add(folderName) }
+
+        val sortedLocales = listOf("en-EN") + localeCodes
+            .filter { it != "en-EN" }
+            .sortedBy { it.lowercase() }
+
+        val content = settingsTsFile.readText()
+        val regex = Regex("""supportedLocales\s*=\s*\[.*?]""", RegexOption.DOT_MATCHES_ALL)
+        val newArray = sortedLocales.joinToString(
+            prefix = "[\"",
+            separator = "\",\"",
+            postfix = "\"]"
+        )
+        val newContent = content.replace(regex, "supportedLocales = $newArray")
+        settingsTsFile.writeText(newContent)
+
+        println("Locale constraints updated with ${localeCodes.size} locale")
+        println("Website sources updated with latest sources successfully.")
+    }
+
+    fun loadFolderContents(baseFolder: File, filterFolderName: String): Array<String> {
+        return baseFolder.listFiles()
+            ?.filter { it.isDirectory && it.name != filterFolderName }
+            ?.map { it.name }
+            ?.toTypedArray() ?: emptyArray()
     }
 }
