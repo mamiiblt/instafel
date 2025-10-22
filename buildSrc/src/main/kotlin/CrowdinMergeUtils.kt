@@ -1,3 +1,4 @@
+import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedOutputStream
 import java.io.File
@@ -150,8 +151,39 @@ class CrowdinMergeUtils(
         println("Extracted ZIP to → ${outputDir.absolutePath}")
     }
 
+    fun mergeUpdaterSources() {
+        println("Merging :updater project sources")
+        val projectDir = File(rootDir, "updater")
+        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "updater").toFile()
+        val updaterLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "main", "res").toFile()
+        val mainStringFile = Paths.get(projectDir.absolutePath, "src", "main", "res", "values", "arrays.xml").toFile()
+
+        val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
+
+        languages.forEach { lang ->
+            copyStringsFile(lang, crowdinLocalizationFolderDir, updaterLocalizationFolderDir)
+        }
+
+        val content = mainStringFile.readText()
+        val newLanguagesArr = arrayOf("en-rEN") + languages
+        val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>$it</item>" }
+
+        val regex = Regex(
+            """<string-array\s+name="supported_languages".*?>.*?</string-array>""",
+            RegexOption.DOT_MATCHES_ALL
+        )
+
+        val newContent = content.replace(regex) {
+            "<string-array name=\"supported_languages\">\n$items\n    </string-array>"
+        }
+
+        mainStringFile.writeText(newContent)
+
+        println("Totally ${languages.size} translation file updated.")
+    }
+
     fun mergeWebsiteSources() {
-        println("Merging website project sources...")
+        println("Merging :website project sources...")
         val projectDir = File(rootDir, "website")
         val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "website").toFile()
         val websiteLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "locales").toFile()
@@ -168,7 +200,6 @@ class CrowdinMergeUtils(
         }
 
         println("Totally ${localWebsiteLocaleFolders.size} localization folder deleted from website sources.")
-
 
         crowdinLocalizationFolders.forEach { folderName ->
             val destFolder = Paths.get(websiteLocalizationFolderDir.absolutePath, folderName)
@@ -207,5 +238,21 @@ class CrowdinMergeUtils(
             ?.filter { it.isDirectory && it.name != filterFolderName }
             ?.map { it.name }
             ?.toTypedArray() ?: emptyArray()
+    }
+
+    fun loadCrowdinAndroidLocales(baseFolder: File): Array<String> {
+        return baseFolder.listFiles()
+            ?.filter { it.isFile && it.name.startsWith("strings_") }
+            ?.map { it.name.replace("strings_", "").replace(".xml", "") }
+            ?.toTypedArray() ?: emptyArray()
+    }
+
+    fun copyStringsFile(lang: String, sourceDir: File, destBaseDir: File) {
+        val source = sourceDir.toPath().resolve("strings_$lang.xml")
+        val destDir = destBaseDir.toPath().resolve("values-$lang")
+        val dest = destDir.resolve("strings.xml")
+
+        Files.createDirectories(destDir)
+        Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING)
     }
 }

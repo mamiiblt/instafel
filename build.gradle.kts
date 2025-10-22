@@ -12,11 +12,12 @@ tasks.register("mergeTranslations") {
             rootDir = rootProject.rootDir
         )
 
-        mergeUtils.startBuild()
-        mergeUtils.waitUntilBuildFinish()
-        mergeUtils.downloadBuild()
+        /*mergeUtils.startBuild()
+        mergeUtils.waitUntilBuildFinish()*/
+        mergeUtils.downloadBuild("48")
         mergeUtils.unzipBuildFile()
 
         mergeUtils.mergeWebsiteSources()
+        mergeUtils.mergeUpdaterSources()
     }
 }
