@@ -55,6 +55,11 @@ public class GeneralFn {
         }
     }
 
+    public static String capitalizeFirstLetter(String input) {
+        if (input == null || input.isEmpty()) return input;
+        return input.substring(0, 1).toUpperCase() + input.substring(1);
+    }
+
     public static String encodeString(String string) {
         return Base64.encodeToString(string.getBytes(), Base64.NO_WRAP);
     }
@@ -96,12 +101,12 @@ public class GeneralFn {
         }
     }
 
-    public static Resources getAppResourcesWithConf(Activity activity, String langCode) {
+    public static Resources getAppResourcesWithConf(Activity activity, Locale locale) {
         try {
             PackageManager packageManager = activity.getPackageManager();
             Resources res = packageManager.getResourcesForApplication(getPackageName(activity));
             final Configuration config = new Configuration();
-            config.locale = new Locale(langCode);
+            config.locale = locale;
             res.updateConfiguration(config, null);
             return res;
         } catch (Exception e) {

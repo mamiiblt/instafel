@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Locale;
 
 import instafel.app.R;
 import instafel.app.managers.NotificationOtaManager;
@@ -81,7 +82,7 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
             }
 
             if (lastVersion > ifl_version) {
-                String languageCode = LocalizationUtils.getIflLocale(act);
+                Locale iflLocale = LocalizationUtils.getIflLocale(act);
 
                 String localizedUpdateText = LocalizedStringGetter.getLocalizedString(
                         act,
@@ -95,7 +96,7 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
                 instafelDialog.addSpace("top_space", 25);
                 instafelDialog.addTextView(
                         "dialog_title",
-                        LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d1_01"),
+                        LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d1_01"),
                         30,
                         0,
                         InstafelDialogTextType.TITLE,
@@ -112,8 +113,8 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
                 String finalApkContentLink = apkContentLink;
                 instafelDialog.addPozitiveAndNegativeButton(
                         "buttons",
-                        LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d1_04"),
-                        LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d1_03"),
+                        LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d1_04"),
+                        LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d1_03"),
                         new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {

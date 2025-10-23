@@ -13,14 +13,16 @@ import instafel.app.managers.OverridesManager;
 import instafel.app.ota.CheckUpdates;
 import instafel.app.utils.localization.LocalizationUtils;
 
+import java.util.Locale;
+
 public class InitializeInstafel {
     public static Context ctx;
 
     public static void setContext(Application application) {
         ctx = application;
-        String iflLocale = LocalizationUtils.getIflLocale(ctx);
+        Locale iflLocale = LocalizationUtils.getIflLocale(ctx);
         InstafelEnv.IFL_LANG = iflLocale;
-        Log.v("IFL", "InstafelEnv.IFL_LANG is set to " + iflLocale);
+        Log.v("IFL", "InstafelEnv.IFL_LANG is set to " + LocalizationUtils.convertToLangCode(iflLocale));
     }
 
     public static void triggerCheckUpdates(Activity activity) {

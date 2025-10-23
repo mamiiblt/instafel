@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Locale;
 
 import instafel.app.managers.PreferenceManager;
 import instafel.app.utils.localization.LocalizationUtils;
@@ -60,7 +61,7 @@ public class ChangelogContentTask extends AsyncTask<String, Void, String> {
             String content = new String(dataBytes);
 
             PreferenceManager preferenceManager = new PreferenceManager(act);
-            String languageCode = LocalizationUtils.getIflLocale(act);
+            Locale locale = LocalizationUtils.getIflLocale(act);
 
             InstafelDialog instafelDialog = new InstafelDialog(act);
             instafelDialog.addSpace("top_space", 25);
@@ -82,7 +83,7 @@ public class ChangelogContentTask extends AsyncTask<String, Void, String> {
             instafelDialog.addSpace("button_top_space", 20);
             instafelDialog.addPozitiveAndNegativeButton(
                     "buttons",
-                    LocalizedStringGetter.getDialogLocalizedString(act, languageCode, "ifl_d3_02"),
+                    LocalizedStringGetter.getDialogLocalizedString(act, locale, "ifl_d3_02"),
                     null,
                     new View.OnClickListener() {
                         @Override

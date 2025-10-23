@@ -5,7 +5,6 @@ public class PreferenceKeys {
     public static String ifl_ota_last_check = "02";
     public static String ifl_ui_recreate = "03";
     public static String ifl_ota_setting = "04";
-    public static String ifl_lang = "05";
     public static String ifl_ota_freq = "06";
     public static String ifl_ota_background_enable = "07";
     public static String ifl_admin_username = "28";
@@ -31,4 +30,5 @@ public class PreferenceKeys {
     public static String ifl_mapping_file_hash = "31";
     public static String ifl_debug_api_url = "32";
     public static String ifl_debug_content_api_url = "33";
+    public static String ifl_lang_rw = "34";
 }

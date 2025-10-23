@@ -6,16 +6,19 @@ import android.widget.LinearLayout;
 
 import instafel.app.R;
 import instafel.app.ui.TileLarge;
+import instafel.app.utils.GeneralFn;
 
-public class LocalizationInfo {
+import java.util.Locale;
+
+public class LocaleInfoTile {
 
     private Context ctx;
     public TileLarge localeTile;
-    public Locales.LocaleType localeData;
+    public Locale locale;
 
-    public LocalizationInfo(Context ctx, Locales.LocaleType localeData) {
+    public LocaleInfoTile(Context ctx, Locale locale) {
         this.ctx = ctx;
-        this.localeData = localeData;
+        this.locale = locale;
         this.localeTile = createLangTile();
     }
 
@@ -33,10 +36,10 @@ public class LocalizationInfo {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         ));
-        localeTile.setTitleText(localeData.langName);
-        localeTile.setSubtitleText(localeData.langCountry);
-        localeTile.setIconRes(localeData.flagDrawableID);
-        localeTile.setIconTint(false);
+        localeTile.setTitleText(GeneralFn.capitalizeFirstLetter(locale.getDisplayLanguage(locale)));
+        localeTile.setSubtitleText(GeneralFn.capitalizeFirstLetter(locale.getDisplayCountry(locale)));
+        localeTile.setIconRes(R.drawable.ifl_language);
+        localeTile.setIconTint(true);
         localeTile.setSpaceBottom("visible");
         localeTile.setVisiblitySubIcon("gone");
         localeTile.setSubIconRes(R.drawable.ifl_tick);

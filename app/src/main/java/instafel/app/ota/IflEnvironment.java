@@ -90,8 +90,8 @@ public class IflEnvironment {
     }
 
     public static String getTypeString(Activity activity, Locale locale) {
-        if (getType(activity).equals("Clone")) return LocalizedStringGetter.getLocalizedString(activity, locale.getLanguage(), "ifl_a1_07");
-        if (getType(activity).equals("Unclone")) return LocalizedStringGetter.getLocalizedString(activity, locale.getLanguage(), "ifl_a1_08");
+        if (getType(activity).equals("Clone")) return LocalizedStringGetter.getLocalizedString(activity, locale, "ifl_a1_07");
+        if (getType(activity).equals("Unclone")) return LocalizedStringGetter.getLocalizedString(activity, locale, "ifl_a1_08");
         return getType(activity);
     }
 

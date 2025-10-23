@@ -37,7 +37,7 @@ public class ifl_a_admin_pref_manager extends AppCompatActivity {
         layout = findViewById(R.id.ifl_prefs_layout);
         preferenceManager = new PreferenceManager(this);
 
-        createPreferenceTitle(PreferenceKeys.ifl_lang, "ifl_lang", Types.PreferenceTypes.STRING);
+        createPreferenceTitle(PreferenceKeys.ifl_lang_rw, "ifl_lang_rw", Types.PreferenceTypes.STRING);
         createPreferenceTitle(PreferenceKeys.ifl_show_admin_dash_as_tile, "ifl_show_admin_dash_as_tile", Types.PreferenceTypes.BOOLEAN);
         createPreferenceTitle(PreferenceKeys.ifl_enable_debug_mode, "ifl_enable_debug_mode", Types.PreferenceTypes.BOOLEAN);
         createPreferenceTitle(PreferenceKeys.ifl_debug_mode_custom_api_url, "ifl_debug_mode_custom_api_url", Types.PreferenceTypes.STRING);

@@ -21,6 +21,8 @@ import instafel.app.utils.dialog.InstafelDialogMargins;
 import instafel.app.utils.dialog.InstafelDialogTextType;
 import instafel.app.utils.types.Types;
 
+import java.util.Locale;
+
 public class CheckUpdates {
     public static void set(Activity activity, TileLarge checkUpdates) {
         checkUpdates.setOnClickListener(v -> {
@@ -102,20 +104,20 @@ public class CheckUpdates {
     }
 
     public static void checkBackupUpdate(Activity activity) {
-        String languageCode = LocalizationUtils.getIflLocale(activity);
+        Locale iflLocale = LocalizationUtils.getIflLocale(activity);
         PreferenceManager preferenceManager = new PreferenceManager(activity);
         try {
             JSONObject jsonObject = new JSONObject(preferenceManager.getPreferenceString(PreferenceKeys.ifl_backup_update_value, "[]"));
             if (jsonObject.has("id") && jsonObject.has("name") && jsonObject.has("current_version")) {
                 AutoUpdateInfo autoUpdateInfo = new AutoUpdateInfo(jsonObject.getString("id"), jsonObject.getString("name"), jsonObject.getInt("current_version"));
-                new BackupUpdateTask(activity, preferenceManager, autoUpdateInfo, languageCode)
+                new BackupUpdateTask(activity, preferenceManager, autoUpdateInfo, iflLocale)
                         .execute("https://raw.githubusercontent.com/instafel/backups/main/" + autoUpdateInfo.getBackup_id() + "/manifest.json");
             } else {
-                Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, iflLocale, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, LocalizedStringGetter.getDialogLocalizedString(activity, iflLocale, "ifl_a11_26"), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -132,12 +134,12 @@ public class CheckUpdates {
         new VersionTask(activity, ifl_type, ifl_version, checkType).execute("https://api.github.com/repos/mamiiblt/instafel/releases/latest");
     }
 
-    public static void showBackupUpdateDialog(Activity activity, String languageCode, String backupId) {
+    public static void showBackupUpdateDialog(Activity activity, Locale locale, String backupId) {
         InstafelDialog instafelDialog = new InstafelDialog(activity);
         instafelDialog.addSpace("top_space", 25);
         instafelDialog.addTextView(
                 "dialog_title",
-                LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_27"),
+                LocalizedStringGetter.getDialogLocalizedString(activity, locale, "ifl_a11_27"),
                 30,
                 0,
                 InstafelDialogTextType.TITLE,
@@ -153,7 +155,7 @@ public class CheckUpdates {
         instafelDialog.addSpace("button_top_space", 20);
         instafelDialog.addPozitiveAndNegativeButton(
                 "buttons",
-                LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_a11_28"),
+                LocalizedStringGetter.getDialogLocalizedString(activity, locale, "ifl_a11_28"),
                 "View Changelog",
                 v -> {
                     System.exit(0);
@@ -166,13 +168,13 @@ public class CheckUpdates {
 
     private static void showWelcomeDialog(Activity activity) {
         PreferenceManager preferenceManager = new PreferenceManager(activity);
-        String languageCode = LocalizationUtils.getIflLocale(activity);
+        Locale iflLocale = LocalizationUtils.getIflLocale(activity);
 
         InstafelDialog instafelDialog = new InstafelDialog(activity);
         instafelDialog.addSpace("top_space", 25);
         instafelDialog.addTextView(
                 "dialog_title",
-                LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_d4_01"),
+                LocalizedStringGetter.getDialogLocalizedString(activity, iflLocale, "ifl_d4_01"),
                 30,
                 0,
                 InstafelDialogTextType.TITLE,
@@ -180,7 +182,7 @@ public class CheckUpdates {
         instafelDialog.addSpace("mid_space", 20);
         instafelDialog.addTextView(
                 "dialog_desc",
-                LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_d4_02"),
+                LocalizedStringGetter.getDialogLocalizedString(activity, iflLocale, "ifl_d4_02"),
                 16,
                 310,
                 InstafelDialogTextType.DESCRIPTION,
@@ -188,7 +190,7 @@ public class CheckUpdates {
         instafelDialog.addSpace("button_top_space", 20);
         instafelDialog.addPozitiveAndNegativeButton(
                 "buttons",
-                LocalizedStringGetter.getDialogLocalizedString(activity, languageCode, "ifl_d3_02"),
+                LocalizedStringGetter.getDialogLocalizedString(activity, iflLocale, "ifl_d3_02"),
                 null,
                 v -> {
                     instafelDialog.dismiss();

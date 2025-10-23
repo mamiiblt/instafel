@@ -1,10 +1,14 @@
 package instafel.app;
 
+import android.os.LocaleList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+import java.util.Locale;
+
 public class InstafelEnv {
-    public static String IFL_LANG = null;
+    public static Locale IFL_LANG = null;
     public static int IFL_THEME = 25891;
 
     // These fields need to be set from patcher.
@@ -18,6 +22,26 @@ public class InstafelEnv {
     public static String COMMIT = "_commit_"; // 3ed4c6e
     public static String BRANCH = "_branch_"; // main
     public static String APPLIED_PATCHES = "_patchesjson_"; // A escaped JSONObject string
+
+    // This method fields need to be set from translation merge task.
+    public static LocaleList getSupportedLocaleList() {
+        String[] supportedLanguages = { "en-US", "tr-TR", "hi-IN", "ar-SA", "de-DE", "zh-TW", "in-ID", "zh-HK", "it-IT", "sr-CS", "az-AZ", "es-ES", "zh-CN", "hu-HU", "pl-PL", "fr-FR", "pt-BR", "el-GR" };
+        Locale[] locales = new Locale[supportedLanguages.length];
+
+        for (int i = 0; i < supportedLanguages.length; i++) {
+            String code = supportedLanguages[i];
+            String language;
+            String country;
+
+            String[] parts = code.split("-");
+            language = parts[0];
+            country = parts[1];
+
+            locales[i] = new Locale(language, country);
+        }
+
+        return new LocaleList(locales);
+    }
 
     public static boolean isPatchApplied(String patchName) {
         try {

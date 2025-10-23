@@ -6,11 +6,13 @@ import android.widget.Toast;
 
 import instafel.app.utils.GeneralFn;
 
+import java.util.Locale;
+
 public class LocalizedStringGetter {
 
-    public static String getLocalizedString(Activity _activity, String languageCode, String resLabel, Object... params) {
+    public static String getLocalizedString(Activity _activity, Locale locale, String resLabel, Object... params) {
         try {
-            Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, languageCode);
+            Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, locale);
             if (params.length != 0) {
                 assert appResources != null;
                 return appResources.getString(
@@ -30,9 +32,9 @@ public class LocalizedStringGetter {
         }
     }
 
-    public static String getDialogLocalizedString(Activity _activity, String languageCode, String resourceName) {
+    public static String getDialogLocalizedString(Activity _activity, Locale locale, String resourceName) {
         try {
-            Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, languageCode);
+            Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, locale);
             return appResources.getString(
                     GeneralFn.getStringResId(_activity, appResources, resourceName)
             ).replace("\\n", "\n");
