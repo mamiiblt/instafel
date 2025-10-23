@@ -151,6 +151,29 @@ class CrowdinMergeUtils(
         println("Extracted ZIP to → ${outputDir.absolutePath}")
     }
 
+    fun mergeAppSources() {
+        println("Merging :app project sources")
+        val projectDir = File(rootDir, "app")
+        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "app").toFile()
+        val appLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "main", "res").toFile()
+        val instafelEnvFile = Paths.get(projectDir.absolutePath, "src", "main", "java", "instafel", "app", "InstafelEnv.java").toFile()
+
+        val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
+        val newLanguagesArr = arrayOf("en-US") + languages
+        newLanguagesArr.forEachIndexed { index, langCode -> newLanguagesArr[index] = langCode.replace("-r", "-") }
+
+        languages.forEach { lang -> copyStringsFile(lang, crowdinLocalizationFolderDir, appLocalizationFolderDir) }
+        println("All localization sources (${languages.size} file) copied into res/values-... folders")
+
+        val content = instafelEnvFile.readText()
+        val regex = Regex("""String\[\]\s+supportedLanguages\s*=\s*\{.*?};""", RegexOption.DOT_MATCHES_ALL)
+        val newArrayContent = newLanguagesArr.joinToString(", ") { "\"$it\"" }
+        val newLine = """String[] supportedLanguages = { $newArrayContent };"""
+        val newContent = content.replace(regex, newLine)
+        instafelEnvFile.writeText(newContent)
+        println("App's SUPPORTED_LANGUAGES definition successfully updated!")
+    }
+
     fun mergeUpdaterSources() {
         println("Merging :updater project sources")
         val projectDir = File(rootDir, "updater")
@@ -159,26 +182,16 @@ class CrowdinMergeUtils(
         val mainStringFile = Paths.get(projectDir.absolutePath, "src", "main", "res", "values", "arrays.xml").toFile()
 
         val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
+        val newLanguagesArr = arrayOf("en-US") + languages
 
-        languages.forEach { lang ->
-            copyStringsFile(lang, crowdinLocalizationFolderDir, updaterLocalizationFolderDir)
-        }
+        languages.forEach { lang -> copyStringsFile(lang, crowdinLocalizationFolderDir, updaterLocalizationFolderDir) }
+        println("All localization sources (${languages.size} file) copied into res/values-... folders")
 
         val content = mainStringFile.readText()
-        val newLanguagesArr = arrayOf("en-rEN") + languages
         val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>$it</item>" }
-
-        val regex = Regex(
-            """<string-array\s+name="supported_languages".*?>.*?</string-array>""",
-            RegexOption.DOT_MATCHES_ALL
-        )
-
-        val newContent = content.replace(regex) {
-            "<string-array name=\"supported_languages\">\n$items\n    </string-array>"
-        }
-
+        val regex = Regex("""<string-array\s+name="supported_languages".*?>.*?</string-array>""", RegexOption.DOT_MATCHES_ALL)
+        val newContent = content.replace(regex) { "<string-array name=\"supported_languages\">\n$items\n    </string-array>" }
         mainStringFile.writeText(newContent)
-
         println("Totally ${languages.size} translation file updated.")
     }
 

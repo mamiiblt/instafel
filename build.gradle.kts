@@ -19,5 +19,6 @@ tasks.register("mergeTranslations") {
 
         mergeUtils.mergeWebsiteSources()
         mergeUtils.mergeUpdaterSources()
+        mergeUtils.mergeAppSources()
     }
 }
