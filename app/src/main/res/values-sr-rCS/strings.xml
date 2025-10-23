@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">Nemate dozvolu</string>
+    <string name="ifl_a5_11">"Dozvola za obaveštenja za Instafel je odbijena. Ako se ovaj problem nastavi, ne zaboravite da uključite obaveštenja u podešavanjima aplikacije."</string>
+    <string name="ifl_a0_08">Razno</string>
+    <string name="ifl_a0_10">Omogućite Amoled temu za Instafel aktivnosti, dijaloge i druge delove.</string>
+    <string name="ifl_a0_11">Uklonite reklame</string>
+    <string name="ifl_a0_12">Uklanja oglase prikazane u fidu, video zapisima ili na drugim mestima.</string>
+    <string name="ifl_a0_13">Ponovo pokrenite aplikaciju da biste primenili promene.</string>
+    <string name="ifl_a0_14">Podrazumevano omogućeno, ne može se promeniti.</string>
+    <string name="ifl_a0_15">Instafel ažuriranje</string>
+    <string name="ifl_a0_16">Koristite Instafel Updater za automatska ažuriranja sa Root-om i Shizuku-om</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">Podešavanja Ažuriranja</string>
+    <string name="ifl_a0_03">Jezik</string>
+    <string name="ifl_a0_04">Biblioteka</string>
+    <string name="ifl_a0_05">O programu</string>
+    <string name="ifl_a0_06">Ova funkcija još nije dodata</string>
+    <string name="ifl_a0_07">Izveštaj o greškama</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">O Instafel-u</string>
+    <string name="ifl_a1_02">Instafel verzija</string>
+    <string name="ifl_a1_03">Tip instalacije</string>
+    <string name="ifl_a1_04">Projekat</string>
+    <string name="ifl_a1_07">Klon</string>
+    <string name="ifl_a1_08">Nije klon</string>
+    <string name="ifl_a1_09">ID generacije</string>
+    <string name="ifl_a1_10">Instagram verzija</string>
+    <string name="ifl_a1_12">Informacije o verziji</string>
+    <string name="ifl_a1_13">Verzija peča</string>
+    <string name="ifl_a1_14">Primenjeni pečevi</string>
+    <string name="ifl_a1_15">Pogledajte detalje</string>
+    <string name="ifl_a1_18">O programeru</string>
+    <string name="ifl_a1_19">Veb stranica</string>
+    <string name="ifl_a1_20">Pridruži se zajednici</string>
+    <string name="ifl_a1_21">Saradnici</string>
+    <string name="ifl_a1_22">Informacije o primenjenim pečevima</string>
+    <string name="ifl_a1_23">Core Commit</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">O Instagram-u</string>
+    <string name="ifl_a2_02">Verzija</string>
+    <string name="ifl_a2_03">Kod verzije</string>
+    <string name="ifl_a2_04">Kanal</string>
+    <string name="ifl_a2_05">Arhitektura</string>
+    <string name="ifl_a3_01">O programu</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">Izvezi</string>
+    <string name="ifl_a4_02">Uvezi</string>
+    <string name="ifl_a4_03">Obriši datoteku za zamene</string>
+    <string name="ifl_a4_04">Molimo vas da izaberete putanju do datoteke da biste je sačuvali.</string>
+    <string name="ifl_a4_05">Rezervna kopija datoteke je uspešno sačuvana.</string>
+    <string name="ifl_a4_06">Datoteka za zamene nije pronađena.</string>
+    <string name="ifl_a4_07">Došlo je do greške prilikom čuvanja rezervne kopije datoteke.</string>
+    <string name="ifl_a4_08">Podeli rezervnu kopiju</string>
+    <string name="ifl_a4_09">Molimo vas da izaberete datoteku za uvoz.</string>
+    <string name="ifl_a4_10">Rezervna kopija datoteke je uspešno uvežena.</string>
+    <string name="ifl_a4_11">Datoteka za zamene nije pronađena.</string>
+    <string name="ifl_a4_12">Došlo je do greške prilikom uvoza rezervne datoteke.</string>
+    <string name="ifl_a4_13">Datoteka za zamene je uspešno obrisana.</string>
+    <string name="ifl_a4_14">Datoteka za zamene nije pronađena.</string>
+    <string name="ifl_a4_15">Došlo je do greške prilikom uvoza rezervne datoteke.</string>
+    <string name="ifl_a4_16">MobileConfig Editor</string>
+    <string name="ifl_a4_17">Flag Analyzer</string>
+    <string name="ifl_a4_18">Uvezi sve</string>
+    <string name="ifl_a4_19">Uvezite sa spajanjem</string>
+    <string name="ifl_a4_20">Analiza rezultata</string>
+    <string name="ifl_a4_21">Koristite prilagođenu datoteku za mapiranje</string>
+    <string name="ifl_a4_22">Omogućava vam da analizirate pomoću prilagođene datoteke za mapiranje umesto podrazumevane datoteke za mapiranje Instagrama</string>
+    <string name="ifl_a4_23">Matched Flags</string>
+    <string name="ifl_a4_24">Mismatched Flags</string>
+    <string name="ifl_a4_25">Pretraga</string>
+    <string name="ifl_a4_26">Uvezi zamene iz rezervne kopije</string>
+    <string name="ifl_a4_27">Koristite rezervnu datoteku umesto analize postojeće datoteke za nadjačavanje</string>
+    <string name="ifl_a4_28">Pokrenite analizu</string>
+    <string name="ifl_a4_29">Pokrenite analizu sa prilagođenom rezervnom kopijom</string>
+    <string name="ifl_a4_30">Započnite analizu sa prilagođenim mapiranjem</string>
+    <string name="ifl_a4_31">Započnite analizu sa prilagođenim pravljenjem rezervnih kopija i mapiranjem</string>
+    <string name="ifl_a4_32">Kopiraj neobrađeno mapiranje</string>
+    <string name="ifl_a4_33">Kopiraj parsirano mapiranje</string>
+    <string name="ifl_a4_34">Datoteka za zamenu nedostaje ili je oštećena</string>
+    <string name="ifl_a4_35">Da li ste sigurni?</string>
+    <string name="ifl_a4_36">Ne postoji način da se oporavi obrisana datoteka za prepisivanje</string>
+    <string name="ifl_a4_37">Okej</string>
+    <string name="ifl_a4_38">Otkaži</string>
+    <string name="ifl_a4_39">Greška pri čitanju datoteke za zamenu.</string>
+    <string name="ifl_a4_40">%1$s flags successfully exported</string>
+    <string name="ifl_a4_41">Greška prilikom pisanja sadržaja u rezervnu datoteku.</string>
+    <string name="ifl_a4_42">Greška pri izvozu rezervne kopije datoteke</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">Proverite ažuriranja</string>
+    <string name="ifl_a5_02">Poslednja provera: %1$s</string>
+    <string name="ifl_a5_03">Učestalost provere</string>
+    <string name="ifl_a5_05">Nikada</string>
+    <string name="ifl_a5_06">Omogući ažuriranja</string>
+    <string name="ifl_a5_07">Omogućite podešavanja ažuriranja</string>
+    <string name="ifl_a5_08">Preuzimanje u pozadini</string>
+    <string name="ifl_a5_09">Obaveštenje se šalje nakon što se ažuriranja preuzmu u pozadini</string>
+    <string name="ifl_a5_sub_freq_00">Postavljeno na svako otvaranje.</string>
+    <string name="ifl_a5_sub_freq_01">Nikada</string>
+    <string name="ifl_a5_sub_freq_02">Svaki dan</string>
+    <string name="ifl_a5_sub_freq_03">Jednom u tri dana</string>
+    <string name="ifl_a5_sub_freq_04">Jednom u pet dana</string>
+    <string name="ifl_a5_sub_freq_05">Jednom nedeljno</string>
+    <string name="ifl_a5_dia_freq_00">Svako otvaranje (podrazumevano)</string>
+    <string name="ifl_a5_dia_freq_01">Nikada</string>
+    <string name="ifl_a5_dia_freq_02">Svaki dan</string>
+    <string name="ifl_a5_dia_freq_03">Jednom u tri dana</string>
+    <string name="ifl_a5_dia_freq_04">Jednom u pet dana</string>
+    <string name="ifl_a5_dia_freq_05">Jednom nedeljno</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">Koristi jezik uređaja</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">Izveštaji</string>
+    <string name="ifl_a7_02">Obriši izveštaje</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">Detalji</string>
+    <string name="ifl_a8_02">Kopiraj dnevnik</string>
+    <string name="ifl_a8_03">Podeli dnevnik</string>
+    <string name="ifl_a8_04">Informacije o uređaju</string>
+    <string name="ifl_a8_05">Verzija androida</string>
+    <string name="ifl_a8_06">IG i IFL verzije</string>
+    <string name="ifl_a8_07">Datum pada</string>
+    <string name="ifl_a8_08">Informacije o padu</string>
+    <string name="ifl_a8_09">Razlog</string>
+    <string name="ifl_a8_10">Stack Trace</string>
+    <string name="ifl_a9_01">Detalji</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">Saradnici</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">Flag Library</string>
+    <string name="ifl_a11_02">Backup Library</string>
+    <string name="ifl_a11_03">Greška pri preuzimanju rezervnih kopija sa API-ja</string>
+    <string name="ifl_a11_04">Kreirano od %1$s</string>
+    <string name="ifl_a11_05">Informacije o rezervnoj kopiji</string>
+    <string name="ifl_a11_06">Ime</string>
+    <string name="ifl_a11_07">Opis</string>
+    <string name="ifl_a11_08">Poslednje ažurirano</string>
+    <string name="ifl_a11_09">Spisak promena</string>
+    <string name="ifl_a11_10">Primenite rezervnu kopiju</string>
+    <string name="ifl_a11_11">Više</string>
+    <string name="ifl_a11_12">Omogućite automatsko ažuriranje</string>
+    <string name="ifl_a11_13">Ako se objavi novo ažuriranje za vašu rezervnu kopiju, rezervna kopija će se automatski ažurirati</string>
+    <string name="ifl_a11_14">Ova rezervna kopija će se za sada primeniti i biće ažurirana ako je omogućeno automatsko ažuriranje</string>
+    <string name="ifl_a11_15">Rezervne kopije</string>
+    <string name="ifl_a11_16">O autoru</string>
+    <string name="ifl_a11_17">Greška pri preuzimanju informacija o rezervnoj kopiji</string>
+    <string name="ifl_a11_18">Ažurirano do v%1$s na %2$s</string>
+    <string name="ifl_a11_19">O autoru</string>
+    <string name="ifl_a11_20">Ime autora</string>
+    <string name="ifl_a11_21">Greška pri preuzimanju informacija o autoru</string>
+    <string name="ifl_a11_22">Greška pri preuzimanju rezervne kopije datoteke</string>
+    <string name="ifl_a11_23">Da biste omogućili ovo podešavanje, potrebno je da primenite barem jednu rezervnu kopiju iz biblioteke</string>
+    <string name="ifl_a11_24">%1$s rezervna kopija će se sada automatski ažurirati</string>
+    <string name="ifl_a11_25">Automatsko ažuriranje je onemogućeno</string>
+    <string name="ifl_a11_26">Greška pri ažuriranju rezervne kopije</string>
+    <string name="ifl_a11_27">Backup Changelog</string>
+    <string name="ifl_a11_28">Restartuj aplikaciju</string>
+    <string name="ifl_a11_29">Ponovo pokreni kasnije</string>
+    <string name="ifl_a11_30">Greška prilikom analize rezervne kopije datoteke</string>
+    <string name="ifl_a11_31">Greška prilikom raščlanjivanja datoteke za mapiranje</string>
+    <string name="ifl_a11_32">Greška pri čitanju Instagram datoteke za mapiranje</string>
+    <string name="ifl_a11_33">Greška prilikom raščlanjivanja datoteke za zamenu</string>
+    <string name="ifl_a11_34">Datoteka za mapiranje nije pronađena</string>
+    <string name="ifl_a11_35">Greška pri upoređivanju rezervne kopije sa mapiranjem</string>
+    <string name="ifl_a11_36">Error while copying flag content</string>
+    <string name="ifl_a11_37">Greška pri pokretanju analize</string>
+    <string name="ifl_a11_38">Izabеritе datotеku</string>
+    <string name="ifl_a11_39">Greška pri čitanju rezervne datoteke</string>
+    <string name="ifl_a11_40">Greška pri čitanju datoteke za mapiranje</string>
+    <string name="ifl_a11_41">%1$s flag imported from backup file</string>
+    <string name="ifl_a11_42">Greška pri uvozu zamena iz rezervne datoteke</string>
+    <string name="ifl_a11_43">%1$s flag succesfully imported</string>
+    <string name="ifl_a11_44">%1$s uspešno uvezeno</string>
+    <string name="ifl_a0_01">Opcije rezervnih kopija</string>
+    <string name="ifl_a11_45">Verzija</string>
+    <string name="ifl_a11_46">%1$s succesfully imported with %2$s flag</string>
+    <string name="ifl_a11_47">Izaberite važeću datoteku rezervne kopije</string>
+    <string name="ifl_a11_48">Uvezite stare rezervne kopije</string>
+    <string name="ifl_a11_49">Molimo vas da popunite obavezna polja.</string>
+    <string name="ifl_a11_50">Molimo vas da unesete važeći naziv verzije</string>
+    <string name="ifl_a11_51">Izvezi rezervnu kopiju</string>
+    <string name="ifl_a11_52">Ime rezervne kopije</string>
+    <string name="ifl_a11_53">"Kao Mami's savršena rezervna kopija"</string>
+    <string name="ifl_a11_54">Ime autora</string>
+    <string name="ifl_a11_55">Kao Albert Ajnštajn</string>
+    <string name="ifl_a11_56">Verzija rezervne kopije</string>
+    <string name="ifl_a11_57">Kao 1.0, 1.0-hitna ispravka itd.</string>
+    <string name="ifl_a11_58">Spisak promena</string>
+    <string name="ifl_a11_59">Ovde možete napisati rezervnu kopiju dnevnika promena</string>
+    <string name="ifl_a11_60">Izvezi rezervnu kopiju</string>
+    <string name="ifl_a11_61">Uvezite stare JSON rezervne kopije</string>
+    <string name="ifl_a11_62">Uporedi rezervne kopije</string>
+    <string name="ifl_a11_63">Used to import a backup file completely with all flags in file</string>
+    <string name="ifl_a11_64">Adds flags to the backup file you use that are not in the backup you selected.</string>
+    <string name="ifl_a11_65">Možete da uvezete stare rezervne kopije tipa .json pomoću ove opcije</string>
+    <string name="ifl_a11_66">Izaberi rezervnu kopiju 1</string>
+    <string name="ifl_a11_67">Izaberi rezervnu kopiju 2</string>
+    <string name="ifl_a11_68">Pritisnite da biste izabrali rezervnu kopiju</string>
+    <string name="ifl_a11_69">Uporedite rezervne kopije</string>
+    <string name="ifl_a11_70">Greška pri pokretanju kompresije</string>
+    <string name="ifl_a11_71">Odabrano</string>
+    <string name="ifl_a11_72">Izaberite dve rezervne datoteke za poređenje</string>
+    <string name="ifl_a11_73">Rezultati poređenja</string>
+    <string name="ifl_a11_74">Razlike B1 do B2</string>
+    <string name="ifl_a11_75">Razlike B2 do B1</string>
+    <string name="ifl_a11_76">Removed Flag IDs</string>
+    <string name="ifl_a11_77">Greška pri poređenju rezervnih kopija</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">Novo ažuriranje</string>
+    <string name="ifl_d1_02">Instafel će biti nadograđen na verziju v%1$d (Instagram v%2$s)</string>
+    <string name="ifl_d1_03">Otkaži</string>
+    <string name="ifl_d1_04">Instaliraj</string>
+    <string name="ifl_d1_05">Sakrij</string>
+    <string name="ifl_d1_06">Povezivanje sa serverom za ažuriranje</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">Instafel je ažuriran.</string>
+    <string name="ifl_d2_01">Ažuriran</string>
+    <string name="ifl_d2_03">Okej</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">Došlo je do greške prilikom otvaranja apk-instalera.</string>
+    <string name="ifl_t1_03">Ažuriranje Instafela nije uspelo.</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">Veb pregledač nije pronađen na vašem uređaju</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">Podеsi učеstalost</string>
+    <string name="ifl_d3_02">Okej</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">Dobrodošli</string>
+    <string name="ifl_d4_02">Dobrodošli u Instafel, ovaj mod je razvijen da svima pruži najnovije funkcije na alfa verzijama Instagrama.\\n\\nMeniju se može pristupiti pritiskom i držanjem dugmeta hamburger na kartici profila.</string>
+    <!-- CRASH TOAST -->
+</resources>

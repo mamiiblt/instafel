@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">權限遭拒</string>
+    <string name="ifl_a5_11">"Instafel 的通知權限已被拒絕。如果此問題持續發生，請別忘記從應用程式設定中開啟通知。"</string>
+    <string name="ifl_a0_08">雜項</string>
+    <string name="ifl_a0_10">為 Instafel 活動、對話框與其他元件啟用 Amoled 主題。</string>
+    <string name="ifl_a0_11">移除廣告</string>
+    <string name="ifl_a0_12">移除顯示於動態流、Reel 與其他地方的廣告。</string>
+    <string name="ifl_a0_13">重啟應用程式以套用變更。</string>
+    <string name="ifl_a0_14">預設啟用，無法更改。</string>
+    <string name="ifl_a0_15">Instafel 更新器</string>
+    <string name="ifl_a0_16">透過 Root 權限和 Shizuku 使用 Instfel 更新器自動更新</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">更新設定</string>
+    <string name="ifl_a0_03">語言</string>
+    <string name="ifl_a0_04">資料庫</string>
+    <string name="ifl_a0_05">關於</string>
+    <string name="ifl_a0_06">此功能尚未添加</string>
+    <string name="ifl_a0_07">崩潰報告</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">關於 Instafel</string>
+    <string name="ifl_a1_02">Instafel 版本</string>
+    <string name="ifl_a1_03">安裝類型</string>
+    <string name="ifl_a1_04">專案</string>
+    <string name="ifl_a1_07">複製</string>
+    <string name="ifl_a1_08">非複製</string>
+    <string name="ifl_a1_09">生成 ID</string>
+    <string name="ifl_a1_10">Instagram 版本</string>
+    <string name="ifl_a1_12">建構資訊</string>
+    <string name="ifl_a1_13">修補器版本</string>
+    <string name="ifl_a1_14">已套用修補檔</string>
+    <string name="ifl_a1_15">查看建構詳細資訊</string>
+    <string name="ifl_a1_18">關於開發者</string>
+    <string name="ifl_a1_19">網站</string>
+    <string name="ifl_a1_20">加入社群</string>
+    <string name="ifl_a1_21">貢獻者</string>
+    <string name="ifl_a1_22">已套用的修補資訊</string>
+    <string name="ifl_a1_23">核心提交</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">關於 Instagram</string>
+    <string name="ifl_a2_02">版本</string>
+    <string name="ifl_a2_03">版本號碼</string>
+    <string name="ifl_a2_04">渠道</string>
+    <string name="ifl_a2_05">架構</string>
+    <string name="ifl_a3_01">關於</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">匯出</string>
+    <string name="ifl_a4_02">匯入</string>
+    <string name="ifl_a4_03">刪除覆蓋檔</string>
+    <string name="ifl_a4_04">請選擇檔案儲存路徑。</string>
+    <string name="ifl_a4_05">備份檔案已成功儲存。</string>
+    <string name="ifl_a4_06">找不到覆蓋檔。</string>
+    <string name="ifl_a4_07">儲存備份檔案時發生錯誤。</string>
+    <string name="ifl_a4_08">分享備份檔案</string>
+    <string name="ifl_a4_09">請選擇要匯入的檔案。</string>
+    <string name="ifl_a4_10">備份檔案匯入成功。</string>
+    <string name="ifl_a4_11">找不到覆蓋檔。</string>
+    <string name="ifl_a4_12">匯入備份檔時發生錯誤。</string>
+    <string name="ifl_a4_13">覆蓋檔案已成功刪除。</string>
+    <string name="ifl_a4_14">找不到覆蓋檔。</string>
+    <string name="ifl_a4_15">匯入備份檔時發生錯誤。</string>
+    <string name="ifl_a4_16">MobileConfig 編輯器</string>
+    <string name="ifl_a4_17">旗幟分析器</string>
+    <string name="ifl_a4_18">全部匯入</string>
+    <string name="ifl_a4_19">匯入並合併</string>
+    <string name="ifl_a4_20">分析結果</string>
+    <string name="ifl_a4_21">使用自訂映射檔</string>
+    <string name="ifl_a4_22">允許你使用自訂映射檔進行分析，而非使用 Instagram 預設映射檔</string>
+    <string name="ifl_a4_23">符合的旗幟</string>
+    <string name="ifl_a4_24">不符合的旗幟</string>
+    <string name="ifl_a4_25">搜尋</string>
+    <string name="ifl_a4_26">從備份中匯入覆蓋</string>
+    <string name="ifl_a4_27">使用備份檔而非分析現有的覆蓋檔</string>
+    <string name="ifl_a4_28">開始分析</string>
+    <string name="ifl_a4_29">使用自訂備份開始分析</string>
+    <string name="ifl_a4_30">使用自訂映射開始分析</string>
+    <string name="ifl_a4_31">使用自訂備份與映射開始分析</string>
+    <string name="ifl_a4_32">複製原始映射</string>
+    <string name="ifl_a4_33">複製傳遞的映射</string>
+    <string name="ifl_a4_34">覆蓋檔遺失或損毀</string>
+    <string name="ifl_a4_35">你確定嗎？</string>
+    <string name="ifl_a4_36">將無法回覆刪除的覆蓋檔</string>
+    <string name="ifl_a4_37">確定</string>
+    <string name="ifl_a4_38">取消</string>
+    <string name="ifl_a4_39">讀取覆蓋檔時發生錯誤。</string>
+    <string name="ifl_a4_40">已成功匯出 %1$s 旗幟</string>
+    <string name="ifl_a4_41">寫入備份檔案內容時發生錯誤。</string>
+    <string name="ifl_a4_42">匯出備份檔時發生錯誤</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">檢查更新</string>
+    <string name="ifl_a5_02">上次檢查：%1$s</string>
+    <string name="ifl_a5_03">檢查頻率</string>
+    <string name="ifl_a5_05">永不</string>
+    <string name="ifl_a5_06">啟用更新</string>
+    <string name="ifl_a5_07">啟用更新設定</string>
+    <string name="ifl_a5_08">背景下載</string>
+    <string name="ifl_a5_09">更新在背景下載後發送通知</string>
+    <string name="ifl_a5_sub_freq_00">設定為每次開啟時。</string>
+    <string name="ifl_a5_sub_freq_01">設定為永不</string>
+    <string name="ifl_a5_sub_freq_02">設定為每天</string>
+    <string name="ifl_a5_sub_freq_03">設定為每三天</string>
+    <string name="ifl_a5_sub_freq_04">設定為每五天</string>
+    <string name="ifl_a5_sub_freq_05">設定為每週</string>
+    <string name="ifl_a5_dia_freq_00">每次開啟（預設）</string>
+    <string name="ifl_a5_dia_freq_01">永不</string>
+    <string name="ifl_a5_dia_freq_02">每天</string>
+    <string name="ifl_a5_dia_freq_03">每三天</string>
+    <string name="ifl_a5_dia_freq_04">每五天</string>
+    <string name="ifl_a5_dia_freq_05">每週</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">使用裝置語言</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">報告</string>
+    <string name="ifl_a7_02">刪除報告</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">詳細資訊</string>
+    <string name="ifl_a8_02">複製日誌</string>
+    <string name="ifl_a8_03">分享日誌</string>
+    <string name="ifl_a8_04">裝置資訊</string>
+    <string name="ifl_a8_05">Android 版本</string>
+    <string name="ifl_a8_06">IG 和 IFL 版本</string>
+    <string name="ifl_a8_07">崩潰日期</string>
+    <string name="ifl_a8_08">崩潰資訊</string>
+    <string name="ifl_a8_09">原因</string>
+    <string name="ifl_a8_10">堆疊追蹤</string>
+    <string name="ifl_a9_01">詳細資訊</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">貢獻者</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">旗幟庫</string>
+    <string name="ifl_a11_02">備份旗幟庫</string>
+    <string name="ifl_a11_03">從 API 取得備份庫時發生錯誤</string>
+    <string name="ifl_a11_04">由 %1$s 建立</string>
+    <string name="ifl_a11_05">備份資訊</string>
+    <string name="ifl_a11_06">名稱</string>
+    <string name="ifl_a11_07">說明</string>
+    <string name="ifl_a11_08">上次更新</string>
+    <string name="ifl_a11_09">變更日誌</string>
+    <string name="ifl_a11_10">套用備份</string>
+    <string name="ifl_a11_11">更多</string>
+    <string name="ifl_a11_12">啟用自動更新</string>
+    <string name="ifl_a11_13">如果備份有發布新的更新，備份會自動更新</string>
+    <string name="ifl_a11_14">此備份將立即套用，若自動更新已啟用則會立即更新</string>
+    <string name="ifl_a11_15">備份</string>
+    <string name="ifl_a11_16">關於作者</string>
+    <string name="ifl_a11_17">取得備份資訊時發生錯誤</string>
+    <string name="ifl_a11_18">於 %2$s 更新至 v%1$s</string>
+    <string name="ifl_a11_19">關於作者</string>
+    <string name="ifl_a11_20">作者姓名</string>
+    <string name="ifl_a11_21">取得作者相關資訊時發生錯誤</string>
+    <string name="ifl_a11_22">下載備份檔時發生錯誤</string>
+    <string name="ifl_a11_23">你需要至少從備份庫中套用一個備份檔才能啟用此設定</string>
+    <string name="ifl_a11_24">%1$s 備份檔現在會自動更新</string>
+    <string name="ifl_a11_25">自動更新已停用</string>
+    <string name="ifl_a11_26">更新備份時發生錯誤</string>
+    <string name="ifl_a11_27">備份變更日誌</string>
+    <string name="ifl_a11_28">重新啟動應用程式</string>
+    <string name="ifl_a11_29">稍後重新啟動</string>
+    <string name="ifl_a11_30">傳遞備份檔時發生錯誤</string>
+    <string name="ifl_a11_31">傳遞映射檔時發生錯誤</string>
+    <string name="ifl_a11_32">讀取 Instagram 映射檔時發生錯誤</string>
+    <string name="ifl_a11_33">傳遞覆蓋檔時發生錯誤</string>
+    <string name="ifl_a11_34">找不到映射檔</string>
+    <string name="ifl_a11_35">比對備份與映射時發生錯誤</string>
+    <string name="ifl_a11_36">複製旗幟內容時發生錯誤</string>
+    <string name="ifl_a11_37">開始分析時發生錯誤</string>
+    <string name="ifl_a11_38">請選擇一個檔案</string>
+    <string name="ifl_a11_39">讀取備份檔時發生錯誤</string>
+    <string name="ifl_a11_40">讀取映射檔時發生錯誤</string>
+    <string name="ifl_a11_41">已從備份檔匯入 %1$s 旗幟</string>
+    <string name="ifl_a11_42">從備份檔匯入複製時發生錯誤</string>
+    <string name="ifl_a11_43">已成功匯入 %1$s 旗幟</string>
+    <string name="ifl_a11_44">已成功匯入 %1$s</string>
+    <string name="ifl_a0_01">備份選項</string>
+    <string name="ifl_a11_45">版本</string>
+    <string name="ifl_a11_46">已成功匯入 %1$s，並設置 %2$s 旗幟</string>
+    <string name="ifl_a11_47">請選擇一個有效的備份檔</string>
+    <string name="ifl_a11_48">匯入舊備份檔</string>
+    <string name="ifl_a11_49">請填寫必要欄位。</string>
+    <string name="ifl_a11_50">請輸入有效版本名稱</string>
+    <string name="ifl_a11_51">匯出備份</string>
+    <string name="ifl_a11_52">備份名稱</string>
+    <string name="ifl_a11_53">"例如「Mami 的完美備份」"</string>
+    <string name="ifl_a11_54">作者名稱</string>
+    <string name="ifl_a11_55">例如「Albert Einstein」</string>
+    <string name="ifl_a11_56">備份檔版本</string>
+    <string name="ifl_a11_57">例如「1.0」、「1.0-hotfix」等。</string>
+    <string name="ifl_a11_58">變更日誌</string>
+    <string name="ifl_a11_59">你可以寫下備份的變更日誌</string>
+    <string name="ifl_a11_60">匯出備份</string>
+    <string name="ifl_a11_61">匯入舊 JSON 備份檔</string>
+    <string name="ifl_a11_62">備份比較器</string>
+    <string name="ifl_a11_63">用於完整匯入備份檔案，包含檔案中的所有旗幟</string>
+    <string name="ifl_a11_64">新增未在備份檔中的旗幟到正在使用的備份檔中。</string>
+    <string name="ifl_a11_65">你可以使用這個選項匯入舊 .json 類型的備份</string>
+    <string name="ifl_a11_66">選擇備份 1</string>
+    <string name="ifl_a11_67">選擇備份 2</string>
+    <string name="ifl_a11_68">請選擇備份</string>
+    <string name="ifl_a11_69">比對備份</string>
+    <string name="ifl_a11_70">開始壓縮時發生錯誤</string>
+    <string name="ifl_a11_71">已選擇</string>
+    <string name="ifl_a11_72">請選擇兩個備份檔進行比對</string>
+    <string name="ifl_a11_73">比對結果</string>
+    <string name="ifl_a11_74">B1 相對 B2 的差異</string>
+    <string name="ifl_a11_75">B2 相對 B1 的差異</string>
+    <string name="ifl_a11_76">移除旗幟編號</string>
+    <string name="ifl_a11_77">比對備份時發生錯誤</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">新更新</string>
+    <string name="ifl_d1_02">Instafel 將會更新至 v%1$d（Instagram v%2$s）</string>
+    <string name="ifl_d1_03">取消</string>
+    <string name="ifl_d1_04">安裝</string>
+    <string name="ifl_d1_05">隱藏</string>
+    <string name="ifl_d1_06">正在連線至更新伺服器</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">Instafel 已為最新版。</string>
+    <string name="ifl_d2_01">最新版</string>
+    <string name="ifl_d2_03">確認</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">開啟 APK 安裝器時發生錯誤。</string>
+    <string name="ifl_t1_03">Imstafel 更新失敗。</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">無法在裝置上找到網頁瀏覽器</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">設定頻率</string>
+    <string name="ifl_d3_02">確定</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">歡迎</string>
+    <string name="ifl_d4_02">歡迎來到 Instafel，此模組開發旨在提供所有人 Instagram Alpha 建構的最新的功能\\n\\n選單可以透過長按個人檔案頁面的漢堡選單開啟。</string>
+    <!-- CRASH TOAST -->
+</resources>

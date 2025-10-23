@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">अनुमति अस्वीकृत</string>
+    <string name="ifl_a5_11">"Instafel की नोटिफिकेशन अनुमति अस्वीकृत कर दी गई। यदि यह समस्या बनी रहती है, तो एप्लिकेशन सेटिंग्स से नोटिफिकेशन चालू करना न भूलें।"</string>
+    <string name="ifl_a0_08">विविध</string>
+    <string name="ifl_a0_10">Instafel की गतिविधियों, डायलॉग्स और अन्य भागों के लिए एमोलेड थीम सक्षम करें।</string>
+    <string name="ifl_a0_11">विज्ञापन हटाएं</string>
+    <string name="ifl_a0_12">फ़ीड, रील्स या अन्य स्थानों में दिखाए गए विज्ञापनों को हटाता है।</string>
+    <string name="ifl_a0_13">परिवर्तन लागू करने के लिए ऐप पुनः प्रारंभ करें।</string>
+    <string name="ifl_a0_14">डिफ़ॉल्ट रूप से सक्षम, बदला नहीं जा सकता।</string>
+    <string name="ifl_a0_15">Instafel Updater</string>
+    <string name="ifl_a0_16">रूट / शिज़ुकु के साथ स्वचालित अपडेट के लिए Instafel Updater का उपयोग करें।</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">अपडेट सेटिंग्स</string>
+    <string name="ifl_a0_03">भाषा</string>
+    <string name="ifl_a0_04">लाइब्रेरी</string>
+    <string name="ifl_a0_05">इसके बारे में</string>
+    <string name="ifl_a0_06">यह सुविधा अभी तक नहीं जोड़ी गई है</string>
+    <string name="ifl_a0_07">क्रैश रिपोर्ट</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">InstaFel के बारे में</string>
+    <string name="ifl_a1_02">InstaFel का वर्ज़न</string>
+    <string name="ifl_a1_03">पैकेज के प्रकार</string>
+    <string name="ifl_a1_04">project</string>
+    <string name="ifl_a1_07">क्लोन</string>
+    <string name="ifl_a1_08">अनक्लोन</string>
+    <string name="ifl_a1_09">जनरेशन आईडी</string>
+    <string name="ifl_a1_10">इंस्टाग्राम का वर्ज़न</string>
+    <string name="ifl_a1_12">बिल्ड जानकारी</string>
+    <string name="ifl_a1_13">पैचर संस्करण</string>
+    <string name="ifl_a1_14">लागू किए गए पैच</string>
+    <string name="ifl_a1_15">बिल्ड जानकारी विवरण देखें</string>
+    <string name="ifl_a1_18">डेवलपर के बारे में</string>
+    <string name="ifl_a1_19">वेबसाइट</string>
+    <string name="ifl_a1_20">समुदाय से जुड़ें</string>
+    <string name="ifl_a1_21">योगदानकर्ता</string>
+    <string name="ifl_a1_22">लागू किए गए पैच की जानकारी देखें</string>
+    <string name="ifl_a1_23">मुख्य कमिट</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">Instagram के बारे में</string>
+    <string name="ifl_a2_02">वर्ज़न</string>
+    <string name="ifl_a2_03">वर्ज़न कोड</string>
+    <string name="ifl_a2_04">वर्ज़न के प्रकार</string>
+    <string name="ifl_a2_05">आर्किटेक्चर</string>
+    <string name="ifl_a3_01">इसके के बारे में</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">अपने वर्तमान फाइल का बैकअप लें </string>
+    <string name="ifl_a4_02">बैकअप फाइल लगाए</string>
+    <string name="ifl_a4_03">वर्तमान के बैकअप फाइल को रीसेट करें </string>
+    <string name="ifl_a4_04">कृपया फाइल को सुरक्षित करने के लिए एक स्थान चुनें </string>
+    <string name="ifl_a4_05">आपकी बैकअप फाइल सफलतापूर्वक सुरक्षित हो गई है</string>
+    <string name="ifl_a4_06">ओवरराइड फ़ाइल नहीं मिली.</string>
+    <string name="ifl_a4_07">बैकअप फ़ाइल सुरक्षित करते समय एक समस्या आई.</string>
+    <string name="ifl_a4_08">बैकअप फाइल शेयर करें </string>
+    <string name="ifl_a4_09">लगाने के लिए कृपया एक फाइल चुनें</string>
+    <string name="ifl_a4_10">बैकअप फाइल सफलतापूर्वक लग गई </string>
+    <string name="ifl_a4_11">ओवरराइड फ़ाइल नहीं मिली.</string>
+    <string name="ifl_a4_12">बैकअप फ़ाइल लगाते करते समय एक समस्या आई.</string>
+    <string name="ifl_a4_13">ओवरराइड फ़ाइल सफलतापूर्वक हटा दी गई.</string>
+    <string name="ifl_a4_14">ओवरराइड फ़ाइल सफलतापूर्वक हटा दी गई.</string>
+    <string name="ifl_a4_15">बैकअप फ़ाइल लगाते समय एक समस्या आई</string>
+    <string name="ifl_a4_16">मोबाइल कानफिग एडिटर </string>
+    <string name="ifl_a4_17">Flag विश्लेषक</string>
+    <string name="ifl_a4_18">पुरी फाइल लगाए</string>
+    <string name="ifl_a4_19">वर्तमान फाइल के साथ मिलाए</string>
+    <string name="ifl_a4_20">परिणाम का विश्लेषण</string>
+    <string name="ifl_a4_21">कस्टम मैपिंग फ़ाइल का उपयोग करें</string>
+    <string name="ifl_a4_22">आपको Instagram\'s डिफ़ॉल्ट मैपिंग फ़ाइल के बजाय कस्टम मैपिंग फ़ाइल के साथ विश्लेषण करने की अनुमति दें </string>
+    <string name="ifl_a4_23">एक जैसे Flags</string>
+    <string name="ifl_a4_24">अलग Flags</string>
+    <string name="ifl_a4_25">खोजें</string>
+    <string name="ifl_a4_26">बैकअप से ओवरराइड फाइल लगाएं</string>
+    <string name="ifl_a4_27">मौजूदा ओवरराइड फ़ाइल का विश्लेषण करने के बजाय बैकअप फ़ाइल का उपयोग करें</string>
+    <string name="ifl_a4_28">विश्लेषण शुरू करें</string>
+    <string name="ifl_a4_29">कस्टम बैकअप के साथ विश्लेषण शुरू करें</string>
+    <string name="ifl_a4_30">कस्टम मैपिंग के साथ विश्लेषण शुरू करें</string>
+    <string name="ifl_a4_31">कस्टम बैकअप और मैपिंग के साथ विश्लेषण शुरू करें</string>
+    <string name="ifl_a4_32">कच्ची मैपिंग की प्रतिलिपि बनाएँ</string>
+    <string name="ifl_a4_33">पार्स की गई मैपिंग की प्रतिलिपि बनाएँ</string>
+    <string name="ifl_a4_34">ओवरराइड फ़ाइल गुम या दूषित है</string>
+    <string name="ifl_a4_35">क्या आप सहमत हैं?</string>
+    <string name="ifl_a4_36">डिलीट की गई ओवरराइड फ़ाइल को वापस लाने का कोई तरीका नहीं है</string>
+    <string name="ifl_a4_37">ठीक है</string>
+    <string name="ifl_a4_38">रद्द करें </string>
+    <string name="ifl_a4_39">ओवरराइड फ़ाइल पढ़ते समय समस्या हो रही है</string>
+    <string name="ifl_a4_40">%1$s flags सफलतापूर्वक निकला गया</string>
+    <string name="ifl_a4_41">बैकअप फ़ाइल में सामग्री लिखते समय समस्या हो रही है</string>
+    <string name="ifl_a4_42">बैकअप फ़ाइल निकलते समय समस्या हो रही है</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">अपडेट के लिए चेक करें</string>
+    <string name="ifl_a5_02">आखरी बार %1$s को चेक किया गया</string>
+    <string name="ifl_a5_03">चेक करने का समय</string>
+    <string name="ifl_a5_05">कभी नहीं </string>
+    <string name="ifl_a5_06">अपडेट चालू करें</string>
+    <string name="ifl_a5_07">अपडेट सेटिंग्स को चालू करें</string>
+    <string name="ifl_a5_08">बैकग्राउंड में डाउनलोड करें </string>
+    <string name="ifl_a5_09">बैकग्राउंड में अपडेट डाउनलोड होने के बाद एक सूचना भेजी जायेगी</string>
+    <string name="ifl_a5_sub_freq_00">प्रत्येक बार खोलने पर</string>
+    <string name="ifl_a5_sub_freq_01">कभी नहीं</string>
+    <string name="ifl_a5_sub_freq_02">प्रतिदिन</string>
+    <string name="ifl_a5_sub_freq_03">3 दिन में 1 बार</string>
+    <string name="ifl_a5_sub_freq_04">5 दिन में 1 बार</string>
+    <string name="ifl_a5_sub_freq_05">सप्ताह में 1 बार</string>
+    <string name="ifl_a5_dia_freq_00">प्रत्येक बार खोलने पे (सामान्य)</string>
+    <string name="ifl_a5_dia_freq_01">कभी नहीं </string>
+    <string name="ifl_a5_dia_freq_02">प्रत्येक दिन</string>
+    <string name="ifl_a5_dia_freq_03">3 दिन में 1 बार</string>
+    <string name="ifl_a5_dia_freq_04">5 दिन में 1 बार</string>
+    <string name="ifl_a5_dia_freq_05">सप्ताह में 1 बार</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">डिवाइस की भाषा इस्तेमाल करें</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">रिपोर्ट्स</string>
+    <string name="ifl_a7_02">रिपोर्ट्स मिटाएं</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">विस्तार </string>
+    <string name="ifl_a8_02">लॉग कॉपी करें</string>
+    <string name="ifl_a8_03">लॉग भेजें</string>
+    <string name="ifl_a8_04">डिवाइस के बारे में</string>
+    <string name="ifl_a8_05">एंड्रॉयड वर्ज़न </string>
+    <string name="ifl_a8_06">माडल</string>
+    <string name="ifl_a8_07">प्रोडक्ट</string>
+    <string name="ifl_a8_08">क्रैश की जानकारी</string>
+    <string name="ifl_a8_09">वजह</string>
+    <string name="ifl_a8_10">स्टैक ट्रेस</string>
+    <string name="ifl_a9_01">विस्तार</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">योगदान करने वाले</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">Flags लाइब्रेरी </string>
+    <string name="ifl_a11_02">बैकअप लाइब्रेरी </string>
+    <string name="ifl_a11_03">API से बैकअप प्राप्त करते समय समस्या आ रही है</string>
+    <string name="ifl_a11_04">%1$s के द्वारा बनाया गया</string>
+    <string name="ifl_a11_05">बैकअप के बारे में</string>
+    <string name="ifl_a11_06">नाम</string>
+    <string name="ifl_a11_07">उल्लेख</string>
+    <string name="ifl_a11_08">आखरी बार अपडेट किया गया</string>
+    <string name="ifl_a11_09">बदलाव के बारे में</string>
+    <string name="ifl_a11_10">बैकअप को लागू करें</string>
+    <string name="ifl_a11_11">और अधिक</string>
+    <string name="ifl_a11_12">स्वतः अपडेट चालू करें</string>
+    <string name="ifl_a11_13">यदि आपके बैकअप के लिए नया अपडेट जारी किया गया है, तो बैकअप स्वचालित रूप से अपडेट हो जाएगा</string>
+    <string name="ifl_a11_14">यह बैकअप अभी लागू किया जाएगा और यदि ऑटो अपडेट सक्षम है तो इसे अपडेट किया जाएगा</string>
+    <string name="ifl_a11_15">बैकअप्स</string>
+    <string name="ifl_a11_16">बनाने वाले के बारे में</string>
+    <string name="ifl_a11_17">बैकअप जानकारी प्राप्त करते समय समस्या आ रही है </string>
+    <string name="ifl_a11_18"> v%1$s %2$s को अपडेट किया गया</string>
+    <string name="ifl_a11_19">बनाने वाले के बारे में</string>
+    <string name="ifl_a11_20">बनाने वाले का नाम </string>
+    <string name="ifl_a11_21">बनाने वाले के बारे में जानकारी प्राप्त करते समय समस्या आ रही है </string>
+    <string name="ifl_a11_22">बैकअप फ़ाइल डाउनलोड करते समय समस्या हो रही है</string>
+    <string name="ifl_a11_23">इस सेटिंग को चालू करने के लिए, आपको लाइब्रेरी से कम से कम एक बैकअप लागू करना होगा</string>
+    <string name="ifl_a11_24">%1$s बैकअप अब अपने आप से अपडेट हो जाएगा</string>
+    <string name="ifl_a11_25">स्वतः अपडेट बंद हुआ</string>
+    <string name="ifl_a11_26">बैकअप अपडेट करते समय समस्या हो रही है</string>
+    <string name="ifl_a11_27">बैकअप के बदलाव</string>
+    <string name="ifl_a11_28">एप को दोबारा चालू करें</string>
+    <string name="ifl_a11_29">बाद में एप को दोबारा चालू करें</string>
+    <string name="ifl_a11_30">बैकअप फ़ाइल पार्स करते समय समस्या</string>
+    <string name="ifl_a11_31">मैपिंग फ़ाइल पार्स करते समय समस्या हो रही है </string>
+    <string name="ifl_a11_32">Instagram\'s की मैपिंग फ़ाइल पढ़ते समय समस्या हो रही है</string>
+    <string name="ifl_a11_33">ओवरराइड फ़ाइल पार्स करते समय समस्या हो रही है </string>
+    <string name="ifl_a11_34">मैपिंग फ़ाइल नहीं मिली</string>
+    <string name="ifl_a11_35">मैपिंग के साथ बैकअप की तुलना करते समय समस्या आ रही है</string>
+    <string name="ifl_a11_36">Flags की कॉपी बनाते समय समस्या हो रही है </string>
+    <string name="ifl_a11_37">विश्लेषण शुरू करते समय समस्या हो रही है</string>
+    <string name="ifl_a11_38">कृपया एक फ़ाइल चुनें</string>
+    <string name="ifl_a11_39">बैकअप फ़ाइल पढ़ते समय समस्या हो रही है</string>
+    <string name="ifl_a11_40">मैपिंग फ़ाइल पढ़ते समय समस्या हो रही है</string>
+    <string name="ifl_a11_41">%1$s flags बैकअप फ़ाइल से डाला गया</string>
+    <string name="ifl_a11_42">बैकअप फ़ाइल से ओवरराइड आयात करते समय समस्या हो रही है</string>
+    <string name="ifl_a11_43">%1$s flag सफलतापूर्वक डाले गए</string>
+    <string name="ifl_a11_44">%1$s सफलतापूर्वक डाले गए</string>
+    <string name="ifl_a0_01">बैकअप विकल्प</string>
+    <string name="ifl_a11_45">संस्करण</string>
+    <string name="ifl_a11_46">%1$s को %2$s ध्वज के साथ सफलतापूर्वक आयात किया गया</string>
+    <string name="ifl_a11_47">कृपया एक मान्य बैकअप फ़ाइल चुनें</string>
+    <string name="ifl_a11_48">पुराने बैकअप आयात करें (.json)</string>
+    <string name="ifl_a11_49">कृपया आवश्यक फ़ील्ड भरें।</string>
+    <string name="ifl_a11_50">कृपया मान्य संस्करण नाम दर्ज करें</string>
+    <string name="ifl_a11_51">बैकअप निर्यात करें</string>
+    <string name="ifl_a11_52">बैकअप नाम</string>
+    <string name="ifl_a11_53">"जैसे मामी का परफेक्ट बैकअप"</string>
+    <string name="ifl_a11_54">लेखक का नाम</string>
+    <string name="ifl_a11_55">जैसे अल्बर्ट आइंस्टीन</string>
+    <string name="ifl_a11_56">बैकअप संस्करण</string>
+    <string name="ifl_a11_57">जैसे 1.0, 1.0-हॉटफिक्स आदि।</string>
+    <string name="ifl_a11_58">चेंजलॉग</string>
+    <string name="ifl_a11_59">आप यहां बैकअप चेंजलॉग लिख सकते हैं</string>
+    <string name="ifl_a11_60">बैकअप अपडेट करें</string>
+    <string name="ifl_a11_61">पुराने JSON बैकअप आयात करें</string>
+    <string name="ifl_a11_62">बैकअप तुलना उपकरण</string>
+    <string name="ifl_a11_63">बैकअप फ़ाइल को सभी फ़्लैग्स के साथ पूरी तरह से आयात करने के लिए उपयोग किया जाता है</string>
+    <string name="ifl_a11_64">आपके द्वारा उपयोग की गई बैकअप फ़ाइल में फ़्लैग्स जोड़ता है जो चयनित बैकअप में नहीं हैं।</string>
+    <string name="ifl_a11_65">इस विकल्प के साथ आप पुराने .json प्रकार के बैकअप आयात कर सकते हैं</string>
+    <string name="ifl_a11_66">बैकअप 1 चुनें</string>
+    <string name="ifl_a11_67">बैकअप 2 चुनें</string>
+    <string name="ifl_a11_68">बैकअप चुनने के लिए दबाएँ</string>
+    <string name="ifl_a11_69">बैकअप की तुलना करें</string>
+    <string name="ifl_a11_70">संपीड़न प्रारंभ करते समय त्रुटि</string>
+    <string name="ifl_a11_71">चयनित</string>
+    <string name="ifl_a11_72">कृपया तुलना करने के लिए दो बैकअप फ़ाइलें चुनें</string>
+    <string name="ifl_a11_73">तुलना परिणाम</string>
+    <string name="ifl_a11_74">B1 से B2 तक के अंतर</string>
+    <string name="ifl_a11_75">B2 से B1 तक के अंतर</string>
+    <string name="ifl_a11_76">हटाए गए फ्लैग आईडी</string>
+    <string name="ifl_a11_77">बैकअप की तुलना करते समय त्रुटि</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">नया अपडेट</string>
+    <string name="ifl_d1_02">InstaFel को v%1$d (instagram v%2$s) में अपग्रेड किया जाएगा</string>
+    <string name="ifl_d1_03">रद्द करें</string>
+    <string name="ifl_d1_04">इंस्टॉल करें</string>
+    <string name="ifl_d1_05">छिपाएं </string>
+    <string name="ifl_d1_06">अपडेट सर्वर से कनेक्ट किया जा रहा है</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">InstaFel अपडेट किया गया है।</string>
+    <string name="ifl_d2_01">अपडेट किया गया है</string>
+    <string name="ifl_d2_03">ठीक है</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">apk-इंस्टॉलर खोलते समय एक समस्या हो रही है</string>
+    <string name="ifl_t1_03">InstaFel अपडेट विफल हुआ.</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">आपके डिवाइस पर वेब ब्राउज़र नहीं मिला</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">समय सेट करें</string>
+    <string name="ifl_d3_02">ठीक है</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">आपका स्वागत है</string>
+    <string name="ifl_d4_02">Instafel में आपका स्वागत है, इस मोड़ को इंस्टाग्राम अल्फा बिल्ड पर सभी को नवीनतम सुविधाएं प्रदान करने के लिए बनाया गया है। प्रोफ़ाइल टैब पर हैमबर्गर बटन को 2 सेकंड तक दबाकर InstaFel मेनू तक पहुंचा जा सकता है।</string>
+    <!-- CRASH TOAST -->
+</resources>

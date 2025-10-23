@@ -11,7 +11,6 @@
     <string name="ifl_a0_14">Enabled by default, cannot be changed.</string>
     <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Use Instafel Updater for automatic updates with Root and Shizuku</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_menu -->
     <string name="ifl_a0_02">Update Settings</string>
     <string name="ifl_a0_03">Language</string>
@@ -19,7 +18,6 @@
     <string name="ifl_a0_05">About</string>
     <string name="ifl_a0_06">This feature has not been added yet</string>
     <string name="ifl_a0_07">Crash Reports</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
     <string name="ifl_a1_01">About Instafel</string>
     <string name="ifl_a1_02">Instafel Version</string>
@@ -39,7 +37,6 @@
     <string name="ifl_a1_21">Contributors</string>
     <string name="ifl_a1_22">Information about applied patches</string>
     <string name="ifl_a1_23">Core Commit</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
     <string name="ifl_a2_01">About Instagram</string>
     <string name="ifl_a2_02">Version</string>
@@ -47,7 +44,6 @@
     <string name="ifl_a2_04">Channel</string>
     <string name="ifl_a2_05">Architecture</string>
     <string name="ifl_a3_01">About</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_devmode -->
     <string name="ifl_a4_01">Export</string>
     <string name="ifl_a4_02">Import</string>
@@ -91,7 +87,6 @@
     <string name="ifl_a4_40">%1$s flags successfully exported</string>
     <string name="ifl_a4_41">Error while writing content into backup file.</string>
     <string name="ifl_a4_42">Error while exporting backup file</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
     <string name="ifl_a5_01">Check for Updates</string>
     <string name="ifl_a5_02">Last check: %1$s</string>
@@ -101,30 +96,23 @@
     <string name="ifl_a5_07">Enable Update Settings</string>
     <string name="ifl_a5_08">Background Download</string>
     <string name="ifl_a5_09">A notification is sent after updates downloaded in the background</string>
-
     <string name="ifl_a5_sub_freq_00">Set to every opening.</string>
     <string name="ifl_a5_sub_freq_01">Set to never</string>
     <string name="ifl_a5_sub_freq_02">Set to every day</string>
     <string name="ifl_a5_sub_freq_03">Set to once in three days</string>
     <string name="ifl_a5_sub_freq_04">Set to once in five days</string>
     <string name="ifl_a5_sub_freq_05">Set to once a week</string>
-
     <string name="ifl_a5_dia_freq_00">Every Opening (default)</string>
     <string name="ifl_a5_dia_freq_01">Never</string>
     <string name="ifl_a5_dia_freq_02">Every day</string>
     <string name="ifl_a5_dia_freq_03">Once in three days</string>
     <string name="ifl_a5_dia_freq_04">Once in five days</string>
     <string name="ifl_a5_dia_freq_05">Once a week</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Use Device Language</string>
-    <string name="ifl_a6_02">Supported</string>
-    <string name="ifl_a6_03">Not Supported</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Reports</string>
     <string name="ifl_a7_02">Delete Reports</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
     <string name="ifl_a8_01">Details</string>
     <string name="ifl_a8_02">Copy Log</string>
@@ -136,12 +124,9 @@
     <string name="ifl_a8_08">Crash Info</string>
     <string name="ifl_a8_09">Reason</string>
     <string name="ifl_a8_10">Stack Trace</string>
-
     <string name="ifl_a9_01">Details</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
     <string name="ifl_a10_01">Contributors</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
     <string name="ifl_a11_01">Flag Library</string>
     <string name="ifl_a11_02">Backup Library</string>
@@ -221,12 +206,7 @@
     <string name="ifl_a11_75">Differences B2 to B1</string>
     <string name="ifl_a11_76">Removed Flag IDs</string>
     <string name="ifl_a11_77">Error while comparing backups</string>
-
     <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
-    <string name="ifl_a12_05" translatable="false">Username or password is cannot be empty</string>
-    <string name="ifl_a12_06" translatable="false">Please wait server response..</string>
-
-
     <!-- OTA FOUND DIALOG -->
     <string name="ifl_d1_01">New Update</string>
     <string name="ifl_d1_02">Instafel will be upgraded to version v%1$d (Instagram v%2$s)</string>
@@ -234,28 +214,20 @@
     <string name="ifl_d1_04">Install</string>
     <string name="ifl_d1_05">Hide</string>
     <string name="ifl_d1_06">Connecting to update server</string>
-
     <!-- OTA UP-TO-DATE DIALOG -->
-
     <string name="ifl_d2_02">Instafel is up-to-date.</string>
     <string name="ifl_d2_01">Up-to-date</string>
     <string name="ifl_d2_03">Okay</string>
-
     <!-- AUTOUPDATE TEXTS -->
     <string name="ifl_t1_01">An error occurred while opening the apk-installer.</string>
     <string name="ifl_t1_03">Instafel update failed.</string>
-
     <!-- GENERAL_FN CLASS -->
     <string name="ifl_c1_01">A web browser was not found on your device</string>
-
     <!--- DIALOG SET FREQ -->
     <string name="ifl_d3_01">Set Frequency</string>
     <string name="ifl_d3_02">Okay</string>
-
     <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Welcome</string>
     <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
-
     <!-- CRASH TOAST -->
-    <string name="ifl_crash_toast" translatable="false">Instafel crashed, visit Crash Reports for more details.</string>
 </resources>

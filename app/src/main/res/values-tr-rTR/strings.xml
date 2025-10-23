@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">İzin Reddedildi</string>
+    <string name="ifl_a5_11">"Instafel'in bildirim izni reddedildi. Eğer bu problem olmaya devam ederse uygulama ayarlarından bildirim izinlerini açmayı unutmayın."</string>
+    <string name="ifl_a0_08">Çeşitli Seçenekler</string>
+    <string name="ifl_a0_10">Instafel aktiviteleri, diyalogları ve diğer kısımları için amoled temayı açar</string>
+    <string name="ifl_a0_11">Reklamları Kaldır</string>
+    <string name="ifl_a0_12">Ana akışta, reelste ve diğer yerlerde gösterilen reklamları gizler</string>
+    <string name="ifl_a0_13">Değişikliklerin geçerli olması için uygulamayı yeniden başlatın.</string>
+    <string name="ifl_a0_14">Varsayılan olarak etkin, değiştirilemez.</string>
+    <string name="ifl_a0_15">Instafel Updater</string>
+    <string name="ifl_a0_16">Root / Shizuku ile otomatik güncellemeler için Instafel Updater\'ı kullanın.</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">Güncelleme Ayarları</string>
+    <string name="ifl_a0_03">Dil Ayarları</string>
+    <string name="ifl_a0_04">Kütüphane</string>
+    <string name="ifl_a0_05">Hakkında</string>
+    <string name="ifl_a0_06">Bu özellik daha eklenmedi</string>
+    <string name="ifl_a0_07">Çökme Günlükleri</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">Instafel Hakkında</string>
+    <string name="ifl_a1_02">Instafel Sürümü</string>
+    <string name="ifl_a1_03">Kurulum Türü</string>
+    <string name="ifl_a1_04">Proje Hakkında</string>
+    <string name="ifl_a1_07">Klon</string>
+    <string name="ifl_a1_08">Klon Olmayan</string>
+    <string name="ifl_a1_09">Oluşturulma Kimliği</string>
+    <string name="ifl_a1_10">Instagram Sürümü</string>
+    <string name="ifl_a1_12">Yapı Bilgisi</string>
+    <string name="ifl_a1_13">Yamalayıcı Sürümü</string>
+    <string name="ifl_a1_14">Uygulanan Yamalar</string>
+    <string name="ifl_a1_15">Bu yapı ile ilgili bilgiler</string>
+    <string name="ifl_a1_18">Geliştirici Hakkında</string>
+    <string name="ifl_a1_19">Web Sitesi</string>
+    <string name="ifl_a1_20">Topluluğa Katıl</string>
+    <string name="ifl_a1_21">Katkıda Bulunanlar</string>
+    <string name="ifl_a1_22">Uygulanan yamalar hakkında bilgi edin</string>
+    <string name="ifl_a1_23">Çekirdek Commit</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">Instagram Hakkında</string>
+    <string name="ifl_a2_02">Sürüm</string>
+    <string name="ifl_a2_03">Sürüm Kodu</string>
+    <string name="ifl_a2_04">Kanal</string>
+    <string name="ifl_a2_05">Mimari</string>
+    <string name="ifl_a3_01">Hakkında</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">Dışa Aktar</string>
+    <string name="ifl_a4_02">İçe Aktar</string>
+    <string name="ifl_a4_03">Geçersiz Kılmaları Sil</string>
+    <string name="ifl_a4_04">Lütfen geçerli bir kaydetme konumu seçin</string>
+    <string name="ifl_a4_05">Kurtarma dosyası başarıyla kaydedildi.</string>
+    <string name="ifl_a4_06">Overrides dosyası bulunamadı.</string>
+    <string name="ifl_a4_07">Dışa aktarılırken bir sorun ile karşılaşıldı.</string>
+    <string name="ifl_a4_08">Yedek Dosyasını Paylaş</string>
+    <string name="ifl_a4_09">Lütfen içe aktarmak için bir dosya seçin</string>
+    <string name="ifl_a4_10">Kurtarma dosyası başarıyla içe aktarıldı</string>
+    <string name="ifl_a4_11">Overrides dosyası bulunamadı</string>
+    <string name="ifl_a4_12">Kurtarma dosyası içe aktarılırken bir sorun oluştu.</string>
+    <string name="ifl_a4_13">Overrides dosyası başarıyla sililndi.</string>
+    <string name="ifl_a4_14">Overrides dosyası bulunamadı.</string>
+    <string name="ifl_a4_15">İçeri aktarılırken bir sorun ile karşılaşıldı</string>
+    <string name="ifl_a4_16">MobileConfig Editörü</string>
+    <string name="ifl_a4_17">Bayrak Analizcisi</string>
+    <string name="ifl_a4_18">Tamamen İçe Aktar</string>
+    <string name="ifl_a4_19">Sadece Seçilenleri İçe Aktar</string>
+    <string name="ifl_a4_20">Analiz Sonucu</string>
+    <string name="ifl_a4_21">Özel Eşleme Kullan</string>
+    <string name="ifl_a4_22">Instagram\'ın varsayılan mapping dosyası yerine custom bir mapping dosyası ile analiz yapmanıza olanak sağlar.</string>
+    <string name="ifl_a4_23">Eşleşen Bayraklar</string>
+    <string name="ifl_a4_24">Eşleşmeyen Bayraklar</string>
+    <string name="ifl_a4_25">Ara</string>
+    <string name="ifl_a4_26">Overrideleri Yedekten İçe Aktar</string>
+    <string name="ifl_a4_27">Dahili override dosyası yerine harici bir yedek dosyası kullanın</string>
+    <string name="ifl_a4_28">Analizi Başlat</string>
+    <string name="ifl_a4_29">Analizi Özel Yedekle Başlat</string>
+    <string name="ifl_a4_30">Analizi Özel Mappingle Başlat</string>
+    <string name="ifl_a4_31">Analizi Özel Mapping ve Yedekle Başlat</string>
+    <string name="ifl_a4_32">Ham Mappingi Kopyala</string>
+    <string name="ifl_a4_33">İşlenmiş Mappingi Kopyala</string>
+    <string name="ifl_a4_34">Overrided dosyası bozuk veya bulunamadı</string>
+    <string name="ifl_a4_35">Emin misin?</string>
+    <string name="ifl_a4_36">Silinen override dosyasını kurtarmanın bir yolu yok, silmek istediğine emin misin?</string>
+    <string name="ifl_a4_37">Tamam</string>
+    <string name="ifl_a4_38">İptal</string>
+    <string name="ifl_a4_39">Override dosyası okunurken hata oluştu</string>
+    <string name="ifl_a4_40">%1$s adet bayrak dışa aktarıldı</string>
+    <string name="ifl_a4_41">İçerikler yedek dosyasına yazılırken hata oluştu</string>
+    <string name="ifl_a4_42">Yedek dosyası dışa aktarılırken sorun oluştu</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">Güncellemeleri Kontrol Et</string>
+    <string name="ifl_a5_02">Son kontrol: %1$s</string>
+    <string name="ifl_a5_03">Kontrol Sıklığı</string>
+    <string name="ifl_a5_05">Kontrol Edilmedi</string>
+    <string name="ifl_a5_06">Güncelleştirmeleri Aç</string>
+    <string name="ifl_a5_07">Güncelleme Ayarlarını Etkinleştir</string>
+    <string name="ifl_a5_08">Arka Planda İndirme</string>
+    <string name="ifl_a5_09">Güncelleme arka planda tamamlandıktan sonra bir bildirim gönderilir</string>
+    <string name="ifl_a5_sub_freq_00">Her açılışta kontrole ayarlandı</string>
+    <string name="ifl_a5_sub_freq_01">Hiçbir zamana ayarlandı</string>
+    <string name="ifl_a5_sub_freq_02">Her güne ayarlandı</string>
+    <string name="ifl_a5_sub_freq_03">Üç günde bir kereye ayarlandı</string>
+    <string name="ifl_a5_sub_freq_04">Beş günde bir kereye ayarlandı</string>
+    <string name="ifl_a5_sub_freq_05">Haftada bir kereye ayarlandı</string>
+    <string name="ifl_a5_dia_freq_00">Her Açılışta (varsayılan)</string>
+    <string name="ifl_a5_dia_freq_01">Hiçbir zaman</string>
+    <string name="ifl_a5_dia_freq_02">Her gün</string>
+    <string name="ifl_a5_dia_freq_03">Üç günde bir</string>
+    <string name="ifl_a5_dia_freq_04">Beş günde bir</string>
+    <string name="ifl_a5_dia_freq_05">Haftada bir kere</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">Cihaz Dilini Kullan</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">Günlükler</string>
+    <string name="ifl_a7_02">Günlükleri Sİl</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">Günlük Detayı</string>
+    <string name="ifl_a8_02">Günlüğü Kopyala</string>
+    <string name="ifl_a8_03">Günlüğü Paylaş</string>
+    <string name="ifl_a8_04">Cihaz Bilgisi</string>
+    <string name="ifl_a8_05">Android Sürümü</string>
+    <string name="ifl_a8_06">IG ve IFL Sürümü</string>
+    <string name="ifl_a8_07">Çökme Tarihi</string>
+    <string name="ifl_a8_08">Çökme Raporu</string>
+    <string name="ifl_a8_09">Sebep</string>
+    <string name="ifl_a8_10">Yığın Bilgisi</string>
+    <string name="ifl_a9_01">Detaylar</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">Katkı Sağlayanlar</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">Bayrak Kütüphanesi</string>
+    <string name="ifl_a11_02">Yedek Kütüphanesi</string>
+    <string name="ifl_a11_03">Yedek dosyaları sunucudan alınırken hata oluştu</string>
+    <string name="ifl_a11_04">%1$s tarafından oluşturuldu</string>
+    <string name="ifl_a11_05">Yedek Bilgisi</string>
+    <string name="ifl_a11_06">Ad</string>
+    <string name="ifl_a11_07">Açıklama</string>
+    <string name="ifl_a11_08">Son Güncellenme Tarihi</string>
+    <string name="ifl_a11_09">Değişiklik Günlüğü</string>
+    <string name="ifl_a11_10">Yedeği Kur</string>
+    <string name="ifl_a11_11">Daha Fazla</string>
+    <string name="ifl_a11_12">Otomatik Güncellemeyi Aç</string>
+    <string name="ifl_a11_13">Eğer yedek dosyanız için yeni bir güncelle yayınlanırsa, otomatik güncellenir.</string>
+    <string name="ifl_a11_14">Bu yedek dosyası kurulacak ve otomatik güncelleme açıksa gelecekte güncellenecek</string>
+    <string name="ifl_a11_15">Yedekler</string>
+    <string name="ifl_a11_16">Yapımcı Hakkında</string>
+    <string name="ifl_a11_17">Yedek bilgisi alınırken sorun oluştu</string>
+    <string name="ifl_a11_18">v%1$s sürümüne %2$s tarihinde güncellendi</string>
+    <string name="ifl_a11_19">Yapımcı Hakkında</string>
+    <string name="ifl_a11_20">Yapımcı Adı</string>
+    <string name="ifl_a11_21">Sahip bilgisi sunucudan alınırken bir sorun oluştu</string>
+    <string name="ifl_a11_22">Yedek dosyası indirilirken bir sorun oluştu</string>
+    <string name="ifl_a11_23">Bu ayarı açmak için en az bir yedek dosyası kurmalısınız</string>
+    <string name="ifl_a11_24">%1$s yedeği artık otomatik olarak güncellencek</string>
+    <string name="ifl_a11_25">Otomatik güncelleme kapatıldı</string>
+    <string name="ifl_a11_26">Yedek güncellenirken bir hata oluştu</string>
+    <string name="ifl_a11_27">Yedek Güncellendi</string>
+    <string name="ifl_a11_28">Şimdi Başlat</string>
+    <string name="ifl_a11_29">Sonra Başlat</string>
+    <string name="ifl_a11_30">Yedek dosyası ayrıştırılırken hata oluştu</string>
+    <string name="ifl_a11_31">Mapping dosyası ayrıştırılırken hata oluştu</string>
+    <string name="ifl_a11_32">Instagram\'ın mapping dosyası okunurken hata oluştu</string>
+    <string name="ifl_a11_33">Override dosyası okunurken hata oluştu</string>
+    <string name="ifl_a11_34">Mapping dosyası bulunamadı</string>
+    <string name="ifl_a11_35">Yedek dosyası eşleştirilirken hata oluştu</string>
+    <string name="ifl_a11_36">Bayrak içerikleri kopyalanırken hata oluştu</string>
+    <string name="ifl_a11_37">Analiz başlatılırken hata oluştu</string>
+    <string name="ifl_a11_38">Lütfen bir dosya seçin</string>
+    <string name="ifl_a11_39">Yedek dosyası okunurken hata oluştu</string>
+    <string name="ifl_a11_40">Mapping dosyası okunurken hata oluştu</string>
+    <string name="ifl_a11_41">%1$s bayrak yedek dosyasından içe aktarıldı</string>
+    <string name="ifl_a11_42">Yedek dosyasından bayraklar içe aktarılırken sorun oluştu</string>
+    <string name="ifl_a11_43">%1$s bayrak başarıyla içe aktarıldı</string>
+    <string name="ifl_a11_44">%1$s içe aktarıldı</string>
+    <string name="ifl_a0_01">Yedekleme Seçenekleri</string>
+    <string name="ifl_a11_45">Versiyon</string>
+    <string name="ifl_a11_46">%1$s başarıyla %2$s bayrağı ile içe aktarıldı</string>
+    <string name="ifl_a11_47">Lütfen geçerli bir yedek dosyası seçin</string>
+    <string name="ifl_a11_48">Eski Yedekleri İçe Aktar (.json)</string>
+    <string name="ifl_a11_49">Lütfen gerekli alanları doldurun.</string>
+    <string name="ifl_a11_50">Lütfen geçerli bir versiyon adı girin</string>
+    <string name="ifl_a11_51">Yedeği Dışa Aktar</string>
+    <string name="ifl_a11_52">Yedek Adı</string>
+    <string name="ifl_a11_53">"Mami'nin Mükemmel Yedeği Gibi"</string>
+    <string name="ifl_a11_54">Yapımcı Adı</string>
+    <string name="ifl_a11_55">Albert Einstein Gibi</string>
+    <string name="ifl_a11_56">Yedek Versiyonu</string>
+    <string name="ifl_a11_57">1.0, 1.0-hotfix vb. Gibi</string>
+    <string name="ifl_a11_58">Değişiklik Günlüğü</string>
+    <string name="ifl_a11_59">Yedeğin değişiklik günlüğünü buraya yazabilirsiniz</string>
+    <string name="ifl_a11_60">Yedeği Dışarı Aktar</string>
+    <string name="ifl_a11_61">Eski JSON Yedeklerini İçe Aktar</string>
+    <string name="ifl_a11_62">Yedek Karşılaştırıcı</string>
+    <string name="ifl_a11_63">Bir yedekleme dosyasını tüm bayraklarla birlikte tamamen içe aktarmak için kullanılır</string>
+    <string name="ifl_a11_64">Seçtiğiniz yedekte olmayan bayrakları kullandığınız yedekleme dosyasına ekler.</string>
+    <string name="ifl_a11_65">Bu seçenekle eski .json türü yedekleri içe aktarabilirsiniz</string>
+    <string name="ifl_a11_66">Yedek 1\'i Seç</string>
+    <string name="ifl_a11_67">Yedek 2\'yi Seç</string>
+    <string name="ifl_a11_68">Yedek seçmek için basın</string>
+    <string name="ifl_a11_69">Yedekleri Karşılaştır</string>
+    <string name="ifl_a11_70">Sıkıştırma başlatılırken hata oluştu</string>
+    <string name="ifl_a11_71">Seçildi</string>
+    <string name="ifl_a11_72">Lütfen karşılaştırmak için iki yedekleme dosyası seçin</string>
+    <string name="ifl_a11_73">Karşılaştırma Sonucu</string>
+    <string name="ifl_a11_74">B1\'den B2\'ye Farklar</string>
+    <string name="ifl_a11_75">B2\'den B1\'e Farklar</string>
+    <string name="ifl_a11_76">Kaldırılan Bayrak Kimlikleri</string>
+    <string name="ifl_a11_77">Yedekleri karşılaştırırken hata oluştu</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">Yeni Güncelleme</string>
+    <string name="ifl_d1_02">Instafel v%1$d sürümüne güncellecek (Instagram v%2$s)</string>
+    <string name="ifl_d1_03">İptal</string>
+    <string name="ifl_d1_04">Güncelle</string>
+    <string name="ifl_d1_05">Gizle</string>
+    <string name="ifl_d1_06">Güncelleme sunucusuna bağlanılıyor</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">Instafel güncel.</string>
+    <string name="ifl_d2_01">Güncel</string>
+    <string name="ifl_d2_03">Tamam</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">Kurucuyu açarken bir sorun ile karşılaşıldı.</string>
+    <string name="ifl_t1_03">Instafel güncellemesi başarısız oldu</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">Bu bağlantıyı açmak için bir internet tarayıcısı bulunamadı</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">Sıklığı Ayarla</string>
+    <string name="ifl_d3_02">Tamam</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">Merhaba</string>
+    <string name="ifl_d4_02">Instafel\'e hoşgeldin. Bu mod herkese Instagram Alpha yeniliklerini sunmak için geliştirilmiştir.\\n\\nMenüye profil sekmesindeki hamburger düğmesine basılı tutarak ulaşabilirsin.</string>
+    <!-- CRASH TOAST -->
+</resources>

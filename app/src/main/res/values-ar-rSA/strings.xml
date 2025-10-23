@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">تم رفض الإذن</string>
+    <string name="ifl_a5_11">"تم رفض إذن الإشعارات لتطبيق {Instafel}. إذا استمرت المشكلة، لا تنسَ تفعيل الإشعارات من إعدادات التطبيق."</string>
+    <string name="ifl_a0_08">أخرى</string>
+    <string name="ifl_a0_10">فعّل المظهر AMOLED في {Instafel} لكل الأنشطة، وباقي أجزاء التطبيق.</string>
+    <string name="ifl_a0_11">إزالة الإعلانات</string>
+    <string name="ifl_a0_12">تفعيل إزالة الإعلانات في الخلاصة، وبقية أجزاء التطبيق.</string>
+    <string name="ifl_a0_13">أعد تشغيل التطبيق لتطبيق التغييرات.</string>
+    <string name="ifl_a0_14">مفعل افتراضيًا، ولا يمكن تغييره.</string>
+    <string name="ifl_a0_15">تحديث {Instafel}</string>
+    <string name="ifl_a0_16">استخدم محدث {Instafel} للتحديثات التلقائية مع صلاحيات روت و {Shizuku}</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">تحديث الإعدادات</string>
+    <string name="ifl_a0_03">اللغة</string>
+    <string name="ifl_a0_04">المكتبة</string>
+    <string name="ifl_a0_05">عن</string>
+    <string name="ifl_a0_06">لم تتم إضافة هذه الخاصية بعد</string>
+    <string name="ifl_a0_07"></string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">عن {Instafel}</string>
+    <string name="ifl_a1_02">إصدار {Instafel}</string>
+    <string name="ifl_a1_03">نوع التثبيت</string>
+    <string name="ifl_a1_04">المشروع</string>
+    <string name="ifl_a1_07">استنساخ التطبيق</string>
+    <string name="ifl_a1_08">إلغاء الاستنساخ</string>
+    <string name="ifl_a1_09">رمز النسخة</string>
+    <string name="ifl_a1_10">نسخة Instagram</string>
+    <string name="ifl_a1_12">معلومات الإصدار</string>
+    <string name="ifl_a1_13">إصدار المصلح</string>
+    <string name="ifl_a1_14">التعديلات المطبقة</string>
+    <string name="ifl_a1_15">اطّلع على تفاصيل النسخة</string>
+    <string name="ifl_a1_18">عن المطوّر</string>
+    <string name="ifl_a1_19">الموقع الإلكتروني</string>
+    <string name="ifl_a1_20">انضم لمجتمعنا</string>
+    <string name="ifl_a1_21">المساهمون</string>
+    <string name="ifl_a1_22">معلومات عن التصحيحات المطبقة</string>
+    <string name="ifl_a1_23">التزام أساسي</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">عن Instagram</string>
+    <string name="ifl_a2_02">الإصدار</string>
+    <string name="ifl_a2_03">رمز الإصدار</string>
+    <string name="ifl_a2_04">القناة</string>
+    <string name="ifl_a2_05">معمارية</string>
+    <string name="ifl_a3_01">عن</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">تصدير</string>
+    <string name="ifl_a4_02">استيراد</string>
+    <string name="ifl_a4_03">حذف مِلَفّ التعديلات</string>
+    <string name="ifl_a4_04">يرجى اختيار مسار المِلَفّ للحفظ.</string>
+    <string name="ifl_a4_05">تم حفظ النسخة الاحتياطية بنجاح.</string>
+    <string name="ifl_a4_06">مِلَفّ التعديلات غير موجود.</string>
+    <string name="ifl_a4_07">حدث خطأ في حفظ مِلَفّ النسخ الاحتياطي.</string>
+    <string name="ifl_a4_08">مشاركة النسخة الاحتياطية</string>
+    <string name="ifl_a4_09">يرجى اختيار مِلَفّ للاستيراد.</string>
+    <string name="ifl_a4_10">تم استيراد النسخة الاحتياطية بنجاح.</string>
+    <string name="ifl_a4_11">مِلَفّ التعديلات غير موجود.</string>
+    <string name="ifl_a4_12">فشل استيراد مِلَفّ النسخ الاحتياطي.</string>
+    <string name="ifl_a4_13">تم حذف مِلَفّ التعديلات بنجاح.</string>
+    <string name="ifl_a4_14">مِلَفّ التعديلات غير موجود.</string>
+    <string name="ifl_a4_15">فشل استيراد مِلَفّ النسخ الاحتياطي.</string>
+    <string name="ifl_a4_16">محرر تكوينات الهاتف</string>
+    <string name="ifl_a4_17">مُحلّل العلامات</string>
+    <string name="ifl_a4_18">استيراد كامل</string>
+    <string name="ifl_a4_19">استيراد مع الدمج</string>
+    <string name="ifl_a4_20">تحليل البيانات</string>
+    <string name="ifl_a4_21">استخدم مِلَفّ التعيين المخصص</string>
+    <string name="ifl_a4_22">يتيح لك التحليل باستخدام مِلَفّ التعيين المخصص بدلًا من مِلَفّ التعيين الافتراضي Instagram</string>
+    <string name="ifl_a4_23">العلامات المطابقة</string>
+    <string name="ifl_a4_24">العلامات غير المطابقة</string>
+    <string name="ifl_a4_25">البحث</string>
+    <string name="ifl_a4_26">استيراد التعديلات من النسخة الاحتياطية</string>
+    <string name="ifl_a4_27">استخدام النسخة الاحتياطية بدلاً من تحليل مِلَفّ التجاوزات الحالي</string>
+    <string name="ifl_a4_28">بَدْء التحليل</string>
+    <string name="ifl_a4_29">التحليل باستخدام النسخة الاحتياطية المخصصة</string>
+    <string name="ifl_a4_30">التحليل باستخدام مِلَفّ التعيين المخصص</string>
+    <string name="ifl_a4_31">التحليل باستخدام النسخة الاحتياطية وملف التعيين المخصص</string>
+    <string name="ifl_a4_32">نسخ مِلَفّ التعيين الأصلي</string>
+    <string name="ifl_a4_33">نسخ مِلَفّ التعيين المحلل</string>
+    <string name="ifl_a4_34">مِلَفّ التعديلات غير موجود أو تآلف</string>
+    <string name="ifl_a4_35">هل تريد المتابعة؟</string>
+    <string name="ifl_a4_36">مِلَفّ التعديلات المحذوف لا يمكن استرجاعه</string>
+    <string name="ifl_a4_37">حسناً</string>
+    <string name="ifl_a4_38">إلغاء الأمر</string>
+    <string name="ifl_a4_39">حدث خطأ في أثناء قراءة مِلَفّ التعديلات.</string>
+    <string name="ifl_a4_40">%1$s تم تصدير العلامات بنجاح</string>
+    <string name="ifl_a4_41">خطأ عند محاولة حفظ المحتوى في النسخة الاحتياطية.</string>
+    <string name="ifl_a4_42">حدث خطأ في تصدير مِلَفّ النسخ الاحتياطي</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">التحقق من وجود تحديثات</string>
+    <string name="ifl_a5_02">الفحص الأخير %1$s</string>
+    <string name="ifl_a5_03">تكرار الفحص</string>
+    <string name="ifl_a5_05">أبدًا</string>
+    <string name="ifl_a5_06">تمكين التحديات</string>
+    <string name="ifl_a5_07">تمكين إعدادات تحديث</string>
+    <string name="ifl_a5_08">التنزيل في الخلفية</string>
+    <string name="ifl_a5_09">سيتم إشعارك بعد تنزيل التحديثات في الخلفية</string>
+    <string name="ifl_a5_sub_freq_00">تم ضبطه على كل افتتاح.</string>
+    <string name="ifl_a5_sub_freq_01">عدم تعيين مطلقا</string>
+    <string name="ifl_a5_sub_freq_02">يتم تحديده ليحدث يوميًا</string>
+    <string name="ifl_a5_sub_freq_03">يُضبط ليكون مرة كل ثلاثة أيام</string>
+    <string name="ifl_a5_sub_freq_04">يُضبط ليكون مرة كل خمسة أيام</string>
+    <string name="ifl_a5_sub_freq_05">اضبطه ليعمل مرة في الأسبوع</string>
+    <string name="ifl_a5_dia_freq_00">عند كل فتح (الإعداد الافتراضي)</string>
+    <string name="ifl_a5_dia_freq_01">أبدا</string>
+    <string name="ifl_a5_dia_freq_02">كل يوم</string>
+    <string name="ifl_a5_dia_freq_03">مرة واحدة كل ثلاثة أيام</string>
+    <string name="ifl_a5_dia_freq_04">مرة كل خمسة أيام</string>
+    <string name="ifl_a5_dia_freq_05">مرة واحدة في الأسبوع</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">استخدام لغة الجهاز</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">التقارير</string>
+    <string name="ifl_a7_02">حذف التقارير</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">التفاصيل</string>
+    <string name="ifl_a8_02">سجل النسخ</string>
+    <string name="ifl_a8_03">سجل المشاركة</string>
+    <string name="ifl_a8_04">معلومات الجهاز</string>
+    <string name="ifl_a8_05">إصدار الاندرويد</string>
+    <string name="ifl_a8_06">إصدار IG و IFL</string>
+    <string name="ifl_a8_07">تاريخ تعطل النظام</string>
+    <string name="ifl_a8_08">معلومات الأعطال</string>
+    <string name="ifl_a8_09">السبب</string>
+    <string name="ifl_a8_10">أثر التتبع</string>
+    <string name="ifl_a9_01">التفاصيل</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">المساهمون</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">مكتبة</string>
+    <string name="ifl_a11_02">مكتبة النسخ الاحتياطي</string>
+    <string name="ifl_a11_03">خطأ أثناء الحصول على نسخ احتياطية من واجهة برمجة التطبيقات</string>
+    <string name="ifl_a11_04">تم الإنشاء بواسطة %1$s</string>
+    <string name="ifl_a11_05">معلومات النسخ الاحتياطي</string>
+    <string name="ifl_a11_06">الاسم</string>
+    <string name="ifl_a11_07">الوصف</string>
+    <string name="ifl_a11_08">آخر تحديث</string>
+    <string name="ifl_a11_09">سجل التغيير</string>
+    <string name="ifl_a11_10">تطبيق النسخة الاحتياطية</string>
+    <string name="ifl_a11_11">أكثر</string>
+    <string name="ifl_a11_12">تمكين التحديث التلقائي</string>
+    <string name="ifl_a11_13">إذا تم إصدار تحديث جديد لنسختك الاحتياطية، سيتم تحديث النسخة الاحتياطية تلقائيًا</string>
+    <string name="ifl_a11_14">سيتم تطبيق هذه النسخة الاحتياطية في الوقت الحالي وسيتم تحديثها إذا تم تمكين التحديث التلقائي</string>
+    <string name="ifl_a11_15">النسخ الاحتياطي</string>
+    <string name="ifl_a11_16">عن المؤلف</string>
+    <string name="ifl_a11_17">خطأ أثناء جلب معلومات النسخ الاحتياطي</string>
+    <string name="ifl_a11_18">تم التحديث إلى الإصدار %1$s في %2$s</string>
+    <string name="ifl_a11_19">عن المؤلف</string>
+    <string name="ifl_a11_20">اسم المؤلف</string>
+    <string name="ifl_a11_21">حدث خطأ أثناء جلب معلومات عن المؤلف</string>
+    <string name="ifl_a11_22">خطأ أثناء تنزيل ملف النسخ الاحتياطي</string>
+    <string name="ifl_a11_23">لتمكين هذا الإعداد، تحتاج إلى تطبيق نسخة احتياطية واحدة على الأقل من المكتبة</string>
+    <string name="ifl_a11_24">%1$s سيتم الآن تحديث النسخ الاحتياطي تلقائيا</string>
+    <string name="ifl_a11_25">تم تعطيل التحديث التلقائي</string>
+    <string name="ifl_a11_26">خطأ أثناء تحديث النسخة الاحتياطية</string>
+    <string name="ifl_a11_27">سجل تغيير النسخة الاحتياطية</string>
+    <string name="ifl_a11_28">إعادة تشغيل التطبيق</string>
+    <string name="ifl_a11_29">إعادة التشغيل لاحقا</string>
+    <string name="ifl_a11_30">حدث خطأ أثناء تحليل ملف النسخة الاحتياطية</string>
+    <string name="ifl_a11_31">خطأ أثناء تحليل ملف التعيين</string>
+    <string name="ifl_a11_32">حدث خطأ أثناء قراءة ملف التعيين الخاص بإنستغرام</string>
+    <string name="ifl_a11_33">خطأ أثناء تحليل ملف تجاوز الملف</string>
+    <string name="ifl_a11_34">تعذّر العثور على ملف التعيين</string>
+    <string name="ifl_a11_35">حدث خطأ أثناء مقارنة النسخة الاحتياطية بملف التعيين</string>
+    <string name="ifl_a11_36">حدث خطأ أثناء نسخ الإعداد</string>
+    <string name="ifl_a11_37">خطأ أثناء بدء التحليل</string>
+    <string name="ifl_a11_38">الرجاء تحديد ملف</string>
+    <string name="ifl_a11_39">خطأ أثناء قراءة ملف النسخ الاحتياطي</string>
+    <string name="ifl_a11_40">خطأ أثناء قراءة ملف التعيين</string>
+    <string name="ifl_a11_41">%1$s وضع علامة على الاستيراد من ملف النسخ الاحتياطي</string>
+    <string name="ifl_a11_42">حدث خطأ أثناء استيراد التعديلات من ملف النسخة الاحتياطية</string>
+    <string name="ifl_a11_43">%1$s تم الاسترداد بنجاح</string>
+    <string name="ifl_a11_44">%1$s تم الاسترداد بنجاح</string>
+    <string name="ifl_a0_01">خيارات النسخة الاحتياطية</string>
+    <string name="ifl_a11_45">الإصدار</string>
+    <string name="ifl_a11_46">%1$s تم الاسترداد بنجاح %2$s مع العلم</string>
+    <string name="ifl_a11_47">الرجاء تحديد ملف نسخ احتياطي صالح</string>
+    <string name="ifl_a11_48">استيراد النسخ الاحتياطية القديمة</string>
+    <string name="ifl_a11_49">يرجى ملء الحقول المطلوبة.</string>
+    <string name="ifl_a11_50">الرجاء إدخال اسم الإصدار الصحيح</string>
+    <string name="ifl_a11_51">تصدير النسخة الاحتياطية</string>
+    <string name="ifl_a11_52">اسم النسخة</string>
+    <string name="ifl_a11_53">"تمامًا كالنسخة الاحتياطية المثالية Mami's"</string>
+    <string name="ifl_a11_54">اسم المؤلف</string>
+    <string name="ifl_a11_55">مثل Albert Einstein</string>
+    <string name="ifl_a11_56">إصدار نسخة احتياطية</string>
+    <string name="ifl_a11_57">مثل 1.0، 1.0-تصحيح، وهكذا.</string>
+    <string name="ifl_a11_58">سجل التغيير</string>
+    <string name="ifl_a11_59">يمكنك كتابة سجل التغيير الاحتياطي هنا</string>
+    <string name="ifl_a11_60">تصدير النسخة الاحتياطية</string>
+    <string name="ifl_a11_61">استيراد نسخ احتياطية قديمة بصيغة JSON</string>
+    <string name="ifl_a11_62">مقارنة النسخ الاحتياطي</string>
+    <string name="ifl_a11_63">تُستخدم لاستيراد ملف النسخة الاحتياطية بالكامل مع جميع الأعلام الموجودة في الملف</string>
+    <string name="ifl_a11_64">يضيف الأعلام من ملف النسخة الاحتياطية الحالي التي لا توجد في النسخة الاحتياطية المحددة.</string>
+    <string name="ifl_a11_65">هذا الخيار يسمح لك باستيراد نسخ احتياطية قديمة بصيغة json</string>
+    <string name="ifl_a11_66">تحديد النسخة 1</string>
+    <string name="ifl_a11_67">تحديد النسخة 2</string>
+    <string name="ifl_a11_68">اضغط لتحديد النسخة الاحتياطية</string>
+    <string name="ifl_a11_69">مقارنة النسخ الاحتياطية</string>
+    <string name="ifl_a11_70">فشل في بدء ضغط البيانات</string>
+    <string name="ifl_a11_71">تم التحديد</string>
+    <string name="ifl_a11_72">الرجاء تحديد ملفي نسخ احتياطية للمقارنة بينهما</string>
+    <string name="ifl_a11_73">نتيجة المقارنة</string>
+    <string name="ifl_a11_74">الاختلافات من B1 إلى B2</string>
+    <string name="ifl_a11_75">\"الاختلافات من B2 إلى B1</string>
+    <string name="ifl_a11_76">معرّفات الأعلام التي تمّت إزالته</string>
+    <string name="ifl_a11_77">خطأ أثناء مقارنة النسخ الاحتياطية</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">تحديث جديد</string>
+    <string name="ifl_d1_02">سيتم تحديث إنستافل إلى الإصدار %1$d (Instagram v%2$s)</string>
+    <string name="ifl_d1_03">إلغاء الأمر</string>
+    <string name="ifl_d1_04">تثبيت</string>
+    <string name="ifl_d1_05">إخفاء</string>
+    <string name="ifl_d1_06">الاتصال بخادم التحديث</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">إنستافل محدث.</string>
+    <string name="ifl_d2_01">محدث</string>
+    <string name="ifl_d2_03">حسنًا</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">حدث خطأ أثناء فتح برنامج تثبيت Apk.</string>
+    <string name="ifl_t1_03">فشل تحديث إنستافل.</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">لم يتم العثور على متصفح ويب على جهازك</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">تعيين التكرار</string>
+    <string name="ifl_d3_02">حسنًا</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">أهلًا وسهلًا</string>
+    <string name="ifl_d4_02">مرحبًا بك في إنستافل، تم تطوير هذا التعديل ليقدم للجميع أحدث الميزات في نسخ انستغرام ألفا
+
+يمكنك الوصول إلى القائمة بالضغط المستمر على زر القائمة في تبويب الملف الشخصي.</string>
+    <!-- CRASH TOAST -->
+</resources>

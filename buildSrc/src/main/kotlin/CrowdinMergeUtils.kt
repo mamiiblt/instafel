@@ -188,7 +188,7 @@ class CrowdinMergeUtils(
         println("All localization sources (${languages.size} file) copied into res/values-... folders")
 
         val content = mainStringFile.readText()
-        val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>$it</item>" }
+        val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>${it.replace("-r", "-")}</item>" }
         val regex = Regex("""<string-array\s+name="supported_languages".*?>.*?</string-array>""", RegexOption.DOT_MATCHES_ALL)
         val newContent = content.replace(regex) { "<string-array name=\"supported_languages\">\n$items\n    </string-array>" }
         mainStringFile.writeText(newContent)

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">Permission Refusée</string>
+    <string name="ifl_a5_11">"La permission de notification d'Instafel a été refusée. Si ce problème persiste, n'oubliez pas d'activer les notifications depuis les paramètres de l'application."</string>
+    <string name="ifl_a0_08">Divers</string>
+    <string name="ifl_a0_10">Activez le thème Amoled pour les activités, les dialogues et d\'autres parties d\'Instafel.</string>
+    <string name="ifl_a0_11">Supprimer les publicités</string>
+    <string name="ifl_a0_12">Supprime les publicités affichées dans le fil d\'actualité, les reels ou d\'autres endroits.</string>
+    <string name="ifl_a0_13">Redémarrez l\'application pour appliquer les changements.</string>
+    <string name="ifl_a0_14">Activé par défaut, ne peut pas être modifié.</string>
+    <string name="ifl_a0_15">Instafel Updater</string>
+    <string name="ifl_a0_16">Utilisez Instafel Updater pour les mises à jour automatiques avec Root / Shizuku</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">Mettre à jour les paramètres</string>
+    <string name="ifl_a0_03">Langue</string>
+    <string name="ifl_a0_04">Bibliothèque</string>
+    <string name="ifl_a0_05">À propos</string>
+    <string name="ifl_a0_06">Cette fonctionnalité n\'a pas encore été ajoutée</string>
+    <string name="ifl_a0_07">Rapports d\'incidents</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">À propos de Instafel</string>
+    <string name="ifl_a1_02">Version Instagram</string>
+    <string name="ifl_a1_03">Type d\'installation</string>
+    <string name="ifl_a1_04">Projet</string>
+    <string name="ifl_a1_07">Cloner</string>
+    <string name="ifl_a1_08">Décloner</string>
+    <string name="ifl_a1_09">ID de génération</string>
+    <string name="ifl_a1_10">Version Instagram</string>
+    <string name="ifl_a1_12">Informations de compilation</string>
+    <string name="ifl_a1_13">Version du correctif</string>
+    <string name="ifl_a1_14">Correctifs appliqués</string>
+    <string name="ifl_a1_15">Voir les détails de la compilation</string>
+    <string name="ifl_a1_18">À propos du développeur</string>
+    <string name="ifl_a1_19">Site web</string>
+    <string name="ifl_a1_20">Rejoindre la communauté</string>
+    <string name="ifl_a1_21">Contributeurs</string>
+    <string name="ifl_a1_22">Voir les informations sur les correctifs appliqués</string>
+    <string name="ifl_a1_23">Commit principal</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">À propos d\'Instagram</string>
+    <string name="ifl_a2_02">Version</string>
+    <string name="ifl_a2_03">Code de version</string>
+    <string name="ifl_a2_04">Canal</string>
+    <string name="ifl_a2_05">Architecture</string>
+    <string name="ifl_a3_01">À propos</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">Exporter</string>
+    <string name="ifl_a4_02">Importer</string>
+    <string name="ifl_a4_03">Supprimer le fichier de remplacements locaux</string>
+    <string name="ifl_a4_04">Veuillez choisir un chemin de fichier pour enregistrer.</string>
+    <string name="ifl_a4_05">Fichier de sauvegarde enregistré avec succès.</string>
+    <string name="ifl_a4_06">Fichier de remplacement introuvable.</string>
+    <string name="ifl_a4_07">Une erreur s\'est produite lors de l\'enregistrement du fichier de sauvegarde.</string>
+    <string name="ifl_a4_08">Partager le fichier de sauvegarde</string>
+    <string name="ifl_a4_09">Veuillez sélectionner un fichier à importer.</string>
+    <string name="ifl_a4_10">Fichier de sauvegarde importé avec succès.</string>
+    <string name="ifl_a4_11">Fichier de remplacement introuvable.</string>
+    <string name="ifl_a4_12">Une erreur s\'est produite lors de l\'importation du fichier de sauvegarde.</string>
+    <string name="ifl_a4_13">Remplace le fichier supprimé avec succès.</string>
+    <string name="ifl_a4_14">Fichier de remplacement introuvable.</string>
+    <string name="ifl_a4_15">Une erreur s\'est produite lors de l\'importation du fichier de sauvegarde.</string>
+    <string name="ifl_a4_16">Éditeur de configuration mobile</string>
+    <string name="ifl_a4_17">Analyseur de drapeaux</string>
+    <string name="ifl_a4_18">Importation complète</string>
+    <string name="ifl_a4_19">Importer avec fusion</string>
+    <string name="ifl_a4_20">Analyser le résultat</string>
+    <string name="ifl_a4_21">Utiliser un fichier de mappage personnalisé</string>
+    <string name="ifl_a4_22">Vous permet d\'analyser avec un fichier de cartographie personnalisé au lieu du fichier de cartographie par défaut d\'Instagram</string>
+    <string name="ifl_a4_23">Drapeaux assortis</string>
+    <string name="ifl_a4_24">Drapeaux incompatibles</string>
+    <string name="ifl_a4_25">Recherche</string>
+    <string name="ifl_a4_26">Importer les remplacements à partir de la sauvegarde</string>
+    <string name="ifl_a4_27">Utilisez un fichier de sauvegarde au lieu d\'analyser le fichier de remplacement existant</string>
+    <string name="ifl_a4_28">Démarrer l\'analyse</string>
+    <string name="ifl_a4_29">Démarrer l\'analyse avec une sauvegarde personnalisée</string>
+    <string name="ifl_a4_30">Démarrer l\'analyse avec un mappage personnalisé</string>
+    <string name="ifl_a4_31">Démarrez l\'analyse avec une sauvegarde et un mappage personnalisés</string>
+    <string name="ifl_a4_32">Copier le mappage brut</string>
+    <string name="ifl_a4_33">Copier le mappage analysé</string>
+    <string name="ifl_a4_34">Remplacer le fichier manquant ou corrompu</string>
+    <string name="ifl_a4_35">Es-tu sûr?</string>
+    <string name="ifl_a4_36">Il n\'y a aucun moyen de récupérer le fichier de remplacement supprimé</string>
+    <string name="ifl_a4_37">D\'accord</string>
+    <string name="ifl_a4_38">Annuler</string>
+    <string name="ifl_a4_39">Erreur lors de la lecture du fichier de remplacement.</string>
+    <string name="ifl_a4_40">%1$s Indicateurs</string>
+    <string name="ifl_a4_41">Erreur lors de l\'écriture du contenu dans le fichier de sauvegarde.</string>
+    <string name="ifl_a4_42">Erreur lors de l\'exportation du fichier de sauvegarde</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">Vérifier les mises à jour</string>
+    <string name="ifl_a5_02">Dernière vérification : %1$s</string>
+    <string name="ifl_a5_03">Vérifier la fréquence</string>
+    <string name="ifl_a5_05">Jamais</string>
+    <string name="ifl_a5_06">Activer les mises à jour</string>
+    <string name="ifl_a5_07">Activer les paramètres de mise à jour</string>
+    <string name="ifl_a5_08">Téléchargement en arrière-plan</string>
+    <string name="ifl_a5_09">Une notification est envoyée après le téléchargement des mises à jour en arrière-plan</string>
+    <string name="ifl_a5_sub_freq_00">Réglé à chaque ouverture.</string>
+    <string name="ifl_a5_sub_freq_01">Réglé sur jamais</string>
+    <string name="ifl_a5_sub_freq_02">Réglé sur tous les jours</string>
+    <string name="ifl_a5_sub_freq_03">Réglé sur une fois tous les trois jours</string>
+    <string name="ifl_a5_sub_freq_04">Réglé sur une fois tous les cinq jours</string>
+    <string name="ifl_a5_sub_freq_05">Réglé sur une fois par semaine</string>
+    <string name="ifl_a5_dia_freq_00">Chaque ouverture (par défaut)</string>
+    <string name="ifl_a5_dia_freq_01">Jamais</string>
+    <string name="ifl_a5_dia_freq_02">Tous les jours</string>
+    <string name="ifl_a5_dia_freq_03">Une fois tous les trois jours</string>
+    <string name="ifl_a5_dia_freq_04">Une fois tous les cinq jours</string>
+    <string name="ifl_a5_dia_freq_05">Une fois par semaine</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">Utiliser la langue de l\'appareil</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">Rapports</string>
+    <string name="ifl_a7_02">Supprimer des rapports</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">Détails</string>
+    <string name="ifl_a8_02">Copier le journal</string>
+    <string name="ifl_a8_03">Partager le journal</string>
+    <string name="ifl_a8_04">Info appareil</string>
+    <string name="ifl_a8_05">Version Android</string>
+    <string name="ifl_a8_06">Version IG et IFL</string>
+    <string name="ifl_a8_07">Date de I\'accident</string>
+    <string name="ifl_a8_08">Informations sur les accidents</string>
+    <string name="ifl_a8_09">Raison</string>
+    <string name="ifl_a8_10">Trace de la pile</string>
+    <string name="ifl_a9_01">Détails</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">Contributeurs</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">Bibliothèque de drapeaux</string>
+    <string name="ifl_a11_02">Bibliothèque de sauvegarde</string>
+    <string name="ifl_a11_03">Erreur lors de l\'obtention des sauvegardes de l\'API</string>
+    <string name="ifl_a11_04">Créé par %1$s</string>
+    <string name="ifl_a11_05">Informations de sauvegarde</string>
+    <string name="ifl_a11_06">Nom</string>
+    <string name="ifl_a11_07">Description</string>
+    <string name="ifl_a11_08">Dernière mise à jour</string>
+    <string name="ifl_a11_09">Journal des modifications</string>
+    <string name="ifl_a11_10">Appliquer la sauvegarde</string>
+    <string name="ifl_a11_11">Plus</string>
+    <string name="ifl_a11_12">Activer la mise à jour automatique</string>
+    <string name="ifl_a11_13">Si une nouvelle mise à jour est publiée pour votre sauvegarde, la sauvegarde sera mise à jour automatiquement</string>
+    <string name="ifl_a11_14">Cette sauvegarde sera appliquée pour l\'instant et sera mise à jour si la mise à jour automatique est activée</string>
+    <string name="ifl_a11_15">Sauvegardes</string>
+    <string name="ifl_a11_16">à propos de l\'auteur</string>
+    <string name="ifl_a11_17">Erreur lors de la récupération des informations de sauvegarde</string>
+    <string name="ifl_a11_18">Mis à jour vers v%1$s le %2$s</string>
+    <string name="ifl_a11_19">à propos de l\'auteur</string>
+    <string name="ifl_a11_20">Nom de l\'auteur</string>
+    <string name="ifl_a11_21">Erreur lors de la récupération des informations sur l\'auteur</string>
+    <string name="ifl_a11_22">Erreur lors du téléchargement du fichier de sauvegarde</string>
+    <string name="ifl_a11_23">Pour activer ce paramètre, vous devez appliquer au moins une sauvegarde de la bibliothèque</string>
+    <string name="ifl_a11_24">La sauvegarde %1$s sera désormais mise à jour automatiquement</string>
+    <string name="ifl_a11_25">Mise à jour automatique désactivée</string>
+    <string name="ifl_a11_26">Erreur lors de la mise à jour de la sauvegarde</string>
+    <string name="ifl_a11_27">Journal des modifications de sauvegarde</string>
+    <string name="ifl_a11_28">Redémarrer l\'application</string>
+    <string name="ifl_a11_29">Recommence plus tard</string>
+    <string name="ifl_a11_30">Erreur lors de l\'analyse du fichier de sauvegarde</string>
+    <string name="ifl_a11_31">Erreur lors de l\'analyse du fichier de mappage</string>
+    <string name="ifl_a11_32">Erreur lors de la lecture du fichier de cartographie d\'Instagram</string>
+    <string name="ifl_a11_33">Erreur lors de l\'analyse du fichier de remplacement</string>
+    <string name="ifl_a11_34">Fichier de mappage introuvable</string>
+    <string name="ifl_a11_35">Erreur lors de la comparaison de la sauvegarde avec le mappage</string>
+    <string name="ifl_a11_36">Erreur lors de la copie du contenu du drapeau</string>
+    <string name="ifl_a11_37">Erreur lors du démarrage de l\'analyse</string>
+    <string name="ifl_a11_38">Veuillez sélectionner un fichier</string>
+    <string name="ifl_a11_39">Erreur lors de la lecture du fichier de sauvegarde</string>
+    <string name="ifl_a11_40">Erreur lors de la lecture du fichier de mappage</string>
+    <string name="ifl_a11_41">%1$s indicateur importé du fichier de sauvegarde</string>
+    <string name="ifl_a11_42">Erreur lors de l\'importation des remplacements à partir du fichier de sauvegarde</string>
+    <string name="ifl_a11_43">%1$s drapeau importé avec succès</string>
+    <string name="ifl_a11_44">%1$s a été importé avec succès</string>
+    <string name="ifl_a0_01">Options de sauvegarde</string>
+    <string name="ifl_a11_45">Version</string>
+    <string name="ifl_a11_46">%1$s importé avec succès avec le drapeau %2$s</string>
+    <string name="ifl_a11_47">Veuillez sélectionner un fichier de sauvegarde valide</string>
+    <string name="ifl_a11_48">Importer d\'anciennes sauvegardes (.json)</string>
+    <string name="ifl_a11_49">Veuillez remplir les champs obligatoires.</string>
+    <string name="ifl_a11_50">Veuillez entrer un nom de version valide</string>
+    <string name="ifl_a11_51">Exporter la sauvegarde</string>
+    <string name="ifl_a11_52">Nom de la sauvegarde</string>
+    <string name="ifl_a11_53">"Comme la sauvegarde parfaite de maman"</string>
+    <string name="ifl_a11_54">Nom de l\'auteur</string>
+    <string name="ifl_a11_55">Comme Albert Einstein</string>
+    <string name="ifl_a11_56">Version de la sauvegarde</string>
+    <string name="ifl_a11_57">Comme 1.0, 1.0-hotfix, etc.</string>
+    <string name="ifl_a11_58">Journal des modifications</string>
+    <string name="ifl_a11_59">Vous pouvez écrire ici le journal des modifications de la sauvegarde</string>
+    <string name="ifl_a11_60">Mettre à jour la sauvegarde</string>
+    <string name="ifl_a11_61">Importer d\'anciens backups JSON</string>
+    <string name="ifl_a11_62">Comparateur de sauvegarde</string>
+    <string name="ifl_a11_63">Utilisé pour importer un fichier de sauvegarde complètement avec tous les drapeaux du fichier</string>
+    <string name="ifl_a11_64">Ajoute des drapeaux au fichier de sauvegarde que vous utilisez qui ne sont pas dans celui que vous avez sélectionné.</string>
+    <string name="ifl_a11_65">Vous pouvez importer d\'anciennes sauvegardes de type .json avec cette option</string>
+    <string name="ifl_a11_66">Sélectionner la Sauvegarde 1</string>
+    <string name="ifl_a11_67">Sélectionner la Sauvegarde 2</string>
+    <string name="ifl_a11_68">Appuyez pour sélectionner une sauvegarde</string>
+    <string name="ifl_a11_69">Comparer les sauvegardes</string>
+    <string name="ifl_a11_70">Erreur lors du démarrage de la compression</string>
+    <string name="ifl_a11_71">Sélectionné</string>
+    <string name="ifl_a11_72">Veuillez sélectionner deux fichiers de sauvegarde à comparer</string>
+    <string name="ifl_a11_73">Résultat de la comparaison</string>
+    <string name="ifl_a11_74">Différences de B1 à B2</string>
+    <string name="ifl_a11_75">Différences de B2 à B1</string>
+    <string name="ifl_a11_76">Identifiants de drapeaux supprimés</string>
+    <string name="ifl_a11_77">Erreur lors de la comparaison des sauvegardes</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">Nouvelle mise à jour</string>
+    <string name="ifl_d1_02">Instafel sera mis à niveau vers la version v%1$d (Instagram v%2$s)</string>
+    <string name="ifl_d1_03">Annuler</string>
+    <string name="ifl_d1_04">Installer</string>
+    <string name="ifl_d1_05">Cacher</string>
+    <string name="ifl_d1_06">Connexion au serveur de mise à jour</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">Instafel est à jour.</string>
+    <string name="ifl_d2_01">À jour</string>
+    <string name="ifl_d2_03">D\'accord</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">Une erreur est survenue lors de l\'ouverture du programme d\'installation d\'APK.</string>
+    <string name="ifl_t1_03">La mise à jour d\'Instafel a échoué.</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">Un navigateur Web est introuvable sur votre appareil</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">Définir la fréquence</string>
+    <string name="ifl_d3_02">D\'accord</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">Accueillir</string>
+    <string name="ifl_d4_02">Bienvenue sur Instafel, ce mod a été développé pour fournir à tout le monde les dernières fonctionnalités des versions alpha d\'Instagram\\n\\nLe menu est accessible en appuyant et en maintenant enfoncé le bouton hamburger sur le</string>
+    <!-- CRASH TOAST -->
+</resources>

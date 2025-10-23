@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">Permiso denegado</string>
+    <string name="ifl_a5_11">"Se denegó el permiso de notificaciones de Instafel's. Si el problema persiste, no olvides activar las notificaciones desde la configuración de la aplicación.."</string>
+    <string name="ifl_a0_08">Misceláneos</string>
+    <string name="ifl_a0_10">Habilite el tema Amoled para las actividades, diálogos y otras partes de Instafel.</string>
+    <string name="ifl_a0_11">Remover anuncios</string>
+    <string name="ifl_a0_12">Elimina los anuncios que se muestran en el feed, reels u otros lugares.</string>
+    <string name="ifl_a0_13">Reiniciar la app para aplicar los cambios.</string>
+    <string name="ifl_a0_14">Habilitado por defecto, no se puede cambiar.</string>
+    <string name="ifl_a0_15">Actualizador de Instafel</string>
+    <string name="ifl_a0_16">Usa Instafel Updater para actualizaciones automáticas con Root / Shizuku.</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">Opciones de Actualización</string>
+    <string name="ifl_a0_03">Idioma</string>
+    <string name="ifl_a0_04">Biblioteca</string>
+    <string name="ifl_a0_05">Acerca de</string>
+    <string name="ifl_a0_06">Esta función todavía no ha sido agregada</string>
+    <string name="ifl_a0_07">Reporte de fallos</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">Sobre Instafel</string>
+    <string name="ifl_a1_02">Versión de Instafel</string>
+    <string name="ifl_a1_03">Tipo de instalación</string>
+    <string name="ifl_a1_04">Proyecto</string>
+    <string name="ifl_a1_07">Clon</string>
+    <string name="ifl_a1_08">No clon</string>
+    <string name="ifl_a1_09">ID de Generación</string>
+    <string name="ifl_a1_10">Versión de Instagram</string>
+    <string name="ifl_a1_12">Información de compilación</string>
+    <string name="ifl_a1_13">Versión del parcheador</string>
+    <string name="ifl_a1_14">Parches aplicados</string>
+    <string name="ifl_a1_15">Ver detalles de la compilación</string>
+    <string name="ifl_a1_18">Acerca del desarrollador</string>
+    <string name="ifl_a1_19">Sitio web</string>
+    <string name="ifl_a1_20">Unirse a la comunidad</string>
+    <string name="ifl_a1_21">Colaboradores</string>
+    <string name="ifl_a1_22">Ver información sobre los parches aplicados</string>
+    <string name="ifl_a1_23">Commit principal</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">Sobre Instagram</string>
+    <string name="ifl_a2_02">Versión</string>
+    <string name="ifl_a2_03">Código de versión</string>
+    <string name="ifl_a2_04">Canal</string>
+    <string name="ifl_a2_05">Arquitectura</string>
+    <string name="ifl_a3_01">Acerca de</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">Exportar</string>
+    <string name="ifl_a4_02">Importar</string>
+    <string name="ifl_a4_03">Eliminar archivo local de sobrescritura.</string>
+    <string name="ifl_a4_04">Porfavor, elige una ruta de archivo para guardar.</string>
+    <string name="ifl_a4_05">Copia de seguridad exitosamente guardada.</string>
+    <string name="ifl_a4_06">Archivo de sobrescritura no encontrado.</string>
+    <string name="ifl_a4_07">Se ha encontrado un error al guardar el archivo de copia de seguridad.</string>
+    <string name="ifl_a4_08">Compartir archivo de copia de seguridad</string>
+    <string name="ifl_a4_09">Porfavor, selecciona un archivo para importar.</string>
+    <string name="ifl_a4_10">Archivo de copia de seguridad importado exitosamente.</string>
+    <string name="ifl_a4_11">Archivo de sobrescritura no encontrado.</string>
+    <string name="ifl_a4_12">Se ha encontrado un error al importar el archivo de copia de seguridad.</string>
+    <string name="ifl_a4_13">Archivo de escritura exitosamente eliminado.</string>
+    <string name="ifl_a4_14">Archivo de sobrescritura no encontrado.</string>
+    <string name="ifl_a4_15">Ocurrió un error al importar la copia de seguridad.</string>
+    <string name="ifl_a4_16">Editor de MobileConfig</string>
+    <string name="ifl_a4_17">Analizador de flags</string>
+    <string name="ifl_a4_18">Importar al completo</string>
+    <string name="ifl_a4_19">Importar y fusionar</string>
+    <string name="ifl_a4_20">Analizar resultado</string>
+    <string name="ifl_a4_21">Usar archivo de mapeado personalizado</string>
+    <string name="ifl_a4_22">Te permite analizar con un archivo de mapeado personalizado en lugar del archivo de mapeo predeterminado de Instagram</string>
+    <string name="ifl_a4_23">Flags coincidentes</string>
+    <string name="ifl_a4_24">Flags no coincidentes</string>
+    <string name="ifl_a4_25">Buscar</string>
+    <string name="ifl_a4_26">Importar sobrescritura desde copia de seguridad</string>
+    <string name="ifl_a4_27">Usar copia de seguridad en lugar de analizar archivo de mapeado existente</string>
+    <string name="ifl_a4_28">Iniciar análisis</string>
+    <string name="ifl_a4_29">Iniciar análisis con copia de seguridad personalizada</string>
+    <string name="ifl_a4_30">Iniciar mapeado con mapeado personalizado</string>
+    <string name="ifl_a4_31">Iniciar análisis con copia de seguridad y mapeado personalizar</string>
+    <string name="ifl_a4_32">Copiar mapeado sin procesar</string>
+    <string name="ifl_a4_33">Copiar mapeado analizado</string>
+    <string name="ifl_a4_34">Archivo de sobrescritura faltante o corrupto</string>
+    <string name="ifl_a4_35">¿Estás seguro?</string>
+    <string name="ifl_a4_36">No hay manera de recuperar el archivo sobrescritura eliminado</string>
+    <string name="ifl_a4_37">Okey</string>
+    <string name="ifl_a4_38">Cancelar</string>
+    <string name="ifl_a4_39">Error al leer archivo de sobrescritura</string>
+    <string name="ifl_a4_40">%1$s flags importadas exitosamente</string>
+    <string name="ifl_a4_41">Error al escribir contenido en la copia de seguridad</string>
+    <string name="ifl_a4_42">Error al exportar la copia de seguridad</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">Revisar actualizaciones</string>
+    <string name="ifl_a5_02">Última Revisión: %1$s</string>
+    <string name="ifl_a5_03">Revisar frecuencia</string>
+    <string name="ifl_a5_05">Nunca</string>
+    <string name="ifl_a5_06">Habilitar actualizaciones</string>
+    <string name="ifl_a5_07">Habilitar opciones de actualización</string>
+    <string name="ifl_a5_08">Descarga en segundo plano</string>
+    <string name="ifl_a5_09">Se envía una notificación después de que las actualizaciones se descargan en segundo plano</string>
+    <string name="ifl_a5_sub_freq_00">Establecido en cada apertura</string>
+    <string name="ifl_a5_sub_freq_01">Establecido en nunca</string>
+    <string name="ifl_a5_sub_freq_02">Establecido en cada día</string>
+    <string name="ifl_a5_sub_freq_03">Establecido en tres días</string>
+    <string name="ifl_a5_sub_freq_04">Establecido en cinco días</string>
+    <string name="ifl_a5_sub_freq_05">Establecido en una vez por semana</string>
+    <string name="ifl_a5_dia_freq_00">Cada apertura (predeterminado)</string>
+    <string name="ifl_a5_dia_freq_01">Nunca</string>
+    <string name="ifl_a5_dia_freq_02">Cada día</string>
+    <string name="ifl_a5_dia_freq_03">Una vez cada tres días</string>
+    <string name="ifl_a5_dia_freq_04">Una vez cada cinco días</string>
+    <string name="ifl_a5_dia_freq_05">Una vez por semana</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">Usar idioma del dispositivo</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">Reportes</string>
+    <string name="ifl_a7_02">Borrar reportes</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">Detalles</string>
+    <string name="ifl_a8_02">Copiar registros</string>
+    <string name="ifl_a8_03">Compartir registros</string>
+    <string name="ifl_a8_04">Información del dispositivo</string>
+    <string name="ifl_a8_05">Versión de Android</string>
+    <string name="ifl_a8_06">Versión de IG e IFL</string>
+    <string name="ifl_a8_07">Fecha de error</string>
+    <string name="ifl_a8_08">Información de error</string>
+    <string name="ifl_a8_09">Razón</string>
+    <string name="ifl_a8_10">Seguimiento de pila</string>
+    <string name="ifl_a9_01">Detalles</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">Contribuyentes</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">Biblioteca de Banderas</string>
+    <string name="ifl_a11_02">Biblioteca de Copias de Seguridad</string>
+    <string name="ifl_a11_03">Error al obtener copias de seguridad desde la API</string>
+    <string name="ifl_a11_04">Creado por %1$s</string>
+    <string name="ifl_a11_05">Información de copia de seguridad</string>
+    <string name="ifl_a11_06">Nombre</string>
+    <string name="ifl_a11_07">Descripción</string>
+    <string name="ifl_a11_08">Última actualización</string>
+    <string name="ifl_a11_09">Registro de cambios</string>
+    <string name="ifl_a11_10">Aplicar copia de seguridad</string>
+    <string name="ifl_a11_11">Más</string>
+    <string name="ifl_a11_12">Habilitar actualización automática</string>
+    <string name="ifl_a11_13">Si una nueva actualización es lanzada para tu copia de seguridad, tu copia de seguridad se actualizará automáticamente</string>
+    <string name="ifl_a11_14">Esta copia de seguridad se aplicará ahora y se actualizará si la actualización automática está habilitada</string>
+    <string name="ifl_a11_15">Copias de seguridad</string>
+    <string name="ifl_a11_16">Sobre el autor</string>
+    <string name="ifl_a11_17">Error al buscar información de copia de seguridad</string>
+    <string name="ifl_a11_18">Actualizado a v%1$s en %2$s</string>
+    <string name="ifl_a11_19">Sobre el autor</string>
+    <string name="ifl_a11_20">Nombre del autor</string>
+    <string name="ifl_a11_21">Error al obtener información sobre el autor</string>
+    <string name="ifl_a11_22">Error al descargar copia de seguridad</string>
+    <string name="ifl_a11_23">Para habilitar esta configuración, debes aplicar al menos una copia de seguridad de la biblioteca</string>
+    <string name="ifl_a11_24">%1$s la copia de seguridad no será actualizada automáticamente</string>
+    <string name="ifl_a11_25">Actualización automática deshabilitada</string>
+    <string name="ifl_a11_26">Error al actualizar la copia de seguridad</string>
+    <string name="ifl_a11_27">Registro de cambios de la copia de seguridad</string>
+    <string name="ifl_a11_28">Reiniciar apps</string>
+    <string name="ifl_a11_29">Reiniciar después</string>
+    <string name="ifl_a11_30">Error al analizar la copia de seguridad</string>
+    <string name="ifl_a11_31">Error al analizar el archivo de mapeado</string>
+    <string name="ifl_a11_32">Error al leer archivo de mapeado de Instagram</string>
+    <string name="ifl_a11_33">Error al analizar el archivo de sobrescritura</string>
+    <string name="ifl_a11_34">Archivo de mapeado no encontrado</string>
+    <string name="ifl_a11_35">Error al comparar copia de seguridad con mapeado</string>
+    <string name="ifl_a11_36">Error al copiar contenido de la flag</string>
+    <string name="ifl_a11_37">Error al iniciar análisis</string>
+    <string name="ifl_a11_38">Por favor selecciona un archivo</string>
+    <string name="ifl_a11_39">Error al leer copia de seguridad</string>
+    <string name="ifl_a11_40">Error al leer archivo de mapeado</string>
+    <string name="ifl_a11_41">%1$s flag importada desde la copia de seguridad</string>
+    <string name="ifl_a11_42">Error al importar sobreescritura desde la copia de seguridad</string>
+    <string name="ifl_a11_43">%1$s flag de Importación exitosa</string>
+    <string name="ifl_a11_44">%1$s Importación exitosa</string>
+    <string name="ifl_a0_01">Opciones de copia de seguridad</string>
+    <string name="ifl_a11_45">Versión</string>
+    <string name="ifl_a11_46">%1$s importado exitosamente con la bandera %2$s</string>
+    <string name="ifl_a11_47">Por favor, seleccione un archivo de copia de seguridad válido</string>
+    <string name="ifl_a11_48">Importar copias de seguridad antiguas (.json)</string>
+    <string name="ifl_a11_49">Por favor, complete los campos requeridos.</string>
+    <string name="ifl_a11_50">Por favor, introduzca un nombre de versión válido</string>
+    <string name="ifl_a11_51">Exportar copia de seguridad</string>
+    <string name="ifl_a11_52">Nombre de la copia de seguridad</string>
+    <string name="ifl_a11_53">"Como la copia de seguridad perfecta de mamá"</string>
+    <string name="ifl_a11_54">Nombre del autor</string>
+    <string name="ifl_a11_55">Como Albert Einstein</string>
+    <string name="ifl_a11_56">Versión de la copia de seguridad</string>
+    <string name="ifl_a11_57">Como 1.0, 1.0-hotfix, etc.</string>
+    <string name="ifl_a11_58">Registro de cambios</string>
+    <string name="ifl_a11_59">Puedes escribir aquí el registro de cambios de la copia de seguridad</string>
+    <string name="ifl_a11_60">Actualizar copia de seguridad</string>
+    <string name="ifl_a11_61">Importar copias de seguridad JSON antiguas</string>
+    <string name="ifl_a11_62">Comparador de copias de seguridad</string>
+    <string name="ifl_a11_63">Se utiliza para importar un archivo de copia de seguridad completamente con todas las flags en el archivo</string>
+    <string name="ifl_a11_64">Agrega flags al archivo de copia de seguridad que utilizas y que no están en el respaldo seleccionado.</string>
+    <string name="ifl_a11_65">Puedes importar copias de seguridad antiguas en formato .json con esta opción</string>
+    <string name="ifl_a11_66">Seleccionar Copia de Seguridad 1</string>
+    <string name="ifl_a11_67">Seleccionar Copia de Seguridad 2</string>
+    <string name="ifl_a11_68">Presiona para seleccionar una copia de seguridad</string>
+    <string name="ifl_a11_69">Comparar copias de seguridad</string>
+    <string name="ifl_a11_70">Error al iniciar la compresión</string>
+    <string name="ifl_a11_71">Seleccionado</string>
+    <string name="ifl_a11_72">Por favor, selecciona dos archivos de copia de seguridad para comparar</string>
+    <string name="ifl_a11_73">Resultado de la comparación</string>
+    <string name="ifl_a11_74">Diferencias de B1 a B2</string>
+    <string name="ifl_a11_75">Diferencias de B2 a B1</string>
+    <string name="ifl_a11_76">IDs de flags eliminados</string>
+    <string name="ifl_a11_77">Error al comparar copias de seguridad</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">Nueva actualización</string>
+    <string name="ifl_d1_02">Instafel ha sido actualizado a la versión v%1$d (Instagram v%2$s)</string>
+    <string name="ifl_d1_03">Cancelar</string>
+    <string name="ifl_d1_04">Instalar</string>
+    <string name="ifl_d1_05">Esconder</string>
+    <string name="ifl_d1_06">Conectándose al servidor de actualizaciones</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">Instafel está actualizado</string>
+    <string name="ifl_d2_01">Actualizar</string>
+    <string name="ifl_d2_03">Okey</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">Ha ocurrido un error al abrir el instalador apk</string>
+    <string name="ifl_t1_03">Fallo al actualizar Instafel</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">No se ha encontrado un navegador web en tú dispositivo</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">Establecer frecuencia</string>
+    <string name="ifl_d3_02">Okey</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">Bienvenidos</string>
+    <string name="ifl_d4_02">Bienvenido a Instafel, este mod ha sido desarrollado para proporcionar a todos las últimas características en las builds aplha de Instagram\\n\\nnEl menú se puede acceder tocando y manteniendo pulsado el botón de hamburguesa en la pestaña de perfil.</string>
+    <!-- CRASH TOAST -->
+</resources>
