@@ -56,7 +56,7 @@ export default function PageBackup() {
     const handleDownloadBackup = (id: string, version: string) => {
         setDownloadStarted(true);
         const link = document.createElement("a");
-        link.href = `https://api.mamii.me/ifl/dw_backup?id=${id}&version=${version}`;
+        link.href = `https://api.instafel.app/content/util/download-backup?id=${id}&version=${version}`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

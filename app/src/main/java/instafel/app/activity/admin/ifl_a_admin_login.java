@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import instafel.app.R;
@@ -50,7 +51,7 @@ public class ifl_a_admin_login extends AppCompatActivity {
 
             if (!username.isEmpty() && !password.isEmpty()) {
                 new AdminLogin(ifl_a_admin_login.this, username, password, waitingApiDialog)
-                        .execute(GeneralFn.getApiUrl(ifl_a_admin_login.this) + "/admin/user/login");
+                        .execute(GeneralFn.getApiUrl(ifl_a_admin_login.this) + "/user_admin/login");
             } else {
                 waitingApiDialog.hide();
                 InstafelDialog.createSimpleAlertDialog(ifl_a_admin_login.this, "Error", ifl_a_admin_login.this.getString(R.string.ifl_a12_05));

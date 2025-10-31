@@ -89,7 +89,7 @@ export default function CreateContentPage() {
                 formData.append("name", file.name);
 
                 const fUploadResp = await fetch(
-                    "https://api.mamii.me/ifl/admin/user/upload-image",
+                    "https://api.instafel.app/user_admin/upload-image",
                     {
                         method: "POST",
                         body: formData,

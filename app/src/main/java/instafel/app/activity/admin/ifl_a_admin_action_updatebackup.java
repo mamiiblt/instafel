@@ -72,7 +72,7 @@ public class ifl_a_admin_action_updatebackup extends AppCompatActivity implement
                 this,
                 19,
                 this.preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_username, "null"),
-                this.preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_password, "null")).execute(GeneralFn.getApiUrl(this) + "/admin/user/list_user_backups");
+                this.preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_password, "null")).execute(GeneralFn.getApiUrl(this) + "/user_admin/list-user-backups");
     }
 
     @Override
@@ -186,7 +186,7 @@ public class ifl_a_admin_action_updatebackup extends AppCompatActivity implement
                            requestBody.getJSONObject("info").put("author", JSONObject.NULL);
 
                            ApiPostAdmin apiPostAdmin = new ApiPostAdmin(ifl_a_admin_action_updatebackup.this, 17, preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_username, "def"), preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_password, "def"), requestBody);
-                           apiPostAdmin.execute(GeneralFn.getApiUrl(ifl_a_admin_action_updatebackup.this) + "/admin/user/update_backup");
+                           apiPostAdmin.execute(GeneralFn.getApiUrl(ifl_a_admin_action_updatebackup.this) + "/user_admin/update-backup");
                            instafelDialogMain = new InstafelDialog(ifl_a_admin_action_updatebackup.this);
                            instafelDialogMain.addSpace("top_space", 25);
                            LoadingBar loadingBar = new LoadingBar(ifl_a_admin_action_updatebackup.this);

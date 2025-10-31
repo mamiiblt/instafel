@@ -70,7 +70,7 @@ public class AdminLogin extends AsyncTask<String, Void, InstafelResponse> {
                 InstafelAdminUser.login(activity, uname, pass);
                 InstafelDialog instafelDialog2 = InstafelDialog.createSimpleDialog(activity,
                         "Welcome",
-                        "Welcome " + uname+ "!\n\nDo you want a shortcut created in the menu for quick access to admin dashboard?",
+                        instafelResponse.getDesc() +"\n\nDo you want a shortcut created in the menu for quick access to admin dashboard?",
                         "Yes",
                         "No",
                         view -> {

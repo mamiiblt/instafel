@@ -18,7 +18,6 @@ import java.security.NoSuchAlgorithmException;
 
 public class UploadMapping implements ApiCallbackInterface {
 
-    private final String BASE_URL = "https://api.mamii.me";
     private final String LOG_TAG = "IFL_ADMIN_MPU";
     private final Activity act;
     private final OverridesManager overridesManager;
@@ -44,13 +43,13 @@ public class UploadMapping implements ApiCallbackInterface {
                 reqBody.put("ig_version", InstafelEnv.IG_VERSION);
 
                 new ApiPostAdmin(this, 17, aUsername, aPassword, reqBody).execute(
-                        BASE_URL + "/ifl/admin/user/mapping-is-exists"
+                        "https://api.instafel.app/user_admin/mapping-is-exists"
                 );
             }
         } catch (Exception e) {
             e.printStackTrace();
             Log.i(LOG_TAG, "Error occurred while uploading mapping file into server.");
-            Toast.makeText(act, "Error occurred while uploading mapping file into server.", Toast.LENGTH_LONG).show();
+            Toast.makeText(act, "Error occurred while uploading mapping file into server (EC: 5)", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -77,28 +76,26 @@ public class UploadMapping implements ApiCallbackInterface {
                             Log.i(LOG_TAG, "Mapping already uploaded by other admin, don't needed.");
                             break;
                         case "FAILURE":
-                            Toast.makeText(act, "Error while checking mapping status.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(act, "Error while checking mapping status (EC: 4)", Toast.LENGTH_LONG).show();
                             break;
                         case "NOT_EXIST":
                             Log.i(LOG_TAG, "Mapping uploading request is sending...");
                             new AdminUploadMapping(this, 10,
-                                    aUsername, aPassword, overridesManager.getMappingFile()).execute(
-                                    BASE_URL + "/ifl/admin/user/upload-mapping"
-                            );
+                                    aUsername, aPassword, overridesManager.getMappingFile()).execute("https://api.instafel.app/user_admin/upload-mapping");
                             break;
                     }
                     break;
                 case 10:
                     if (instafelResponse.getStatus().equals("SUCCESS")) {
-                        Toast.makeText(act, "Mapping uploaded into server successfully.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(act, "Mapping uploaded into server successfully", Toast.LENGTH_LONG).show();
                         preferenceManager.setPreferenceString(PreferenceKeys.ifl_mapping_file_hash, newMappingHash);
                     } else {
-                        Toast.makeText(act, "Error occurred while uploading mapping to server.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(act, "Error occurred while uploading mapping to server (EC: 2)", Toast.LENGTH_LONG).show();
                     }
                     break;
             }
         } else {
-            Toast.makeText(act, "Error while parsing upload mapping response", Toast.LENGTH_LONG).show();
+            Toast.makeText(act, "Error while parsing upload mapping response (EC: 1)", Toast.LENGTH_LONG).show();
         }
     }
 
