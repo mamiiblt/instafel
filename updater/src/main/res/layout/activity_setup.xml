@@ -41,7 +41,7 @@
             android:id="@+id/subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Configure your installation preferences"
+            android:text="@string/setup_ifl_desc"
             android:textSize="16sp"
             android:gravity="center"
             android:layout_marginTop="8dp"
@@ -94,7 +94,7 @@
                         android:id="@+id/radio_unclone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Unclone"
+                        android:text="@string/unclone"
                         android:textSize="16sp"
                         android:padding="12dp"
                         android:layout_marginBottom="8dp" />
@@ -103,7 +103,7 @@
                         android:id="@+id/radio_clone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Clone"
+                        android:text="@string/clone"
                         android:textSize="16sp"
                         android:padding="12dp" />
 
@@ -139,7 +139,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Installation Method"
+                        android:text="@string/install_method"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 

@@ -1,7 +1,0 @@
-files:
-  - source: /website/src/locales/en/**.json
-    translation: /website/src/locales/%two_letters_code%/%original_file_name%
-  - source: /app/src/main/res/values/strings.xml
-    translation: /app/src/main/res/values-%two_letters_code%/strings.xml
-  - source: /updater/src/main/res/values/strings.xml
-    translation: /updater/src/main/res/values-%two_letters_code%/strings.xml

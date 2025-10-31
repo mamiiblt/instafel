@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="app_arch">
-        <item>arm64-v8a (64-bit)</item>
-        <item>armeabi-v7a (32-bit)</item>
-    </string-array>
-
-    <string-array name="app_type">
-        <item>Unclone</item>
-        <item>Clone</item>
-    </string-array>
-
     <string-array name="installation_method_list">
         <item>Root</item>
         <item>Shizuku</item>
-    </string-array>
-
-    <string-array name="checker_interval_list">
-        <item>2 hour</item>
-        <item>3 hour</item>
-        <item>4 hour</item>
-        <item>6 hour</item>
-        <item>8 hour</item>
-        <item>12 hour</item>
-        <item>14 hour</item>
-        <item>24 hour</item>
     </string-array>
 
     <string-array name="supported_languages">

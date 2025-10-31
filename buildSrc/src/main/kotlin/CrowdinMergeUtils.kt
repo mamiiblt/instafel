@@ -1,3 +1,4 @@
+import org.gradle.internal.impldep.kotlinx.serialization.json.Json
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedOutputStream
@@ -149,6 +150,19 @@ class CrowdinMergeUtils(
         }
 
         println("Extracted ZIP to → ${outputDir.absolutePath}")
+    }
+
+    fun updateLocalesInPatcher() {
+        println("Updating locales in :patcher-core sources")
+        val projectDir = File(rootDir, "patcher-core")
+        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "app").toFile()
+        val localeAssetFile = Paths.get(projectDir.absolutePath, "src", "main", "resources", "supported_locales.json").toFile()
+        val locales = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
+        val normalizedLocaleNames = mutableListOf<String>()
+        locales.forEach { locale -> normalizedLocaleNames.add(locale.replace("-r", "-")) }
+        val localesJsonArr = JSONArray(normalizedLocaleNames)
+        localeAssetFile.writeText(localesJsonArr.toString())
+        println("Patcher's SUPPORTED_LANGUAGES definition successfully updated!")
     }
 
     fun mergeAppSources() {

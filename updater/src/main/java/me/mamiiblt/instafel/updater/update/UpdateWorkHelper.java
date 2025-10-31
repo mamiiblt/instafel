@@ -86,27 +86,7 @@ public class UpdateWorkHelper {
 
     public static int getCheckIntervalHour(Context ctx) {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(ctx);
-        String checkIntervalString = sharedPreferences.getString("checker_interval", "4 hour");
-        switch (checkIntervalString) {
-            case "2 hour":
-                return 2;
-            case "3 hour":
-                return 3;
-            case "4 hour":
-                return 4;
-            case "6 hour":
-                return 6;
-            case "8 hour":
-                return 8;
-            case "12 hour":
-                return 12;
-            case "14 hour":
-                return 14;
-            case "24 hour":
-                return 24;
-            default:
-                return 4;
-        }
+        return sharedPreferences.getInt("checker_interval_i", 4);
     }
 
     public interface WorkManagerActiveCallback {

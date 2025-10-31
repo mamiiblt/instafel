@@ -50,9 +50,9 @@ public class SetupActivity extends AppCompatActivity {
 
         radioGroupInstallType.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.radio_unclone) {
-                editor.putString("checker_type", "Unclone");
+                editor.putInt("install_type_i", 11);
             } else if (checkedId == R.id.radio_clone) {
-                editor.putString("checker_type", "Clone");
+                editor.putInt("install_type_i", 22);
             }
             editor.apply();
         });
@@ -69,16 +69,13 @@ public class SetupActivity extends AppCompatActivity {
 
     public void next(View view) {
 
-        if (!preferences.getString("checker_method", "NULL").equals("NULL") && !preferences.getString("checker_type", "MULL").equals("NULL")) {
-
-            // set app preferences too
-            editor.putString("checker_interval", "4 hour");
+        if (!preferences.getString("checker_method", "NULL").equals("NULL") && preferences.getInt("install_type_i", 0) != 0) {
+            editor.putInt("checker_interval_i", 4);
             editor.apply();
             Intent mainIntent = new Intent(SetupActivity.this, MainActivity.class);
             startActivity(mainIntent);
             finish();
         } else {
-
             new AlertDialog.Builder(this)
                     .setTitle(this.getString(R.string.warning))
                     .setMessage(this.getString(R.string.warning_desc))

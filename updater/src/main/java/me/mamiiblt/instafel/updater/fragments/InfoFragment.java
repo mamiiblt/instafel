@@ -73,7 +73,9 @@ public class InfoFragment extends Fragment {
        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
        SharedPreferences.Editor prefEditor = sharedPreferences.edit();
 
-       viewIType.setText(sharedPreferences.getString("checker_type", "NULL"));
+       int iType = sharedPreferences.getInt("install_type_i", 0);
+       String iTypeString = iType == 11 ? getString(R.string.unclone) : getString(R.string.clone);
+       viewIType.setText(iTypeString);
 
        if (Utils.getBatteryRestrictionStatus(getActivity())) {
            viewBatteryStatus.setText(STRING_RESTRICTED);
@@ -104,7 +106,7 @@ public class InfoFragment extends Fragment {
                rootStatus = false;
                viewStatusDesc.setText(STRING_NOT_FOUND);
                warIconProvider.setVisibility(View.VISIBLE);
-               Utils.showDialog(getActivity(), "Root access cloudn't ensured", "Please give root access to Instafel Updater from your root manager (Magisk, KernelSU, KernelSU Next, APatch etc.) to use Updater with root mode\n\nApp Name: Instafel Updater\nApp Package: me.mamiiblt.instafel.updater");
+               Utils.showDialog(getActivity(), getString(R.string.root_access_ensure_issue), getString(R.string.root_access_ensure_issue_desc));
            }
        } else {
            viewStatusTitle.setText(this.getString(R.string.shizuku_status));

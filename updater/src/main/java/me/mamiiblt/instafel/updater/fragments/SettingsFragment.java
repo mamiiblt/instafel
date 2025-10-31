@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.os.LocaleList;
 import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -81,27 +82,79 @@ public class SettingsFragment extends PreferenceFragmentCompat {
 
         installationMet.setValue(sharedPreferences.getString("checker_method", "shi").equals("root") ? "Root" : "Shizuku");
 
-        MaterialListPreference checkerInterval = findPreference("checker_interval");
-        checkerInterval.setOnPreferenceChangeListener((preference, newValue) -> {
-            prefEditor.putString("checker_interval", String.valueOf(newValue)).apply();
-            prefEditor.apply();
-            Toast.makeText(getContext(), getActivity().getString(R.string.work_restarted), Toast.LENGTH_SHORT).show();
-            UpdateWorkHelper.restartWork(getActivity());
-            return true;
-        });
+        MaterialListPreference installType = findPreference("checker_type");
+        if (installType != null) {
+            List<CharSequence> entriesList = new ArrayList<>();
+            List<CharSequence> entryValuesList = new ArrayList<>();
 
+            entriesList.add(getString(R.string.unclone));
+            entryValuesList.add("unclone");
+            entriesList.add(getString(R.string.clone));
+            entryValuesList.add("clone");
+
+            installType.setEntries(entriesList.toArray(new CharSequence[0]));
+            installType.setEntryValues(entryValuesList.toArray(new CharSequence[0]));
+
+            installType.setOnPreferenceChangeListener((preference, newValue) -> {
+                if (newValue.equals("unclone")) {
+                    prefEditor.putInt("install_type_i", 11);
+                } else {
+                    prefEditor.putInt("install_type_i", 22);
+                }
+
+                prefEditor.apply();
+
+                Toast.makeText(getContext(), getActivity().getString(R.string.work_restarted), Toast.LENGTH_SHORT).show();
+                UpdateWorkHelper.restartWork(getActivity());
+                return true;
+            });
+        }
+
+        MaterialListPreference checkerInterval = findPreference("checker_interval");
+        if (checkerInterval != null) {
+            Integer[] hourEntries = {2,3,4,6,8,12,14,24};
+
+            List<CharSequence> entriesList = new ArrayList<>();
+            List<CharSequence> entryValuesList = new ArrayList<>();
+
+            for (int hourEntry : hourEntries) {
+                entriesList.add(getString(R.string.hour_imz, hourEntry));
+                entryValuesList.add(String.valueOf(hourEntry));
+            }
+
+            checkerInterval.setDefaultValue(entryValuesList.get(0));
+            checkerInterval.setEntries(entriesList.toArray(new CharSequence[0]));
+            checkerInterval.setEntryValues(entryValuesList.toArray(new CharSequence[0]));
+
+            checkerInterval.setOnPreferenceChangeListener((preference, newValue) -> {
+                int intValue;
+                try {
+                    intValue = Integer.parseInt(String.valueOf(newValue));
+                } catch (NumberFormatException e) {
+                    return false;
+                }
+
+                prefEditor.putInt("checker_interval_i", intValue);
+                prefEditor.apply();
+
+                Toast.makeText(getContext(), getActivity().getString(R.string.work_restarted), Toast.LENGTH_SHORT).show();
+                UpdateWorkHelper.restartWork(getActivity());
+                return true;
+            });
+        }
 
         MaterialListPreference language = findPreference("language");
         if (language != null) {
-            String[] languages = getResources().getStringArray(R.array.supported_languages);
+            LocaleList languages = LocalizationUtils.getSupportedLocaleList(requireActivity());
 
             List<String> entriesList = new ArrayList<>();
             List<String> entryValuesList = new ArrayList<>();
 
-            for (String langCode: languages) {
-                String displayName = LocalizationUtils.getLanguageDisplayName(langCode);
+            for (int i = 0; i < languages.size(); i++) {
+                Locale locale = languages.get(i);
+                String displayName = LocalizationUtils.getLanguageDisplayName(locale);
                 entriesList.add(displayName);
-                entryValuesList.add(langCode);
+                entryValuesList.add(LocalizationUtils.convertToLangCode(locale));
             }
 
             language.setEntries(entriesList.toArray(new CharSequence[0]));

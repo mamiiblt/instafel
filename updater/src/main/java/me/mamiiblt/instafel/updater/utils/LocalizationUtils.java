@@ -1,5 +1,6 @@
 package me.mamiiblt.instafel.updater.utils;
 
+import android.app.Activity;
 import android.app.LocaleManager;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,26 +9,37 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.LocaleList;
 import androidx.preference.PreferenceManager;
+import me.mamiiblt.instafel.updater.R;
 
 import java.util.Locale;
 
 public class LocalizationUtils {
 
-    public static String getLanguageDisplayName(String langCode) {
-        String[] parts = langCode.split("-");
+    public static LocaleList getSupportedLocaleList(Activity activity) {
+        String[] supportedLanguages = activity.getResources().getStringArray(R.array.supported_languages);
+        Locale[] locales = new Locale[supportedLanguages.length];
 
-        String languageCode = parts[0];
-        String countryCode = parts.length > 1 ? parts[1] : "";
+        for (int i = 0; i < supportedLanguages.length; i++) {
+            String code = supportedLanguages[i];
+            String language;
+            String country;
 
-        Locale locale = countryCode.isEmpty()
-                ? new Locale(languageCode)
-                : new Locale(languageCode, countryCode.substring(1));
+            String[] parts = code.split("-");
+            language = parts[0];
+            country = parts[1];
 
+            locales[i] = new Locale(language, country);
+        }
+
+        return new LocaleList(locales);
+    }
+
+    public static String getLanguageDisplayName(Locale locale) {
         String languageName = locale.getDisplayLanguage(locale);
         String countryName = locale.getDisplayCountry(locale);
 
         String displayName;
-        if (!countryName.isEmpty() && !langCode.trim().equalsIgnoreCase("en-rEN")) {
+        if (!countryName.isEmpty() && !convertToLangCode(locale).equalsIgnoreCase("en-US")) {
             displayName = languageName + " (" + countryName + ")";
         } else {
             displayName = languageName;
@@ -40,42 +52,15 @@ public class LocalizationUtils {
         return displayName;
     }
 
-    private static final String KEY_LANGUAGE = "language";
+    private static final String KEY_LANGUAGE = "iflu_app_lang";
 
     public static Context applyLocale(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        String langCode = prefs.getString(KEY_LANGUAGE, "en-rEN");
-        if (langCode == null) langCode = "en-rEN";
-        return updateResources(context, langCode);
+        String langCode = prefs.getString(KEY_LANGUAGE, "en-US");
+        return updateResources(context, convertToLocale(langCode));
     }
 
-    public static void setAppLocale(Context context, String langCode) {
-        PreferenceManager.getDefaultSharedPreferences(context)
-                .edit()
-                .putString(KEY_LANGUAGE, langCode)
-                .apply();
-
-        updateResources(context, langCode);
-    }
-
-    private static Context updateResources(Context context, String langCode) {
-        String language;
-        String country;
-
-        if (langCode.contains("-r")) {
-            String[] parts = langCode.split("-r");
-            language = parts[0];
-            country = parts.length > 1 ? parts[1] : "";
-        } else if (langCode.contains("-")) {
-            String[] parts = langCode.split("-");
-            language = parts[0];
-            country = parts.length > 1 ? parts[1] : "";
-        } else {
-            language = langCode;
-            country = "";
-        }
-
-        Locale locale = country.isEmpty() ? new Locale(language) : new Locale(language, country);
+    private static Context updateResources(Context context, Locale locale) {
         Locale.setDefault(locale);
 
         Configuration config = new Configuration(context.getResources().getConfiguration());
@@ -92,5 +77,29 @@ public class LocalizationUtils {
             config.setLocale(locale);
             return context.createConfigurationContext(config);
         }
+    }
+
+    public static void setAppLocale(Context context, String langCode) {
+        PreferenceManager.getDefaultSharedPreferences(context)
+                .edit()
+                .putString(KEY_LANGUAGE, langCode)
+                .apply();
+
+        updateResources(context, convertToLocale(langCode));
+    }
+
+    public static String convertToLangCode(Locale locale) {
+        String language = locale.getLanguage();
+        String country = locale.getCountry();
+
+        return language + "-" + country;
+    }
+
+    public static Locale convertToLocale(String langCode) {
+        String[] parts = langCode.split("-");
+        String language = parts[0];
+        String country = parts[1];
+
+        return new Locale(language, country);
     }
 }

@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         logUtils = new LogUtils(this);
 
         if (!prefsApp.getBoolean("init", false)) {
-            prefsEditor.putString("checker_type", "NULL");
+            prefsEditor.putInt("install_type_i", 0);
             prefsEditor.putString("checker_method", "NULL");
             prefsEditor.putBoolean("root_request_complete", false);
             prefsEditor.putBoolean("init", true);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             setTheme(R.style.Base_Theme_InstafelUpdater);
         }
 
-        if (prefsApp.getString("checker_type", "NULL").equals("NULL")) {
+        if (prefsApp.getInt("install_type_i", 0) == 0) {
             Intent intent = new Intent(MainActivity.this, SetupActivity.class);
             startActivity(intent);
             finish();

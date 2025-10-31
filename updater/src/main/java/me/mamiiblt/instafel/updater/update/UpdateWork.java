@@ -64,11 +64,11 @@ public class UpdateWork extends Worker {
         // Get arch and type from SharedPreferences
 
         String type;
-        String prefType = preferences.getString("checker_type", "non");
+        int prefType = preferences.getInt("install_type_i", 0);
 
-        if (prefType.equals("Unclone")) {
+        if (prefType == 11) {
             type = "uc";
-        } else if (prefType.equals("Clone")) {
+        } else if (prefType == 22) {
             type = "c";
         } else {
             type = null;
