@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {useSearchParams} from "next/navigation";
 import Link from "next/link";
 import {useTranslation} from "react-i18next";
-import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
+import {iflApiBase, flagCategories} from "@/wdata/flag_sdata";
 import {Copy, SearchCheckIcon, Trash,} from "lucide-react";
 import {Page, PageHeader, PageLoading} from "@/components/PageUtils";
 
@@ -31,7 +31,7 @@ export default function FlagListPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const requestUrl = `${contentAPIURL}/content/flib/filter?sQuery=${encodeURIComponent(
+                const requestUrl = `${iflApiBase}/content/flib/filter?sQuery=${encodeURIComponent(
                     search
                 )}`;
                 const res = await fetch(requestUrl);

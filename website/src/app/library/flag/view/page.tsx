@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {useTranslation} from "react-i18next";
 import {useSearchParams} from "next/navigation";
-import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
+import {iflApiBase, flagCategories} from "@/wdata/flag_sdata";
 import {
     AlertCircle,
     BadgeIcon as IdCardLanyardIcon,
@@ -59,7 +59,7 @@ export default function FlagInfoPage() {
     useEffect(() => {
         const loadFlagData = async () => {
             try {
-                const res = await fetch(`${contentAPIURL}/content/flib/flag/${ID}`);
+                const res = await fetch(`${iflApiBase}/content/flib/flag/${ID}`);
                 if (res.status !== 404) {
                     const data: FlagData = await res.json();
                     setFlagData(data);

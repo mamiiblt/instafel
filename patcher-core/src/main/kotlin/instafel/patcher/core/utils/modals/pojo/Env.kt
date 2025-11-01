@@ -9,7 +9,6 @@ data class ConfigPOJO (
 
 data class ProjectPOJO(
     var apiBase: String = "",
-    var contentApiUrl: String = "",
     var igVersion: String = "",
     var igVersionCode: String = "",
     var generationId: String = "",

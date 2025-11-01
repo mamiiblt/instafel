@@ -26,7 +26,7 @@ class GetGenerationInfo: InstafelPatch() {
             override fun execute() {
                 if (isProdMode) {
                     val iflVersionRequest = Request.Builder()
-                        .url("https://${Env.Project.contentApiUrl}/manager/get-latest-ifl-version")
+                        .url("https://${Env.Project.apiBase}/manager/get-latest-ifl-version")
                         .addHeader("manager-token", Env.Config.managerToken)
                         .build()
 
@@ -59,7 +59,7 @@ class GetGenerationInfo: InstafelPatch() {
             override fun execute() {
                 if (isProdMode) {
                     val genIDRequest = Request.Builder()
-                        .url("https://${Env.Project.contentApiUrl}/manager/get-new-gen-id")
+                        .url("https://${Env.Project.apiBase}/manager/get-new-gen-id")
                         .addHeader("manager-token", Env.Config.managerToken)
                         .build()
 

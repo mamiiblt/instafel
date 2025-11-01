@@ -170,7 +170,7 @@ object UploadPreview: CLIJob {
             .toRequestBody("application/json".toMediaType())
 
         val request = Request.Builder()
-            .url("https://content.api.instafel.app/manager/send-generated-log")
+            .url("https://api.instafel.app/manager/send-generated-log")
             .addHeader("manager-token", Env.Config.managerToken)
             .post(requestBody)
             .build()

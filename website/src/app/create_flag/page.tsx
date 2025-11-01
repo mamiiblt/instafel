@@ -8,7 +8,7 @@ import {Textarea} from "@/components/ui/textarea";
 import {Button} from "@/components/ui/button";
 import {Card, CardContent, CardDescription, CardHeader, CardTitle,} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
+import {iflApiBase, flagCategories} from "@/wdata/flag_sdata";
 import {useTranslation} from "react-i18next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -89,7 +89,7 @@ export default function CreateContentPage() {
                 formData.append("name", file.name);
 
                 const fUploadResp = await fetch(
-                    "https://api.instafel.app/user_admin/upload-image",
+                    `${iflApiBase}/user_admin/upload-image`,
                     {
                         method: "POST",
                         body: formData,
@@ -196,7 +196,7 @@ export default function CreateContentPage() {
 
         try {
             if (checkFlagsValidity(flags)) {
-                const res = await fetch(`${contentAPIURL}/creator/create-flag`, {
+                const res = await fetch(`${iflApiBase}/creator/create-flag`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

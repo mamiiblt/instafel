@@ -27,7 +27,7 @@ import {
     DialogTrigger
 } from '@/components/ui/dialog';
 import {useTranslation} from "react-i18next";
-import {contentAPIURL} from "@/wdata/flag_sdata";
+import {iflApiBase} from "@/wdata/flag_sdata";
 import {useSearchParams} from "next/navigation";
 import {toast} from "sonner";
 import {Page, PageHeader, PageLoading} from "@/components/PageUtils";
@@ -182,7 +182,7 @@ export default function ReleaseInfoPage() {
 
     useEffect(() => {
         const fetchData = async () => {
-            var requestUrl = `${contentAPIURL}/content/rels/get/${version}`;
+            var requestUrl = `${iflApiBase}/content/rels/get/${version}`;
             const res = await fetch(requestUrl);
             const result = await res.json();
             setData(result);

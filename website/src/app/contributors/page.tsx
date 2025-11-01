@@ -9,7 +9,7 @@ import {useTranslation} from "react-i18next";
 import {Page, PageHeader} from "@/components/PageUtils";
 import React, {useEffect, useState} from "react";
 import {LoadingBar} from "@/components/LoadingBars";
-import {contentAPIURL} from "@/wdata/flag_sdata";
+import {iflApiBase} from "@/wdata/flag_sdata";
 import {getLanguageDisplayName} from "@/lib/utils";
 import Link from "next/link";
 import {CrowdinSuggestCard} from "@/components/CrowdinSuggestCard";
@@ -58,7 +58,7 @@ export default function ContributorsPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const requestUrl = `${contentAPIURL}/content/util/get-crw-members`;
+                const requestUrl = `${iflApiBase}/content/util/get-crw-members`;
                 const res = await fetch(requestUrl);
                 const result: TranslatorResponse = await res.json();
                 result.memberList = [...result.memberList].sort((a, b) => b.members.length - a.members.length);

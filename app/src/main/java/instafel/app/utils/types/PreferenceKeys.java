@@ -29,6 +29,5 @@ public class PreferenceKeys {
     public static String ifl_remove_ads = "27";
     public static String ifl_mapping_file_hash = "31";
     public static String ifl_debug_api_url = "32";
-    public static String ifl_debug_content_api_url = "33";
     public static String ifl_lang_rw = "34";
 }

@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 import Link from "next/link";
 import {useTranslation} from "react-i18next";
-import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
+import {iflApiBase, flagCategories} from "@/wdata/flag_sdata";
 import {
     Pagination,
     PaginationContent,
@@ -46,8 +46,8 @@ export default function FlagListPage() {
             try {
                 const requestUrl =
                     categoryID != 2589
-                        ? `${contentAPIURL}/content/flib/list?category_id=${categoryID}&page=${page}`
-                        : `${contentAPIURL}/content/flib/list_all?page=${page}`;
+                        ? `${iflApiBase}/content/flib/list?category_id=${categoryID}&page=${page}`
+                        : `${iflApiBase}/content/flib/list_all?page=${page}`;
                 const res = await fetch(requestUrl);
                 const data: RespTF = await res.json();
                 console.log(data);

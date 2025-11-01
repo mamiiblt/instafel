@@ -83,7 +83,7 @@ public class ifl_a_admin_action_approvepreview extends AppCompatActivity impleme
                            preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_username, "null"),
                            preferenceManager.getPreferenceString(PreferenceKeys.ifl_admin_password, "null"),
                            new JSONObject().put("gen_id", GENERATION_ID).put("clog", editText.getText().toString()));
-                   apiPostAdmin.execute(GeneralFn.getContentApiUrl(ifl_a_admin_action_approvepreview.this) + "/user_admin/approve-preview");
+                   apiPostAdmin.execute(GeneralFn.getApiUrl(ifl_a_admin_action_approvepreview.this) + "/user_admin/approve-preview");
                    clickLock = true;
                } else {
                    Toast.makeText(ifl_a_admin_action_approvepreview.this, "Please wait for finish process", Toast.LENGTH_SHORT).show();

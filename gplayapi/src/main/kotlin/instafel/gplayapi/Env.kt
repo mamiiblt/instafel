@@ -17,7 +17,7 @@ import kotlin.system.exitProcess
 
 class Env {
     companion object {
-        var email: String? = null; var aas_token: String? = null; var release_content_api_url: String? = null; var github_pat: String? = null; var telegram_api_key: String? = null
+        var email: String? = null; var aas_token: String? = null; var release_api_url: String? = null; var github_pat: String? = null; var telegram_api_key: String? = null
         lateinit var deviceProperties: Properties
         lateinit var client: OkHttpClient
 
@@ -36,13 +36,13 @@ class Env {
 
                 val emailP = props.getProperty("email", null)
                 val aasTokenP = props.getProperty("aas_token", null)
-                val relContentLink = props.getProperty("release_content_api_url", null)
+                val relApiUrl = props.getProperty("instafel_api_url", null)
                 val githubPatP = props.getProperty("github_pat", null)
 
-                if (emailP != null && aasTokenP != null && relContentLink != null && githubPatP != null) {
+                if (emailP != null && aasTokenP != null && relApiUrl != null && githubPatP != null) {
                     email = emailP
                     aas_token = aasTokenP
-                    release_content_api_url = relContentLink
+                    release_api_url = relApiUrl
                     github_pat = githubPatP
 
                     Log.println("I", "User ($email) read from config file.")
@@ -158,7 +158,7 @@ class Env {
 
         fun getLatestInstafelVersion(): String? {
             val request = Request.Builder()
-                .url(release_content_api_url ?: "")
+                .url(release_api_url ?: "")
                 .build()
 
             client.newCall(request).execute().use { response ->

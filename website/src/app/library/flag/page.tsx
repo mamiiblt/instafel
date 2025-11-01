@@ -3,7 +3,7 @@
 import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import {useTranslation} from "react-i18next";
-import {contentAPIURL, flagCategories} from "@/wdata/flag_sdata";
+import {iflApiBase, flagCategories} from "@/wdata/flag_sdata";
 import {FlagIcon, GalleryVerticalEnd, Search} from "lucide-react";
 import FlagLibraryCategoryItem from "@/components/FlagLibraryCategoryItem";
 import {Input} from "@/components/ui/input";
@@ -22,7 +22,7 @@ export default function LibraryFlagPage() {
 
     useEffect(() => {
         const fetchData = async () => {
-            var requestUrl = `${contentAPIURL}/content/flib/sizes`;
+            var requestUrl = `${iflApiBase}/content/flib/sizes`;
             const res = await fetch(requestUrl);
             const result = await res.json();
             setData(result);

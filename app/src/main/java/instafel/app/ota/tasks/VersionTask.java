@@ -68,7 +68,7 @@ public class VersionTask extends AsyncTask<String, Void, String> {
             JSONObject jObject = new JSONObject(result);
             int lastVersion = Integer.parseInt(jObject.getString("tag_name").substring(1));
             new BuildInfoTask(act, ifl_version, ifl_type, lastVersion, instafelDialog, checkType).execute(
-                    "https://content.api.instafel.app/content/rels/get/" + lastVersion
+                    "https://api.instafel.app/content/rels/get/" + lastVersion
             );
         } catch (Exception e) {
             e.printStackTrace();

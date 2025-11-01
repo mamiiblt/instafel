@@ -19,7 +19,7 @@ import {
   Wrench,
 } from "lucide-react";
 
-export const contentAPIURL = "https://content.api.instafel.app";
+export const iflApiBase = "https://api.instafel.app";
 
 export const flagCategories = {
   "2589": {

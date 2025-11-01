@@ -9,13 +9,13 @@ tasks.register("mergeTranslations") {
             rootDir = rootProject.rootDir
         )
 
-        /*mergeUtils.startBuild()
+        mergeUtils.startBuild()
         mergeUtils.waitUntilBuildFinish()
         mergeUtils.downloadBuild()
         mergeUtils.unzipBuildFile()
         mergeUtils.mergeWebsiteSources()
         mergeUtils.mergeUpdaterSources()
-        mergeUtils.mergeAppSources()*/
+        mergeUtils.mergeAppSources()
         mergeUtils.updateLocalesInPatcher()
     }
 }

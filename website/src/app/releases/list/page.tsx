@@ -5,7 +5,7 @@ import React, {useEffect, useState} from "react";
 import Footer from "@/components/Footer";
 import {useTranslation} from "react-i18next";
 import Navbar from "@/components/Navbar";
-import {contentAPIURL} from "@/wdata/flag_sdata";
+import {iflApiBase} from "@/wdata/flag_sdata";
 import {LoadingBar} from "@/components/LoadingBars";
 import {useRouter, useSearchParams} from "next/navigation";
 import {CardTitle} from "@/components/ui/card";
@@ -36,7 +36,7 @@ export default function ReleasesPage() {
 
     useEffect(() => {
         const fetchData = async () => {
-            var requestUrl = `${contentAPIURL}/content/rels/list?page=${currentPage}`;
+            var requestUrl = `${iflApiBase}/content/rels/list?page=${currentPage}`;
             const res = await fetch(requestUrl);
             const result = await res.json();
 
