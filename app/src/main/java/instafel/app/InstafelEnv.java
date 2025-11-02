@@ -25,7 +25,7 @@ public class InstafelEnv {
 
     // This method fields need to be set from translation merge task.
     public static LocaleList getSupportedLocaleList() {
-        String[] supportedLanguages = { "en-US", "tr-TR", "hi-IN", "ar-SA", "de-DE", "zh-TW", "in-ID", "zh-HK", "it-IT", "sr-CS", "az-AZ", "es-ES", "zh-CN", "hu-HU", "pl-PL", "fr-FR", "pt-BR", "el-GR" };
+        String[] supportedLanguages = { "en-US", "tr-TR", "hi-IN", "ar-SA", "de-DE", "zh-TW", "in-ID", "zh-HK", "it-IT", "sr-CS", "az-AZ", "es-ES", "zh-CN", "th-TH", "hu-HU", "pl-PL", "fr-FR", "pt-BR", "el-GR" };
         Locale[] locales = new Locale[supportedLanguages.length];
 
         for (int i = 0; i < supportedLanguages.length; i++) {
