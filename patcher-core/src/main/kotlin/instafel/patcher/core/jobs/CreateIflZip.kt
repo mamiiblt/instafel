@@ -4,15 +4,18 @@ import brut.directory.ExtFile
 import instafel.patcher.core.source.SourceManager
 import instafel.patcher.core.source.SourceUtils
 import instafel.patcher.core.utils.Env
+import instafel.patcher.core.utils.LocaleUtils
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.CLIJob
+import instafel.patcher.core.utils.modals.pojo.PatcherLocaleInfo
 import instafel.patcher.core.utils.resources.IFLResData
 import instafel.patcher.core.utils.resources.ResourceParser
 import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.PrefixFileFilter
 import java.io.File
 import java.nio.file.Paths
+import java.util.Locale
 import kotlin.system.exitProcess
 
 object CreateIflZip: CLIJob {
@@ -129,7 +132,7 @@ object CreateIflZip: CLIJob {
                 File(Utils.mergePaths(Env.PROJECT_DIR, "ifl_data.xml"))
             )
 
-            getAndAddInstafelString("")
+            getAndAddInstafelString(PatcherLocaleInfo("", Locale("en", "US")))
             for (locale in Env.INSTAFEL_LOCALES) {
                 getAndAddInstafelString(locale)
             }
@@ -230,10 +233,10 @@ object CreateIflZip: CLIJob {
         Log.info("Succesfully exported")
     }
 
-    fun getAndAddInstafelString(langCodeParam: String) {
-        var langCode = langCodeParam
+    fun getAndAddInstafelString(localeInfo: PatcherLocaleInfo) {
+        var langCode = localeInfo.androidLangCode
 
-        if (langCode.isNotEmpty()) {
+        if (localeInfo.androidLangCode.isNotEmpty()) {
             langCode = "-$langCode"
         }
 
@@ -250,8 +253,7 @@ object CreateIflZip: CLIJob {
         }
 
         if (langCode.contains("-")) {
-            val cleanedLang = langCode.replace("-", "")
-            Log.info("Totally ${iflStrings.size} strings added from $cleanedLang to resource data.")
+            Log.info("Totally ${iflStrings.size} strings added from '${localeInfo.androidLangCode}' [${LocaleUtils.getDisplayString(localeInfo.locale)}] to resource data.")
         } else {
             Log.info("Totally ${iflStrings.size} strings added to resource data.")
         }

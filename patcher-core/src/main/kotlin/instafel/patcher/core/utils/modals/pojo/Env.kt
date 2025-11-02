@@ -1,5 +1,7 @@
 package instafel.patcher.core.utils.modals.pojo
 
+import java.util.Locale
+
 data class ConfigPOJO (
     var manifestVersion: Int = 1,
     var productionMode: Boolean = false,
@@ -22,4 +24,9 @@ data class AppliedPatchesPOJO(
     var appliedPatchCounts: MutableMap<String, Int> = mutableMapOf(),
     var singlePatches: MutableList<PatchInfo> = mutableListOf(),
     var groupPatches: MutableList<PatchGroupInfo> = mutableListOf(),
+)
+
+data class PatcherLocaleInfo(
+    var androidLangCode: String,
+    var locale: Locale
 )

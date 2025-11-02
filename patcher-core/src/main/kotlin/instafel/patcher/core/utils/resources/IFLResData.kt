@@ -88,7 +88,7 @@ class IFLResData {
                 "ids", "attrs", "colors", "strings"
             )
             defaultCategories.forEach { createCategory(it) }
-            Env.INSTAFEL_LOCALES.forEach { createCategory("strings-$it") }
+            Env.INSTAFEL_LOCALES.forEach { createCategory("strings-${it.androidLangCode}") }
         }
 
         private fun createCategory(categoryName: String) {

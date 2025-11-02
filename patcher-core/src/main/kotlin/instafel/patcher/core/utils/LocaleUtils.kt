@@ -1,5 +1,6 @@
 package instafel.patcher.core.utils
 
+import instafel.patcher.core.utils.modals.pojo.PatcherLocaleInfo
 import org.json.JSONArray
 import java.io.InputStream
 import java.util.Locale
@@ -11,8 +12,8 @@ object LocaleUtils {
         )
     }
 
-    fun parseLocalesFromLangCodes(): List<Locale> {
-        val localeList = mutableListOf<Locale>()
+    fun parseLocalesFromLangCodes(): List<PatcherLocaleInfo> {
+        val localeList = mutableListOf<PatcherLocaleInfo>()
         val languageCodes = loadSupportedLocalesFromAssets()
 
         for (i in 0 until languageCodes.length()) {
@@ -25,10 +26,14 @@ object LocaleUtils {
                 else -> Locale(parts[0])
             }
 
-            localeList.add(locale)
+            localeList.add(PatcherLocaleInfo("${parts[0]}-r${parts[1]}", locale))
         }
 
         return localeList
+    }
+
+    fun getDisplayString(locale: Locale): String {
+        return "${locale.displayLanguage} (${locale.displayCountry})"
     }
 
     // Utility functions

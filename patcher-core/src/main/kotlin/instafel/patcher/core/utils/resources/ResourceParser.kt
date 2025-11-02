@@ -39,9 +39,9 @@ object ResourceParser {
 
     @Throws(ParserConfigurationException::class, IOException::class, SAXException::class)
     fun parseResString(file: File): Resources<TString> {
-        Env.INSTAFEL_LOCALES.forEach { locale ->
-            if (file.absolutePath.contains("values-$locale")) {
-                return parseResource(file, "string", ::TString, "strings-$locale")
+        Env.INSTAFEL_LOCALES.forEach { localeInfo ->
+            if (file.absolutePath.contains("values-${localeInfo.androidLangCode}")) {
+                return parseResource(file, "string", ::TString, "strings-${localeInfo.androidLangCode}")
             }
         }
         return parseResource(file, "string", ::TString, "strings")
@@ -71,10 +71,22 @@ object ResourceParser {
         return getElementsFromResFile(parseResourceDocument(inpFile), "provider")
     }
 
-    fun parseResourceDocument(inputFile: File): Document =
-        DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(inputFile).apply { normalize() }
+    fun parseResourceDocument(inputFile: File): Document {
+        val documentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+        return if (inputFile.exists()) {
+            documentBuilder.parse(inputFile).apply { normalize() }
+        } else {
+            documentBuilder.newDocument().apply {
+                xmlStandalone = true
+                val root = createElement("resources")
+                appendChild(root)
+            }
+        }
+    }
 
     fun buildXmlFile(doc: Document, distFile: File) {
+        distFile.parentFile.mkdirs()
+
         val transformerFactory = TransformerFactory.newInstance()
         val transformer = transformerFactory.newTransformer(
             StreamSource(ResourceParser::class.java.getResourceAsStream("/styling.xslt"))

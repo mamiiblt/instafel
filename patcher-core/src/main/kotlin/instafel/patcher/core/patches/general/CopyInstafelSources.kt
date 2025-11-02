@@ -1,6 +1,7 @@
 package instafel.patcher.core.patches.general
 
 import instafel.patcher.core.utils.Env
+import instafel.patcher.core.utils.LocaleUtils
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.LastResourceIDs
@@ -17,6 +18,7 @@ import org.apache.commons.io.FileUtils
 import org.apache.commons.io.filefilter.PrefixFileFilter
 import org.apache.commons.io.filefilter.TrueFileFilter
 import java.io.File
+import java.util.Locale
 
 @PInfos.PatchInfo(
     name = "Copy Instafel Sources",
@@ -110,11 +112,11 @@ class CopyInstafelSources: InstafelPatch() {
 
                 val strings: Map<String, Resources<RTypes.TString>> = resDataParser.resourcesStrings
 
-                Env.INSTAFEL_LOCALES.forEach { locale ->
-                    val targetFile = File(Utils.mergePaths("$valuesFolderPath-$locale", "strings.xml"))
+                Env.INSTAFEL_LOCALES.forEach { localeInfo ->
+                    val targetFile = File(Utils.mergePaths("$valuesFolderPath-${localeInfo.androidLangCode}", "strings.xml"))
                     val targetResources = ResourceParser.parseResString(targetFile)
 
-                    strings["strings-$locale"]?.let { sourceResources ->
+                    strings["strings-${localeInfo.androidLangCode}"]?.let { sourceResources ->
                         mergeResources(targetResources, sourceResources)
                     }
                 }
