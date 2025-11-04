@@ -6,7 +6,7 @@ import instafel.gplayapi.utils.EnvConfig
 import instafel.gplayapi.utils.Log
 
 lateinit var params: Array<String>
-val gson: Gson = GsonBuilder().setPrettyPrinting().create()
+val gson: Gson = GsonBuilder().disableHtmlEscaping().create()
 
 fun main(args: Array<String>) {
     params = args;
@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
     )
     Env.updateEnvironment(envConfig)
     Env.updateDeviceProp()
-    Log.println("RESP", gson.toJson(Env.getLatestRelease()))
+    Log.println("R", gson.toJson(Env.getLatestRelease()))
 }
 
 fun loadParamFromArgs(paramName: String): String {
