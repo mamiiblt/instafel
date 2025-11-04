@@ -14,6 +14,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.gplayapi)
     implementation(libs.org.json)
+    implementation(libs.gson)
     implementation(libs.okhttp)
 }
 

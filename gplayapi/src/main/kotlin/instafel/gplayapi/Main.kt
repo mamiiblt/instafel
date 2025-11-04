@@ -1,18 +1,31 @@
 package instafel.gplayapi
 
-import instafel.gplayapi.utils.ExceptionHandler
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import instafel.gplayapi.utils.EnvConfig
 import instafel.gplayapi.utils.Log
 
-@Throws(Exception::class)
-fun main() {
-    Log.println("I", "Instafel GPlayAPI (with Kotlin)")
+lateinit var params: Array<String>
+val gson: Gson = GsonBuilder().setPrettyPrinting().create()
 
-    Thread.setDefaultUncaughtExceptionHandler(ExceptionHandler());
+fun main(args: Array<String>) {
+    params = args;
+    Log.println("I", "Starting a new GPlayAPI instance...")
 
-    // load email & aas token from gplayapi.properties
-    Env.updateEnvironment()
-    // set device config (you can get device props from https://gitlab.com/AuroraOSS/gplayapi , And don't forget to import prop file into resources)
-    Env.updateDeviceProp("gplayapi_px_3a.properties")
-    // this method starts checker, you can customize it whatever you want :)
-    Env.startChecker()
+    val envConfig = EnvConfig(
+        loadParamFromArgs("email"),
+        loadParamFromArgs("aasToken"),
+    )
+    Env.updateEnvironment(envConfig)
+    Env.updateDeviceProp()
+    Log.println("RESP", gson.toJson(Env.getLatestRelease()))
+}
+
+fun loadParamFromArgs(paramName: String): String {
+    params.forEach { param ->
+        if (param.startsWith("$paramName=")) {
+            return param.replace("$paramName=", "")
+        }
+    }
+    return ""
 }

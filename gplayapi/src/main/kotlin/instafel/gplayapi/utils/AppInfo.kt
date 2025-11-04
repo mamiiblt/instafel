@@ -29,7 +29,7 @@ class AppInfo(val app: App) {
 
     fun getVer_name(): String = infoObject.getString("ver_name")
 
-    fun getVer_code(): String = infoObject.getString("ver_code")
+    fun getVer_code(): Int = infoObject.getInt("ver_code")
 
     fun getTarget_sdk(): String = infoObject.getString("target_sdk")
 

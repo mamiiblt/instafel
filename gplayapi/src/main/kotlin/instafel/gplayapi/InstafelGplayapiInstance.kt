@@ -1,26 +1,24 @@
 package instafel.gplayapi
 
 import instafel.gplayapi.utils.AppInfo
-import instafel.gplayapi.utils.General
 import instafel.gplayapi.utils.Log
 
 import com.aurora.gplayapi.data.models.AuthData
 import com.aurora.gplayapi.data.models.File
 import com.aurora.gplayapi.helpers.AppDetailsHelper
+import com.aurora.gplayapi.helpers.AuthHelper
 import com.aurora.gplayapi.helpers.PurchaseHelper
+import java.util.Properties
+import kotlin.system.exitProcess
 
 class InstafelGplayapiInstance(private val packageName: String) {
 
     lateinit var authData: AuthData
 
     @Throws(Exception::class)
-    fun getIgApk(): AppInfo? {
+    fun fetchData(): AppInfo? {
 
-        if (Env.email != null && Env.aas_token != null) {
-            authData = General.authenticateUser(Env.email!!, Env.aas_token!!, Env.deviceProperties)!!
-        } else {
-            return null
-        }
+        authData = authenticateUser(Env.config.email, Env.config.aasToken, Env.deviceProp)!!
 
         val appInfo = AppInfo(AppDetailsHelper(authData).getAppByPackageName(packageName))
         val files: List<File> = PurchaseHelper(authData).purchase(
@@ -32,11 +30,21 @@ class InstafelGplayapiInstance(private val packageName: String) {
         for (file in files) {
             Log.println("I", "File found, ${file.name}")
             when {
-                file.name == "com.instagram.android.apk" -> appInfo.addApkInfo("base_apk", file.url, file.size)
-                file.name.contains("config") && file.name.contains("dpi.apk") -> appInfo.addApkInfo("rconf_apk", file.url, file.size)
+                file.name == "com.instagram.android.apk" -> appInfo.addApkInfo("baseApk", file.url, file.size)
+                file.name.contains("config") && file.name.contains("dpi.apk") -> appInfo.addApkInfo("resConfigApk", file.url, file.size)
             }
         }
 
-        return if (appInfo.ifApkExist("base_apk") && appInfo.ifApkExist("rconf_apk")) appInfo else null
+        return if (appInfo.ifApkExist("baseApk") && appInfo.ifApkExist("resConfigApk")) appInfo else null
+    }
+
+    fun authenticateUser (email: String, aasKey: String, deviceProp: Properties): AuthData? {
+        try {
+            return AuthHelper.build(email, aasKey, deviceProp)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            Log.println("E", "An error occurred while authenticating user with GPlay servers.")
+            exitProcess(-1)
+        }
     }
 }
