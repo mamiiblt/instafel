@@ -35,7 +35,9 @@ jobs:
           git add .
           git reset env.properties
           git commit -m "[general] chore: Update translation sources" || echo "No changes to commit"
-          git push https://${{ secrets.GH_TOKEN }}@github.com/mamiiblt/instafel.git main
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release a new update for patcher-core
         run: ./gradlew :patcher-core:release
