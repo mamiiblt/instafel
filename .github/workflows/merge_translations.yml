@@ -37,7 +37,7 @@ jobs:
           git commit -m "[general] chore: Update translation sources" || echo "No changes to commit"
           git push origin main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Release a new update for patcher-core
         run: ./gradlew :patcher-core:release
