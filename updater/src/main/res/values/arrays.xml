@@ -7,23 +7,23 @@
 
     <string-array name="supported_languages">
         <item>en-US</item>
-        <item>tr-TR</item>
         <item>hi-IN</item>
-        <item>ar-SA</item>
-        <item>de-DE</item>
         <item>zh-TW</item>
+        <item>de-DE</item>
+        <item>tr-TR</item>
+        <item>ar-SA</item>
         <item>in-ID</item>
-        <item>zh-HK</item>
-        <item>it-IT</item>
-        <item>sr-CS</item>
-        <item>az-AZ</item>
+        <item>pl-PL</item>
         <item>es-ES</item>
         <item>zh-CN</item>
-        <item>th-TH</item>
-        <item>hu-HU</item>
-        <item>pl-PL</item>
         <item>fr-FR</item>
         <item>pt-BR</item>
+        <item>az-AZ</item>
+        <item>sr-CS</item>
+        <item>th-TH</item>
+        <item>it-IT</item>
+        <item>hu-HU</item>
+        <item>zh-HK</item>
         <item>el-GR</item>
     </string-array>
 </resources>
