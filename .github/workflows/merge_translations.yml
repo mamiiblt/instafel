@@ -24,3 +24,18 @@ jobs:
 
       - name: Run merge tasks
         run: ./gradlew mergeTranslations
+
+      - name: Update patcher app sources with latest sources
+        run: ./gradlew updatePatcherSources
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git reset env.properties
+          git commit -m "[general] chore: Update translation sources" || echo "No changes to commit"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/mamiiblt/instafel.git main
+
+      - name: Release a new update for patcher-core
+        run: ./gradlew :patcher-core:release
