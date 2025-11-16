@@ -191,8 +191,8 @@
     <string name="ifl_a11_60">Izvezi rezervnu kopiju</string>
     <string name="ifl_a11_61">Uvezite stare JSON rezervne kopije</string>
     <string name="ifl_a11_62">Uporedi rezervne kopije</string>
-    <string name="ifl_a11_63">Used to import a backup file completely with all flags in file</string>
-    <string name="ifl_a11_64">Adds flags to the backup file you use that are not in the backup you selected.</string>
+    <string name="ifl_a11_63">Koristi se za potpuni uvoz rezervne kopije sa svim zastavicama u datoteci</string>
+    <string name="ifl_a11_64">Dodaje zastavice datoteci rezervne kopije koju koristite, a koje nisu u rezervnoj kopiji koju ste izabrali.</string>
     <string name="ifl_a11_65">Možete da uvezete stare rezervne kopije tipa .json pomoću ove opcije</string>
     <string name="ifl_a11_66">Izaberi rezervnu kopiju 1</string>
     <string name="ifl_a11_67">Izaberi rezervnu kopiju 2</string>

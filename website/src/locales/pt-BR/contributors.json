@@ -12,8 +12,8 @@
     "special": "Agradecimentos Especiais"
   },
   "pleaseTranslateCard": {
-    "title": "Would you like to translate too?",
-    "desc": "Join Instafel's Crowdin project and contribute to the translation!",
-    "joinUs": "Join us on Crowdin!"
+    "title": "Você gostaria de traduzir também?",
+    "desc": "Junte-se ao projeto Crowdin do Instafel e contribua para a tradução!",
+    "joinUs": "Junte-se a nós no Crowdin!"
   }
 }

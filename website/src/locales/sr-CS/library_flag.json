@@ -1,6 +1,6 @@
 {
   "title": "Flag Library",
-  "desc": "With this library you can get information about the flags of Instagram",
+  "desc": "Ova biblioteka vam omogućava da saznate detalje o eksperimentalnim funkcijama na Instagramu",
   "num_flag_zero": "No flags",
   "num_flag_one": "{{count}} flag",
   "num_flag_few": "{{count}} flags",

@@ -1,57 +1,57 @@
 {
   "heroHeader": {
     "title": "Instafel Updater",
-    "subtitle": "Automatic updates, zero effort",
-    "description": "Keep Instafel always up-to-date with this powerful companion app that handles updates automatically through Shizuku or Root."
+    "subtitle": "Atualizações automáticas, esforço zero",
+    "description": "Mantenha a Instafel sempre atualizada com este poderoso app companheiro que lida com atualizações automaticamente através de Shizuku ou Root."
   },
   "buttons": {
     "download": "Download {{version}}",
-    "sourceCode": "Source Code"
+    "sourceCode": "Código Fonte"
   },
   "howItWorks": {
-    "title": "How It Works",
+    "title": "Como Funciona",
     "steps": {
       "install": {
-        "title": "Install & Grant Permissions",
-        "description": "Install the app and grant Shizuku or Root permissions."
+        "title": "Instalar & Conceder Permissões",
+        "description": "Instale o app e conceda permissões de Root ou Shizuku."
       },
       "configure": {
-        "title": "Configure Settings",
-        "description": "Choose your update preferences and check frequency."
+        "title": "Configurar definições",
+        "description": "Escolha as suas preferências de atualização e a frequência de verificação."
       },
       "automatic": {
-        "title": "Automatic Updates",
-        "description": "Relax and let Updater handle everything for you."
+        "title": "Atualizações Automáticas",
+        "description": "Relaxe e deixe o updater lidar com tudo para você."
       }
     }
   },
   "features": {
-    "title": "Key Features",
+    "title": "Principais Recursos",
     "silent": {
-      "title": "Silent Installation",
-      "description": "Runs in the background to automatically download and install the latest versions from our API."
+      "title": "Instalação silenciosa",
+      "description": "Executa em segundo plano para baixar e instalar automaticamente as versões mais recentes da nossa API."
     },
     "shizuku": {
-      "title": "Shizuku Support",
-      "description": "Works on non-rooted phones with Shizuku without requiring any additional root managers."
+      "title": "Suporte ao Shizuku",
+      "description": "Funciona em telefones sem root com Shizuku sem precisar de nenhum gerenciador Root adicional."
     },
     "openSource": {
-      "title": "Open Source",
-      "description": "Completely transparent code so you can trust the app with the necessary permissions."
+      "title": "Código aberto",
+      "description": "Código totalmente transparente para que possa confiar o app com as permissões necessárias."
     }
   },
   "whyUse": {
-    "title": "Why Use Updater?",
+    "title": "Por que usar o Updater?",
     "benefits": {
-      "latestFeatures": "Always have the latest patches and features automatically",
-      "saveTime": "Save time with background updates instead of manual OTA checks",
-      "lightweight": "Lightweight and efficient with minimal resource usage",
-      "notifications": "Get notified only when updates are successfully installed",
-      "compatibility": "Works seamlessly with both Shizuku and Root methods"
+      "latestFeatures": "Tenha sempre as últimas atualizações e recursos automaticamente",
+      "saveTime": "Economize tempo com atualizações em segundo plano em vez de verificações manuais OTA",
+      "lightweight": "Leve e eficiente com mínimo de uso de recurso",
+      "notifications": "Seja notificado apenas quando as atualizações forem instaladas com sucesso",
+      "compatibility": "Funciona perfeitamente com os métodos Shizuku e Root"
     }
   },
   "callToAction": {
-    "title": "Get it now!",
-    "description": "Keep your Instafel experience up-to-date with minimum effort. Download the updater now."
+    "title": "Obtenha agora!",
+    "description": "Mantenha sua experiência com o Instafel atualizada com o mínimo de esforço. Baixe o Updater agora."
   }
 }

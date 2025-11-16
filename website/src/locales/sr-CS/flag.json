@@ -20,7 +20,7 @@
     "block_contents": {
       "info": {
         "added_by": "Dodat od strane",
-        "last_edit": "Last Edit",
+        "last_edit": "Poslednje uređeno",
         "added_in": "Dodato u",
         "removed_in": "Obrisano u",
         "unknown": "Nepoznato"
@@ -29,8 +29,8 @@
         "failed_load_img": "Učitavanje slike nije uspelo"
       },
       "metaconf_options": {
-        "copy_to_clipboard": "Copy to clipboard",
-        "prop_name_copied": "Property name copied",
+        "copy_to_clipboard": "Kopiraj u privremenu memoriju",
+        "prop_name_copied": "Naziv svojstva je kopiran",
         "prop_name_copied_desc": "Flag property name copied to clipboard"
       }
     }

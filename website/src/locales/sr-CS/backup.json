@@ -1,20 +1,20 @@
 {
-  "backToLibrary": "Back to Backup Library",
-  "version": "Version {{verStr}}",
-  "downloadButton": "Download Backup",
-  "downloading": "Downloading...",
-  "importButton": "Import in Instafel",
-  "openingInstafel": "Opening Instafel...",
-  "aboutTitle": "About This Backup",
-  "lastUpdated": "Last Updated",
-  "changelogTitle": "Changelog",
-  "howToUseTitle": "How to use this backup",
-  "howToUseDescription": "You can either download this backup file and manually import it into Instafel, or use the \"Import in Instafel\" button to automatically open the app and import it directly.",
-  "viewAllBackups": "View All Backups",
+  "backToLibrary": "Vratite se u biblioteku rezervnih kopija",
+  "version": "Verzija {{verStr}}",
+  "downloadButton": "Preuzmi rezervnu kopiju",
+  "downloading": "Preuzimanje...",
+  "importButton": "Uvoz u Instafel",
+  "openingInstafel": "Otvaranje Instafel...",
+  "aboutTitle": "O rezervnoj kopiji",
+  "lastUpdated": "Poslednje ažurirano",
+  "changelogTitle": "Spisak promena",
+  "howToUseTitle": "Kako se koristi ova rezervna kopija",
+  "howToUseDescription": "Možete preuzeti ovu rezervnu datoteku i ručno je uvesti u Instafel ili koristiti dugme „Uvezi u Instafel“ da biste automatski otvorili aplikaciju i direktno je uvezli.",
+  "viewAllBackups": "Prikaži sve rezervne kopije",
   "notFound": {
-    "title": "Backup Not Found",
-    "description": "We couldn't find the backup you're looking for. It may have been removed or doesn't exist.",
-    "returnButton": "Return to Backup Library"
+    "title": "Rezervna kopija nije pronađena",
+    "description": "Nismo mogli da pronađemo rezervnu kopiju koju tražite. Možda je uklonjena ili ne postoji.",
+    "returnButton": "Vratite se u biblioteku rezervnih kopija"
   },
-  "fetchFailed": "Failed to fetch backup data: {{errStr}}"
+  "fetchFailed": "Preuzimanje rezervnih podataka nije uspelo: {{errStr}}"
 }

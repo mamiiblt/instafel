@@ -1,15 +1,15 @@
 {
   "title": "Backup Library",
-  "description": "Browse community-created backups that you can import directly into Instafel.",
-  "createdBy": "Created by {{author}}",
+  "description": "Pregledajte rezervne kopije koje je kreirala zajednica i koje možete direktno uvesti u Instafel.",
+  "createdBy": "Kreirano od {{author}}",
   "contribute": {
-    "title": "Want to Contribute?",
-    "description": "Share your Instafel backup with the community and help others discover optimal configurations.",
-    "button": "Join Our Community"
+    "title": "Želite da doprinesete?",
+    "description": "Podelite rezervnu kopiju vašeg Instafel sa zajednicom i pomozite drugima da otkriju najbolja podešavanja.",
+    "button": "Pridruži se našoj zajednici"
   },
   "error": {
-    "title": "Failed to Load Backups",
-    "description": "We couldn't retrieve the backup information. Please check your connection or try again later.",
-    "retryButton": "Retry"
+    "title": "Učitavanje rezervnih kopija nije uspelo",
+    "description": "Nismo mogli da preuzmemo informacije o rezervnoj kopiji. Proverite vezu ili pokušajte ponovo kasnije.",
+    "retryButton": "Pokušaj ponovo"
   }
 }

@@ -12,8 +12,8 @@
     "special": "Külön köszönet"
   },
   "pleaseTranslateCard": {
-    "title": "Would you like to translate too?",
-    "desc": "Join Instafel's Crowdin project and contribute to the translation!",
-    "joinUs": "Join us on Crowdin!"
+    "title": "Te is szeretnél fordítani?",
+    "desc": "Csatlakozz az Instafel Crowdin projekthez és működj közre a fordításban!",
+    "joinUs": "Csatlakozz hozzánk Crowdinon!"
   }
 }

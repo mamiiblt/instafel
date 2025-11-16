@@ -1,11 +1,11 @@
 {
   "heroHeader": {
     "title": "Instafel Updater",
-    "subtitle": "Automatic updates, zero effort",
+    "subtitle": "Automatska ažuriranja, bez napora",
     "description": "Držite Instafel uvek ažuriran pomoću ove moćne prateće aplikacije koja automatski obrađuje ažuriranja putem Shizukua ili Ruta."
   },
   "buttons": {
-    "download": "Download {{version}}",
+    "download": "Preuzmi {{version}}",
     "sourceCode": "Izvorni kod"
   },
   "howItWorks": {
@@ -13,45 +13,45 @@
     "steps": {
       "install": {
         "title": "Instaliraj i odobri dozvole",
-        "description": "Install the app and grant Shizuku or Root permissions."
+        "description": "Instalirajte aplikaciju i dodelite Shizuku i Root dozvole."
       },
       "configure": {
         "title": "Konfigurišite podešavanja",
-        "description": "Choose your update preferences and check frequency."
+        "description": "Izaberite podešavanja ažuriranja i proverite učestalost."
       },
       "automatic": {
-        "title": "Automatic Updates",
-        "description": "Relax and let Updater handle everything for you."
+        "title": "Automatska ažuriranja",
+        "description": "Ne brinite, dozvolite da ažuriranje sve uradi za vas."
       }
     }
   },
   "features": {
-    "title": "Key Features",
+    "title": "Ključne karakteristike",
     "silent": {
-      "title": "Silent Installation",
-      "description": "Runs in the background to automatically download and install the latest versions from our API."
+      "title": "Tiha instalacija",
+      "description": "Radi u pozadini da bi automatski preuzeo i instalirao najnovije verzije sa našeg API-ja."
     },
     "shizuku": {
       "title": "Shizuku Support",
       "description": "Works on non-rooted phones with Shizuku without requiring any additional root managers."
     },
     "openSource": {
-      "title": "Open Source",
-      "description": "Completely transparent code so you can trust the app with the necessary permissions."
+      "title": "Otvorenog koda",
+      "description": "Potpuno transparentan kod tako da možete verovati aplikaciji sa potrebnim dozvolama."
     }
   },
   "whyUse": {
     "title": "Why Use Updater?",
     "benefits": {
       "latestFeatures": "Always have the latest patches and features automatically",
-      "saveTime": "Save time with background updates instead of manual OTA checks",
-      "lightweight": "Lightweight and efficient with minimal resource usage",
-      "notifications": "Get notified only when updates are successfully installed",
+      "saveTime": "Uštedite vreme uz pozadinska ažuriranja umesto ručnih OTA provera",
+      "lightweight": "Lagan i efikasan sa minimalnom potrošnjom resursa",
+      "notifications": "Dobijajte obaveštenja samo kada se ažuriranja uspešno instaliraju",
       "compatibility": "Works seamlessly with both Shizuku and Root methods"
     }
   },
   "callToAction": {
-    "title": "Get it now!",
-    "description": "Keep your Instafel experience up-to-date with minimum effort. Download the updater now."
+    "title": "Nabavite ga odmah!",
+    "description": "Održavajte svoje Instafel iskustvo ažuriranim uz minimalan napor. Preuzmite program za ažuriranje sada."
   }
 }
