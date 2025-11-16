@@ -63,10 +63,11 @@ class CrowdinMergeUtils(
         conn.requestMethod = "POST"
         conn.setRequestProperty("Authorization", "Bearer $crowdinApiToken")
         conn.setRequestProperty("Content-Type", "application/json")
+        conn.setRequestProperty("Accept", "application/json")
         conn.doOutput = true
 
         val body = JSONObject().apply {
-            put("exportApprovedOnly", true)
+            put("exportApprovedOnly", false)
         }.toString()
 
         OutputStreamWriter(conn.outputStream).use { it.write(body) }
@@ -86,6 +87,8 @@ class CrowdinMergeUtils(
             val conn = url.openConnection() as HttpURLConnection
             conn.requestMethod = "GET"
             conn.setRequestProperty("Authorization", "Bearer $crowdinApiToken")
+            conn.setRequestProperty("Content-Type", "application/json")
+            conn.setRequestProperty("Accept", "application/json")
 
             val responseText = conn.inputStream.bufferedReader().readText()
             val status = JSONObject(responseText)
@@ -99,7 +102,6 @@ class CrowdinMergeUtils(
                 }
                 "failed" -> error("Crowdin build failed!")
                 else -> {
-                    println("Current status: $status, waiting...")
                     Thread.sleep(pollInterval)
                 }
             }
@@ -111,6 +113,8 @@ class CrowdinMergeUtils(
         val conn = url.openConnection() as HttpURLConnection
         conn.requestMethod = "GET"
         conn.setRequestProperty("Authorization", "Bearer $crowdinApiToken")
+        conn.setRequestProperty("Content-Type", "application/json")
+        conn.setRequestProperty("Accept", "application/json")
 
         val response = conn.inputStream.bufferedReader().readText()
         val downloadUrl = JSONObject(response).getJSONObject("data").getString("url")

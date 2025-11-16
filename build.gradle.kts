@@ -17,5 +17,7 @@ tasks.register("mergeTranslations") {
         mergeUtils.mergeUpdaterSources()
         mergeUtils.mergeAppSources()
         mergeUtils.updateLocalesInPatcher()
+
+        println("All translation merge steps ran successfully.")
     }
 }
