@@ -79,8 +79,8 @@ public class ifl_a_language extends AppCompatActivity {
         }
 
         LocalizationUtils.setLanguageClickListeners(ifl_a_language.this, localeTiles);
-        tileDeviceSwitch.setOnCheckedChangeListener((compoundButton, isChecked) -> LocalizationUtils.setStateOfDevice(ifl_a_language.this, isChecked));
-        tileLangDevice.setOnClickListener(v -> LocalizationUtils.setStateOfDevice(ifl_a_language.this, !tileDeviceSwitch.isChecked()));
+        tileDeviceSwitch.setOnCheckedChangeListener((compoundButton, isChecked)
+                -> LocalizationUtils.setStateOfDevice(ifl_a_language.this, isChecked));
     }
 
     @Override
