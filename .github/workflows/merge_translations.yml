@@ -1,0 +1,26 @@
+name: Merge Translations from Crowdin
+
+on:
+  repository_dispatch:
+    types: [merge_translations]
+
+jobs:
+  merge_translations:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '17'
+
+      - name: Create env.properties file
+        run: |
+          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> env.properties
+          echo "CROWDIN_TOKEN=${{ secrets.CROWDIN_API_TOKEN }}" >> env.properties
+
+      - name: Run merge tasks
+        run: ./gradlew mergeTranslations
