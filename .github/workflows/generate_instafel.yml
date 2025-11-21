@@ -1,0 +1,62 @@
+name: Generate Instafel
+
+on:
+  repository_dispatch:
+    types: [generate_instafel]
+
+jobs:
+  ifl_generator:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '21'
+
+      - name: Download & Merge APKs
+        run: |
+          echo "Downloading APKs..."
+          mkdir -p apks && cd apks
+          wget -q "${{ github.event.client_payload.base.url }}"
+          wget -q "${{ github.event.client_payload.rconf.url }}"
+          echo "Merging APKs..."
+          cd ..
+          java -jar apkeditor.jar m -i apks -o instagram.apk
+
+      - name: Create config.json
+        run: |
+          cat <<EOF > config.json
+          {    
+              "manifestVersion": 1,
+              "productionMode": true,
+              "managerToken": "${{ secrets.MANAGER_TOKEN }}",
+              "githubPatToken": "${{ secrets.GH_PAT_TOKEN }}"
+          }
+          EOF
+
+      - name: Download latest Patcher
+        run: |
+          chmod +x download_patcher.sh
+          ./download_patcher.sh
+
+      - name: Print about of patcher
+        run: |
+          java -jar ifl-patcher.jar about
+
+      - name: Initialize Project
+        run: |
+          java -jar ifl-patcher.jar init instagram.apk
+          cp config.json instagram/config.json
+
+      - name: Run patches
+        run: java -jar ifl-patcher.jar run instagram unlock_developer_options remove_ads remove_snooze_warning instafel change_channel_name clone
+
+      - name: Build project
+        run: java -jar ifl-patcher.jar build instagram
+
+      - name: Upload preview
+        run: java -jar ifl-patcher.jar uprew instagram
