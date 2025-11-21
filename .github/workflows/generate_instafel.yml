@@ -23,9 +23,10 @@ jobs:
           mkdir -p apks && cd apks
           wget -q "${{ github.event.client_payload.base.url }}"
           wget -q "${{ github.event.client_payload.rconf.url }}"
-          echo "Merging APKs..."
           cd ..
-          java -jar apkeditor.jar m -i apks -o instagram.apk
+          wget -q "https://github.com/REAndroid/APKEditor/releases/download/V1.4.5/APKEditor-1.4.5.jar"
+          echo "Merging APKs..."
+          java -jar APKEditor-1.4.5.jar m -i apks -o instagram.apk
 
       - name: Create config.json
         run: |
