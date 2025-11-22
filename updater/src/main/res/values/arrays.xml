@@ -6,24 +6,24 @@
     </string-array>
 
     <string-array name="supported_languages">
-        <item>en-US</item>
-        <item>hi-IN</item>
-        <item>zh-TW</item>
-        <item>de-DE</item>
-        <item>tr-TR</item>
         <item>ar-SA</item>
-        <item>in-ID</item>
-        <item>pl-PL</item>
-        <item>es-ES</item>
-        <item>zh-CN</item>
-        <item>fr-FR</item>
-        <item>pt-BR</item>
         <item>az-AZ</item>
+        <item>de-DE</item>
+        <item>el-GR</item>
+        <item>en-US</item>
+        <item>es-ES</item>
+        <item>fr-FR</item>
+        <item>hi-IN</item>
+        <item>hu-HU</item>
+        <item>in-ID</item>
+        <item>it-IT</item>
+        <item>pl-PL</item>
+        <item>pt-BR</item>
         <item>sr-CS</item>
         <item>th-TH</item>
-        <item>it-IT</item>
-        <item>hu-HU</item>
+        <item>tr-TR</item>
+        <item>zh-CN</item>
         <item>zh-HK</item>
-        <item>el-GR</item>
+        <item>zh-TW</item>
     </string-array>
 </resources>
