@@ -164,7 +164,7 @@ class CrowdinMergeUtils(
         val locales = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
         val normalizedLocaleNames = mutableListOf<String>()
         locales.forEach { locale -> normalizedLocaleNames.add(locale.replace("-r", "-")) }
-        val localesJsonArr = JSONArray(normalizedLocaleNames)
+        val localesJsonArr = JSONArray(normalizedLocaleNames.sorted())
         localeAssetFile.writeText(localesJsonArr.toString())
         println("Patcher's SUPPORTED_LANGUAGES definition successfully updated!")
     }
@@ -185,7 +185,7 @@ class CrowdinMergeUtils(
 
         val content = instafelEnvFile.readText()
         val regex = Regex("""String\[\]\s+supportedLanguages\s*=\s*\{.*?};""", RegexOption.DOT_MATCHES_ALL)
-        val newArrayContent = newLanguagesArr.joinToString(", ") { "\"$it\"" }
+        val newArrayContent = newLanguagesArr.sorted().joinToString(", ") { "\"$it\"" }
         val newLine = """String[] supportedLanguages = { $newArrayContent };"""
         val newContent = content.replace(regex, newLine)
         instafelEnvFile.writeText(newContent)
@@ -206,7 +206,7 @@ class CrowdinMergeUtils(
         println("All localization sources (${languages.size} file) copied into res/values-... folders")
 
         val content = mainStringFile.readText()
-        val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>${it.replace("-r", "-")}</item>" }
+        val items = newLanguagesArr.sorted().joinToString(separator = "\n") { "        <item>${it.replace("-r", "-")}</item>" }
         val regex = Regex("""<string-array\s+name="supported_languages".*?>.*?</string-array>""", RegexOption.DOT_MATCHES_ALL)
         val newContent = content.replace(regex) { "<string-array name=\"supported_languages\">\n$items\n    </string-array>" }
         mainStringFile.writeText(newContent)
@@ -252,7 +252,7 @@ class CrowdinMergeUtils(
 
         val content = settingsTsFile.readText()
         val regex = Regex("""supportedLocales\s*=\s*\[.*?]""", RegexOption.DOT_MATCHES_ALL)
-        val newArray = sortedLocales.joinToString(
+        val newArray = sortedLocales.sorted().joinToString(
             prefix = "[\"",
             separator = "\",\"",
             postfix = "\"]"
