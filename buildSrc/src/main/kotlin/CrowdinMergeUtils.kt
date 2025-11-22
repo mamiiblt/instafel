@@ -2,9 +2,11 @@ import org.gradle.internal.impldep.kotlinx.serialization.json.Json
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedOutputStream
+import java.io.BufferedReader
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.io.InputStreamReader
 import java.net.URL
 import java.net.HttpURLConnection
 import java.io.OutputStreamWriter
@@ -46,6 +48,7 @@ fun copyFolder(sourceDir: Path, targetDir: Path) {
 
 class CrowdinMergeUtils(
     val crowdinApiToken: String,
+    val managerToken: String,
     val outputDir: File,
     val rootDir: File
 ) {
@@ -262,6 +265,36 @@ class CrowdinMergeUtils(
 
         println("Locale constraints updated with ${localeCodes.size} locale")
         println("Website sources updated with latest sources successfully.")
+    }
+
+    fun sendActionCompletedReq(commitHash: String) {
+        val url = URL("https://api.instafel.app/manager/merge-op-completed")
+        val connection = url.openConnection() as HttpURLConnection
+
+        connection.requestMethod = "POST"
+        connection.doOutput = true
+        connection.setRequestProperty("Content-Type", "application/json; charset=UTF-8")
+        connection.setRequestProperty("Accept", "application/json")
+        connection.setRequestProperty("manager-token", managerToken)
+
+        val json = JSONObject()
+        json.put("commitHash", commitHash)
+        json.put("branch", "main")
+
+        val outputBytes = json.toString().toByteArray(Charsets.UTF_8)
+        connection.outputStream.use { os ->
+            os.write(outputBytes)
+        }
+
+        val responseCode = connection.responseCode
+        val response = if (responseCode == HttpURLConnection.HTTP_OK) {
+            BufferedReader(InputStreamReader(connection.inputStream)).use { it.readText() }
+        } else {
+            BufferedReader(InputStreamReader(connection.errorStream)).use { it.readText() }
+        }
+
+        println("Status: $responseCode")
+        println("Response: $response")
     }
 
     fun loadFolderContents(baseFolder: File, filterFolderName: String): Array<String> {

@@ -21,6 +21,7 @@ jobs:
         run: |
           echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> env.properties
           echo "CROWDIN_TOKEN=${{ secrets.CROWDIN_API_TOKEN }}" >> env.properties
+          echo "MANAGER_TOKEN=${{ secrets.MANAGER_TOKEN }}" >> env.properties
 
       - name: Run merge tasks
         run: ./gradlew mergeTranslations
@@ -41,3 +42,6 @@ jobs:
 
       - name: Release a new update for patcher-core
         run: ./gradlew :patcher-core:release
+
+      - name: Send merging finished log
+        run: ./gradlew sendTaskFinishedLog

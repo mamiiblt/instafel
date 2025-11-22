@@ -1,3 +1,5 @@
+import IFLProjectManager.getCommitHash
+
 tasks.register("mergeTranslations") {
     group = "ifl-general"
     description = "Loads latest translations from Crowdin into sources"
@@ -5,6 +7,7 @@ tasks.register("mergeTranslations") {
     doLast {
         val mergeUtils = CrowdinMergeUtils(
             crowdinApiToken = getInstafelEnvProperty("CROWDIN_TOKEN"),
+            managerToken = getInstafelEnvProperty("MANAGER_TOKEN"),
             outputDir = File("${rootProject.rootDir}/.output/translations"),
             rootDir = rootProject.rootDir
         )
@@ -22,6 +25,20 @@ tasks.register("mergeTranslations") {
     }
 }
 
+tasks.register("sendTaskFinishedLog") {
+    group = "ifl-general"
+    description = "Sends action finish log into ethernal api logs"
+
+    doLast {
+        val mergeUtils = CrowdinMergeUtils(
+            crowdinApiToken = getInstafelEnvProperty("CROWDIN_TOKEN"),
+            managerToken = getInstafelEnvProperty("MANAGER_TOKEN"),
+            outputDir = File("${rootProject.rootDir}/.output/translations"),
+            rootDir = rootProject.rootDir
+        )
+        mergeUtils.sendActionCompletedReq(project.getCommitHash())
+    }
+}
 tasks.register("deleteOutputFolderIfExists"){
     doLast {
         val outputDir = File("${rootProject.rootDir}/.output")
