@@ -25,11 +25,18 @@ export default function LocaleProvider({
 
   useEffect(() => {
     let lng = getCookie(cookieName);
-    const langSupported = supportedLocales.includes(lng)
-    if (!lng || !langSupported) {
+
+    if (!lng || !supportedLocales.includes(lng)) {
       lng = getBrowserLanguage();
-      if (!langSupported) lng = "en-EN";
-      if (!langSupported) lng = "en-EN";
+      if (!lng.includes("-")) {
+        lng = `${lng}-${lng.toUpperCase()}`;
+      }
+
+      if (!supportedLocales.includes(lng)) {
+        lng = "en-EN";
+      }
+
+      console.log(`Detected browser language: ${lng}`);
       document.cookie = `${cookieName}=${lng}; path=/; max-age=31536000`;
     }
 
