@@ -5,13 +5,10 @@ import {
   BookCheck,
   FileCog2,
   FlagIcon,
-  GitBranchIcon,
   InfoIcon,
-  Languages,
   PackageSearch,
   TriangleAlert,
   Users,
-  Wrench,
 } from "lucide-react";
 
 const wikiData: WikiCategory[] = [

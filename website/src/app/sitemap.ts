@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         "/",
         "/wiki",
         "/library/backup",
-        "/library/flag",
+        "/library/flib_moved",
         "/about_updater",
         "/releases/list?page=1",
         "/contributors",

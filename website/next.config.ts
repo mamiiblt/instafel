@@ -26,8 +26,11 @@ const nextConfig: NextConfig = {
             { source: "/guide", destination: "/wiki", permanent: true },
             { source: "/guides", destination: "/wiki", permanent: true },
             { source: "/library_backup", destination: "/library/backup", permanent: true },
-            { source: "/library_flag", destination: "/library/flag", permanent: true },
-            { source: "/flag", destination: "/library/flag/view", permanent: true },
+            { source: "/library_flag", destination: "/library/flib_moved", permanent: true },
+            { source: "/flag", destination: "/library/flib_moved", permanent: true },
+            { source: "/library/backup", destination: "/library/flib_moved", permanent: true },
+            { source: "/library/flag", destination: "/library/flib_moved", permanent: true },
+            { source: "/library/flag/view", destination: "/library/flib_moved", permanent: true },
             { source: "/backup", destination: "/library/backup/view", permanent: true }
         ];
     },
