@@ -6,6 +6,7 @@
   "unclone": "Unclone",
   "releaseStr": "Release v{{iflVersion}}",
   "recommended": "Recommended",
+  "bestForUse": "Best for Daily",
   "cloneDesc": "Works alongside regular Instagram",
   "uncloneDesc": "Replaces the original Instagram",
   "cloneInfo": "About Clone",

@@ -3,8 +3,8 @@ import {defaultMetadata} from "@/config/metadata";
 
 export const metadata: Metadata = {
     ...defaultMetadata,
-    title: `Create Flag`,
-    description: "Click this link to visit flag information.",
+    title: `Flag Library is Moved!`,
+    description: "Flag library is moved to Telegram again!",
 };
 
 export default function AboutLayout({

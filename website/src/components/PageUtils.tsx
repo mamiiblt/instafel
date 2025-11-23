@@ -24,14 +24,12 @@ export function PageHeader({icon: Icon, title, subtitle}: { icon: ReactNode, tit
 export function Page({width, header, content}: { width: number, header?: ReactNode, content: ReactNode }) {
     return (
         <div>
-            <div>
-                <Navbar/>
-                <div className={`container max-w-${width}xl mx-auto py-8 px-4`}>
-                    {header && header}
-                    {content}
-                </div>
-                <Footer/>
+            <Navbar/>
+            <div className={`container max-w-${width}xl mx-auto py-8 px-4`}>
+                {header && header}
+                {content}
             </div>
+            <Footer/>
         </div>
     )
 }
