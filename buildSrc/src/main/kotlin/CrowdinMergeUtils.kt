@@ -180,7 +180,7 @@ class CrowdinMergeUtils(
         val instafelEnvFile = Paths.get(projectDir.absolutePath, "src", "main", "java", "instafel", "app", "InstafelEnv.java").toFile()
 
         val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
-        val newLanguagesArr = arrayOf("en-US") + languages
+        val newLanguagesArr = arrayOf("en-US") + languages.sorted()
         newLanguagesArr.forEachIndexed { index, langCode -> newLanguagesArr[index] = langCode.replace("-r", "-") }
 
         languages.forEach { lang -> copyStringsFile(lang, crowdinLocalizationFolderDir, appLocalizationFolderDir) }
@@ -188,7 +188,7 @@ class CrowdinMergeUtils(
 
         val content = instafelEnvFile.readText()
         val regex = Regex("""String\[\]\s+supportedLanguages\s*=\s*\{.*?};""", RegexOption.DOT_MATCHES_ALL)
-        val newArrayContent = newLanguagesArr.sorted().joinToString(", ") { "\"$it\"" }
+        val newArrayContent = newLanguagesArr.joinToString(", ") { "\"$it\"" }
         val newLine = """String[] supportedLanguages = { $newArrayContent };"""
         val newContent = content.replace(regex, newLine)
         instafelEnvFile.writeText(newContent)
@@ -203,13 +203,13 @@ class CrowdinMergeUtils(
         val mainStringFile = Paths.get(projectDir.absolutePath, "src", "main", "res", "values", "arrays.xml").toFile()
 
         val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
-        val newLanguagesArr = arrayOf("en-US") + languages
+        val newLanguagesArr = arrayOf("en-US") + languages.sorted()
 
         languages.forEach { lang -> copyStringsFile(lang, crowdinLocalizationFolderDir, updaterLocalizationFolderDir) }
         println("All localization sources (${languages.size} file) copied into res/values-... folders")
 
         val content = mainStringFile.readText()
-        val items = newLanguagesArr.sorted().joinToString(separator = "\n") { "        <item>${it.replace("-r", "-")}</item>" }
+        val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>${it.replace("-r", "-")}</item>" }
         val regex = Regex("""<string-array\s+name="supported_languages".*?>.*?</string-array>""", RegexOption.DOT_MATCHES_ALL)
         val newContent = content.replace(regex) { "<string-array name=\"supported_languages\">\n$items\n    </string-array>" }
         mainStringFile.writeText(newContent)
@@ -249,13 +249,13 @@ class CrowdinMergeUtils(
         localeCodes.add("en-EN")
         crowdinLocalizationFolders.forEach { folderName -> localeCodes.add(folderName) }
 
-        val sortedLocales = listOf("en-EN") + localeCodes
+        val sortedLocales = listOf("en-EN") + localeCodes.sorted()
             .filter { it != "en-EN" }
             .sortedBy { it.lowercase() }
 
         val content = settingsTsFile.readText()
         val regex = Regex("""supportedLocales\s*=\s*\[.*?]""", RegexOption.DOT_MATCHES_ALL)
-        val newArray = sortedLocales.sorted().joinToString(
+        val newArray = sortedLocales.joinToString(
             prefix = "[\"",
             separator = "\",\"",
             postfix = "\"]"
