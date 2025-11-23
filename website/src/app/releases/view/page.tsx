@@ -88,31 +88,33 @@ function InfoTileComp({icon: Icon, title, subtitle, copiable, copyData}: {
 
 type BadgeVariant = React.ComponentProps<typeof Badge>["variant"];
 
-function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadText, downloadDataInfo, isDeleted}: {
+interface DownloadDataInfo {
+    iflVersion: number;
+    fileName: string;
+}
+
+function VariantCard({badges, installationType, cardDesc, dialogInfo, downloadText, downloadDataInfo, isDeleted}: {
     badges: {
         text: string;
         icon: LucideIcon;
         variant: BadgeVariant;
         className: string;
     }[];
-    cardTitle: string;
+    installationType: string;
     cardDesc: string;
     dialogInfo: {
         title: string;
         description: string;
     };
     downloadText: string;
-    downloadDataInfo: {
-        iflVersion: number;
-        fileName: string;
-    }
+    downloadDataInfo: DownloadDataInfo,
     isDeleted: boolean;
 }) {
     return (
         <motion.div variants={item}>
             <Card className="h-full border-2 hover:border-primary transition-colors">
                 <CardHeader>
-                    <div className="flex items-start justify-between">
+                    <div className={`flex items-start justify-between`}>
                         <div className="flex flex-wrap gap-2">
                           {badges.filter(Boolean).map(({text, icon: Icon, variant, className}, i) => (
                               <Badge key={i} variant={variant} className={className}>
@@ -122,25 +124,15 @@ function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadText, dow
                           ))}
                         </div>
                     </div>
-                    <CardTitle className="text-2xl mb-2">{cardTitle}</CardTitle>
-                    <CardDescription className="text-base">{cardDesc}</CardDescription>
+                    <CardTitle className={`text-2xl mb-`}>{installationType}</CardTitle>
+                    <CardDescription className={`text-base`}>{cardDesc}</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="flex items-center gap-2">
-                        <Button
-                            className="flex-1"
-                            size="lg"
-                            disabled={isDeleted}
-                            onClick={() =>
-                                window.open(
-                                    `https://github.com/mamiiblt/instafel/releases/download/v${downloadDataInfo.iflVersion}/${downloadDataInfo.fileName}`,
-                                    "_blank",
-                                )
-                            }
-                        >
-                            <Download className="mr-2 h-5 w-5"/>
-                            {downloadText}
-                        </Button>
+                        <DownloadButton
+                            downloadText={downloadText}
+                            downloadDataInfo={downloadDataInfo}
+                            isDeleted={isDeleted} />
 
                         <Dialog>
                             <DialogTrigger asChild>
@@ -160,6 +152,32 @@ function VariantCard({badges, cardTitle, cardDesc, dialogInfo, downloadText, dow
             </Card>
         </motion.div>
     );
+}
+
+function DownloadButton({
+    downloadText,
+    downloadDataInfo,
+    isDeleted
+}: {
+    downloadText: string,
+    downloadDataInfo: DownloadDataInfo,
+    isDeleted: boolean
+}) {    return (
+        <Button
+            className="flex-1"
+            size="lg"
+            disabled={isDeleted}
+            onClick={() =>
+                window.open(
+                    `https://github.com/mamiiblt/instafel/releases/download/v${downloadDataInfo.iflVersion}/${downloadDataInfo.fileName}`,
+                    "_blank",
+                )
+            }
+        >
+            <Download className="mr-2 h-5 w-5"/>
+            {downloadText}
+        </Button>
+    )
 }
 
 const copyToClipboard = (text: string) => {
@@ -230,12 +248,6 @@ export default function ReleaseInfoPage() {
                             <VariantCard
                                 badges={[
                                     {
-                                        icon: Package,
-                                        text: t("unclone"),
-                                        variant: "secondary",
-                                        className: "mb-3",
-                                    },
-                                    {
                                         icon: Star,
                                         text: t("recommended"),
                                         variant: "secondary",
@@ -248,7 +260,7 @@ export default function ReleaseInfoPage() {
                                         className: "ml-1 mb-3"
                                     }
                                 ]}
-                                cardTitle={t("releaseStr", {iflVersion: data.patcherData.iflVersion})}
+                                installationType={t("unclone")}
                                 cardDesc={t("uncloneDesc")}
                                 dialogInfo={{
                                     title: t("uncloneInfo"),
@@ -264,10 +276,10 @@ export default function ReleaseInfoPage() {
                             <VariantCard
                                 badges={[
                                     {
-                                        icon: Package,
-                                        text: t("clone"),
+                                        icon: Star,
+                                        text: t("bestForUse"),
                                         variant: "secondary",
-                                        className: "mb-3",
+                                        className: "ml-1 mb-3",
                                     },
                                     data.is_deleted == true && {
                                         icon: Trash,
@@ -276,7 +288,7 @@ export default function ReleaseInfoPage() {
                                         className: "ml-1 mb-3"
                                     }
                                 ]}
-                                cardTitle={t("releaseStr", {iflVersion: data.patcherData.iflVersion})}
+                                installationType={t("clone")}
                                 cardDesc={t("cloneDesc")}
                                 dialogInfo={{
                                     title: t("cloneInfo"),
