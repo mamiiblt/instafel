@@ -51,7 +51,7 @@ export interface TranslatorResponse {
 }
 
 export default function ContributorsPage() {
-    const {t} = useTranslation("contributors");
+    const {t} = useTranslation(["contributors", "cont_abouts"]);
     const [translators, setTranslators] = useState<TranslatorResponse | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -80,7 +80,7 @@ export default function ContributorsPage() {
         name: "mamii.",
         role: t("roles.dev"),
         avatar: "https://mamii.me/mamiiblt.png",
-        bio: "Developer of Instafel, passionate about open source, web & android technologies, and building inclusive communities.",
+        bio: t("mamiiblt", { ns: "cont_abouts" }),
         socials: {
             github: "mamiiblt",
             x: "mamiiblt",
@@ -156,7 +156,7 @@ export default function ContributorsPage() {
     const specialThanks = [
         {
             name: "Bluepapilte",
-            reason: "Developer of MyInsta",
+            reason: t("bluepapilte", { ns: "cont_abouts" }),
             avatar: "/placeholder.svg?height=60&width=60",
             socials: {
                 telegram: "Carpaxel",
@@ -165,7 +165,7 @@ export default function ContributorsPage() {
         },
         {
             name: "Amàzing World",
-            reason: "Author of snoozing & link fix patches",
+            reason: t("amazingw", { ns: "cont_abouts" }),
             avatar: "/placeholder.svg?height=60&width=60",
             socials: {
                 telegram: "world669",
@@ -174,7 +174,7 @@ export default function ContributorsPage() {
         },
         {
             name: "Adwaith Varma",
-            reason: "Instagram scholar",
+            reason: t("adwaithv", { ns: "cont_abouts" }),
             avatar: "/cpictures/varma.jpg",
             socials: {
                 telegram: "VarmaAdwaith",
@@ -183,7 +183,7 @@ export default function ContributorsPage() {
         },
         {
             name: "Dani",
-            reason: "He is like a flag!",
+            reason: t("dani", { ns: "cont_abouts" }),
             avatar: "/cpictures/dani.jpg",
             socials: {
                 telegram: "danii5",
@@ -192,7 +192,7 @@ export default function ContributorsPage() {
         },
         {
             name: "EreN",
-            reason: "Helped me a lot of in website!",
+            reason: t("eren", { ns: "cont_abouts" }),
             avatar: "https://avatars.githubusercontent.com/u/77717109?v=4",
             socials: {
                 telegram: "Mr_ErenK",

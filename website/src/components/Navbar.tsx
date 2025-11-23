@@ -162,11 +162,6 @@ export default function Navbar() {
       icon: FileCog2Icon,
     },
     {
-      title: t("navbar.items.flags"),
-      href: "/library/flag",
-      icon: FlagIcon,
-    },
-    {
       title: t("navbar.items.updater"),
       href: "/about_updater",
       icon: RefreshCcwDot,

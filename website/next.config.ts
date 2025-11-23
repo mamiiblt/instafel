@@ -28,7 +28,6 @@ const nextConfig: NextConfig = {
             { source: "/library_backup", destination: "/library/backup", permanent: true },
             { source: "/library_flag", destination: "/library/flib_moved", permanent: true },
             { source: "/flag", destination: "/library/flib_moved", permanent: true },
-            { source: "/library/backup", destination: "/library/flib_moved", permanent: true },
             { source: "/library/flag", destination: "/library/flib_moved", permanent: true },
             { source: "/library/flag/view", destination: "/library/flib_moved", permanent: true },
             { source: "/backup", destination: "/library/backup/view", permanent: true }
