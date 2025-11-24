@@ -6,11 +6,11 @@
     </string-array>
 
     <string-array name="supported_languages">
+        <item>en-US</item>
         <item>ar-SA</item>
         <item>az-AZ</item>
         <item>de-DE</item>
         <item>el-GR</item>
-        <item>en-US</item>
         <item>es-ES</item>
         <item>fr-FR</item>
         <item>hi-IN</item>
