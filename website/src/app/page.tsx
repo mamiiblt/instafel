@@ -244,8 +244,8 @@ export default function PageHome() {
                                                 <div
                                                     className="relative w-16 h-16 rounded-full overflow-hidden">
                                                     <Image
-                                                        alt="Instafel Logo"
-                                                        src="/instafel.jpg"
+                                                        alt="Community Logo"
+                                                        src="/community_logo.png"
                                                         width={70}
                                                         height={70}
                                                         quality={80}
@@ -253,7 +253,7 @@ export default function PageHome() {
                                                     />
                                                 </div>
                                                 <div className="ml-3">
-                                                    <h3 className="font-bold text-lg">Instafel</h3>
+                                                    <h3 className="font-bold text-lg">Instafel Community</h3>
                                                     <p className="text-gray-500 text-sm">@instafel</p>
                                                 </div>
                                             </div>
