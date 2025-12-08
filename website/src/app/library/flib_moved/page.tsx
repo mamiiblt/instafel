@@ -31,7 +31,7 @@ export default function MovedPage() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: {duration: 0.8, ease: "easeOut"},
+            transition: {duration: 0.8, ease: "easeOut" as const},
         },
     }
 
@@ -41,7 +41,7 @@ export default function MovedPage() {
             transition: {
                 duration: 4,
                 repeat: Number.POSITIVE_INFINITY,
-                ease: "easeInOut",
+                ease: "easeInOut" as const,
             },
         },
     }
