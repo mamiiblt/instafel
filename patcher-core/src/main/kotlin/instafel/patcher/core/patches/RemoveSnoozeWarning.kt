@@ -4,6 +4,7 @@ import instafel.patcher.core.source.SmaliParser
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.modals.FileSearchResult
+import instafel.patcher.core.utils.modals.LineData
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
@@ -54,19 +55,27 @@ class RemoveSnoozeWarning: InstafelPatch() {
                     failure("Correct invoke-direct/range line couldn't found.")
                 }
 
-                val longConversationLine = invokeLines[0].num - 4
-                val longConversationContent = fContent[longConversationLine]
-                if (!longConversationContent.contains("long-to-int")) {
-                    failure("long-to-int conversation couldn't found.")
+
+                val longConversationMatches = mutableListOf<LineData>()
+
+                for (i in 0 until 20) {
+                    val idx = invokeLines[0].num - i
+                    if (fContent[idx].contains("long-to-int")) {
+                        longConversationMatches.add(LineData(idx, fContent[idx]))
+                    }
+                }
+
+                if (longConversationMatches.isEmpty() || longConversationMatches.size > 1) {
+                    failure("long-to-int conversation caller couldn't found.")
                 }
 
                 val regex = Regex("""long-to-int\s+(v\d+)""")
-                val match = regex.find(longConversationContent)
+                val match = regex.find(longConversationMatches[0].content)
                 val registerName = match?.groups?.get(1)?.value
 
                 val convertedValue = "    const/4 ${registerName}, 0x0"
-                Log.info("Day duration converted from '${longConversationContent.trim()}' to '${convertedValue.trim()}'")
-                fContent[invokeLines[0].num - 4] = convertedValue
+                Log.info("Day duration converted from '${longConversationMatches[0].content.trim()}' to '${convertedValue.trim()}'")
+                fContent[longConversationMatches[0].num] = convertedValue
                 FileUtils.writeLines(callerClass, fContent)
                 success("Time duration successfully set to 0")
             }
