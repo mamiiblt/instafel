@@ -5,6 +5,7 @@ import {SITE_CONFIG} from "@/config/config";
 import {defaultMetadata} from "@/config/metadata";
 import LocaleProvider from "@/i18n/LocaleProvider";
 import {Toaster} from "sonner";
+import SnowEffect from "@/components/SnowEffect";
 
 const appleTitle = SITE_CONFIG.siteName;
 const geist = Geist({
@@ -29,7 +30,10 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <LocaleProvider>
                 <Toaster/>
-                <main className="flex-1">{children}</main>
+                <main className="flex-1">
+                    <SnowEffect />
+                    {children}
+                </main>
             </LocaleProvider>
         </ThemeProvider>
         </body>
