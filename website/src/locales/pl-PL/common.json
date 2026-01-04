@@ -3,7 +3,7 @@
     "items": {
       "backups": "Kopie zapasowe",
       "flags": "Flagi",
-      "updater": "Aktualizator",
+      "updater": "Updater",
       "src_code": "Kod źródłowy",
       "download": "Pobierz",
       "contributors": "Współtwórcy"
@@ -21,7 +21,7 @@
     "5": "Wiki",
     "6": "Kopie zapasowe",
     "7": "Linki",
-    "8": "Aktualizator",
+    "8": "Updater",
     "9": "Pobierz",
     "10": "Kod źródłowy",
     "11": "Flagi",

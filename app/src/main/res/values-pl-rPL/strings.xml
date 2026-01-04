@@ -9,7 +9,7 @@
     <string name="ifl_a0_12">Usuwa reklamy wyświetlane na stronie głównej, w rolkach lub innych sekcjach.</string>
     <string name="ifl_a0_13">Uruchom ponownie aplikację, aby zastosować zmiany.</string>
     <string name="ifl_a0_14">Domyślnie włączone, nie można zmienić.</string>
-    <string name="ifl_a0_15">Aktualizator Instafel</string>
+    <string name="ifl_a0_15">Instafel Updater</string>
     <string name="ifl_a0_16">Użyj aplikacji Instafel Updater do automatycznych aktualizacji z rootem i Shizuku</string>
     <!-- me.mamiiblt.instafel.ifl_a_menu -->
     <string name="ifl_a0_02">Aktualizacje</string>
@@ -54,7 +54,7 @@
     <string name="ifl_a4_07">Wystąpił błąd podczas zapisywania kopii zapasowej.</string>
     <string name="ifl_a4_08">Udostępnij kopię</string>
     <string name="ifl_a4_09">Wybierz plik do importu.</string>
-    <string name="ifl_a4_10">Kopia została pomyślnie zaimportowana</string>
+    <string name="ifl_a4_10">Kopia została pomyślnie zaimportowana.</string>
     <string name="ifl_a4_11">Nie znaleziono pliku ustawień.</string>
     <string name="ifl_a4_12">Wystąpił błąd podczas importowania kopii zapasowej.</string>
     <string name="ifl_a4_13">Plik ustawień został pomyślnie usunięty.</string>
@@ -96,7 +96,7 @@
     <string name="ifl_a5_07">Włącza ustawienia aktualizacji</string>
     <string name="ifl_a5_08">Pobieranie w tle</string>
     <string name="ifl_a5_09">Powiadomienie zostanie wysłane po pobraniu aktualizacji w tle</string>
-    <string name="ifl_a5_sub_freq_00">Ustawione na każde uruchomienie</string>
+    <string name="ifl_a5_sub_freq_00">Ustawione na każde uruchomienie.</string>
     <string name="ifl_a5_sub_freq_01">Ustawione na nigdy</string>
     <string name="ifl_a5_sub_freq_02">Ustawione na codziennie</string>
     <string name="ifl_a5_sub_freq_03">Ustawione na co trzy dni</string>
