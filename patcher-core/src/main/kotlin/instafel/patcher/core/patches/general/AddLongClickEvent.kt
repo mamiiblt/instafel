@@ -28,7 +28,6 @@ class AddLongClickEvent: InstafelPatch() {
                     SearchUtils.getFileContainsAllCords(smaliUtils,
                         listOf(
                             listOf("notifications_entry_point_impression"),
-                            listOf("user_profile_header"),
                             listOf("Lcom/instagram/profile/fragment/UserDetailFragment;"),
                             listOf("Lcom/instagram/common/ui/base/IgTextView")
                         ))
