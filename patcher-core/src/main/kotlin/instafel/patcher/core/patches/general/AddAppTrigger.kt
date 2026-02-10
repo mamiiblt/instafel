@@ -50,11 +50,8 @@ class AddAppTrigger: InstafelPatch() {
                 when (val result = runBlocking {
                     SearchUtils.getFileContainsAllCords(smaliUtils,
                         listOf(
-                            listOf("Landroid/content/res/Configuration;"),
-                            listOf("Lcom/facebook/quicklog/reliability/UserFlowLogger"),
-                            listOf("Lcom/instagram/quickpromotion/intf/QPTooltipAnchor"),
-                            listOf(".super Ljava/lang/Object;"),
-                            listOf("MainFeedQuickPromotionDelegate.onCreateView")
+                            listOf("MainFeedQuickPromotionDelegate.onCreateView"),
+                            listOf(".super", "Ljava/lang/Object;")
                         ))
                 }) {
                     is FileSearchResult.Success -> {
@@ -84,7 +81,7 @@ class AddAppTrigger: InstafelPatch() {
                         Log.info("Invoke line found in line $i, ${line.trim()}")
                         invokeLines.add(line)
                     }
-                }
+                
 
                 if (invokeLines.size != 1) {
                     failure("invokeLines size is more or equal to 0")
