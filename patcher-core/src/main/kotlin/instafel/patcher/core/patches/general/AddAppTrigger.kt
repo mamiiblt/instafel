@@ -81,7 +81,7 @@ class AddAppTrigger: InstafelPatch() {
                         Log.info("Invoke line found in line $i, ${line.trim()}")
                         invokeLines.add(line)
                     }
-                
+                }
 
                 if (invokeLines.size != 1) {
                     failure("invokeLines size is more or equal to 0")
