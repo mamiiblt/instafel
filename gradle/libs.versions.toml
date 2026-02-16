@@ -1,6 +1,6 @@
 [versions]
 gson = "2.13.2"
-kotlin_android = "2.2.20"
+kotlin_android = "2.3.0"
 kotlin_jvm = "2.2.20"
 kotlin_reflect = "2.2.20"
 kotlin_stdlib = "2.2.20"
