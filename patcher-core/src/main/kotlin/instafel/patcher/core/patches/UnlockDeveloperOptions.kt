@@ -29,20 +29,17 @@ class UnlockDeveloperOptions: InstafelPatch() {
             override fun execute() {
 
                 val unlockRefClassResults =
-                    smaliUtils.getSmaliFilesByName(
-                        "/com/instagram/business/promote/activity/PromoteActivity.smali"
-                    )
+                    smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
 
-                unlockRefSmali =
-                    if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
-                        failure("PromoteActivity class can't be found / selected.")
-                        exitProcess(-1)
-                    } else {
-                        unlockRefClassResults.first()
-                    }
+                unlockRefSmali = if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
+                    failure("BaseFragmentActivity class can't be found / selected.")
+                    exitProcess(-1)
+                } else {
+                    unlockRefClassResults.first()
+                }
 
                 val referenceFileContent =
-                    smaliUtils.getSmaliFileContent(unlockRefSmali.absolutePath)
+                    smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
 
                 val linesWithInvokeAndUserSession: List<LineData> =
                     smaliUtils.getContainLines(
@@ -75,11 +72,10 @@ class UnlockDeveloperOptions: InstafelPatch() {
 
                 val devOptionsFile =
                     smaliUtils.getSmaliFilesByName("X/$className.smali")
-                        .firstOrNull()
-                        ?: run {
-                            failure("Developer options file not found")
-                            return
-                        }
+                        .firstOrNull() ?: run {
+                        failure("Developer options file not found")
+                        return
+                    }
 
                 val devOptionsContent =
                     smaliUtils.getSmaliFileContent(devOptionsFile.absolutePath)
