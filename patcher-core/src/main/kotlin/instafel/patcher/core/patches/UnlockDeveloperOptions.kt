@@ -27,17 +27,56 @@ class UnlockDeveloperOptions: InstafelPatch() {
         @PInfos.TaskInfo("Get constraint definition class")
         object: InstafelTask() {
             override fun execute() {
-                val unlockRefClassResults = smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
-                unlockRefSmali = if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
-                    failure("BaseFragmentActivity class can't be found / selected.")
-                    exitProcess(-1)
-                } else {
-                    unlockRefClassResults.first()
+
+                // 🔹 Try BaseFragmentActivity first
+                var unlockRefClassResults =
+                    smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
+
+                if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
+
+                    // 🔹 Fallback to PromoteActivity
+                    unlockRefClassResults =
+                        smaliUtils.getSmaliFilesByName("/com/instagram/business/promote/activity/PromoteActivity.smali")
+
+                    if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
+                        failure("Neither BaseFragmentActivity nor PromoteActivity class can be found / selected.")
+                        exitProcess(-1)
+                    }
                 }
-                val referenceFileContent = smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
-                val linesWithInvokeAndUserSession: List<LineData> = smaliUtils.getContainLines(
-                    referenceFileContent, "(Lcom/instagram/common/session/UserSession;)Z", "invoke-static"
-                )
+
+                unlockRefSmali = unlockRefClassResults.first()
+
+                val referenceFileContent =
+                    smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
+
+                var linesWithInvokeAndUserSession: List<LineData> =
+                    smaliUtils.getContainLines(
+                        referenceFileContent,
+                        "(Lcom/instagram/common/session/UserSession;)Z",
+                        "invoke-static"
+                    )
+
+                // 🔹 If no match in BaseFragmentActivity, try PromoteActivity
+                if (linesWithInvokeAndUserSession.size != 1 &&
+                    unlockRefSmali.absolutePath.contains("BaseFragmentActivity")
+                ) {
+
+                    val promoteResults =
+                        smaliUtils.getSmaliFilesByName("/com/instagram/business/promote/activity/PromoteActivity.smali")
+
+                    if (promoteResults.isNotEmpty()) {
+                        unlockRefSmali = promoteResults.first()
+                        val promoteContent =
+                            smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
+
+                        linesWithInvokeAndUserSession =
+                            smaliUtils.getContainLines(
+                                promoteContent,
+                                "(Lcom/instagram/common/session/UserSession;)Z",
+                                "invoke-static"
+                            )
+                    }
+                }
 
                 if (linesWithInvokeAndUserSession.size != 1) {
                     failure("Static caller opcode can't found or more than 1!")
@@ -45,11 +84,16 @@ class UnlockDeveloperOptions: InstafelPatch() {
                 }
 
                 val callLine: LineData = linesWithInvokeAndUserSession.get(0)
-                val callLineInstruction = SmaliParser.parseInstruction(callLine.content, callLine.num)
-                className = callLineInstruction.className.replace("LX/", "").replace(";", "")
+                val callLineInstruction =
+                    SmaliParser.parseInstruction(callLine.content, callLine.num)
+
+                className =
+                    callLineInstruction.className.replace("LX/", "").replace(";", "")
+
                 success("DevOptions class is $className")
             }
         },
+
         @PInfos.TaskInfo("Add constraint line to DevOptions class")
         object: InstafelTask() {
             override fun execute() {
@@ -59,13 +103,16 @@ class UnlockDeveloperOptions: InstafelPatch() {
                     return
                 }
 
-                val devOptionsContent = smaliUtils.getSmaliFileContent(devOptionsFile.absolutePath).toMutableList()
+                val devOptionsContent =
+                    smaliUtils.getSmaliFileContent(devOptionsFile.absolutePath).toMutableList()
 
-                val moveResultLine = smaliUtils.getContainLines(devOptionsContent, "move-result", "v0")
-                    .also { check(it.size == 1) { "Move result line size is 0 or bigger than 1" } }
-                    .first()
+                val moveResultLine =
+                    smaliUtils.getContainLines(devOptionsContent, "move-result", "v0")
+                        .also { check(it.size == 1) { "Move result line size is 0 or bigger than 1" } }
+                        .first()
 
-                check(!devOptionsContent[moveResultLine.num + 2].contains("const v0, 0x1")) { "Developer options already unlocked." }
+                check(!devOptionsContent[moveResultLine.num + 2]
+                    .contains("const v0, 0x1")) { "Developer options already unlocked." }
 
                 devOptionsContent.add(moveResultLine.num + 1, "    ")
                 devOptionsContent.add(moveResultLine.num + 2, "    const v0, 0x1")
