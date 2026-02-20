@@ -27,83 +27,50 @@ class UnlockDeveloperOptions: InstafelPatch() {
         @PInfos.TaskInfo("Get constraint definition class")
         object: InstafelTask() {
             override fun execute() {
-
-                val unlockRefClassResults =
-                    smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
-
+                val unlockRefClassResults = smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
                 unlockRefSmali = if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
                     failure("BaseFragmentActivity class can't be found / selected.")
                     exitProcess(-1)
                 } else {
                     unlockRefClassResults.first()
                 }
-
-                val referenceFileContent =
-                    smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
-
-                val linesWithInvokeAndUserSession: List<LineData> =
-                    smaliUtils.getContainLines(
-                        referenceFileContent,
-                        "(Lcom/instagram/common/session/UserSession;)Z",
-                        "invoke-static"
-                    )
+                val referenceFileContent = smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
+                val linesWithInvokeAndUserSession: List<LineData> = smaliUtils.getContainLines(
+                    referenceFileContent, "(Lcom/instagram/common/session/UserSession;)Z", "invoke-static"
+                )
 
                 if (linesWithInvokeAndUserSession.size != 1) {
                     failure("Static caller opcode can't found or more than 1!")
-                    return
+                    return;
                 }
 
-                val callLine: LineData = linesWithInvokeAndUserSession[0]
-                val callLineInstruction =
-                    SmaliParser.parseInstruction(callLine.content, callLine.num)
-
-                className =
-                    callLineInstruction.className
-                        .replace("LX/", "")
-                        .replace(";", "")
-
+                val callLine: LineData = linesWithInvokeAndUserSession.get(0)
+                val callLineInstruction = SmaliParser.parseInstruction(callLine.content, callLine.num)
+                className = callLineInstruction.className.replace("LX/", "").replace(";", "")
                 success("DevOptions class is $className")
             }
         },
-
         @PInfos.TaskInfo("Add constraint line to DevOptions class")
         object: InstafelTask() {
             override fun execute() {
+                val devOptionsFile = smaliUtils.getSmaliFilesByName("X/$className.smali")
+                    .firstOrNull() ?: run {
+                    failure("Developer options file not found")
+                    return
+                }
 
-                val devOptionsFile =
-                    smaliUtils.getSmaliFilesByName("X/$className.smali")
-                        .firstOrNull() ?: run {
-                        failure("Developer options file not found")
-                        return
-                    }
+                val devOptionsContent = smaliUtils.getSmaliFileContent(devOptionsFile.absolutePath).toMutableList()
 
-                val devOptionsContent =
-                    smaliUtils.getSmaliFileContent(devOptionsFile.absolutePath)
-                        .toMutableList()
+                val moveResultLine = smaliUtils.getContainLines(devOptionsContent, "move-result", "v0")
+                    .also { check(it.size == 1) { "Move result line size is 0 or bigger than 1" } }
+                    .first()
 
-                val moveResultLine =
-                    smaliUtils.getContainLines(
-                        devOptionsContent,
-                        "move-result",
-                        "v0"
-                    ).also {
-                        check(it.size == 1) {
-                            "Move result line size is 0 or bigger than 1"
-                        }
-                    }.first()
-
-                check(
-                    !devOptionsContent[moveResultLine.num + 2]
-                        .contains("const v0, 0x1")
-                ) { "Developer options already unlocked." }
+                check(!devOptionsContent[moveResultLine.num + 2].contains("const v0, 0x1")) { "Developer options already unlocked." }
 
                 devOptionsContent.add(moveResultLine.num + 1, "    ")
                 devOptionsContent.add(moveResultLine.num + 2, "    const v0, 0x1")
 
-                smaliUtils.writeContentIntoFile(
-                    devOptionsFile.absolutePath,
-                    devOptionsContent
-                )
+                smaliUtils.writeContentIntoFile(devOptionsFile.absolutePath, devOptionsContent)
 
                 Log.info("Constraint added successfully.")
                 success("Developer options unlocked successfully.")
