@@ -256,6 +256,13 @@
     <string name="ifl_d4_01">Welcome</string>
     <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
 
+    <!-- HOME SHEETS -->
+    <string name="ifl_d5_01">Based on Instagram v%1$s</string>
+    <string name="ifl_d5_02">Open Instafel Menu</string>
+    <string name="ifl_d5_03">Open Developer Options</string>
+    <string name="ifl_d5_04">Join Instafel Community</string>
+    <string name="ifl_d5_05">Restart Application</string>
+
     <!-- CRASH TOAST -->
     <string name="ifl_crash_toast" translatable="false">Instafel crashed, visit Crash Reports for more details.</string>
 </resources>

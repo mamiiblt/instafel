@@ -32,12 +32,19 @@ public class LocalizedStringGetter {
         }
     }
 
-    public static String getDialogLocalizedString(Activity _activity, Locale locale, String resourceName) {
+    public static String getDialogLocalizedString(Activity _activity, Locale locale, String resourceName, Object... params) {
         try {
             Resources appResources = GeneralFn.getAppResourcesWithConf(_activity, locale);
-            return appResources.getString(
-                    GeneralFn.getStringResId(_activity, appResources, resourceName)
-            ).replace("\\n", "\n");
+            if (params.length != 0) {
+                return appResources.getString(
+                        GeneralFn.getStringResId(_activity, appResources, resourceName),
+                        params
+                ).replace("\\n", "\n");
+            } else {
+                return appResources.getString(
+                        GeneralFn.getStringResId(_activity, appResources, resourceName)
+                ).replace("\\n", "\n");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             return null;

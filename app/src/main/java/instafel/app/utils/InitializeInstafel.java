@@ -37,12 +37,8 @@ public class InitializeInstafel {
     }
 
     public static void startInstafel() {
-        try {
-            Intent intent = new Intent(ctx, ifl_a_menu.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            ctx.startActivity(intent);
-        } catch (Exception e) {
-            Toast.makeText(ctx, e.toString(), Toast.LENGTH_LONG).show();
-        }
+        Intent intent = new Intent(ctx, ifl_a_menu.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        ctx.startActivity(intent);
     }
 }

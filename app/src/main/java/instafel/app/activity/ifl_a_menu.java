@@ -22,6 +22,7 @@ import instafel.app.ui.TileSocials;
 import instafel.app.utils.GeneralFn;
 import instafel.app.utils.InitializeInstafel;
 import instafel.app.utils.InstafelAdminUser;
+import instafel.app.utils.InstafelHomeSheet;
 import instafel.app.utils.types.PreferenceKeys;
 import instafel.app.utils.dialog.InstafelDialog;
 
@@ -65,8 +66,12 @@ public class ifl_a_menu extends AppCompatActivity {
 
         TileSocials tileSocials = findViewById(R.id.ifl_tile_menu_sections);
         tileSocials.getTileLanguage().setOnClickListener(v -> {
-            InitializeInstafel.triggerUploadMapping(this);
             GeneralFn.startIntent(ifl_a_menu.this, ifl_a_language.class);
+        });
+        tileSocials.getTileLanguage().setOnLongClickListener(v -> {
+            InstafelHomeSheet instafelHomeSheet = new InstafelHomeSheet(ifl_a_menu.this);
+            instafelHomeSheet.buildAndShowDialog();
+            return false;
         });
         tileSocials.getTileInfo().setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_about.class));
         tileSocials.getTileChat().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://t.me/instafel"));

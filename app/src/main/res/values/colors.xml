@@ -12,4 +12,15 @@
     <color name="ifl_sub_line_light">#12151B</color>
     <color name="ifl_background_color_light">#FFFFFF</color>
     <color name="ifl_tile_color_light">#DFDFDF</color>
+
+    <!-- IFL SHEET THEMES -->
+    <color name="ifl_sheet_background_dark">#222328</color>
+    <color name="ifl_sheet_text_main_dark">#fafbfd</color>
+    <color name="ifl_sheet_text_sub_dark">#a3abb2</color>
+
+    <!-- IFL SHEET THEMES -->
+    <color name="ifl_sheet_background_light">#ffffff</color>
+    <color name="ifl_sheet_text_main_light">#05060a</color>
+    <color name="ifl_sheet_text_sub_light">#767980</color>
+
 </resources>
