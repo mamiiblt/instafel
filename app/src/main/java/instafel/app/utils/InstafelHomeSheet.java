@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import instafel.app.InstafelEnv;
 import instafel.app.R;
 import instafel.app.utils.localization.LocalizationUtils;
@@ -108,70 +107,55 @@ public class InstafelHomeSheet {
         ));
         root.setBackgroundColor(bgColor);
 
-        ConstraintLayout header = new ConstraintLayout(act);
+        LinearLayout header = new LinearLayout(act);
+        header.setOrientation(LinearLayout.HORIZONTAL);
+        header.setGravity(Gravity.CENTER_VERTICAL);
+        header.setPadding(dp(15), dp(15), dp(15), dp(15));
         header.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
         ));
 
         ImageView icon = new ImageView(act);
-        icon.setId(View.generateViewId());
+        LinearLayout.LayoutParams iconLp = new LinearLayout.LayoutParams(dp(49), dp(49));
+        icon.setLayoutParams(iconLp);
         icon.setImageResource(R.drawable.ifl_instafel);
         icon.setColorFilter(mainText);
         icon.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
-        ConstraintLayout.LayoutParams iconLp = new ConstraintLayout.LayoutParams(dp(49), dp(49));
-        iconLp.startToStart = ConstraintLayout.LayoutParams.PARENT_ID;
-        iconLp.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        iconLp.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
-        iconLp.setMargins(dp(15), dp(15), 0, dp(15));
-        icon.setLayoutParams(iconLp);
+        View space = new View(act);
+        space.setLayoutParams(new LinearLayout.LayoutParams(dp(15), 1));
 
-        ConstraintLayout textBox = new ConstraintLayout(act);
-        textBox.setId(View.generateViewId());
-
-        ConstraintLayout.LayoutParams boxLp = new ConstraintLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
-        boxLp.startToEnd = icon.getId();
-        boxLp.endToEnd = ConstraintLayout.LayoutParams.PARENT_ID;
-        boxLp.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        boxLp.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
-        boxLp.setMargins(dp(15), dp(15), dp(15), dp(15));
-        textBox.setLayoutParams(boxLp);
+        LinearLayout textBox = new LinearLayout(act);
+        textBox.setOrientation(LinearLayout.VERTICAL);
+        textBox.setLayoutParams(new LinearLayout.LayoutParams(
+                0,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                1f
+        ));
 
         TextView title = new TextView(act);
-        title.setId(View.generateViewId());
         title.setText("Instafel v" + InstafelEnv.IFL_VERSION);
         title.setTextColor(mainText);
         title.setTextSize(20);
         title.setTypeface(Typeface.DEFAULT_BOLD);
 
-        ConstraintLayout.LayoutParams titleLp =
-                new ConstraintLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                );
-        titleLp.startToStart = ConstraintLayout.LayoutParams.PARENT_ID;
-        titleLp.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
-        title.setLayoutParams(titleLp);
-
         TextView sub = new TextView(act);
-        sub.setText(LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_01", InstafelEnv.IG_VERSION));
+        sub.setText(
+                LocalizedStringGetter.getDialogLocalizedString(
+                        act,
+                        iflLocale,
+                        "ifl_d5_01",
+                        InstafelEnv.IG_VERSION
+                )
+        );
         sub.setTextColor(subText);
         sub.setTextSize(14);
-
-        ConstraintLayout.LayoutParams subLp =
-                new ConstraintLayout.LayoutParams(
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        ViewGroup.LayoutParams.WRAP_CONTENT
-                );
-        subLp.startToStart = ConstraintLayout.LayoutParams.PARENT_ID;
-        subLp.topToBottom = title.getId();
-        subLp.bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID;
-        sub.setLayoutParams(subLp);
 
         textBox.addView(title);
         textBox.addView(sub);
         header.addView(icon);
+        header.addView(space);
         header.addView(textBox);
 
         root.addView(header);
