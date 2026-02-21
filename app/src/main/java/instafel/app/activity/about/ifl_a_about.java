@@ -36,7 +36,7 @@ public class ifl_a_about extends AppCompatActivity {
         findViewById(R.id.ifl_tile_build_info).setOnClickListener(view -> GeneralFn.startIntent(ifl_a_about.this, ifl_a_build_info.class));
         findViewById(R.id.ifl_tile_contributors).setOnClickListener(v -> openUrlInWeb("https://instafel.app/contributors"));
         findViewById(R.id.ifl_tile_website).setOnClickListener(v -> openUrlInWeb("https://instafel.app"));
-        findViewById(R.id.ifl_tile_about_dev).setOnClickListener(v -> openUrlInWeb("https://mamii.me/about"));
+        findViewById(R.id.ifl_tile_about_dev).setOnClickListener(v -> openUrlInWeb("https://mamii.dev/about"));
         findViewById(R.id.ifl_tile_join_community).setOnClickListener(v -> openUrlInWeb("https://t.me/instafel"));
     }
 

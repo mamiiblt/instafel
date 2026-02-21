@@ -122,7 +122,7 @@ export default function Footer() {
                 <div className="flex items-center gap-4">
                   <motion.a
                     whileHover={{ y: -3 }}
-                    href="https://mamii.me/about"
+                    href="https://mamii.dev/about"
                     className="text-muted-foreground hover:text-foreground transition-colors"
                     aria-label="About Developer"
                     target="_blank"

@@ -79,12 +79,12 @@ export default function ContributorsPage() {
     const mainDeveloper = {
         name: "mamii.",
         role: t("roles.dev"),
-        avatar: "https://mamii.me/mamiiblt.png",
+        avatar: "https://mamii.dev/mamiiblt.png",
         bio: t("mamiiblt", { ns: "cont_abouts" }),
         socials: {
             github: "mamiiblt",
             x: "mamiiblt",
-            website: "mamii.me",
+            website: "mamii.dev",
             telegram: "mamiiblt",
         },
     };
