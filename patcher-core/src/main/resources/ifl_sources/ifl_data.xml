@@ -147,6 +147,7 @@
             <public name="ifl_library_backup" type="drawable"/>
             <public name="ifl_library_flags" type="drawable"/>
             <public name="ifl_menu" type="drawable"/>
+            <public name="ifl_metaoverrides" type="drawable"/>
             <public name="ifl_misc" type="drawable"/>
             <public name="ifl_notifications" type="drawable"/>
             <public name="ifl_open_in_browser" type="drawable"/>
@@ -180,6 +181,7 @@
             <public name="ifl_button_exportbackup" type="id"/>
             <public name="ifl_button_text" type="id"/>
             <public name="ifl_button_updatebackup" type="id"/>
+            <public name="ifl_constraintLayout" type="id"/>
             <public name="ifl_content_area" type="id"/>
             <public name="ifl_developer_title" type="id"/>
             <public name="ifl_developer_title_2" type="id"/>
@@ -198,6 +200,7 @@
             <public name="ifl_loading_page" type="id"/>
             <public name="ifl_logs_layout" type="id"/>
             <public name="ifl_page1" type="id"/>
+            <public name="ifl_pageContentArea" type="id"/>
             <public name="ifl_page_area" type="id"/>
             <public name="ifl_page_area_backup" type="id"/>
             <public name="ifl_page_area_edit" type="id"/>
@@ -295,6 +298,7 @@
             <public name="ifl_titleBar1" type="id"/>
             <public name="ifl_titleSpace" type="id"/>
             <public name="ifl_titleSpace1" type="id"/>
+            <public name="ifl_titleSpace2" type="id"/>
             <public name="ifl_ui_content_area" type="id"/>
             <public name="ifl_ui_icon" type="id"/>
             <public name="ifl_ui_item_box" type="id"/>
@@ -561,6 +565,7 @@
             <public name="ifl_d5_03" type="string"/>
             <public name="ifl_d5_04" type="string"/>
             <public name="ifl_d5_05" type="string"/>
+            <public name="ifl_d5_06" type="string"/>
             <public name="ifl_t1_01" type="string"/>
             <public name="ifl_t1_03" type="string"/>
             <public name="ifl_theme_dark" type="style"/>
@@ -574,6 +579,7 @@
             <item name="ifl_button_exportbackup" type="id"/>
             <item name="ifl_button_text" type="id"/>
             <item name="ifl_button_updatebackup" type="id"/>
+            <item name="ifl_constraintLayout" type="id"/>
             <item name="ifl_content_area" type="id"/>
             <item name="ifl_developer_title" type="id"/>
             <item name="ifl_developer_title_2" type="id"/>
@@ -592,6 +598,7 @@
             <item name="ifl_loading_page" type="id"/>
             <item name="ifl_logs_layout" type="id"/>
             <item name="ifl_page1" type="id"/>
+            <item name="ifl_pageContentArea" type="id"/>
             <item name="ifl_page_area" type="id"/>
             <item name="ifl_page_area_backup" type="id"/>
             <item name="ifl_page_area_edit" type="id"/>
@@ -689,6 +696,7 @@
             <item name="ifl_titleBar1" type="id"/>
             <item name="ifl_titleSpace" type="id"/>
             <item name="ifl_titleSpace1" type="id"/>
+            <item name="ifl_titleSpace2" type="id"/>
             <item name="ifl_ui_content_area" type="id"/>
             <item name="ifl_ui_icon" type="id"/>
             <item name="ifl_ui_item_box" type="id"/>
@@ -950,11 +958,12 @@
             <string name="ifl_d3_02">Okay</string>
             <string name="ifl_d4_01">Welcome</string>
             <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
-            <string name="ifl_d5_01">Based on Instagram v%1$s</string>
-            <string name="ifl_d5_02">Open Instafel Menu</string>
-            <string name="ifl_d5_03">Open Developer Options</string>
-            <string name="ifl_d5_04">Join Instafel Community</string>
-            <string name="ifl_d5_05">Restart Application</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">An error occurred while opening the apk-installer.</string>
             <string name="ifl_t1_03">Instafel update failed.</string>
         </vcategory>

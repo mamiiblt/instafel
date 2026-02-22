@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instafel.app.ui.Page
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:fitsSystemWindows="true"
             android:orientation="vertical"
             android:layout_height="wrap_content"
-            android:id="@+id/constraintLayout">
+            android:id="@+id/ifl_constraintLayout">
         <Space
                 android:id="@+id/ifl_titleSpace1"
                 android:layout_width="match_parent"
@@ -66,8 +66,8 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <instafel.app.ui.PageContentArea android:layout_width="fill_parent" android:layout_height="0.0dip"
-                                     android:id="@+id/pageContentArea"
-                                     app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+                                     android:id="@+id/ifl_pageContentArea"
+                                     app:layout_constraintTop_toBottomOf="@+id/ifl_constraintLayout">
         <instafel.app.ui.TileCompact android:id="@+id/ifl_tile_menu_devopt" android:layout_width="fill_parent"
                                      android:layout_height="wrap_content" app:ifl_attr_ui_iconPadding="2"
                                      app:ifl_attr_ui_iconRes="@drawable/ifl_developer"
