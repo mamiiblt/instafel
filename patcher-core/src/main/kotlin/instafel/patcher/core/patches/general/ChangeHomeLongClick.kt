@@ -88,7 +88,7 @@ class ChangeHomeLongClick: InstafelPatch() {
 
                         new-instance v2, Linstafel/app/utils/HomeSheetHandler;
 
-                        invoke-direct {v2, v0}, Linstafel/app/utils/HomeSheetHandler;-><init>(Landroid/app/Activity;)V
+                        invoke-direct {v2, v0}, Linstafel/app/utils/HomeSheetHandler;-><init>(Landroid/content/Context;)V
 
                         invoke-interface {v2, p1}, Landroid/view/View${'$'}OnLongClickListener;->onLongClick(Landroid/view/View;)Z
 
