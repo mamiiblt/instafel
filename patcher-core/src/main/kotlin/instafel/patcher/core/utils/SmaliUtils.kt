@@ -14,6 +14,73 @@ import java.nio.file.Paths
 class SmaliUtils(private val projectDir: String) {
     val smaliFolders = getSmaliFolderArray()
 
+    fun extractAllMethodsAsLineArrays(fContent: List<String>): List<List<String>> {
+        val methods = ArrayList<List<String>>()
+
+        var i = 0
+        while (i < fContent.size) {
+            val line = fContent[i]
+            val trimmed = line.trimStart()
+
+            if (trimmed.startsWith(".method ")) {
+                val methodLines = ArrayList<String>()
+                methodLines.add(line)
+                i++
+
+                var foundEnd = false
+                while (i < fContent.size) {
+                    val l = fContent[i]
+                    methodLines.add(l)
+
+                    if (l.trim() == ".end method") {
+                        foundEnd = true
+                        i++
+                        break
+                    }
+                    i++
+                }
+                methods.add(methodLines)
+                continue
+            }
+            i++
+        }
+
+        return methods
+    }
+
+    fun removeMethodContent(
+        fContent: List<String>,
+        methodName: String,
+        methodParams: String
+    ): List<String> {
+        val out = ArrayList<String>(fContent.size)
+
+        var i = 0
+        while (i < fContent.size) {
+            val line = fContent[i]
+            val trimmed = line.trimStart()
+
+            val isTargetMethodHeader = trimmed.startsWith(".method ") && trimmed.contains("$methodName$methodParams")
+
+            if (isTargetMethodHeader) {
+                i++
+                while (i < fContent.size) {
+                    if (fContent[i].trim() == ".end method") {
+                        i++
+                        break
+                    }
+                    i++
+                }
+                continue
+            }
+
+            out.add(line)
+            i++
+        }
+
+        return out
+    }
+
     fun getMethodContent(fContent: List<String>, methodStart: Int): MethodContent {
         if (methodStart !in fContent.indices) return MethodContent(linkedMapOf(), "")
 

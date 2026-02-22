@@ -34,7 +34,7 @@ class CloneGeneral: InstafelPatch() {
 
     var cloneRefFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "clone_ref"))
     var blacklistedPermissions = JSONArray(
-    slurp(CloneGeneral::class.java.getResourceAsStream("/blacklisted_perms.json"))
+        slurp(CloneGeneral::class.java.getResourceAsStream("/blacklisted_perms.json"))
     )
     val NEW_PACKAGE_NAME = "com.instafel.android"
     val NEW_APP_NAME = "Instafel"

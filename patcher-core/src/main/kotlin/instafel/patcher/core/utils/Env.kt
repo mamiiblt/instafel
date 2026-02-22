@@ -8,6 +8,7 @@ import instafel.patcher.core.utils.modals.pojo.ConfigPOJO
 import instafel.patcher.core.utils.modals.pojo.ProjectPOJO
 import org.apache.commons.io.FileUtils
 import java.io.File
+import java.io.InputStream
 import kotlin.system.exitProcess
 
 object Env {
@@ -79,4 +80,6 @@ object Env {
 
         return "${root.get("versionName").asText()}#${root.get("versionCode").asText()}"
     }
+
+    fun slurp(inputStream: InputStream): String = inputStream.bufferedReader().use { it.readText() }
 }
