@@ -1,13 +1,13 @@
 package instafel.app.utils;
 
-appimport android.app.Activity;
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 
-public class OpenIflMenu implements View.OnLongClickListener {
+public class HomeSheetHandler implements View.OnLongClickListener {
     private Activity mainAppActivity;
 
-    public OpenIflMenu(Context context) {
+    public HomeSheetHandler(Context context) {
         if (context instanceof Activity) {
             this.mainAppActivity = (Activity) context;
         } else {

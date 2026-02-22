@@ -80,6 +80,12 @@
             <public name="ifl_background_color" type="color"/>
             <public name="ifl_background_color_light" type="color"/>
             <public name="ifl_black" type="color"/>
+            <public name="ifl_sheet_background_dark" type="color"/>
+            <public name="ifl_sheet_background_light" type="color"/>
+            <public name="ifl_sheet_text_main_dark" type="color"/>
+            <public name="ifl_sheet_text_main_light" type="color"/>
+            <public name="ifl_sheet_text_sub_dark" type="color"/>
+            <public name="ifl_sheet_text_sub_light" type="color"/>
             <public name="ifl_sub_line" type="color"/>
             <public name="ifl_sub_line_light" type="color"/>
             <public name="ifl_tile_color" type="color"/>
@@ -111,6 +117,7 @@
             <public name="ifl_changelog" type="drawable"/>
             <public name="ifl_chat" type="drawable"/>
             <public name="ifl_check_frequency" type="drawable"/>
+            <public name="ifl_community_icon" type="drawable"/>
             <public name="ifl_contributors" type="drawable"/>
             <public name="ifl_copy" type="drawable"/>
             <public name="ifl_crashlog" type="drawable"/>
@@ -139,6 +146,7 @@
             <public name="ifl_libraries" type="drawable"/>
             <public name="ifl_library_backup" type="drawable"/>
             <public name="ifl_library_flags" type="drawable"/>
+            <public name="ifl_menu" type="drawable"/>
             <public name="ifl_misc" type="drawable"/>
             <public name="ifl_notifications" type="drawable"/>
             <public name="ifl_open_in_browser" type="drawable"/>
@@ -153,6 +161,8 @@
             <public name="ifl_progress_circle_drawable" type="drawable"/>
             <public name="ifl_remove_ads" type="drawable"/>
             <public name="ifl_share" type="drawable"/>
+            <public name="ifl_sheet_devopts" type="drawable"/>
+            <public name="ifl_sheet_reload" type="drawable"/>
             <public name="ifl_social_github" type="drawable"/>
             <public name="ifl_social_instagram" type="drawable"/>
             <public name="ifl_social_medium" type="drawable"/>
@@ -546,6 +556,11 @@
             <public name="ifl_d3_02" type="string"/>
             <public name="ifl_d4_01" type="string"/>
             <public name="ifl_d4_02" type="string"/>
+            <public name="ifl_d5_01" type="string"/>
+            <public name="ifl_d5_02" type="string"/>
+            <public name="ifl_d5_03" type="string"/>
+            <public name="ifl_d5_04" type="string"/>
+            <public name="ifl_d5_05" type="string"/>
             <public name="ifl_t1_01" type="string"/>
             <public name="ifl_t1_03" type="string"/>
             <public name="ifl_theme_dark" type="style"/>
@@ -707,6 +722,12 @@
             <color name="ifl_background_color">#ff000000</color>
             <color name="ifl_background_color_light">#ffffffff</color>
             <color name="ifl_black">#ff212328</color>
+            <color name="ifl_sheet_background_dark">#ff222328</color>
+            <color name="ifl_sheet_background_light">#ffffffff</color>
+            <color name="ifl_sheet_text_main_dark">#fffafbfd</color>
+            <color name="ifl_sheet_text_main_light">#ff05060a</color>
+            <color name="ifl_sheet_text_sub_dark">#ffa3abb2</color>
+            <color name="ifl_sheet_text_sub_light">#ff767980</color>
             <color name="ifl_sub_line">#ff949494</color>
             <color name="ifl_sub_line_light">#ff12151b</color>
             <color name="ifl_tile_color">#ff1a1c1f</color>
@@ -929,6 +950,11 @@
             <string name="ifl_d3_02">Okay</string>
             <string name="ifl_d4_01">Welcome</string>
             <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
+            <string name="ifl_d5_01">Based on Instagram v%1$s</string>
+            <string name="ifl_d5_02">Open Instafel Menu</string>
+            <string name="ifl_d5_03">Open Developer Options</string>
+            <string name="ifl_d5_04">Join Instafel Community</string>
+            <string name="ifl_d5_05">Restart Application</string>
             <string name="ifl_t1_01">An error occurred while opening the apk-installer.</string>
             <string name="ifl_t1_03">Instafel update failed.</string>
         </vcategory>

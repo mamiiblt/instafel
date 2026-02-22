@@ -135,7 +135,7 @@ public class InstafelHomeSheet {
         ));
 
         TextView title = new TextView(act);
-        title.setText("Instafel v" + InstafelEnv.IFL_VERSION);
+        title.setText(LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_01"));
         title.setTextColor(mainText);
         title.setTextSize(20);
         title.setTypeface(Typeface.DEFAULT_BOLD);
@@ -145,7 +145,8 @@ public class InstafelHomeSheet {
                 LocalizedStringGetter.getDialogLocalizedString(
                         act,
                         iflLocale,
-                        "ifl_d5_01",
+                        "ifl_d5_02",
+                        InstafelEnv.IFL_VERSION,
                         InstafelEnv.IG_VERSION
                 )
         );
@@ -162,22 +163,25 @@ public class InstafelHomeSheet {
 
         root.addView(menuItem(
                 R.drawable.ifl_menu,
-                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_02"),
-                mainText, v -> InitializeInstafel.startInstafel()));
+                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_03"),
+                mainText, v -> {
+                    dismissSheetDialog();
+                    InitializeInstafel.startInstafel();
+                }));
 
         root.addView(menuItem(
-                R.drawable.ifl_sheet_devopts,
-                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_03"),
+                R.drawable.ifl_metaoverrides,
+                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_04"),
                 mainText, v -> openDeveloperOptions()));
 
         root.addView(menuItem(
                 R.drawable.ifl_community_icon,
-                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_04"),
+                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_05"),
                 mainText, v -> GeneralFn.openInWebBrowser(act, "https://t.me/instafel")));
 
         root.addView(menuItem(
                 R.drawable.ifl_sheet_reload,
-                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_05"),
+                LocalizedStringGetter.getDialogLocalizedString(act, iflLocale, "ifl_d5_06"),
                 mainText, v -> restartInstagram()));
 
         return root;
@@ -193,8 +197,15 @@ public class InstafelHomeSheet {
         Runtime.getRuntime().exit(0);
     }
 
-    public void openDeveloperOptions() {
+    public void dismissSheetDialog() {
+        if (sheetDialog.isShowing()) sheetDialog.dismiss();
+    }
 
+    public void openDeveloperOptions() {
+        /*
+            This method should need to be filled by patcher.
+            If you want to inspect it, please see ChangeHomeLongClick patch.
+         */
     }
 
     private View menuItem(int iconRes, String text, int color, View.OnClickListener onClickListener) {

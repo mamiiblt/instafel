@@ -1,8 +1,8 @@
 package instafel.patcher.core.patches
 
 import instafel.patcher.core.patches.general.AddAppTrigger
+import instafel.patcher.core.patches.general.ChangeHomeLongClick
 import instafel.patcher.core.patches.general.AddInitInstafel
-import instafel.patcher.core.patches.general.AddLongClickEvent
 import instafel.patcher.core.patches.general.CopyInstafelSources
 import instafel.patcher.core.patches.general.GetGenerationInfo
 import instafel.patcher.core.utils.patch.InstafelPatch
@@ -20,7 +20,7 @@ class InstafelStuffs: InstafelPatchGroup() {
         GetGenerationInfo::class,
         CopyInstafelSources::class,
         AddInitInstafel::class,
-        AddLongClickEvent::class,
+        ChangeHomeLongClick::class,
         AddAppTrigger::class
     )
 }
