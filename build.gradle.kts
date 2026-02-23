@@ -39,6 +39,18 @@ tasks.register("sendTaskFinishedLog") {
         mergeUtils.sendActionCompletedReq(project.getCommitHash())
     }
 }
+tasks.register("sendTaskFinishedLogPCore") {
+    group = "ifl-general"
+    description = "Sends action finish log into ethernal api logs"
+
+    doLast {
+        val pcoreUpdaterUtils = PatcherCoreUpdaterUtils(
+            managerToken = getInstafelEnvProperty("MANAGER_TOKEN"),
+            ghPatToken = getInstafelEnvProperty("GH_TOKEN")
+        )
+        pcoreUpdaterUtils.sendActionCompletedReq()
+    }
+}
 tasks.register("deleteOutputFolderIfExists"){
     doLast {
         val outputDir = File("${rootProject.rootDir}/.output")
