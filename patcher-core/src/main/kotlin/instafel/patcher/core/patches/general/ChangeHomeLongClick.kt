@@ -136,10 +136,10 @@ class ChangeHomeLongClick: InstafelPatch() {
         @PInfos.TaskInfo("Find correct class name and method names of FragmentNavigator class")
         object: InstafelTask() {
             override fun execute() {
-                val refClass = smaliUtils.getSmaliFilesByName("/com/instagram/direct/avatar/socialstickers/ui/AvatarOptionsActivity")[0]
+                val refClass = smaliUtils.getSmaliFilesByName("/com/instagram/profile/fragment/UserDetailFragment.smali")[0]
                 val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
                 val invokeVirtualMainCall = smaliUtils.getContainLines(refClassContent, "(Landroidx/fragment/app/Fragment;)V")
-                if (invokeVirtualMainCall.size > 1) failure("Correct caller line couldn't be found")
+                if (invokeVirtualMainCall.size > 1 || invokeVirtualMainCall.isEmpty()) failure("Correct caller line couldn't be found")
 
                 val lineCreator = SmaliParser.parseInstruction(refClassContent[invokeVirtualMainCall[0].num], invokeVirtualMainCall[0].num)
                 val lineCaller = SmaliParser.parseInstruction(refClassContent[invokeVirtualMainCall[0].num + 2], invokeVirtualMainCall[0].num + 2)
