@@ -1,0 +1,30 @@
+name: Update PCore with Latest Changes
+
+on:
+  repository_dispatch:
+    types: [update_pcore]
+
+jobs:
+  merge_translations:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '17'
+
+      - name: Create env.properties file
+        run: |
+          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}" >> env.properties
+          echo "CROWDIN_TOKEN=${{ secrets.CROWDIN_API_TOKEN }}" >> env.properties
+          echo "MANAGER_TOKEN=${{ secrets.MANAGER_TOKEN }}" >> env.properties
+
+      - name: Release a new update for patcher-core
+        run: ./gradlew :patcher-core:release
+
+      - name: Send patcher core updated log
+        run: ./gradlew sendTaskFinishedLogPCore
