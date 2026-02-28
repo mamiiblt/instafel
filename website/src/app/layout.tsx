@@ -5,6 +5,7 @@ import {SITE_CONFIG} from "@/config/config";
 import {defaultMetadata} from "@/config/metadata";
 import LocaleProvider from "@/i18n/LocaleProvider";
 import {Toaster} from "sonner";
+import Script from "next/script";
 
 const appleTitle = SITE_CONFIG.siteName;
 const geist = Geist({
@@ -34,6 +35,11 @@ export default function RootLayout({
                 </main>
             </LocaleProvider>
         </ThemeProvider>
+        <Script
+          src="https://stats.mamii.dev/script.js"
+          data-website-id="741237d4-25f5-4ff3-b263-ad8c3351bdc5"
+          strategy="afterInteractive"
+        />
         </body>
         </html>
     );
