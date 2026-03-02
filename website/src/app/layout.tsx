@@ -23,6 +23,7 @@ export default function RootLayout({
         <html suppressHydrationWarning>
         <head>
             <meta name="apple-mobile-web-app-title" content={appleTitle}/>
+            <meta name="google-adsense-account" content="ca-pub-1644268609103084">
         </head>
         <body
             className={`${geist.className} flex min-h-screen flex-col bg-background text-foreground`}
