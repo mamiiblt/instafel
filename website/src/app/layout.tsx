@@ -23,7 +23,7 @@ export default function RootLayout({
         <html suppressHydrationWarning>
         <head>
             <meta name="apple-mobile-web-app-title" content={appleTitle} />
-            <meta name="monetag" content="28cd56d32c71b4880910ed2f70faaaad"> />
+            <meta name="monetag" content="28cd56d32c71b4880910ed2f70faaaad" />
         </head>
         <body
             className={`${geist.className} flex min-h-screen flex-col bg-background text-foreground`}
