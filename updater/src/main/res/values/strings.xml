@@ -8,6 +8,7 @@
 
     <!-- Setup Updater -->
     <string name="setup_ifl">Setup Updater</string>
+    <string name="setup_ifl_desc">Configure your installation preferences</string>
     <string name="checker_arch">Checker Architecture</string>
     <string name="checker_itype">Checker Installation Type</string>
     <string name="unclone">Unclone</string>
@@ -49,6 +50,7 @@
     <string name="dialog_desc">Instafel Updater needs Notification and Root permission for running normally.</string>
     <string name="dialog_ok">Okay</string>
     <string name="hour">hour</string>
+    <string name="hour_imz">%1$s hour</string>
     <string name="minute">minute</string>
     <string name="upd_started">Updater started</string>
     <string name="upd_stopped">Updater stopped</string>

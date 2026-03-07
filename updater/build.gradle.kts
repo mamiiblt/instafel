@@ -24,7 +24,7 @@ dependencies {
 }
 
 android {
-    namespace = "me.mamiiblt.instafel.updater"
+    namespace = "dev.mamii.instafel.updater"
     compileSdk = 36
 
     // disable include metadata in dep infos
@@ -34,7 +34,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "me.mamiiblt.instafel.updater"
+        applicationId = "dev.mamii.instafel.updater"
         minSdk = 26
         targetSdk = 36
         versionCode = Config.updater.versionCode
