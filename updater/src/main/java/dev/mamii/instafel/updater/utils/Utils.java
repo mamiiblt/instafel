@@ -72,8 +72,8 @@ public class Utils {
                         "\nbase commit: " + BuildConfig.COMMIT + "@" + BuildConfig.BRANCH +
                         "\n\n" + ctx.getString(R.string.developed_by)
                 )
-                .setNegativeButton("View Commit", (dialog, which) -> openInBrowser(ctx, Uri.parse("https://github.com/mamiiblt/instafel/commit/" + BuildConfig.COMMIT)))
-                .setPositiveButton(ctx.getString(R.string.dialog_ok), (dialog, which) -> openBatterySettings(ctx))
+                .setNegativeButton("About Release", (dialog, which) -> openInBrowser(ctx, Uri.parse("https://github.com/instafel/u-rel/releases/tag/v" + BuildConfig.IFLU_VERSION)))
+                .setPositiveButton(ctx.getString(R.string.dialog_ok), (dialog, which) -> { })
                 .show();
     }
 
