@@ -198,7 +198,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
             return false;
         });
         MaterialPreference appVersion = findPreference("app_version");
-        appVersion.setSummary(getActivity().getString(R.string.app_version_s, BuildConfig.IFLU_VERSION, BuildConfig.BUILD_TYPE));
+        appVersion.setSummary(getActivity().getString(R.string.app_version_s, BuildConfig.IFLU_VERSION, BuildConfig.COMMIT));
         appVersion.setOnPreferenceClickListener(preference -> {
             Utils.showAppInfoDialog(getActivity());
             return false;

@@ -1,12 +1,7 @@
-import com.google.gson.JsonDeserializationContext
-import com.google.gson.JsonDeserializer
-import com.google.gson.JsonElement
-import com.google.gson.JsonParseException
 import modals.ConfigFile
 import org.gradle.api.Project
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
-import java.lang.reflect.Type
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -22,7 +17,6 @@ object IFLProjectManager {
         get() = System.getProperty("project.rootDir") ?: throw IllegalStateException("project.rootDir not set!")
 
     val configPath = Paths.get("$rootDir/.config/ifl_config.json")
-    val configObject = JSONObject(Files.readAllLines(configPath).joinToString("\n"))
 
     fun Project.getCommitHash(): String =
         ByteArrayOutputStream().use { output ->
@@ -35,19 +29,7 @@ object IFLProjectManager {
 
 
     val Config: ConfigFile by lazy {
+        val configObject = JSONObject(Files.readAllLines(configPath).joinToString("\n"))
         gson.fromJson(configObject.toString(), ConfigFile::class.java)
-    }
-}
-
-class DependencyDeserializer : JsonDeserializer<String> {
-    override fun deserialize(
-        json: JsonElement?,
-        typeOfT: Type?,
-        context: JsonDeserializationContext?
-    ): String {
-        val obj = json?.asJsonObject ?: throw JsonParseException("Invalid dependency JSON")
-        val pkg = obj["pkg"].asString
-        val ver = obj["ver"].asString
-        return "$pkg:$ver"
     }
 }
