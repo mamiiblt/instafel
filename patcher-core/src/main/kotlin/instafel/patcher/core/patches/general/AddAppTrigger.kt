@@ -1,4 +1,4 @@
-.package instafel.patcher.core.patches.general
+package instafel.patcher.core.patches.general
 
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SearchUtils
