@@ -70,69 +70,36 @@ class AddAppTrigger: InstafelPatch() {
                 val fContent = smaliUtils.getSmaliFileContent(activityFile.absolutePath).toMutableList()
 
                 Log.info("Searching reference line...")
-                val invokeLines = mutableListOf<String>()
                 var status = false
 
-                fContent.forEachIndexed { i, line ->
-                    if (line.contains("invoke-direct") &&
-                        line.contains("Landroidx/fragment/app/Fragment") &&
-                        !line.contains("Lcom/instagram/quickpromotion/intf/QuickPromotionSlot;")
-                    ) {
-                        Log.info("Invoke line found in line $i, ${line.trim()}")
-                        invokeLines.add(line)
-                    }
-                }
-
-                if (invokeLines.size != 1) {
-                    failure("invokeLines size is more or equal to 0")
-                    return
-                }
-
-                lateinit var callerLines: Array<String>
-                val invokeLine = invokeLines.first()
-                val regex = """\{([^}]*)}""".toRegex()
-                val match = regex.find(invokeLine)
-
-                val variablesArr = match?.groups?.get(1)?.value?.split(", ")
-                    ?: run {
-                        failure("Cannot parse variables in invoke-direct line: $invokeLine")
-                        return
-                    }
-
-                callerLines = arrayOf(
-                    "    invoke-virtual {${variablesArr[1]}}, LX/$interfaceClassName;->getRootActivity()Landroid/app/Activity;",
+                val callerLines = arrayOf(
+                    "    invoke-static {v2}, Linstafel/app/utils/InitializeInstafel;->triggerCheckUpdates(Landroid/app/Activity;)V",
                     "",
-                    "    move-result-object v0",
-                    "",
-                    "    invoke-static {v0}, Linstafel/app/utils/InitializeInstafel;->triggerCheckUpdates(Landroid/app/Activity;)V",
-                    "",
-                    "    invoke-static {v0}, Linstafel/app/utils/InitializeInstafel;->triggerUploadMapping(Landroid/app/Activity;)V",
+                    "    invoke-static {v2}, Linstafel/app/utils/InitializeInstafel;->triggerUploadMapping(Landroid/app/Activity;)V",
                     "",
                 )
-                Log.info("Caller lines set successfully.")
+
                 val newFileContent = fContent.toMutableList()
+                var insertOffset = 0
 
                 fContent.forEachIndexed { i, line ->
-                    if (line.contains("iput-object") &&
-                        fContent[i + 2].contains("return-void")) {
-
-                        Log.info("Method end found at line ${i + 2}")
-
-                        var sVal = i + 2
+                    if (line.contains("move-result-object v2") &&
+                        i > 0 &&
+                        fContent[i - 1].contains("getRootActivity()Landroid/app/Activity;")
+                    ) {
+                        Log.info("Injection point found at line ${i + 1}")
+                        var sVal = i + 1 + insertOffset
                         callerLines.forEach { callerLine ->
                             newFileContent.add(sVal, callerLine)
                             sVal++
                         }
-
+                        insertOffset += callerLines.size
                         status = true
                     }
                 }
 
-                fContent.clear()
-                fContent.addAll(newFileContent)
-
                 if (status) {
-                    FileUtils.writeLines(activityFile, fContent)
+                    FileUtils.writeLines(activityFile, newFileContent)
                     success("Caller lines added into Main Activity successfully")
                 } else {
                     failure("Patcher can't find correct lines...")

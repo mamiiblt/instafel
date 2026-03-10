@@ -116,21 +116,44 @@ class ChangeHomeLongClick: InstafelPatch() {
         @PInfos.TaskInfo("Find session casting class from a reference class.")
         object: InstafelTask() {
             override fun execute() {
-                // get casting class name via a reference class
                 val refClass = smaliUtils.getSmaliFilesByName("/com/facebook/FacebookActivity.smali")[0]
                 val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
 
+                // Pattern 1: invoke-virtual or invoke-static with Activity param returning LX/ class
                 refClassContent.forEachIndexed { i, line ->
-                    if (line.contains("invoke-static") &&
+                    if (castClassVariableName.isEmpty() &&
+                        (line.contains("invoke-virtual") || line.contains("invoke-static")) &&
                         line.contains("(Landroid/app/Activity;)LX/")
                     ) {
                         val parsedInst = SmaliParser.parseInstruction(line.trim(), i)
-                        castClassVariableName = parsedInst.returnType.replace("LX/", "").replace(";", "")
+                        val extracted = parsedInst.returnType.replace("LX/", "").replace(";", "")
+                        if (extracted.isNotEmpty()) {
+                            castClassVariableName = extracted
+                        }
                     }
                 }
 
-                if (castClassVariableName.isEmpty()) failure("Casting class name cannot catch from method return type...")
-                success("Caster class name is $castClassVariableName")
+                // Pattern 2: check-cast fallback
+                if (castClassVariableName.isEmpty()) {
+                    refClassContent.forEachIndexed { i, line ->
+                        if (castClassVariableName.isEmpty() &&
+                            line.trim().startsWith("check-cast") &&
+                            line.contains("LX/")
+                        ) {
+                            val start = line.indexOf("LX/") + 3
+                            val end = line.indexOf(";", start)
+                            if (start > 2 && end > 0) {
+                                castClassVariableName = line.substring(start, end)
+                            }
+                        }
+                    }
+                }
+
+                if (castClassVariableName.isEmpty()) {
+                    failure("Casting class name cannot catch from method return type...")
+                } else {
+                    success("Caster class name is $castClassVariableName")
+                }
             }
         },
         @PInfos.TaskInfo("Find correct class name and method names of FragmentNavigator class")
