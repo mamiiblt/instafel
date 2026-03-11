@@ -83,9 +83,9 @@ class AddAppTrigger: InstafelPatch() {
                 var insertOffset = 0
 
                 fContent.forEachIndexed { i, line ->
-                    if (line.contains("move-result-object v2") &&
+                    if (line.trim().contains("move-result-object v2") &&
                         i > 0 &&
-                        fContent[i - 1].contains("getRootActivity()Landroid/app/Activity;")
+                        fContent[i - 1].trim().contains("getRootActivity()Landroid/app/Activity;")
                     ) {
                         Log.info("Injection point found at line ${i + 1}")
                         var sVal = i + 1 + insertOffset
