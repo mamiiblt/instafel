@@ -23,7 +23,7 @@ class ChangeHomeLongClick: InstafelPatch() {
 
     lateinit var homeLongClickClass: File
     lateinit var activityVariableName: String
-    lateinit var castClassVariableName: String
+    var castClassVariableName: String = ""
     lateinit var fNavigatorClassName: String
     lateinit var fNavigatorCreatorMethodName: String
     lateinit var fNavigatorTransitionMethodName: String
@@ -119,10 +119,10 @@ class ChangeHomeLongClick: InstafelPatch() {
                 val refClass = smaliUtils.getSmaliFilesByName("/com/facebook/FacebookActivity.smali")[0]
                 val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
 
-                // Pattern 1: invoke-virtual or invoke-static with Activity param returning LX/ class
+                // Pattern 1: invoke-static with Activity param returning LX/ class
                 refClassContent.forEachIndexed { i, line ->
                     if (castClassVariableName.isEmpty() &&
-                        (line.contains("invoke-virtual") || line.contains("invoke-static")) &&
+                        line.contains("invoke-static") &&
                         line.contains("(Landroid/app/Activity;)LX/")
                     ) {
                         val parsedInst = SmaliParser.parseInstruction(line.trim(), i)
@@ -133,7 +133,23 @@ class ChangeHomeLongClick: InstafelPatch() {
                     }
                 }
 
-                // Pattern 2: check-cast fallback
+                // Pattern 2: invoke-virtual fallback
+                if (castClassVariableName.isEmpty()) {
+                    refClassContent.forEachIndexed { i, line ->
+                        if (castClassVariableName.isEmpty() &&
+                            line.contains("invoke-virtual") &&
+                            line.contains("(Landroid/app/Activity;)LX/")
+                        ) {
+                            val parsedInst = SmaliParser.parseInstruction(line.trim(), i)
+                            val extracted = parsedInst.returnType.replace("LX/", "").replace(";", "")
+                            if (extracted.isNotEmpty()) {
+                                castClassVariableName = extracted
+                            }
+                        }
+                    }
+                }
+
+                // Pattern 3: check-cast fallback
                 if (castClassVariableName.isEmpty()) {
                     refClassContent.forEachIndexed { i, line ->
                         if (castClassVariableName.isEmpty() &&
@@ -181,6 +197,11 @@ class ChangeHomeLongClick: InstafelPatch() {
         @PInfos.TaskInfo("Update openDeveloperOptions method")
         object: InstafelTask() {
             override fun execute() {
+                if (castClassVariableName.isEmpty()) {
+                    failure("castClassVariableName is empty — openDeveloperOptions skipped!")
+                    return
+                }
+
                 val instafelSheetClass = smaliUtils.getSmaliFilesByName("/instafel/app/utils/InstafelHomeSheet.smali")[0]
                 val classContent = smaliUtils.getSmaliFileContent(instafelSheetClass.absolutePath).toMutableList()
                 val newMethodContent = """
