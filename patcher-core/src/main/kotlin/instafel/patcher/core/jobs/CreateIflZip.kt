@@ -194,10 +194,18 @@ object CreateIflZip: CLIJob {
                 style.element.removeAttribute("parent")
             }
 
-            resStyles.document!!.createElement("item").apply {
-                setAttribute("name", "igds_color_link")
-                textContent = "@color/ifl_white"
-                style.element.appendChild(this)
+            val attrs = listOf(
+                "igds_color_link",
+                "igds_color_secondary_text",
+                "igds_color_secondary_text_on_media"
+            )
+
+            attrs.forEach { attr ->
+                resStyles.document!!.createElement("item").apply {
+                    setAttribute("name", attr)
+                    textContent = "@color/ifl_black"
+                    style.element.appendChild(this)
+                }
             }
 
             resDataBuilder.addElToCategory("styles", style.element)
