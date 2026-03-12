@@ -83,18 +83,18 @@ class AddAppTrigger: InstafelPatch() {
                 var insertOffset = 0
 
                 fContent.forEachIndexed { i, line ->
-                    if (line.contains("move-result-object v2") &&
-                        i > 0 &&
-                        fContent[i - 1].contains("getRootActivity()Landroid/app/Activity;")
-                    ) {
-                        Log.info("Injection point found at line ${i + 1}")
-                        var sVal = i + 1 + insertOffset
-                        callerLines.forEach { callerLine ->
-                            newFileContent.add(sVal, callerLine)
-                            sVal++
+                    if (line.trim().contains("move-result-object v2")) {
+                        val prevLines = fContent.subList(maxOf(0, i - 3), i)
+                        if (prevLines.any { it.trim().contains("getRootActivity()Landroid/app/Activity;") }) {
+                            Log.info("Injection point found at line ${i + 1}")
+                            var sVal = i + 1 + insertOffset
+                            callerLines.forEach { callerLine ->
+                                newFileContent.add(sVal, callerLine)
+                                sVal++
+                            }
+                            insertOffset += callerLines.size
+                            status = true
                         }
-                        insertOffset += callerLines.size
-                        status = true
                     }
                 }
 
