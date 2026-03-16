@@ -10,6 +10,7 @@ import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
 import kotlinx.coroutines.runBlocking
 import java.io.File
+import java.util.regex.Pattern
 import kotlin.system.exitProcess
 
 @PInfos.PatchInfo(
@@ -18,84 +19,88 @@ import kotlin.system.exitProcess
     desc = "You can unlock developer options with applying this patch!",
     isSingle = true
 )
-class UnlockDeveloperOptions: InstafelPatch() {
+class UnlockDeveloperOptions : InstafelPatch() {
 
     lateinit var className: String
     lateinit var unlockRefSmali: File
 
+    private val invokePattern: Pattern = Pattern.compile(
+        "invoke-static(?:/range)?\\s+\\{[^}]+\\},\\s+L([^;]+);->A00\\(Lcom/instagram/common/session/UserSession;\\)Z"
+    )
+
+    private val referenceClassPaths = listOf(
+        "/com/instagram/base/activity/BaseFragmentActivity.smali",
+        "/com/instagram/business/promote/activity/PromoteActivity.smali",
+        "/com/instagram/notification/ClearNotificationReceiver.smali"
+    )
+
     override fun initializeTasks() = mutableListOf(
+
         @PInfos.TaskInfo("Get constraint definition class")
-        object: InstafelTask() {
+        object : InstafelTask() {
             override fun execute() {
 
-                // 🔹 Try BaseFragmentActivity first
-                var unlockRefClassResults =
-                    smaliUtils.getSmaliFilesByName("/com/instagram/base/activity/BaseFragmentActivity.smali")
+                var extractedClassName: String? = null
 
-                if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
+                for (refPath in referenceClassPaths) {
+                    val refResults = smaliUtils.getSmaliFilesByName(refPath)
 
-                    // 🔹 Fallback to PromoteActivity
-                    unlockRefClassResults =
-                        smaliUtils.getSmaliFilesByName("/com/instagram/business/promote/activity/PromoteActivity.smali")
-
-                    if (unlockRefClassResults.isEmpty() || unlockRefClassResults.size > 1) {
-                        failure("Neither BaseFragmentActivity nor PromoteActivity class can be found / selected.")
-                        exitProcess(-1)
+                    if (refResults.isEmpty() || refResults.size > 1) {
+                        Log.info("Reference not found or ambiguous: $refPath — trying next.")
+                        continue
                     }
-                }
 
-                unlockRefSmali = unlockRefClassResults.first()
+                    val refFile = refResults.first()
+                    val refContent = smaliUtils.getSmaliFileContent(refFile.absolutePath)
 
-                val referenceFileContent =
-                    smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
-
-                var linesWithInvokeAndUserSession: List<LineData> =
-                    smaliUtils.getContainLines(
-                        referenceFileContent,
-                        "(Lcom/instagram/common/session/UserSession;)Z",
-                        "invoke-static"
-                    )
-
-                // 🔹 If no match in BaseFragmentActivity, try PromoteActivity
-                if (linesWithInvokeAndUserSession.size != 1 &&
-                    unlockRefSmali.absolutePath.contains("BaseFragmentActivity")
-                ) {
-
-                    val promoteResults =
-                        smaliUtils.getSmaliFilesByName("/com/instagram/business/promote/activity/PromoteActivity.smali")
-
-                    if (promoteResults.isNotEmpty()) {
-                        unlockRefSmali = promoteResults.first()
-                        val promoteContent =
-                            smaliUtils.getSmaliFileContent(unlockRefSmali.getAbsolutePath())
-
-                        linesWithInvokeAndUserSession =
-                            smaliUtils.getContainLines(
-                                promoteContent,
-                                "(Lcom/instagram/common/session/UserSession;)Z",
-                                "invoke-static"
-                            )
+                    for (line in refContent) {
+                        val matcher = invokePattern.matcher(line.trim())
+                        if (matcher.find()) {
+                            val rawClassPath = matcher.group(1)
+                            extractedClassName = rawClassPath
+                                .removePrefix("LX/")
+                                .removePrefix("X/")
+                                .removeSuffix(";")
+                            Log.info("Found invoke-static in ${refFile.name} → class: $extractedClassName")
+                            unlockRefSmali = refFile
+                            break
+                        }
                     }
+
+                    if (extractedClassName != null) break
                 }
 
-                if (linesWithInvokeAndUserSession.size != 1) {
-                    failure("Static caller opcode can't found or more than 1!")
-                    return;
+                if (extractedClassName == null) {
+                    failure("Could not extract DevOptions class from any reference activity.")
+                    exitProcess(-1)
                 }
 
-                val callLine: LineData = linesWithInvokeAndUserSession.get(0)
-                val callLineInstruction =
-                    SmaliParser.parseInstruction(callLine.content, callLine.num)
+                val candidateFile = smaliUtils.getSmaliFilesByName("X/$extractedClassName.smali")
+                    .firstOrNull() ?: run {
+                    failure("Smali file not found for extracted class: $extractedClassName")
+                    exitProcess(-1)
+                }
 
-                className =
-                    callLineInstruction.className.replace("LX/", "").replace(";", "")
+                val candidateContent = smaliUtils.getSmaliFileContent(candidateFile.absolutePath)
+                val isValidTarget = candidateContent.any { line ->
+                    line.contains(".method") &&
+                    line.contains("A00") &&
+                    line.contains("Lcom/instagram/common/session/UserSession;") &&
+                    line.contains(")Z")
+                }
 
+                if (!isValidTarget) {
+                    failure("Extracted class $extractedClassName does not contain expected A00(UserSession)Z method.")
+                    exitProcess(-1)
+                }
+
+                className = extractedClassName
                 success("DevOptions class is $className")
             }
         },
 
         @PInfos.TaskInfo("Add constraint line to DevOptions class")
-        object: InstafelTask() {
+        object : InstafelTask() {
             override fun execute() {
                 val devOptionsFile = smaliUtils.getSmaliFilesByName("X/$className.smali")
                     .firstOrNull() ?: run {
@@ -108,11 +113,14 @@ class UnlockDeveloperOptions: InstafelPatch() {
 
                 val moveResultLine =
                     smaliUtils.getContainLines(devOptionsContent, "move-result", "v0")
-                        .also { check(it.size == 1) { "Move result line size is 0 or bigger than 1" } }
+                        .also {
+                            check(it.size == 1) { "Move result line size is 0 or bigger than 1" }
+                        }
                         .first()
 
-                check(!devOptionsContent[moveResultLine.num + 2]
-                    .contains("const v0, 0x1")) { "Developer options already unlocked." }
+                check(
+                    !devOptionsContent[moveResultLine.num + 2].contains("const v0, 0x1")
+                ) { "Developer options already unlocked." }
 
                 devOptionsContent.add(moveResultLine.num + 1, "    ")
                 devOptionsContent.add(moveResultLine.num + 2, "    const v0, 0x1")
