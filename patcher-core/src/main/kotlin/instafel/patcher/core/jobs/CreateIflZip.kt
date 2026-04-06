@@ -195,17 +195,17 @@ object CreateIflZip: CLIJob {
             }
 
             val attrs = listOf(
-                "igds_color_primary_background",
-                "igds_color_secondary_background",
-                "igds_color_primary_text",
-                "igds_color_secondary_text",
-                "igds_color_primary_icon",
-                "igds_color_secondary_icon",
-                "igds_color_selected_text_background",
-                "igds_color_link",
-                "igds_color_secondary_text",
-                "igds_color_secondary_text_on_media"
-            )
+    "igds_color_primary_background",
+    "igds_color_secondary_background",
+    "igds_color_primary_text",
+    "igds_color_secondary_text",
+    "igds_color_primary_icon",
+    "igds_color_secondary_icon",
+    "igds_color_selected_text_background",
+    "igds_color_link",
+    "igds_color_secondary_text",
+    "igds_color_secondary_text_on_media"
+)
 
             attrs.forEach { attr ->
                 resStyles.document!!.createElement("item").apply {
