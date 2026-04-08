@@ -186,39 +186,75 @@ object CreateIflZip: CLIJob {
     }
 
     fun copyResourceStyle() {
-        val resStyles = ResourceParser.parseResStyle(File(Utils.mergePaths(baseValuesDir.absolutePath, "styles.xml")))
-        val iflStyles = resStyles.resources.filter { it.name.startsWith("ifl_") }
 
-        iflStyles.forEach { style ->
-            if (style.name == "ifl_theme_light") {
-                style.element.removeAttribute("parent")
-            }
+    val resStyles = ResourceParser.parseResStyle(
+        File(Utils.mergePaths(baseValuesDir.absolutePath, "styles.xml"))
+    )
 
-            val attrs = listOf(
-    "igds_color_primary_background",
-    "igds_color_secondary_background",
-    "igds_color_primary_text",
-    "igds_color_secondary_text",
-    "igds_color_primary_icon",
-    "igds_color_secondary_icon",
-    "igds_color_selected_text_background",
-    "igds_color_link",
-    "igds_color_secondary_text",
-    "igds_color_secondary_text_on_media"
-)
+    val iflStyles = resStyles.resources.filter { it.name.startsWith("ifl_") }
 
-            attrs.forEach { attr ->
+    val attrs = listOf(
+        "igds_color_primary_background",
+        "igds_color_secondary_background",
+        "igds_color_primary_text",
+        "igds_color_secondary_text",
+        "igds_color_primary_icon",
+        "igds_color_secondary_icon",
+        "igds_color_selected_text_background",
+        "igds_color_link",
+        "igds_color_secondary_text_on_media"
+    )
+
+    iflStyles.forEach { style ->
+
+        if (style.name == "ifl_theme_light") {
+            style.element.removeAttribute("parent")
+        }
+
+        val existing = mutableSetOf<String>()
+        val items = style.element.getElementsByTagName("item")
+
+        for (i in 0 until items.length) {
+            val el = items.item(i) as Element
+            existing.add(el.getAttribute("name"))
+        }
+
+        val isDark = style.name.contains("dark", true)
+
+        attrs.forEach { attr ->
+
+            if (!existing.contains(attr)) {
+
                 resStyles.document!!.createElement("item").apply {
                     setAttribute("name", attr)
-                    textContent = "@color/ifl_black"
+
+                    textContent = when {
+                        attr.contains("background") ->
+                            if (isDark) "@color/ifl_background_color" else "@color/ifl_background_color_light"
+
+                        attr.contains("primary_text") ->
+                            if (isDark) "@color/ifl_white" else "@color/ifl_black"
+
+                        attr.contains("secondary_text") ->
+                            if (isDark) "@color/ifl_sub_line" else "@color/ifl_sub_line_light"
+
+                        attr.contains("icon") ->
+                            if (isDark) "@color/ifl_white" else "@color/ifl_black"
+
+                        attr.contains("selected") -> "@color/ifl_black"
+                        attr.contains("link") -> "@color/ifl_black"
+                        else -> "@color/ifl_black"
+                    }
+
                     style.element.appendChild(this)
                 }
             }
-
-            resDataBuilder.addElToCategory("styles", style.element)
         }
 
-        Log.info("Totally ${iflStyles.size} style added to resource data.")
+        resDataBuilder.addElToCategory("styles", style.element)
+    }
+
+    Log.info("Totally ${iflStyles.size} style added to resource data.")
     }
 
     fun exportManifestThingsToResData() {
