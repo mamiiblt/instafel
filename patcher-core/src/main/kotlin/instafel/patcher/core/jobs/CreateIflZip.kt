@@ -197,9 +197,8 @@ object CreateIflZip: CLIJob {
 
     fun scan(dir: File) {
         dir.listFiles()?.forEach {
-            if (it.isDirectory) {
-                scan(it)
-            } else if (it.name == "styles.xml" && it.parent.contains("values")) {
+            if (it.isDirectory) scan(it)
+            else if (it.name == "styles.xml" && it.parent.contains("values")) {
                 styleFiles.add(it)
             }
         }
@@ -268,17 +267,19 @@ object CreateIflZip: CLIJob {
             }
         }
 
-        val transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer()
-        transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes")
+        val transformer = TransformerFactory.newInstance().newTransformer()
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes")
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4")
 
         transformer.transform(
-            javax.xml.transform.dom.DOMSource(resStyles.document),
-            javax.xml.transform.stream.StreamResult(file)
+            DOMSource(resStyles.document),
+            StreamResult(file)
         )
 
         
-        resDataBuilder.addElToCategory("styles", resStyles.document!!.documentElement)
+        styles.forEach { style ->
+            resDataBuilder.addElToCategory("styles", style.element)
+        }
     }
 
     Log.info("IGDS multi-style patch applied.")
