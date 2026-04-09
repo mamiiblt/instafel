@@ -268,7 +268,6 @@ object CreateIflZip: CLIJob {
             }
         }
 
-        
         val transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer()
         transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes")
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4")
@@ -277,6 +276,9 @@ object CreateIflZip: CLIJob {
             javax.xml.transform.dom.DOMSource(resStyles.document),
             javax.xml.transform.stream.StreamResult(file)
         )
+
+        
+        resDataBuilder.addElToCategory("styles", resStyles.document!!.documentElement)
     }
 
     Log.info("IGDS multi-style patch applied.")
