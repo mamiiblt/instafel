@@ -191,20 +191,11 @@ object CreateIflZip: CLIJob {
     }
 
     fun copyResourceStyle() {
+    val resStyles = ResourceParser.parseResStyle(
+        File(Utils.mergePaths(baseValuesDir.absolutePath, "styles.xml"))
+    )
 
-    val valuesDir = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "res"))
-    val styleFiles = mutableListOf<File>()
-
-    fun scan(dir: File) {
-        dir.listFiles()?.forEach {
-            if (it.isDirectory) scan(it)
-            else if (it.name == "styles.xml" && it.parent.contains("values")) {
-                styleFiles.add(it)
-            }
-        }
-    }
-
-    scan(valuesDir)
+    val styles = resStyles.resources.filter { it.name.contains("theme", true) }
 
     val attrs = listOf(
         "igds_color_primary_background",
@@ -218,71 +209,36 @@ object CreateIflZip: CLIJob {
         "igds_color_secondary_text_on_media"
     )
 
-    styleFiles.forEach { file ->
+    styles.forEach { style ->
 
-        val resStyles = ResourceParser.parseResStyle(file)
-        val styles = resStyles.resources
+        if (style.name == "ifl_theme_light") {
+            style.element.removeAttribute("parent")
+        }
 
-        styles.forEach { style ->
+        val existing = mutableSetOf<String>()
+        val items = style.element.getElementsByTagName("item")
 
-            if (!style.name.contains("theme", true)) return@forEach
+        for (i in 0 until items.length) {
+            val el = items.item(i) as Element
+            existing.add(el.getAttribute("name"))
+        }
 
-            val existing = mutableSetOf<String>()
-            val items = style.element.getElementsByTagName("item")
+        attrs.forEach { attr ->
 
-            for (i in 0 until items.length) {
-                val el = items.item(i) as Element
-                existing.add(el.getAttribute("name"))
-            }
+            if (!existing.contains(attr)) {
 
-            val isDark = style.name.contains("dark", true)
+                val newItem = resStyles.document!!.createElement("item")
+                newItem.setAttribute("name", attr)
+                newItem.textContent = "@color/ifl_black"
 
-            attrs.forEach { attr ->
-
-                if (!existing.contains(attr)) {
-
-                    val newItem = resStyles.document!!.createElement("item")
-                    newItem.setAttribute("name", attr)
-
-                    newItem.textContent = when {
-                        attr.contains("background") ->
-                            if (isDark) "@color/ifl_background_color" else "@color/ifl_background_color_light"
-
-                        attr.contains("primary_text") ->
-                            if (isDark) "@color/ifl_white" else "@color/ifl_black"
-
-                        attr.contains("secondary_text") ->
-                            if (isDark) "@color/ifl_sub_line" else "@color/ifl_sub_line_light"
-
-                        attr.contains("icon") ->
-                            if (isDark) "@color/ifl_white" else "@color/ifl_black"
-
-                        attr.contains("selected") -> "@color/ifl_black"
-                        attr.contains("link") -> "@color/ifl_black"
-                        else -> "@color/ifl_black"
-                    }
-
-                    style.element.appendChild(newItem)
-                }
+                style.element.appendChild(newItem)
             }
         }
 
-        val transformer = TransformerFactory.newInstance().newTransformer()
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes")
-        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4")
-
-        transformer.transform(
-            DOMSource(resStyles.document),
-            StreamResult(file)
-        )
-
-        
-        styles.forEach { style ->
-            resDataBuilder.addElToCategory("styles", style.element)
-        }
+        resDataBuilder.addElToCategory("styles", style.element)
     }
 
-    Log.info("IGDS multi-style patch applied.")
+    Log.info("Totally ${styles.size} theme styles added to resource data.")
 }
 
     fun exportManifestThingsToResData() {
