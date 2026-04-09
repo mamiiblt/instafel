@@ -18,6 +18,10 @@ import java.nio.file.Paths
 import java.util.Locale
 import kotlin.system.exitProcess
 import org.w3c.dom.Element
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.OutputKeys
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
 
 object CreateIflZip: CLIJob {
 
@@ -188,11 +192,20 @@ object CreateIflZip: CLIJob {
 
     fun copyResourceStyle() {
 
-    val resStyles = ResourceParser.parseResStyle(
-        File(Utils.mergePaths(baseValuesDir.absolutePath, "styles.xml"))
-    )
+    val valuesDir = File(Utils.mergePaths(Env.PROJECT_DIR, "sources", "res"))
+    val styleFiles = mutableListOf<File>()
 
-    val iflStyles = resStyles.resources.filter { it.name.startsWith("ifl_") }
+    fun scan(dir: File) {
+        dir.listFiles()?.forEach {
+            if (it.isDirectory) {
+                scan(it)
+            } else if (it.name == "styles.xml" && it.parent.contains("values")) {
+                styleFiles.add(it)
+            }
+        }
+    }
+
+    scan(valuesDir)
 
     val attrs = listOf(
         "igds_color_primary_background",
@@ -206,30 +219,33 @@ object CreateIflZip: CLIJob {
         "igds_color_secondary_text_on_media"
     )
 
-    iflStyles.forEach { style ->
+    styleFiles.forEach { file ->
 
-        if (style.name == "ifl_theme_light") {
-            style.element.removeAttribute("parent")
-        }
+        val resStyles = ResourceParser.parseResStyle(file)
+        val styles = resStyles.resources
 
-        val existing = mutableSetOf<String>()
-        val items = style.element.getElementsByTagName("item")
+        styles.forEach { style ->
 
-        for (i in 0 until items.length) {
-            val el = items.item(i) as Element
-            existing.add(el.getAttribute("name"))
-        }
+            if (!style.name.contains("theme", true)) return@forEach
 
-        val isDark = style.name.contains("dark", true)
+            val existing = mutableSetOf<String>()
+            val items = style.element.getElementsByTagName("item")
 
-        attrs.forEach { attr ->
+            for (i in 0 until items.length) {
+                val el = items.item(i) as Element
+                existing.add(el.getAttribute("name"))
+            }
 
-            if (!existing.contains(attr)) {
+            val isDark = style.name.contains("dark", true)
 
-                resStyles.document!!.createElement("item").apply {
-                    setAttribute("name", attr)
+            attrs.forEach { attr ->
 
-                    textContent = when {
+                if (!existing.contains(attr)) {
+
+                    val newItem = resStyles.document!!.createElement("item")
+                    newItem.setAttribute("name", attr)
+
+                    newItem.textContent = when {
                         attr.contains("background") ->
                             if (isDark) "@color/ifl_background_color" else "@color/ifl_background_color_light"
 
@@ -247,16 +263,24 @@ object CreateIflZip: CLIJob {
                         else -> "@color/ifl_black"
                     }
 
-                    style.element.appendChild(this)
+                    style.element.appendChild(newItem)
                 }
             }
         }
 
-        resDataBuilder.addElToCategory("styles", style.element)
+        
+        val transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer()
+        transformer.setOutputProperty(javax.xml.transform.OutputKeys.INDENT, "yes")
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4")
+
+        transformer.transform(
+            javax.xml.transform.dom.DOMSource(resStyles.document),
+            javax.xml.transform.stream.StreamResult(file)
+        )
     }
 
-    Log.info("Totally ${iflStyles.size} style added to resource data.")
-    }
+    Log.info("IGDS multi-style patch applied.")
+}
 
     fun exportManifestThingsToResData() {
         Log.info("Exporting activities & providers from Instafel base")
