@@ -197,28 +197,28 @@ object CreateIflZip: CLIJob {
 
     val iflStyles = resStyles.resources.filter { it.name.startsWith("ifl_") }
 
-    val attrs = listOf(
-        "igds_color_primary_background",
-        "igds_color_secondary_background",
-        "igds_color_primary_text",
-        "igds_color_secondary_text",
-        "igds_color_primary_icon",
-        "igds_color_secondary_icon",
-        "igds_color_selected_text_background",
-        "igds_color_link",
-        "igds_color_secondary_text_on_media"
-    )
-
     iflStyles.forEach { style ->
 
         if (style.name == "ifl_theme_light") {
             style.element.removeAttribute("parent")
         }
 
+        val attrs = listOf(
+            "igds_color_primary_background",
+            "igds_color_secondary_background",
+            "igds_color_primary_text",
+            "igds_color_secondary_text",
+            "igds_color_primary_icon",
+            "igds_color_secondary_icon",
+            "igds_color_selected_text_background",
+            "igds_color_link",
+            "igds_color_secondary_text_on_media"
+        )
+
         attrs.forEach { attr ->
             resStyles.document!!.createElement("item").apply {
                 setAttribute("name", attr)
-                textContent = "@color/ifl_white"
+                textContent = "@color/ifl_black"
                 style.element.appendChild(this)
             }
         }
