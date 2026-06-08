@@ -1,6 +1,22 @@
 #!/bin/sh
 
 #
+# (c) 2026 Muhammed Ali Bulut, All rights reserved.
+#
+# See LICENSE file in repository root for copy file of license. For copyright
+# notices, technical issues, feedback, or any other related to this code file or
+# project, please contact me via mamii@mamii.dev or other ways.
+#
+
+#
+# (c) 2026 Muhammed Ali Bulut, All rights reserved.
+#
+# See LICENSE file in repository root for copy file of license. For copyright
+# notices, technical issues, feedback, or any other related to this code file or
+# project, please contact me via mamii@mamii.dev or other ways.
+#
+
+#
 # Copyright © 2015-2021 the original authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
