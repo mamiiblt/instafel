@@ -268,7 +268,7 @@ class CrowdinMergeUtils(
     }
 
     fun sendActionCompletedReq(commitHash: String) {
-        val url = URL("https://api.instafel.app/manager/merge-op-completed")
+        val url = URL("https://api.instafel.mamii.dev/manager/merge-op-completed")
         val connection = url.openConnection() as HttpURLConnection
 
         connection.requestMethod = "POST"

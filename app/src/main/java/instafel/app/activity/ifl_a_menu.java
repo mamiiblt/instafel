@@ -75,7 +75,7 @@ public class ifl_a_menu extends AppCompatActivity {
         });
         tileSocials.getTileInfo().setOnClickListener(v -> GeneralFn.startIntent(ifl_a_menu.this, ifl_a_about.class));
         tileSocials.getTileChat().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://t.me/instafel"));
-        tileSocials.getTileGuide().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://instafel.app/wiki"));
+        tileSocials.getTileGuide().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://instafel.mamii.dev/wiki"));
         tileSocials.getTileGithub().setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_menu.this, "https://github.com/mamiiblt/instafel"));
         tileSocials.getTileInfo().setOnLongClickListener(view -> {
             if (InstafelEnv.PRODUCTION_MODE) {

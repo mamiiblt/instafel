@@ -32,7 +32,7 @@ import instafel.app.utils.types.PreferenceKeys;
 
 public class GeneralFn {
 
-    public static String DEFAULT_API_PATH = "https://api.instafel.app";
+    public static String DEFAULT_API_PATH = "https://api.instafel.mamii.dev";
 
     public static String getApiUrl(Activity activity) {
         PreferenceManager preferenceManager = new PreferenceManager(activity);

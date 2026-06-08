@@ -30,9 +30,9 @@ This enables community-based experimentation and shared discoveries.
 
 ### 🔍 How to Access the Flag Library and Backup Library?
 
-- The Flag Library is being established on the website (still WIP) at [Flag Library](https://instafel.app/library/flag)
+- The Flag Library is being established on the website (still WIP) at [Flag Library](https://instafel.mamii.dev/library/flag)
 - The most used flags can also be found via the [Telegram Community](https://t.me/instafel/34335)
-- The Backup Library is accessible here: [Backup Library](https://instafel.app/library/backup)
+- The Backup Library is accessible here: [Backup Library](https://instafel.mamii.dev/library/backup)
 - You can apply any backup files via the Instafel Menu.
 
 ---

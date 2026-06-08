@@ -48,7 +48,7 @@ The process behind Instafel is designed to be fast, efficient, and reliable:
 Follow these steps to install Instafel on your device:
 
 1. **Download the Latest Build**  
-   Get it from [Download Page](https://instafel.app/download?version=latest) or head over to our [Official Release Channel](https://t.me/instafel) to grab the newest alpha version patched by our team.
+   Get it from [Download Page](https://instafel.mamii.dev/download?version=latest) or head over to our [Official Release Channel](https://t.me/instafel) to grab the newest alpha version patched by our team.
 
 2. **Enable Unknown Sources**  
    On your Android device, make sure that the option "Installation from unknown sources" is allowed. You can enable this in:

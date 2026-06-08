@@ -20,7 +20,7 @@ public class ifl_a_library_menu extends AppCompatActivity {
         updateIflLocale(this, false);
         setContentView(R.layout.ifl_at_library_menu);
 
-        findViewById(R.id.ifl_tile_flag_library).setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_library_menu.this, "https://instafel.app/library/flag"));
+        findViewById(R.id.ifl_tile_flag_library).setOnClickListener(view -> GeneralFn.openInWebBrowser(ifl_a_library_menu.this, "https://instafel.mamii.dev/library/flag"));
         findViewById(R.id.ifl_tile_backup_library).setOnClickListener(view -> GeneralFn.startIntent(ifl_a_library_menu.this, ifl_a_library_backup.class));
     }
 

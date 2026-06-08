@@ -42,7 +42,7 @@ class PatcherCoreUpdaterUtils(
         body.put("commit_hash", uData.baseCommitHash)
         body.put("view_url", uData.releaseViewLink)
 
-        val url = URL("https://api.instafel.app/manager/update-op-completed")
+        val url = URL("https://api.instafel.mamii.dev/manager/update-op-completed")
         val connection = url.openConnection() as HttpURLConnection
 
         connection.requestMethod = "POST"

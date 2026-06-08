@@ -139,7 +139,7 @@ tasks.register("release") {
 
                 ## More Information?
 
-                For more information about the updater, please visit [About Updater](https://instafel.app/about_updater) or [Source Code](https://github.com/mamiiblt/instafel)
+                For more information about the updater, please visit [About Updater](https://instafel.mamii.dev/about_updater) or [Source Code](https://github.com/mamiiblt/instafel)
             """.trimIndent()
         )
     }

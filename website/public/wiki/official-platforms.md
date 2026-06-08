@@ -8,7 +8,7 @@ Instafel maintains an active and supportive community where users can get help, 
   [Telegram Group Link](https://t.me/instafel)
 
 - **🌍 Website:** The main hub for downloads, guides, and news.  
-  [https://instafel.app](https://instafel.app)
+  [https://instafel.mamii.dev](https://instafel.mamii.dev)
 
 - **💻 GitHub Repositories:** Source code and issue tracking for advanced users and contributors.  
   [GitHub Organization](https://github.com/mamiiblt)

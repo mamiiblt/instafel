@@ -63,7 +63,7 @@ public class ifl_a_ota extends AppCompatActivity {
         switchView = tileSetting.getSwitchView();
 
         findViewById(R.id.ifl_tile_ota_instafel_updater).setOnClickListener(view -> {
-            GeneralFn.openInWebBrowser(ifl_a_ota.this, "https://instafel.app/about_updater");
+            GeneralFn.openInWebBrowser(ifl_a_ota.this, "https://instafel.mamii.dev/about_updater");
         });
 
         if (preferenceManager.getPreferenceBoolean(PreferenceKeys.ifl_ota_setting, false)) {

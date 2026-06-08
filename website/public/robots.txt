@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap URL
-Sitemap: https://instafel.app/sitemap.xml
+Sitemap: https://instafel.mamii.dev/sitemap.xml

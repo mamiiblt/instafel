@@ -37,6 +37,6 @@ The builds it installs are generated and tested beforehand by the Instafel patch
 
 ### 📥 Where to Get It?
 
-You can download the latest Instafel Updater from the [official website](https://instafel.app/about_updater). It is the **recommended way** to install and maintain Instafel going forward.
+You can download the latest Instafel Updater from the [official website](https://instafel.mamii.dev/about_updater). It is the **recommended way** to install and maintain Instafel going forward.
 
 ---

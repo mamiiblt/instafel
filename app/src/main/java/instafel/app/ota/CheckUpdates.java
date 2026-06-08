@@ -161,7 +161,7 @@ public class CheckUpdates {
                     System.exit(0);
                     instafelDialog.dismiss();
                 },
-                view -> GeneralFn.openInWebBrowser(activity, "https://instafel.app/backup?id=" + backupId));
+                view -> GeneralFn.openInWebBrowser(activity, "https://instafel.mamii.dev/backup?id=" + backupId));
         instafelDialog.addSpace("bottom_space", 27);
         instafelDialog.show();
     }
