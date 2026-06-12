@@ -129,13 +129,13 @@ export default function Footer() {
 
     return (
         <Suspense fallback={null}>
-            <footer className="px-4 pb-6 sm:px-6">
+            <footer className="px-4 pb-6 sm:px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="mx-auto max-w-7xl overflow-hidden rounded-3xl border border-border bg-background/80 shadow-lg shadow-black/5 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
+                    className="mx-auto max-w-8xl overflow-hidden rounded-3xl border border-border bg-background/80 shadow-lg shadow-black/5 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
                 >
                     <div className="grid grid-cols-1 gap-10 p-6 sm:p-8 md:grid-cols-2 lg:grid-cols-4">
                         <div className="space-y-4 lg:col-span-2">
