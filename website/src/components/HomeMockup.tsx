@@ -21,8 +21,8 @@ export default function HomeMockup() {
   const currentTheme = theme === "system" ? resolvedTheme : theme;
   const imageSrc =
     currentTheme === "dark"
-      ? "/mockups/mockup_dark.png"
-      : "/mockups/mockup_light.png";
+      ? "/mockups/mockup_dark_t.png"
+      : "/mockups/mockup_light_t.png";
 
   return (
     <Image

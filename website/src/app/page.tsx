@@ -57,7 +57,7 @@ export default function PageHome() {
     return (
         <>
             <Navbar/>
-            <main className="flex min-h-screen flex-col bg-primary-foreground dark:bg-primary-background">
+            <main className="flex min-h-screen flex-col bg-background">
                 <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                     <section className="py-16 md:py-24 lg:py-32">
                         <div className="container mx-auto px-4">
