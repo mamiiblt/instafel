@@ -53,7 +53,6 @@ export default function WikiSlugPage() {
     const [loading, setLoading] = useState(true);
 
     const page = getPageBySlug(slug);
-    const proviData = getPreviousAndNextPage(slug);
 
     useEffect(() => {
         if (!slug) return;

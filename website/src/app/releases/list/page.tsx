@@ -10,11 +10,8 @@
 
 import {AnimatePresence, motion} from "framer-motion";
 import React, {useEffect, useState} from "react";
-import Footer from "@/components/Footer";
 import {useTranslation} from "react-i18next";
-import Navbar from "@/components/Navbar";
 import {iflApiBase} from "@/wdata/flag_sdata";
-import {LoadingBar} from "@/components/LoadingBars";
 import {useRouter, useSearchParams} from "next/navigation";
 import {CardTitle} from "@/components/ui/card";
 import {AlertCircle, Blocks, ChevronLeft, ChevronRight, Package, Sparkles} from "lucide-react";

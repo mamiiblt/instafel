@@ -12,8 +12,8 @@ import {motion} from "framer-motion"
 import React, {useEffect, useState} from "react"
 import {ArrowRight, Flag, Send} from "lucide-react"
 import {useTranslation} from "react-i18next"
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function MovedPage() {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -56,7 +56,7 @@ export default function MovedPage() {
 
     return (
         <div>
-            <Navbar/>
+            <Navbar />
             <div
                 className="min-h-screen bg-gradient-to-br from-background via-background to-background overflow-hidden relative">
                 <motion.div

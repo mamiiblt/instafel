@@ -17,8 +17,8 @@ import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {Card} from "@/components/ui/card";
 import {useTranslation} from "react-i18next";
-import Navbar from "@/components/Navbar";
 import {Page, PageHeader} from "@/components/PageUtils";
+import Navbar from "@/components/Navbar";
 
 interface Backup {
     id: string;

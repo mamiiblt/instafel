@@ -56,7 +56,7 @@ export default function PageHome() {
                             </div>
                         </section>
 
-                        <section className="py-16">
+                        <section className="py-8">
                             <div className="container mx-auto px-4">
                                 <motion.h2
                                     initial={{opacity: 0}}
@@ -97,7 +97,7 @@ export default function PageHome() {
                                             whileHover={{y: -5}}
                                         >
                                             <Card
-                                                className="h-full cursor-pointer hover:shadow-lg transition-shadow dark:bg-black dark:border-gray-800">
+                                                className="h-full cursor-pointer hover:shadow-lg transition-shadow dark:bg-card dark:border-gray-800">
                                                 <CardHeader>
                                                     <div
                                                         className="w-10 h-10 bg-blue-100 dark:bg-gray-800 rounded-lg flex items-center justify-center mb-3">
