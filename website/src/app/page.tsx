@@ -324,10 +324,6 @@ export default function PageHome() {
                                     <Link href="/releases/view?version=latest">
                                         <HugeiconsIcon icon={Download01Icon} className="mr-2 h-5 w-5" />
                                         {t("try_now.3")}
-                                        <HugeiconsIcon
-                                            icon={ArrowUpRight01Icon}
-                                            className="ml-1 h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
-                                        />
                                     </Link>
                                 </Button>
                             </motion.div>

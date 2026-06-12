@@ -15,12 +15,14 @@ import {motion} from "framer-motion";
 import {Github, Globe, Heart, Languages, SendIcon, Twitter, Users,} from "lucide-react";
 import {useTranslation} from "react-i18next";
 import {Page, PageHeader} from "@/components/PageUtils";
-import React, {useEffect, useState} from "react";
+import React, {ReactElement, useEffect, useState} from "react";
 import {LoadingBar} from "@/components/LoadingBars";
 import {iflApiBase} from "@/wdata/flag_sdata";
 import {getLanguageDisplayName} from "@/lib/utils";
 import Link from "next/link";
 import {CrowdinSuggestCard} from "@/components/CrowdinSuggestCard";
+import {HugeiconsIcon} from "@hugeicons/react";
+import {Github01Icon, Globe02Icon, TelegramIcon, TwitterIcon} from "@hugeicons/core-free-icons";
 
 const itemVariants = {
     hidden: {opacity: 0, y: 30},
@@ -87,7 +89,7 @@ export default function ContributorsPage() {
     const mainDeveloper = {
         name: "mamii.",
         role: t("roles.dev"),
-        avatar: "https://mamii.dev/mamiiblt.png",
+        avatar: "https://avatars.githubusercontent.com/u/70213359",
         bio: t("mamiiblt", { ns: "cont_abouts" }),
         socials: {
             github: "mamiiblt",
@@ -209,31 +211,23 @@ export default function ContributorsPage() {
         },
     ];
 
-    const SocialButton = ({
-                              icon: Icon,
-                              href,
-                              label,
-                          }: {
-        icon: any;
+    const SocialButton = ({icon, href, label}: {
+        icon: ReactElement<any, any>;
         href: string;
         label: string;
     }) => (
         <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
-            <Button
-                variant="ghost"
-                size="sm"
-                className="h-8 w-8 p-0 text-gray-400 hover:text-foreground hover:bg-gray-100 transition-colors"
-                asChild
+            <motion.a
+                whileHover={{ y: -3 }}
+                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="flex size-10 items-center justify-center rounded-full border border-border bg-background/60 text-muted-foreground backdrop-blur-md transition-colors hover:bg-muted hover:text-foreground"
             >
-                <a
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                >
-                    <Icon className="h-4 w-4"/>
-                </a>
-            </Button>
+                {icon}
+            </motion.a>
         </motion.div>
     );
 
@@ -241,28 +235,28 @@ export default function ContributorsPage() {
         <div className="flex items-center gap-1">
             {socials.telegram && (
                 <SocialButton
-                    icon={SendIcon}
+                    icon={<HugeiconsIcon icon={TelegramIcon} className={"w-4 h-4"}/>}
                     href={`https://t.me/${socials.telegram}`}
                     label="Telegram"
                 />
             )}
             {socials.github && (
                 <SocialButton
-                    icon={Github}
+                    icon={<HugeiconsIcon icon={Github01Icon} className={"w-4 h-4"}/>}
                     href={`https://github.com/${socials.github}`}
                     label="GitHub"
                 />
             )}
             {socials.twitter && (
                 <SocialButton
-                    icon={Twitter}
+                    icon={<HugeiconsIcon icon={TwitterIcon} className={"w-4 h-4"}/>}
                     href={`https://twitter.com/${socials.twitter}`}
                     label="Twitter"
                 />
             )}
             {socials.website && (
                 <SocialButton
-                    icon={Globe}
+                    icon={<HugeiconsIcon icon={Globe02Icon} className={"w-4 h-4"}/>}
                     href={`https://${socials.website}`}
                     label="Website"
                 />
@@ -280,9 +274,9 @@ export default function ContributorsPage() {
             content={<>
                 <motion.section variants={itemVariants}>
                     <motion.div variants={cardHoverVariants} whileHover="hover">
-                        <Card>
-                            <CardContent className="p-8">
-                                <div className="flex flex-col md:flex-row items-start space-y-4 gap-8">
+                        <Card className={"p-8"}>
+                            <CardContent className="p-4">
+                                <div className="flex flex-col md:flex-row items-start space-y-2 gap-4">
                                     <Avatar className="w-24 h-24 border-2">
                                         <AvatarImage
                                             src={mainDeveloper.avatar || "/placeholder.svg"}
@@ -304,7 +298,7 @@ export default function ContributorsPage() {
                                                 @mamiiblt
                                             </p>
                                         </div>
-                                        <p className="text-muted-foreground leading-relaxed">
+                                        <p className="text-muted-foreground text-base leading-relaxed">
                                             {mainDeveloper.bio}
                                         </p>
                                         <SocialLinks socials={mainDeveloper.socials}/>
@@ -331,7 +325,7 @@ export default function ContributorsPage() {
                                 transition={{delay: index * 0.1, duration: 0.6}}
                             >
                                 <Card className="h-full">
-                                    <CardContent className="p-6">
+                                    <CardContent className="pr-6 pl-6">
                                         <div className="flex flex-col items-center text-center space-y-4">
                                             <Avatar className="w-16 h-16 border-2">
                                                 <AvatarImage
@@ -378,7 +372,7 @@ export default function ContributorsPage() {
                                 transition={{delay: index * 0.1, duration: 0.6}}
                             >
                                 <Card className="transition-colors h-full">
-                                    <CardContent className="p-6">
+                                    <CardContent className="pl-6 pr-6">
                                         <div className="flex items-start gap-4">
                                             <Avatar className="w-12 h-12 border-2 flex-shrink-0">
                                                 <AvatarImage
@@ -430,7 +424,7 @@ export default function ContributorsPage() {
                                 <CardContent>
                                     <div className="space-y-4">
                                         {lang.members.map((member) => (
-                                            <Card key={member.id}>
+                                            <Card key={member.id} className={"p-0"}>
                                                 <Link href={`https://crowdin.com/profile/${member.username}`} className="flex items-center bg-input/30 gap-3 p-3 rounded-lg">
                                                     <Avatar>
                                                         <AvatarImage src={member.avatarUrl} alt={member.username} />
