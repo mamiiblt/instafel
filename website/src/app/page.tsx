@@ -61,7 +61,7 @@ export default function PageHome() {
         <>
             <Navbar/>
             <main className="flex min-h-screen flex-col bg-background">
-                <div className="mx-auto w-full max-w-7xl">
+                <div className="mx-auto w-full max-w-7xl px-4">
                     <section className="py-16 md:py-24 lg:py-32">
                         <div className="container mx-auto px-4">
                             <div className="flex flex-col items-center justify-center text-center">
@@ -175,7 +175,7 @@ export default function PageHome() {
                                     className="bg-card/40 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700/50 gap-2 items-start"
                                 >
                                     <div
-                                        className="bg-card text-foreground p-0 rounded-lg flex items-center gap-3 mb-2"
+                                        className=" text-foreground p-0 rounded-lg flex items-center gap-3 mb-2"
                                     >
                                         <div className="shrink-0">
                                             {feature.icon}
@@ -298,7 +298,7 @@ export default function PageHome() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="relative my-12 overflow-hidden rounded-3xl border border-border bg-card/60 px-4 py-16 text-center backdrop-blur-xl"
+                        className="relative my-12 overflow-hidden rounded-3xl border border-border bg-card/60 px-4 py-10 text-center backdrop-blur-xl"
                     >
                         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 

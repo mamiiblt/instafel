@@ -27,7 +27,15 @@ import {HugeiconsIcon} from "@hugeicons/react";
 import {Check, Languages, ListCollapse, LucideInstagram} from "lucide-react";
 import {Separator} from "@/components/ui/separator";
 import {useSidebar} from "@/components/ui/sidebar";
-import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger} from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from "@/components/ui/dialog";
 
 const localeFallbacks: Record<string, string> = {
   "en-EN": "gb",
@@ -263,7 +271,9 @@ export default function Navbar() {
 
             <ul className="hidden items-center gap-1 md:flex">
               {navItems.map((item) => {
-                const isActive = pathname.startsWith(item.href)
+                const hrefPath = item.href.split("?")[0]
+                const isActive = pathname.startsWith(hrefPath)
+
                 if (item.visibleMd == false) return (<div key={item.href}></div>)
                 return (
                     <li key={item.href} className="relative">
@@ -313,7 +323,7 @@ export default function Navbar() {
                     {supportedLocales.map((langCode) => {
                       const isSelected = langCode === i18n.language;
                       return (
-                          <button
+                          <DialogClose
                               key={langCode}
                               onClick={() => handleLanguageChange(langCode)}
                               className={cn(
@@ -325,7 +335,7 @@ export default function Navbar() {
                             <LocaleFlag localeCode={langCode} />
                             <span>{getLanguageDisplayName(langCode, i18n.language)}</span>
                             {isSelected && <Check className="size-4 shrink-0 text-primary" />}
-                          </button>
+                          </DialogClose>
                       );
                     })}
                   </div>
