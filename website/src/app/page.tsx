@@ -17,6 +17,9 @@ import Footer from "@/components/Footer";
 import HomeMockup from "@/components/HomeMockup";
 import {useTranslation} from "react-i18next";
 import Navbar from "@/components/Navbar";
+import {Card} from "@/components/ui/card";
+import {ArrowUpRight01Icon, Download01Icon, SystemUpdate01Icon} from "@hugeicons/core-free-icons";
+import {HugeiconsIcon} from "@hugeicons/react";
 
 export default function PageHome() {
     const {t} = useTranslation("home");
@@ -58,7 +61,7 @@ export default function PageHome() {
         <>
             <Navbar/>
             <main className="flex min-h-screen flex-col bg-background">
-                <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto w-full max-w-7xl">
                     <section className="py-16 md:py-24 lg:py-32">
                         <div className="container mx-auto px-4">
                             <div className="flex flex-col items-center justify-center text-center">
@@ -143,14 +146,14 @@ export default function PageHome() {
 
                     <section
                         id="features"
-                        className="py-16 px-4 md:px-12 bg-gray-50 dark:bg-gray-900/20 rounded-3xl my-12"
+                        className="md:px-12 rounded-3xl my-12"
                     >
                         <motion.h2
                             initial={{opacity: 0, y: 20}}
                             whileInView={{opacity: 1, y: 0}}
                             viewport={{once: true}}
                             transition={{duration: 0.6}}
-                            className="text-3xl font-bold text-center mb-6"
+                            className="text-3xl font-bold text-center mb-6 mt-6"
                         >
                             {t("features.1")}
                         </motion.h2>
@@ -165,33 +168,26 @@ export default function PageHome() {
                             {t("features.2")}
                         </motion.p>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {features.map((feature, idx) => (
-                                <motion.div
+                                <Card
                                     key={idx}
-                                    initial={{opacity: 0, y: 30}}
-                                    whileInView={{opacity: 1, y: 0}}
-                                    viewport={{once: true}}
-                                    transition={{
-                                        delay: idx * 0.15,
-                                        duration: 0.5,
-                                        ease: "easeOut",
-                                    }}
-                                    whileHover={{
-                                        scale: 1.03,
-                                        boxShadow: "0 10px 30px -15px rgba(0, 0, 0, 0.15)",
-                                    }}
-                                    className="bg-white dark:bg-gray-800/50 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700/50"
+                                    className="bg-card/40 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700/50 gap-2 items-start"
                                 >
                                     <div
-                                        className="bg-gray-600 text-white p-3 rounded-lg inline-block mb-4 hover:rotate-6 transition-transform duration-300">
-                                        {feature.icon}
+                                        className="bg-card text-foreground p-0 rounded-lg flex items-center gap-3 mb-2"
+                                    >
+                                        <div className="shrink-0">
+                                            {feature.icon}
+                                        </div>
+
+                                        <h3 className="text-xl font-semibold leading-none">
+                                            {feature.title}
+                                        </h3>
                                     </div>
-                                    <h3 className="text-xl font-semibold mb-2">
-                                        {feature.title}
-                                    </h3>
+
                                     <p className="text-muted-foreground">{feature.desc}</p>
-                                </motion.div>
+                                </Card>
                             ))}
                         </div>
                     </section>
@@ -217,7 +213,7 @@ export default function PageHome() {
                                             <Button
                                                 asChild
                                                 size="lg"
-                                                className="group bg-[#0088cc] hover:bg-[#0099dd] text-white hover:scale-105 transition-all duration-300"
+                                                className="group hover:scale-105 transition-all duration-300"
                                             >
                                                 <a
                                                     href="https://t.me/instafel"
@@ -245,9 +241,9 @@ export default function PageHome() {
                                 >
                                     <div className="relative">
                                         <div
-                                            className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-primary/10 rounded-2xl blur-lg opacity-70"></div>
+                                            className="absolute -inset-1 bg-gradient-to-r rounded-2xl blur-lg opacity-70"></div>
                                         <div
-                                            className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-6 relative max-w-xs">
+                                            className="bg-white dark:bg-card rounded-3xl shadow-xl p-6 relative max-w-xs">
                                             <div className="flex items-center mb-4">
                                                 <div
                                                     className="relative w-16 h-16 rounded-full overflow-hidden">
@@ -298,42 +294,55 @@ export default function PageHome() {
                     </section>
 
                     <motion.section
-                        initial={{opacity: 0, y: 30}}
-                        whileInView={{opacity: 1, y: 0}}
-                        viewport={{once: true}}
-                        transition={{duration: 0.6}}
-                        className="py-16 px-4 my-12 text-center bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="relative my-12 overflow-hidden rounded-3xl border border-border bg-card/60 px-4 py-16 text-center backdrop-blur-xl"
                     >
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
+                        <motion.div
+                            whileInView={{ scale: [0.95, 1] }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5 }}
+                            className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-background/60"
+                        >
+                            <HugeiconsIcon icon={Download01Icon} className="h-6 w-6 text-primary" />
+                        </motion.div>
+
+                        <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">
                             {t("try_now.1")}
                         </h2>
-                        <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                        <p className="mx-auto mb-8 max-w-xl text-pretty leading-relaxed text-muted-foreground">
                             {t("try_now.2")}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Button
-                                asChild
-                                size="lg"
-                                className="hover:scale-105 transition-transform duration-300"
-                            >
-                                <Link href="/releases/view?version=latest">
-                                    <Download className="mr-2"/>
-                                    {t("try_now.3")}
-                                </Link>
-                            </Button>
-                            <Button
-                                asChild
-                                size="lg"
-                                variant={"outline"}
-                                className="hover:scale-105 transition-transform duration-300"
-                            >
-                                <Link href="/about_updater">
-                                    <RefreshCw className="mr-2"/>
-                                    {t("try_now.4")}
-                                </Link>
-                            </Button>
+
+                        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                            <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+                                <Button asChild size="lg" className="group rounded-full px-6">
+                                    <Link href="/releases/view?version=latest">
+                                        <HugeiconsIcon icon={Download01Icon} className="mr-2 h-5 w-5" />
+                                        {t("try_now.3")}
+                                        <HugeiconsIcon
+                                            icon={ArrowUpRight01Icon}
+                                            className="ml-1 h-4 w-4 opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                                        />
+                                    </Link>
+                                </Button>
+                            </motion.div>
+
+                            <motion.div whileHover={{ y: -2 }} transition={{ type: "spring", stiffness: 400, damping: 25 }}>
+                                <Button asChild size="lg" variant="outline" className="rounded-full border-border bg-background/40 px-6 backdrop-blur">
+                                    <Link href="/about_updater">
+                                        <HugeiconsIcon icon={SystemUpdate01Icon} className="mr-2 h-5 w-5" />
+                                        {t("try_now.4")}
+                                    </Link>
+                                </Button>
+                            </motion.div>
                         </div>
                     </motion.section>
+
                 </div>
                 <Footer/>
             </main>
