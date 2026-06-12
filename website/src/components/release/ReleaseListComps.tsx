@@ -13,8 +13,9 @@ import {ReactNode} from "react";
 import {Card, CardContent, CardDescription, CardHeader} from "@/components/ui/card";
 import {Separator} from "@/components/ui/separator";
 import { motion } from "framer-motion";
-import {CalendarArrowUp, HashIcon, InstagramIcon} from "lucide-react";
 import Link from "next/link";
+import {HugeiconsIcon} from "@hugeicons/react";
+import {CalendarsIcon, HashtagIcon, InstagramFreeIcons} from "@hugeicons/core-free-icons";
 
 export interface ReleaseInfo {
     iflVersion: number,
@@ -50,8 +51,8 @@ export function ReleaseListCard({ cardBody, release, isLatest }: { cardBody: Rea
             whileHover={{ scale: 1.01 }}
             transition={{ type: 'spring', stiffness: 300 }}
         >
-            <Link href={`/releases/view?version=${release.iflVersion}`}>
-                <Card className={`${ isLatest == true ? "border-2 border-primary" : "" }`}>
+            <Link href={`/releases/view?version=${release.iflVersion}`} className={"gap-0"} >
+                <Card className={`${ isLatest == true ? "border border-primary/40" : "" }`}>
                     <CardHeader>
                         <div className="flex items-start justify-between gap-4">
                             {cardBody}
@@ -97,17 +98,17 @@ export function ReleaseListInfoCard({ release }: { release: ReleaseInfo }) {
             )}
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2">
-                <InstagramIcon className="h-4 w-4" />
+                <HugeiconsIcon icon={InstagramFreeIcons} className="h-5 w-5" />
                 {t("basedOn", { version: release.igVersion })}
             </div>
 
             <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2">
-                <CalendarArrowUp className="h-4 w-4" />
+                <HugeiconsIcon icon={CalendarsIcon} className="h-5 w-5" />
                 {t("releasedOn", { dateFormatted: formatDate(i18n.language, release.releaseDate) })}
             </div>
 
             {release.iflGenID != null && <div className="flex items-center gap-2 text-sm text-muted-foreground pt-2">
-                <HashIcon className="h-4 w-4" />
+                <HugeiconsIcon icon={HashtagIcon} className="h-5 w-5" />
                 {`ID ${release.iflGenID}`}
             </div>}
         </>

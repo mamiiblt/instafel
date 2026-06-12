@@ -8,19 +8,10 @@
 
 "use client";
 
-import React, {useEffect, useState} from 'react';
+import React, {ReactElement, useEffect, useState} from 'react';
 import {motion} from 'framer-motion';
 import {
-    Calendar,
-    Download,
-    DownloadIcon,
-    Hash,
-    Info,
-    LogsIcon,
     LucideIcon,
-    Package,
-    Shield,
-    SquaresExcludeIcon,
     Star, Trash
 } from 'lucide-react';
 import {Badge} from '@/components/ui/badge';
@@ -39,6 +30,15 @@ import {iflApiBase} from "@/wdata/flag_sdata";
 import {useSearchParams} from "next/navigation";
 import {toast} from "sonner";
 import {Page, PageHeader, PageLoading} from "@/components/PageUtils";
+import {HugeiconsIcon} from "@hugeicons/react";
+import {
+    BookIcon,
+    Calendar01Icon,
+    Download01Icon, InformationCircleIcon,
+    Package01Icon, Shield01Icon,
+    SquaresExcludeFreeIcons,
+    Tag01Icon
+} from "@hugeicons/core-free-icons";
 
 interface RelInfo {
     manifest_version: number
@@ -72,26 +72,36 @@ const item = {
     show: {opacity: 1, y: 0}
 };
 
-
-function InfoTileComp({icon: Icon, title, subtitle, copiable, copyData}: {
-    icon: LucideIcon
-    title: string
-    subtitle: string
-    copiable?: boolean
-    copyData?: string
+function InfoTileComp({ icon, title, subtitle, copiable, copyData }: {
+    icon: ReactElement;
+    title: string;
+    subtitle: string;
+    copiable?: boolean;
+    copyData?: string;
 }) {
+    const handleClick = () => {
+        if (copiable && copyData) {
+            copyToClipboard(copyData);
+        }
+    };
+
     return (
         <div
-            onClick={() => copiable && copyData && copyToClipboard(copyData)}
-            className={`grid grid-cols-[auto_1fr] gap-2 items-start ${copiable ? "cursor-pointer hover:opacity-80 transition-opacity" : ""}`}
+            onClick={handleClick}
+            className={`grid grid-cols-[auto_1fr] gap-3 items-start rounded-md
+        ${copiable ? "cursor-pointer hover:opacity-80 transition-opacity" : ""}`}
         >
-            <Icon className="h-3.5 w-3.5 text-muted-foreground mt-0.5"/>
-            <div className="space-y-1">
-                <p className="text-sm text-muted-foreground leading-none">{title}</p>
-                <p className="font-medium font-mono text-sm leading-none">{subtitle}</p>
+            {React.cloneElement(icon, {
+                // @ts-ignore
+                className: "h-5 w-5 text-muted-foreground"
+            })}
+
+            <div className="space-y-0.5">
+                <p className="text-sm text-muted-foreground">{title}</p>
+                <p className="text-sm font-medium font-mono">{subtitle}</p>
             </div>
         </div>
-    )
+    );
 }
 
 type BadgeVariant = React.ComponentProps<typeof Badge>["variant"];
@@ -120,32 +130,32 @@ function VariantCard({badges, installationType, cardDesc, dialogInfo, downloadTe
 }) {
     return (
         <motion.div variants={item}>
-            <Card className="h-full border-2 hover:border-primary transition-colors">
+            <Card className="h-full border hover:border-primary/50 transition-colors">
                 <CardHeader>
                     <div className={`flex items-start justify-between`}>
                         <div className="flex flex-wrap gap-2">
-                          {badges.filter(Boolean).map(({text, icon: Icon, variant, className}, i) => (
-                              <Badge key={i} variant={variant} className={className}>
-                                  <Icon className={"mr-1 h-3 w-3"}/>
-                                  {text}
-                              </Badge>
-                          ))}
+                            {badges.filter(Boolean).map(({text, icon: Icon, variant, className}, i) => (
+                                <Badge key={i} variant={variant} className={className}>
+                                    <Icon className={"mr-1 h-3 w-3"}/>
+                                    {text}
+                                </Badge>
+                            ))}
                         </div>
                     </div>
-                    <CardTitle className={`text-2xl mb-`}>{installationType}</CardTitle>
+                    <CardTitle className={`text-2xl font-bold mb-`}>{installationType}</CardTitle>
                     <CardDescription className={`text-base`}>{cardDesc}</CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-2">
                     <div className="flex items-center gap-2">
                         <DownloadButton
                             downloadText={downloadText}
                             downloadDataInfo={downloadDataInfo}
-                            isDeleted={isDeleted} />
+                            isDeleted={isDeleted}/>
 
                         <Dialog>
                             <DialogTrigger asChild>
-                                <Button variant="default" size="lg" className="h-10 w-10 shrink-0">
-                                    <Info className="h-5 w-5"/>
+                                <Button variant="outline" size="lg" className="h-10 w-10 shrink-0">
+                                    <HugeiconsIcon icon={InformationCircleIcon} size={5} />
                                 </Button>
                             </DialogTrigger>
                             <DialogContent>
@@ -163,14 +173,15 @@ function VariantCard({badges, installationType, cardDesc, dialogInfo, downloadTe
 }
 
 function DownloadButton({
-    downloadText,
-    downloadDataInfo,
-    isDeleted
-}: {
+                            downloadText,
+                            downloadDataInfo,
+                            isDeleted
+                        }: {
     downloadText: string,
     downloadDataInfo: DownloadDataInfo,
     isDeleted: boolean
-}) {    return (
+}) {
+    return (
         <Button
             className="flex-1"
             size="lg"
@@ -182,7 +193,7 @@ function DownloadButton({
                 )
             }
         >
-            <Download className="mr-2 h-5 w-5"/>
+            <HugeiconsIcon icon={Download01Icon} className="mr-2 h-6 w-6"/>
             {downloadText}
         </Button>
     )
@@ -243,7 +254,7 @@ export default function ReleaseInfoPage() {
                 <Page
                     width={6}
                     header={<PageHeader
-                        icon={<DownloadIcon/>}
+                        icon={<HugeiconsIcon icon={Download01Icon}/>}
                         title={t("title")}
                         subtitle={t("subtitle", {version: data.patcherData.iflVersion})}/>}
                     content={<motion.div
@@ -315,7 +326,7 @@ export default function ReleaseInfoPage() {
                                 <Card>
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-2">
-                                            <LogsIcon className="h-5 w-5"/>
+                                            <HugeiconsIcon icon={BookIcon} size={5} />
                                             {t("changelogs")}
                                         </CardTitle>
                                     </CardHeader>
@@ -337,7 +348,7 @@ export default function ReleaseInfoPage() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <Info className="h-5 w-5"/>
+                                        <HugeiconsIcon icon={InformationCircleIcon} className={"h-5 w-5"} />
                                         {t("releaseInfo")}
                                     </CardTitle>
                                 </CardHeader>
@@ -345,24 +356,24 @@ export default function ReleaseInfoPage() {
                                     <div className="grid md:grid-cols-2 gap-4">
                                         <div className="space-y-3">
                                             {data.patcherData.buildDate && <InfoTileComp
-                                                icon={Calendar}
+                                                icon={<HugeiconsIcon icon={Calendar01Icon} />}
                                                 title={t("releaseDate")}
                                                 subtitle={formatDate(i18n.language, data.patcherData.buildDate)}/>}
 
                                             <InfoTileComp
-                                                icon={Package}
+                                                icon={<HugeiconsIcon icon={Package01Icon} />}
                                                 title={t("igVersion")}
                                                 subtitle={`v${data.patcherData.igVersion} (${data.patcherData.igVersionCode})`}/>
 
                                             {data.patcherData.generationId && <InfoTileComp
-                                                icon={Hash}
+                                                icon={<HugeiconsIcon icon={Tag01Icon} />}
                                                 title={t("generationId")}
                                                 subtitle={data.patcherData.generationId}/>}
                                         </div>
 
                                         <div className="space-y-3">
                                             {data.patcher.version && <InfoTileComp
-                                                icon={SquaresExcludeIcon}
+                                                icon={<HugeiconsIcon icon={SquaresExcludeFreeIcons} />}
                                                 title={t("patcherInfo")}
                                                 subtitle={t("patcherInfoDesc", {
                                                     version: data.patcher.version,
@@ -370,14 +381,14 @@ export default function ReleaseInfoPage() {
                                                 })}/>}
 
                                             {data.fileInfos.unclone.fileHash && <InfoTileComp
-                                                icon={Shield}
+                                                icon={<HugeiconsIcon icon={Shield01Icon} />}
                                                 title={t("hash", {type: t("unclone")})}
                                                 subtitle={data.fileInfos.unclone.fileHash}
                                                 copiable={true}
                                                 copyData={data.fileInfos.unclone.fileHash}/>}
 
                                             {data.fileInfos.clone.fileHash && <InfoTileComp
-                                                icon={Shield}
+                                                icon={<HugeiconsIcon icon={Shield01Icon} />}
                                                 title={t("hash", {type: t("clone")})}
                                                 subtitle={data.fileInfos.clone.fileHash}
                                                 copiable={true}

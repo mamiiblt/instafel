@@ -14,7 +14,6 @@ import {useTranslation} from "react-i18next";
 import {iflApiBase} from "@/wdata/flag_sdata";
 import {useRouter, useSearchParams} from "next/navigation";
 import {CardTitle} from "@/components/ui/card";
-import {AlertCircle, Blocks, ChevronLeft, ChevronRight, Package, Sparkles} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
 import {
     Pagination,
@@ -27,6 +26,13 @@ import {
 } from "@/components/ui/pagination";
 import {ReleaseInfo, ReleaseListCard, ReleaseListInfoCard} from "@/components/release/ReleaseListComps";
 import {Page, PageLoading, PageHeader} from "@/components/PageUtils";
+import {
+    BlocksIcon, ChevronRightIcon,
+    Delete01Icon,
+    Package01Icon,
+    SparklesFreeIcons
+} from "@hugeicons/core-free-icons";
+import {HugeiconsIcon} from "@hugeicons/react";
 
 export default function ReleasesPage() {
     const {t} = useTranslation(["releases"]);
@@ -122,7 +128,7 @@ export default function ReleasesPage() {
                 <Page
                     width={6}
                     header={currentPage == 1 && <PageHeader
-                        icon={<Blocks/>}
+                        icon={<HugeiconsIcon icon={BlocksIcon} />}
                         title={t("title")}
                         subtitle={t("subtitle")}/>}
                     content={<>
@@ -138,14 +144,14 @@ export default function ReleasesPage() {
                                         <ReleaseListCard
                                             release={release}
                                             isLatest={true}
-                                            cardBody={<div className="space-y-2 flex-1">
+                                            cardBody={<div className="space-y-2 flex-1 gap-0">
                                                 <Badge className="mb-2">
-                                                    <Sparkles className="mr-1 h-3 w-3"/>
+                                                    <HugeiconsIcon icon={SparklesFreeIcons} className="mr-1 h-3 w-3" />
                                                     {t("latestVersion")}
                                                 </Badge>
 
                                                 <CardTitle className="flex items-center gap-2 text-3xl font-bold">
-                                                    <Package className="h-7 w-7"/>
+                                                    <HugeiconsIcon icon={Package01Icon} className="h-7 w-7" />
                                                     {t("releaseText", {version: release.iflVersion})}
                                                 </CardTitle>
 
@@ -157,12 +163,12 @@ export default function ReleasesPage() {
                                             cardBody={<div className="space-y-2 flex-1">
                                                 <div className="flex items-center gap-2 flex-wrap">
                                                     <CardTitle className="flex items-center gap-2">
-                                                        <Package className="h-5 w-5"/>
+                                                        <HugeiconsIcon icon={Package01Icon} className="h-6 w-6" />
                                                         {t("releaseText", {version: release.iflVersion})}
                                                     </CardTitle>
                                                     {release.isDeleted && (
                                                         <Badge variant="destructive">
-                                                            <AlertCircle className="mr-1 h-3 w-3"/>
+                                                            <HugeiconsIcon icon={Delete01Icon} className="mr-1 h-3 w-3" />
                                                             {t("deleted")}
                                                         </Badge>
                                                     )}
@@ -196,7 +202,7 @@ export default function ReleasesPage() {
                                             }
                           `}
                                         >
-                                            <ChevronLeft className="h-4 w-4"/>
+                                            <HugeiconsIcon icon={ChevronRightIcon} className="h-4 w-4" />
                                             <span className="hidden sm:inline">Previous</span>
                                         </PaginationPrevious>
                                     </PaginationItem>
@@ -242,7 +248,7 @@ export default function ReleasesPage() {
                           `}
                                         >
                                             <span className="hidden sm:inline">Next</span>
-                                            <ChevronRight className="h-4 w-4"/>
+                                            <HugeiconsIcon icon={ChevronRightIcon} className="h-4 w-4" />
                                         </PaginationNext>
                                     </PaginationItem>
                                 </PaginationContent>
