@@ -21,7 +21,7 @@ export default function BackupLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="bg-primary-foreground dark:bg-primary-background">
+        <div className="bg-background">
             {children}
         </div>
     );

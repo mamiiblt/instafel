@@ -8,349 +8,318 @@
 
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { useSearchParams } from "next/navigation";
-import { LoadingBar } from "@/components/LoadingBars";
+import {motion} from "framer-motion";
+import {useEffect, useState} from "react";
+import {Button} from "@/components/ui/button";
+import {useSearchParams} from "next/navigation";
+import {LoadingBar} from "@/components/LoadingBars";
 import Footer from "@/components/Footer";
+import {HugeiconsIcon} from "@hugeicons/react";
 import {
-  Calendar,
-  Download,
-  FileDown,
-  FileSpreadsheet,
-  History,
-  Info,
-  Smartphone,
-  User,
-} from "lucide-react";
+    Calendar03Icon,
+    Download01Icon,
+    FileValidationIcon,
+    ArrowLeft01Icon,
+    ArrowUpRight01Icon,
+    Time04Icon,
+    InformationCircleIcon,
+    SmartPhone01Icon,
+    UserIcon,
+    CheckmarkCircle02Icon, QuestionFreeIcons, CircleQuestionMarkIcon, LibraryIcon,
+} from "@hugeicons/core-free-icons";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
-import { useTranslation } from "react-i18next";
-import { Page } from "@/components/PageUtils";
+import {useTranslation} from "react-i18next";
+import Navbar from "@/components/Navbar";
 
 interface Manifest {
-  version_name: string;
-  author: string;
-  changelog: string;
-  last_updated: string;
-  description: string;
-  name: string;
+    version_name: string;
+    author: string;
+    changelog: string;
+    last_updated: string;
+    description: string;
+    name: string;
 }
 
 interface Resp {
-  manifest_version: number;
-  manifest: Manifest;
+    manifest_version: number;
+    manifest: Manifest;
 }
 
 export default function PageBackup() {
-  const { t } = useTranslation("backup");
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id") ?? "null";
-  const [data, setData] = useState<Resp | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [downloadStarted, setDownloadStarted] = useState(false);
-  const [importStarted, setImportStarted] = useState(false);
+    const {t} = useTranslation("backup");
+    const searchParams = useSearchParams();
+    const id = searchParams.get("id") ?? "null";
+    const [data, setData] = useState<Resp | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [downloadStarted, setDownloadStarted] = useState(false);
+    const [importStarted, setImportStarted] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const requestUrl = `https://raw.githubusercontent.com/instafel/backups/refs/heads/main/${id}/manifest.json`;
-        const res = await fetch(requestUrl);
-        const result: Resp = await res.json();
-        setData(result);
-      } catch (error) {
-        console.error(t("errors.fetchFailed", { errStr: error }));
-      } finally {
-        setIsLoading(false);
-      }
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const requestUrl = `https://raw.githubusercontent.com/instafel/backups/refs/heads/main/${id}/manifest.json`;
+                const res = await fetch(requestUrl);
+                const result: Resp = await res.json();
+                setData(result);
+            } catch (error) {
+                console.error(t("errors.fetchFailed", {errStr: error}));
+            } finally {
+                setIsLoading(false);
+            }
+        };
+        fetchData();
+    }, [id, t]);
+
+    const handleDownloadBackup = (id: string, version: string) => {
+        setDownloadStarted(true);
+        const link = document.createElement("a");
+        link.href = `https://api.instafel.mamii.dev/content/util/download-backup?id=${id}&version=${version}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        setTimeout(() => {
+            setDownloadStarted(false);
+        }, 2500);
     };
-    fetchData();
-  }, [id, t]);
 
-  const handleDownloadBackup = (id: string, version: string) => {
-    setDownloadStarted(true);
-    const link = document.createElement("a");
-    link.href = `https://api.instafel.mamii.dev/content/util/download-backup?id=${id}&version=${version}`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    setTimeout(() => {
-      setDownloadStarted(false);
-    }, 2500);
-  };
+    const handleImportInstafel = () => {
+        setImportStarted(true);
+        setTimeout(() => {
+            setImportStarted(false);
+        }, 2500);
+    };
 
-  const handleImportInstafel = () => {
-    setImportStarted(true);
+    if (isLoading) {
+        return <LoadingBar/>;
+    }
 
-    setTimeout(() => {
-      setImportStarted(false);
-    }, 2500);
-  };
-
-  if (isLoading) {
-    return <LoadingBar />;
-  }
-
-  if (!data) {
-    return (
-      <div className="container mx-auto py-12 px-4 text-center">
-        <Card className="max-w-md mx-auto p-6 border-2">
-          <CardTitle className="text-xl mb-4">{t("notFound.title")}</CardTitle>
-          <p className="text-muted-foreground mb-6">
-            {t("notFound.description")}
-          </p>
-          <Link href="/library/backup">
-            <Button>{t("notFound.returnButton")}</Button>
-          </Link>
-        </Card>
-        <Footer />
-      </div>
-    );
-  }
-
-  const changelogItems =
-    typeof data.manifest.changelog === "string"
-      ? data.manifest.changelog.split("\n").filter((item) => item.trim() !== "")
-      : [];
-
-  return (
-    <Page
-      width={6}
-      content={
-        <>
-          <div className="mb-6">
-            <Link
-              href="/library/backup"
-              className="text-primary hover:underline flex items-center"
-            >
-              <FileSpreadsheet className="mr-2 h-4 w-4" />
-              {t("backToLibrary")}
-            </Link>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="border-2 shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 sm:p-6">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6">
-                  <div>
-                    <motion.h1
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.1 }}
-                      className="text-xl sm:text-2xl md:text-3xl font-bold"
-                    >
-                      {data.manifest.name}
-                    </motion.h1>
-
+    if (!data) {
+        return (
+            <>
+                <div className="mx-auto flex min-h-[60vh] w-full max-w-7xl items-center justify-center px-4 py-12">
                     <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.2 }}
-                      className="flex flex-wrap items-center gap-2 mt-2"
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.5}}
+                        className="w-full max-w-md rounded-3xl border border-border bg-card/60 p-8 text-center backdrop-blur-xl"
                     >
-                      <Badge
-                        variant="outline"
-                        className="bg-white/80 text-xs font-medium flex items-center gap-1 py-1 dark:text-background"
-                      >
-                        <User className="h-3 w-3 text-primary dark:text-background" />
-                        {data.manifest.author}
-                      </Badge>
-
-                      <Badge
-                        variant="secondary"
-                        className="text-xs font-medium flex items-center gap-1 py-1"
-                      >
-                        <History className="h-3 w-3" />
-                        {t("version", {
-                          verStr: data.manifest.version_name,
-                        })}
-                      </Badge>
-                    </motion.div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3 md:flex-col lg:flex-row">
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: 0.3 }}
-                    >
-                      <Button
-                        onClick={() =>
-                          handleDownloadBackup(id, data.manifest.version_name)
-                        }
-                        className={`w-full relative overflow-hidden ${
-                          downloadStarted
-                            ? "bg-green-600 hover:bg-green-700"
-                            : "bg-primary"
-                        }`}
-                        disabled={downloadStarted}
-                      >
-                        {downloadStarted ? (
-                          <>
-                            <motion.div
-                              initial={{ width: 0 }}
-                              animate={{ width: "100%" }}
-                              transition={{ duration: 2 }}
-                              className="absolute inset-y-0 left-0 bg-green-500/20"
+                        <div
+                            className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-background/60">
+                            <HugeiconsIcon
+                                icon={InformationCircleIcon}
+                                className="h-6 w-6 text-primary"
                             />
-                            <span className="relative z-10 flex items-center text-xs sm:text-sm">
-                              <FileDown className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                              {t("downloading")}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <Download className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                            <span className="text-xs sm:text-sm">
-                              {t("downloadButton")}
-                            </span>
-                          </>
-                        )}
-                      </Button>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: 0.4 }}
-                    >
-                      <Button
-                        onClick={handleImportInstafel}
-                        variant="outline"
-                        className={`w-full border-primary relative overflow-hidden ${
-                          importStarted
-                            ? "bg-primary/20 text-primary"
-                            : "text-primary hover:bg-primary/10"
-                        }`}
-                        disabled={importStarted}
-                      >
-                        {importStarted ? (
-                          <>
-                            <motion.div
-                              initial={{ width: 0 }}
-                              animate={{ width: "100%" }}
-                              transition={{ duration: 2 }}
-                              className="absolute inset-y-0 left-0 bg-primary/10"
-                            />
-                            <span className="relative z-10 flex items-center text-xs sm:text-sm">
-                              <Smartphone className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                              {t("openingInstafel")}
-                            </span>
-                          </>
-                        ) : (
-                          <>
-                            <Smartphone className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                            <span className="text-xs sm:text-sm">
-                              {t("importButton")}
-                            </span>
-                          </>
-                        )}
-                      </Button>
-                    </motion.div>
-                  </div>
-                </div>
-              </div>
-
-              <CardContent className="p-4 sm:p-6">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  <div className="mb-6 sm:mb-8">
-                    <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 flex items-center">
-                      <Info className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary" />
-                      {t("aboutTitle")}
-                    </h2>
-                    <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 sm:p-4">
-                      <p className="text-sm text-foreground/90">
-                        {data.manifest.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="text-xs sm:text-sm font-medium text-muted-foreground flex items-center mb-1">
-                          <Calendar className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5" />
-                          {t("lastUpdated")}
-                        </h3>
-                        <p className="text-sm sm:text-base font-medium">
-                          {data.manifest.last_updated}
+                        </div>
+                        <h2 className="mb-3 text-xl font-bold">{t("notFound.title")}</h2>
+                        <p className="mb-6 text-pretty leading-relaxed text-muted-foreground">
+                            {t("notFound.description")}
                         </p>
-                      </div>
-                    </div>
-                  </div>
+                        <Button asChild className="rounded-full px-6">
+                            <Link href="/library/backup">{t("notFound.returnButton")}</Link>
+                        </Button>
+                    </motion.div>
+                </div>
+                <Footer/>
+            </>
+        );
+    }
 
-                  {changelogItems.length > 0 && (
-                    <div className="mt-4 sm:mt-6">
-                      <Separator className="my-4 sm:my-6" />
+    const changelogItems =
+        typeof data.manifest.changelog === "string"
+            ? data.manifest.changelog.split("\n").filter((item) => item.trim() !== "")
+            : [];
 
-                      <h2 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 flex items-center">
-                        <History className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-primary" />
-                        {t("changelogTitle")}
-                      </h2>
+    return (
+        <>
+            <Navbar/>
+            <div className="mx-auto w-full max-w-7xl px-4 py-10">
+                <motion.section
+                    initial={{opacity: 0, y: 20}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.5}}
+                    className="relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-xl sm:p-8"
+                >
+                    <div
+                        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"/>
 
-                      <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-3 sm:p-4">
-                        <ul className="space-y-1.5 sm:space-y-2">
-                          {changelogItems.map((item, index) => (
-                            <motion.li
-                              key={index}
-                              initial={{ opacity: 0, x: -5 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{
-                                delay: 0.5 + index * 0.1,
-                                duration: 0.3,
-                              }}
-                              className="flex items-start"
+                    <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
+                        <div>
+                            <h1 className="text-balance text-2xl font-bold sm:text-3xl">
+                                {data.manifest.name}
+                            </h1>
+                            <div className="mt-3 flex flex-wrap items-center gap-2">
+                <span
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/50 px-3 py-1 text-xs font-medium">
+                  <HugeiconsIcon
+                      icon={UserIcon}
+                      className="h-3.5 w-3.5 text-primary"
+                  />
+                    {data.manifest.author}
+                </span>
+                                <span
+                                    className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                  <HugeiconsIcon icon={Time04Icon} className="h-3.5 w-3.5"/>
+                                    {t("version", {verStr: data.manifest.version_name})}
+                </span>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
+                            <motion.div
+                                whileHover={{y: -2}}
+                                transition={{type: "spring", stiffness: 400, damping: 25}}
                             >
-                              <span className="text-xs sm:text-sm">{item}</span>
-                            </motion.li>
-                          ))}
-                        </ul>
-                      </div>
+                                <Button
+                                    onClick={() =>
+                                        handleDownloadBackup(id, data.manifest.version_name)
+                                    }
+                                    disabled={downloadStarted}
+                                    className="w-full rounded-full px-6"
+                                >
+                                    <HugeiconsIcon
+                                        icon={downloadStarted ? CheckmarkCircle02Icon : Download01Icon}
+                                        className="mr-2 h-4 w-4"
+                                    />
+                                    {downloadStarted ? t("downloading") : t("downloadButton")}
+                                </Button>
+                            </motion.div>
+
+                            <motion.div
+                                whileHover={{y: -2}}
+                                transition={{type: "spring", stiffness: 400, damping: 25}}
+                            >
+                                <Button
+                                    onClick={handleImportInstafel}
+                                    disabled={importStarted}
+                                    variant="outline"
+                                    className="w-full rounded-full border-border bg-background/40 px-6 backdrop-blur"
+                                >
+                                    <HugeiconsIcon
+                                        icon={SmartPhone01Icon}
+                                        className="mr-2 h-4 w-4"
+                                    />
+                                    {importStarted ? t("openingInstafel") : t("importButton")}
+                                </Button>
+                            </motion.div>
+                        </div>
                     </div>
-                  )}
+                </motion.section>
 
-                  <Separator className="my-4 sm:my-6" />
+                <div className="mt-6 grid grid-cols-1 items-stretch gap-6 lg:grid-cols-3">
+                    <motion.section
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.5, delay: 0.1}}
+                        className="rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-xl lg:col-span-2"
+                    >
+                        <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold">
+                            <HugeiconsIcon
+                                icon={InformationCircleIcon}
+                                className="h-5 w-5 text-primary"
+                            />
+                            {t("aboutTitle")}
+                        </h2>
+                        <p className="text-pretty leading-relaxed text-foreground/90">
+                            {data.manifest.description}
+                        </p>
+                    </motion.section>
 
-                  <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 sm:p-4 mt-4 sm:mt-6">
-                    <h3 className="text-xs sm:text-sm font-medium text-blue-700 dark:text-blue-300 flex items-center mb-1 sm:mb-2">
-                      <Info className="h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5" />
-                      {t("howToUseTitle")}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-blue-700/80 dark:text-blue-300/80">
-                      {t("howToUseDescription")}
-                    </p>
-                  </div>
+                    <motion.section
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.5, delay: 0.15}}
+                        className="flex flex-col justify-center rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-xl"
+                    >
+                        <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold">
+                            <HugeiconsIcon
+                                icon={Calendar03Icon}
+                                className="h-5 w-5 text-primary"
+                            />
+                            {t("lastUpdated")}
+                        </h2>
+                        <p className="text-base font-semibold">
+                            {data.manifest.last_updated}
+                        </p>
+                    </motion.section>
+
+                    {changelogItems.length > 0 && (
+                        <motion.section
+                            initial={{opacity: 0, y: 20}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 0.5, delay: 0.2}}
+                            className="rounded-3xl border border-border bg-card/60 p-6 backdrop-blur-xl lg:col-span-2"
+                        >
+                            <h2 className="mb-4 flex items-center gap-2 text-lg font-semibold">
+                                <HugeiconsIcon
+                                    icon={Time04Icon}
+                                    className="h-5 w-5 text-primary"
+                                />
+                                {t("changelogTitle")}
+                            </h2>
+                            <ul className="space-y-2">
+                                {changelogItems.map((item, index) => (
+                                    <motion.li
+                                        key={index}
+                                        initial={{opacity: 0, x: -5}}
+                                        animate={{opacity: 1, x: 0}}
+                                        transition={{delay: 0.2 + index * 0.06, duration: 0.3}}
+                                        className="flex items-start gap-2.5 rounded-2xl border border-border bg-background/40 px-4 py-2.5 text-sm leading-relaxed"
+                                    >
+                                        <span>{item}</span>
+                                    </motion.li>
+                                ))}
+                            </ul>
+                        </motion.section>
+                    )}
+
+                    <motion.section
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{duration: 0.5, delay: 0.25}}
+                        className="rounded-3xl border p-6 bg-card/60"
+                    >
+                        <h2 className="mb-3 flex items-center gap-2 text-lg font-semibold">
+                            <HugeiconsIcon
+                                icon={CircleQuestionMarkIcon}
+                                className="h-5 w-5 text-primary"
+                            />
+                            {t("howToUseTitle")}
+                        </h2>
+                        <p className="text-pretty text-sm leading-relaxed text-foreground/80">
+                            {t("howToUseDescription")}
+                        </p>
+                    </motion.section>
+                </div>
+
+                <motion.div
+                    initial={{opacity: 0, y: 20}}
+                    animate={{opacity: 1, y: 0}}
+                    transition={{duration: 0.5, delay: 0.3}}
+                    className="mt-8 text-center"
+                >
+                    <motion.div
+                        whileHover={{y: -2}}
+                        transition={{type: "spring", stiffness: 400, damping: 25}}
+                        className="inline-block"
+                    >
+                        <Button
+                            asChild
+                            variant="outline"
+                            className="group rounded-full border-border bg-card/50 px-6 backdrop-blur"
+                        >
+                            <Link href="/library/backup">
+                                <HugeiconsIcon
+                                    icon={LibraryIcon}
+                                    className="mr-2 h-4 w-4"
+                                />
+                                {t("viewAllBackups")}
+                            </Link>
+                        </Button>
+                    </motion.div>
                 </motion.div>
-              </CardContent>
-            </Card>
-          </motion.div>
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-6 sm:mt-8 text-center"
-          >
-            <Button asChild variant="outline">
-              <Link href="/library/backup" className="flex items-center">
-                <FileSpreadsheet className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                {t("viewAllBackups")}
-              </Link>
-            </Button>
-          </motion.div>
+            <Footer/>
         </>
-      }
-    />
-  );
+    );
 }
