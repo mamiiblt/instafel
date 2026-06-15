@@ -16,8 +16,7 @@ import instafel.patcher.core.utils.patch.PInfos
 import kotlinx.coroutines.runBlocking
 import org.apache.commons.io.FileUtils
 import java.io.File
-
-// Thanks to ReVanced developers for made this patch possible!
+// Thanks to Swakshan to made it possible! :)
 @PInfos.PatchInfo(
     name = "Remove Ads",
     shortname = "remove_ads",
@@ -35,7 +34,7 @@ class RemoveAds: InstafelPatch() {
                 when (val result = runBlocking {
                     SearchUtils.getFileContainsAllCords(smaliUtils,
                         listOf(
-                            listOf("SponsoredContentController.insertItem"),
+                            listOf("Is ad pod"),
                         ))
                 }) {
                     is FileSearchResult.Success -> {
@@ -55,7 +54,7 @@ class RemoveAds: InstafelPatch() {
                 var methodLine = -1
 
                 fContent.forEachIndexed { index, line ->
-                    if (line.contains("SponsoredContentController.insertItem")) {
+                    if (line.contains("Is ad pod")) {
                         for (i in index downTo 0) {
                             if (fContent[i].contains(".method")) {
                                 methodLine = i
