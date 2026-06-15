@@ -31,7 +31,7 @@ class Env {
 
         fun updateDeviceProp() {
             val input: InputStream? = Env::class.java.classLoader.getResourceAsStream(
-                Paths.get("device_props", "gplayapi_px_3a.properties").toString()
+                "device_props/gplayapi_px_3a.properties"
             )
             deviceProp = Properties()
             deviceProp.load(input)
