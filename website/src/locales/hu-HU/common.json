@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Mentések",
-      "flags": "Zászlók",
       "updater": "Telepítő",
       "src_code": "Forráskód",
       "download": "Letöltés",

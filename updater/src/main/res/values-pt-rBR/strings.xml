@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ (c) 2026 Muhammed Ali Bulut, All rights reserved.
+  ~
+  ~ See LICENSE file in repository root for copy file of license. For copyright
+  ~ notices, technical issues, feedback, or any other related to this code file or
+  ~ project, please contact me via mamii@mamii.dev or other ways.
+  -->
 <resources>
     <!-- Nav Bar -->
     <string name="status">Status</string>
@@ -6,6 +13,7 @@
     <string name="settings">Configurações</string>
     <!-- Setup Updater -->
     <string name="setup_ifl">Configure o Updater</string>
+    <string name="setup_ifl_desc">Configurar suas preferências de instalação</string>
     <string name="checker_arch">Verificar Arquitetura</string>
     <string name="checker_itype">Verificar o Tipo de Instalação</string>
     <string name="unclone">Unclone</string>
@@ -46,6 +54,7 @@
     <string name="dialog_desc">Instafel Updater precisa de permissão de notificação e Root para ser executado normalmente.</string>
     <string name="dialog_ok">Ok</string>
     <string name="hour">hora</string>
+    <string name="hour_imz">%1$s hora</string>
     <string name="minute">minuto</string>
     <string name="upd_started">Atualização iniciada</string>
     <string name="upd_stopped">A atualização parou</string>
@@ -67,6 +76,8 @@
     <string name="cname_about">Sobre o Updater</string>
     <string name="checker_interval">Intervalor de verificação</string>
     <string name="checker_interval_s">Alterar o intervalo de verificação</string>
+    <string name="install_method">Método de instalação</string>
+    <string name="install_method_desc">Você pode alterar o método de instalação</string>
     <string name="itype">Tipo de Instalação</string>
     <string name="itype_s">Alterar o tipo de instalação</string>
     <string name="send_notif">Enviar Notificação</string>
@@ -92,4 +103,6 @@
     <string name="disable_error_s">Desativa notificações de erros não críticos</string>
     <string name="updater_guide">Guia do Updater</string>
     <string name="updater_guide_s">Saiba mais sobre o Updater</string>
+    <string name="help_translation">Ajude a traduzir</string>
+    <string name="help_translation_desc">Participe do projeto Crowdin e contribua!</string>
 </resources>

@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Sauvegardes",
-      "flags": "Drapeaux",
       "updater": "Updater",
       "src_code": "Code source",
       "download": "Télécharger",

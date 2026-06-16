@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ (c) 2026 Muhammed Ali Bulut, All rights reserved.
+  ~
+  ~ See LICENSE file in repository root for copy file of license. For copyright
+  ~ notices, technical issues, feedback, or any other related to this code file or
+  ~ project, please contact me via mamii@mamii.dev or other ways.
+  -->
 <resources>
     <!-- sa -->
     <string name="ifl_a5_10">Autorizzazione Negata</string>
@@ -110,6 +117,8 @@
     <string name="ifl_a5_dia_freq_05">Una volta a settimana</string>
     <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Usa la lingua del dispositivo</string>
+    <string name="ifl_a6_02">Supported</string>
+    <string name="ifl_a6_03">Not Supported</string>
     <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Rapporti</string>
     <string name="ifl_a7_02">Elimina rapporti</string>
@@ -229,5 +238,12 @@
     <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Benvenuto</string>
     <string name="ifl_d4_02">Benvenuti su Instafel, questa mod è stata sviluppata per fornire a tutti le ultime funzionalità delle build alpha di Instagram\\n\\nÈ possibile accedere al menu tenendo premuto il pulsante hamburger nella scheda del profilo.</string>
+    <!-- HOME SHEETS -->
+    <string name="ifl_d5_01">Instafel Quick-menu</string>
+    <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+    <string name="ifl_d5_03">Open Instafel Menu</string>
+    <string name="ifl_d5_04">Open IG Experiment Options</string>
+    <string name="ifl_d5_05">Join Instafel Community</string>
+    <string name="ifl_d5_06">Restart Instagram</string>
     <!-- CRASH TOAST -->
 </resources>

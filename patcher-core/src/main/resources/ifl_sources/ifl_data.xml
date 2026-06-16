@@ -1166,6 +1166,8 @@
             <string name="ifl_a5_sub_freq_04">يُضبط ليكون مرة كل خمسة أيام</string>
             <string name="ifl_a5_sub_freq_05">اضبطه ليعمل مرة في الأسبوع</string>
             <string name="ifl_a6_01">استخدام لغة الجهاز</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">التقارير</string>
             <string name="ifl_a7_02">حذف التقارير</string>
             <string name="ifl_a8_01">التفاصيل</string>
@@ -1193,6 +1195,12 @@
             <string name="ifl_d3_02">حسنًا</string>
             <string name="ifl_d4_01">أهلًا وسهلًا</string>
             <string name="ifl_d4_02">مرحبًا بك في إنستافل، تم تطوير هذا التعديل ليقدم للجميع أحدث الميزات في نسخ انستغرام ألفا يمكنك الوصول إلى القائمة بالضغط المستمر على زر القائمة في تبويب الملف الشخصي.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">حدث خطأ أثناء فتح برنامج تثبيت Apk.</string>
             <string name="ifl_t1_03">فشل تحديث إنستافل.</string>
         </vcategory>
@@ -1379,6 +1387,8 @@
             <string name="ifl_a5_sub_freq_04">Hər beş gündə bir təyin et</string>
             <string name="ifl_a5_sub_freq_05">Həftədə bir təyin et</string>
             <string name="ifl_a6_01">Cihaz dilini istifadə et</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Hesabatlar</string>
             <string name="ifl_a7_02">Hesabatları sil</string>
             <string name="ifl_a8_01">Təfərrüatlar</string>
@@ -1406,6 +1416,12 @@
             <string name="ifl_d3_02">Tamam</string>
             <string name="ifl_d4_01">Xoş gəldiniz</string>
             <string name="ifl_d4_02">Instafel-ə xoş gəlmisiniz, bu mod Instagram alpha versiyalarını ən son xüsusiyyətlərlə təqdim etmək üçün hazırlanmışdır.\\n\\nMenyu, profil hissəsində hamburger düyməsinə basaraq əldə edilə bilər.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">apk-installer açılarkən səhv baş verdi.</string>
             <string name="ifl_t1_03">Instafel yeniləməsi baş tutmadı.</string>
         </vcategory>
@@ -1592,6 +1608,8 @@
             <string name="ifl_a5_sub_freq_04">Auf „Alle fünf Tage“ setzen</string>
             <string name="ifl_a5_sub_freq_05">Auf „Einmal pro Woche“ setzen</string>
             <string name="ifl_a6_01">Gerätesprache verwenden</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Berichte</string>
             <string name="ifl_a7_02">Berichte löschen</string>
             <string name="ifl_a8_01">Details</string>
@@ -1619,6 +1637,12 @@
             <string name="ifl_d3_02">OK</string>
             <string name="ifl_d4_01">Willkommen</string>
             <string name="ifl_d4_02">Willkommen bei Instafel! Dieses Mod wurde entwickelt, um allen die neuesten Funktionen der Instagram-Alpha-Versionen bereitzustellen.\\n\\nDas Menü kann durch langes Drücken der Hamburger-Schaltfläche im Profil-Tab geöffnet werden.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Beim Öffnen des APK-Installers ist ein Fehler aufgetreten.</string>
             <string name="ifl_t1_03">Instafel-Update fehlgeschlagen.</string>
         </vcategory>
@@ -1805,6 +1829,8 @@
             <string name="ifl_a5_sub_freq_04">Να πραγματοποιείται έλεγχος κάθε πέντε ημέρες</string>
             <string name="ifl_a5_sub_freq_05">Να πραγματοποιείται έκεγχος κάθε εβδομάδα</string>
             <string name="ifl_a6_01">Χρήση προεπιλεγμένης γλώσσας</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Καταγραφές Σφαλμάτων</string>
             <string name="ifl_a7_02">Διαγραφή Καταγραφών</string>
             <string name="ifl_a8_01">Λεπτομέρειες Καταγραφής</string>
@@ -1832,6 +1858,12 @@
             <string name="ifl_d3_02">Εντάξει</string>
             <string name="ifl_d4_01">Καλωσήρθατε</string>
             <string name="ifl_d4_02">Καλωσήρθατε στο Instafel, μια τροποποιημένη εκδοχή του Instagram με στόχο την άμεση πρόσβαση στις πειραματικές εκδόσεις της εφαρμογής.\\n\\nΠατήστε τον εικόνα του προφίλ σας στο κάτω μέρος και μετά πιέστε παρατεταμένα τις τρεις γραμμές πάνω δεξιά για να μεταφερθείτε στις ρυθμίσεις του Instafel.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Σφάλμα κατά το άνοιγμα του προγράμματος εγκατάστασης του αρχείου ενημέρωσης.</string>
             <string name="ifl_t1_03">Σφάλμα ενημέρωσης του Instafel.</string>
         </vcategory>
@@ -2018,6 +2050,8 @@
             <string name="ifl_a5_sub_freq_04">Establecido en cinco días</string>
             <string name="ifl_a5_sub_freq_05">Establecido en una vez por semana</string>
             <string name="ifl_a6_01">Usar idioma del dispositivo</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Reportes</string>
             <string name="ifl_a7_02">Borrar reportes</string>
             <string name="ifl_a8_01">Detalles</string>
@@ -2045,6 +2079,12 @@
             <string name="ifl_d3_02">Okey</string>
             <string name="ifl_d4_01">Bienvenidos</string>
             <string name="ifl_d4_02">Bienvenido a Instafel, este mod ha sido desarrollado para proporcionar a todos las últimas características en las builds aplha de Instagram\\n\\nnEl menú se puede acceder tocando y manteniendo pulsado el botón de hamburguesa en la pestaña de perfil.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Ha ocurrido un error al abrir el instalador apk</string>
             <string name="ifl_t1_03">Fallo al actualizar Instafel</string>
         </vcategory>
@@ -2231,6 +2271,8 @@
             <string name="ifl_a5_sub_freq_04">Réglé sur une fois tous les cinq jours</string>
             <string name="ifl_a5_sub_freq_05">Réglé sur une fois par semaine</string>
             <string name="ifl_a6_01">"Utiliser la langue de l'appareil"</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Rapports</string>
             <string name="ifl_a7_02">Supprimer des rapports</string>
             <string name="ifl_a8_01">Détails</string>
@@ -2258,6 +2300,12 @@
             <string name="ifl_d3_02">"D'accord"</string>
             <string name="ifl_d4_01">Accueillir</string>
             <string name="ifl_d4_02">"Bienvenue sur Instafel, ce mod a été développé pour fournir à tout le monde les dernières fonctionnalités des versions alpha d'Instagram\\n\\nLe menu est accessible en appuyant et en maintenant enfoncé le bouton hamburger sur le"</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">"Une erreur est survenue lors de l'ouverture du programme d'installation d'APK."</string>
             <string name="ifl_t1_03">"La mise à jour d'Instafel a échoué."</string>
         </vcategory>
@@ -2444,6 +2492,8 @@
             <string name="ifl_a5_sub_freq_04">5 दिन में 1 बार</string>
             <string name="ifl_a5_sub_freq_05">सप्ताह में 1 बार</string>
             <string name="ifl_a6_01">डिवाइस की भाषा इस्तेमाल करें</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">रिपोर्ट्स</string>
             <string name="ifl_a7_02">रिपोर्ट्स मिटाएं</string>
             <string name="ifl_a8_01">विस्तार</string>
@@ -2471,6 +2521,12 @@
             <string name="ifl_d3_02">ठीक है</string>
             <string name="ifl_d4_01">आपका स्वागत है</string>
             <string name="ifl_d4_02">Instafel में आपका स्वागत है, इस मोड़ को इंस्टाग्राम अल्फा बिल्ड पर सभी को नवीनतम सुविधाएं प्रदान करने के लिए बनाया गया है। प्रोफ़ाइल टैब पर हैमबर्गर बटन को 2 सेकंड तक दबाकर InstaFel मेनू तक पहुंचा जा सकता है।</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">apk-इंस्टॉलर खोलते समय एक समस्या हो रही है</string>
             <string name="ifl_t1_03">InstaFel अपडेट विफल हुआ.</string>
         </vcategory>
@@ -2657,6 +2713,8 @@
             <string name="ifl_a5_sub_freq_04">Beállítva öt naponként-re</string>
             <string name="ifl_a5_sub_freq_05">Beállítva egyszer egy héten-re</string>
             <string name="ifl_a6_01">Eszköz nyelvének használata</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Jelentések</string>
             <string name="ifl_a7_02">Jelentések törlése</string>
             <string name="ifl_a8_01">Részletek</string>
@@ -2684,6 +2742,12 @@
             <string name="ifl_d3_02">Oké</string>
             <string name="ifl_d4_01">Üdvözölünk</string>
             <string name="ifl_d4_02">Üdvözölünk az Instafel, ezt a modot azért fejlesztették, hogy mindenki számára a legújabb funkciókat az Instagram alfa buildeken\\n\\nA menü érhető el a hamburger gomb megnyomásával és lenyomva tartásával a profil fülön.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Hiba történt az apk-telepítő megnyitásakor.</string>
             <string name="ifl_t1_03">Instafel frissítés sikertelen.</string>
         </vcategory>
@@ -2870,6 +2934,8 @@
             <string name="ifl_a5_sub_freq_04">Atur menjadi setiap lima hari sekali</string>
             <string name="ifl_a5_sub_freq_05">Atur menjadi setiap minggu sekali</string>
             <string name="ifl_a6_01">Gunakan Bahasa Perangkat</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Laporan</string>
             <string name="ifl_a7_02">Hapus Laporan</string>
             <string name="ifl_a8_01">Rincian</string>
@@ -2897,6 +2963,12 @@
             <string name="ifl_d3_02">Oke</string>
             <string name="ifl_d4_01">Selamat datang</string>
             <string name="ifl_d4_02">Selamat datang di Instafel, mod ini dikembangkan untuk memberikan fitur terbaru pada versi alpha Instagram\\n\\nMenu dapat diakses dengan menekan dan menahan tombol hamburger di tab profil.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Terjadi kesalahan saat membuka pemasang APK.</string>
             <string name="ifl_t1_03">Pembaruan Instafel gagal.</string>
         </vcategory>
@@ -3083,6 +3155,8 @@
             <string name="ifl_a5_sub_freq_04">Imposta su una volta ogni cinque giorni</string>
             <string name="ifl_a5_sub_freq_05">Imposta su una volta a settimana</string>
             <string name="ifl_a6_01">Usa la lingua del dispositivo</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Rapporti</string>
             <string name="ifl_a7_02">Elimina rapporti</string>
             <string name="ifl_a8_01">Dettagli</string>
@@ -3110,6 +3184,12 @@
             <string name="ifl_d3_02">Va bene</string>
             <string name="ifl_d4_01">Benvenuto</string>
             <string name="ifl_d4_02">Benvenuti su Instafel, questa mod è stata sviluppata per fornire a tutti le ultime funzionalità delle build alpha di Instagram\\n\\nÈ possibile accedere al menu tenendo premuto il pulsante hamburger nella scheda del profilo.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">"Si è verificato un errore durante l'apertura dell'apk-installer."</string>
             <string name="ifl_t1_03">Aggiornamento Instafel non riuscito.</string>
         </vcategory>
@@ -3296,6 +3376,8 @@
             <string name="ifl_a5_sub_freq_04">Ustawione na co pięć dni</string>
             <string name="ifl_a5_sub_freq_05">Ustawione na raz w tygodniu</string>
             <string name="ifl_a6_01">Użyj języka urządzenia</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Raporty</string>
             <string name="ifl_a7_02">Usuń raporty</string>
             <string name="ifl_a8_01">Szczegóły</string>
@@ -3325,6 +3407,12 @@
             <string name="ifl_d4_02">"Witamy w Instafel! Ten mod został stworzony, aby zapewnić wszystkim dostęp do najnowszych funkcji z wersji alpha Instagrama.
 
 Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na karcie profilu."</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Wystąpił błąd podczas otwierania instalatora APK.</string>
             <string name="ifl_t1_03">Aktualizacja Instafel nie powiodła się.</string>
         </vcategory>
@@ -3511,6 +3599,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Definir para uma vez a cada cinco dias</string>
             <string name="ifl_a5_sub_freq_05">Definir para uma vez por semana</string>
             <string name="ifl_a6_01">Usar o Idioma do Dispositivo</string>
+            <string name="ifl_a6_02">Suportado</string>
+            <string name="ifl_a6_03">Não Suportado</string>
             <string name="ifl_a7_01">Relatórios</string>
             <string name="ifl_a7_02">Excluir Relatórios</string>
             <string name="ifl_a8_01">Detalhes</string>
@@ -3538,6 +3628,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Ok</string>
             <string name="ifl_d4_01">Seja bem-vindo(a)</string>
             <string name="ifl_d4_02">Bem-vindo ao Instafel, este mod foi desenvolvido para fornecer a todos os recursos mais recentes nas versões alfa do Instagram\\n\\nO menu pode ser acessado pressionando e segurando o botão de hambúrguer na aba do perfil.</string>
+            <string name="ifl_d5_01">Menu rápido instafel</string>
+            <string name="ifl_d5_02">IFL Versão v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Abrir Menu Instafel</string>
+            <string name="ifl_d5_04">Abrir Opções de Experimento IG</string>
+            <string name="ifl_d5_05">Junte-se à Comunidade Instafel</string>
+            <string name="ifl_d5_06">Reiniciar o Instagram</string>
             <string name="ifl_t1_01">Ocorreu um erro ao abrir o instalador do Apk.</string>
             <string name="ifl_t1_03">A atualização do Instafel falhou.</string>
         </vcategory>
@@ -3724,6 +3820,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Jednom u pet dana</string>
             <string name="ifl_a5_sub_freq_05">Jednom nedeljno</string>
             <string name="ifl_a6_01">Koristi jezik uređaja</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Izveštaji</string>
             <string name="ifl_a7_02">Obriši izveštaje</string>
             <string name="ifl_a8_01">Detalji</string>
@@ -3751,6 +3849,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Okej</string>
             <string name="ifl_d4_01">Dobrodošli</string>
             <string name="ifl_d4_02">Dobrodošli u Instafel, ovaj mod je razvijen da svima pruži najnovije funkcije na alfa verzijama Instagrama.\\n\\nMeniju se može pristupiti pritiskom i držanjem dugmeta hamburger na kartici profila.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Došlo je do greške prilikom otvaranja apk-instalera.</string>
             <string name="ifl_t1_03">Ažuriranje Instafela nije uspelo.</string>
         </vcategory>
@@ -3937,6 +4041,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Set to once in five days</string>
             <string name="ifl_a5_sub_freq_05">Set to once a week</string>
             <string name="ifl_a6_01">Use Device Language</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Reports</string>
             <string name="ifl_a7_02">Delete Reports</string>
             <string name="ifl_a8_01">Details</string>
@@ -3964,6 +4070,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Okay</string>
             <string name="ifl_d4_01">Welcome</string>
             <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">An error occurred while opening the apk-installer.</string>
             <string name="ifl_t1_03">Instafel update failed.</string>
         </vcategory>
@@ -4150,6 +4262,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Beş günde bir kereye ayarlandı</string>
             <string name="ifl_a5_sub_freq_05">Haftada bir kereye ayarlandı</string>
             <string name="ifl_a6_01">Cihaz Dilini Kullan</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Günlükler</string>
             <string name="ifl_a7_02">Günlükleri Sİl</string>
             <string name="ifl_a8_01">Günlük Detayı</string>
@@ -4177,6 +4291,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Tamam</string>
             <string name="ifl_d4_01">Merhaba</string>
             <string name="ifl_d4_02">"Instafel'e hoşgeldin. Bu mod herkese Instagram Alpha yeniliklerini sunmak için geliştirilmiştir.\\n\\nMenüye profil sekmesindeki hamburger düğmesine basılı tutarak ulaşabilirsin."</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">Kurucuyu açarken bir sorun ile karşılaşıldı.</string>
             <string name="ifl_t1_03">Instafel güncellemesi başarısız oldu</string>
         </vcategory>
@@ -4363,6 +4483,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Set to once in five days</string>
             <string name="ifl_a5_sub_freq_05">Set to once a week</string>
             <string name="ifl_a6_01">Use Device Language</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Reports</string>
             <string name="ifl_a7_02">Delete Reports</string>
             <string name="ifl_a8_01">Details</string>
@@ -4390,6 +4512,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Okay</string>
             <string name="ifl_d4_01">Welcome</string>
             <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">An error occurred while opening the apk-installer.</string>
             <string name="ifl_t1_03">Instafel update failed.</string>
         </vcategory>
@@ -4576,6 +4704,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Set to once in five days</string>
             <string name="ifl_a5_sub_freq_05">Set to once a week</string>
             <string name="ifl_a6_01">Use Device Language</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">Reports</string>
             <string name="ifl_a7_02">Delete Reports</string>
             <string name="ifl_a8_01">Details</string>
@@ -4603,6 +4733,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Okay</string>
             <string name="ifl_d4_01">Welcome</string>
             <string name="ifl_d4_02">Welcome to Instafel, this mod has been developed to provide everyone with the latest features on Instagram alpha builds\\n\\nThe menu can be accessed by pressing and holding the hamburger button on the profile tab.</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">An error occurred while opening the apk-installer.</string>
             <string name="ifl_t1_03">Instafel update failed.</string>
         </vcategory>
@@ -4789,6 +4925,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">設定為每五天</string>
             <string name="ifl_a5_sub_freq_05">設定為每週</string>
             <string name="ifl_a6_01">使用裝置語言</string>
+            <string name="ifl_a6_02">Supported</string>
+            <string name="ifl_a6_03">Not Supported</string>
             <string name="ifl_a7_01">報告</string>
             <string name="ifl_a7_02">刪除報告</string>
             <string name="ifl_a8_01">詳細資訊</string>
@@ -4816,6 +4954,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">確定</string>
             <string name="ifl_d4_01">歡迎</string>
             <string name="ifl_d4_02">歡迎來到 Instafel，此模組開發旨在提供所有人 Instagram Alpha 建構的最新的功能\\n\\n選單可以透過長按個人檔案頁面的漢堡選單開啟。</string>
+            <string name="ifl_d5_01">Instafel Quick-menu</string>
+            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+            <string name="ifl_d5_03">Open Instafel Menu</string>
+            <string name="ifl_d5_04">Open IG Experiment Options</string>
+            <string name="ifl_d5_05">Join Instafel Community</string>
+            <string name="ifl_d5_06">Restart Instagram</string>
             <string name="ifl_t1_01">開啟 APK 安裝器時發生錯誤。</string>
             <string name="ifl_t1_03">Imstafel 更新失敗。</string>
         </vcategory>

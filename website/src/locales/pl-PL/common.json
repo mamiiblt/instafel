@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Kopie zapasowe",
-      "flags": "Flagi",
       "updater": "Aktualizator",
       "src_code": "Kod źródłowy",
       "download": "Pobierz",
