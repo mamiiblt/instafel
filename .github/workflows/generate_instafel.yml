@@ -54,7 +54,7 @@ jobs:
           cp config.json instagram/config.json
 
       - name: Run patches
-        run: java -jar ifl-patcher.jar run instagram unlock_developer_options remove_ads amoled_theme remove_snooze_warning instafel change_channel_name clone
+        run: java -jar ifl-patcher.jar run instagram unlock_developer_options remove_ads remove_snooze_warning instafel change_channel_name clone
 
       - name: Build project
         run: java -jar ifl-patcher.jar build instagram
