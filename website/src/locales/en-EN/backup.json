@@ -4,7 +4,6 @@
   "downloading": "Downloading...",
   "importButton": "Import in Instafel",
   "openingInstafel": "Opening Instafel...",
-  "aboutTitle": "About This Backup",
   "releaseDate": "Release Date",
   "changelogTitle": "Changelogs",
   "recents": {
@@ -20,11 +19,11 @@
   "howToUseDescription": "You can either download this backup file and manually import it into Instafel, or use the \"Import in Instafel\" button to automatically open the app and import it directly.",
   "viewAllBackups": "View All Backups",
   "notFound": {
-    "title": "Backup Not Found",
-    "description": "We couldn't find the backup you're looking for. It may have been removed or doesn't exist.",
+    "title": "Release Not Found",
+    "description": "We couldn't find the backup release you're looking for. It may have been removed or doesn't exist.",
     "returnButton": "Return to Backup Library"
   },
-  "fetchFailed": "Failed to fetch backup data: {{errStr}}",
+  "fetchFailed": "Failed to fetch release data: {{errStr}}",
   "latestRelease": "LATEST",
   "authorOfBackup": "Author of Backup",
   "screenshots": "Backup Screenshots",
