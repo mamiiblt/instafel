@@ -206,7 +206,7 @@ export default function Footer() {
                                         icon: <HugeiconsIcon icon={SystemUpdate01Icon} />,
                                     },
                                     {
-                                        href: "/releases/view?version=latest",
+                                        href: "/releases/release?version=latest",
                                         text: t("footer.9"),
                                         icon: <HugeiconsIcon icon={Download01Icon} />,
                                     },

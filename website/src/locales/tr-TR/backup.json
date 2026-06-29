@@ -1,20 +1,40 @@
 {
-  "backToLibrary": "Yedek Kütüphanesine Geri Dön",
-  "version": "Sürüm {{verStr}}",
+  "backToLibrary": "Yedek Kütüphanesine Dön",
   "downloadButton": "Yedeği İndir",
   "downloading": "İndiriliyor...",
-  "importButton": "Instafel'de İçe Aktar",
+  "importButton": "Instafel'e İçe Aktar",
   "openingInstafel": "Instafel Açılıyor...",
   "aboutTitle": "Bu Yedek Hakkında",
-  "lastUpdated": "Son Güncelleme",
+  "releaseDate": "Yayınlanma Tarihi",
   "changelogTitle": "Değişiklik Günlüğü",
-  "howToUseTitle": "Bu yedeği nasıl kullanırım?",
-  "howToUseDescription": "Bu dosyayı elle veya uygulama içi Backup Library'den direkt olarak içe aktarabilirsiniz. Hızlıca içe aktarmak için Instafel'de İçe Aktar butonuna basabilirsiniz.",
+  "recents": {
+    "title": "Son Sürümler",
+    "noAnyRelease": "Daha eski bir sürüm yayınlanmadı.",
+    "version": "Sürüm",
+    "downloadCount": "İndirme Sayısı",
+    "releaseDate": "Yayınlanma Tarihi",
+    "viewDetails": "Detayları Görüntüle",
+    "changelogOf": "v{{verStr}}'ın değişiklik günlüğü"
+  },
+  "howToUseTitle": "Bu yedeği nasıl kullanabilirim?",
+  "howToUseDescription": "Bu yedek dosyasını indirip Instafel'e manuel olarak aktarabilir veya \"Instafel'e İçe Aktar\" düğmesini kullanarak uygulamayı otomatik olarak açabilir ve doğrudan içe aktarabilirsiniz.",
   "viewAllBackups": "Tüm Yedekleri Görüntüle",
   "notFound": {
     "title": "Yedek Bulunamadı",
-    "description": "Aradığınız yedeği bulamadık, kaldırılmış veya mevcut olmayabilir.",
+    "description": "Aradığınız yedek bulunamadı. Yedek kaldırılmış olabilir veya mevcut olmayabilir.",
     "returnButton": "Yedek Kütüphanesine Dön"
   },
-  "fetchFailed": "Yedek bilgisi alınırken hata oldu: {{errStr}}"
+  "fetchFailed": "Yedek verileri alınamadı: {{errStr}}",
+  "latestRelease": "SON SÜRÜM",
+  "authorOfBackup": "Yedeğin Sahibi",
+  "screenshots": "Ekran Görüntüleri",
+  "screenshotAlt": "Ekran Görüntüsü",
+  "noScreenshots": "Ekran görüntüsü bulunamadı",
+  "version_label": "Sürüm",
+  "author_label": "Sahip",
+  "status_label": "Durum",
+  "release_date_label": "Yayınlanma Tarihi",
+  "suggested_ig_version_label": "Önerilen IG Sürümü",
+  "not_specified": "Belirtilmedi",
+  "downloads_label": "Toplam İndirme"
 }

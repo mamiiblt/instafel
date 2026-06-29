@@ -17,37 +17,66 @@ import {useTranslation} from "react-i18next";
 import {Page, PageHeader} from "@/components/PageUtils";
 import {HugeiconsIcon} from "@hugeicons/react";
 import {
-    ArrowRight01Icon, DocumentCodeFreeIcons,
-    FileValidationIcon, LibraryIcon,
+    ArrowRight01Icon, Calendar03Icon, DocumentCodeFreeIcons,
+    FileValidationIcon, LibraryIcon, Package01Icon,
     RefreshIcon,
     TelegramIcon,
-    UserIcon
+    Time04Icon, UserIcon
 } from "@hugeicons/core-free-icons";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 interface Backup {
-    id: string;
-    name: string;
-    author: string;
+    id: number
+    name: string
+    shown_author_name: string
+    latest_release_id: string
+    last_updated: string
 }
 
-interface BackupInfo {
-    tag_name: string;
-    backups: Backup[];
+interface ResponseData {
+    status: string,
+    data: {
+        msg: string,
+        manifest_version: string,
+        backups: Backup[];
+    }
+}
+
+export function formatDate(date: any, localeCode = "en-US"): string {
+    if (!date) return "—"
+    const d = new Date(date)
+    return d.toLocaleDateString(localeCode, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    })
+}
+
+export function formatDateWithTime(date: any, localeCode = "en-US"): string {
+    if (!date) return "—"
+    const d = new Date(date)
+    return d.toLocaleDateString(localeCode, {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+    })
 }
 
 export default function LibraryBackupContent() {
-    const {t} = useTranslation("library_backup");
-    const [data, setData] = useState<BackupInfo | null>(null);
+    const { t, i18n } = useTranslation("library_backup");
+    const [response, setResponse] = useState<ResponseData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const requestUrl =
-                    "https://raw.githubusercontent.com/instafel/backups/refs/heads/main/backups.json";
+                const requestUrl = `${process.env.API_BASE}/content/backups/list`;
                 const res = await fetch(requestUrl);
-                const result: BackupInfo = await res.json();
-                setData(result);
+                const result: ResponseData = await res.json();
+                setResponse(result);
             } catch (error) {
                 console.error(t("errors.fetchBackupsFailed"), error);
             } finally {
@@ -65,7 +94,7 @@ export default function LibraryBackupContent() {
     return (
         <>
             <AnimatePresence>
-                {data ? (
+                {response ? (
                     <Page
                         width={6}
                         header={<PageHeader
@@ -80,7 +109,7 @@ export default function LibraryBackupContent() {
                                 exit={{ opacity: 0 }}
                             >
                                 <div className="grid gap-3">
-                                    {data.backups.map((backup, index) => (
+                                    {response.data.backups.map((backup, index) => (
                                         <motion.div
                                             key={backup.id}
                                             initial={{ opacity: 0, y: 18 }}
@@ -88,7 +117,7 @@ export default function LibraryBackupContent() {
                                             transition={{ delay: 0.15 + index * 0.06, duration: 0.45 }}
                                         >
                                             <Link
-                                                href={`/library/backup/view?id=${backup.id}`}
+                                                href={`/library/backup/release?rid=${backup.latest_release_id}`}
                                                 className="group flex items-center gap-4 rounded-3xl border border-border bg-card/40 p-4 backdrop-blur-sm transition-colors duration-300 hover:border-primary/40 hover:bg-card/70"
                                             >
                                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-background/60 transition-colors duration-300 group-hover:border-primary">
@@ -102,8 +131,14 @@ export default function LibraryBackupContent() {
                                                     <h3 className="truncate text-lg font-semibold">{backup.name}</h3>
                                                     <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted-foreground">
                                                         <HugeiconsIcon icon={UserIcon} className="h-3.5 w-3.5" />
-                                                        {t("createdBy", { author: backup.author })}
+                                                        {t("createdBy", { author: backup.shown_author_name })}
                                                     </p>
+                                                    <div className="mt-1 flex items-center gap-3 text-xs text-muted-foreground/60">
+                                                        <span className="flex items-center gap-1">
+                                                            <HugeiconsIcon icon={Calendar03Icon} className="h-3 w-3" />
+                                                            {t("updatedAt", { dateStr: formatDateWithTime(backup.last_updated, i18n.language)})}
+                                                        </span>
+                                                    </div>
                                                 </div>
 
                                                 <HugeiconsIcon
@@ -153,7 +188,8 @@ export default function LibraryBackupContent() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="flex min-h-[50vh] items-center justify-center"
                     >
-                        <div className="w-full max-w-md rounded-3xl border border-border bg-card/60 p-8 text-center backdrop-blur-xl">
+                        <Navbar />
+                        <div className="w-full max-w-md rounded-3xl border border-border bg-card/60 p-8 text-center backdrop-blur-xl mt-50">
                             <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-background/60">
                                 <HugeiconsIcon icon={FileValidationIcon} className="h-6 w-6 text-primary" />
                             </div>

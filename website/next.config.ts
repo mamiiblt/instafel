@@ -17,10 +17,12 @@ const nextConfig: NextConfig = {
         hostname: "raw.githubusercontent.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.mamii.dev",
+        pathname: "/**",
+      }
     ],
-  },
-  env: {
-    NEXT_PUBLIC_SITE_URL: "https://instafel.mamii.dev",
   },
   redirects: async () => {
     return [
@@ -44,16 +46,20 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/library/flag/view",
+        source: "/library/flag/release",
         destination: "/library/flib_moved",
         permanent: true,
       },
       {
         source: "/backup",
-        destination: "/library/backup/view",
+        destination: "/library/backup/release",
         permanent: true,
       },
     ];
+  },
+  env: {
+    NEXT_PUBLIC_SITE_URL: "https://instafel.mamii.dev",
+    API_BASE: process.env.NODE_ENV === "development" ? "http://localhost:3001" : "https://api.instafel.mamii.dev"
   },
 };
 
