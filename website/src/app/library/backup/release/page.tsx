@@ -9,7 +9,7 @@
 "use client";
 
 import {motion} from "framer-motion";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
 import {useSearchParams} from "next/navigation";
 import {LoadingBar} from "@/components/LoadingBars";
@@ -22,7 +22,7 @@ import {
     SmartPhone01Icon,
     UserIcon,
     CheckmarkCircle02Icon, CircleQuestionMarkIcon, LibraryIcon, Sparkles, Package01Icon, Github01Icon, TelegramIcon,
-    Link01Icon, File01Icon, PackageProcess01Icon, InstagramIcon,
+    Link01Icon, File01Icon, PackageProcess01Icon, InstagramIcon, ChevronRightIcon,
 } from "@hugeicons/core-free-icons";
 import Link from "next/link";
 import {useTranslation} from "react-i18next";
@@ -34,6 +34,13 @@ import {Card, CardFooter} from "@/components/ui/card";
 import {Calendar, Download, ExternalLink, ScrollText, Tag, ViewIcon, X} from "lucide-react";
 import {formatDate, formatDateWithTime} from "../page";
 import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/components/ui/dialog";
+import {
+    Pagination,
+    PaginationContent,
+    PaginationEllipsis,
+    PaginationItem, PaginationLink, PaginationNext,
+    PaginationPrevious
+} from "@/components/ui/pagination";
 
 interface ReleaseResponse {
     admin_info: {
@@ -114,6 +121,19 @@ export default function PageBackup() {
         fetchData();
     }, [id, t]);
 
+    useEffect(() => {
+        const renewData = async () => {
+            try {
+                if (data != null) {
+                    await fetchLastReleases(lastPage, data.backup_info.id)
+                }
+            } catch (e) {
+                console.error(e)
+            }
+        }
+        renewData()
+    }, [lastPage]);
+
     const fetchLastReleases = async (page: number, backup_id: number) => {
         const request_LastRelease = `${process.env.API_BASE}/content/backups/last_releases?page=${page}&backup_id=${backup_id}`;
         const res_LastRelease = await fetch(request_LastRelease);
@@ -138,6 +158,41 @@ export default function PageBackup() {
         setTimeout(() => {
             setImportStarted(false);
         }, 2500);
+    };
+
+    const generatePageNumbers = () => {
+        const pages = [];
+        const maxVisiblePages = 5;
+
+        if (lastReleases.page_size <= maxVisiblePages) {
+            for (let i = 1; i <= lastReleases.page_size; i++) {
+                pages.push(i);
+            }
+        } else {
+            if (lastPage <= 3) {
+                for (let i = 1; i <= 4; i++) {
+                    pages.push(i);
+                }
+                pages.push("ellipsis");
+                pages.push(lastReleases.page_size);
+            } else if (lastPage >= lastReleases.page_size - 2) {
+                pages.push(1);
+                pages.push("ellipsis");
+                for (let i = lastReleases.page_size - 3; i <= lastReleases.page_size; i++) {
+                    pages.push(i);
+                }
+            } else {
+                pages.push(1);
+                pages.push("ellipsis");
+                for (let i = lastPage - 1; i <= lastPage + 1; i++) {
+                    pages.push(i);
+                }
+                pages.push("ellipsis");
+                pages.push(lastReleases.page_size);
+            }
+        }
+
+        return pages;
     };
 
     if (isLoading) {
@@ -245,7 +300,7 @@ export default function PageBackup() {
                             initial={{ opacity: 0, y: 16 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.45, delay: 0.08 }}
-                            className="relative overflow-hidden rounded-3xl border border-border bg-card/60 p-6 shadow-sm backdrop-blur-xl"
+                            className="relative overflow-hidden rounded-3xl border border-border bg-card/60 p-4 shadow-sm backdrop-blur-xl"
                         >
                             <div className="relative z-10">
                                 <div className="mb-5 flex items-center justify-between">
@@ -307,19 +362,17 @@ export default function PageBackup() {
                                         </div>
                                     </div>
 
-                                    <div className="grid grid-cols-2 col-span-2 gap-3 sm:gap-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:col-span-2 gap-3 sm:gap-4">
                                         <div className="group flex flex-col justify-center p-4 rounded-2xl border border-border bg-background/40">
-                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
-                                                <div className="flex items-center gap-2 text-muted-foreground">
-                                                    <HugeiconsIcon icon={Package01Icon} className="h-4 w-4 text-primary shrink-0" />
-                                                    <p className="text-[13px] font-bold uppercase tracking-wider leading-tight">
-                                                        {t("version_label")}
-                                                    </p>
-                                                </div>
+                                            <div className="flex items-start sm:items-center gap-2 text-muted-foreground mb-3">
+                                                <HugeiconsIcon icon={Package01Icon} className="h-4 w-4 text-primary shrink-0 mt-0.5 sm:mt-0" />
+                                                <p className="font-bold tracking-wider leading-tight">
+                                                    {t("version_label")}
+                                                </p>
                                                 {data.release_info.is_latest && (
                                                     <span className="self-start sm:self-auto inline-flex items-center gap-1 rounded-md bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary shrink-0">
                                                         <HugeiconsIcon icon={Sparkles} className="h-3 w-3" />
-                                                        <span className="hidden xl:inline">{t("latestRelease")}</span>
+                                                        <span>{t("latestRelease")}</span>
                                                     </span>
                                                 )}
                                             </div>
@@ -331,7 +384,7 @@ export default function PageBackup() {
                                         <div className="group flex flex-col justify-center p-4 rounded-2xl border border-border bg-background/40">
                                             <div className="flex items-start sm:items-center gap-2 text-muted-foreground mb-3">
                                                 <HugeiconsIcon icon={Download01Icon} className="h-4 w-4 text-primary shrink-0 mt-0.5 sm:mt-0" />
-                                                <p className="text-[13px] font-bold uppercase tracking-wider leading-tight">
+                                                <p className="font-bold tracking-wider leading-tight">
                                                     {t("downloads_label")}
                                                 </p>
                                             </div>
@@ -343,7 +396,7 @@ export default function PageBackup() {
                                         <div className="group flex flex-col justify-center p-4 rounded-2xl border border-border bg-background/40">
                                             <div className="flex items-start sm:items-center gap-2 text-muted-foreground mb-3">
                                                 <HugeiconsIcon icon={InformationCircleIcon} className="h-4 w-4 text-primary shrink-0 mt-0.5 sm:mt-0" />
-                                                <p className="text-[13px] font-bold uppercase tracking-wider leading-tight">
+                                                <p className="font-bold tracking-wider leading-tight">
                                                     {t("release_date_label")}
                                                 </p>
                                             </div>
@@ -355,11 +408,11 @@ export default function PageBackup() {
                                         <div className="group flex flex-col justify-center p-4 rounded-2xl border border-border bg-background/40">
                                             <div className="flex items-start sm:items-center gap-2 text-muted-foreground mb-3">
                                                 <HugeiconsIcon icon={InstagramIcon} className="h-4 w-4 text-primary shrink-0 mt-0.5 sm:mt-0" />
-                                                <p className="text-[13px] font-bold uppercase tracking-wider leading-tight">
+                                                <p className="font-bold tracking-wider leading-tight">
                                                     {t("suggested_ig_version_label")}
                                                 </p>
                                             </div>
-                                            <p className="text-2xl font-bold tracking-tight text-foreground truncate">
+                                            <p className="font-bold tracking-tight text-foreground truncate">
                                                 {data.release_info.pref_ig_ver == null ? t("not_specified") : <>
                                                     <span className="text-foreground/65">v</span>{data.release_info.pref_ig_ver}
                                                 </>}
@@ -416,42 +469,116 @@ export default function PageBackup() {
                                             <p className="text-muted-foreground">{t("recents.noAnyRelease")}</p>
                                         </div>
                                     ) : (
-                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-1 gap-4">
-                                            {lastReleases.list.map((release) => (
-                                                <Card key={release.release_id} className="flex flex-col">
-                                                    <div className="mt-auto px-(--card-spacing) space-y-1.5">
-                                                        <div className="flex items-center justify-between text-sm">
-                                                            <span className="text-muted-foreground flex items-center gap-1.5"><Tag className="size-3.5" />{t("recents.version")}</span>
-                                                            <span>v{release.version_name}</span>
+                                        <>
+                                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-1 gap-4">
+                                                {lastReleases.list.map((release) => (
+                                                    <Card key={release.release_id} className="flex flex-col">
+                                                        <div className="mt-auto px-(--card-spacing) space-y-1.5">
+                                                            <div className="flex items-center justify-between text-sm">
+                                                                <span
+                                                                    className="text-muted-foreground flex items-center gap-1.5"><Tag
+                                                                    className="size-3.5"/>{t("recents.version")}</span>
+                                                                <span>v{release.version_name}</span>
+                                                            </div>
+                                                            <div className="flex items-center justify-between text-sm">
+                                                                <span
+                                                                    className="text-muted-foreground flex items-center gap-1.5"><Download
+                                                                    className="size-3.5"/>{t("recents.downloadCount")}</span>
+                                                                <span>{Number(release.download_count).toLocaleString()}</span>
+                                                            </div>
+                                                            <div className="flex items-center justify-between text-sm">
+                                                                <span
+                                                                    className="text-muted-foreground flex items-center gap-1.5"><Calendar
+                                                                    className="size-3.5"/>{t("recents.releaseDate")}</span>
+                                                                <span
+                                                                    className="text-sm whitespace-nowrap">{formatDate(release.release_date, i18n.language)}</span>
+                                                            </div>
                                                         </div>
-                                                        <div className="flex items-center justify-between text-sm">
-                                                            <span className="text-muted-foreground flex items-center gap-1.5"><Download className="size-3.5" />{t("recents.downloadCount")}</span>
-                                                            <span>{Number(release.download_count).toLocaleString()}</span>
-                                                        </div>
-                                                        <div className="flex items-center justify-between text-sm">
-                                                            <span className="text-muted-foreground flex items-center gap-1.5"><Calendar className="size-3.5" />{t("recents.releaseDate")}</span>
-                                                            <span className="text-sm whitespace-nowrap">{formatDate(release.release_date, i18n.language)}</span>
-                                                        </div>
-                                                    </div>
-                                                    <CardFooter className="border-t">
-                                                        <div className="flex items-end justify-end gap-2 w-full">
-                                                            <Button className="gap-2" variant={"outline"} size={"icon"} onClick={() => {
-                                                                setSelectedRelease(release)
-                                                                setShowChangelog(true)
-                                                            }}>
-                                                                <ScrollText className="size-4" />
-                                                            </Button>
-                                                            <Link href={`/library/backup/release?rid=${release.release_id}`}>
-                                                                <Button className="gap-2" variant={"outline"}>
-                                                                    <ExternalLink className="size-4" />
-                                                                    {t("recents.viewDetails")}
+                                                        <CardFooter className="border-t">
+                                                            <div className="flex items-end justify-end gap-2 w-full">
+                                                                <Button className="gap-2" variant={"outline"}
+                                                                        size={"icon"} onClick={() => {
+                                                                    setSelectedRelease(release);
+                                                                    setShowChangelog(true);
+                                                                }}>
+                                                                    <ScrollText className="size-4"/>
                                                                 </Button>
-                                                            </Link>
-                                                        </div>
-                                                    </CardFooter>
-                                                </Card>
-                                            ))}
-                                        </div>
+                                                                <Link
+                                                                    href={`/library/backup/release?rid=${release.release_id}`}>
+                                                                    <Button className="gap-2" variant={"outline"}>
+                                                                        <ExternalLink className="size-4"/>
+                                                                        {t("recents.viewDetails")}
+                                                                    </Button>
+                                                                </Link>
+                                                            </div>
+                                                        </CardFooter>
+                                                    </Card>
+                                                ))}
+                                            </div>
+                                            <motion.div
+                                                initial={{opacity: 0, y: 20}}
+                                                animate={{opacity: 1, y: 0}}
+                                                transition={{delay: 0.8, duration: 0.6}}
+                                                className="flex justify-center mt-6"
+                                            >
+                                                <Pagination>
+                                                    <PaginationContent className="flex items-center gap-1">
+                                                        <PaginationItem>
+                                                            <PaginationPrevious
+                                                                onClick={() => lastPage > 1 && setLastPage(lastPage - 1)}
+                                                                className={`
+                            flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200
+                            ${lastPage <= 1
+                                                                    ? "opacity-50 cursor-not-allowed"
+                                                                    : "hover:bg-muted cursor-pointer"}
+                          `}
+                                                            >
+                                                                <HugeiconsIcon icon={ChevronRightIcon}
+                                                                               className="h-4 w-4"/>
+                                                                <span className="hidden sm:inline">Previous</span>
+                                                            </PaginationPrevious>
+                                                        </PaginationItem>
+
+                                                        {generatePageNumbers().map((pageNum, index) => (
+                                                            <PaginationItem key={index}>
+                                                                {pageNum === "ellipsis" ? (
+                                                                    <PaginationEllipsis className="px-3 py-2"/>
+                                                                ) : (
+                                                                    <PaginationLink
+                                                                        onClick={() => setLastPage(pageNum as number)}
+                                                                        isActive={lastPage === pageNum}
+                                                                        className={`
+                                                                            px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer
+                                                                                ${lastPage === pageNum
+                                                                            ? "text-foreground shadow-sm"
+                                                                            : "hover:bg-muted"}
+                                                                           `}
+                                                                    >
+                                                                        {pageNum}
+                                                                    </PaginationLink>
+                                                                )}
+                                                            </PaginationItem>
+                                                        ))}
+
+                                                        <PaginationItem>
+                                                            <PaginationNext
+                                                                onClick={() => lastPage < lastReleases.page_size &&
+                                                                    setLastPage(lastPage + 1)}
+                                                                className={`
+                                                                    flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200
+                                                                        ${lastPage >= lastReleases.page_size
+                                                                    ? "opacity-50 cursor-not-allowed"
+                                                                    : "hover:bg-muted cursor-pointer"}
+                                                                `}
+                                                            >
+                                                                <span className="hidden sm:inline">Next</span>
+                                                                <HugeiconsIcon icon={ChevronRightIcon} className="h-4 w-4"/>
+                                                            </PaginationNext>
+                                                        </PaginationItem>
+                                                    </PaginationContent>
+                                                </Pagination>
+                                            </motion.div>
+                                        </>
                                     )}
                                 </div>
                             </div>
