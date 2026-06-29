@@ -31,7 +31,7 @@ import Navbar from "@/components/Navbar";
 import ScreenshotViewer from "@/components/ScreenshotViewer";
 import {SocialButton, SocialButton2} from "@/app/contributors/page";
 import {Card, CardFooter} from "@/components/ui/card";
-import {Calendar, Download, ExternalLink, ScrollText, Tag, ViewIcon, X} from "lucide-react";
+import {Calendar, Download, ExternalLink, InfoIcon, ScrollText, Tag, ViewIcon, X} from "lucide-react";
 import {formatDate, formatDateWithTime} from "../page";
 import {Dialog, DialogContent, DialogHeader, DialogTitle} from "@/components/ui/dialog";
 import {
@@ -504,8 +504,15 @@ export default function PageBackup() {
                                                                 <span
                                                                     className="text-muted-foreground flex items-center gap-1.5"><Calendar
                                                                     className="size-3.5"/>{t("recents.releaseDate")}</span>
-                                                                    <span
-                                                                        className="text-sm whitespace-nowrap">{formatDate(release.release_date, i18n.language)}</span>
+                                                                    <span className="text-sm whitespace-nowrap">{formatDate(release.release_date, i18n.language)}</span>
+                                                                </div>
+                                                                <div className="flex items-center justify-between text-sm">
+                                                                <span
+                                                                    className="text-muted-foreground flex items-center gap-1.5"><InfoIcon
+                                                                    className="size-3.5"/>{t("suggested_ig_version_label")}</span>
+                                                                    <span className="text-sm whitespace-nowrap">{
+                                                                        release.preferred_ig_version != null ? `v${release.preferred_ig_version}` : t("not_specified")
+                                                                    }</span>
                                                                 </div>
                                                             </div>
                                                             <CardFooter className="border-t">
