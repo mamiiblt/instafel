@@ -485,7 +485,7 @@ export default function PageBackup() {
                                                                     className="text-muted-foreground flex items-center gap-1.5"><Tag
                                                                     className="size-3.5"/>{t("recents.version")}</span>
                                                                     <div className={"gap-2 flex flex-row"}>
-                                                                        {release.release_id == id.trim() && (
+                                                                        {release.release_id == lastReleases.list[0].release_id && lastPage == 1 && (
                                                                             <span className=" inline-flex items-center gap-1 rounded-md bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary shrink-0">
                                                                             <HugeiconsIcon icon={Sparkles} className="h-3 w-3" />
                                                                             <span>{t("latestRelease")}</span>
