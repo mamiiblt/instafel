@@ -35,5 +35,7 @@
   "release_date_label": "Release Date",
   "suggested_ig_version_label": "Suggested IG Version",
   "not_specified": "Not Specified",
-  "downloads_label": "Total Download"
+  "downloads_label": "Total Download",
+  "next": "Next",
+  "prev": "Previous"
 }

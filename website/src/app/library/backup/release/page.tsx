@@ -431,24 +431,19 @@ export default function PageBackup() {
                             </h2>
 
                             <div className="flex flex-col gap-2 space-y-1 pl-1 mt-2.5">
-                                {data.release_info.changelog.split('\n').filter(Boolean).map((change, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{opacity: 0, x: -5}}
-                                        animate={{opacity: 1, x: 0}}
-                                        transition={{
-                                            delay: 0.2 + 0.06 + (index * 0.05),
-                                            duration: 0.3
-                                        }}
-                                        className="flex items-start gap-4"
-                                    >
-                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></div>
-
-                                        <p className="flex-1 text-sm leading-relaxed text-foreground/90 whitespace-pre-wrap">
-                                            {change}
-                                        </p>
-                                    </motion.div>
-                                ))}
+                                <motion.div
+                                    initial={{opacity: 0, x: -5}}
+                                    animate={{opacity: 1, x: 0}}
+                                    transition={{
+                                        delay: 0.2 + 0.06 + 0.05,
+                                        duration: 0.3
+                                    }}
+                                    className="flex items-start gap-4"
+                                >
+                                    <p className="flex-1 leading-relaxed text-foreground/90 whitespace-pre-wrap">
+                                        {data.release_info.changelog}
+                                    </p>
+                                </motion.div>
                             </div>
                         </motion.section>
 
@@ -557,7 +552,7 @@ export default function PageBackup() {
                                                             >
                                                                 <HugeiconsIcon icon={ChevronRightIcon}
                                                                                className="h-4 w-4"/>
-                                                                <span className="hidden sm:inline">Previous</span>
+                                                                <span className="hidden sm:inline">{t("prev")}</span>
                                                             </PaginationPrevious>
                                                         </PaginationItem>
 
@@ -593,7 +588,7 @@ export default function PageBackup() {
                                                                     : "hover:bg-muted cursor-pointer"}
                                                                 `}
                                                             >
-                                                                <span className="hidden sm:inline">Next</span>
+                                                                <span className="hidden sm:inline">{t("next")}</span>
                                                                 <HugeiconsIcon icon={ChevronRightIcon} className="h-4 w-4"/>
                                                             </PaginationNext>
                                                         </PaginationItem>

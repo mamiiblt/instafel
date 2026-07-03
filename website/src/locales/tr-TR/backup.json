@@ -36,5 +36,7 @@
   "release_date_label": "Yayınlanma Tarihi",
   "suggested_ig_version_label": "Önerilen IG Sürümü",
   "not_specified": "Belirtilmedi",
-  "downloads_label": "Toplam İndirme"
+  "downloads_label": "Toplam İndirme",
+  "next": "Sonraki",
+  "prev": "Önceki"
 }
