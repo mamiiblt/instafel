@@ -82,6 +82,25 @@ class AmoledThemePatch : InstafelPatch() {
                 success("Prism black overridden")
             }
         }
+,
+        @PInfos.TaskInfo("Patch Prism Compose colors")
+        object : InstafelTask() {
+            override fun execute() {
+                val file = getProjectDir().walkTopDown()
+                    .firstOrNull { it.isFile && it.name == "BasePrismColorsV2.smali" }
+
+                if (file == null) {
+                    Log.info("BasePrismColorsV2.smali not found")
+                    return
+                }
+
+                if (patchGray1600(file)) {
+                    success("GRAY_1600 patched")
+                } else {
+                    Log.info("GRAY_1600 not patched")
+                }
+            }
+        }
     )
 
     private fun getProjectDir(): File {
@@ -134,4 +153,34 @@ class AmoledThemePatch : InstafelPatch() {
         }
         Log.info("$name not found")
     }
+
+
+    private fun patchGray1600(file: File): Boolean {
+        val lines = file.readLines().toMutableList()
+
+        for (i in lines.indices) {
+            val line = lines[i].trim()
+            if (!line.startsWith("sput-wide") || !line.contains("->GRAY_1600:J")) continue
+
+            for (j in i - 1 downTo maxOf(0, i - 20)) {
+                val prev = lines[j].trim()
+
+                if (prev.startsWith("const-wide")) {
+                    val register = prev.substringAfter(' ').substringBefore(',').trim()
+                    val indent = lines[j].takeWhile { it == ' ' || it == '\t' }
+                    lines[j] = "${indent}const-wide $register, 0xff000000L"
+                    file.writeText(lines.joinToString("\n"))
+                    Log.info("Patched GRAY_1600 -> 0xff000000L")
+                    return true
+                }
+
+                if (prev.startsWith("sput-wide") || prev.startsWith(".method")) {
+                    break
+                }
+            }
+        }
+
+        return false
+    }
+
 }
