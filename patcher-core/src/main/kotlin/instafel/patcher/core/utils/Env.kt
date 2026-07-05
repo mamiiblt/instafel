@@ -64,7 +64,7 @@ object Env {
             fileProj = File(Utils.mergePaths(PROJECT_DIR, "project.json"))
             if (!fileProj.exists()) {
                 Project = ProjectPOJO(
-                    apiBase = "api.instafel.app",
+                    apiBase = "api.instafel.mamii.dev",
                     igVersion = getIgVerCodeAndVersion().split("#")[0],
                     igVersionCode = getIgVerCodeAndVersion().split("#")[1]
                 )

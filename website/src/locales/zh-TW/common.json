@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "備份",
-      "flags": "旗幟",
       "updater": "更新器",
       "src_code": "原始碼",
       "download": "下載",

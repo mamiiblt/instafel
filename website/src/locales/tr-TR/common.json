@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Yedekler",
-      "flags": "Bayraklar",
       "updater": "Güncelleyici",
       "src_code": "Kaynak Kodu",
       "download": "İndir",

@@ -1,20 +1,41 @@
 {
   "backToLibrary": "Back to Backup Library",
-  "version": "Version {{verStr}}",
   "downloadButton": "Download Backup",
   "downloading": "Downloading...",
   "importButton": "Import in Instafel",
   "openingInstafel": "Opening Instafel...",
-  "aboutTitle": "About This Backup",
-  "lastUpdated": "Last Updated",
-  "changelogTitle": "Changelog",
+  "releaseDate": "Release Date",
+  "changelogTitle": "Changelogs",
+  "recents": {
+    "title": "Recent Releases",
+    "noAnyRelease": "No any other older version released.",
+    "version": "Version",
+    "downloadCount": "Download Count",
+    "releaseDate": "Release Date",
+    "viewDetails": "View Details",
+    "changelogOf": "Changelog of v{{verStr}}"
+  },
   "howToUseTitle": "How to use this backup",
   "howToUseDescription": "You can either download this backup file and manually import it into Instafel, or use the \"Import in Instafel\" button to automatically open the app and import it directly.",
   "viewAllBackups": "View All Backups",
   "notFound": {
-    "title": "Backup Not Found",
-    "description": "We couldn't find the backup you're looking for. It may have been removed or doesn't exist.",
+    "title": "Release Not Found",
+    "description": "We couldn't find the backup release you're looking for. It may have been removed or doesn't exist.",
     "returnButton": "Return to Backup Library"
   },
-  "fetchFailed": "Failed to fetch backup data: {{errStr}}"
+  "fetchFailed": "Failed to fetch release data: {{errStr}}",
+  "latestRelease": "LATEST",
+  "authorOfBackup": "Author of Backup",
+  "screenshots": "Backup Screenshots",
+  "screenshotAlt": "Screenshot",
+  "noScreenshots": "No screenshots available",
+  "version_label": "Version",
+  "author_label": "Author",
+  "status_label": "Status",
+  "release_date_label": "Release Date",
+  "suggested_ifl_version_label": "Suggested Instafel V.",
+  "not_specified": "Not Specified",
+  "downloads_label": "Total Download",
+  "next": "Next",
+  "prev": "Previous"
 }

@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Backup",
-      "flags": "Flag",
       "updater": "Updater",
       "src_code": "Kode Sumber",
       "download": "Unduh",

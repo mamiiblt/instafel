@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Backups",
-      "flags": "Flags",
       "updater": "Updater",
       "src_code": "Source Code",
       "download": "Download",

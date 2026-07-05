@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ (c) 2026 Muhammed Ali Bulut, All rights reserved.
+  ~
+  ~ See LICENSE file in repository root for copy file of license. For copyright
+  ~ notices, technical issues, feedback, or any other related to this code file or
+  ~ project, please contact me via mamii@mamii.dev or other ways.
+  -->
 <resources>
     <!-- sa -->
     <string name="ifl_a5_10">Η άδεια αρνήθηκε</string>
@@ -110,6 +117,8 @@
     <string name="ifl_a5_dia_freq_05">Κάθε εβδομάδα</string>
     <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Χρήση προεπιλεγμένης γλώσσας</string>
+    <string name="ifl_a6_02">Supported</string>
+    <string name="ifl_a6_03">Not Supported</string>
     <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Καταγραφές Σφαλμάτων</string>
     <string name="ifl_a7_02">Διαγραφή Καταγραφών</string>
@@ -229,5 +238,12 @@
     <!-- WELCOME_DIALOG -->
     <string name="ifl_d4_01">Καλωσήρθατε</string>
     <string name="ifl_d4_02">Καλωσήρθατε στο Instafel, μια τροποποιημένη εκδοχή του Instagram με στόχο την άμεση πρόσβαση στις πειραματικές εκδόσεις της εφαρμογής.\\n\\nΠατήστε τον εικόνα του προφίλ σας στο κάτω μέρος και μετά πιέστε παρατεταμένα τις τρεις γραμμές πάνω δεξιά για να μεταφερθείτε στις ρυθμίσεις του Instafel.</string>
+    <!-- HOME SHEETS -->
+    <string name="ifl_d5_01">Instafel Quick-menu</string>
+    <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
+    <string name="ifl_d5_03">Open Instafel Menu</string>
+    <string name="ifl_d5_04">Open IG Experiment Options</string>
+    <string name="ifl_d5_05">Join Instafel Community</string>
+    <string name="ifl_d5_06">Restart Instagram</string>
     <!-- CRASH TOAST -->
 </resources>

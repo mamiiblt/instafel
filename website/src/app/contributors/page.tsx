@@ -15,7 +15,7 @@ import {motion} from "framer-motion";
 import {Github, Globe, Heart, Languages, SendIcon, Twitter, Users,} from "lucide-react";
 import {useTranslation} from "react-i18next";
 import {Page, PageHeader} from "@/components/PageUtils";
-import React, {ReactElement, useEffect, useState} from "react";
+import React, {cloneElement, ReactElement, useEffect, useState} from "react";
 import {LoadingBar} from "@/components/LoadingBars";
 import {iflApiBase} from "@/wdata/flag_sdata";
 import {getLanguageDisplayName} from "@/lib/utils";
@@ -23,6 +23,47 @@ import Link from "next/link";
 import {CrowdinSuggestCard} from "@/components/CrowdinSuggestCard";
 import {HugeiconsIcon} from "@hugeicons/react";
 import {Github01Icon, Globe02Icon, TelegramIcon, TwitterIcon} from "@hugeicons/core-free-icons";
+
+export const SocialButton = ({icon, href, label}: {
+    icon: ReactElement<any, any>;
+    href: string;
+    label: string;
+}) => (
+    <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
+        <motion.a
+            whileHover={{ y: -3 }}
+            transition={{ type: "spring", stiffness: 400, damping: 20 }}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={label}
+            className="flex size-8 items-center justify-center rounded-full border border-border bg-background/60 text-muted-foreground backdrop-blur-md transition-colors hover:bg-muted hover:text-foreground"
+        >
+            {icon}
+        </motion.a>
+    </motion.div>
+);
+
+export const SocialButton2 = ({icon, href, label}: {
+    icon: ReactElement<any, any>;
+    href: string;
+    label: string;
+}) => (
+    <motion.a
+        whileHover={{ y: -2, scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label={label}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group flex h-9 items-center gap-2 rounded-xl border border-border/50 bg-card px-3 text-sm font-medium text-muted-foreground shadow-sm hover:border-primary/30 hover:text-primary"
+    >
+        {cloneElement(icon, {
+            className: "h-4 w-4 transition-transform group-hover:scale-110"
+        })}
+        <span className="hidden sm:inline-block">{label}</span>
+    </motion.a>
+);
 
 const itemVariants = {
     hidden: {opacity: 0, y: 30},
@@ -210,26 +251,6 @@ export default function ContributorsPage() {
             },
         },
     ];
-
-    const SocialButton = ({icon, href, label}: {
-        icon: ReactElement<any, any>;
-        href: string;
-        label: string;
-    }) => (
-        <motion.div whileHover={{scale: 1.1}} whileTap={{scale: 0.95}}>
-            <motion.a
-                whileHover={{ y: -3 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="flex size-10 items-center justify-center rounded-full border border-border bg-background/60 text-muted-foreground backdrop-blur-md transition-colors hover:bg-muted hover:text-foreground"
-            >
-                {icon}
-            </motion.a>
-        </motion.div>
-    );
 
     const SocialLinks = ({socials}: { socials: any }) => (
         <div className="flex items-center gap-1">

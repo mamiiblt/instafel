@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "النسخ الاحتياطية",
-      "flags": "القيم المميزة",
       "updater": "التحديث",
       "src_code": "كود المصدر",
       "download": "تحميل",

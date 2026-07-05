@@ -2,7 +2,6 @@
   "navbar": {
     "items": {
       "backups": "Copias de seguridad",
-      "flags": "Banderas",
       "updater": "Actualizador",
       "src_code": "Código Fuente",
       "download": "Descargar",

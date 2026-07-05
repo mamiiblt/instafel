@@ -2,6 +2,7 @@
   "title": "Backup Library",
   "description": "Browse community-created backups that you can import directly into Instafel.",
   "createdBy": "Created by {{author}}",
+  "updatedAt": "Updated at {{dateStr}}",
   "contribute": {
     "title": "Want to Contribute?",
     "description": "Share your Instafel backup with the community and help others discover optimal configurations.",

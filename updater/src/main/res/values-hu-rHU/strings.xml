@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ (c) 2026 Muhammed Ali Bulut, All rights reserved.
+  ~
+  ~ See LICENSE file in repository root for copy file of license. For copyright
+  ~ notices, technical issues, feedback, or any other related to this code file or
+  ~ project, please contact me via mamii@mamii.dev or other ways.
+  -->
 <resources>
     <!-- Nav Bar -->
     <string name="status">Állapot</string>
@@ -6,6 +13,7 @@
     <string name="settings">Beállítások</string>
     <!-- Setup Updater -->
     <string name="setup_ifl">Telepítő frissítő</string>
+    <string name="setup_ifl_desc">Configure your installation preferences</string>
     <string name="checker_arch">Ellenőrző architektúrája</string>
     <string name="checker_itype">Ellenőrző telepítési típusa</string>
     <string name="unclone">Nem klónozott</string>
@@ -46,6 +54,7 @@
     <string name="dialog_desc">Az Instafel telepítő normál működéséhez értesítési és root jogosultságra van szükség.</string>
     <string name="dialog_ok">Oké</string>
     <string name="hour">óra</string>
+    <string name="hour_imz">%1$s hour</string>
     <string name="minute">perc</string>
     <string name="upd_started">A telepítő elindult</string>
     <string name="upd_stopped">A telepítő megállt</string>
@@ -67,6 +76,8 @@
     <string name="cname_about">A telepítőről</string>
     <string name="checker_interval">Ellenőrzések gyakorisága</string>
     <string name="checker_interval_s">Gyakoriság átállítása</string>
+    <string name="install_method">Installation Method</string>
+    <string name="install_method_desc">You can change installation method</string>
     <string name="itype">Telepítés típusa</string>
     <string name="itype_s">Telepítés típusának változtatása</string>
     <string name="send_notif">Értesítés küldése</string>
@@ -92,4 +103,6 @@
     <string name="disable_error_s">Letiltja a nem kritikus hibaüzeneteket</string>
     <string name="updater_guide">Frissítési útmutató</string>
     <string name="updater_guide_s">Tudj meg többet a telepítőről</string>
+    <string name="help_translation">Help to Translation</string>
+    <string name="help_translation_desc">Join Crowdin project and contribute!</string>
 </resources>
