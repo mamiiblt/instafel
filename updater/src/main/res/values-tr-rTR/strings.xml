@@ -13,7 +13,7 @@
     <string name="settings">Ayarlar</string>
     <!-- Setup Updater -->
     <string name="setup_ifl">Güncelleyici Kurulumu</string>
-    <string name="setup_ifl_desc">Configure your installation preferences</string>
+    <string name="setup_ifl_desc">Kurulum seçeneklerinizi özelleştirin</string>
     <string name="checker_arch">Kontrolcü Mimarisi</string>
     <string name="checker_itype">Kontrolcü Kurulum Türü</string>
     <string name="unclone">Klon Olmayan</string>
@@ -54,7 +54,7 @@
     <string name="dialog_desc">Instafel Updater\'in çalışabilmesi için bildirim ve root iznine gerek duymaktadır. İzin vermek için Tamam\'a basınız</string>
     <string name="dialog_ok">Tamam</string>
     <string name="hour">saat</string>
-    <string name="hour_imz">%1$s hour</string>
+    <string name="hour_imz">%1$s saat</string>
     <string name="minute">dakika</string>
     <string name="upd_started">Güncelleyici başlatıldı</string>
     <string name="upd_stopped">Güncelleyici durduruldu</string>
@@ -76,8 +76,8 @@
     <string name="cname_about">Güncelleyici Hakkında</string>
     <string name="checker_interval">Kontrolcü Aralığı</string>
     <string name="checker_interval_s">Kontrolcü aralığını değiştir</string>
-    <string name="install_method">Installation Method</string>
-    <string name="install_method_desc">You can change installation method</string>
+    <string name="install_method">Kurulum Yöntemi</string>
+    <string name="install_method_desc">Kurulum yönetimini değiştirebilirsiniz</string>
     <string name="itype">Kurulum Türü</string>
     <string name="itype_s">Kontrolcünün kurulum türünü değiştir</string>
     <string name="send_notif">Bildirim Gönder</string>
@@ -103,6 +103,6 @@
     <string name="disable_error_s">Çok önemli olmayan uyarılar için bildirim göndermez.</string>
     <string name="updater_guide">Updater Kılavuzu</string>
     <string name="updater_guide_s">Instafel Updater\'i nasıl kullanacağınızı öğrenin</string>
-    <string name="help_translation">Help to Translation</string>
-    <string name="help_translation_desc">Join Crowdin project and contribute!</string>
+    <string name="help_translation">Çeviriye Katkı Sağlayın</string>
+    <string name="help_translation_desc">Hemen Crowdin projesine katılın!</string>
 </resources>

@@ -4262,8 +4262,8 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_a5_sub_freq_04">Beş günde bir kereye ayarlandı</string>
             <string name="ifl_a5_sub_freq_05">Haftada bir kereye ayarlandı</string>
             <string name="ifl_a6_01">Cihaz Dilini Kullan</string>
-            <string name="ifl_a6_02">Supported</string>
-            <string name="ifl_a6_03">Not Supported</string>
+            <string name="ifl_a6_02">Destekleniyor</string>
+            <string name="ifl_a6_03">Desteklenmiyor</string>
             <string name="ifl_a7_01">Günlükler</string>
             <string name="ifl_a7_02">Günlükleri Sİl</string>
             <string name="ifl_a8_01">Günlük Detayı</string>
@@ -4291,12 +4291,12 @@ Menu można otworzyć, przytrzymując przycisk z trzema kreskami (hamburger) na 
             <string name="ifl_d3_02">Tamam</string>
             <string name="ifl_d4_01">Merhaba</string>
             <string name="ifl_d4_02">"Instafel'e hoşgeldin. Bu mod herkese Instagram Alpha yeniliklerini sunmak için geliştirilmiştir.\\n\\nMenüye profil sekmesindeki hamburger düğmesine basılı tutarak ulaşabilirsin."</string>
-            <string name="ifl_d5_01">Instafel Quick-menu</string>
-            <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
-            <string name="ifl_d5_03">Open Instafel Menu</string>
-            <string name="ifl_d5_04">Open IG Experiment Options</string>
-            <string name="ifl_d5_05">Join Instafel Community</string>
-            <string name="ifl_d5_06">Restart Instagram</string>
+            <string name="ifl_d5_01">Instafel Hızlı Menüsü</string>
+            <string name="ifl_d5_02">IFL Sürümü v%1$s (Taban: v%2$s)</string>
+            <string name="ifl_d5_03">Instafel Menüsünü Aç</string>
+            <string name="ifl_d5_04">IG Deneyleri Menüsünü Aç</string>
+            <string name="ifl_d5_05">Instafel Topluluğuna Katıl</string>
+            <string name="ifl_d5_06">"Instagram'ı Yeniden Başlat"</string>
             <string name="ifl_t1_01">Kurucuyu açarken bir sorun ile karşılaşıldı.</string>
             <string name="ifl_t1_03">Instafel güncellemesi başarısız oldu</string>
         </vcategory>
