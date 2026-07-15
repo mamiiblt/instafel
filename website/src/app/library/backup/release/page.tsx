@@ -54,7 +54,7 @@ export const itemVariants = {
 interface ReleaseResponse {
     admin_info: {
         username: string;
-        pp_url: string;
+        pp_id: string;
     },
     backup_info: {
         id: number,
@@ -325,7 +325,7 @@ export default function PageBackup() {
                                     <div className="bg-card/60 relative w-full overflow-hidden flex flex-row sm:flex-col items-center sm:items-center justify-center text-left sm:text-center rounded-2xl border border-border p-6 gap-4">
                                         <div className="flex-shrink-0">
                                             <img
-                                                src={data.admin_info.pp_url}
+                                                src={`https://cdn.mamii.dev/madmin/u_pps/${data.admin_info.pp_id}.png`}
                                                 alt={data.backup_info.shown_author_name}
                                                 className="h-20 w-20 shrink-0 rounded-full object-cover shadow-lg ring-3 ring-border"
                                                 loading="lazy"
