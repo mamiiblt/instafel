@@ -117,8 +117,8 @@
     <string name="ifl_a5_dia_freq_05">Haftada bir kere</string>
     <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Cihaz Dilini Kullan</string>
-    <string name="ifl_a6_02">Supported</string>
-    <string name="ifl_a6_03">Not Supported</string>
+    <string name="ifl_a6_02">Destekleniyor</string>
+    <string name="ifl_a6_03">Desteklenmiyor</string>
     <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Günlükler</string>
     <string name="ifl_a7_02">Günlükleri Sİl</string>
@@ -239,11 +239,11 @@
     <string name="ifl_d4_01">Merhaba</string>
     <string name="ifl_d4_02">Instafel\'e hoşgeldin. Bu mod herkese Instagram Alpha yeniliklerini sunmak için geliştirilmiştir.\\n\\nMenüye profil sekmesindeki hamburger düğmesine basılı tutarak ulaşabilirsin.</string>
     <!-- HOME SHEETS -->
-    <string name="ifl_d5_01">Instafel Quick-menu</string>
-    <string name="ifl_d5_02">IFL Version v%1$s (Base: v%2$s)</string>
-    <string name="ifl_d5_03">Open Instafel Menu</string>
-    <string name="ifl_d5_04">Open IG Experiment Options</string>
-    <string name="ifl_d5_05">Join Instafel Community</string>
-    <string name="ifl_d5_06">Restart Instagram</string>
+    <string name="ifl_d5_01">Instafel Hızlı Menüsü</string>
+    <string name="ifl_d5_02">IFL Sürümü v%1$s (Taban: v%2$s)</string>
+    <string name="ifl_d5_03">Instafel Menüsünü Aç</string>
+    <string name="ifl_d5_04">IG Deneyleri Menüsünü Aç</string>
+    <string name="ifl_d5_05">Instafel Topluluğuna Katıl</string>
+    <string name="ifl_d5_06">Instagram\'ı Yeniden Başlat</string>
     <!-- CRASH TOAST -->
 </resources>
