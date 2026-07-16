@@ -35,6 +35,7 @@ class ChangeHomeLongClick: InstafelPatch() {
     lateinit var fNavigatorClassName: String
     lateinit var fNavigatorCreatorMethodName: String
     lateinit var fNavigatorTransitionMethodName: String
+    var fNavigatorConstructorParams: String = ""
 
     override fun initializeTasks() = mutableListOf(
         @PInfos.TaskInfo("Find home button long click smali class")
@@ -57,6 +58,7 @@ class ChangeHomeLongClick: InstafelPatch() {
                     }
                     is FileSearchResult.NotFound -> {
                         failure("Patch aborted because no any matching classes found.")
+                        exitProcess(-1)
                     }
                 }
             }
@@ -127,7 +129,6 @@ class ChangeHomeLongClick: InstafelPatch() {
                 val refClass = smaliUtils.getSmaliFilesByName("/com/facebook/FacebookActivity.smali")[0]
                 val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
 
-                // Pattern 1: invoke-static with Activity param returning LX/ class
                 refClassContent.forEachIndexed { i, line ->
                     if (castClassVariableName.isEmpty() &&
                         line.contains("invoke-static") &&
@@ -141,7 +142,6 @@ class ChangeHomeLongClick: InstafelPatch() {
                     }
                 }
 
-                // Pattern 2: invoke-virtual fallback
                 if (castClassVariableName.isEmpty()) {
                     refClassContent.forEachIndexed { i, line ->
                         if (castClassVariableName.isEmpty() &&
@@ -157,7 +157,6 @@ class ChangeHomeLongClick: InstafelPatch() {
                     }
                 }
 
-                // Pattern 3: check-cast fallback
                 if (castClassVariableName.isEmpty()) {
                     refClassContent.forEachIndexed { i, line ->
                         if (castClassVariableName.isEmpty() &&
@@ -185,20 +184,62 @@ class ChangeHomeLongClick: InstafelPatch() {
             override fun execute() {
                 val refClass = smaliUtils.getSmaliFilesByName("/com/instagram/profile/fragment/UserDetailFragment.smali")[0]
                 val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
-                val invokeVirtualMainCall = smaliUtils.getContainLines(refClassContent, "(Landroidx/fragment/app/Fragment;)V")
-                if (invokeVirtualMainCall.size > 1 || invokeVirtualMainCall.isEmpty()) failure("Correct caller line couldn't be found")
 
-                val lineCreator = SmaliParser.parseInstruction(refClassContent[invokeVirtualMainCall[0].num], invokeVirtualMainCall[0].num)
-                val lineCaller = SmaliParser.parseInstruction(refClassContent[invokeVirtualMainCall[0].num + 2], invokeVirtualMainCall[0].num + 2)
+                val invokeVirtualMainCall = smaliUtils.getContainLines(refClassContent, "invoke-virtual", "(Landroidx/fragment/app/Fragment;)V")
 
-                val cName = lineCreator.className.replace("LX/", "").replace(";", "")
-                fNavigatorClassName = cName
+                if (invokeVirtualMainCall.isEmpty()) {
+                    failure("Correct caller line couldn't be found")
+                    exitProcess(-1)
+                }
+
+                val matchLine = invokeVirtualMainCall[0]
+                val lineCreator = SmaliParser.parseInstruction(refClassContent[matchLine.num], matchLine.num)
+                val lineCaller = SmaliParser.parseInstruction(refClassContent[matchLine.num + 2], matchLine.num + 2)
+
+                fNavigatorClassName = lineCreator.className.replace("LX/", "").replace(";", "")
                 fNavigatorCreatorMethodName = lineCreator.methodName
                 fNavigatorTransitionMethodName = lineCaller.methodName
 
-                Log.info("fNavigatorClassName is $cName")
-                Log.info("fNavigatorCreatorMethodName is ${lineCreator.methodName}")
-                Log.info("fNavigatorTransitionMethodName is ${lineCaller.methodName}")
+                val initNeedle = "LX/$fNavigatorClassName;-><init>("
+                for (j in (matchLine.num - 1) downTo maxOf(0, matchLine.num - 15)) {
+                    val prevLine = refClassContent[j].trim()
+                    if (prevLine.contains("invoke-direct") && prevLine.contains(initNeedle)) {
+                        val paramStart = prevLine.indexOf("<init>(") + 7
+                        val paramEnd = prevLine.lastIndexOf(")")
+                        if (paramEnd > paramStart) {
+                            fNavigatorConstructorParams = prevLine.substring(paramStart, paramEnd)
+                        }
+                        break
+                    }
+                }
+
+                if (fNavigatorConstructorParams.isEmpty()) {
+                    val navigatorFiles = smaliUtils.getSmaliFilesByName("/X/$fNavigatorClassName.smali")
+                    if (navigatorFiles.isNotEmpty()) {
+                        val navContent = smaliUtils.getSmaliFileContent(navigatorFiles[0].absolutePath)
+                        for (navLine in navContent) {
+                            val trimmed = navLine.trim()
+                            if (trimmed.startsWith(".method public constructor <init>(") && !trimmed.contains("<init>()V")) {
+                                val paramStart = trimmed.indexOf("<init>(") + 7
+                                val paramEnd = trimmed.lastIndexOf(")")
+                                if (paramEnd > paramStart) {
+                                    fNavigatorConstructorParams = trimmed.substring(paramStart, paramEnd)
+                                }
+                                break
+                            }
+                        }
+                    }
+                }
+
+                Log.info("fNavigatorClassName is $fNavigatorClassName")
+                Log.info("fNavigatorCreatorMethodName is $fNavigatorCreatorMethodName")
+                Log.info("fNavigatorTransitionMethodName is $fNavigatorTransitionMethodName")
+                if (fNavigatorConstructorParams.isNotEmpty()) {
+                    Log.info("fNavigatorConstructorParams is $fNavigatorConstructorParams")
+                } else {
+                    Log.info("fNavigatorConstructorParams not found, will fall back to assumed 2-param signature next task")
+                }
+
                 success("Everything is found successfully.")
             }
         },
@@ -207,7 +248,18 @@ class ChangeHomeLongClick: InstafelPatch() {
             override fun execute() {
                 if (castClassVariableName.isEmpty()) {
                     failure("castClassVariableName is empty — openDeveloperOptions skipped!")
-                    return
+                    exitProcess(-1)
+                }
+
+                val assumedParams = "Landroidx/fragment/app/FragmentActivity;LX/$castClassVariableName;"
+                val resolvedParams = fNavigatorConstructorParams.ifEmpty {
+                    Log.info("No derived constructor params, using assumed default: $assumedParams")
+                    assumedParams
+                }
+
+                if (resolvedParams != assumedParams) {
+                    failure("FragmentNavigator constructor signature is now '$resolvedParams', which no longer matches the 2-param shape this patch builds registers for. Update the patch instead of forcing it through.")
+                    exitProcess(-1)
                 }
 
                 val instafelSheetClass = smaliUtils.getSmaliFilesByName("/instafel/app/utils/InstafelHomeSheet.smali")[0]
@@ -233,7 +285,7 @@ class ChangeHomeLongClick: InstafelPatch() {
 
                         new-instance v3, LX/$fNavigatorClassName;
 
-                        invoke-direct {v3, v0, v1}, LX/$fNavigatorClassName;-><init>(Landroidx/fragment/app/FragmentActivity;LX/$castClassVariableName;)V
+                        invoke-direct {v3, v0, v1}, LX/$fNavigatorClassName;-><init>($resolvedParams)V
 
                         invoke-virtual {v3, v2}, LX/$fNavigatorClassName;->$fNavigatorCreatorMethodName(Landroidx/fragment/app/Fragment;)V
 
