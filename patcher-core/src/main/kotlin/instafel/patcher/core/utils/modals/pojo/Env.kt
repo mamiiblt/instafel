@@ -14,7 +14,8 @@ data class ConfigPOJO (
     var manifestVersion: Int = 1,
     var productionMode: Boolean = false,
     var managerToken: String = "",
-    var githubPatToken: String = ""
+    var githubPatToken: String = "",
+    var serverSessionToken: String = ""
 )
 
 data class ProjectPOJO(

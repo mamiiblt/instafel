@@ -49,6 +49,7 @@ object Env {
                     productionMode = false,
                     managerToken = "",
                     githubPatToken = "",
+                    serverSessionToken = ""
                 )
             }
             Config = gson.fromJson(fileConf.readText(), ConfigPOJO::class.java)

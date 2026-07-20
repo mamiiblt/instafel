@@ -35,7 +35,8 @@ jobs:
               "manifestVersion": 1,
               "productionMode": true,
               "managerToken": "${{ secrets.MANAGER_TOKEN }}",
-              "githubPatToken": "${{ secrets.GH_PAT_TOKEN }}"
+              "githubPatToken": "${{ secrets.GH_PAT_TOKEN }}",
+              "serverSessionToken": "${{ secrets.SERVER_SESSION_TOKEN }}"
           }
           EOF
 

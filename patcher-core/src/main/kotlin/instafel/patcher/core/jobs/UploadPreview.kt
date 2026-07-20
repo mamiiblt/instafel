@@ -15,6 +15,7 @@ import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.pojo.BuildInfo
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
@@ -24,6 +25,7 @@ import org.json.JSONObject
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
+import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 
 object UploadPreview: CLIJob {
@@ -34,7 +36,13 @@ object UploadPreview: CLIJob {
     lateinit var buildInfo: BuildInfo
     lateinit var buildFolder: File
     lateinit var GITHUB_PAT: String
-    val httpClient = OkHttpClient()
+    lateinit var SERVER_SESSION_TOKEN: String
+    val httpClient = OkHttpClient.Builder()
+        .connectTimeout(0, TimeUnit.MILLISECONDS)
+        .readTimeout(0, TimeUnit.MILLISECONDS)
+        .writeTimeout(0, TimeUnit.MILLISECONDS)
+        .callTimeout(0, TimeUnit.MILLISECONDS)
+        .build()
     var isProdMode = false
 
     override fun runJob(vararg args: Any) {
@@ -53,6 +61,7 @@ object UploadPreview: CLIJob {
 
         isProdMode = Env.Config.productionMode
         GITHUB_PAT = Env.Config.githubPatToken
+        SERVER_SESSION_TOKEN = Env.Config.serverSessionToken
 
         if (isProdMode) {
             buildFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
@@ -79,123 +88,43 @@ object UploadPreview: CLIJob {
     }
 
     fun createRelease(patcherVersion: String, patcherCommit: String) {
-        val buildInfoMap = mapOf(
-            "GENERATION_ID" to buildInfo.patcherData.generationId,
-            "BUILD_TS" to buildInfo.patcherData.buildDate,
-            "IFL_VERSION" to buildInfo.patcherData.iflVersion.toString(),
-            "IG_VERSION" to buildInfo.patcherData.igVersion,
-            "IG_VER_CODE" to buildInfo.patcherData.igVersionCode,
-            "HASH_UC" to buildInfo.fileInfos.unclone.fileHash,
-            "HASH_C" to buildInfo.fileInfos.clone.fileHash
-        )
-        val bLines = mutableListOf(
-            "# Build Information",
-            "| PROPERTY  | VALUE |",
-            "| ------------- | ------------- |",
-        )
+        Log.info("Adding APK(s) into FormBody for request. It may be take long time.")
+        val requestBody =
+            MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("patcher_version", patcherVersion)
+                .addFormDataPart("patcher_commit", patcherCommit)
+                .addFormDataPart("build_info", Env.gson.toJson(buildInfo))
+                .addFormDataPart("files",
+                    APK_UC.name,
+                    APK_UC.asRequestBody(
+                        "application/vnd.android.package-archive".toMediaType()
+                    )
+                )
+                .addFormDataPart(
+                    "files",
+                    APK_C.name,
+                    APK_C.asRequestBody(
+                        "application/vnd.android.package-archive".toMediaType()
+                    )
+                )
+                .build()
 
-        buildInfoMap.forEach { infoLine ->
-            bLines.add("| ${infoLine.key} | ${infoLine.value} |")
-        }
-
-        bLines.add("\nGenerated with **Instafel Patcher** v$patcherVersion ($patcherCommit/release)")
-
-        val body = bLines.joinToString("\n")
-
-        val req = JSONObject().apply {
-            put("tag_name", buildInfo.patcherData.generationId)
-            put("name", "Preview of ${buildInfo.patcherData.igVersion}")
-            put("body", body)
-            put("draft", false)
-            put("prerelease", false)
-            put("generate_release_notes", false)
-        }
-
-        val requestBody = RequestBody.create(
-            "application/json".toMediaType(),
-            req.toString()
-        )
-
-        val request = Request.Builder()
-            .url("https://api.github.com/repos/mamiiblt/instafel_previews/releases")
-            .addHeader("Authorization", "Bearer $GITHUB_PAT")
-            .addHeader("Accept", "application/vnd.github+json")
-            .addHeader("X-GitHub-Api-Version", "2022-11-28")
-            .post(requestBody)
-            .build()
+        val request =
+            Request.Builder()
+                .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
+                .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
+                .post(requestBody)
+                .build()
 
         httpClient.newCall(request).execute().use { response ->
-            if (response.isSuccessful) {
-                val resp = JSONObject(response.body.string())
-                Log.info("Release created!")
+            val resp = JSONObject(response.body.string())
+            Log.info(resp.getJSONObject("data").getString("msg"))
 
-                val uploadUrl = resp.getString("upload_url")
-                    .replace("{?name,label}", "?name=%s")
-
-                Log.info("Uploading assets...")
-                uploadAsset(uploadUrl, APK_UC)
-                uploadAsset(uploadUrl, APK_C)
-                uploadAsset(uploadUrl, F_BUILD_INFO)
-                Log.info("Assets uploaded")
-
-                sendLogToTelegram()
-            } else {
-                Log.severe("Error while creating release: ${response.code} ${response.message}")
-                Log.severe(response.body.string())
-            }
-        }
-    }
-
-    fun uploadAsset(assetUploadUrl: String, file: File): String {
-        Log.info("Uploading file ${file.name}")
-
-        val url = assetUploadUrl.format(file.name)
-        val reqBody = file.asRequestBody("application/octet-stream".toMediaType())
-
-        val request = Request.Builder()
-            .url(url)
-            .header("Authorization", "Bearer $GITHUB_PAT")
-            .header("Accept", "application/vnd.github+json")
-            .post(reqBody)
-            .build()
-
-        return httpClient.newCall(request).execute().use { response ->
-            if (response.isSuccessful) {
-                Log.info("Asset ${file.name} uploaded.")
-                val resp = JSONObject(response.body.string())
-                resp.getString("browser_download_url")
-            } else {
-                val errorBody = response.body.string()
-                Log.severe("Error while uploading asset: ${file.name} - ${response.code} - $errorBody")
+            if (!resp.getString("status").equals("SUCCESS")) {
+                Log.severe("Error while creating preview, aborting.")
                 exitProcess(-1)
             }
         }
     }
-
-    fun sendLogToTelegram() {
-        val requestBody =
-            Env.gson.toJson(buildInfo)
-            .toRequestBody("application/json".toMediaType())
-
-        val request = Request.Builder()
-            .url("https://api.instafel.mamii.dev/manager/send-generated-log")
-            .addHeader("manager-token", Env.Config.managerToken)
-            .post(requestBody)
-            .build()
-
-        try {
-            httpClient.newCall(request).execute().use { response ->
-                if (!response.isSuccessful) {
-                    Log.severe("Request unsuccessful: ${response.code}")
-                    return
-                }
-                Log.info("Log successfully sent to Telegram.")
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-            Log.severe("Error while sending request.")
-            exitProcess(-1)
-        }
-    }
-
 }
