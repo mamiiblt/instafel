@@ -11,24 +11,21 @@ package instafel.patcher.core.jobs
 import instafel.patcher.core.source.WorkingDir
 import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.Log
-import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.utils.Utils
+import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.utils.modals.pojo.BuildInfo
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MultipartBody
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody.Companion.asRequestBody
 
-object UploadPreview: CLIJob {
+object UploadPreview : CLIJob {
 
     lateinit var F_BUILD_INFO: File
     lateinit var APK_UC: File
@@ -37,12 +34,13 @@ object UploadPreview: CLIJob {
     lateinit var buildFolder: File
     lateinit var GITHUB_PAT: String
     lateinit var SERVER_SESSION_TOKEN: String
-    val httpClient = OkHttpClient.Builder()
-        .connectTimeout(0, TimeUnit.MILLISECONDS)
-        .readTimeout(0, TimeUnit.MILLISECONDS)
-        .writeTimeout(0, TimeUnit.MILLISECONDS)
-        .callTimeout(0, TimeUnit.MILLISECONDS)
-        .build()
+    val httpClient =
+            OkHttpClient.Builder()
+                    .connectTimeout(0, TimeUnit.MILLISECONDS)
+                    .readTimeout(0, TimeUnit.MILLISECONDS)
+                    .writeTimeout(0, TimeUnit.MILLISECONDS)
+                    .callTimeout(0, TimeUnit.MILLISECONDS)
+                    .build()
     var isProdMode = false
 
     override fun runJob(vararg args: Any) {
@@ -69,7 +67,7 @@ object UploadPreview: CLIJob {
                 loadFiles()
                 createRelease(patcherVersion, patcherCommit)
             } else {
-               Log.severe("/build folder doesn't exist.")
+                Log.severe("/build folder doesn't exist.")
             }
         } else {
             Log.severe("You are not using production env..!:")
@@ -80,9 +78,16 @@ object UploadPreview: CLIJob {
         Log.info("Loading build files...")
 
         F_BUILD_INFO = File(Utils.mergePaths(buildFolder.absolutePath, "build_info.json"))
-        val jsonStr = Files.readAllBytes(Paths.get(F_BUILD_INFO.absolutePath)).toString(Charsets.UTF_8)
+        val jsonStr =
+                Files.readAllBytes(Paths.get(F_BUILD_INFO.absolutePath)).toString(Charsets.UTF_8)
         buildInfo = Env.gson.fromJson(jsonStr, BuildInfo::class.java)
-        APK_UC = File(Utils.mergePaths(buildFolder.absolutePath, buildInfo.fileInfos.unclone.fileName))
+        APK_UC =
+                File(
+                        Utils.mergePaths(
+                                buildFolder.absolutePath,
+                                buildInfo.fileInfos.unclone.fileName
+                        )
+                )
         APK_C = File(Utils.mergePaths(buildFolder.absolutePath, buildInfo.fileInfos.clone.fileName))
         Log.info("Build files & properties loaded")
     }
@@ -90,38 +95,39 @@ object UploadPreview: CLIJob {
     fun createRelease(patcherVersion: String, patcherCommit: String) {
         Log.info("Adding APK(s) into FormBody for request. It may be take long time.")
         val requestBody =
-            MultipartBody.Builder()
-                .setType(MultipartBody.FORM)
-                .addFormDataPart("patcher_version", patcherVersion)
-                .addFormDataPart("patcher_commit", patcherCommit)
-                .addFormDataPart("build_info", Env.gson.toJson(buildInfo))
-                .addFormDataPart("files",
-                    APK_UC.name,
-                    APK_UC.asRequestBody(
-                        "application/vnd.android.package-archive".toMediaType()
-                    )
-                )
-                .addFormDataPart(
-                    "files",
-                    APK_C.name,
-                    APK_C.asRequestBody(
-                        "application/vnd.android.package-archive".toMediaType()
-                    )
-                )
-                .build()
+                MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
+                        .addFormDataPart("patcher_version", patcherVersion)
+                        .addFormDataPart("patcher_commit", patcherCommit)
+                        .addFormDataPart("build_info", Env.gson.toJson(buildInfo))
+                        .addFormDataPart(
+                                "files",
+                                APK_UC.name,
+                                APK_UC.asRequestBody(
+                                        "application/vnd.android.package-archive".toMediaType()
+                                )
+                        )
+                        .addFormDataPart(
+                                "files",
+                                APK_C.name,
+                                APK_C.asRequestBody(
+                                        "application/vnd.android.package-archive".toMediaType()
+                                )
+                        )
+                        .build()
 
         val request =
-            Request.Builder()
-                .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
-                .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
-                .post(requestBody)
-                .build()
+                Request.Builder()
+                        .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
+                        .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
+                        .post(requestBody)
+                        .build()
 
         httpClient.newCall(request).execute().use { response ->
-            val resp = JSONObject(response.body.string())
-            Log.info(resp.getJSONObject("data").getString("msg"))
+            val resp = response.body.string()
+            Log.info(resp)
 
-            if (!resp.getString("status").equals("SUCCESS")) {
+            if (!response.isSuccessful) {
                 Log.severe("Error while creating preview, aborting.")
                 exitProcess(-1)
             }
