@@ -123,7 +123,7 @@ object UploadPreview : CLIJob {
 
         val request =
                 Request.Builder()
-                        .url("http://localhost:3001/madmin/content/instafel/preview/create")
+                        .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
                         .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
                         .post(requestBody)
                         .build()
