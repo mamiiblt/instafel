@@ -6,18 +6,15 @@
  * project, please contact me via mamii@mamii.dev or other ways.
  */
 
-import org.gradle.internal.impldep.kotlinx.serialization.json.Json
-import org.json.JSONArray
-import org.json.JSONObject
 import java.io.BufferedOutputStream
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.InputStreamReader
-import java.net.URL
-import java.net.HttpURLConnection
 import java.io.OutputStreamWriter
+import java.net.HttpURLConnection
+import java.net.URL
 import java.nio.file.FileVisitResult
 import java.nio.file.Files
 import java.nio.file.Path
@@ -26,6 +23,8 @@ import java.nio.file.SimpleFileVisitor
 import java.nio.file.StandardCopyOption
 import java.nio.file.attribute.BasicFileAttributes
 import java.util.zip.ZipInputStream
+import org.json.JSONArray
+import org.json.JSONObject
 
 fun File.deleteRecursivelySafe(): Boolean {
     if (!exists()) return true
@@ -38,27 +37,37 @@ fun File.deleteRecursivelySafe(): Boolean {
 }
 
 fun copyFolder(sourceDir: Path, targetDir: Path) {
-    Files.walkFileTree(sourceDir, object : SimpleFileVisitor<Path>() {
-        override fun preVisitDirectory(dir: Path, attrs: BasicFileAttributes): FileVisitResult {
-            val targetPath = targetDir.resolve(sourceDir.relativize(dir))
-            if (!Files.exists(targetPath)) {
-                Files.createDirectory(targetPath)
-            }
-            return FileVisitResult.CONTINUE
-        }
+    Files.walkFileTree(
+            sourceDir,
+            object : SimpleFileVisitor<Path>() {
+                override fun preVisitDirectory(
+                        dir: Path,
+                        attrs: BasicFileAttributes
+                ): FileVisitResult {
+                    val targetPath = targetDir.resolve(sourceDir.relativize(dir))
+                    if (!Files.exists(targetPath)) {
+                        Files.createDirectory(targetPath)
+                    }
+                    return FileVisitResult.CONTINUE
+                }
 
-        override fun visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult {
-            Files.copy(file, targetDir.resolve(sourceDir.relativize(file)), StandardCopyOption.REPLACE_EXISTING)
-            return FileVisitResult.CONTINUE
-        }
-    })
+                override fun visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult {
+                    Files.copy(
+                            file,
+                            targetDir.resolve(sourceDir.relativize(file)),
+                            StandardCopyOption.REPLACE_EXISTING
+                    )
+                    return FileVisitResult.CONTINUE
+                }
+            }
+    )
 }
 
 class CrowdinMergeUtils(
-    val crowdinApiToken: String,
-    val managerToken: String,
-    val outputDir: File,
-    val rootDir: File
+        val crowdinApiToken: String,
+        val managerToken: String,
+        val outputDir: File,
+        val rootDir: File
 ) {
     val crowdinProjectID = 838578
     val pollInterval = 1000L
@@ -69,7 +78,8 @@ class CrowdinMergeUtils(
         println("Sending build request...")
         outputDir.deleteRecursivelySafe()
 
-        val url = URL("https://api.crowdin.com/api/v2/projects/$crowdinProjectID/translations/builds")
+        val url =
+                URL("https://api.crowdin.com/api/v2/projects/$crowdinProjectID/translations/builds")
         val conn = url.openConnection() as HttpURLConnection
         conn.requestMethod = "POST"
         conn.setRequestProperty("Authorization", "Bearer $crowdinApiToken")
@@ -77,9 +87,7 @@ class CrowdinMergeUtils(
         conn.setRequestProperty("Accept", "application/json")
         conn.doOutput = true
 
-        val body = JSONObject().apply {
-            put("exportApprovedOnly", false)
-        }.toString()
+        val body = JSONObject().apply { put("exportApprovedOnly", false) }.toString()
 
         OutputStreamWriter(conn.outputStream).use { it.write(body) }
 
@@ -94,7 +102,10 @@ class CrowdinMergeUtils(
         println("Waiting for build $buildId to finish...")
 
         while (true) {
-            val url = URL("https://api.crowdin.com/api/v2/projects/$crowdinProjectID/translations/builds/$buildId")
+            val url =
+                    URL(
+                            "https://api.crowdin.com/api/v2/projects/$crowdinProjectID/translations/builds/$buildId"
+                    )
             val conn = url.openConnection() as HttpURLConnection
             conn.requestMethod = "GET"
             conn.setRequestProperty("Authorization", "Bearer $crowdinApiToken")
@@ -102,9 +113,7 @@ class CrowdinMergeUtils(
             conn.setRequestProperty("Accept", "application/json")
 
             val responseText = conn.inputStream.bufferedReader().readText()
-            val status = JSONObject(responseText)
-                .getJSONObject("data")
-                .getString("status")
+            val status = JSONObject(responseText).getJSONObject("data").getString("status")
 
             when (status) {
                 "finished" -> {
@@ -120,7 +129,10 @@ class CrowdinMergeUtils(
     }
 
     fun downloadBuild(downloadBuildId: String = this.buildId) {
-        val url = URL("https://api.crowdin.com/api/v2/projects/$crowdinProjectID/translations/builds/$downloadBuildId/download")
+        val url =
+                URL(
+                        "https://api.crowdin.com/api/v2/projects/$crowdinProjectID/translations/builds/$downloadBuildId/download"
+                )
         val conn = url.openConnection() as HttpURLConnection
         conn.requestMethod = "GET"
         conn.setRequestProperty("Authorization", "Bearer $crowdinApiToken")
@@ -137,9 +149,7 @@ class CrowdinMergeUtils(
         exportFile = File(outputDir, "crowdin_export.zip")
         exportFile.parentFile.mkdirs()
         BufferedOutputStream(FileOutputStream(exportFile)).use { output ->
-            zipConn.inputStream.use { input ->
-                input.copyTo(output)
-            }
+            zipConn.inputStream.use { input -> input.copyTo(output) }
         }
 
         println("Downloaded Build ZIP → ${exportFile.absolutePath}")
@@ -155,9 +165,7 @@ class CrowdinMergeUtils(
                     outFile.mkdirs()
                 } else {
                     outFile.parentFile.mkdirs()
-                    FileOutputStream(outFile).use { output ->
-                        zip.copyTo(output)
-                    }
+                    FileOutputStream(outFile).use { output -> zip.copyTo(output) }
                 }
                 zip.closeEntry()
                 entry = zip.nextEntry
@@ -170,8 +178,17 @@ class CrowdinMergeUtils(
     fun updateLocalesInPatcher() {
         println("Updating locales in :patcher-core sources")
         val projectDir = File(rootDir, "patcher-core")
-        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "app").toFile()
-        val localeAssetFile = Paths.get(projectDir.absolutePath, "src", "main", "resources", "supported_locales.json").toFile()
+        val crowdinLocalizationFolderDir =
+                Paths.get(outputDir.absolutePath, "sources", "main", "app").toFile()
+        val localeAssetFile =
+                Paths.get(
+                                projectDir.absolutePath,
+                                "src",
+                                "main",
+                                "resources",
+                                "supported_locales.json"
+                        )
+                        .toFile()
         val locales = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
         val normalizedLocaleNames = mutableListOf<String>()
         locales.forEach { locale -> normalizedLocaleNames.add(locale.replace("-r", "-")) }
@@ -183,19 +200,41 @@ class CrowdinMergeUtils(
     fun mergeAppSources() {
         println("Merging :app project sources")
         val projectDir = File(rootDir, "app")
-        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "app").toFile()
-        val appLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "main", "res").toFile()
-        val instafelEnvFile = Paths.get(projectDir.absolutePath, "src", "main", "java", "instafel", "app", "InstafelEnv.java").toFile()
+        val crowdinLocalizationFolderDir =
+                Paths.get(outputDir.absolutePath, "sources", "main", "app").toFile()
+        val appLocalizationFolderDir =
+                Paths.get(projectDir.absolutePath, "src", "main", "res").toFile()
+        val instafelEnvFile =
+                Paths.get(
+                                projectDir.absolutePath,
+                                "src",
+                                "main",
+                                "java",
+                                "instafel",
+                                "app",
+                                "InstafelEnv.java"
+                        )
+                        .toFile()
 
         val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
         val newLanguagesArr = arrayOf("en-US") + languages.sorted()
-        newLanguagesArr.forEachIndexed { index, langCode -> newLanguagesArr[index] = langCode.replace("-r", "-") }
+        newLanguagesArr.forEachIndexed { index, langCode ->
+            newLanguagesArr[index] = langCode.replace("-r", "-")
+        }
 
-        languages.forEach { lang -> copyStringsFile(lang, crowdinLocalizationFolderDir, appLocalizationFolderDir) }
-        println("All localization sources (${languages.size} file) copied into res/values-... folders")
+        languages.forEach { lang ->
+            copyStringsFile(lang, crowdinLocalizationFolderDir, appLocalizationFolderDir)
+        }
+        println(
+                "All localization sources (${languages.size} file) copied into res/values-... folders"
+        )
 
         val content = instafelEnvFile.readText()
-        val regex = Regex("""String\[\]\s+supportedLanguages\s*=\s*\{.*?};""", RegexOption.DOT_MATCHES_ALL)
+        val regex =
+                Regex(
+                        """String\[\]\s+supportedLanguages\s*=\s*\{.*?};""",
+                        RegexOption.DOT_MATCHES_ALL
+                )
         val newArrayContent = newLanguagesArr.joinToString(", ") { "\"$it\"" }
         val newLine = """String[] supportedLanguages = { $newArrayContent };"""
         val newContent = content.replace(regex, newLine)
@@ -206,20 +245,38 @@ class CrowdinMergeUtils(
     fun mergeUpdaterSources() {
         println("Merging :updater project sources")
         val projectDir = File(rootDir, "updater")
-        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "updater").toFile()
-        val updaterLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "main", "res").toFile()
-        val mainStringFile = Paths.get(projectDir.absolutePath, "src", "main", "res", "values", "arrays.xml").toFile()
+        val crowdinLocalizationFolderDir =
+                Paths.get(outputDir.absolutePath, "sources", "main", "updater").toFile()
+        val updaterLocalizationFolderDir =
+                Paths.get(projectDir.absolutePath, "src", "main", "res").toFile()
+        val mainStringFile =
+                Paths.get(projectDir.absolutePath, "src", "main", "res", "values", "arrays.xml")
+                        .toFile()
 
         val languages = loadCrowdinAndroidLocales(crowdinLocalizationFolderDir)
         val newLanguagesArr = arrayOf("en-US") + languages.sorted()
 
-        languages.forEach { lang -> copyStringsFile(lang, crowdinLocalizationFolderDir, updaterLocalizationFolderDir) }
-        println("All localization sources (${languages.size} file) copied into res/values-... folders")
+        languages.forEach { lang ->
+            copyStringsFile(lang, crowdinLocalizationFolderDir, updaterLocalizationFolderDir)
+        }
+        println(
+                "All localization sources (${languages.size} file) copied into res/values-... folders"
+        )
 
         val content = mainStringFile.readText()
-        val items = newLanguagesArr.joinToString(separator = "\n") { "        <item>${it.replace("-r", "-")}</item>" }
-        val regex = Regex("""<string-array\s+name="supported_languages".*?>.*?</string-array>""", RegexOption.DOT_MATCHES_ALL)
-        val newContent = content.replace(regex) { "<string-array name=\"supported_languages\">\n$items\n    </string-array>" }
+        val items =
+                newLanguagesArr.joinToString(separator = "\n") {
+                    "        <item>${it.replace("-r", "-")}</item>"
+                }
+        val regex =
+                Regex(
+                        """<string-array\s+name="supported_languages".*?>.*?</string-array>""",
+                        RegexOption.DOT_MATCHES_ALL
+                )
+        val newContent =
+                content.replace(regex) {
+                    "<string-array name=\"supported_languages\">\n$items\n    </string-array>"
+                }
         mainStringFile.writeText(newContent)
         println("Totally ${languages.size} translation file updated.")
     }
@@ -227,9 +284,12 @@ class CrowdinMergeUtils(
     fun mergeWebsiteSources() {
         println("Merging :website project sources...")
         val projectDir = File(rootDir, "website")
-        val crowdinLocalizationFolderDir = Paths.get(outputDir.absolutePath, "sources", "main", "website").toFile()
-        val websiteLocalizationFolderDir = Paths.get(projectDir.absolutePath, "src", "locales").toFile()
-        val settingsTsFile = Paths.get(projectDir.absolutePath, "src", "i18n", "settings.ts").toFile()
+        val crowdinLocalizationFolderDir =
+                Paths.get(outputDir.absolutePath, "sources", "main", "website").toFile()
+        val websiteLocalizationFolderDir =
+                Paths.get(projectDir.absolutePath, "src", "locales").toFile()
+        val settingsTsFile =
+                Paths.get(projectDir.absolutePath, "src", "i18n", "settings.ts").toFile()
 
         val crowdinLocalizationFolders = loadFolderContents(crowdinLocalizationFolderDir, "en-EN")
         val localWebsiteLocaleFolders = loadFolderContents(websiteLocalizationFolderDir, "en-EN")
@@ -241,33 +301,31 @@ class CrowdinMergeUtils(
             }
         }
 
-        println("Totally ${localWebsiteLocaleFolders.size} localization folder deleted from website sources.")
+        println(
+                "Totally ${localWebsiteLocaleFolders.size} localization folder deleted from website sources."
+        )
 
         crowdinLocalizationFolders.forEach { folderName ->
             val destFolder = Paths.get(websiteLocalizationFolderDir.absolutePath, folderName)
-            copyFolder(
-                Paths.get(crowdinLocalizationFolderDir.absolutePath, folderName),
-                destFolder
-            )
+            copyFolder(Paths.get(crowdinLocalizationFolderDir.absolutePath, folderName), destFolder)
         }
 
-        println("Totally ${crowdinLocalizationFolders.size} localization folder copied into website sources.")
+        println(
+                "Totally ${crowdinLocalizationFolders.size} localization folder copied into website sources."
+        )
 
         val localeCodes = mutableListOf<String>()
         localeCodes.add("en-EN")
         crowdinLocalizationFolders.forEach { folderName -> localeCodes.add(folderName) }
 
-        val sortedLocales = listOf("en-EN") + localeCodes.sorted()
-            .filter { it != "en-EN" }
-            .sortedBy { it.lowercase() }
+        val sortedLocales =
+                listOf("en-EN") +
+                        localeCodes.sorted().filter { it != "en-EN" }.sortedBy { it.lowercase() }
 
         val content = settingsTsFile.readText()
         val regex = Regex("""supportedLocales\s*=\s*\[.*?]""", RegexOption.DOT_MATCHES_ALL)
-        val newArray = sortedLocales.joinToString(
-            prefix = "[\"",
-            separator = "\",\"",
-            postfix = "\"]"
-        )
+        val newArray =
+                sortedLocales.joinToString(prefix = "[\"", separator = "\",\"", postfix = "\"]")
         val newContent = content.replace(regex, "supportedLocales = $newArray")
         settingsTsFile.writeText(newContent)
 
@@ -276,7 +334,7 @@ class CrowdinMergeUtils(
     }
 
     fun sendActionCompletedReq(commitHash: String) {
-        val url = URL("https://api.instafel.mamii.dev/manager/merge-op-completed")
+        val url = URL("https://api.mamii.dev/manager/merge-op-completed")
         val connection = url.openConnection() as HttpURLConnection
 
         connection.requestMethod = "POST"
@@ -290,33 +348,36 @@ class CrowdinMergeUtils(
         json.put("branch", "main")
 
         val outputBytes = json.toString().toByteArray(Charsets.UTF_8)
-        connection.outputStream.use { os ->
-            os.write(outputBytes)
-        }
+        connection.outputStream.use { os -> os.write(outputBytes) }
 
         val responseCode = connection.responseCode
-        val response = if (responseCode == HttpURLConnection.HTTP_OK) {
-            BufferedReader(InputStreamReader(connection.inputStream)).use { it.readText() }
-        } else {
-            BufferedReader(InputStreamReader(connection.errorStream)).use { it.readText() }
-        }
+        val response =
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader(InputStreamReader(connection.inputStream)).use { it.readText() }
+                } else {
+                    BufferedReader(InputStreamReader(connection.errorStream)).use { it.readText() }
+                }
 
         println("Status: $responseCode")
         println("Response: $response")
     }
 
     fun loadFolderContents(baseFolder: File, filterFolderName: String): Array<String> {
-        return baseFolder.listFiles()
-            ?.filter { it.isDirectory && it.name != filterFolderName }
-            ?.map { it.name }
-            ?.toTypedArray() ?: emptyArray()
+        return baseFolder
+                .listFiles()
+                ?.filter { it.isDirectory && it.name != filterFolderName }
+                ?.map { it.name }
+                ?.toTypedArray()
+                ?: emptyArray()
     }
 
     fun loadCrowdinAndroidLocales(baseFolder: File): Array<String> {
-        return baseFolder.listFiles()
-            ?.filter { it.isFile && it.name.startsWith("strings_") }
-            ?.map { it.name.replace("strings_", "").replace(".xml", "") }
-            ?.toTypedArray() ?: emptyArray()
+        return baseFolder
+                .listFiles()
+                ?.filter { it.isFile && it.name.startsWith("strings_") }
+                ?.map { it.name.replace("strings_", "").replace(".xml", "") }
+                ?.toTypedArray()
+                ?: emptyArray()
     }
 
     fun copyStringsFile(lang: String, sourceDir: File, destBaseDir: File) {

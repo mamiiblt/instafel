@@ -51,7 +51,7 @@ public class UploadMapping implements ApiCallbackInterface {
                 reqBody.put("ig_version", InstafelEnv.IG_VERSION);
 
                 new ApiPostAdmin(this, 17, aUsername, aPassword, reqBody).execute(
-                        "https://api.instafel.mamii.dev/user_admin/mapping-is-exists"
+                        "https://api.mamii.dev/user_admin/mapping-is-exists"
                 );
             }
         } catch (Exception e) {
@@ -89,7 +89,7 @@ public class UploadMapping implements ApiCallbackInterface {
                         case "NOT_EXIST":
                             Log.i(LOG_TAG, "Mapping uploading request is sending...");
                             new AdminUploadMapping(this, 10,
-                                    aUsername, aPassword, overridesManager.getMappingFile()).execute("https://api.instafel.mamii.dev/user_admin/upload-mapping");
+                                    aUsername, aPassword, overridesManager.getMappingFile()).execute("https://api.mamii.dev/user_admin/upload-mapping");
                             break;
                     }
                     break;

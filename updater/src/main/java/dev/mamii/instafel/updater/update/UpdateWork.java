@@ -127,7 +127,7 @@ public class UpdateWork extends Worker {
                             try {
                                 OkHttpClient client = new OkHttpClient();
                                 Request request = new Request.Builder()
-                                        .url("https://api.instafel.mamii.dev/content/rels/get/latest")
+                                        .url("https://api.mamii.dev/content/rels/get/latest")
                                         .build();
                                 Response response = client.newCall(request).execute();
                                 if (response.isSuccessful()) {

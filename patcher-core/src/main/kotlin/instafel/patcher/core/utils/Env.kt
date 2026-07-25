@@ -14,10 +14,10 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import instafel.patcher.core.utils.modals.pojo.ConfigPOJO
 import instafel.patcher.core.utils.modals.pojo.ProjectPOJO
-import org.apache.commons.io.FileUtils
 import java.io.File
 import java.io.InputStream
 import kotlin.system.exitProcess
+import org.apache.commons.io.FileUtils
 
 object Env {
     val USER_DIR: String = System.getProperty("user.dir")
@@ -44,13 +44,14 @@ object Env {
         try {
             fileConf = File(Utils.mergePaths(PROJECT_DIR, "config.json"))
             if (!fileConf.exists()) {
-                Config = ConfigPOJO(
-                    manifestVersion = 1,
-                    productionMode = false,
-                    managerToken = "",
-                    githubPatToken = "",
-                    serverSessionToken = ""
-                )
+                Config =
+                        ConfigPOJO(
+                                manifestVersion = 1,
+                                productionMode = false,
+                                managerToken = "",
+                                githubPatToken = "",
+                                serverSessionToken = ""
+                        )
             }
             Config = gson.fromJson(fileConf.readText(), ConfigPOJO::class.java)
         } catch (e: Exception) {
@@ -64,11 +65,12 @@ object Env {
         try {
             fileProj = File(Utils.mergePaths(PROJECT_DIR, "project.json"))
             if (!fileProj.exists()) {
-                Project = ProjectPOJO(
-                    apiBase = "api.instafel.mamii.dev",
-                    igVersion = getIgVerCodeAndVersion().split("#")[0],
-                    igVersionCode = getIgVerCodeAndVersion().split("#")[1]
-                )
+                Project =
+                        ProjectPOJO(
+                                apiBase = "api.mamii.dev",
+                                igVersion = getIgVerCodeAndVersion().split("#")[0],
+                                igVersionCode = getIgVerCodeAndVersion().split("#")[1]
+                        )
             }
             Project = gson.fromJson(fileProj.readText(), ProjectPOJO::class.java)
         } catch (e: Exception) {
@@ -83,9 +85,9 @@ object Env {
 
     fun getIgVerCodeAndVersion(): String {
         val mapper = ObjectMapper(YAMLFactory())
-        val root = mapper.readTree(File(
-            Utils.mergePaths(PROJECT_DIR, "sources", "apktool.yml")
-        )).get("versionInfo")
+        val root =
+                mapper.readTree(File(Utils.mergePaths(PROJECT_DIR, "sources", "apktool.yml")))
+                        .get("versionInfo")
 
         return "${root.get("versionName").asText()}#${root.get("versionCode").asText()}"
     }

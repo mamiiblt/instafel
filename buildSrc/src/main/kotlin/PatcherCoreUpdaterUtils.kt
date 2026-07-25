@@ -6,21 +6,21 @@
  * project, please contact me via mamii@mamii.dev or other ways.
  */
 
-import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
-import java.net.URL
 import java.net.HttpURLConnection
+import java.net.URL
+import org.json.JSONObject
 
 data class PCoreReleaseInfo(
-    val releaseViewLink: String,
-    val releaseId: Int,
-    val baseCommitHash: String
+        val releaseViewLink: String,
+        val releaseId: Int,
+        val baseCommitHash: String
 )
 
 class PatcherCoreUpdaterUtils(
-    val managerToken: String,
-    val ghPatToken: String,
+        val managerToken: String,
+        val ghPatToken: String,
 ) {
 
     fun getLatestPCoreRelease(): PCoreReleaseInfo {
@@ -37,10 +37,16 @@ class PatcherCoreUpdaterUtils(
         val releaseId = releaseData.getInt("id")
         val body = releaseData.getString("body").split("\n")
         lateinit var baseCommitHash: String
-        body.forEach { line -> if (line.contains("| Commit  |")) baseCommitHash = Regex("""\[(\b[a-f0-9]{7,40}\b)]\(""").find(line)?.groupValues?.get(1)?.trim()!! }
-        return PCoreReleaseInfo(
-            releaseViewLink, releaseId, baseCommitHash
-        )
+        body.forEach { line ->
+            if (line.contains("| Commit  |"))
+                    baseCommitHash =
+                            Regex("""\[(\b[a-f0-9]{7,40}\b)]\(""")
+                                    .find(line)
+                                    ?.groupValues
+                                    ?.get(1)
+                                    ?.trim()!!
+        }
+        return PCoreReleaseInfo(releaseViewLink, releaseId, baseCommitHash)
     }
 
     fun sendActionCompletedReq() {
@@ -50,7 +56,7 @@ class PatcherCoreUpdaterUtils(
         body.put("commit_hash", uData.baseCommitHash)
         body.put("view_url", uData.releaseViewLink)
 
-        val url = URL("https://api.instafel.mamii.dev/manager/update-op-completed")
+        val url = URL("https://api.mamii.dev/manager/update-op-completed")
         val connection = url.openConnection() as HttpURLConnection
 
         connection.requestMethod = "POST"
@@ -60,16 +66,15 @@ class PatcherCoreUpdaterUtils(
         connection.setRequestProperty("manager-token", managerToken)
 
         val outputBytes = body.toString().toByteArray(Charsets.UTF_8)
-        connection.outputStream.use { os ->
-            os.write(outputBytes)
-        }
+        connection.outputStream.use { os -> os.write(outputBytes) }
 
         val responseCode = connection.responseCode
-        val response = if (responseCode == HttpURLConnection.HTTP_OK) {
-            BufferedReader(InputStreamReader(connection.inputStream)).use { it.readText() }
-        } else {
-            BufferedReader(InputStreamReader(connection.errorStream)).use { it.readText() }
-        }
+        val response =
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader(InputStreamReader(connection.inputStream)).use { it.readText() }
+                } else {
+                    BufferedReader(InputStreamReader(connection.errorStream)).use { it.readText() }
+                }
 
         println("Status: $responseCode")
         println("Response: $response")
