@@ -27,6 +27,7 @@ dependencies {
     implementation(libs.org.json)
     implementation(libs.apache.commons.io)
     implementation(libs.okhttp)
+    implementation(libs.sshj)
     implementation(libs.apktool.lib)
     implementation(libs.jackson.databind)
     implementation(libs.jackson.yaml)

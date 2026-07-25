@@ -1,10 +1,11 @@
 [versions]
+sshj = "0.40.0"
 gson = "2.14.0"
-kotlin_android = "2.4.10"
-kotlin_jvm = "2.4.10"
-kotlin_reflect = "2.4.10"
-kotlin_stdlib = "2.4.10"
-kotlin_coroutines = "1.11.0"
+kotlin_android = "2.3.10"
+kotlin_jvm = "2.3.10"
+kotlin_reflect = "2.2.20"
+kotlin_stdlib = "2.2.20"
+kotlin_coroutines = "1.10.2"
 shadowjar_ref = "9.3.2"
 gplayapi = "0e224071"
 org-json = "20260719"
@@ -34,6 +35,7 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_jvm" }
 shadowjar = { id = "com.gradleup.shadow", version.ref = "shadowjar_ref" }
 
 [libraries]
+sshj = { group = "com.hierynomus", name = "sshj", version.ref = "sshj" }
 kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin_coroutines" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin_stdlib" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin_reflect" }

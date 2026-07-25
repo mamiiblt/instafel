@@ -14,16 +14,19 @@ import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.utils.modals.pojo.BuildInfo
+import instafel.patcher.core.utils.modals.pojo.PreviewCreateRequest
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
-import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MultipartBody
+import net.schmizz.sshj.SSHClient
+import net.schmizz.sshj.sftp.SFTPClient
+import net.schmizz.sshj.sftp.SFTPException
+import net.schmizz.sshj.transport.verification.PromiscuousVerifier
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody.Companion.asRequestBody
 
 object UploadPreview : CLIJob {
 
@@ -34,13 +37,12 @@ object UploadPreview : CLIJob {
     lateinit var buildFolder: File
     lateinit var GITHUB_PAT: String
     lateinit var SERVER_SESSION_TOKEN: String
-    val httpClient =
-            OkHttpClient.Builder()
-                    .connectTimeout(0, TimeUnit.MILLISECONDS)
-                    .readTimeout(0, TimeUnit.MILLISECONDS)
-                    .writeTimeout(0, TimeUnit.MILLISECONDS)
-                    .callTimeout(0, TimeUnit.MILLISECONDS)
-                    .build()
+    lateinit var SFTP_HOST: String
+    lateinit var SFTP_PORT: String
+    lateinit var SFTP_USERNAME: String
+    lateinit var SFTP_PASSWORD: String
+
+    val httpClient = OkHttpClient()
     var isProdMode = false
 
     override fun runJob(vararg args: Any) {
@@ -60,6 +62,10 @@ object UploadPreview : CLIJob {
         isProdMode = Env.Config.productionMode
         GITHUB_PAT = Env.Config.githubPatToken
         SERVER_SESSION_TOKEN = Env.Config.serverSessionToken
+        SFTP_HOST = Env.Config.sftpAddress
+        SFTP_PORT = Env.Config.sftpPort
+        SFTP_USERNAME = Env.Config.sftpUsername
+        SFTP_PASSWORD = Env.Config.sftpPassword
 
         if (isProdMode) {
             buildFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
@@ -93,32 +99,31 @@ object UploadPreview : CLIJob {
     }
 
     fun createRelease(patcherVersion: String, patcherCommit: String) {
-        Log.info("Adding APK(s) into FormBody for request. It may be take long time.")
-        val requestBody =
-                MultipartBody.Builder()
-                        .setType(MultipartBody.FORM)
-                        .addFormDataPart("patcher_version", patcherVersion)
-                        .addFormDataPart("patcher_commit", patcherCommit)
-                        .addFormDataPart("build_info", Env.gson.toJson(buildInfo))
-                        .addFormDataPart(
-                                "files",
-                                APK_UC.name,
-                                APK_UC.asRequestBody(
-                                        "application/vnd.android.package-archive".toMediaType()
-                                )
-                        )
-                        .addFormDataPart(
-                                "files",
-                                APK_C.name,
-                                APK_C.asRequestBody(
-                                        "application/vnd.android.package-archive".toMediaType()
-                                )
-                        )
-                        .build()
+        Log.info("Uploading build files to CDN...")
+        uploadApks(
+                host = SFTP_HOST,
+                port = SFTP_PORT.toInt(),
+                username = SFTP_USERNAME,
+                password = SFTP_PASSWORD,
+                remoteDirectory =
+                        "/mamii-cdn-files/instafel/previews/${buildInfo.patcherData.generationId}",
+                uncloneApk = APK_UC,
+                cloneApk = APK_C
+        )
+
+        Log.info("Creating preview in API side...")
+        val body =
+                PreviewCreateRequest(
+                        patcherVersion = patcherVersion,
+                        patcherCommit = patcherCommit,
+                        buildInfo = Env.gson.toJson(buildInfo)
+                )
+
+        val requestBody = Env.gson.toJson(body).toRequestBody("application/json".toMediaType())
 
         val request =
                 Request.Builder()
-                        .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
+                        .url("http://localhost:3001/madmin/content/instafel/preview/create")
                         .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
                         .post(requestBody)
                         .build()
@@ -133,4 +138,63 @@ object UploadPreview : CLIJob {
             }
         }
     }
+}
+
+fun uploadApks(
+        host: String,
+        port: Int = 22,
+        username: String,
+        password: String,
+        remoteDirectory: String,
+        uncloneApk: File,
+        cloneApk: File
+) {
+    val ssh = SSHClient()
+    ssh.addHostKeyVerifier(PromiscuousVerifier())
+
+    try {
+        ssh.connect(host, port)
+        ssh.authPassword(username, password)
+
+        ssh.newSFTPClient().use { sftp ->
+            var createdDirectory = false
+
+            try {
+                if (!exists(sftp, remoteDirectory)) {
+                    sftp.mkdir(remoteDirectory)
+                    Log.info("Generation preview directory created successfully.")
+                    createdDirectory = true
+                }
+
+                upload(sftp, uncloneApk, "$remoteDirectory/${uncloneApk.name}", "unclone")
+                upload(sftp, cloneApk, "$remoteDirectory/${cloneApk.name}", "clone")
+                Log.info("All variants uploaded to cdn successfully.")
+            } catch (e: Exception) {
+                if (createdDirectory) {
+                    runCatching { sftp.rmdir(remoteDirectory) }
+                }
+                throw e
+            }
+        }
+    } finally {
+        if (ssh.isConnected) {
+            ssh.disconnect()
+        }
+        ssh.close()
+    }
+}
+
+private fun exists(sftp: SFTPClient, path: String): Boolean =
+        try {
+            sftp.stat(path)
+            true
+        } catch (_: SFTPException) {
+            false
+        }
+
+private fun upload(sftp: SFTPClient, local: File, remote: String, apkType: String) {
+    require(local.exists()) { "File does not exist: ${local.absolutePath}" }
+    Log.info("Uplading $apkType variant into CDN..")
+    sftp.put(local.absolutePath, remote)
+    Log.info("$apkType variant uploaded to CDN successfully.")
 }

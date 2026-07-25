@@ -50,7 +50,11 @@ object Env {
                                 productionMode = false,
                                 managerToken = "",
                                 githubPatToken = "",
-                                serverSessionToken = ""
+                                serverSessionToken = "",
+                                sftpAddress = "",
+                                sftpPort = "3010",
+                                sftpUsername = "",
+                                sftpPassword = ""
                         )
             }
             Config = gson.fromJson(fileConf.readText(), ConfigPOJO::class.java)

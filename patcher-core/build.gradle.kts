@@ -33,6 +33,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.apktool.lib)
     implementation(libs.jackson.databind)
+    implementation(libs.sshj)
     implementation(libs.jackson.yaml)
     implementation(libs.gson)
 }
