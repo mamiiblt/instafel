@@ -1,22 +1,21 @@
 [versions]
-gson = "2.13.2"
-kotlin_android = "2.3.10"
-kotlin_jvm = "2.3.10"
-kotlin_reflect = "2.2.20"
-kotlin_stdlib = "2.2.20"
-kotlin_coroutines = "1.10.2"
+gson = "2.14.0"
+kotlin_android = "2.4.10"
+kotlin_jvm = "2.4.10"
+kotlin_reflect = "2.4.10"
+kotlin_stdlib = "2.4.10"
+kotlin_coroutines = "1.11.0"
 shadowjar_ref = "9.3.2"
 gplayapi = "0e224071"
-org-json = "20251224"
-okhttp = "5.3.2"
-apache-commonsio = "2.21.0"
-apktool-lib = "2.12.1"
-classgraph = "4.8.184"
-jackson-databind = "2.21.1"
-jackson-yaml = "2.21.1"
+org-json = "20260719"
+okhttp = "5.4.0"
+apache-commonsio = "2.22.0"
+apktool-lib = "3.0.3"
+jackson-databind = "2.22.1"
+jackson-yaml = "2.22.1"
 shizuku-api = "13.1.5"
 shizuku-provider = "13.1.5"
-rootbeer = "0.1.1"
+rootbeer = "0.1.2"
 m3-preferences = "0.2.5"
 a_agp = "8.12.3"
 a_appcompat = "1.7.1"
@@ -44,7 +43,6 @@ org-json = { group = "org.json", name = "json", version.ref = "org-json" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 apache-commons-io = { group = "commons-io", name = "commons-io", version.ref = "apache-commonsio" }
 apktool_lib = { group = "org.apktool", name = "apktool-lib", version.ref = "apktool-lib" }
-classgraph = { group = "io.github.classgraph", name = "classgraph", version.ref = "classgraph" }
 jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson-databind" }
 jackson-yaml = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-yaml", version.ref = "jackson-yaml" }
 shizuku-api = { group = "dev.rikka.shizuku", name = "api", version.ref = "shizuku-api" }

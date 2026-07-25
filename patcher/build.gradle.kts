@@ -17,6 +17,7 @@ plugins {
 }
 
 group = "instafel"
+
 version = "v${Config.patcher.version}-${Config.patcher.tag}"
 
 dependencies {
@@ -27,15 +28,12 @@ dependencies {
     implementation(libs.apache.commons.io)
     implementation(libs.okhttp)
     implementation(libs.apktool.lib)
-    implementation(libs.classgraph)
     implementation(libs.jackson.databind)
     implementation(libs.jackson.yaml)
     implementation(libs.gson)
 }
 
-application {
-    mainClass = "instafel.patcher.MainKt"
-}
+application { mainClass = "instafel.patcher.MainKt" }
 
 tasks.shadowJar {
     archiveBaseName = "ifl-patcher"
@@ -44,10 +42,10 @@ tasks.shadowJar {
 
     manifest {
         attributes(
-            "Patcher-Cli-Version" to Config.patcher.version,
-            "Patcher-Cli-Commit" to project.getCommitHash(),
-            "Patcher-Cli-Branch" to "main",
-            "Patcher-Cli-Tag" to Config.patcher.tag
+                "Patcher-Cli-Version" to Config.patcher.version,
+                "Patcher-Cli-Commit" to project.getCommitHash(),
+                "Patcher-Cli-Branch" to "main",
+                "Patcher-Cli-Tag" to Config.patcher.tag
         )
     }
 }
@@ -58,9 +56,7 @@ tasks.register("build-jar") {
 
     dependsOn("shadowJar")
 
-    doLast {
-        println("All build tasks completed successfully")
-    }
+    doLast { println("All build tasks completed successfully") }
 }
 
 tasks.register("release") {
@@ -71,20 +67,22 @@ tasks.register("release") {
 
     doLast {
         registerGithubReleaseTask(
-            token = getInstafelEnvProperty("GH_TOKEN"),
-            owner = "instafel",
-            repo = "p-rel",
-            tagName = "v${Config.patcher.version}",
-            name =  "Release v${Config.patcher.version}",
-            assets = listOf(
-                tasks.shadowJar.get().archiveFile.get().asFile,
-                generatePatcherBuildJSON(
-                    version = Config.patcher.version,
-                    channel = Config.patcher.tag,
-                    commit = project.getCommitHash(),
-                )
-            ),
-            body =  """
+                token = getInstafelEnvProperty("GH_TOKEN"),
+                owner = "instafel",
+                repo = "p-rel",
+                tagName = "v${Config.patcher.version}",
+                name = "Release v${Config.patcher.version}",
+                assets =
+                        listOf(
+                                tasks.shadowJar.get().archiveFile.get().asFile,
+                                generatePatcherBuildJSON(
+                                        version = Config.patcher.version,
+                                        channel = Config.patcher.tag,
+                                        commit = project.getCommitHash(),
+                                )
+                        ),
+                body =
+                        """
                 # Build Information
         
                 | Property | Value |
@@ -102,6 +100,4 @@ tasks.register("release") {
     }
 }
 
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("-Xlint:deprecation")
-}
+tasks.withType<JavaCompile> { options.compilerArgs.add("-Xlint:deprecation") }

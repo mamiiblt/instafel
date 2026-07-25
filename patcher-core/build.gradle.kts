@@ -6,8 +6,8 @@
  * project, please contact me via mamii@mamii.dev or other ways.
  */
 
-import IFLProjectManager.getCommitHash
 import IFLProjectManager.Config
+import IFLProjectManager.getCommitHash
 import java.util.jar.JarEntry
 import java.util.jar.JarFile
 import java.util.jar.JarOutputStream
@@ -21,6 +21,7 @@ plugins {
 lateinit var patchesJsonFile: File
 
 group = "instafel"
+
 version = project.getCommitHash()
 
 dependencies {
@@ -31,7 +32,6 @@ dependencies {
     implementation(libs.apache.commons.io)
     implementation(libs.okhttp)
     implementation(libs.apktool.lib)
-    implementation(libs.classgraph)
     implementation(libs.jackson.databind)
     implementation(libs.jackson.yaml)
     implementation(libs.gson)
@@ -44,9 +44,9 @@ tasks.named<Jar>("jar") {
 
     manifest {
         attributes(
-            "Patcher-Core-Commit" to project.getCommitHash(),
-            "Patcher-Core-Supported-Version" to Config.patcher.version,
-            "Patcher-Core-Branch" to "main"
+                "Patcher-Core-Commit" to project.getCommitHash(),
+                "Patcher-Core-Supported-Version" to Config.patcher.version,
+                "Patcher-Core-Branch" to "main"
         )
     }
 }
@@ -57,9 +57,7 @@ tasks.register("build-jar") {
 
     dependsOn("jar", "generatePatchesJSON")
 
-    doLast {
-        println("Core JAR successfully generated.")
-    }
+    doLast { println("Core JAR successfully generated.") }
 }
 
 tasks.register("generatePatchesJSON") {
@@ -67,7 +65,7 @@ tasks.register("generatePatchesJSON") {
     group = "ifl-patcher-core"
     description = "Generates a patches.json file contains patch details"
 
-    doLast{
+    doLast {
         val jarFile = tasks.jar.get().archiveFile.get().asFile
         patchesJsonFile = generatePatchesJSON(jarFile)
 
@@ -100,21 +98,23 @@ tasks.register("release") {
 
     doLast {
         registerGithubReleaseTask(
-            token = getInstafelEnvProperty("GH_TOKEN"),
-            owner = "instafel",
-            repo = "pc-rel",
-            tagName = "${project.getCommitHash()}-${Config.patcher.version}",
-            name =  "Core ${project.getCommitHash()}",
-            assets = listOf(
-                tasks.jar.get().archiveFile.get().asFile,
-                patchesJsonFile,
-                generatePatcherCoreBuildJSON(
-                    commit = project.getCommitHash(),
-                    branch = "main",
-                    supportedVer = Config.patcher.version
-                )
-            ),
-            body =  """
+                token = getInstafelEnvProperty("GH_TOKEN"),
+                owner = "instafel",
+                repo = "pc-rel",
+                tagName = "${project.getCommitHash()}-${Config.patcher.version}",
+                name = "Core ${project.getCommitHash()}",
+                assets =
+                        listOf(
+                                tasks.jar.get().archiveFile.get().asFile,
+                                patchesJsonFile,
+                                generatePatcherCoreBuildJSON(
+                                        commit = project.getCommitHash(),
+                                        branch = "main",
+                                        supportedVer = Config.patcher.version
+                                )
+                        ),
+                body =
+                        """
                 # Build Information
         
                 | Property | Value |
@@ -132,3 +132,6 @@ tasks.register("release") {
         )
     }
 }
+
+
+

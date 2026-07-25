@@ -16,11 +16,11 @@ import brut.directory.ExtFile
 import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.Utils
-import org.apache.commons.io.FileUtils
 import java.io.File
 import java.io.IOException
+import org.apache.commons.io.FileUtils
 
-class SourceManager(var config: Config = Config()) {
+class SourceManager(var config: Config = Config("3.0.3")) {
 
     @Throws(IOException::class, AndrolibException::class)
     fun decompile(apkFile: ExtFile) {
@@ -37,11 +37,7 @@ class SourceManager(var config: Config = Config()) {
         if (!buildDir.exists()) {
             FileUtils.forceMkdir(buildDir)
         }
-        val apkBuilder = ApkBuilder(
-            ExtFile(
-                Utils.mergePaths(Env.PROJECT_DIR, "sources")
-            ), config
-        )
+        val apkBuilder = ApkBuilder(ExtFile(Utils.mergePaths(Env.PROJECT_DIR, "sources")), config)
         apkBuilder.build(File(Utils.mergePaths(buildDir.absolutePath, fileName)))
         Log.info("APK built successfully")
         Log.info("Saved as build/$fileName")
