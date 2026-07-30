@@ -21,12 +21,20 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 import kotlin.system.exitProcess
-import net.schmizz.sshj.SSHClient
-import net.schmizz.sshj.sftp.SFTPClient
-import net.schmizz.sshj.sftp.SFTPException
-import net.schmizz.sshj.transport.verification.PromiscuousVerifier
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import software.amazon.awssdk.auth.credentials.AwsBasicCredentials
+import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider
+import software.amazon.awssdk.core.sync.RequestBody
+import software.amazon.awssdk.regions.Region
+import software.amazon.awssdk.services.s3.S3AsyncClient
+import software.amazon.awssdk.services.s3.S3Client
+import software.amazon.awssdk.services.s3.S3Configuration
+import software.amazon.awssdk.services.s3.model.PutObjectRequest
+import software.amazon.awssdk.transfer.s3.S3TransferManager
+import software.amazon.awssdk.transfer.s3.model.UploadFileRequest
+import software.amazon.awssdk.transfer.s3.model.UploadRequest
+import java.net.URI
 
 object UploadPreview : CLIJob {
 
@@ -37,10 +45,8 @@ object UploadPreview : CLIJob {
     lateinit var buildFolder: File
     lateinit var GITHUB_PAT: String
     lateinit var SERVER_SESSION_TOKEN: String
-    lateinit var SFTP_HOST: String
-    lateinit var SFTP_PORT: String
-    lateinit var SFTP_USERNAME: String
-    lateinit var SFTP_PASSWORD: String
+    lateinit var S3_ACCESS_KEY_ID: String
+    lateinit var S3_SECRET_KEY: String
 
     val httpClient = OkHttpClient()
     var isProdMode = false
@@ -62,10 +68,8 @@ object UploadPreview : CLIJob {
         isProdMode = Env.Config.productionMode
         GITHUB_PAT = Env.Config.githubPatToken
         SERVER_SESSION_TOKEN = Env.Config.serverSessionToken
-        SFTP_HOST = Env.Config.sftpAddress
-        SFTP_PORT = Env.Config.sftpPort
-        SFTP_USERNAME = Env.Config.sftpUsername
-        SFTP_PASSWORD = Env.Config.sftpPassword
+        S3_ACCESS_KEY_ID = Env.Config.s3AccessKeyId
+        S3_SECRET_KEY = Env.Config.s3SecretKey
 
         if (isProdMode) {
             buildFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
@@ -100,33 +104,33 @@ object UploadPreview : CLIJob {
 
     fun createRelease(patcherVersion: String, patcherCommit: String) {
         Log.info("Uploading build files to CDN...")
-        uploadApks(
-                host = SFTP_HOST,
-                port = SFTP_PORT.toInt(),
-                username = SFTP_USERNAME,
-                password = SFTP_PASSWORD,
-                remoteDirectory =
-                        "/mamii-cdn-files/instafel/previews/${buildInfo.patcherData.generationId}",
-                uncloneApk = APK_UC,
-                cloneApk = APK_C
+
+        val success = uploadBuildArtifactsIntoCdn(
+            buildInfo.patcherData.generationId,
+            listOf(APK_C, APK_UC)
         )
+
+        if (!success) {
+            Log.severe("Upload failed.")
+            exitProcess(-1)
+        }
 
         Log.info("Creating preview in API side...")
         val body =
-                PreviewCreateRequest(
-                        patcherVersion = patcherVersion,
-                        patcherCommit = patcherCommit,
-                        buildInfo = Env.gson.toJson(buildInfo)
-                )
+            PreviewCreateRequest(
+                patcherVersion = patcherVersion,
+                patcherCommit = patcherCommit,
+                buildInfo = Env.gson.toJson(buildInfo)
+            )
 
         val requestBody = Env.gson.toJson(body).toRequestBody("application/json".toMediaType())
 
         val request =
-                Request.Builder()
-                        .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
-                        .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
-                        .post(requestBody)
-                        .build()
+            Request.Builder()
+                .url("http://localhost:3001/madmin/content/instafel/preview/create")
+                .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
+                .post(requestBody)
+                .build()
 
         httpClient.newCall(request).execute().use { response ->
             val resp = response.body.string()
@@ -138,63 +142,67 @@ object UploadPreview : CLIJob {
             }
         }
     }
-}
 
-fun uploadApks(
-        host: String,
-        port: Int = 22,
-        username: String,
-        password: String,
-        remoteDirectory: String,
-        uncloneApk: File,
-        cloneApk: File
-) {
-    val ssh = SSHClient()
-    ssh.addHostKeyVerifier(PromiscuousVerifier())
+    fun uploadBuildArtifactsIntoCdn(
+        generationId: String,
+        files: List<File>
+    ): Boolean {
+        return try {
+            val s3 = S3AsyncClient.builder()
+                .endpointOverride(URI.create("http://195.85.201.93:9000"))
+                .region(Region.of("tr-west-1"))
+                .credentialsProvider(
+                    StaticCredentialsProvider.create(
+                        AwsBasicCredentials.create(
+                            S3_ACCESS_KEY_ID,
+                            S3_SECRET_KEY
+                        )
+                    )
+                )
+                .serviceConfiguration(
+                    S3Configuration.builder()
+                        .pathStyleAccessEnabled(true)
+                        .build()
+                )
+                .build()
 
-    try {
-        ssh.connect(host, port)
-        ssh.authPassword(username, password)
+            for (file in files) {
+                Log.info("Uploading '${file.name}' into bucket...")
+                val fileKey = "previews/$generationId/${file.name}"
+                val start = System.currentTimeMillis()
 
-        ssh.newSFTPClient().use { sftp ->
-            var createdDirectory = false
+                val transferManager = S3TransferManager.builder()
+                    .s3Client(s3)
+                    .build()
+                val upload = transferManager.uploadFile(
+                    UploadFileRequest.builder()
+                        .putObjectRequest(
+                            PutObjectRequest.builder()
+                                .bucket("instafel")
+                                .key(fileKey)
+                                .build()
+                        )
+                        .source(Paths.get(file.absolutePath))
 
-            try {
-                if (!exists(sftp, remoteDirectory)) {
-                    sftp.mkdir(remoteDirectory)
-                    Log.info("Generation preview directory created successfully.")
-                    createdDirectory = true
-                }
+                        .build()
+                )
 
-                upload(sftp, uncloneApk, "$remoteDirectory/${uncloneApk.name}", "unclone")
-                upload(sftp, cloneApk, "$remoteDirectory/${cloneApk.name}", "clone")
-                Log.info("All variants uploaded to cdn successfully.")
-            } catch (e: Exception) {
-                if (createdDirectory) {
-                    runCatching { sftp.rmdir(remoteDirectory) }
-                }
-                throw e
+                upload.completionFuture().join()
+
+                val elapsed = System.currentTimeMillis() - start
+
+                val minutes = elapsed / 60_000
+                val seconds = (elapsed % 60_000) / 1_000
+                val millis = elapsed % 1_000
+
+                Log.info("File '${file.name}' uploaded successfully in ${minutes}m ${seconds}s ${millis}ms")
             }
-        }
-    } finally {
-        if (ssh.isConnected) {
-            ssh.disconnect()
-        }
-        ssh.close()
-    }
-}
 
-private fun exists(sftp: SFTPClient, path: String): Boolean =
-        try {
-            sftp.stat(path)
             true
-        } catch (_: SFTPException) {
+        } catch (e: Exception) {
+            e.printStackTrace()
+
             false
         }
-
-private fun upload(sftp: SFTPClient, local: File, remote: String, apkType: String) {
-    require(local.exists()) { "File does not exist: ${local.absolutePath}" }
-    Log.info("Uplading $apkType variant into CDN..")
-    sftp.put(local.absolutePath, remote)
-    Log.info("$apkType variant uploaded to CDN successfully.")
+    }
 }

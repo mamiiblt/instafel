@@ -16,10 +16,8 @@ data class ConfigPOJO(
         var managerToken: String = "",
         var githubPatToken: String = "",
         var serverSessionToken: String = "",
-        var sftpAddress: String = "",
-        var sftpPort: String = "3010",
-        var sftpUsername: String = "",
-        var sftpPassword: String = "",
+        var s3AccessKeyId: String = "",
+        var s3SecretKey: String = ""
 )
 
 data class ProjectPOJO(

@@ -33,9 +33,12 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.apktool.lib)
     implementation(libs.jackson.databind)
-    implementation(libs.sshj)
     implementation(libs.jackson.yaml)
     implementation(libs.gson)
+    implementation(libs.aws.s3.java)
+    implementation(libs.aws.s3.netty.nio.client)
+    implementation(libs.aws.s3.transfer.manager)
+    implementation(libs.slf4j.simple)
 }
 
 tasks.named<Jar>("jar") {

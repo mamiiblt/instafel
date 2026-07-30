@@ -1,5 +1,8 @@
 [versions]
-sshj = "0.40.0"
+slf4j-simple = "2.0.18"
+aws-java-s3 = "2.49.6"
+aws-java-transfer-manager = "2.49.6"
+aws-java-netty-nio-client = "2.49.6"
 gson = "2.14.0"
 kotlin_android = "2.3.10"
 kotlin_jvm = "2.3.10"
@@ -20,13 +23,13 @@ rootbeer = "0.1.2"
 m3-preferences = "0.2.5"
 a_agp = "8.12.3"
 a_appcompat = "1.7.1"
-a_material = "1.13.0"
-a_activity = "1.12.4"
-a_constraintlayout = "2.2.1"
-a_navigationFragment = "2.9.7"
-a_navigationUi = "2.9.7"
+a_material = "1.14.0"
+a_activity = "1.13.0"
+a_constraintlayout = "2.2.2"
+a_navigationFragment = "2.9.8"
+a_navigationUi = "2.9.8"
 a_preference = "1.2.1"
-a_workManager = "2.11.1"
+a_workManager = "2.11.2"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "a_agp" }
@@ -35,7 +38,10 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin_jvm" }
 shadowjar = { id = "com.gradleup.shadow", version.ref = "shadowjar_ref" }
 
 [libraries]
-sshj = { group = "com.hierynomus", name = "sshj", version.ref = "sshj" }
+slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j-simple"}
+aws-s3-java = { group = "software.amazon.awssdk", name = "s3", version.ref = "aws-java-s3"}
+aws-s3-transfer-manager = { group = "software.amazon.awssdk", name = "s3-transfer-manager", version.ref = "aws-java-transfer-manager"}
+aws-s3-netty-nio-client = { group = "software.amazon.awssdk", name = "netty-nio-client", version.ref = "aws-java-netty-nio-client"}
 kotlin-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlin_coroutines" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlin_stdlib" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin_reflect" }

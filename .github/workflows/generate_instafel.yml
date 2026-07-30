@@ -37,10 +37,8 @@ jobs:
             "managerToken": "${{ secrets.MANAGER_TOKEN }}",
             "githubPatToken": "${{ secrets.GH_PAT_TOKEN }}",
             "serverSessionToken": "${{ secrets.SERVER_SESSION_TOKEN }}",
-            "sftpAddress": "${{ secrets.SFTP_ADDRESS }}",
-            "sftpPort": "${{ secrets.SFTP_PORT }}",
-            "sftpUsername": "${{ secrets.SFTP_USERNAME }}",
-            "sftpPassword": "${{ secrets.SFTP_PASSWORD }}"
+            "s3AccessKeyId": "${{ secrets.S3_ACCESS_KEY_ID }}",
+            "s3SecretKey": "${{ secrets.S3_SECRET_KEY }}"
           }
           EOF
 

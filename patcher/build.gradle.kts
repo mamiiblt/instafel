@@ -27,11 +27,14 @@ dependencies {
     implementation(libs.org.json)
     implementation(libs.apache.commons.io)
     implementation(libs.okhttp)
-    implementation(libs.sshj)
     implementation(libs.apktool.lib)
     implementation(libs.jackson.databind)
     implementation(libs.jackson.yaml)
     implementation(libs.gson)
+    implementation(libs.aws.s3.java)
+    implementation(libs.aws.s3.netty.nio.client)
+    implementation(libs.aws.s3.transfer.manager)
+    implementation(libs.slf4j.simple)
 }
 
 application { mainClass = "instafel.patcher.MainKt" }
