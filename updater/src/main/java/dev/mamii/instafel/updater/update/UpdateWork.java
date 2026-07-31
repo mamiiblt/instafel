@@ -165,10 +165,10 @@ public class UpdateWork extends Worker {
                                         String b_download_url = null;
                                         if (type.equals("uc")) {
                                             String fName = res.getJSONObject("fileInfos").getJSONObject("unclone").getString("fileName");
-                                            b_download_url = "https://github.com/mamiiblt/instafel/releases/download/v" + iflVersion +"/" + fName;
+                                            b_download_url = "https://cdn.mamii.dev/instafel/releases/v" + iflVersion +"/" + fName;
                                         } else {
                                             String fName = res.getJSONObject("fileInfos").getJSONObject("clone").getString("fileName");
-                                            b_download_url = "https://github.com/mamiiblt/instafel/releases/download/v" + iflVersion +"/" + fName;
+                                            b_download_url = "https://cdn.mamii.dev/instafel/releases/v" + iflVersion +"/" + fName;
                                         }
 
                                         if (b_download_url != null) {
