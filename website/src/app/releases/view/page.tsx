@@ -188,7 +188,7 @@ function DownloadButton({
             disabled={isDeleted}
             onClick={() =>
                 window.open(
-                    `https://github.com/mamiiblt/instafel/releases/download/v${downloadDataInfo.iflVersion}/${downloadDataInfo.fileName}`,
+                    `https://cdn.mamii.dev/instafel/releases/v${downloadDataInfo.iflVersion}/${downloadDataInfo.fileName}`,
                     "_blank",
                 )
             }
