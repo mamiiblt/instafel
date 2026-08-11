@@ -149,7 +149,7 @@ object UploadPreview : CLIJob {
     ): Boolean {
         return try {
             val s3 = S3AsyncClient.builder()
-                .endpointOverride(URI.create("http://195.85.201.93:9000"))
+                .endpointOverride(URI.create("http://153.56.180.15:9000"))
                 .region(Region.of("tr-west-1"))
                 .credentialsProvider(
                     StaticCredentialsProvider.create(
