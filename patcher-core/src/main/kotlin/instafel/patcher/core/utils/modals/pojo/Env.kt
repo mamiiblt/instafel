@@ -16,6 +16,7 @@ data class ConfigPOJO(
         var managerToken: String = "",
         var githubPatToken: String = "",
         var serverSessionToken: String = "",
+        var s3ConnectionUrl: String = "",
         var s3AccessKeyId: String = "",
         var s3SecretKey: String = ""
 )

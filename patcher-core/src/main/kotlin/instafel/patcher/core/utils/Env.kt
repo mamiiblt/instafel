@@ -52,7 +52,8 @@ object Env {
                                 githubPatToken = "",
                                 serverSessionToken = "",
                                 s3AccessKeyId = "",
-                                s3SecretKey = ""
+                                s3SecretKey = "",
+                                s3ConnectionUrl = ""
                         )
             }
             Config = gson.fromJson(fileConf.readText(), ConfigPOJO::class.java)
