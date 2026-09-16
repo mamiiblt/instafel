@@ -15,26 +15,23 @@ import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.CLIJob
 import instafel.patcher.core.utils.modals.pojo.BuildInfo
 import instafel.patcher.core.utils.modals.pojo.PreviewCreateRequest
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
+import java.net.URI
 import java.nio.file.Files
 import java.nio.file.Paths
 import kotlin.system.exitProcess
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider
-import software.amazon.awssdk.core.sync.RequestBody
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.s3.S3AsyncClient
-import software.amazon.awssdk.services.s3.S3Client
 import software.amazon.awssdk.services.s3.S3Configuration
 import software.amazon.awssdk.services.s3.model.PutObjectRequest
 import software.amazon.awssdk.transfer.s3.S3TransferManager
 import software.amazon.awssdk.transfer.s3.model.UploadFileRequest
-import software.amazon.awssdk.transfer.s3.model.UploadRequest
-import java.net.URI
 
 object UploadPreview : CLIJob {
 
@@ -47,6 +44,7 @@ object UploadPreview : CLIJob {
     lateinit var SERVER_SESSION_TOKEN: String
     lateinit var S3_ACCESS_KEY_ID: String
     lateinit var S3_SECRET_KEY: String
+    lateinit var S3_CONNECTION_URL: String
 
     val httpClient = OkHttpClient()
     var isProdMode = false
@@ -70,6 +68,7 @@ object UploadPreview : CLIJob {
         SERVER_SESSION_TOKEN = Env.Config.serverSessionToken
         S3_ACCESS_KEY_ID = Env.Config.s3AccessKeyId
         S3_SECRET_KEY = Env.Config.s3SecretKey
+        S3_CONNECTION_URL = Env.Config.s3ConnectionUrl
 
         if (isProdMode) {
             buildFolder = File(Utils.mergePaths(Env.PROJECT_DIR, "build"))
@@ -105,10 +104,11 @@ object UploadPreview : CLIJob {
     fun createRelease(patcherVersion: String, patcherCommit: String) {
         Log.info("Uploading build files to CDN...")
 
-        val success = uploadBuildArtifactsIntoCdn(
-            buildInfo.patcherData.generationId,
-            listOf(APK_C, APK_UC)
-        )
+        val success =
+                uploadBuildArtifactsIntoCdn(
+                        buildInfo.patcherData.generationId,
+                        listOf(APK_C, APK_UC)
+                )
 
         if (!success) {
             Log.severe("Upload failed.")
@@ -117,20 +117,20 @@ object UploadPreview : CLIJob {
 
         Log.info("Creating preview in API side...")
         val body =
-            PreviewCreateRequest(
-                patcherVersion = patcherVersion,
-                patcherCommit = patcherCommit,
-                buildInfo = Env.gson.toJson(buildInfo)
-            )
+                PreviewCreateRequest(
+                        patcherVersion = patcherVersion,
+                        patcherCommit = patcherCommit,
+                        buildInfo = Env.gson.toJson(buildInfo)
+                )
 
         val requestBody = Env.gson.toJson(body).toRequestBody("application/json".toMediaType())
 
         val request =
-            Request.Builder()
-                .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
-                .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
-                .post(requestBody)
-                .build()
+                Request.Builder()
+                        .url("https://api.mamii.dev/madmin/content/instafel/preview/create")
+                        .addHeader("Authorization", "Token $SERVER_SESSION_TOKEN")
+                        .post(requestBody)
+                        .build()
 
         httpClient.newCall(request).execute().use { response ->
             val resp = response.body.string()
@@ -143,49 +143,43 @@ object UploadPreview : CLIJob {
         }
     }
 
-    fun uploadBuildArtifactsIntoCdn(
-        generationId: String,
-        files: List<File>
-    ): Boolean {
+    fun uploadBuildArtifactsIntoCdn(generationId: String, files: List<File>): Boolean {
         return try {
-            val s3 = S3AsyncClient.builder()
-                .endpointOverride(URI.create("http://153.56.180.15:9000"))
-                .region(Region.of("tr-west-1"))
-                .credentialsProvider(
-                    StaticCredentialsProvider.create(
-                        AwsBasicCredentials.create(
-                            S3_ACCESS_KEY_ID,
-                            S3_SECRET_KEY
-                        )
-                    )
-                )
-                .serviceConfiguration(
-                    S3Configuration.builder()
-                        .pathStyleAccessEnabled(true)
-                        .build()
-                )
-                .build()
+            val s3 =
+                    S3AsyncClient.builder()
+                            .endpointOverride(URI.create(S3_CONNECTION_URL))
+                            .region(Region.of("eu-central-1"))
+                            .credentialsProvider(
+                                    StaticCredentialsProvider.create(
+                                            AwsBasicCredentials.create(
+                                                    S3_ACCESS_KEY_ID,
+                                                    S3_SECRET_KEY
+                                            )
+                                    )
+                            )
+                            .serviceConfiguration(
+                                    S3Configuration.builder().pathStyleAccessEnabled(true).build()
+                            )
+                            .build()
 
             for (file in files) {
                 Log.info("Uploading '${file.name}' into bucket...")
                 val fileKey = "previews/$generationId/${file.name}"
                 val start = System.currentTimeMillis()
 
-                val transferManager = S3TransferManager.builder()
-                    .s3Client(s3)
-                    .build()
-                val upload = transferManager.uploadFile(
-                    UploadFileRequest.builder()
-                        .putObjectRequest(
-                            PutObjectRequest.builder()
-                                .bucket("instafel")
-                                .key(fileKey)
-                                .build()
+                val transferManager = S3TransferManager.builder().s3Client(s3).build()
+                val upload =
+                        transferManager.uploadFile(
+                                UploadFileRequest.builder()
+                                        .putObjectRequest(
+                                                PutObjectRequest.builder()
+                                                        .bucket("instafel")
+                                                        .key(fileKey)
+                                                        .build()
+                                        )
+                                        .source(Paths.get(file.absolutePath))
+                                        .build()
                         )
-                        .source(Paths.get(file.absolutePath))
-
-                        .build()
-                )
 
                 upload.completionFuture().join()
 
@@ -195,7 +189,9 @@ object UploadPreview : CLIJob {
                 val seconds = (elapsed % 60_000) / 1_000
                 val millis = elapsed % 1_000
 
-                Log.info("File '${file.name}' uploaded successfully in ${minutes}m ${seconds}s ${millis}ms")
+                Log.info(
+                        "File '${file.name}' uploaded successfully in ${minutes}m ${seconds}s ${millis}ms"
+                )
             }
 
             true
