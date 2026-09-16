@@ -13,7 +13,6 @@ import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.modals.FileSearchResult
-import instafel.patcher.core.utils.modals.LineData
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
 import instafel.patcher.core.utils.patch.PInfos
@@ -27,66 +26,123 @@ import kotlin.system.exitProcess
     desc = "Changes the home button long press function to call InstafelHomeSheet",
     isSingle = true
 )
-class ChangeHomeLongClick: InstafelPatch() {
+class ChangeHomeLongClick : InstafelPatch() {
 
     lateinit var homeLongClickClass: File
     lateinit var activityVariableName: String
-    var castClassVariableName: String = ""
+
     lateinit var fNavigatorClassName: String
     lateinit var fNavigatorCreatorMethodName: String
     lateinit var fNavigatorTransitionMethodName: String
-    var fNavigatorConstructorParams: String = ""
+
+    var fNavigatorConstructorParams = ""
+    var fNavigatorSessionType = ""
 
     override fun initializeTasks() = mutableListOf(
+
         @PInfos.TaskInfo("Find home button long click smali class")
-        object: InstafelTask() {
+        object : InstafelTask() {
             override fun execute() {
-                when (val result = runBlocking {
-                    SearchUtils.getFileContainsAllCords(smaliUtils,
-                        listOf(
-                            listOf(".super", "Ljava/lang/Object;"),
-                            listOf(".implements", "Landroid/view/View\$OnLongClickListener"),
-                            listOf("iput-object", ":Lcom/instagram/mainactivity/InstagramMainActivity;"),
-                            listOf("iput-object", ":Lcom/instagram/common/session/UserSession;"),
-                            listOf("\"click\""),
-                            listOf("\"activity\"")
-                        ))
-                }) {
+                when (
+                    val result = runBlocking {
+                        SearchUtils.getFileContainsAllCords(
+                            smaliUtils,
+                            listOf(
+                                listOf(".super", "Ljava/lang/Object;"),
+                                listOf(
+                                    ".implements",
+                                    "Landroid/view/View\$OnLongClickListener"
+                                ),
+                                listOf(
+                                    "iput-object",
+                                    ":Lcom/instagram/mainactivity/InstagramMainActivity;"
+                                ),
+                                listOf(
+                                    "iput-object",
+                                    ":Lcom/instagram/common/session/UserSession;"
+                                ),
+                                listOf("\"click\""),
+                                listOf("\"activity\"")
+                            )
+                        )
+                    }
+                ) {
                     is FileSearchResult.Success -> {
                         homeLongClickClass = result.file
-                        success("Home long click class found successfully")
+                        success("Home long click class found successfully.")
                     }
+
                     is FileSearchResult.NotFound -> {
-                        failure("Patch aborted because no any matching classes found.")
+                        failure(
+                            "Patch aborted because no matching home long click class was found."
+                        )
                         exitProcess(-1)
                     }
                 }
             }
         },
-        @PInfos.TaskInfo("Change onLongClick function for handle home sheet operations")
-        object: InstafelTask() {
+
+        @PInfos.TaskInfo(
+            "Change onLongClick function for handle home sheet operations"
+        )
+        object : InstafelTask() {
             override fun execute() {
-                val fContent = smaliUtils.getSmaliFileContent(homeLongClickClass.absolutePath).toMutableList()
-                activityVariableName = homeLongClickClass.name.replace(".smali", "")
-                Log.info("Home long click handler class is LX/$activityVariableName")
+                val content = smaliUtils
+                    .getSmaliFileContent(homeLongClickClass.absolutePath)
+                    .toMutableList()
 
-                val classFieldVNameRegex = Regex("""\.field\s+public\s+final\s+synthetic\s+(A\d+):""")
-                val userSessionFields: List<LineData> = smaliUtils.getContainLines(fContent, ".field", "Lcom/instagram/common/session/UserSession;")
-                val mainActivityFields: List<LineData> = smaliUtils.getContainLines(fContent, ".field", "Lcom/instagram/mainactivity/InstagramMainActivity;")
+                activityVariableName =
+                    homeLongClickClass.name.removeSuffix(".smali")
 
-                if (userSessionFields.isEmpty() || mainActivityFields.isEmpty()) {
-                    failure("UserSession and InstagramMainActivity variable cannot detected in handler class.")
+                val fieldRegex =
+                    Regex("""\.field\s+public\s+final\s+synthetic\s+(A\d+):""")
+
+                val userSessionField = smaliUtils.getContainLines(
+                    content,
+                    ".field",
+                    "Lcom/instagram/common/session/UserSession;"
+                )
+
+                val activityField = smaliUtils.getContainLines(
+                    content,
+                    ".field",
+                    "Lcom/instagram/mainactivity/InstagramMainActivity;"
+                )
+
+                if (
+                    userSessionField.isEmpty() ||
+                    activityField.isEmpty()
+                ) {
+                    failure(
+                        "UserSession and InstagramMainActivity fields could not be detected."
+                    )
                     exitProcess(-1)
                 }
 
-                var userSessionVariable = classFieldVNameRegex.find(userSessionFields[0].content)?.groupValues?.get(1)
-                var mainActivityVariable = classFieldVNameRegex.find(mainActivityFields[0].content)?.groupValues?.get(1)
+                val userSessionVariable =
+                    fieldRegex
+                        .find(userSessionField[0].content)
+                        ?.groupValues
+                        ?.getOrNull(1)
 
-                var newMethodContent = """
+                val mainActivityVariable =
+                    fieldRegex
+                        .find(activityField[0].content)
+                        ?.groupValues
+                        ?.getOrNull(1)
+
+                if (
+                    userSessionVariable == null ||
+                    mainActivityVariable == null
+                ) {
+                    failure("Could not extract Activity/UserSession field names.")
+                    exitProcess(-1)
+                }
+
+                val newMethod = """
                     .method public final onLongClick(Landroid/view/View;)Z
                         .registers 6
 
-                        # Added for class re-foundabilidity
                         # "click"
                         # "activity"
 
@@ -108,164 +164,246 @@ class ChangeHomeLongClick: InstafelPatch() {
                     .end method
                 """.trimIndent()
 
-                val newFileContent = smaliUtils.removeMethodContent(fContent, "onLongClick", "(Landroid/view/View;)Z").toMutableList()
-                newFileContent.addAll(newMethodContent.split("\n"))
-                smaliUtils.writeContentIntoFile(homeLongClickClass.absolutePath, newFileContent)
+                val updatedContent = smaliUtils
+                    .removeMethodContent(
+                        content,
+                        "onLongClick",
+                        "(Landroid/view/View;)Z"
+                    )
+                    .toMutableList()
+
+                updatedContent.addAll(newMethod.split("\n"))
+
+                smaliUtils.writeContentIntoFile(
+                    homeLongClickClass.absolutePath,
+                    updatedContent
+                )
+
                 success("Home button long press event successfully modified.")
             }
         },
+
         @PInfos.TaskInfo("Add DevHolder class into app/utils package.")
-        object: InstafelTask() {
+        object : InstafelTask() {
             override fun execute() {
-                val classContent = Env.slurp(ChangeHomeLongClick::class.java.getResourceAsStream("/patch_exts/DevHolder.smali"))
-                val filePath = "${Env.PROJECT_DIR}/sources/${Env.Project.iflSourcesFolder}/instafel/app/utils/DevHolder.smali"
-                smaliUtils.writeContentIntoFile(filePath, classContent.split("\n"))
-                success("DevHolder class successfully created.")
-            }
-        },
-        @PInfos.TaskInfo("Find session casting class from a reference class.")
-        object: InstafelTask() {
-            override fun execute() {
-                val refClass = smaliUtils.getSmaliFilesByName("/com/facebook/FacebookActivity.smali")[0]
-                val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
+                val inputStream =
+                    ChangeHomeLongClick::class.java.getResourceAsStream(
+                        "/patch_exts/DevHolder.smali"
+                    )
 
-                refClassContent.forEachIndexed { i, line ->
-                    if (castClassVariableName.isEmpty() &&
-                        line.contains("invoke-static") &&
-                        line.contains("(Landroid/app/Activity;)LX/")
-                    ) {
-                        val parsedInst = SmaliParser.parseInstruction(line.trim(), i)
-                        val extracted = parsedInst.returnType.replace("LX/", "").replace(";", "")
-                        if (extracted.isNotEmpty()) {
-                            castClassVariableName = extracted
-                        }
-                    }
-                }
-
-                if (castClassVariableName.isEmpty()) {
-                    refClassContent.forEachIndexed { i, line ->
-                        if (castClassVariableName.isEmpty() &&
-                            line.contains("invoke-virtual") &&
-                            line.contains("(Landroid/app/Activity;)LX/")
-                        ) {
-                            val parsedInst = SmaliParser.parseInstruction(line.trim(), i)
-                            val extracted = parsedInst.returnType.replace("LX/", "").replace(";", "")
-                            if (extracted.isNotEmpty()) {
-                                castClassVariableName = extracted
-                            }
-                        }
-                    }
-                }
-
-                if (castClassVariableName.isEmpty()) {
-                    refClassContent.forEachIndexed { i, line ->
-                        if (castClassVariableName.isEmpty() &&
-                            line.trim().startsWith("check-cast") &&
-                            line.contains("LX/")
-                        ) {
-                            val start = line.indexOf("LX/") + 3
-                            val end = line.indexOf(";", start)
-                            if (start > 2 && end > 0) {
-                                castClassVariableName = line.substring(start, end)
-                            }
-                        }
-                    }
-                }
-
-                if (castClassVariableName.isEmpty()) {
-                    failure("Casting class name cannot catch from method return type...")
-                } else {
-                    success("Caster class name is $castClassVariableName")
-                }
-            }
-        },
-        @PInfos.TaskInfo("Find correct class name and method names of FragmentNavigator class")
-        object: InstafelTask() {
-            override fun execute() {
-                val refClass = smaliUtils.getSmaliFilesByName("/com/instagram/profile/fragment/UserDetailFragment.smali")[0]
-                val refClassContent = smaliUtils.getSmaliFileContent(refClass.absolutePath)
-
-                val invokeVirtualMainCall = smaliUtils.getContainLines(refClassContent, "invoke-virtual", "(Landroidx/fragment/app/Fragment;)V")
-
-                if (invokeVirtualMainCall.isEmpty()) {
-                    failure("Correct caller line couldn't be found")
+                if (inputStream == null) {
+                    failure("DevHolder.smali resource not found.")
                     exitProcess(-1)
                 }
 
-                val matchLine = invokeVirtualMainCall[0]
-                val lineCreator = SmaliParser.parseInstruction(refClassContent[matchLine.num], matchLine.num)
-                val lineCaller = SmaliParser.parseInstruction(refClassContent[matchLine.num + 2], matchLine.num + 2)
+                val classContent = Env.slurp(inputStream)
 
-                fNavigatorClassName = lineCreator.className.replace("LX/", "").replace(";", "")
-                fNavigatorCreatorMethodName = lineCreator.methodName
-                fNavigatorTransitionMethodName = lineCaller.methodName
+                val filePath =
+                    "${Env.PROJECT_DIR}/sources/" +
+                    "${Env.Project.iflSourcesFolder}/" +
+                    "instafel/app/utils/DevHolder.smali"
 
-                val initNeedle = "LX/$fNavigatorClassName;-><init>("
-                for (j in (matchLine.num - 1) downTo maxOf(0, matchLine.num - 15)) {
-                    val prevLine = refClassContent[j].trim()
-                    if (prevLine.contains("invoke-direct") && prevLine.contains(initNeedle)) {
-                        val paramStart = prevLine.indexOf("<init>(") + 7
-                        val paramEnd = prevLine.lastIndexOf(")")
-                        if (paramEnd > paramStart) {
-                            fNavigatorConstructorParams = prevLine.substring(paramStart, paramEnd)
+                smaliUtils.writeContentIntoFile(
+                    filePath,
+                    classContent.split("\n")
+                )
+
+                success("DevHolder class successfully created.")
+            }
+        },
+
+        @PInfos.TaskInfo(
+            "Find correct class name and method names of FragmentNavigator class"
+        )
+        object : InstafelTask() {
+            override fun execute() {
+                val refClass = smaliUtils
+                    .getSmaliFilesByName(
+                        "/com/instagram/profile/fragment/UserDetailFragment.smali"
+                    )
+                    .firstOrNull()
+
+                if (refClass == null) {
+                    failure("UserDetailFragment.smali not found.")
+                    exitProcess(-1)
+                }
+
+                val content =
+                    smaliUtils.getSmaliFileContent(refClass.absolutePath)
+
+                val navigatorCall = smaliUtils.getContainLines(
+                    content,
+                    "invoke-virtual",
+                    "(Landroidx/fragment/app/Fragment;)V"
+                )
+
+                if (navigatorCall.isEmpty()) {
+                    failure(
+                        "Correct FragmentNavigator caller line could not be found."
+                    )
+                    exitProcess(-1)
+                }
+
+                val matchLine = navigatorCall[0]
+
+                val creator = SmaliParser.parseInstruction(
+                    content[matchLine.num].trim(),
+                    matchLine.num
+                )
+
+                fNavigatorClassName =
+                    creator.className
+                        .removePrefix("LX/")
+                        .removeSuffix(";")
+
+                fNavigatorCreatorMethodName =
+                    creator.methodName
+
+                val transitionIndex = matchLine.num + 2
+
+                if (transitionIndex >= content.size) {
+                    failure(
+                        "Navigator transition call could not be found."
+                    )
+                    exitProcess(-1)
+                }
+
+                val transition = SmaliParser.parseInstruction(
+                    content[transitionIndex].trim(),
+                    transitionIndex
+                )
+
+                fNavigatorTransitionMethodName =
+                    transition.methodName
+
+                val initNeedle =
+                    "LX/$fNavigatorClassName;-><init>("
+
+                for (
+                    index in
+                    (matchLine.num - 1) downTo maxOf(0, matchLine.num - 15)
+                ) {
+                    val line = content[index].trim()
+
+                    if (
+                        line.contains("invoke-direct") &&
+                        line.contains(initNeedle)
+                    ) {
+                        val start = line.indexOf("<init>(") + 7
+                        val end = line.lastIndexOf(")")
+
+                        if (start > 6 && end > start) {
+                            fNavigatorConstructorParams =
+                                line.substring(start, end)
                         }
+
                         break
                     }
                 }
 
                 if (fNavigatorConstructorParams.isEmpty()) {
-                    val navigatorFiles = smaliUtils.getSmaliFilesByName("/X/$fNavigatorClassName.smali")
+                    val navigatorFiles = smaliUtils.getSmaliFilesByName(
+                        "/X/$fNavigatorClassName.smali"
+                    )
+
                     if (navigatorFiles.isNotEmpty()) {
-                        val navContent = smaliUtils.getSmaliFileContent(navigatorFiles[0].absolutePath)
-                        for (navLine in navContent) {
-                            val trimmed = navLine.trim()
-                            if (trimmed.startsWith(".method public constructor <init>(") && !trimmed.contains("<init>()V")) {
-                                val paramStart = trimmed.indexOf("<init>(") + 7
-                                val paramEnd = trimmed.lastIndexOf(")")
-                                if (paramEnd > paramStart) {
-                                    fNavigatorConstructorParams = trimmed.substring(paramStart, paramEnd)
+                        val navigatorContent =
+                            smaliUtils.getSmaliFileContent(
+                                navigatorFiles[0].absolutePath
+                            )
+
+                        for (line in navigatorContent) {
+                            val trimmed = line.trim()
+
+                            if (
+                                trimmed.startsWith(
+                                    ".method public constructor <init>("
+                                ) &&
+                                !trimmed.contains("<init>()V")
+                            ) {
+                                val start = trimmed.indexOf("<init>(") + 7
+                                val end = trimmed.lastIndexOf(")")
+
+                                if (start > 6 && end > start) {
+                                    fNavigatorConstructorParams =
+                                        trimmed.substring(start, end)
                                 }
+
                                 break
                             }
                         }
                     }
                 }
 
-                Log.info("fNavigatorClassName is $fNavigatorClassName")
-                Log.info("fNavigatorCreatorMethodName is $fNavigatorCreatorMethodName")
-                Log.info("fNavigatorTransitionMethodName is $fNavigatorTransitionMethodName")
-                if (fNavigatorConstructorParams.isNotEmpty()) {
-                    Log.info("fNavigatorConstructorParams is $fNavigatorConstructorParams")
-                } else {
-                    Log.info("fNavigatorConstructorParams not found, will fall back to assumed 2-param signature next task")
+                if (fNavigatorConstructorParams.isEmpty()) {
+                    failure(
+                        "FragmentNavigator constructor parameters could not be detected."
+                    )
+                    exitProcess(-1)
                 }
 
-                success("Everything is found successfully.")
+                val constructorTypes =
+                    tokenizeDescriptor(fNavigatorConstructorParams)
+
+                if (constructorTypes.size != 2) {
+                    failure(
+                        "Unsupported FragmentNavigator constructor. " +
+                        "Expected 2 parameters but found ${constructorTypes.size}."
+                    )
+                    exitProcess(-1)
+                }
+
+                if (
+                    constructorTypes[0] !=
+                    "Landroidx/fragment/app/FragmentActivity;"
+                ) {
+                    failure(
+                        "FragmentNavigator first constructor parameter is not FragmentActivity."
+                    )
+                    exitProcess(-1)
+                }
+
+                fNavigatorSessionType =
+                    constructorTypes[1]
+
+                Log.info("Navigator class: LX/$fNavigatorClassName")
+                Log.info("Creator method: $fNavigatorCreatorMethodName")
+                Log.info("Transition method: $fNavigatorTransitionMethodName")
+                Log.info("Constructor params: $fNavigatorConstructorParams")
+                Log.info("Session type: $fNavigatorSessionType")
+
+                success(
+                    "FragmentNavigator information found successfully."
+                )
             }
         },
+
         @PInfos.TaskInfo("Update openDeveloperOptions method")
-        object: InstafelTask() {
+        object : InstafelTask() {
             override fun execute() {
-                if (castClassVariableName.isEmpty()) {
-                    failure("castClassVariableName is empty — openDeveloperOptions skipped!")
+                if (
+                    fNavigatorClassName.isEmpty() ||
+                    fNavigatorConstructorParams.isEmpty() ||
+                    fNavigatorSessionType.isEmpty()
+                ) {
+                    failure(
+                        "Required FragmentNavigator information is missing."
+                    )
                     exitProcess(-1)
                 }
 
-                val assumedParams = "Landroidx/fragment/app/FragmentActivity;LX/$castClassVariableName;"
-                val resolvedParams = fNavigatorConstructorParams.ifEmpty {
-                    Log.info("No derived constructor params, using assumed default: $assumedParams")
-                    assumedParams
-                }
+                val sheetClass = smaliUtils
+                    .getSmaliFilesByName(
+                        "/instafel/app/utils/InstafelHomeSheet.smali"
+                    )
+                    .firstOrNull()
 
-                if (resolvedParams != assumedParams) {
-                    failure("FragmentNavigator constructor signature is now '$resolvedParams', which no longer matches the 2-param shape this patch builds registers for. Update the patch instead of forcing it through.")
+                if (sheetClass == null) {
+                    failure("InstafelHomeSheet.smali not found.")
                     exitProcess(-1)
                 }
 
-                val instafelSheetClass = smaliUtils.getSmaliFilesByName("/instafel/app/utils/InstafelHomeSheet.smali")[0]
-                val classContent = smaliUtils.getSmaliFileContent(instafelSheetClass.absolutePath).toMutableList()
-                val newMethodContent = """
-                    
+                val newMethod = """
                     .method public openDeveloperOptions()V
                         .registers 7
 
@@ -277,7 +415,9 @@ class ChangeHomeLongClick: InstafelPatch() {
 
                         move-result-object v1
 
-                        check-cast v1, LX/$castClassVariableName;
+                        check-cast v0, Landroidx/fragment/app/FragmentActivity;
+
+                        check-cast v1, $fNavigatorSessionType
 
                         new-instance v2, Lcom/instagram/debug/quickexperiment/QuickExperimentCategoriesFragment;
 
@@ -285,7 +425,7 @@ class ChangeHomeLongClick: InstafelPatch() {
 
                         new-instance v3, LX/$fNavigatorClassName;
 
-                        invoke-direct {v3, v0, v1}, LX/$fNavigatorClassName;-><init>($resolvedParams)V
+                        invoke-direct {v3, v0, v1}, LX/$fNavigatorClassName;-><init>($fNavigatorConstructorParams)V
 
                         invoke-virtual {v3, v2}, LX/$fNavigatorClassName;->$fNavigatorCreatorMethodName(Landroidx/fragment/app/Fragment;)V
 
@@ -297,11 +437,98 @@ class ChangeHomeLongClick: InstafelPatch() {
                     .end method
                 """.trimIndent()
 
-                val newFileContent = smaliUtils.removeMethodContent(classContent, "openDeveloperOptions", "()V").toMutableList()
-                newFileContent.addAll(newMethodContent.split("\n"))
-                smaliUtils.writeContentIntoFile(instafelSheetClass.absolutePath, newFileContent)
-                success("openDeveloperOptions method successfully updated.")
+                val content =
+                    smaliUtils.getSmaliFileContent(
+                        sheetClass.absolutePath
+                    ).toMutableList()
+
+                val updatedContent = smaliUtils
+                    .removeMethodContent(
+                        content,
+                        "openDeveloperOptions",
+                        "()V"
+                    )
+                    .toMutableList()
+
+                updatedContent.addAll(newMethod.split("\n"))
+
+                smaliUtils.writeContentIntoFile(
+                    sheetClass.absolutePath,
+                    updatedContent
+                )
+
+                success(
+                    "openDeveloperOptions method successfully updated."
+                )
             }
-        },
+        }
     )
+
+    private fun tokenizeDescriptor(
+        descriptor: String
+    ): List<String> {
+        val result = mutableListOf<String>()
+        var index = 0
+
+        while (index < descriptor.length) {
+            when (descriptor[index]) {
+                'L' -> {
+                    val end = descriptor.indexOf(';', index)
+                    if (end == -1) break
+
+                    result.add(
+                        descriptor.substring(index, end + 1)
+                    )
+
+                    index = end + 1
+                }
+
+                '[' -> {
+                    val start = index
+
+                    while (
+                        index < descriptor.length &&
+                        descriptor[index] == '['
+                    ) {
+                        index++
+                    }
+
+                    if (
+                        index < descriptor.length &&
+                        descriptor[index] == 'L'
+                    ) {
+                        val end =
+                            descriptor.indexOf(';', index)
+
+                        if (end == -1) break
+
+                        result.add(
+                            descriptor.substring(start, end + 1)
+                        )
+
+                        index = end + 1
+                    } else {
+                        if (index < descriptor.length) {
+                            result.add(
+                                descriptor.substring(
+                                    start,
+                                    index + 1
+                                )
+                            )
+                            index++
+                        }
+                    }
+                }
+
+                else -> {
+                    result.add(
+                        descriptor[index].toString()
+                    )
+                    index++
+                }
+            }
+        }
+
+        return result
+    }
 }
