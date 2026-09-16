@@ -10,7 +10,6 @@ package instafel.patcher.core.patches.general
 
 import instafel.patcher.core.source.SmaliParser
 import instafel.patcher.core.utils.Env
-import instafel.patcher.core.utils.Log
 import instafel.patcher.core.utils.SearchUtils
 import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
@@ -30,7 +29,6 @@ class ChangeHomeLongClick : InstafelPatch() {
 
     lateinit var homeLongClickClass: File
     lateinit var activityVariableName: String
-
     lateinit var fNavigatorClassName: String
     lateinit var fNavigatorCreatorMethodName: String
     lateinit var fNavigatorTransitionMethodName: String
@@ -43,39 +41,35 @@ class ChangeHomeLongClick : InstafelPatch() {
         @PInfos.TaskInfo("Find home button long click smali class")
         object : InstafelTask() {
             override fun execute() {
-                when (
-                    val result = runBlocking {
-                        SearchUtils.getFileContainsAllCords(
-                            smaliUtils,
+                when (val result = runBlocking {
+                    SearchUtils.getFileContainsAllCords(
+                        smaliUtils,
+                        listOf(
+                            listOf(".super", "Ljava/lang/Object;"),
                             listOf(
-                                listOf(".super", "Ljava/lang/Object;"),
-                                listOf(
-                                    ".implements",
-                                    "Landroid/view/View\$OnLongClickListener"
-                                ),
-                                listOf(
-                                    "iput-object",
-                                    ":Lcom/instagram/mainactivity/InstagramMainActivity;"
-                                ),
-                                listOf(
-                                    "iput-object",
-                                    ":Lcom/instagram/common/session/UserSession;"
-                                ),
-                                listOf("\"click\""),
-                                listOf("\"activity\"")
-                            )
+                                ".implements",
+                                "Landroid/view/View\$OnLongClickListener"
+                            ),
+                            listOf(
+                                "iput-object",
+                                ":Lcom/instagram/mainactivity/InstagramMainActivity;"
+                            ),
+                            listOf(
+                                "iput-object",
+                                ":Lcom/instagram/common/session/UserSession;"
+                            ),
+                            listOf("\"click\""),
+                            listOf("\"activity\"")
                         )
-                    }
-                ) {
+                    )
+                }) {
                     is FileSearchResult.Success -> {
                         homeLongClickClass = result.file
                         success("Home long click class found successfully.")
                     }
 
                     is FileSearchResult.NotFound -> {
-                        failure(
-                            "Patch aborted because no matching home long click class was found."
-                        )
+                        failure("No matching home long click class found.")
                         exitProcess(-1)
                     }
                 }
@@ -113,9 +107,7 @@ class ChangeHomeLongClick : InstafelPatch() {
                     userSessionField.isEmpty() ||
                     activityField.isEmpty()
                 ) {
-                    failure(
-                        "UserSession and InstagramMainActivity fields could not be detected."
-                    )
+                    failure("Required Activity/UserSession fields not found.")
                     exitProcess(-1)
                 }
 
@@ -135,7 +127,7 @@ class ChangeHomeLongClick : InstafelPatch() {
                     userSessionVariable == null ||
                     mainActivityVariable == null
                 ) {
-                    failure("Could not extract Activity/UserSession field names.")
+                    failure("Could not extract required field names.")
                     exitProcess(-1)
                 }
 
@@ -238,9 +230,7 @@ class ChangeHomeLongClick : InstafelPatch() {
                 )
 
                 if (navigatorCall.isEmpty()) {
-                    failure(
-                        "Correct FragmentNavigator caller line could not be found."
-                    )
+                    failure("FragmentNavigator call not found.")
                     exitProcess(-1)
                 }
 
@@ -262,9 +252,7 @@ class ChangeHomeLongClick : InstafelPatch() {
                 val transitionIndex = matchLine.num + 2
 
                 if (transitionIndex >= content.size) {
-                    failure(
-                        "Navigator transition call could not be found."
-                    )
+                    failure("FragmentNavigator transition call not found.")
                     exitProcess(-1)
                 }
 
@@ -337,7 +325,7 @@ class ChangeHomeLongClick : InstafelPatch() {
 
                 if (fNavigatorConstructorParams.isEmpty()) {
                     failure(
-                        "FragmentNavigator constructor parameters could not be detected."
+                        "FragmentNavigator constructor parameters not found."
                     )
                     exitProcess(-1)
                 }
@@ -347,8 +335,7 @@ class ChangeHomeLongClick : InstafelPatch() {
 
                 if (constructorTypes.size != 2) {
                     failure(
-                        "Unsupported FragmentNavigator constructor. " +
-                        "Expected 2 parameters but found ${constructorTypes.size}."
+                        "Unsupported FragmentNavigator constructor."
                     )
                     exitProcess(-1)
                 }
@@ -358,19 +345,12 @@ class ChangeHomeLongClick : InstafelPatch() {
                     "Landroidx/fragment/app/FragmentActivity;"
                 ) {
                     failure(
-                        "FragmentNavigator first constructor parameter is not FragmentActivity."
+                        "FragmentNavigator does not use FragmentActivity as first parameter."
                     )
                     exitProcess(-1)
                 }
 
-                fNavigatorSessionType =
-                    constructorTypes[1]
-
-                Log.info("Navigator class: LX/$fNavigatorClassName")
-                Log.info("Creator method: $fNavigatorCreatorMethodName")
-                Log.info("Transition method: $fNavigatorTransitionMethodName")
-                Log.info("Constructor params: $fNavigatorConstructorParams")
-                Log.info("Session type: $fNavigatorSessionType")
+                fNavigatorSessionType = constructorTypes[1]
 
                 success(
                     "FragmentNavigator information found successfully."
@@ -438,9 +418,9 @@ class ChangeHomeLongClick : InstafelPatch() {
                 """.trimIndent()
 
                 val content =
-                    smaliUtils.getSmaliFileContent(
-                        sheetClass.absolutePath
-                    ).toMutableList()
+                    smaliUtils
+                        .getSmaliFileContent(sheetClass.absolutePath)
+                        .toMutableList()
 
                 val updatedContent = smaliUtils
                     .removeMethodContent(
@@ -450,7 +430,9 @@ class ChangeHomeLongClick : InstafelPatch() {
                     )
                     .toMutableList()
 
-                updatedContent.addAll(newMethod.split("\n"))
+                updatedContent.addAll(
+                    newMethod.split("\n")
+                )
 
                 smaliUtils.writeContentIntoFile(
                     sheetClass.absolutePath,
@@ -508,15 +490,10 @@ class ChangeHomeLongClick : InstafelPatch() {
 
                         index = end + 1
                     } else {
-                        if (index < descriptor.length) {
-                            result.add(
-                                descriptor.substring(
-                                    start,
-                                    index + 1
-                                )
-                            )
-                            index++
-                        }
+                        result.add(
+                            descriptor.substring(start, index + 1)
+                        )
+                        index++
                     }
                 }
 
