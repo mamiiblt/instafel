@@ -1,7 +1,7 @@
 [versions]
 slf4j-simple = "2.0.18"
 aws-java-s3 = "2.49.6"
-aws-java-transfer-manager = "2.49.6"
+aws-java-transfer-manager = "2.51.2"
 aws-java-netty-nio-client = "2.49.6"
 gson = "2.14.0"
 kotlin_android = "2.3.10"
