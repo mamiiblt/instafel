@@ -82,11 +82,17 @@ public class BuildInfoTask extends AsyncTask<String, Void, String> {
 
             String apkContentLink = "";
             if (ifl_type.equals("Unclone")) {
-                String fileName = buildInfo.getJSONObject("fileInfos").getJSONObject("unclone").getString("fileName");
-                apkContentLink = "https://cdn.mamii.dev/instafel/releases/v" + lastVersion + "/" + fileName;
+                JSONObject uncloneInfo = buildInfo.getJSONObject("fileInfos").getJSONObject("unclone");
+                apkContentLink = uncloneInfo.optString("fileUrl", "");
+                if (apkContentLink.isEmpty()) {
+                    apkContentLink = "https://cdn.mamii.dev/instafel/releases/v" + lastVersion + "/" + uncloneInfo.getString("fileName");
+                }
             } else if (ifl_type.equals("Clone")) {
-                String fileName = buildInfo.getJSONObject("fileInfos").getJSONObject("clone").getString("fileName");
-                apkContentLink = "https://cdn.mamii.dev/instafel/releases/v" + lastVersion + "/" + fileName;
+                JSONObject cloneInfo = buildInfo.getJSONObject("fileInfos").getJSONObject("clone");
+                apkContentLink = cloneInfo.optString("fileUrl", "");
+                if (apkContentLink.isEmpty()) {
+                    apkContentLink = "https://cdn.mamii.dev/instafel/releases/v" + lastVersion + "/" + cloneInfo.getString("fileName");
+                }
             }
 
             if (lastVersion > ifl_version) {

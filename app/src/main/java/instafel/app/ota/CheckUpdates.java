@@ -139,7 +139,7 @@ public class CheckUpdates {
     public static void check(Activity activity, boolean checkType) {
         int ifl_version = IflEnvironment.getIflVersion(activity);
         String ifl_type = IflEnvironment.getType(activity);
-        new VersionTask(activity, ifl_type, ifl_version, checkType).execute("https://api.github.com/repos/mamiiblt/instafel/releases/latest");
+        new VersionTask(activity, ifl_type, ifl_version, checkType).execute("https://api.mamii.dev/content/rels/list?page=1");
     }
 
     public static void showBackupUpdateDialog(Activity activity, Locale locale, String backupId) {

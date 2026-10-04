@@ -74,7 +74,19 @@ public class VersionTask extends AsyncTask<String, Void, String> {
                 LastCheck.updateUi(act);
             }
             JSONObject jObject = new JSONObject(result);
-            int lastVersion = Integer.parseInt(jObject.getString("tag_name").substring(1));
+            JSONArray releases = jObject.getJSONArray("releases");
+            int lastVersion = 0;
+            for (int i = 0; i < releases.length(); i++) {
+                JSONArray release = releases.getJSONArray(i);
+                boolean isDeleted = release.optBoolean(4, false);
+                if (!isDeleted) {
+                    lastVersion = release.getInt(0);
+                    break;
+                }
+            }
+            if (lastVersion == 0) {
+                return;
+            }
             new BuildInfoTask(act, ifl_version, ifl_type, lastVersion, instafelDialog, checkType).execute(
                     "https://api.mamii.dev/content/rels/get/" + lastVersion
             );
