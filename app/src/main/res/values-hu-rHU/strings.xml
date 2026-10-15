@@ -117,8 +117,8 @@
     <string name="ifl_a5_dia_freq_05">Egyszer egy héten</string>
     <!-- me.mamiiblt.instafel.ifl_a_language -->
     <string name="ifl_a6_01">Eszköz nyelvének használata</string>
-    <string name="ifl_a6_02">Supported</string>
-    <string name="ifl_a6_03">Not Supported</string>
+    <string name="ifl_a6_02">Támogatott</string>
+    <string name="ifl_a6_03">Nem támogatott</string>
     <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
     <string name="ifl_a7_01">Jelentések</string>
     <string name="ifl_a7_02">Jelentések törlése</string>

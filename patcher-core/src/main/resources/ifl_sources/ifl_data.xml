@@ -40,7 +40,7 @@
                         
                 <item name="ifl_attr_subtitle_color">@color/ifl_sub_line</item>
                         
-                <item name="ifl_attr_tile_color">#ff25282d</item>
+                <item name="ifl_attr_tile_color">#25282d</item>
                         
                 <item name="ifl_attr_title_color">@color/ifl_white</item>
                     
@@ -587,144 +587,7 @@
             <public name="ifl_theme_dark" type="style"/>
             <public name="ifl_theme_light" type="style"/>
         </vcategory>
-        <vcategory name="ids">
-            <item name="ifl_about_title" type="id"/>
-            <item name="ifl_backup_editText" type="id"/>
-            <item name="ifl_backups_layout" type="id"/>
-            <item name="ifl_button_approvepreview" type="id"/>
-            <item name="ifl_button_exportbackup" type="id"/>
-            <item name="ifl_button_text" type="id"/>
-            <item name="ifl_button_updatebackup" type="id"/>
-            <item name="ifl_constraintLayout" type="id"/>
-            <item name="ifl_content_area" type="id"/>
-            <item name="ifl_developer_title" type="id"/>
-            <item name="ifl_developer_title_2" type="id"/>
-            <item name="ifl_dg_button_negative" type="id"/>
-            <item name="ifl_dg_button_okay" type="id"/>
-            <item name="ifl_dg_button_pozitive" type="id"/>
-            <item name="ifl_dialog_desc" type="id"/>
-            <item name="ifl_dialog_spinner" type="id"/>
-            <item name="ifl_dialog_title" type="id"/>
-            <item name="ifl_edittext" type="id"/>
-            <item name="ifl_flag_editText" type="id"/>
-            <item name="ifl_flags_layout" type="id"/>
-            <item name="ifl_homepageHeader" type="id"/>
-            <item name="ifl_languages_layout" type="id"/>
-            <item name="ifl_loading_area" type="id"/>
-            <item name="ifl_loading_page" type="id"/>
-            <item name="ifl_logs_layout" type="id"/>
-            <item name="ifl_page1" type="id"/>
-            <item name="ifl_pageContentArea" type="id"/>
-            <item name="ifl_page_area" type="id"/>
-            <item name="ifl_page_area_backup" type="id"/>
-            <item name="ifl_page_area_edit" type="id"/>
-            <item name="ifl_page_area_pinfo" type="id"/>
-            <item name="ifl_page_title" type="id"/>
-            <item name="ifl_patches_layout" type="id"/>
-            <item name="ifl_prefs_layout" type="id"/>
-            <item name="ifl_search_layout" type="id"/>
-            <item name="ifl_start_analyze" type="id"/>
-            <item name="ifl_start_compare" type="id"/>
-            <item name="ifl_text_button" type="id"/>
-            <item name="ifl_tile_about_dev" type="id"/>
-            <item name="ifl_tile_admin_action_export_mapping" type="id"/>
-            <item name="ifl_tile_admin_action_logout" type="id"/>
-            <item name="ifl_tile_admin_action_sharedpref_manager" type="id"/>
-            <item name="ifl_tile_admin_login" type="id"/>
-            <item name="ifl_tile_admin_password" type="id"/>
-            <item name="ifl_tile_admin_update_approve_preview" type="id"/>
-            <item name="ifl_tile_admin_update_update_backup" type="id"/>
-            <item name="ifl_tile_admin_username" type="id"/>
-            <item name="ifl_tile_applied_patches" type="id"/>
-            <item name="ifl_tile_backup_1" type="id"/>
-            <item name="ifl_tile_backup_2" type="id"/>
-            <item name="ifl_tile_backup_library" type="id"/>
-            <item name="ifl_tile_backup_library_aboutAuthor" type="id"/>
-            <item name="ifl_tile_backup_library_applyBackup" type="id"/>
-            <item name="ifl_tile_backup_library_author_name" type="id"/>
-            <item name="ifl_tile_backup_library_changelog" type="id"/>
-            <item name="ifl_tile_backup_library_desc" type="id"/>
-            <item name="ifl_tile_backup_library_enableAutoUpdates" type="id"/>
-            <item name="ifl_tile_backup_library_lastUpdated" type="id"/>
-            <item name="ifl_tile_backup_library_name" type="id"/>
-            <item name="ifl_tile_backup_library_social_github" type="id"/>
-            <item name="ifl_tile_backup_library_social_ig" type="id"/>
-            <item name="ifl_tile_backup_library_social_medium" type="id"/>
-            <item name="ifl_tile_backup_library_social_x" type="id"/>
-            <item name="ifl_tile_backup_library_version" type="id"/>
-            <item name="ifl_tile_build_info" type="id"/>
-            <item name="ifl_tile_commit" type="id"/>
-            <item name="ifl_tile_contributors" type="id"/>
-            <item name="ifl_tile_crashlog_delete_logs" type="id"/>
-            <item name="ifl_tile_crashviewer_aver" type="id"/>
-            <item name="ifl_tile_crashviewer_copy" type="id"/>
-            <item name="ifl_tile_crashviewer_crashDate" type="id"/>
-            <item name="ifl_tile_crashviewer_iflIgVersion" type="id"/>
-            <item name="ifl_tile_crashviewer_msg" type="id"/>
-            <item name="ifl_tile_crashviewer_share" type="id"/>
-            <item name="ifl_tile_crashviewer_stacktrace" type="id"/>
-            <item name="ifl_tile_exp_analyzer" type="id"/>
-            <item name="ifl_tile_exp_comperator" type="id"/>
-            <item name="ifl_tile_exp_develeov" type="id"/>
-            <item name="ifl_tile_exp_export" type="id"/>
-            <item name="ifl_tile_exp_import" type="id"/>
-            <item name="ifl_tile_export_author_name" type="id"/>
-            <item name="ifl_tile_export_backup_changelog" type="id"/>
-            <item name="ifl_tile_export_backup_name" type="id"/>
-            <item name="ifl_tile_export_backup_version" type="id"/>
-            <item name="ifl_tile_flag_library" type="id"/>
-            <item name="ifl_tile_generation_id" type="id"/>
-            <item name="ifl_tile_ifl_version" type="id"/>
-            <item name="ifl_tile_ig_version" type="id"/>
-            <item name="ifl_tile_import_full" type="id"/>
-            <item name="ifl_tile_import_merge" type="id"/>
-            <item name="ifl_tile_import_old_backups" type="id"/>
-            <item name="ifl_tile_installation_type" type="id"/>
-            <item name="ifl_tile_join_community" type="id"/>
-            <item name="ifl_tile_lang_device" type="id"/>
-            <item name="ifl_tile_menu_about" type="id"/>
-            <item name="ifl_tile_menu_adminmenu" type="id"/>
-            <item name="ifl_tile_menu_crashlogs" type="id"/>
-            <item name="ifl_tile_menu_devopt" type="id"/>
-            <item name="ifl_tile_menu_lang" type="id"/>
-            <item name="ifl_tile_menu_library" type="id"/>
-            <item name="ifl_tile_menu_misc" type="id"/>
-            <item name="ifl_tile_menu_ota" type="id"/>
-            <item name="ifl_tile_menu_sections" type="id"/>
-            <item name="ifl_tile_ota_background_download" type="id"/>
-            <item name="ifl_tile_ota_check" type="id"/>
-            <item name="ifl_tile_ota_enable_updates" type="id"/>
-            <item name="ifl_tile_ota_freq" type="id"/>
-            <item name="ifl_tile_ota_instafel_updater" type="id"/>
-            <item name="ifl_tile_patcher_version" type="id"/>
-            <item name="ifl_tile_remove_ads_section" type="id"/>
-            <item name="ifl_tile_selectbackupfile" type="id"/>
-            <item name="ifl_tile_setchangelog" type="id"/>
-            <item name="ifl_tile_setversionname" type="id"/>
-            <item name="ifl_tile_use_custom_mapping" type="id"/>
-            <item name="ifl_tile_use_custom_override" type="id"/>
-            <item name="ifl_tile_website" type="id"/>
-            <item name="ifl_tiles_about" type="id"/>
-            <item name="ifl_tiles_chat" type="id"/>
-            <item name="ifl_tiles_github" type="id"/>
-            <item name="ifl_tiles_guide" type="id"/>
-            <item name="ifl_tiles_language" type="id"/>
-            <item name="ifl_titleBar1" type="id"/>
-            <item name="ifl_titleSpace" type="id"/>
-            <item name="ifl_titleSpace1" type="id"/>
-            <item name="ifl_titleSpace2" type="id"/>
-            <item name="ifl_ui_content_area" type="id"/>
-            <item name="ifl_ui_icon" type="id"/>
-            <item name="ifl_ui_item_box" type="id"/>
-            <item name="ifl_ui_page_title" type="id"/>
-            <item name="ifl_ui_space_bottom" type="id"/>
-            <item name="ifl_ui_space_top" type="id"/>
-            <item name="ifl_ui_subicon" type="id"/>
-            <item name="ifl_ui_subtitle" type="id"/>
-            <item name="ifl_ui_switch" type="id"/>
-            <item name="ifl_ui_text" type="id"/>
-            <item name="ifl_ui_title" type="id"/>
-        </vcategory>
+        <vcategory name="ids"/>
         <vcategory name="attrs">
             <attr format="color" name="ifl_attr_background_color"/>
             <attr format="color" name="ifl_attr_iview_tint"/>
@@ -743,21 +606,21 @@
             <attr format="string" name="ifl_attr_ui_titleText"/>
         </vcategory>
         <vcategory name="colors">
-            <color name="ifl_background_color">#ff000000</color>
-            <color name="ifl_background_color_light">#ffffffff</color>
-            <color name="ifl_black">#ff212328</color>
-            <color name="ifl_sheet_background_dark">#ff222328</color>
-            <color name="ifl_sheet_background_light">#ffffffff</color>
-            <color name="ifl_sheet_text_main_dark">#fffafbfd</color>
-            <color name="ifl_sheet_text_main_light">#ff05060a</color>
-            <color name="ifl_sheet_text_sub_dark">#ffa3abb2</color>
-            <color name="ifl_sheet_text_sub_light">#ff767980</color>
-            <color name="ifl_sub_line">#ff949494</color>
-            <color name="ifl_sub_line_light">#ff12151b</color>
-            <color name="ifl_tile_color">#ff1a1c1f</color>
-            <color name="ifl_tile_color_light">#ffdfdfdf</color>
+            <color name="ifl_background_color">#000000</color>
+            <color name="ifl_background_color_light">#ffffff</color>
+            <color name="ifl_black">#212328</color>
+            <color name="ifl_sheet_background_dark">#222328</color>
+            <color name="ifl_sheet_background_light">#ffffff</color>
+            <color name="ifl_sheet_text_main_dark">#fafbfd</color>
+            <color name="ifl_sheet_text_main_light">#05060a</color>
+            <color name="ifl_sheet_text_sub_dark">#a3abb2</color>
+            <color name="ifl_sheet_text_sub_light">#767980</color>
+            <color name="ifl_sub_line">#949494</color>
+            <color name="ifl_sub_line_light">#12151b</color>
+            <color name="ifl_tile_color">#1a1c1f</color>
+            <color name="ifl_tile_color_light">#dfdfdf</color>
             <color name="ifl_white">#ffffffff</color>
-            <color name="ifl_yellow">#ffffeb3b</color>
+            <color name="ifl_yellow">#ffeb3b</color>
         </vcategory>
         <vcategory name="strings">
             <string name="ifl_a0_01">Backup Options</string>
@@ -2713,8 +2576,8 @@
             <string name="ifl_a5_sub_freq_04">Beállítva öt naponként-re</string>
             <string name="ifl_a5_sub_freq_05">Beállítva egyszer egy héten-re</string>
             <string name="ifl_a6_01">Eszköz nyelvének használata</string>
-            <string name="ifl_a6_02">Supported</string>
-            <string name="ifl_a6_03">Not Supported</string>
+            <string name="ifl_a6_02">Támogatott</string>
+            <string name="ifl_a6_03">Nem támogatott</string>
             <string name="ifl_a7_01">Jelentések</string>
             <string name="ifl_a7_02">Jelentések törlése</string>
             <string name="ifl_a8_01">Részletek</string>
