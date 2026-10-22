@@ -39,14 +39,20 @@ class InstafelGplayapiInstance(private val packageName: String) {
             Log.println("I", "File found, ${file.name}")
             when {
                 file.name == "com.instagram.android.apk" -> appInfo.addApkInfo("baseApk", file.url, file.size)
-                file.name.contains("config") && file.name.contains("dpi.apk") -> appInfo.addApkInfo("resConfigApk", file.url, file.size)
+                file.name.contains("config") && file.name.contains("dpi.apk") -> appInfo.addApkInfo(
+                    "resConfigApk",
+                    file.url,
+                    file.size
+                )
+
+                file.name == "config.arm64_v8a.apk" -> appInfo.addApkInfo("resArchApk", file.url, file.size)
             }
         }
 
-        return if (appInfo.ifApkExist("baseApk") && appInfo.ifApkExist("resConfigApk")) appInfo else null
+        return if (appInfo.ifApkExist("baseApk") && appInfo.ifApkExist("resConfigApk") && appInfo.ifApkExist("resArchApk")) appInfo else null
     }
 
-    fun authenticateUser (email: String, aasKey: String, deviceProp: Properties): AuthData? {
+    fun authenticateUser(email: String, aasKey: String, deviceProp: Properties): AuthData? {
         try {
             return AuthHelper.build(email, aasKey, deviceProp)
         } catch (e: Exception) {

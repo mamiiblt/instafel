@@ -19,4 +19,5 @@ data class LatestReleaseInfo(
     val updatedOn: String,
     val apkUrlBase: String,
     val apkUrlRes: String,
+    val apkUrlArch: String
 )

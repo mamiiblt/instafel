@@ -49,6 +49,7 @@ class Env {
                     updatedOn = appInfo.getUpdated_on(),
                     apkUrlBase = appInfo.getApkUrl("baseApk"),
                     apkUrlRes = appInfo.getApkUrl("resConfigApk"),
+                    apkUrlArch = appInfo.getApkUrl("resArchApk")
                 )
             } catch (e: Exception) {
                 e.printStackTrace()
