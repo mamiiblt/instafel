@@ -86,18 +86,25 @@ class AmoledThemePatch : InstafelPatch() {
         @PInfos.TaskInfo("Patch Prism Compose colors")
         object : InstafelTask() {
             override fun execute() {
-                val file = getProjectDir().walkTopDown()
-                    .firstOrNull { it.isFile && it.name == "BasePrismColorsV2.smali" }
+                val files = getProjectDir().walkTopDown()
+                    .filter { it.isFile && (it.name == "BasePrismColorsV2.smali" || it.name == "BasePrismColors.smali") }
+                    .toList()
 
-                if (file == null) {
-                    Log.info("BasePrismColorsV2.smali not found")
+                if (files.isEmpty()) {
+                    Log.info("No BasePrismColors smali files found")
                     return
                 }
 
-                if (patchGray1600(file)) {
-                    success("GRAY_1600 patched")
+                var patchedAny = false
+                files.forEach { file ->
+                    if (patchPrismField(file, "GRAY_1600")) patchedAny = true
+                    if (patchPrismField(file, "BLACK")) patchedAny = true
+                }
+
+                if (patchedAny) {
+                    success("GRAY_1600 + BLACK patched")
                 } else {
-                    Log.info("GRAY_1600 not patched")
+                    Log.info("GRAY_1600 / BLACK not patched")
                 }
             }
         }
@@ -155,12 +162,13 @@ class AmoledThemePatch : InstafelPatch() {
     }
 
 
-    private fun patchGray1600(file: File): Boolean {
+    private fun patchPrismField(file: File, fieldName: String): Boolean {
         val lines = file.readLines().toMutableList()
+        var changed = false
 
         for (i in lines.indices) {
             val line = lines[i].trim()
-            if (!line.startsWith("sput-wide") || !line.contains("->GRAY_1600:J")) continue
+            if (!line.startsWith("sput-wide") || !line.contains("->$fieldName:J")) continue
 
             for (j in i - 1 downTo maxOf(0, i - 20)) {
                 val prev = lines[j].trim()
@@ -169,9 +177,9 @@ class AmoledThemePatch : InstafelPatch() {
                     val register = prev.substringAfter(' ').substringBefore(',').trim()
                     val indent = lines[j].takeWhile { it == ' ' || it == '\t' }
                     lines[j] = "${indent}const-wide $register, 0xff000000L"
-                    file.writeText(lines.joinToString("\n"))
-                    Log.info("Patched GRAY_1600 -> 0xff000000L")
-                    return true
+                    changed = true
+                    Log.info("Patched $fieldName -> 0xff000000L in ${file.name}")
+                    break
                 }
 
                 if (prev.startsWith("sput-wide") || prev.startsWith(".method")) {
@@ -180,7 +188,11 @@ class AmoledThemePatch : InstafelPatch() {
             }
         }
 
-        return false
+        if (changed) {
+            file.writeText(lines.joinToString("\n"))
+        }
+
+        return changed
     }
 
 }
