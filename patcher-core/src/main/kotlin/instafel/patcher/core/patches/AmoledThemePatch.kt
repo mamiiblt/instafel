@@ -34,7 +34,6 @@ class AmoledThemePatch : InstafelPatch() {
         @PInfos.TaskInfo("Patch night mode colors")
         object : InstafelTask() {
             override fun execute() {
-
                 val files = scanForColors("values-night")
 
                 if (files.isEmpty()) {
@@ -58,53 +57,76 @@ class AmoledThemePatch : InstafelPatch() {
             }
         },
 
-        @PInfos.TaskInfo("Patch prism black")
+        @PInfos.TaskInfo("Patch dark root backgrounds")
         object : InstafelTask() {
             override fun execute() {
-
-                val files = scanForColors("values")
+                val files = scanForStyles()
 
                 if (files.isEmpty()) {
-                    Log.info("values/colors.xml not found")
+                    Log.info("res/values/styles.xml not found")
                     return
                 }
 
+                val targets = listOf(
+                    Triple("EffectDarkMode", "backgroundDrawable", "@color/bds_black"),
+                    Triple("EffectDarkMode", "igds_color_primary_background", "@color/bds_black"),
+                    Triple("IgdsPrismSemanticColorsExperimentDark", "igds_color_primary_background", "@color/bds_black"),
+                    Triple("IgdsPrismGrayOverridesDark", "igds_color_primary_background", "@color/bds_black")
+                )
+
+                var patched = 0
                 files.forEach { file ->
                     val doc = loadXML(file)
-                    val colors = doc.getElementsByTagName("color")
+                    var fileChanged = false
 
-                    setColor(colors, "igds_prism_black", "#ff000000")
+                    targets.forEach { target ->
+                        if (setStyleItem(doc, target.first, target.second, target.third)) {
+                            patched++
+                            fileChanged = true
+                        }
+                    }
 
-                    saveXML(doc, file)
-                    Log.info("Default patched: ${file.absolutePath}")
+                    if (fileChanged) {
+                        saveXML(doc, file)
+                        Log.info("Dark root styles patched: ${file.absolutePath}")
+                    }
                 }
 
-                success("Prism black overridden")
+                if (patched > 0) {
+                    success("Patched $patched dark root background entries")
+                } else {
+                    Log.info("Dark root background entries already patched or not found")
+                }
             }
-        }
-,
+        },
+
         @PInfos.TaskInfo("Patch Prism Compose colors")
         object : InstafelTask() {
             override fun execute() {
-                val files = getProjectDir().walkTopDown()
-                    .filter { it.isFile && (it.name == "BasePrismColorsV2.smali" || it.name == "BasePrismColors.smali") }
-                    .toList()
+                val projectDir = getProjectDir()
+                val targets = listOf(
+                    "BasePrismColors.smali" to "BLACK",
+                    "BasePrismColorsV2.smali" to "GRAY_1600"
+                )
 
-                if (files.isEmpty()) {
-                    Log.info("No BasePrismColors smali files found")
-                    return
+                var patched = 0
+                targets.forEach { (fileName, fieldName) ->
+                    val file = projectDir.walkTopDown()
+                        .firstOrNull { it.isFile && it.name == fileName }
+
+                    if (file == null) {
+                        Log.info("$fileName not found")
+                    } else if (patchPrismField(file, fieldName)) {
+                        patched++
+                    } else {
+                        Log.info("$fileName $fieldName not changed")
+                    }
                 }
 
-                var patchedAny = false
-                files.forEach { file ->
-                    if (patchPrismField(file, "GRAY_1600")) patchedAny = true
-                    if (patchPrismField(file, "BLACK")) patchedAny = true
-                }
-
-                if (patchedAny) {
-                    success("GRAY_1600 + BLACK patched")
+                if (patched > 0) {
+                    success("Prism AMOLED fields patched")
                 } else {
-                    Log.info("GRAY_1600 / BLACK not patched")
+                    Log.info("Prism AMOLED fields already patched or not found")
                 }
             }
         }
@@ -137,6 +159,25 @@ class AmoledThemePatch : InstafelPatch() {
         return result
     }
 
+    private fun scanForStyles(): List<File> {
+        val result = mutableListOf<File>()
+        val baseDir = getProjectDir()
+
+        baseDir.walkTopDown().forEach { file ->
+            val path = file.absolutePath.replace("\\", "/")
+
+            if (file.isFile &&
+                file.name == "styles.xml" &&
+                path.contains("/res/values")
+            ) {
+                result.add(file)
+            }
+        }
+
+        Log.info("Found ${result.size} styles.xml files")
+        return result
+    }
+
     private fun loadXML(file: File) =
         DocumentBuilderFactory.newInstance()
             .newDocumentBuilder()
@@ -161,38 +202,81 @@ class AmoledThemePatch : InstafelPatch() {
         Log.info("$name not found")
     }
 
+    private fun setStyleItem(
+        doc: org.w3c.dom.Document,
+        styleName: String,
+        itemName: String,
+        value: String
+    ): Boolean {
+        val styles = doc.getElementsByTagName("style")
+
+        for (i in 0 until styles.length) {
+            val style = styles.item(i) as org.w3c.dom.Element
+            if (style.getAttribute("name") != styleName) continue
+
+            val items = style.getElementsByTagName("item")
+            for (j in 0 until items.length) {
+                val item = items.item(j) as org.w3c.dom.Element
+                if (item.getAttribute("name") != itemName) continue
+
+                val old = item.textContent.trim()
+                if (old == value) {
+                    Log.info("[$styleName.$itemName] already $value")
+                    return false
+                }
+
+                item.textContent = value
+                Log.info("[$styleName.$itemName] $old -> $value")
+                return true
+            }
+
+            Log.info("$styleName.$itemName not found")
+            return false
+        }
+
+        Log.info("$styleName style not found")
+        return false
+    }
 
     private fun patchPrismField(file: File, fieldName: String): Boolean {
         val lines = file.readLines().toMutableList()
-        var changed = false
+        val fieldSuffix = "->$fieldName:J"
+        var storeFound = false
 
         for (i in lines.indices) {
             val line = lines[i].trim()
-            if (!line.startsWith("sput-wide") || !line.contains("->$fieldName:J")) continue
+            if (!line.startsWith("sput-wide") || !line.contains(fieldSuffix)) continue
+            storeFound = true
 
             for (j in i - 1 downTo maxOf(0, i - 20)) {
-                val prev = lines[j].trim()
+                val previous = lines[j].trim()
 
-                if (prev.startsWith("const-wide")) {
-                    val register = prev.substringAfter(' ').substringBefore(',').trim()
+                if (previous.startsWith("const-wide")) {
+                    val register = previous.substringAfter(' ').substringBefore(',').trim()
+                    if (register.isEmpty()) break
+
+                    val oldValue = previous.substringAfter(',', "").trim()
+                    if (oldValue == "0xff000000L") {
+                        Log.info("$fieldName is already pure black")
+                        return false
+                    }
+
                     val indent = lines[j].takeWhile { it == ' ' || it == '\t' }
                     lines[j] = "${indent}const-wide $register, 0xff000000L"
-                    changed = true
-                    Log.info("Patched $fieldName -> 0xff000000L in ${file.name}")
-                    break
+                    file.writeText(lines.joinToString("\n", postfix = "\n"))
+                    Log.info("Patched $fieldName: $oldValue -> 0xff000000L")
+                    return true
                 }
 
-                if (prev.startsWith("sput-wide") || prev.startsWith(".method")) {
+                if (previous.startsWith("sput-wide") || previous.startsWith(".method")) {
                     break
                 }
             }
         }
 
-        if (changed) {
-            file.writeText(lines.joinToString("\n"))
+        if (!storeFound) {
+            Log.info("$fieldName store not found in ${file.name}")
         }
-
-        return changed
+        return false
     }
-
 }
