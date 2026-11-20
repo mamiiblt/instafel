@@ -3,6 +3,7 @@ name: Update PCore with Latest Changes
 on:
   repository_dispatch:
     types: [update_pcore]
+  workflow_dispatch:
 
 jobs:
   merge_translations:
