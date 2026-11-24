@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sa -->
+    <string name="ifl_a5_10">권한이 거부됨</string>
+    <string name="ifl_a5_11">"Instafel의 알림 권한이 거부되었습니다. 이 문제가 계속되면 앱 설정에서 알림을 켜는 것을 잊지 마세요."</string>
+    <string name="ifl_a0_08">기타</string>
+    <string name="ifl_a0_10">Instafel의 액티비티, 다이얼로그 및 기타 요소에 AMOLED 테마를 적용합니다.</string>
+    <string name="ifl_a0_11">광고 제거</string>
+    <string name="ifl_a0_12">피드, 릴스 및 기타 영역에서 표시되는 광고를 제거합니다.</string>
+    <string name="ifl_a0_13">변경 사항을 적용하려면 앱을 다시 시작하세요.</string>
+    <string name="ifl_a0_14">기본적으로 활성화되어 있으며 변경할 수 없습니다.</string>
+    <string name="ifl_a0_15">Instafel 업데이터</string>
+    <string name="ifl_a0_16">루팅 및 Shizuku를 사용하여 Instafel 업데이터로 자동 업데이트하세요</string>
+    <!-- me.mamiiblt.instafel.ifl_a_menu -->
+    <string name="ifl_a0_02">업데이트 설정</string>
+    <string name="ifl_a0_03">언어</string>
+    <string name="ifl_a0_04">라이브러리</string>
+    <string name="ifl_a0_05">정보</string>
+    <string name="ifl_a0_06">이 기능은 아직 추가되지 않았습니다</string>
+    <string name="ifl_a0_07">충돌 보고서</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ifl -->
+    <string name="ifl_a1_01">Instafel에 대한 정보</string>
+    <string name="ifl_a1_02">Instafel 버전</string>
+    <string name="ifl_a1_03">설치 유형</string>
+    <string name="ifl_a1_04">프로젝트</string>
+    <string name="ifl_a1_07">클론</string>
+    <string name="ifl_a1_08">언클론</string>
+    <string name="ifl_a1_09">생성 ID</string>
+    <string name="ifl_a1_10">Instagram 버전</string>
+    <string name="ifl_a1_12">빌드 정보</string>
+    <string name="ifl_a1_13">패처 버전</string>
+    <string name="ifl_a1_14">적용된 패치</string>
+    <string name="ifl_a1_15">빌드 정보 상세 보기</string>
+    <string name="ifl_a1_18">개발자에 대한 정보</string>
+    <string name="ifl_a1_19">웹사이트</string>
+    <string name="ifl_a1_20">커뮤니티 참여</string>
+    <string name="ifl_a1_21">도움을 주신 분들</string>
+    <string name="ifl_a1_22">적용된 패치에 대한 정보</string>
+    <string name="ifl_a1_23">코어 커밋</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ig -->
+    <string name="ifl_a2_01">Instagram에 대한 정보</string>
+    <string name="ifl_a2_02">버전</string>
+    <string name="ifl_a2_03">버전 코드</string>
+    <string name="ifl_a2_04">채널</string>
+    <string name="ifl_a2_05">아키텍처</string>
+    <string name="ifl_a3_01">정보</string>
+    <!-- me.mamiiblt.instafel.ifl_a_devmode -->
+    <string name="ifl_a4_01">내보내기</string>
+    <string name="ifl_a4_02">가져오기</string>
+    <string name="ifl_a4_03">재정의 파일 삭제</string>
+    <string name="ifl_a4_04">저장할 파일 경로를 선택하세요.</string>
+    <string name="ifl_a4_05">백업 파일을 성공적으로 저장하였습니다.</string>
+    <string name="ifl_a4_06">재정의 파일을 찾을 수 없습니다.</string>
+    <string name="ifl_a4_07">백업 파일을 저장하는 중에 오류가 발생하였습니다.</string>
+    <string name="ifl_a4_08">백업 파일 공유</string>
+    <string name="ifl_a4_09">가져올 파일을 선택하세요.</string>
+    <string name="ifl_a4_10">백업 파일을 성공적으로 가져왔습니다.</string>
+    <string name="ifl_a4_11">재정의 파일을 찾을 수 없습니다.</string>
+    <string name="ifl_a4_12">백업 파일을 가져오는 중에 오류가 발생하였습니다.</string>
+    <string name="ifl_a4_13">재정의 파일을 성공적으로 삭제하였습니다.</string>
+    <string name="ifl_a4_14">재정의 파일을 찾을 수 없습니다.</string>
+    <string name="ifl_a4_15">백업 파일을 가져오는 중에 오류가 발생하였습니다.</string>
+    <string name="ifl_a4_16">MobileConfig 편집기</string>
+    <string name="ifl_a4_17">플래그 분석기</string>
+    <string name="ifl_a4_18">모두 가져오기</string>
+    <string name="ifl_a4_19">병합하여 가져오기</string>
+    <string name="ifl_a4_20">분석 결과</string>
+    <string name="ifl_a4_21">사용자 정의 매핑 파일 사용</string>
+    <string name="ifl_a4_22">Instagram의 기본 매핑 파일 대신 사용자 정의 매핑 파일을 사용하여 분석할 수 있습니다</string>
+    <string name="ifl_a4_23">일치되는 플래그</string>
+    <string name="ifl_a4_24">일치되지 않는 플래그</string>
+    <string name="ifl_a4_25">검색</string>
+    <string name="ifl_a4_26">백업에서 재정의 가져오기</string>
+    <string name="ifl_a4_27">기존 재정의 파일을 분석하는 대신 백업 파일을 사용합니다</string>
+    <string name="ifl_a4_28">분석 시작</string>
+    <string name="ifl_a4_29">사용자 정의 백업으로 분석 시작</string>
+    <string name="ifl_a4_30">사용자 정의 매핑으로 분석 시작</string>
+    <string name="ifl_a4_31">사용자 정의 백업 및 매핑으로 분석 시작</string>
+    <string name="ifl_a4_32">원본 매핑 복사</string>
+    <string name="ifl_a4_33">분석된 매핑 복사</string>
+    <string name="ifl_a4_34">재정의 파일이 없거나 손상되었습니다</string>
+    <string name="ifl_a4_35">계속하시겠습니까?</string>
+    <string name="ifl_a4_36">삭제된 재정의 파일을 복구할 방법이 없습니다</string>
+    <string name="ifl_a4_37">확인</string>
+    <string name="ifl_a4_38">취소</string>
+    <string name="ifl_a4_39">재정의 파일을 읽는 중에 오류가 발생하였습니다.</string>
+    <string name="ifl_a4_40">%1$s개의 플래그를 성공적으로 내보냈습니다</string>
+    <string name="ifl_a4_41">백업 파일에 내용을 입력하는 중에 오류가 발생하였습니다.</string>
+    <string name="ifl_a4_42">백업 파일을 내보내는 중에 오류가 발생하였습니다</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_ota -->
+    <string name="ifl_a5_01">업데이트 확인</string>
+    <string name="ifl_a5_02">마지막 확인: %1$s</string>
+    <string name="ifl_a5_03">확인 주기</string>
+    <string name="ifl_a5_05">사용 안 함</string>
+    <string name="ifl_a5_06">업데이트 활성화</string>
+    <string name="ifl_a5_07">업데이트 설정 활성화</string>
+    <string name="ifl_a5_08">백그라운드 다운로드</string>
+    <string name="ifl_a5_09">백그라운드에서 업데이트 다운로드 완료 시 알림을 표시합니다</string>
+    <string name="ifl_a5_sub_freq_00">앱 실행할 때마다</string>
+    <string name="ifl_a5_sub_freq_01">사용 안 함</string>
+    <string name="ifl_a5_sub_freq_02">매일</string>
+    <string name="ifl_a5_sub_freq_03">3일에 한 번</string>
+    <string name="ifl_a5_sub_freq_04">5일에 한 번</string>
+    <string name="ifl_a5_sub_freq_05">일주일에 한 번</string>
+    <string name="ifl_a5_dia_freq_00">앱 실행할 때마다 (기본값)</string>
+    <string name="ifl_a5_dia_freq_01">사용 안 함</string>
+    <string name="ifl_a5_dia_freq_02">매일</string>
+    <string name="ifl_a5_dia_freq_03">3일에 한 번</string>
+    <string name="ifl_a5_dia_freq_04">5일에 한 번</string>
+    <string name="ifl_a5_dia_freq_05">일주일에 한 번</string>
+    <!-- me.mamiiblt.instafel.ifl_a_language -->
+    <string name="ifl_a6_01">기기 언어 사용</string>
+    <string name="ifl_a6_02">지원됨</string>
+    <string name="ifl_a6_03">지원되지 않음</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashlog -->
+    <string name="ifl_a7_01">보고서</string>
+    <string name="ifl_a7_02">보고서 삭제</string>
+    <!-- me.mamiiblt.instafel.ifl_a_crashviewer -->
+    <string name="ifl_a8_01">세부 정보</string>
+    <string name="ifl_a8_02">로그 복사</string>
+    <string name="ifl_a8_03">로그 공유</string>
+    <string name="ifl_a8_04">기기 정보</string>
+    <string name="ifl_a8_05">Android 버전</string>
+    <string name="ifl_a8_06">IG 및 IFL 버전</string>
+    <string name="ifl_a8_07">충돌 발생 시간</string>
+    <string name="ifl_a8_08">충돌 정보</string>
+    <string name="ifl_a8_09">원인</string>
+    <string name="ifl_a8_10">스택 트레이스</string>
+    <string name="ifl_a9_01">세부 정보</string>
+    <!-- me.mamiiblt.instafel.ifl_a_about_contributors and translators -->
+    <string name="ifl_a10_01">도움을 주신 분들</string>
+    <!-- me.mamiiblt.instafel.ifl_a_library_menu -->
+    <string name="ifl_a11_01">플래그 라이브러리</string>
+    <string name="ifl_a11_02">백업 라이브러리</string>
+    <string name="ifl_a11_03">API에서 백업을 가져오는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_04">\'%1$s\'님이 생성함</string>
+    <string name="ifl_a11_05">백업 정보</string>
+    <string name="ifl_a11_06">이름</string>
+    <string name="ifl_a11_07">설명</string>
+    <string name="ifl_a11_08">마지막으로 업데이트됨</string>
+    <string name="ifl_a11_09">변경 사항</string>
+    <string name="ifl_a11_10">백업 적용</string>
+    <string name="ifl_a11_11">더보기</string>
+    <string name="ifl_a11_12">자동 업데이트 활성화</string>
+    <string name="ifl_a11_13">새 업데이트가 있으면 백업이 자동으로 업데이트됩니다</string>
+    <string name="ifl_a11_14">이 백업은 지금 적용되며, 자동 업데이트가 활성화된 경우 이후 업데이트됩니다</string>
+    <string name="ifl_a11_15">백업 목록</string>
+    <string name="ifl_a11_16">작성자에 대한 정보</string>
+    <string name="ifl_a11_17">백업 정보를 가져오는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_18">%2$s에 v%1$s로 업데이트됨</string>
+    <string name="ifl_a11_19">작성자에 대한 정보</string>
+    <string name="ifl_a11_20">작성자 이름</string>
+    <string name="ifl_a11_21">작성자 정보를 가져오는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_22">백업 파일을 다운로드하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_23">이 설정을 사용하려면 라이브러리에서 최소 하나의 백업을 적용해야 합니다</string>
+    <string name="ifl_a11_24">%1$s 백업이 자동으로 업데이트됩니다</string>
+    <string name="ifl_a11_25">자동 업데이트를 비활성화하였습니다</string>
+    <string name="ifl_a11_26">백업을 업데이트하는 중 오류가 발생하였습니다</string>
+    <string name="ifl_a11_27">백업 변경 사항</string>
+    <string name="ifl_a11_28">앱 다시 시작</string>
+    <string name="ifl_a11_29">나중에 다시 시작</string>
+    <string name="ifl_a11_30">백업 파일을 분석하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_31">매핑 파일을 분석하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_32">Instagram 매핑 파일을 읽어오는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_33">재정의 파일을 분석하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_34">매핑 파일을 찾을 수 없습니다</string>
+    <string name="ifl_a11_35">백업과 매핑을 비교하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_36">플래그 내용을 복사하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_37">분석을 시작하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_38">파일을 선택하세요</string>
+    <string name="ifl_a11_39">백업 파일을 읽어오는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_40">매핑 파일을 읽는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_41">백업 파일에서 %1$s개의 플래그를 가져왔습니다</string>
+    <string name="ifl_a11_42">백업 파일에서 재정의를 가져오는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_43">%1$s개의 플래그를 성공적으로 가져왔습니다</string>
+    <string name="ifl_a11_44">%1$s개를 성공적으로 가져왔습니다</string>
+    <string name="ifl_a0_01">백업 옵션</string>
+    <string name="ifl_a11_45">버전</string>
+    <string name="ifl_a11_46">%1$s개를 %2$s개의 플래그와 함께 가져왔습니다</string>
+    <string name="ifl_a11_47">유효한 백업 파일을 선택하세요</string>
+    <string name="ifl_a11_48">이전 백업 가져오기</string>
+    <string name="ifl_a11_49">필수 항목을 입력하세요.</string>
+    <string name="ifl_a11_50">올바른 버전 이름을 입력하세요</string>
+    <string name="ifl_a11_51">백업 내보내기</string>
+    <string name="ifl_a11_52">백업 이름</string>
+    <string name="ifl_a11_53">"예시: Mami's Perfect Backup"</string>
+    <string name="ifl_a11_54">작성자 이름</string>
+    <string name="ifl_a11_55">예시: Albert Einstein</string>
+    <string name="ifl_a11_56">백업 버전</string>
+    <string name="ifl_a11_57">예시: 1.0, 1.0-hotfix etc.</string>
+    <string name="ifl_a11_58">변경 사항</string>
+    <string name="ifl_a11_59">여기에 백업 변경 사항을 작성할 수 있습니다</string>
+    <string name="ifl_a11_60">백업 내보내기</string>
+    <string name="ifl_a11_61">이전 JSON 백업 가져오기</string>
+    <string name="ifl_a11_62">백업 비교기</string>
+    <string name="ifl_a11_63">파일의 모든 플래그를 포함하여 백업을 완전히 가져옵니다</string>
+    <string name="ifl_a11_64">선택된 백업에 없는 플래그를 현재 백업에 추가합니다.</string>
+    <string name="ifl_a11_65">이 옵션으로 이전 JSON 파일 형식의 백업을 가져올 수 있습니다</string>
+    <string name="ifl_a11_66">백업 1 선택</string>
+    <string name="ifl_a11_67">백업 2 선택</string>
+    <string name="ifl_a11_68">백업을 선택하려면 탭하세요</string>
+    <string name="ifl_a11_69">백업 비교</string>
+    <string name="ifl_a11_70">압축을 시작하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_a11_71">선택됨</string>
+    <string name="ifl_a11_72">비교하려면 두 개의 백업 파일을 선택하세요</string>
+    <string name="ifl_a11_73">비교 결과</string>
+    <string name="ifl_a11_74">B1 → B2 차이</string>
+    <string name="ifl_a11_75">B2 → B1 차이</string>
+    <string name="ifl_a11_76">삭제된 플래그 ID</string>
+    <string name="ifl_a11_77">백업을 비교하는 중에 오류가 발생하였습니다</string>
+    <!-- me.mamiiblt.instafel.ifl_a_admin_login -->
+    <!-- OTA FOUND DIALOG -->
+    <string name="ifl_d1_01">새 업데이트</string>
+    <string name="ifl_d1_02">Instafel이 v%1$d (Instagram v%2$s) 버전으로 업데이트됩니다</string>
+    <string name="ifl_d1_03">취소</string>
+    <string name="ifl_d1_04">설치</string>
+    <string name="ifl_d1_05">숨기기</string>
+    <string name="ifl_d1_06">업데이트 서버에 연결하는 중</string>
+    <!-- OTA UP-TO-DATE DIALOG -->
+    <string name="ifl_d2_02">Instafel이 최신 버전입니다</string>
+    <string name="ifl_d2_01">최신 버전</string>
+    <string name="ifl_d2_03">확인</string>
+    <!-- AUTOUPDATE TEXTS -->
+    <string name="ifl_t1_01">APK 설치 프로그램을 실행하는 중에 오류가 발생하였습니다</string>
+    <string name="ifl_t1_03">Instafel를 업데이트할 수 없습니다.</string>
+    <!-- GENERAL_FN CLASS -->
+    <string name="ifl_c1_01">기기에서 웹 브라우저를 찾을 수 없습니다</string>
+    <!--- DIALOG SET FREQ -->
+    <string name="ifl_d3_01">주기 설정</string>
+    <string name="ifl_d3_02">확인</string>
+    <!-- WELCOME_DIALOG -->
+    <string name="ifl_d4_01">환영합니다</string>
+    <string name="ifl_d4_02">Instafel에 오신 것을 환영합니다. 이 모드는 Instagram Alpha 빌드의 최신 기능을 제공하기 위해 개발되었습니다\\n\\n홈 버튼 또는 프로필 탭 오른쪽 상단에 있는 더보기 버튼을 길게 탭하여 Inatafel 메뉴를 열 수 있습니다.</string>
+    <!-- HOME SHEETS -->
+    <string name="ifl_d5_01">Instafel 빠른 메뉴</string>
+    <string name="ifl_d5_02">IFL 버전 v%1$s (베이스: v%2$s)</string>
+    <string name="ifl_d5_03">Instafel 메뉴 열기</string>
+    <string name="ifl_d5_04">IG 실험 옵션 열기</string>
+    <string name="ifl_d5_05">Instafel 커뮤니티 참여</string>
+    <string name="ifl_d5_06">Instagram 다시 시작</string>
+    <!-- CRASH TOAST -->
+</resources>
