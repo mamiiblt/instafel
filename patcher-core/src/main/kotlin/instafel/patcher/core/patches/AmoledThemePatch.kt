@@ -71,7 +71,8 @@ class AmoledThemePatch : InstafelPatch() {
                     Triple("EffectDarkMode", "backgroundDrawable", "@color/bds_black"),
                     Triple("EffectDarkMode", "igds_color_primary_background", "@color/bds_black"),
                     Triple("IgdsPrismSemanticColorsExperimentDark", "igds_color_primary_background", "@color/bds_black"),
-                    Triple("IgdsPrismGrayOverridesDark", "igds_color_primary_background", "@color/bds_black")
+                    Triple("IgdsPrismGrayOverridesDark", "igds_color_primary_background", "@color/bds_black"),
+                    Triple("IgdsPrismGrayOverridesDark", "igds_color_clips_tab_bar_background", "@color/bds_black")
                 )
 
                 var patched = 0
