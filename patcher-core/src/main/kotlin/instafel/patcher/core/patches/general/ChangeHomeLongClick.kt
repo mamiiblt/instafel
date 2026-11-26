@@ -11,6 +11,7 @@ package instafel.patcher.core.patches.general
 import instafel.patcher.core.source.SmaliParser
 import instafel.patcher.core.utils.Env
 import instafel.patcher.core.utils.SearchUtils
+import instafel.patcher.core.utils.Utils
 import instafel.patcher.core.utils.modals.FileSearchResult
 import instafel.patcher.core.utils.patch.InstafelPatch
 import instafel.patcher.core.utils.patch.InstafelTask
@@ -58,6 +59,24 @@ class ChangeHomeLongClick : InstafelPatch() {
                                 "iput-object",
                                 ":Lcom/instagram/common/session/UserSession;"
                             ),
+                            // .67 fix, layer 1: the target's Activity /
+                            // UserSession fields are `public final synthetic`
+                            // (`.field` declaration lines). The tab-controller
+                            // class holding the same dependencies declares
+                            // plain `public final` fields, so it fails
+                            // these two groups and is excluded. (`iput`
+                            // lines never contain `synthetic`, so the marker
+                            // has to live on the `.field` lines.)
+                            listOf(
+                                ".field",
+                                "public final synthetic",
+                                ":Lcom/instagram/mainactivity/InstagramMainActivity;"
+                            ),
+                            listOf(
+                                ".field",
+                                "public final synthetic",
+                                ":Lcom/instagram/common/session/UserSession;"
+                            ),
                             listOf("\"click\""),
                             listOf("\"activity\"")
                         )
@@ -69,8 +88,36 @@ class ChangeHomeLongClick : InstafelPatch() {
                     }
 
                     is FileSearchResult.NotFound -> {
-                        failure("No matching home long click class found.")
-                        exitProcess(-1)
+                        // .67 fix, layer 2: on .67 the coordinate search
+                        // matches two files (the true handler + a sibling
+                        // long-press handler whose fields are synthetic
+                        // too). Tie-break on the synthetic field count:
+                        // the true handler declares exactly 5
+                        // `.field public final synthetic` lines, the
+                        // sibling 6. Fail closed if the tie-break does
+                        // not single out one file — never take the first
+                        // match (order is thread-dependent).
+                        val picked = pickHomeLongClickBySyntheticFieldCount(
+                            result.matchedFiles
+                        )
+                        if (picked != null) {
+                            homeLongClickClass = picked
+                            success(
+                                "Home long click class found successfully " +
+                                "(tie-break: " +
+                                Utils.makeSmaliPathShort(picked) +
+                                " declares exactly 5 synthetic fields)."
+                            )
+                        } else {
+                            failure(
+                                "No matching home long click class found. " +
+                                "Candidates: " +
+                                result.matchedFiles.joinToString(", ") {
+                                    Utils.makeSmaliPathShort(it)
+                                } + "."
+                            )
+                            exitProcess(-1)
+                        }
                     }
                 }
             }
@@ -445,6 +492,45 @@ class ChangeHomeLongClick : InstafelPatch() {
             }
         }
     )
+
+    companion object {
+        /**
+         * .67 fix, layer 2 — the true home long-click handler declares
+         * exactly this many `.field public final synthetic` lines (5:
+         * UserSession, InstagramMainActivity, the tab-controller, 03dm,
+         * Function1). The sibling long-press handler for another tab
+         * declares 6 (one extra tab-component field).
+         */
+        private const val HOME_LONG_CLICK_SYNTHETIC_FIELD_COUNT = 5
+    }
+
+    /**
+     * .67 fix, layer 2 — structural tie-break for the coordinate search.
+     * Returns the single candidate declaring exactly
+     * [HOME_LONG_CLICK_SYNTHETIC_FIELD_COUNT] synthetic fields, or null
+     * when zero or more than one qualify (fail closed).
+     */
+    private fun pickHomeLongClickBySyntheticFieldCount(
+        candidates: List<File>
+    ): File? {
+        if (candidates.isEmpty()) return null
+        val qualified = candidates.filter { file ->
+            countSyntheticFields(file) ==
+                HOME_LONG_CLICK_SYNTHETIC_FIELD_COUNT
+        }
+        return if (qualified.size == 1) qualified[0] else null
+    }
+
+    private fun countSyntheticFields(file: File): Int {
+        return try {
+            smaliUtils.getSmaliFileContent(file.absolutePath).count { line ->
+                line.contains(".field") &&
+                    line.contains("public final synthetic")
+            }
+        } catch (e: Exception) {
+            -1
+        }
+    }
 
     private fun tokenizeDescriptor(
         descriptor: String

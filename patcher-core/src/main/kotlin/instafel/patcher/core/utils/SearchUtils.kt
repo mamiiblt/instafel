@@ -107,7 +107,7 @@ object SearchUtils {
 
         if (resultFiles.isEmpty() || resultFiles.size > 1) {
             Log.severe("Found more files than one (or no any file found) for apply patch, add more condition for find correct file.")
-            return@withContext FileSearchResult.NotFound(resultFiles.size)
+            return@withContext FileSearchResult.NotFound(resultFiles.size, resultFiles)
         } else {
             Log.info("Class ${Utils.makeSmaliPathShort(resultFiles[0])} meets all requirements")
             return@withContext FileSearchResult.Success(resultFiles[0])

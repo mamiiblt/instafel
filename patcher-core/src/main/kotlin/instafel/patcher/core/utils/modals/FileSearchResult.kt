@@ -12,5 +12,12 @@ import java.io.File
 
 sealed class FileSearchResult {
     data class Success(val file: File) : FileSearchResult()
-    data class NotFound(val scannedFiles: Int) : FileSearchResult()
+    data class NotFound(
+        val scannedFiles: Int,
+        // .67 fix: the files that matched the coordinates, so a caller
+        // can tie-break instead of failing blind. Empty when nothing
+        // matched. (The `scannedFiles` name is historical — it carries
+        // the matched count, not the scanned count.)
+        val matchedFiles: List<File> = emptyList()
+    ) : FileSearchResult()
 }
